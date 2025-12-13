@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@font-face {
+    font-family: "Boldie";
+    src: url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.eot");
+    src: url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/3d326e4a3753d0f1220967bb7cbc88b7.svg#Boldie")format("svg");
+}
+
+.mp-container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mp-left-column, .mp-right-column {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+/* Desktop: 1024px and up */
+@media screen and (min-width: 1024px) {
+  .mp-left-column {
+    width: 75%;
+    float: left;
+    padding-right: 15px;
+  }
+  
+  .mp-right-column {
+    width: 24%;
+    float: right;
+  }
+  
+  .mp-left-column-60{
+  	width: 63%;
+  	float:left;
+  	padding-right:5px;
+  }
+  
+  .mp-right-column-35{
+  	width: 35%;
+  	float:right;
+  }
+}
+
+/* Tablet styles: 768px to 1023px */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .mp-left-column {
+    width: 70%;
+    float: left;
+    padding-right: 15px;
+  }
+  
+  .mp-right-column {
+    width: 29%;
+    float: right;
+  }
+  
+  .mp-left-column-60{
+  	width: 60%;
+  	float:left;
+  	padding-right:5px;
+  }
+  
+  .mp-right-column-35{
+  	width: 35%;
+  	float:right;
+  }
+  
+  .mp-edit-container {
+    font-size: 15px;
+  }
+  
+  /* Adjust Discord widget size with more specific selector */
+  .mp-right-column .DiscordWidget {
+    width: 95% !important;
+    height: 350px !important;
+  }
+}
+
+/* Mobile styles: below 768px */
+@media screen and (max-width: 767px) {
+  .mp-left-column,
+  .mp-right-column {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .mp-hide-mobile {
+    display: none !important;
+  }
+  
+  /* Make tables in main page responsive with specific selector */
+  .mp-container table {
+    display: block;
+    width: 100% !important;
+    overflow-x: auto;
+  }
+  
+  /* Constrain images in the main page */
+  .mp-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  .mp-edit-container {
+    font-size: 14px;
+   }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 480px) {
+  /* Targeted adjustments for very small screens */
+  .mp-container .mp-heading {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Adjust spacing with specific selectors */
+  .mp-container > div {
+    padding: 5px;
+  }
+  .mp-edit-container {
+    font-size: 13px;
+  }
+}
+
+/* Clearfix to prevent layout collapse */
+.mp-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.mp-welcome {
+    font-family: 'Boldie', 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #7fb3d3;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+
+/*.mp-welcome::after {*/
+/*    content: "♪";*/
+/*    margin-left: 8px;*/
+/*    font-size: 28px;*/
+/*    color: #7fb3d3;*/
+/*    display: inline-block;*/
+/*    vertical-align: baseline;*/
+/*}*/
+
+/*MP-Admins*/
+.team-info-section {
+    border: 2px solid #c3e6f9;
+    border-radius: 1px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* Header */
+.team-header {
+    background: #c3e6f9;
+    border: 1px solid #c3e6f9;
+    border-radius: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.team-title {
+    font-size: 200%;
+    font-weight: bolder;
+    color: #006cb0;
+}
+
+/* Team member tables */
+.team-table {
+    text-align: center;
+    width: 100%;
+}
+
+.team-table-container {
+    overflow-x: auto;
+}
+
+/*MP-Editing*/
+.mp-edit-container{border:2px solid #c3e6f9; border-radius: 1px; padding:5px; margin-bottom:10px; font-size: 16px;}
+.mp-edit-header{background:#c3e6f9; border:1px solid #c3e6f9; border-radius: 1px; padding:10px; margin-bottom:10px; font-size: 200%; font-weight: bolder; width: 100%; text-align: left;}
+.mp-edit-emphasis{color: #d9534f; font-weight: bold;}
+.mp-edit-header-text{color: #006cb0;}
+
+/*MP-UtaiteSpotlight*/
+.utaite-spotlight {
+    width: 100%;
+    margin: 0 auto 15px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.utaite-spotlight .utaite-spotlight-header {
+    background-color: #c3e6f9;
+    color: #333;
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.utaite-spotlight .utaite-media-container {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.utaite-spotlight .utaite-description {
+    font-size: 14px;
+    padding: 12px;
+    line-height: 1.5;
+}
+
+.utaite-spotlight .utaite-sample {
+    margin-top: 10px;
+}
+
+.utaite-sample-links {
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.utaite-sample-links > * {
+    display: flex;
+    align-items: center;
+}
+
+.utaite-spotlight .utaite-name-container {
+    text-align: center;
+    font-size: 18px;
+    background-color: #c3e6f9;
+    color: #333;
+    padding: 10px;
+}
+
+.utaite-spotlight .utaite-name-romaji {
+    font-size: 15px;
+    opacity: 0.7;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.utaite-spotlight .utaite-links-container {
+    vertical-align: middle;
+    background-color: #c3e6f9;
+    padding: 10px;
+}
+
+.utaite-spotlight .utaite-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.utaite-spotlight .utaite-links img,
+.utaite-spotlight .utaite-links i {
+    vertical-align: middle !important;
+}
+
+.utaite-spotlight .utaite-warning {
+    color: #f44;
+    font-weight: bold;
+}
+
+.utaite-spotlight .external:after {
+  display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    /* Tablet view - slightly reorganized */
+    .utaite-spotlight-header {
+        font-size: 20px;
+        width: 100%;
+    }
+    
+    .utaite-media-container {
+        padding: 8px;
+    }
+    
+    .utaite-description {
+        font-size: 14px;
+    }
+}
+
+/* Mobile view - completely reorganized layout */
+@media screen and (max-width: 480px) {
+    .utaite-spotlight {
+        border-radius: 6px;
+    }
+    
+    .utaite-spotlight-header {
+        font-size: 18px;
+        padding: 8px;
+        width: 100%;
+    }
+    
+    /* Stack everything vertically */
+    .utaite-spotlight td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+    
+    /* Remove spacing between stacked cells */
+    .utaite-spotlight tr {
+        display: block;
+    }
+    
+    /* Name becomes full-width header */
+    .utaite-name-container {
+        border-radius: 0;
+        padding: 8px;
+        font-size: 16px;
+    }
+    
+    .utaite-name-romaji {
+        display: block;
+        margin: 3px 0 0 0;
+        font-size: 13px;
+    }
+    
+    /* Description gets more compact */
+    .utaite-description {
+        padding: 8px;
+        font-size: 13px;
+    }
+    
+    /* Video container gets more compact */
+    .utaite-media-container {
+        padding: 8px;
+        justify-content: space-around;
+    }
+    
+    /* Links container gets compact styling */
+    .utaite-links-container {
+        padding: 8px;
+    }
+    
+    .utaite-links {
+        justify-content: center;
+    }
+    
+    /* Sample links become more compact */
+    .utaite-sample-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/*MP-Birthday*/
+.birthday-container-style{
+	border:2px solid #c3e6f9; 
+	border-radius: 1px; 
+	padding:5px; 
+	margin-bottom:10px;
+}
+
+.mp-birthday-header{
+	background:#c3e6f9; 
+	border:1px solid #c3e6f9; 
+	border-radius: 1px; 
+	padding:10px; 
+	margin-bottom:10px; 
+	font-size: 200%; 
+	font-weight: bolder; 
+	width: 100%; 
+	text-align: left;
+	color: #006cb0;
+}
+
+/* mp-banner */
+/* inspired by Heavenly Delusion Wiki on wikia*/
+.banner-block {
+  position: relative;
+  margin: -18px -18px 20px;
+  border-radius: 9px;
+  overflow: hidden;
+  color: #fff;
+}
+.banner-block img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 30rem;
+}
+.banner-block:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  border-radius: 9px;
+}
+.banner-block .container-top {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 18px 36px;
+  z-index: 2;
+}
+.banner-block .container-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  z-index: 2;
+}
+.banner-block .container-bottom div:first-child {
+  flex: 1;
+}
+/* Button styling */
+.wds-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #3366cc;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.wds-button.wds-is-text.wds-is-secondary {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.wds-button:hover {
+  background-color: #255bb5;
+}
+
+.wds-button.wds-is-text.wds-is-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.help-pages {
+  margin-right: 10px;
+}
+
+/* Responsive styles */
+/* For tablets and smaller desktops */
+@media (max-width: 992px) {
+  .banner-block .container-top,
+  .banner-block .container-bottom {
+    padding: 16px 24px;
+  }
+  
+  .banner-block img {
+    max-height: 25rem;
+  }
+}
+
+/* For mobile devices in landscape */
+@media (max-width: 768px) {
+  .banner-block {
+    margin: -12px -12px 16px;
+  }
+  
+  .banner-block .container-top,
+  .banner-block .container-bottom {
+    padding: 12px 18px;
+  }
+  
+  .banner-block img {
+    max-height: 20rem;
+  }
+  
+  .wds-button {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+}
+
+/* For mobile devices in portrait */
+@media (max-width: 576px) {
+  .banner-block {
+    margin: -10px -10px 0;
+    border-radius: 9px 9px 0 0;
+  }
+  
+  .banner-block:before {
+    display: none;
+  }
+  
+  .banner-block .container-top {
+    padding: 10px 14px;
+  }
+  
+  .banner-block .container-bottom {
+    display: none;
+  }
+  
+  .banner-block img {
+    max-height: 15rem;
+    border-radius: 9px 9px 0 0;
+  }
+  
+  /* Show the mobile content container */
+  .banner-block .mobile-content {
+    display: block;
+    margin-bottom: 14px;
+  }
+  
+  .wds-button {
+    padding: 5px 10px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-top: 8px;
+  }
+  
+  .wds-button.wds-is-text.wds-is-secondary {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #333;
+  }
+  
+  .wds-button.wds-is-text.wds-is-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .help-pages {
+    margin-right: 6px;
+  }
+}
+
+/* For very small devices */
+@media (max-width: 400px) {
+  .banner-block {
+    margin: -8px -8px 0;
+  }
+  
+  .banner-block .container-top {
+    padding: 8px 12px;
+  }
+  
+  .banner-block img {
+    max-height: 12rem;
+  }
+  
+  .banner-block .mobile-content {
+    padding: 10px;
+  }
+}

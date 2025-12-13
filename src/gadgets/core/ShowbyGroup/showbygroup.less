@@ -1,0 +1,18 @@
+.show-to-sysop, .show-to-bureaucrat, .show-to-admin { display: none; }
+
+body.user-group-sysop .show-to-sysop,
+body.user-level-sysop .show-to-sysop,
+body.user-level-sysop .show-to-admin { 
+    display: block !important; 
+}
+
+body.user-group-bureaucrat .show-to-bureaucrat,
+body.user-level-bureaucrat .show-to-bureaucrat { 
+    display: block !important; 
+}
+
+.show-to-logged-in { display: none; }
+body.user-status-loggedin .show-to-logged-in { display: block !important; }
+
+.show-to-anonymous { display: none; }
+body.user-status-anonymous .show-to-anonymous { display: block !important; }

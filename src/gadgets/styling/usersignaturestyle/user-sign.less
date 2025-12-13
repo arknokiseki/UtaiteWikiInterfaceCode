@@ -1,0 +1,74 @@
+.ark-sign {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  border-left: 3px solid;
+}
+
+.ark-sign__username {
+  font-weight: 600;
+  margin-right: 5px;
+  position: relative;
+}
+
+.ark-sign__username::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease;
+}
+
+.ark-sign:hover .ark-sign__username::after {
+  width: 100%;
+}
+
+html.skin-citizen-light .ark-sign {
+  border-color: #4a6da7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+html.skin-citizen-light .ark-sign__username {
+  color: #2a4b8d;
+}
+
+html.skin-citizen-light .ark-sign__username::after {
+  background-color: #4a6da7;
+}
+
+html.skin-citizen-light .ark-sign:hover {
+  background-color: rgba(74, 109, 167, 0.05);
+}
+
+html.skin-citizen-light .ark-sign a {
+  color: #5c7cb0;
+}
+
+html.skin-citizen-dark .ark-sign {
+  border-color: #7aa2f7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+html.skin-citizen-dark .ark-sign__username {
+  color: #a9b9e6;
+}
+
+html.skin-citizen-dark .ark-sign__username::after {
+  background-color: #7aa2f7;
+}
+
+html.skin-citizen-dark .ark-sign:hover {
+  background-color: rgba(122, 162, 247, 0.1);
+}
+
+html.skin-citizen-dark .ark-sign a {
+  color: #8ab4f8;
+}

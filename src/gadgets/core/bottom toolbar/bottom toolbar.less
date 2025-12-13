@@ -1,0 +1,114 @@
+@media (min-width: 767px) {
+#bottom-toolbar {
+  position: fixed;
+  bottom: 10px;
+  right: 15px;
+  z-index: 200;
+  background-color: var(--container-bg);
+  border: 1px solid var(--theme-border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.skin-theme-clientpref-night #bottom-toolbar {
+  background-color: var(--template-bg-box) !important;
+  border-color: var(--template-border-box) !important;
+}
+
+#bottom-toolbar:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+#bottom-toolbar .tools {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#bottom-toolbar .tools > li {
+  margin: 0 8px;
+}
+
+#bottom-toolbar a {
+  color: var(--theme-link-color);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  transition: color 0.2s ease;
+}
+
+#bottom-toolbar a:hover {
+  color: var(--theme-link-color-hover);
+}
+
+.tools-dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  bottom: 110%;
+  right: -10px;
+  background-color: var(--surface-bg);
+  border: 1px solid var(--theme-border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 8px;
+  min-width: 150px;
+}
+
+.tools-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-content li {
+  padding: 5px;
+}
+
+#toolbar-watch {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#toolbar-watch a {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+#bottom-toolbar,
+#bottom-toolbar .dropdown-content {
+  border-radius: 16px;
+}
+
+#bottom-toolbar #toolbar-watch .citizen-ui-icon {
+  width: 16px;
+  height: 16px;
+}
+}
+
+@media (max-width: 766px) {
+  #bottom-toolbar {
+    display: none !important;
+    z-index: -1 !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    transform: translateY(100%) !important;
+  }
+}

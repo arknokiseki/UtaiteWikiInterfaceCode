@@ -1,0 +1,460 @@
+/*==========================================================
+Birthday Calendar
+===========================================================*/
+.utaiteUnit .citizen-overflow-wrapper,
+.utaiteUnit .citizen-overflow-content,
+.birthday-calendar .citizen-overflow-wrapper,
+.birthday-calendar .citizen-overflow-content,
+.wikitable {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.utaiteUnit .citizen-overflow-nav,
+.birthday-calendar .citizen-overflow-nav {
+  width: 1% !important;
+  position: relative;
+}
+
+/*===========================================================
+Styles for Important Resources Pages
+===========================================================*/
+.resource-panel {
+    display: inline-block;
+    width: clamp(300px, 90%, 450px);
+    border-radius: var(--border-radius, 12px);
+    border: 1px solid;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.skin-theme-clientpref-day .resource-panel {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.skin-theme-clientpref-night .resource-panel {
+    background-color: rgba(var(--theme-page-background-color--rgb, 40, 39, 43), 0.65);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.resource-panel-title {
+    color: var(--primary-text-color);
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 16px 20px;
+    background-color: rgba(var(--primary-color), 0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resource-panel-list {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-panel-item {
+    position: relative;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: calc(var(--border-radius, 12px) - 4px);
+}
+
+.resource-panel-item::after {
+    content: '›';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8em;
+    color: rgba(var(--primary-color), 0.3);
+    transition: right 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.resource-panel-item:hover {
+    background-color: rgba(var(--accent-color, #5865F2), 0.15);
+}
+
+.resource-panel-item:hover::after {
+    right: 10px;
+    color: var(--accent-color, #5865F2);
+}
+
+.resource-panel-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resource-panel-item .icon {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.resource-panel-item a.selflink {
+    cursor: default;
+    display: block;
+    background-color: var(--accent-color, #5865F2);
+    border-radius: calc(var(--border-radius, 12px) - 4px);
+}
+
+.resource-panel-item a.selflink,
+.resource-panel-item a.selflink .icon {
+    color: var(--secondary-color, #ffffff);
+}
+
+.resource-panel-item a.selflink:hover {
+    background-color: var(--accent-color, #5865F2);
+}
+
+.resource-panel-item a.selflink::after {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.resource-panel-item a.selflink:hover::after {
+    right: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*============================================
+Utaite Status
+=============================================*/
+.active-template{
+	font-weight: bold; color: var(--status-active-text-color);
+}
+
+.inactive-template{
+	font-size:normal; font-weight: bold; color:#FF0000;
+}
+
+.hiatus-template{
+	font-size:normal; font-weight: bold; color:#8dc6dd;
+}
+
+.graduated-template{
+	font-size:normal; font-weight: bold; color:#A29587;
+}
+
+/*=============================================================
+sns class
+=============================================================*/
+.dead-icon-link {
+    filter: grayscale(100%) brightness(84%) !important;
+    opacity: 0.7 !important;
+}
+/*nnd*/
+/*.nnd-link img {*/
+/*    vertical-align: -0.125em !important;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*.skin-theme-clientpref-night .nnd-link svg .b,*/
+/*.citizen-feature-pure-black-clientpref-1 .nnd-link svg .b,*/
+/*body:not(.skin-theme-clientpref-day) .nnd-link svg .b {*/
+/*    stroke: white !important;*/
+/*    stroke-width: 1.5px;*/
+/*}*/
+
+/*.skin-theme-clientpref-day .nnd-link svg .b {*/
+/*    stroke: black !important;*/
+/*    stroke-width: 1.5px;*/
+/*}*/
+
+.niconico-icon {
+    display: inline-block;
+    vertical-align: -0.125em;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%22800px%22%20height%3D%22800px%22%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cdefs%3E%3Cstyle%3E.b%7Bfill%3Anone%3Bstroke%3A%23000000%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bstroke-width%3A2%3B%7D%20.filled%7Bfill%3A%23000000%3Bstroke%3A%23000000%3Bstroke-linecap%3Around%3Bstroke-linejoin%3Around%3Bstroke-width%3A2%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%20%3Cpath%20class%3D%22b%22%20d%3D%22M42.1281%2C37.201V14.7035c0-.9296-.8367-1.6734-1.8593-1.6734H7.7312c-1.0226%2C0-1.8593%2C.7437-1.8593%2C1.6734v22.4975c0%2C.9296%2C.8367%2C1.6734%2C1.8593%2C1.6734H40.2688c1.0226%2C0%2C1.8593-.7437%2C1.8593-1.6734Z%22%2F%3E%20%3Cpath%20class%3D%22b%22%20d%3D%22M38.8744%2C34.4121V17.4925c0-.6508-.6508-1.2085-1.4874-1.2085H10.706c-.8367%2C0-1.4874%2C.5578-1.4874%2C1.2085v16.8266c0%2C.6508%2C.6508%2C1.2085%2C1.4874%2C1.2085h26.6809c.7437%2C.093%2C1.4874-.4648%2C1.4874-1.1156Z%22%2F%3E%20%3Cpolyline%20class%3D%22b%22%20points%3D%2232.8317%205.5%2025.0226%2013.0302%2022.9774%2013.0302%2015.1683%205.5%22%2F%3E%20%3Cpolygon%20class%3D%22filled%22%20points%3D%2224%2030.5779%2022.5%2032.2035%2025.5%2032.2035%2024%2030.5779%22%2F%3E%20%3Ccircle%20class%3D%22b%22%20cx%3D%2233.2965%22%20cy%3D%2222.4196%22%20r%3D%221.8593%22%2F%3E%20%3Ccircle%20class%3D%22b%22%20cx%3D%2214.6106%22%20cy%3D%2226.2312%22%20r%3D%221.8593%22%2F%3E%20%3Cpath%20class%3D%22b%22%20d%3D%22M18.608%2C38.8744c-.5578%2C2.1382-1.6734%2C3.6256-3.0678%2C3.6256-1.3015%2C0-2.51-1.4874-3.0678-3.6256%22%2F%3E%20%3Cpath%20class%3D%22b%22%20d%3D%22M35.5276%2C38.8744c-.5578%2C2.1382-1.6734%2C3.6256-3.0678%2C3.6256-1.3015%2C0-2.5101-1.4874-3.0678-3.6256%22%2F%3E%20%3C%2Fsvg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: var(--niconico-icon-filter);
+    transition: filter 0.2s ease;
+}
+
+.svg-icon-black .niconico-icon {
+    filter: brightness(0) saturate(100%) invert(0%) !important;
+    vertical-align: -0.270em !important;
+}
+
+.niconico-icon:hover {
+    filter: var(--niconico-icon-filter-hover);
+}
+
+.svg-icon-black .niconico-icon:hover {
+    filter: brightness(0) saturate(100%) invert(20%) !important;
+}
+
+a .niconico-icon::after { 
+	display: none !important;
+	content: none !important;
+}
+
+.nnd-link a::after,
+.nnd-link a:after {
+    display: none !important;
+    content: none !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .niconico-icon {
+    width: 19px !important;
+    height: 19px !important;
+    display: inline-block !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+
+/*ig*/
+.ig-gradient {
+  background: radial-gradient(circle at 30% 107%, 
+    rgb(255, 214, 0) 0%, 
+    rgb(255, 122, 0) 25%, 
+    rgb(255, 0, 105) 50%, 
+    rgb(211, 0, 197) 75%, 
+    rgb(118, 56, 250) 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+/*twitter*/
+.icon-link.fa-twitter {
+    color: #1DA1F2 !important;
+}
+
+.icon-link:hover i.fa-twitter {
+    color: #ff0000 !important;
+}
+
+.skin-theme-clientpref-night .icon-link{
+    color: var(--primary-color) !important;
+}
+/*yt*/
+.yt-link {
+    color: #d20438 !important;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.yt-link i.fa-youtube {
+    color: #d20438 !important;
+}
+
+
+.yt-link:hover i.fa-youtube {
+    color: #ff0000 !important;
+}
+
+.yt-no-link {
+    color: #d6d6d6 !important;
+    vertical-align: middle;
+    pointer-events:none !important;
+    display: inline-block;
+}
+
+.yt-no-link i.fa-youtube {
+    color: #d6d6d6 !important;
+}
+// .yt-no-link:hover i.fa-youtube {
+// 	/**/
+// }
+
+.yt-link a::after,
+.yt-link a:after {
+    display: none !important;
+    content: none !important;
+}
+
+a .fa-youtube::after {
+    display: none !important;
+    content: none !important;
+}
+
+.yt-link .fa-youtube::after {
+    display: none !important;
+    content: none !important;
+}
+
+/*=============================================================
+inputbox
+==============================================================*/
+/* Progressive Action Button Styles - Primary Weight */
+.cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive:hover, 
+.cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-primary.cdx-button--action-progressive:hover {
+    background-color: var(--background-color-progressive--hover, #4b77d6);
+    border-color: var(--border-color-progressive--hover, #4b77d6);
+}
+
+.cdx-button:enabled.cdx-button--weight-primary.cdx-button--action-progressive, 
+.cdx-button.cdx-button--fake-button--enabled.cdx-button--weight-primary.cdx-button--action-progressive {
+    background-color: var(--background-color-progressive, #36c);
+    color: var(--color-inverted-fixed, #fff);
+    border-color: var(--border-color-progressive, #36c);
+}
+
+/* Progressive Action Button Styles - Normal Weight */
+.cdx-button:enabled.cdx-button--action-progressive:hover, 
+.cdx-button.cdx-button--fake-button--enabled.cdx-button--action-progressive:hover {
+    color: var(--color-progressive--hover, #4b77d6);
+    border-color: var(--border-color-progressive--hover, #4b77d6);
+}
+
+.cdx-button:enabled.cdx-button--action-progressive, 
+.cdx-button.cdx-button--fake-button--enabled.cdx-button--action-progressive {
+    color: var(--color-progressive, #36c);
+    border-color: var(--border-color-progressive, #36c);
+}
+
+/* Invalid Form Button Styles */
+form.createbox:invalid .cdx-button {
+    background-color: #ccc !important;
+    color: #fff !important;
+    border-color: #ccc !important;
+    cursor: default !important;
+}
+
+/* Specific Context Button Hover Styles */
+.bodySearch .cdx-button:hover, 
+.bodySearch .mw-ui-button:hover, 
+.commentbox .cdx-button:hover, 
+.commentbox .mw-ui-button:hover, 
+.createbox .cdx-button:hover, 
+.createbox .mw-ui-button:hover, 
+.mw-movebox .cdx-button:hover, 
+.mw-movebox .mw-ui-button:hover, 
+.searchbox .cdx-button:hover, 
+.searchbox .mw-ui-button:hover {
+    background-color: var(--theme-accent-color--hover);
+    border-color: var(--theme-accent-color--hover);
+}
+
+/* General Button Hover/Focus/Active Styles */
+.cdx-button:not(:disabled):active, 
+.cdx-button:not(:disabled):focus, 
+.cdx-button:not(:disabled):hover, 
+.mw-ui-button:not(:disabled):active, 
+.mw-ui-button:not(:disabled):focus, 
+.mw-ui-button:not(:disabled):hover {
+    background-color: var(--theme-accent-color--hover);
+    border: 1px solid var(--theme-accent-color--hover);
+    color: var(--theme-accent-label-color);
+}
+
+/* Default Enabled Button Hover */
+.cdx-button:enabled:hover, 
+.cdx-button.cdx-button--fake-button--enabled:hover {
+    background-color: var(--background-color-base, #fff);
+    color: var(--color-base--hover, #404244);
+    cursor: pointer;
+}
+
+/* Specific Context Button Styles */
+.bodySearch .cdx-button, 
+.bodySearch .mw-ui-button, 
+.commentbox .cdx-button, 
+.commentbox .mw-ui-button, 
+.createbox .cdx-button, 
+.createbox .mw-ui-button, 
+.mw-movebox .cdx-button, 
+.mw-movebox .mw-ui-button, 
+.searchbox .cdx-button, 
+.searchbox .mw-ui-button {
+    background-color: var(--theme-accent-color);
+    border-color: var(--theme-accent-color);
+    color: var(--theme-accent-label-color);
+}
+
+/* General Button Transition */
+.cdx-button:not(:disabled), 
+.mw-ui-button:not(:disabled) {
+    border: 1px solid var(--theme-accent-color);
+    transition-duration: .3s;
+    transition-property: background-color, border-color;
+}
+
+/* Default Enabled Button Styles */
+.cdx-button:enabled, 
+.cdx-button.cdx-button--fake-button--enabled {
+    background-color: var(--background-color-interactive-subtle, #f8f9fa);
+    color: var(--color-base, #202122);
+    border-color: var(--border-color-base, #a2a9b1);
+}
+
+/* Base Button Styles */
+.cdx-button, 
+.mw-ui-button {
+    background-color: var(--theme-accent-color);
+    border: 1px solid var(--theme-accent-color);
+    border-radius: 3px;
+    color: var(--theme-accent-label-color);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .15px;
+    line-height: 18px;
+    padding: 7px 18px !important;
+    text-transform: uppercase;
+}
+
+/* CDX Button Core Styles */
+.cdx-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-sizing: border-box;
+    min-height: 32px;
+    max-width: 28rem;
+    margin: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    padding-right: 11px;
+    padding-left: 11px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: none;
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: .1s;
+}
+
+.skin-theme-clientpref-night .cdx-button:enabled,
+.skin-theme-clientpref-night .cdx-button:enabled:hover,
+.skin-theme-clientpref-night .cdx-button:enabled:active,
+.skin-theme-clientpref-night .cdx-button:enabled:focus {
+    color: #fff !important;
+}
+
+
+
+/*Datatables*/
+.dt-scroll-body > table > thead,
+.dt-scroll-body > table > tfoot {
+  visibility: hidden !important;
+}
+
+.dt-scroll-body thead th,
+.dt-scroll-body thead td,
+.dt-scroll-body tfoot th,
+.dt-scroll-body tfoot td {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.dt-scroll-head {
+  position: relative;
+  z-index: 2;
+}
+/*[[Category:Citizen Theme Gadgets]]*/

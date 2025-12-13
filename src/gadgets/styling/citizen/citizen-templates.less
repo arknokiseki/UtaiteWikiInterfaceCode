@@ -1,0 +1,1279 @@
+/* ==========================================================================
+   Template:Birthday Calendar
+   ========================================================================== */
+.current-date {
+    background-color: var(--birthday-calendar-bg-color) !important;
+    border: 2px solid var(--birthday-calender-border-color) !important;
+    box-shadow: 0 0 8px var(--birthday-calendar-box-shadow-color) !important;
+}
+
+.current-date b {
+    display: inline-block;
+    background-color: var(--birthday-calendar-current-date-bold-bg-color) !important;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+
+.current-date a {
+    font-weight: bold;
+}
+
+.current-date:hover {
+    background-color: var(--birthday-calender-current-date-hover-bg-color) !important;
+    color: white !important;
+}
+
+.current-date:hover a {
+    color: white !important;
+}
+
+/*====================================
+Template:ProcessBirthdayCategory
+=====================================*/
+.birthday-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+.birthday-grid > table {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 8px;
+  background: transparent;
+  min-width: 0;
+}
+
+.birthday-grid > table tr {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.birthday-grid > table td:first-child {
+  flex: 0 0 auto;
+}
+
+.birthday-grid > table td:last-child {
+  flex: 1 1 0%;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.birthday-grid img {
+  display: block;
+  max-width: 80px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@media (max-width: 374px) and (min-width: 321px) {
+  .birthday-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 320px) {
+  .birthday-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+  .birthday-grid img { max-width: 56px; }
+}
+
+
+/*====================================
+Template:Album
+======================================*/
+.portable-infobox.pi-theme-tracklist{
+   width:100%;
+}
+
+.tracklist-wrapper {
+	width:calc(100% - 290px);
+}
+.tracklist2-wrapper {
+	width:calc(100% - 170px);
+}
+.fifth-wrapper, .anikora-wrapper {
+	width: 20%;
+	min-width: 140px;
+}
+
+/*======================================
+Template:AlbumType2
+=======================================*/
+/* Base styles (desktop) */
+.album-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 8px;
+    background-color: transparent !important;
+    box-shadow: var(--box-shadow);
+}
+
+.album-cover {
+    flex: 1;
+    max-width: 30%;
+    margin-right: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.album-cover img {
+    border-radius: 8px;
+}
+
+.album-details {
+    flex: 2;
+    padding: 10px 0;
+}
+
+.album-title {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.album-singers,
+.album-date,
+.album-label {
+    margin-top: 8px;
+    font-size: 1.1em;
+    color: var(--secondary-text-color);
+}
+
+.album-row:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Album Components */
+.tracklist,
+.streams,
+.crossfade {
+    margin-top: 20px;
+}
+
+.streams,
+.crossfade,
+.shops {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: transparent !important;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--secondary-text-color);
+}
+
+/* Shop Section */
+.shops-heading {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: var(--primary-text-color);
+}
+
+.album-shop-jp,
+.album-shop-intl {
+    margin-top: 5px;
+}
+
+.album-shop-jp h4,
+.album-shop-intl h4 {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    background-color: rgba(0, 123, 255, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shop-links {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+}
+
+/* Track Display */
+.track-item {
+    width: 100% !important;
+}
+
+.track-row-refined {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: var(--background-color, #fff);
+    box-shadow: var(--box-shadow, 0 1px 3px rgba(0, 0, 0, 0.1));
+    color: var(--primary-text-color, #333);
+    width: 100%;
+}
+
+.track-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.95em;
+    color: var(--secondary-text-color, #555);
+}
+
+.track-details div {
+    display: inline-block;
+}
+
+.track-details div strong {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+/* Track Grid Layout */
+.track-grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.track-header {
+    display: grid;
+    grid-template-columns: 3rem minmax(200px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+    padding: 0.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid #eee;
+}
+
+/* Smaller Desktop, Tablet, and below (1024px and smaller) */
+@media screen and (max-width: 1024px) {
+    .album-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .album-cover {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+    }
+    
+    .album-cover figure {
+        margin: 0 auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .album-cover a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .album-cover img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .album-details {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    
+    .album-title {
+        font-size: 1.6em;
+    }
+    
+    .album-singers,
+    .album-date,
+    .album-label {
+        font-size: 1em;
+    }
+}
+
+/* Mobile landscape (768px and smaller) */
+@media screen and (max-width: 768px) {
+    .album-row {
+        padding: 12px;
+    }
+    
+    .album-title {
+        font-size: 1.4em;
+    }
+    
+    .album-singers,
+    .album-date,
+    .album-label {
+        font-size: 0.95em;
+        margin-top: 6px;
+    }
+    
+    .shops-heading {
+        font-size: 1.4em;
+    }
+    
+    .album-shop-jp h4,
+    .album-shop-intl h4 {
+        font-size: 1.2em;
+    }
+    
+    .streams,
+    .crossfade,
+    .shops {
+        padding: 12px;
+    }
+}
+
+/* Mobile portrait (425px and smaller) */
+@media screen and (max-width: 425px) {
+    .album-row {
+        padding: 10px;
+    }
+    
+    .album-cover {
+        margin-bottom: 15px;
+    }
+    
+    .album-cover img {
+        max-width: 100%;
+    }
+    
+    .album-title {
+        font-size: 1.2em;
+        line-height: 1.3;
+    }
+    
+    .album-details {
+        padding: 5px;
+    }
+    
+    .album-singers,
+    .album-date,
+    .album-label {
+        font-size: 0.9em;
+        margin-top: 5px;
+    }
+    
+    .shops-heading {
+        font-size: 1.2em;
+    }
+    
+    .album-shop-jp h4,
+    .album-shop-intl h4 {
+        font-size: 1.1em;
+        padding: 6px;
+    }
+    
+    .shop-links {
+        font-size: 0.95em;
+    }
+    
+    .streams,
+    .crossfade,
+    .shops {
+        padding: 10px;
+    }
+    
+    /* Make tables responsive */
+    .track-item table {
+        font-size: 0.85em;
+    }
+}
+
+/* Extra small mobile (320px and smaller) */
+@media screen and (max-width: 320px) {
+    .album-row {
+        padding: 8px;
+    }
+    
+    .album-title {
+        font-size: 1.1em;
+        word-break: break-word;
+    }
+    
+    .album-singers,
+    .album-date,
+    .album-label {
+        font-size: 0.85em;
+    }
+    
+    .shops-heading {
+        font-size: 1.1em;
+    }
+    
+    .album-shop-jp h4,
+    .album-shop-intl h4 {
+        font-size: 1em;
+        padding: 5px;
+    }
+    
+    .shop-links {
+        font-size: 0.9em;
+    }
+    
+    .streams,
+    .crossfade,
+    .shops {
+        padding: 8px;
+    }
+    
+    .track-item table {
+        font-size: 0.8em;
+    }
+}
+
+/* Fix for figure captions on mobile */
+@media screen and (max-width: 1024px) {
+    .album-cover figcaption {
+        text-align: center;
+        font-size: 0.9em;
+        padding: 8px;
+        word-break: break-word;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .album-cover figcaption {
+        font-size: 0.85em;
+        padding: 6px;
+    }
+}
+
+/* ==========================================================================
+   Utattemita Front Box
+   ========================================================================== */
+.utattemita-header {
+    text-align: center;
+    background-color: #c3e6f9;
+    color: #000;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.utattemita-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.utattemita-image {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.utattemita-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.utattemita-details {
+    flex: 1 1 70%;
+    padding: 20px;
+}
+
+.utattemita-details dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.utattemita-details dt {
+    width: 30%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.utattemita-details dd {
+    width: 70%;
+    margin: 0 0 10px 0;
+}
+
+.utattemita-producers {
+    background-color: #c3e6f9;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.utattemita-producers-content {
+    text-align: center;
+    padding: 10px;
+}
+
+.nicollabo-male {
+    background-color: #CFF2EF;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.nicollabo-female {
+    background-color: #FFE1EF;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.nicollabo-androgyne {
+    background-color: #EDE6FF;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* ==========================================================================
+   Tutorial
+   ========================================================================== */
+
+.tutorial .mw-file-element {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+
+/* ==========================================================================
+   Message Boxes (Mbox)
+   ========================================================================== */
+.mbox {
+    --type-important: rgba(200,0,0,.8);
+    --type-moderate: rgba(233,124,47,.8);
+    --type-minor: rgba(241,197,37,.8);
+    display: flex;
+    position: relative;
+    background-color: var(--custom-mbox-bg);
+    border: 1px solid #D6D6D6;
+    border-left-width: 8px;
+    border-left-color: #D6D6D6;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    min-height: 32px;
+}
+
+/* Message Box Types */
+.mbox.mbox-type-important {
+    border-left-color: var(--type-important);
+}
+
+.mbox.mbox-type-moderate {
+    border-left-color: var(--type-moderate);
+}
+
+.mbox.mbox-type-minor {
+    border-left-color: var(--type-minor);
+}
+
+/* Message Box Content Layout */
+.mbox__content {
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 15px;
+}
+
+.mbox__content__image {
+    display: table-cell;
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    padding-right: 15px;
+}
+
+.mbox__content__wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mbox__content__header {
+    display: block;
+    font-weight: bold;
+}
+
+.mbox__content__text {
+    display: block;
+    padding-right: 10px;
+}
+
+.mbox__content__text__comment {
+    font-size: small;
+    line-height: 18px;
+}
+
+.mbox__content__aside {
+    display: table-cell;
+    width: 100px;
+    vertical-align: middle;
+    text-align: center;
+    padding-left: 15px;
+    border-left: 1px solid #D6D6D6;
+    line-height: 18px;
+}
+
+/* Message Box Close Button */
+.mbox__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 2px 7px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #BBB;
+    cursor: pointer;
+    transition: all .15s ease-in;
+}
+
+.mbox__close:hover {
+    color: #777;
+}
+
+.mbox__close::after {
+    content: "×";
+}
+
+/* Special Message Box Types */
+.mbox.stub {
+    border-color: rgb(var(--stub));
+    background-color: rgba(var(--stub), var(--opacity));
+}
+
+.mbox.cleanup {
+    border-color: rgb(var(--cleanup));
+    background-color: rgba(var(--cleanup), var(--opacity));
+}
+
+.mbox.removed {
+    border-color: rgb(var(--removed));
+    background-color: rgba(var(--removed), var(--opacity));
+}
+
+.mbox.spoiler {
+    border-color: rgb(var(--cleanup));
+    background-color: rgba(var(--cleanup), var(--opacity));
+}
+
+.mbox.upcoming {
+    border-color: rgb(var(--upcoming));
+    background-color: rgba(var(--upcoming), var(--opacity));
+}
+
+.mbox.lua {
+    border-color: rgb(var(--lua));
+    background-color: rgba(var(--lua), var(--opacity));
+}
+
+/* ==============================================
+Utaite Unit
+=================================================*/
+/*.utaiteUnit img {*/
+/*    max-width: 100% !important;*/
+/*    height: auto !important;*/
+/*    width: auto !important;*/
+/*}*/
+
+.utaiteUnit .mw-file-element {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+
+/*==============================================
+External Link
+================================================*/
+/* utaite spotlight */
+.utaite-sample-links span abbr a.external::after,
+td.utaite-links-container div.utaite-links a.external.text::after,
+.utaite-spotlight a.external.text::after,
+/* portable infobox */
+div.pi-smart-data-value.pi-data-value a.external.text::after,
+/* utaite unit */
+div.utaiteUnit  a.external.text::after,
+/* forbid reprint notice */
+div.forbidreprintnotice a.external.text::after,
+/* userblog list */
+div.listpages-container div.blog-card a.external.text::after
+{
+  content: none !important;
+  display: none !important;
+  /*width: 0 !important;*/
+  /*height: 0 !important;*/
+  /*margin: 0 !important;*/
+  /*padding: 0 !important;*/
+  /*border: none !important;*/
+  /*background-color: transparent !important;*/
+  /*color: initial !important;*/
+  /*opacity: 0 !important;*/
+  /*font-size: 0 !important;*/
+  /*line-height: 0 !important;*/
+  /*visibility: hidden !important;*/
+}
+
+
+/*==============================================
+Template:UtaiteGroupGallery
+================================================*/
+.utaite-groups-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px)) !important;
+    gap: 20px !important;
+    padding: 20px !important;
+    justify-content: center !important;
+}
+
+.group-card {
+    background: var(--container-bg) !important; 
+    border: 1px solid var(--theme-border-color);
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--card-shadow) !important; 
+
+    overflow: hidden !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.group-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+}
+
+.group-image-container {
+    position: relative !important;
+    width: 100% !important;
+    height: 180px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    overflow: hidden !important;
+}
+
+.group-image-container img {
+    position: relative !important;
+    max-width: 100% !important;
+    max-height: 180px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin: auto !important;
+}
+
+.group-info {
+    padding: 15px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.group-name {
+    margin: 0 0 5px !important;
+    font-size: 1.2em !important;
+    color: var(--primary-text-color) !important; 
+}
+
+.group-name-kanji, 
+.group-description {
+    font-size: 0.9em !important;
+	color: var(--secondary-text-color) !important;
+    margin-bottom: 10px !important;
+}
+
+.group-description {
+    flex-grow: 1 !important;
+}
+
+.group-members {
+    font-size: 0.8em !important;
+    color: var(--text-tertiary) !important;
+}
+
+/*==============================================
+Template:UtaiteGroupMember
+================================================*/
+.member-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.member-card {
+    flex: 0 1 200px;
+    max-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.member-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.member-name {
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.status-active {
+    color: #2ECC71 !important;
+}
+.status-graduated {
+    color: #9B59B6 !important;
+}
+.status-inactive {
+    color: #7F8C8D !important;
+}
+.status-hiatus {
+    color: #E67E22 !important;
+}
+.status-terminated {
+    color: #E74C3C !important;
+}
+
+.member-info-label {
+    font-weight: 700;
+}
+
+/* =======================================
+  Template:LatestUserBlogItem
+========================================= */
+.blog-card-meta .mw-socialprofile-avatar {
+  border-radius: 50%;
+}
+
+/* =====================================
+  Template:Notice
+=======================================*/
+/* ==========================================================================
+   Template:Notice (Vertically Centered "Bubble" Layout)
+   ========================================================================== */
+.n-notice {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    
+    align-items: center; 
+    
+    margin: 1em 0;
+    padding: 16px;
+    
+    border-radius: var(--border-radius, 12px);
+    border: 1px solid currentColor;
+    
+    /* Default color fallback */
+    color: #2e7d32; 
+    background: transparent;
+    
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.n-notice:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Background Tint */
+.n-notice::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: currentColor;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .n-notice::before { opacity: 0.15; }
+}
+
+/* --- Image / Icon Box --- */
+.n-notice__image-box, 
+.n-notice__icon-box {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Style the box as a "bubble" */
+    background-color: var(--container-bg, #ffffff);
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    padding: 8px;
+    
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Specific styling for circular icons */
+.n-notice__icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+/* Image scaling */
+.n-notice__image-box img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --- Content Area --- */
+.n-notice__content {
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+    min-width: 0;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.n-notice__header {
+    margin-bottom: 4px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.n-notice__body {
+    color: var(--primary-text-color, #202122);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.n-notice__body a {
+    color: var(--theme-link-color, #36c);
+}
+
+/* ==================================================
+Maintenance notice
+====================================================*/
+
+.maintenance-box {
+    --mb-accent-blue: #007bff;
+    --mb-accent-theme: var(--theme-accent-color, #5c9ece);
+    
+    position: relative;
+    overflow: hidden;
+    margin: 16px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--mb-accent-blue) 0%, var(--mb-accent-theme) 100%);
+    border-radius: var(--border-radius, 12px);
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.15));
+    color: #ffffff;
+}
+
+.maintenance-box__deco {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+    pointer-events: none;
+}
+
+.maintenance-box__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.maintenance-box__icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.maintenance-box__icon i {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.maintenance-box__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.maintenance-box__title {
+    margin-bottom: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.maintenance-box__desc {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/*===================================================
+Portable Infoboxes
+====================================================*/
+/*1. Utaite Template*/
+.portable-infobox.pi-theme-utaite-infobox {
+    max-width: 100% !important;
+    overflow: hidden;
+    word-wrap: break-word;
+    box-sizing: border-box !important;
+    font-size: 0.85em;
+    border: 1px solid var(--theme-border-color); 
+    border-radius: var(--border-radius);
+    background-color: var(--container-bg); 
+    color: var(--primary-text-color);
+    box-shadow: var(--card-shadow);
+}
+
+.portable-infobox.pi-theme-utaite-infobox img{
+	width: 100% !important;
+    height: auto !important;
+    min-height: 1px !important;
+}
+
+aside.portable-infobox.pi-theme-utaite-infobox {
+    display: block !important;
+    white-space: normal !important;
+    position: relative;
+    z-index: auto !important;
+    content-visibility: auto; 
+    overflow-anchor: none; 
+}
+
+@media (min-width: 1024px) {
+    .portable-infobox.pi-theme-utaite-infobox {
+        float: right !important;
+        clear: right !important;
+        width: 300px !important;
+        margin: 0 0 1rem 1rem !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .portable-infobox.pi-theme-utaite-infobox {
+        float: none !important;
+        clear: both !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 1rem auto !important;
+        display: block !important;
+    }
+}
+
+.portable-infobox.pi-theme-utaite-infobox .pi-image, 
+.portable-infobox.pi-theme-utaite-infobox .pi-image-thumbnail {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block !important;
+    min-height: 50px; 
+}
+
+.portable-infobox.pi-theme-utaite-infobox noscript noscript {
+    display: none !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox figure.pi-media {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .pi-data {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .pi-header {
+    text-align: center;
+    padding: 0.75rem !important;
+    font-size: 1.1em;
+    word-break: break-word;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .pi-data-label {
+    font-weight: bold;
+    padding: 0.5rem !important;
+    word-break: break-word;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .pi-data-value {
+    padding: 0.5rem !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .custom-scroll {
+    max-height: 5vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    word-break: break-word;
+}
+
+@media (max-width: 767px) {
+    .portable-infobox.pi-theme-utaite-infobox .custom-scroll {
+        max-height: 8vh !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    aside.portable-infobox.pi-theme-utaite-infobox {
+        overflow-anchor: none; 
+        min-height: 300px;
+        height: auto !important;
+        display: block !important;
+        float: none !important;
+    }
+    .portable-infobox.pi-theme-utaite-infobox {
+        width: calc(100% - 1rem) !important;
+        max-width: none !important;
+        margin: 1rem 0.5rem !important;
+        font-size: 0.9em;
+    }
+    .portable-infobox.pi-theme-utaite-infobox img {
+        content-visibility: auto; 
+        contain-intrinsic-size: 100% 200px;
+    }
+}
+
+.portable-infobox.pi-theme-utaite-infobox a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.portable-infobox.pi-theme-utaite-infobox .fa-brands,
+.portable-infobox.pi-theme-utaite-infobox .niconico-icon {
+    display: inline-block;
+    width: auto !important;
+    height: auto !important;
+    max-width: 24px;
+    max-height: 24px;
+}
+
+.container .portable-infobox.pi-theme-utaite-infobox,
+.row .portable-infobox.pi-theme-utaite-infobox {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .portable-infobox.pi-theme-utaite-infobox {
+        border-color: #4a4a4a;
+    }
+    
+    // .portable-infobox.pi-theme-utaite-infobox .pi-secondary-background {
+
+    // }
+    
+    .portable-infobox.pi-theme-utaite-infobox .pi-border-color {
+        border-color: #4a4a4a !important;
+    }
+}
+
+/* remove doppelganger image inside pi */
+.portable-infobox.pi-theme-utaite-infobox .pi-media a img + img {
+    display: none !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox span[typeof="mw:File"] {
+    display: inline-block;
+}
+
+.portable-infobox.pi-theme-utaite-infobox span[typeof="mw:File"] noscript {
+    display: none !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox span[typeof="mw:File"] .image-lazy-loaded:first-of-type {
+    display: inline-block !important;
+}
+
+.portable-infobox.pi-theme-utaite-infobox span[typeof="mw:File"] .image-lazy-loaded:not(:first-of-type) {
+    display: none !important;
+}
+
+/* remove external :after */
+.portable-infobox.pi-theme-utaite-infobox a.external::after,
+.portable-infobox.pi-theme-utaite-infobox a.external.text::after {
+    display: none !important;
+    content: none !important;
+    background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Signature: theme-aware inversion */
+html.skin-theme-clientpref-day  .utaite-signature.si-day  img.mw-file-element,
+html.skin-theme-clientpref-day  .utaite-signature.si-day  .utaite-signature-img img { filter: invert(1); }
+
+html.skin-theme-clientpref-night .utaite-signature.si-night img.mw-file-element,
+html.skin-theme-clientpref-night .utaite-signature.si-night .utaite-signature-img img { filter: invert(1); }
+
+/* Explicit no-invert baseline */
+.utaite-signature.si-off img.mw-file-element,
+.utaite-signature.si-off .utaite-signature-img img { filter: none !important; }
+
+.utaite-signature .no-invert { filter: none !important; }
+
+
+
+/*[[Category:Citizen Theme Gadgets]]*/

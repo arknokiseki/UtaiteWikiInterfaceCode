@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Badge
+   ========================================================================== */
+
+/*1. Original Song Badge*/
+.orikyoku-badge {
+   display: inline-block;
+   background-color: #2E7D32;
+   color: rgba(255, 255, 255, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.2s ease;
+}
+
+.orikyoku-badge:hover {
+   background-color: #388E3C;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+.orikyoku-badge__with {
+   display: inline-block;
+   background-color: #8E44AD;
+   color: rgba(255, 255, 255, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.2s ease;
+}
+
+.orikyoku-badge__with a {
+   color: white !important;
+}
+
+.orikyoku-badge__with:hover {
+   background-color: #9B59B6;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+.orikyoku-badge__with-rainbow {
+   display: inline-block;
+   background: linear-gradient(to right, #f8c5c7, #f9e2b3, #e8f9b3, #bdeecc, #b3e1f9, #c5c5f8, #eac5f8);
+   background-size: 200% auto;
+   animation: rainbow 4s ease infinite;
+   color: rgba(50, 50, 50, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 600;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   transition: all 0.2s ease;
+}
+
+.orikyoku-badge__with-rainbow a {
+   color: rgba(50, 50, 50, 0.95) !important;
+}
+
+.orikyoku-badge__with-rainbow:hover {
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+@keyframes rainbow {
+   0% {background-position: 0% center;}
+   50% {background-position: 100% center;}
+   100% {background-position: 0% center;}
+}
+
+.orikyoku-badge__featuring {
+   display: inline-block;
+   background-color: #E91E63;
+   color: rgba(255, 255, 255, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.2s ease;
+}
+
+.orikyoku-badge__featuring a {
+   color: white !important;
+}
+
+.orikyoku-badge__featuring:hover {
+   background-color: #EC407A;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+/*2. Deleted Media Badge*/
+.deleted-media-badge {
+   display: inline-block;
+   background-color: #D32F2F;
+   color: rgba(255, 255, 255, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.2s ease;
+}
+
+.deleted-media-badge:hover {
+   background-color: #C62828;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+/*3. Privated Media Badge*/
+.privated-media-badge {
+   display: inline-block;
+   background-color: #673AB7;
+   color: rgba(255, 255, 255, 0.95);
+   padding: 1px 5px;
+   border-radius: 12px;
+   font-size: 75%;
+   margin-right: 4px;
+   font-weight: 500;
+   letter-spacing: 0.2px;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.2s ease;
+}
+.privated-media-badge:hover {
+   background-color: #5E35B1;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+   transform: translateY(-1px);
+}
+
+/* 99. Achievement Badges */
+.tag-achievement\:_unpaid_editor {
+    background: #FFB200 !important;
+}
+
+.tag-template_enthusiast {
+    background: #9ABF80 !important;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+    [data-tooltip]::after {
+        max-width: 250px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-tooltip]::after {
+        max-width: 200px;
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}

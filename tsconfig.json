@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": false,
+    "noEmitOnError": false,
+
+    "outDir": "build",
+
+    "typeRoots": [
+      "./node_modules/@types", 
+      "./node_modules/types-mediawiki", 
+      "./node_modules/@vue"
+    ],
+    
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strict": false
+  },
+  "include": ["dev-utils/**/*", "dev-sync/**/*", "plugins/**/*", "src/**/*"]
+}

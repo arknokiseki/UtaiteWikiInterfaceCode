@@ -1,0 +1,197 @@
+#sandbox-container {
+    position: fixed;
+    width: 800px;
+    height: 500px;
+    top: 50px;
+    right: 20px;
+    z-index: 1000;
+    border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+}
+
+.sandbox-handle {
+    padding: 10px 15px;
+    border-bottom: 1px solid;
+    cursor: move;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.sandbox-handle-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sandbox-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.sandbox-control-btn {
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: opacity 0.2s;
+}
+
+.sandbox-control-btn:hover {
+    opacity: 0.7;
+}
+
+.sandbox-body {
+    height: calc(100% - 90px);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.sandbox-toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: 1px solid;
+    flex-wrap: wrap;
+}
+
+.sandbox-toolbar button {
+    padding: 4px 10px;
+    border: 1px solid;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: opacity 0.2s;
+}
+
+.sandbox-toolbar button:hover {
+    opacity: 0.7;
+}
+
+.sandbox-panels {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+}
+
+.sandbox-panel {
+    flex: 1;
+    border: 1px solid;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sandbox-panel-header {
+    padding: 8px;
+    border-bottom: 1px solid;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sandbox-panel-content {
+    flex: 1;
+    padding: 8px;
+    overflow-y: auto;
+}
+
+#sandbox-source {
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    padding: 8px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#sandbox-source:focus {
+    outline: none;
+}
+
+#sandbox-preview {
+    padding: 8px;
+    font-size: 14px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.sandbox-status {
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    border: 1px solid;
+}
+
+.sandbox-resize-handle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: nwse-resize;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-radius: 4px 0 8px 0;
+}
+
+#sandbox-container.minimized {
+    height: auto !important;
+    width: 300px !important;
+}
+
+#sandbox-container.minimized .sandbox-body,
+#sandbox-container.minimized .sandbox-toolbar,
+#sandbox-container.minimized .sandbox-resize-handle {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #sandbox-container {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .sandbox-panels {
+        flex-direction: column;
+    }
+}
+
+.sandbox-toggle-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 999;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sandbox-toggle-btn:hover {
+    opacity: 0.8;
+}
+
+.sandbox-panel .CodeMirror {
+    height: 100%;
+    font-size: 13px;
+    border: 1px solid;
+}

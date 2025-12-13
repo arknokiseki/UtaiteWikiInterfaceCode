@@ -1,0 +1,228 @@
+/*======================================================
+Important Resources Pages Navigation
+=========================================================*/
+.link-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 0;
+    padding: 10px 15px;
+    color: var(--primary-text-color);
+    gap: 15px;
+    flex: 0 1 auto;
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Link Row */
+.link-row {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    gap: 15px;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--primary-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-description {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Link Actions */
+.link-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.link-button {
+    padding: 6px 12px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    border: 1px solid var(--secondary-text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.link-button:hover {
+    background-color: var(--secondary-text-color);
+    color: var(--background-color);
+}
+
+.skin-theme-clientpref-night .link-box {
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+}
+
+.skin-theme-clientpref-night .link-button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skin-theme-clientpref-night .link-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .link-container {
+        justify-content: center;
+    }
+    
+    .link-box {
+        flex: 0 1 calc(50% - 15px);
+    }
+
+    .link-content {
+        flex-basis: 100%;
+    }
+
+    .link-actions {
+        width: auto;
+        margin-left: auto;
+    }
+
+    .link-description {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .link-box {
+        flex: 0 1 100%;
+    }
+    
+    .link-actions {
+        gap: 4px;
+    }
+
+    .link-button {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+}
+
+#citizen-userMenu__card {
+  inline-size: clamp(18rem, 92vw, 40rem);
+  max-inline-size: 20vw !important;
+  max-width: 20vw !important;
+  box-sizing: border-box;
+}
+
+#citizen-userMenu__card .citizen-userInfo-usergroups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem .5rem;
+  margin: .25rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-inline-size: 100%;
+}
+
+#citizen-userMenu__card .citizen-userInfo-usergroup {
+  flex: 1 1 12rem;
+  min-inline-size: 8rem;
+  min-width: 0;
+}
+
+#citizen-userMenu__card .citizen-userInfo-usergroup a {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .3rem .6rem;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  text-decoration: none;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+
+  transition: filter 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+#citizen-userMenu__card .citizen-userInfo-usergroup a:hover { filter: saturate(1.05) brightness(1.02); }
+#citizen-userMenu__card .citizen-userInfo-usergroup a:active { transform: translateY(1px); }
+#citizen-userMenu__card .citizen-userInfo-usergroup a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+#citizen-userMenu__card .uw-role-icon {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 1.35em;
+  block-size: 1.35em;
+  border-radius: 9999px;
+  background-color: currentColor;
+  color: #fff;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+#citizen-userMenu__card .uw-role-icon i,
+#citizen-userMenu__card .uw-role-icon svg {
+  font-size: .85em;
+  width: .85em;
+  height: .85em;
+}
+
+#citizen-userMenu__card .citizen-menu__card-content { max-inline-size: 100%; overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  #citizen-userMenu__card .citizen-userInfo-usergroup a { transition: none; }
+}
+
+/*From External Wiki*/
+/*1. virtualyoutuber.fandom.com*/
+/* Styles for "Tabs" template */
+/*unused*/
+
+/*================================================================
+Mark redirects in Special:Allpages and Special:Watchlist
+================================================================*/
+.allpagesredirect {
+   font-style: italic;
+}
+.allpagesredirect::after {
+   color: #808080 !important; 
+   content: " (redirect)" !important;
+}
+.watchlistredir {
+   font-style: italic;
+}
+/*[[Category:Citizen Theme Gadgets]]*/

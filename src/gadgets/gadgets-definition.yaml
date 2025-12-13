@@ -1,0 +1,510 @@
+workspace:
+  enable_all: true
+
+gadgets:
+  core:
+    CustomTabber:
+      description: "Client-side enhancements for MediaWiki Tabber."
+      authors:
+        - makudoumee
+      code:
+        - CustomTabber.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    TextExtractsLoader:
+      description: "Fetches text extracts for blog cards and other placeholders."
+      authors:
+        - makudoumee
+      code:
+        - TextExtractsLoader.ts
+      resourceLoader:
+        default: true
+        hidden: true
+        dependencies:
+          - mediawiki.api
+    videopreview:
+      description: "Video preview functionality."
+      authors:
+        - makudoumee
+      code:
+        - PreviewVid.less
+        - PreviewVid.ts
+      resourceLoader:
+        default: true
+    preloadtemplate:
+      description: "Custom preload templates. Adds a dropdown to the editor to insert pre-defined templates."
+      authors:
+        - Grunny (original code)
+        - leviathan_89 (modifications)
+        - CoolMikeHatsune22 (Miraheze port)
+        - Makudoumee (Utaite Wiki port)
+      links:
+        - https://dev.fandom.com/wiki/MediaWiki:PreloadTemplates.js?oldid=208770
+        - https://dev.miraheze.org/wiki/PreloadTemplates/code.js
+      code:
+        - preloadTemplate.ts
+        - preloadTemplate.less
+      resourceLoader:
+        default: true
+        hidden: true
+        actions:
+          - edit
+          - submit
+    datatables:
+      description: "DataTables helper."
+      authors:
+        - makudoumee
+      code:
+        - datatables-helper.ts
+        - mobile-datatables-helper.ts
+        - Datatables.less
+      resourceLoader:
+        default: true
+        hidden: true
+        actions:
+          - view
+    userlinks:
+      description: "UserLinks template JavaScript handler."
+      authors:
+        - makudoumee
+      code:
+        - UserLinks.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    forum:
+      description: "Lightweight forum helper script for MediaWiki Forum pages."
+      authors:
+        - makudoumee
+      code:
+        - forum.ts
+      resourceLoader:
+        default: true
+        hidden: true
+        namespaces: "110,111"
+    lightboxmodoki:
+      description: "Lightbox gallery."
+      authors:
+        - makudoumee
+      code:
+        - lightbox-modoki.ts
+        - lightbox-modoki.less
+      resourceLoader:
+        default: true
+        hidden: true
+    twitter:
+      description: "Embed Twitter."
+      authors:
+        - Yehuda Katz
+        - Tom Dale
+        - Stefan Penner
+        - Jake Archibald (Conversion to ES6 API)
+        - other contributors
+      code:
+        - twitter.js
+      resourceLoader:
+        default: true
+        hidden: true
+    bottom toolbar:
+      description: "Desktop-only bottom toolbar for MediaWiki pages."
+      authors:
+        - makudoumee
+      code:
+        - bottom toolbar.ts
+        - bottom toolbar.less
+      resourceLoader:
+        default: true
+        dependencies:
+          - mediawiki.api
+          - oots-ui
+          - mediawiki.page.watch.ajax
+          - mediawiki.watchstar.widgets
+    ToolsMenu:
+      description: "Tools Menu Gateway."
+      authors:
+        - makudoumee
+      code:
+        - ToolsMenu.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    ModalBuilder:
+      description: "Modal Builder utility."
+      authors:
+        - makudoumee
+      code:
+        - ModalBuilder.ts
+        - ModalBuilder.less
+      resourceLoader:
+        default: true
+        hidden: true
+    QuickPurge:
+      description: "Intercepts purge links and performs API-based purge without confirmation."
+      links:
+        - https://dev.fandom.com/wiki/MediaWiki:QuickPurge.js?oldid=206840
+      authors:
+        - Thundercraft5
+        - ExE Boss
+        - MonkeysHK
+        - Celeranis
+        - Magiczocker
+        - makudoumee (Port to Utaite Wiki)
+      code:
+        - QuickPurge.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    LinkPreview:
+      description: "Hover-based link preview system for MediaWiki, inspired by Extension:Popups. <br/>Displays a smart™ preview with extracted lead text and the best™ available page image."
+      authors: 
+        - fngplg
+        - makudoumee (port to Utaite Wiki)
+      code:
+        - LinkPreview.ts
+        - LinkPreview.less
+    ShowbyGroup:
+      description: "Show content by user group."
+      authors:
+        - makudoumee
+      code:
+        - showbygroup.ts
+        - showbygroup.less
+      resourceLoader:
+        default: true
+        hidden: true
+    AddCategory:
+      description: "Interactive category editor for MediaWiki articles."
+      authors:
+        - makudoumee
+      code:
+        - add-category.ts
+        - add-category.less
+      resourceLoader:
+        default: true
+        hidden: true
+        actions:
+          - view
+        namespaces: "0,4,6,8,10,12,14,110,828,3000,3006"
+    hidesnonedit:
+      description: "Hides site notice on edit."
+      authors:
+        - makudoumee
+      code:
+        - hidesnonedit.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    sandbox:
+      description: "A WikiText sandbox editor with live preview."
+      authors:
+        - makudoumee
+      code:
+        - portablesandbox.ts
+        - sandbox.ts
+        - sandbox.less
+        - sandbox.json
+      resourceLoader:
+        default: true
+        hidden: true
+        actions:
+          - view
+        namespaces: "0,4"
+
+  contents:
+    spoiler:
+      description: "Spoiler functionality."
+      authors:
+        - Canadabonk
+        - Pppery
+      links:
+        - https://dev.miraheze.org/wiki/Template:Spoiler/spoiler.js?oldid=26100
+      code:
+        - spoiler.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    utacolle:
+      description: "Loads JSON data from wiki pages and renders them as DataTables (currently used on UtaColle table)."
+      code:
+        - UtaColle.ts
+      resourceLoader:
+        default: true
+        hidden: true
+
+  utility:
+    getuserprofile:
+      description: "Avatar Fetcher (for [[mw:Extension:UserProfileV2|UserProfileV2]] Extension)."
+      authors:
+        - makudoumee
+      code:
+        - getuserprofile.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    docsbrowser:
+      description: "Documentation Browser Modal."
+      authors:
+        - makudoumee
+      dependencies:
+        - mediawiki.api
+        - ext.gadget.ModalBuilder
+        - ext.gadget.ToolsMenu
+      code:
+        - DocsBrowser.ts
+        - DocsBrowser.less
+      resourceLoader:
+        default: true
+        hidden: true
+    LinkSuggest:
+      description: "Link Suggestions on code editor."
+      authors:
+        - makudoumee
+      code:
+        - LinkSuggest.ts
+        - LinkSuggest.less
+      resourceLoader:
+        default: true
+        actions:
+          - edit
+          - submit
+        dependencies:
+          - mediawiki.api
+    PWA:
+      description: "PWA Installer & Manager Gadget."
+      code:
+        - PWA.ts
+        - PWA.less
+      resourceLoader:
+        default: true
+        hidden: true
+
+  blog:
+    userblog:
+      description: "User Blog functionality."
+      authors:
+        - makudoumee
+      code:
+        - userblog.ts
+        - userblog.less
+      resourceLoader:
+        default: true
+        hidden: true
+        namespaces: "0,2,3000,3001"
+        dependencies:
+          - mediawiki.api
+
+  styling:
+    citizen:
+      description: "Citizen skin styling and extensions."
+      authors:
+        - makudoumee
+      code:
+        - citizen-vars.less
+        - citizen-base.less
+        - citizen.less
+        - citizen-layout.less
+        - citizen-templates.less
+        - citizen-widgets.less
+        - citizen-extensions.less
+        - citizen-navigation.less
+        - citizen-pages.less
+        - citizen-forums.less
+        - citizen-external.less
+      resourceLoader:
+        default: true
+        hidden: true
+    mainpage:
+      description: "Main Page styling."
+      authors:
+        - makudoumee
+      code:
+        - Mp.less
+      resourceLoader:
+        default: true
+        hidden: true
+    actioncard:
+      description: "Action Card hotfix for main page."
+      authors:
+        - makudoumee
+      code:
+        - actioncard.ts
+      resourceLoader:
+        default: true
+        hidden: true
+        namespaces: "0"
+        actions:
+          - view
+    fontawesome:
+      description: "FontAwesome icons."
+      links:
+        - https://github.com/FortAwesome/Font-Awesome
+      code:
+        - fontawesome.less
+      resourceLoader:
+        default: true
+        hidden: true
+    usercard:
+      description: "User Card styling."
+      code:
+        - citizen-usergroup-icons.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    uptodatebox:
+      description: "Up-to-date Box styling."
+      code:
+        - uptodate.less
+      resourceLoader:
+        default: true
+        hidden: true
+    systemmessage:
+      description: "System Message styling."
+      code:
+        - editing.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    protectionindicator:
+      description: "Protection Indicator."
+      authors:
+        - Sohom Datta (Extension)
+        - Makudoumee (Utaite Wiki port)
+      code:
+        - ProtectionIndicator.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    movablesitenotice:
+      description: "Movable Site Notice."
+      code:
+        - movablenotice.ts
+        - movablenotice.less
+    birthday:
+      description: "Adds confetti to pages in the 'Today's Birthdays' category."
+      authors:
+        - makudoumee
+      code:
+        - birthday.ts
+        - birthday.less
+      resourceLoader:
+        default: true
+        hidden: true
+        namespaces: "0"
+        actions:
+          - view
+    usersignaturestyle:
+      description: "User Signature styling."
+      code:
+        - user-sign.less
+      resourceLoader:
+        default: true
+        hidden: true
+    badge:
+      description: "Badge styling."
+      authors:
+        - makudoumee
+      code:
+        - badge.less
+      resourceLoader:
+        default: true
+        hidden: true
+    documentation:
+      description: "Documentation styling."
+      links:
+        - https://genshin-impact.fandom.com/wiki/MediaWiki:Documentation.css?oldid=702872
+      authors:
+        - Echoblast53
+        - Salty Nori
+        - Leochan100
+        - makudoumee (Utaite Wiki port)
+      code:
+        - documentation.less
+        - documentation.ts
+      resourceLoader:
+        default: true
+        hidden: true
+
+  external:
+    item:
+      description: "Styling for [[Module:Item]] from [[wikia:genshin-impact|Genshin Impact Wiki]]"
+      authors:
+        - Leochan100
+        - Mikevoir
+        - 
+      links:
+        - https://genshin-impact.fandom.com/wiki/MediaWiki:Item.css?oldid=1727760
+      code:
+        - Item.less
+      resourceLoader:
+        default: true
+        hidden: true
+    tabs:
+      description: "Styling for [[Template:CustomTabs]] from [[wikia:genshin-impact|Genshin Impact Wiki]]."
+      links:
+        - https://genshin-impact.fandom.com/wiki/MediaWiki:CustomTabs.css?oldid=1321041
+      authors:
+        - Leochan100
+        - Echoblast53
+        - Racnarok9
+        - Salty Nori
+        - 919dd
+      code:
+        - Tabs.less
+      resourceLoader:
+        default: true
+        hidden: true
+
+  community:
+    discord:
+      description: "Discord integration."
+      code:
+        - discord.ts
+      resourceLoader:
+        default: true
+        hidden: true
+    consolemessage:
+      description: "Easter egg™"
+      code:
+        - console.ts
+      resourceLoader:
+        default: true
+        hidden: true
+
+  "moderation-housekeeping":
+    massrename:
+      description: "Mass Rename tool (admin-only)."
+      code:
+        - massrename.ts
+      rights:
+        - move
+      dependencies:
+        - mediawiki.api
+        - ext.gadget.ModalBuilder
+        - ext.gadget.ToolsMenu
+    massdelete:
+      description: "Mass Delete tool (admin-only)."
+      code:
+        - massdelete.ts
+      dependencies:
+        - mediawiki.api
+        - ext.gadget.ModalBuilder
+        - ext.gadget.ToolsMenu
+      rights:
+        - delete
+    massupload:
+      description: "Mass Upload tool (admin-only)."
+      code:
+        - massupload.ts
+      dependencies:
+        - mediawiki.api
+        - ext.gadget.ModalBuilder
+        - ext.gadget.ToolsMenu
+    masscategorization:
+      description: "Mass Categorization tool (admin-only)."
+      code:
+        - masscategorization.ts
+      dependencies:
+        - mediawiki.api
+        - ext.gadget.ModalBuilder
+        - ext.gadget.ToolsMenu

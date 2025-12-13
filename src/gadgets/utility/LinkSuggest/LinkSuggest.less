@@ -1,0 +1,452 @@
+.linksuggest-dropdown {
+	position: fixed;
+	z-index: 10000;
+	margin: 0;
+	padding: 4px 0;
+	list-style: none;
+	background: var(--container-bg, var(--menu-card-bg, #fff));
+	border: 1px solid var(--theme-border-color, #a2a9b1);
+	border-radius: var(--border-radius, 8px);
+	box-shadow: var(--card-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+	max-height: 280px;
+	min-width: 220px;
+	max-width: 450px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: 14px;
+	line-height: 1.4;
+}
+
+/* Flip animation when above caret */
+.linksuggest-dropdown.linksuggest-above {
+	box-shadow: var(--card-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Individual items */
+.linksuggest-dropdown li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	padding: 8px 12px;
+	cursor: pointer;
+	color: var(--primary-text-color, #202122);
+	border-left: 3px solid transparent;
+	transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.linksuggest-dropdown li:hover {
+	background-color: var(--theme-page-background-color-quiet--hover, var(--background-color-quiet--hover, #eaecf0));
+}
+
+.linksuggest-dropdown li.linksuggest-selected {
+	background-color: var(--theme-page-background-color-quiet, var(--background-color-quiet, #f8f9fa));
+	border-left-color: var(--theme-accent-color, var(--color-progressive, #36c));
+}
+
+.linksuggest-dropdown li.linksuggest-selected:hover {
+	background-color: var(--theme-page-background-color-quiet--hover, var(--background-color-quiet--hover, #eaecf0));
+}
+
+/* Label */
+.linksuggest-label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	min-width: 0;
+}
+
+/* Namespace chip - base styles */
+.linksuggest-chip {
+	flex-shrink: 0;
+	font-size: 11px;
+	font-weight: 500;
+	padding: 2px 8px;
+	border-radius: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	white-space: nowrap;
+}
+
+/* ===================
+   Namespace Colors
+   =================== */
+
+/* Main namespace (0) - Soft Blue */
+.linksuggest-ns-0 {
+	background-color: #E3F2FD;
+	color: #1565C0;
+}
+
+/* Talk (1) - Soft Cyan */
+.linksuggest-ns-1 {
+	background-color: #E0F7FA;
+	color: #00838F;
+}
+
+/* User (2) - Soft Green */
+.linksuggest-ns-2 {
+	background-color: #E8F5E9;
+	color: #2E7D32;
+}
+
+/* User talk (3) - Soft Teal */
+.linksuggest-ns-3 {
+	background-color: #E0F2F1;
+	color: #00695C;
+}
+
+/* Project (4) - Soft Purple */
+.linksuggest-ns-4 {
+	background-color: #F3E5F5;
+	color: #7B1FA2;
+}
+
+/* Project talk (5) - Soft Lavender */
+.linksuggest-ns-5 {
+	background-color: #EDE7F6;
+	color: #5E35B1;
+}
+
+/* File (6) - Soft Orange */
+.linksuggest-ns-6 {
+	background-color: #FFF3E0;
+	color: #E65100;
+}
+
+/* File talk (7) - Soft Peach */
+.linksuggest-ns-7 {
+	background-color: #FBE9E7;
+	color: #BF360C;
+}
+
+/* MediaWiki (8) - Soft Gray */
+.linksuggest-ns-8 {
+	background-color: #ECEFF1;
+	color: #37474F;
+}
+
+/* MediaWiki talk (9) - Soft Slate */
+.linksuggest-ns-9 {
+	background-color: #CFD8DC;
+	color: #455A64;
+}
+
+/* Template (10) - Soft Yellow */
+.linksuggest-ns-10 {
+	background-color: #FFFDE7;
+	color: #F57F17;
+}
+
+/* Template talk (11) - Soft Amber */
+.linksuggest-ns-11 {
+	background-color: #FFF8E1;
+	color: #FF8F00;
+}
+
+/* Help (12) - Soft Lime */
+.linksuggest-ns-12 {
+	background-color: #F9FBE7;
+	color: #827717;
+}
+
+/* Help talk (13) - Soft Light Green */
+.linksuggest-ns-13 {
+	background-color: #F1F8E9;
+	color: #558B2F;
+}
+
+/* Category (14) - Soft Pink */
+.linksuggest-ns-14 {
+	background-color: #FCE4EC;
+	color: #C2185B;
+}
+
+/* Category talk (15) - Soft Rose */
+.linksuggest-ns-15 {
+	background-color: #FFEEF1;
+	color: #AD1457;
+}
+
+/* Module (828) - Soft Indigo */
+.linksuggest-ns-828 {
+	background-color: #E8EAF6;
+	color: #3949AB;
+}
+
+/* Module talk (829) - Soft Deep Purple */
+.linksuggest-ns-829 {
+	background-color: #EDE7F6;
+	color: #512DA8;
+}
+
+/* Gadget (2300) - Soft Brown */
+.linksuggest-ns-2300 {
+	background-color: #EFEBE9;
+	color: #5D4037;
+}
+
+/* Gadget talk (2301) */
+.linksuggest-ns-2301 {
+	background-color: #D7CCC8;
+	color: #4E342E;
+}
+
+/* Gadget definition (2302) */
+.linksuggest-ns-2302 {
+	background-color: #EFEBE9;
+	color: #6D4C41;
+}
+
+/* Gadget definition talk (2303) */
+.linksuggest-ns-2303 {
+	background-color: #D7CCC8;
+	color: #5D4037;
+}
+
+/* Portal (100) - Soft Sky */
+.linksuggest-ns-100 {
+	background-color: #E1F5FE;
+	color: #0277BD;
+}
+
+/* Portal talk (101) */
+.linksuggest-ns-101 {
+	background-color: #B3E5FC;
+	color: #01579B;
+}
+
+/* Draft (118) - Soft Warm Gray */
+.linksuggest-ns-118 {
+	background-color: #F5F5F5;
+	color: #616161;
+}
+
+/* Draft talk (119) */
+.linksuggest-ns-119 {
+	background-color: #EEEEEE;
+	color: #757575;
+}
+
+/* TimedText (710) */
+.linksuggest-ns-710 {
+	background-color: #FFF9C4;
+	color: #F9A825;
+}
+
+/* TimedText talk (711) */
+.linksuggest-ns-711 {
+	background-color: #FFF59D;
+	color: #FBC02D;
+}
+
+/* Custom namespaces (110, 111) - Soft Mint */
+.linksuggest-ns-110 {
+	background-color: #E8F5E9;
+	color: #388E3C;
+}
+
+.linksuggest-ns-111 {
+	background-color: #C8E6C9;
+	color: #2E7D32;
+}
+
+/* Custom namespaces (3000 series) - Various */
+.linksuggest-ns-3000 {
+	background-color: #E0F7FA;
+	color: #0097A7;
+}
+
+.linksuggest-ns-3004 {
+	background-color: #F1F8E9;
+	color: #689F38;
+}
+
+.linksuggest-ns-3005 {
+	background-color: #DCEDC8;
+	color: #558B2F;
+}
+
+.linksuggest-ns-3006 {
+	background-color: #FFF8E1;
+	color: #FFA000;
+}
+
+.linksuggest-ns-3007 {
+	background-color: #FFECB3;
+	color: #FF8F00;
+}
+
+/* Default fallback for unknown namespaces */
+// .linksuggest-chip[class*="linksuggest-ns-"] {
+	/* Already styled above, this is just a fallback selector */
+// }
+
+.linksuggest-chip:not([class*="linksuggest-ns-"]),
+.linksuggest-dropdown li .linksuggest-chip {
+	/* Ensure base styling applies */
+	background-color: #F5F5F5;
+	color: #616161;
+}
+
+/* ===================
+   Dark Theme Overrides
+   =================== */
+
+.skin-theme-clientpref-night .linksuggest-chip,
+.skin-theme-clientpref-os .linksuggest-chip {
+	filter: none;
+}
+
+/* Dark mode - desaturate and darken backgrounds, lighten text */
+.skin-theme-clientpref-night .linksuggest-ns-0 {
+	background-color: #1E3A5F;
+	color: #90CAF9;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-1 {
+	background-color: #1A4A4F;
+	color: #80DEEA;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-2 {
+	background-color: #1B3D2F;
+	color: #A5D6A7;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-3 {
+	background-color: #1A3D3A;
+	color: #80CBC4;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-4 {
+	background-color: #3D2A4D;
+	color: #CE93D8;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-5 {
+	background-color: #352A4D;
+	color: #B39DDB;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-6 {
+	background-color: #4D3320;
+	color: #FFCC80;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-7 {
+	background-color: #4D2A25;
+	color: #FFAB91;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-8 {
+	background-color: #2D3336;
+	color: #B0BEC5;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-9 {
+	background-color: #37474F;
+	color: #90A4AE;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-10 {
+	background-color: #4D4420;
+	color: #FFF59D;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-11 {
+	background-color: #4D3D1A;
+	color: #FFE082;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-12 {
+	background-color: #3D4020;
+	color: #E6EE9C;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-13 {
+	background-color: #2E4025;
+	color: #C5E1A5;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-14 {
+	background-color: #4D2535;
+	color: #F48FB1;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-15 {
+	background-color: #4D2030;
+	color: #F8BBD9;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-828 {
+	background-color: #2A2D4D;
+	color: #9FA8DA;
+}
+
+.skin-theme-clientpref-night .linksuggest-ns-829 {
+	background-color: #35284D;
+	color: #B39DDB;
+}
+
+/* Dark mode fallback */
+.skin-theme-clientpref-night .linksuggest-chip:not([class*="linksuggest-ns-"]),
+.skin-theme-clientpref-night .linksuggest-dropdown li .linksuggest-chip {
+	background-color: #3D3D3D;
+	color: #BDBDBD;
+}
+
+/* ===================
+   Scrollbar
+   =================== */
+
+.linksuggest-dropdown::-webkit-scrollbar {
+	width: 6px;
+}
+
+.linksuggest-dropdown::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.linksuggest-dropdown::-webkit-scrollbar-thumb {
+	background-color: var(--theme-border-color, #a2a9b1);
+	border-radius: 3px;
+}
+
+.linksuggest-dropdown::-webkit-scrollbar-thumb:hover {
+	background-color: var(--secondary-text-color, #72777d);
+}
+
+/* ===================
+   Animation
+   =================== */
+
+.linksuggest-dropdown {
+	animation: linksuggest-fadein 0.12s ease-out;
+}
+
+@keyframes linksuggest-fadein {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ===================
+   Reduced Motion
+   =================== */
+
+@media (prefers-reduced-motion: reduce) {
+	.linksuggest-dropdown {
+		animation: none;
+	}
+	
+	.linksuggest-dropdown li {
+		transition: none;
+	}
+}

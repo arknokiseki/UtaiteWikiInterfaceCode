@@ -1,0 +1,18 @@
+.fx-rainbow-text {
+    background: linear-gradient(90deg, #ff9aa2, #ffb7b2, #ffdac1, #e2f0cb, #b5ead7, #c7ceea, #ff9aa2);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: fx-shine 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes fx-shine {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}

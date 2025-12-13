@@ -1,0 +1,54 @@
+/*=================================================================================
+Section 2: Extension Styles
+==================================================================================*/
+/*==============================================================
+Multimedia Viewer (MMV)
+===============================================================*/
+/*moved to [[MediaWiki:Gadget-mmv.css]]*/
+
+/*=============================================================
+[[:mw:Extension:UserProfileV2|UserProfileV2]]
+===============================================================*/
+.profile-user-group{
+    background-color: var(--accent-color) !important;
+}
+
+.external-link.tooltip:hover::after {
+    background: var(--accent-color) !important;
+}
+
+/*=============================================================
+[[:mw:Extension:PWA|PWA]]
+===============================================================*/
+img.pwa-install-button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 160px;
+    height: 50px;
+    
+    padding-left: 160px; 
+    overflow: hidden;
+    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    
+    cursor: pointer;
+}
+
+img.pwa-install-android {
+    background-image: url('https://static.wikitide.net/utaitewiki/d/d1/Android-install-en.svg'); 
+}
+
+img.pwa-install-ios {
+    background-image: url('https://static.wikitide.net/utaitewiki/6/6e/IOS-install-en.svg');
+}
+
+img.pwa-disabled-install-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(100%);
+}
+
+
+/*[[Category:Citizen Theme Gadgets]]*/

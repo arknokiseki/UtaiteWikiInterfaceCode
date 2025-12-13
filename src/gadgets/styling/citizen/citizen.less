@@ -1,0 +1,35 @@
+/*---------------------------------------------
+all css rules are reorganized into 8 new files
+-----------------------------------------------*/
+/*
+[[MediaWiki:Gadget-citizen-vars.css]]
+[[MediaWiki:Gadget-citizen-base.css]]
+[[MediaWiki:Gadget-citizen-templates.css]]
+[[MediaWiki:Gadget-citizen-widgets.css]]
+[[MediaWiki:Gadget-citizen-extensions.css]]
+[[MediaWiki:Gadget-citizen-navigation.css]]
+[[MediaWiki:Gadget-citizen-pages.css]]
+[[MediaWiki:Gadget-citizen-forums.css]]
+[[MediaWiki:Gadget-citizen-external.css]]
+*/
+
+body {
+  position: relative;
+  z-index: auto !important;
+}
+
+/* Make sure the header text is readable on both themes */
+html.skin-theme-clientpref-day .firstHeading,
+html.skin-theme-clientpref-day #siteSub {
+  color: #000 !important;
+}
+
+/*html.skin-theme-clientpref-night #siteSub,*/
+html.skin-theme-clientpref-night #siteSub {
+  color: #fff !important;
+}
+
+/*==========================================================
+Citizen Custom Notice Container
+moved to [[MediaWiki:Gadget-movablenotice.css]]
+===========================================================*/

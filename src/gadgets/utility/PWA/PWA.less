@@ -1,0 +1,138 @@
+:root {
+    --pwa-theme: #5c9ece;
+    --pwa-theme-dark: #4a8ab8;
+    --pwa-bg-soft: #e8f4fd;
+    --pwa-chip-bg: #4a8ab8;
+    --pwa-text: #5c9ece;
+}
+
+.utaite-pwa-install-btn {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    outline: none;
+    text-decoration: none !important;
+    line-height: 1.2;
+    box-sizing: border-box;
+    vertical-align: middle;
+
+    /* Utility: Spinner */
+    .pwa-spin {
+        animation: pwa-spin-anim 1s linear infinite;
+    }
+
+    /* Utility: Subtext */
+    .pwa-subtext {
+        display: block;
+        font-size: 0.75em;
+        font-weight: 400;
+        opacity: 0.8;
+        margin-top: 2px;
+        font-family: monospace;
+    }
+}
+
+/* --- CHIP STYLE --- */
+.pwa-chip {
+    display: inline-block;
+    background-color: var(--pwa-theme);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 6px;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(92, 158, 206, 0.2);
+    white-space: nowrap;
+}
+
+/* --- STATES --- */
+
+/* 1. STANDALONE (In App) */
+.pwa-btn-standalone {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px !important;
+    background: #ffffff;
+    color: var(--pwa-text) !important;
+    border: 2px solid var(--pwa-theme) !important;
+    border-radius: 50px !important;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(92, 158, 206, 0.15);
+
+    &:hover {
+        background: var(--pwa-bg-soft);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(92, 158, 206, 0.25);
+    }
+}
+
+/* 2. INSTALLED / FALLBACK (Browser Mode) */
+.pwa-btn-installed {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 16px !important;
+    background: var(--pwa-bg-soft);
+    color: var(--pwa-theme-dark) !important;
+    border: 2px dashed var(--pwa-theme) !important;
+    border-radius: 12px !important;
+    cursor: default;
+    font-weight: 600;
+    opacity: 0.95;
+    text-align: left;
+
+    .pwa-chip {
+        background: var(--pwa-theme-dark);
+        opacity: 0.8;
+        margin-left: 12px;
+    }
+}
+
+/* 3. UPDATE AVAILABLE */
+.pwa-btn-update {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px !important;
+    background: linear-gradient(135deg, #5c9ece 0%, #7EC2F2 100%) !important;
+    color: white !important;
+    border-radius: 50px !important;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(92, 158, 206, 0.4);
+    animation: pwa-pulse-pastel 2s infinite;
+
+    .pwa-chip {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes pwa-pulse-pastel {
+    0% {
+        box-shadow: 0 0 0 0 rgba(92, 158, 206, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(92, 158, 206, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(92, 158, 206, 0);
+    }
+}
+
+@keyframes pwa-spin-anim {
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,383 @@
+// ====================================================================
+// Variables & Mixins
+// ====================================================================
+@transition-base: background-color .15s ease, border-color .15s ease, color .15s ease;
+
+// ====================================================================
+// Base Layout
+// ====================================================================
+.cs-panel {
+	margin-top: 10px;
+	border: 1px solid;
+	border-radius: 8px;
+
+	// Toggle Arrow indicators
+	&.is-collapsed .cs-title::after {
+		content: " ▼";
+		font-size: 80%;
+		opacity: .7;
+	}
+
+	&.is-expanded .cs-title::after {
+		content: " ▲";
+		font-size: 80%;
+		opacity: .7;
+	}
+}
+
+.cs-container {
+	padding: 10px 12px;
+}
+
+.cs-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
+.cs-title {
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.cs-status {
+	font-size: 12px;
+}
+
+.cs-body {
+	padding-top: 12px;
+}
+
+.cs-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.cs-chip {
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid;
+	border-radius: 16px;
+	padding: 4px 10px;
+	font-size: 90%;
+	transition: @transition-base;
+
+	&.cs-chip-removed {
+		opacity: .6;
+		text-decoration: line-through;
+	}
+}
+
+.cs-chip-name {
+	margin-right: 6px;
+}
+
+.cs-chip-remove {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	font-weight: bold;
+	line-height: 1;
+	font-size: 14px;
+}
+
+.cs-addrow {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 10px;
+	flex-wrap: wrap;
+}
+
+.cs-btn {
+	border: 1px solid;
+	border-radius: 6px;
+	padding: 6px 10px;
+	cursor: pointer;
+	user-select: none;
+	font-size: 90%;
+	transition: @transition-base;
+
+	&[disabled] {
+		opacity: .65;
+		cursor: not-allowed;
+	}
+}
+
+.cs-inputwrap {
+	position: relative;
+	min-width: 260px;
+	display: none;
+}
+
+.cs-input {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6px 8px;
+	border: 1px solid;
+	border-radius: 6px;
+}
+
+.cs-suggest {
+	position: absolute;
+	top: calc(100% + 2px);
+	left: 0;
+	right: 0;
+	border: 1px solid;
+	max-height: 260px;
+	overflow: auto;
+	z-index: 5;
+	display: none;
+	border-radius: 6px;
+
+	li {
+		padding: 6px 8px;
+		cursor: pointer;
+		line-height: 1.4;
+
+		&.is-active,
+		&[aria-selected="true"] {
+			font-weight: 600;
+		}
+	}
+
+	.match {
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}
+
+.cs-toolbar {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	border-top: 1px solid;
+	padding: 12px 0 0;
+	margin-top: 12px;
+}
+
+.cs-hidden-label {
+	margin-top: 10px;
+	margin-bottom: 4px;
+}
+
+.cs-empty {
+	font-style: italic;
+	opacity: .85;
+	padding: 2px 0;
+}
+
+// ====================================================================
+// Light Theme
+// ====================================================================
+.skin-theme-clientpref-day {
+	.cs-panel {
+		border-color: #dfe3e8;
+		background-color: #ffffff;
+		color: #202122;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+
+		&.is-expanded .cs-header {
+			margin-bottom: 0;
+		}
+	}
+
+	.cs-status {
+		color: #5a6067;
+	}
+
+	.cs-chip {
+		background-color: #f8f9fa;
+		border-color: #cdd4da;
+		color: #202122;
+
+		&.cs-chip-new {
+			border-color: #3366cc;
+			background-color: #e7efff;
+		}
+	}
+
+	.cs-chip-remove {
+		color: #3366cc;
+		&:hover { color: #244a9a; }
+	}
+
+	.cs-btn {
+		background-color: #ffffff;
+		color: #202122;
+		border-color: #cfd4db;
+
+		&:hover {
+			background-color: #f4f6f8;
+			color: #111;
+		}
+
+		&:focus {
+			outline: 2px solid #6ea8ff;
+			outline-offset: 1px;
+		}
+
+		&.cs-save {
+			background-color: #3366cc;
+			border-color: #3366cc;
+			color: #ffffff;
+
+			&:hover {
+				background-color: #2a5bd7;
+				border-color: #2a5bd7;
+			}
+		}
+
+		&.cs-cancel {
+			background-color: #f8f9fa;
+		}
+	}
+
+	.cs-input {
+		background-color: #ffffff;
+		color: #202122;
+		border-color: #b8bec6;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px rgba(51, 102, 204, .3);
+		}
+	}
+
+	.cs-suggest {
+		background-color: #ffffff;
+		color: #202122;
+		border-color: #b8bec6;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+		li:hover {
+			background-color: #eef4ff;
+			color: #181b20;
+		}
+
+		li.is-active,
+		li[aria-selected="true"] {
+			background-color: #e7efff;
+		}
+	}
+
+	.cs-toolbar {
+		border-top-color: #eceef1;
+		background-color: #ffffff;
+	}
+
+	.cs-hidden-label {
+		color: #5c6670;
+	}
+}
+
+// ====================================================================
+// Dark Theme
+// ====================================================================
+.skin-theme-clientpref-night {
+	.cs-panel {
+		border-color: #3a3f4b;
+		background-color: #14181f;
+		color: #e6e6e6;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+
+		&.is-expanded .cs-header {
+			margin-bottom: 0;
+		}
+	}
+
+	.cs-status {
+		color: #a7afba;
+	}
+
+	.cs-chip {
+		background-color: #1b2230;
+		border-color: #3a3f4b;
+		color: #e6e6e6;
+
+		&.cs-chip-new {
+			border-color: #70a7ff;
+			background-color: rgba(112, 167, 255, .14);
+		}
+	}
+
+	.cs-chip-remove {
+		color: #9bbcff;
+		&:hover { color: #c3d9ff; }
+	}
+
+	.cs-btn {
+		background-color: #10151d;
+		color: #e6e6e6;
+		border-color: #3a3f4b;
+
+		&:hover {
+			background-color: #18202c;
+			color: #ffffff;
+		}
+
+		&:focus {
+			outline: 2px solid rgba(112, 167, 255, .7);
+			outline-offset: 1px;
+		}
+
+		&.cs-save {
+			background-color: #70a7ff;
+			border-color: #70a7ff;
+			color: #0b1526;
+
+			&:hover {
+				background-color: #8bb8ff;
+				border-color: #8bb8ff;
+				color: #0b1526;
+			}
+		}
+
+		&.cs-cancel {
+			background-color: #1b2330;
+		}
+	}
+
+	.cs-input {
+		background-color: #0f141b;
+		color: #e6e6e6;
+		border-color: #3a3f4b;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 0 2px rgba(112, 167, 255, .35);
+		}
+	}
+
+	.cs-suggest {
+		background-color: #0f141b;
+		color: #e6e6e6;
+		border-color: #3a3f4b;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, .5);
+
+		li:hover {
+			background-color: #1b2330;
+			color: #ffffff;
+		}
+
+		li.is-active,
+		li[aria-selected="true"] {
+			background-color: #21324a;
+		}
+	}
+
+	.cs-toolbar {
+		border-top-color: #2a3140;
+		background-color: #14181f;
+	}
+
+	.cs-hidden-label {
+		color: #b5bac4;
+	}
+}

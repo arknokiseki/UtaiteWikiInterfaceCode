@@ -1,0 +1,143 @@
+/** For Template:CustomTabs **/
+.custom-tabs {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	width: 100%;
+	margin: 5px 0;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.custom-tabs > span {
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	flex: 1;
+	transition: .25s;
+}
+
+.custom-tabs a,
+.custom-tabs .selflink,
+.custom-tabs span.new {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 8px 10px;
+	border-radius: 4px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+}
+
+/* Mobile 2 column format */
+.skin-fandommobile div.custom-tabs {
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-auto-flow: row;
+	flex-wrap: wrap;
+}
+
+.skin-fandommobile .custom-tabs a,
+.skin-fandommobile .custom-tabs .selflink,
+.skin-fandommobile .custom-tabs span.new {
+	font-size: 90%;
+}
+
+/* Define Colors for Dark Theme */
+.skin-theme-clientpref-night .custom-tabs, .theme-fandommobile-dark .custom-tabs {
+	--language-tabs-active-color: var(--pi-tabber-bg-color);
+	--language-tabs-inactive-color: var(--pi-rows-color);
+	--language-tabs-inactive-hover-color: var(--pi-tabber-bg-color);
+	--secondary-tabs-active-color: var(--theme-color-10);
+	--secondary-tabs-inactive-color: var(--theme-color-9);
+	--secondary-tabs-inactive-hover-color: var(--theme-color-7);
+	--tertiary-tabs-active-color: #48549a;
+	--tertiary-tabs-inactive-color: #333e90;
+	--tertiary-tabs-inactive-hover-color: #48549a;
+}
+
+/* Define Colors for Light Theme */
+.skin-theme-clientpref-day .custom-tabs, .theme-fandommobile-light .custom-tabs {
+	--language-tabs-active-color: var(--pi-header-bg-color);
+	--language-tabs-inactive-color: var(--pi-tabber-bg-color);
+	--language-tabs-inactive-hover-color: var(--pi-header-bg-color);
+	--secondary-tabs-active-color: var(--theme-color-6);
+	--secondary-tabs-inactive-color: var(--theme-color-8);
+	--secondary-tabs-inactive-hover-color: var(--theme-color-6);
+	--tertiary-tabs-active-color: #afacba;
+	--tertiary-tabs-inactive-color: #ece5d8;
+	--tertiary-tabs-inactive-hover-color: #afacba;
+}
+
+/* Default Color Scheme */
+.custom-tabs-default {
+	--active-tab-background-color: var(--theme-accent-color);
+	--active-tab-color: var(--custom-tabs-active-color);
+	--inactive-tab-background-color: rgba(var(--theme-accent-color--rgb), 0.5);
+	--inactive-tab-color: var(--theme-page-text-color);
+	--inactive-tab-hover-background-color: var(--theme-accent-color);
+	--inactive-tab-hover-color: var(--custom-tabs-active-color);
+}
+
+/* Language Color Scheme */
+.custom-tabs-language {
+	--active-tab-background-color: var(--language-tabs-active-color);
+	--active-tab-color: var(--theme-page-text-color);
+	--inactive-tab-background-color: var(--language-tabs-inactive-color);
+	--inactive-tab-color: var(--theme-page-text-color);
+	--inactive-tab-hover-background-color: var(--language-tabs-inactive-hover-color);
+	--inactive-tab-hover-color: var(--theme-page-text-color);
+}
+
+/* Secondary Color Scheme */
+.custom-tabs-secondary {
+	--active-tab-background-color: var(--secondary-tabs-active-color);
+	--active-tab-color: var(--theme-page-text-color);
+	--inactive-tab-background-color: var(--secondary-tabs-inactive-color);
+	--inactive-tab-color: var(--theme-page-text-color);
+	--inactive-tab-hover-background-color: var(--secondary-tabs-inactive-hover-color);
+	--inactive-tab-hover-color: var(--theme-page-text-color);
+}
+
+/* Tertiary Color Scheme */
+.custom-tabs-tertiary {
+	--active-tab-background-color: var(--tertiary-tabs-active-color);
+	--active-tab-color: var(--theme-page-text-color);
+	--inactive-tab-background-color: var(--tertiary-tabs-inactive-color);
+	--inactive-tab-color: var(--theme-page-text-color);
+	--inactive-tab-hover-background-color: var(--tertiary-tabs-inactive-hover-color);
+	--inactive-tab-hover-color: var(--theme-page-text-color);
+}
+
+/* Apply Color Scheme */
+.custom-tabs span.active-tab {
+	background-color: var(--active-tab-background-color);
+}
+
+.custom-tabs span.active-tab strong {
+	color: var(--active-tab-color);
+}
+
+.custom-tabs span.active-tab a:not(.new) {
+	color: var(--active-tab-color);
+	font-weight: bold;
+}
+
+.custom-tabs span.inactive-tab {
+	background: var(--inactive-tab-background-color);
+}
+
+.custom-tabs span.inactive-tab a:not(.new) {
+	color: var(--inactive-tab-color);
+}
+
+.custom-tabs span.inactive-tab:hover {
+	background: var(--inactive-tab-hover-background-color);
+}
+
+.custom-tabs span.inactive-tab:hover a:not(.new) {
+	color: var(--inactive-tab-hover-color);
+}

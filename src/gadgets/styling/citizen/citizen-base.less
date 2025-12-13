@@ -1,0 +1,102 @@
+/*=================================================================================
+Section 1: Layout Base Rules
+==================================================================================*/
+.skin-theme-clientpref-night #content {
+	background-color: rgba(var(--theme-page-background-color--rgb), var(--theme-page-background-color-opacity)) !important;
+}
+
+#citizen-drawer__card.citizen-menu__card {
+    background: oklch(var(--color-surface-1-oklch__l) var(--color-surface-1-oklch__c) var(--color-progressive-oklch__h) / var(--opacity-glass)) !important;
+    backdrop-filter: var(--backdrop-filter-frosted-glass) !important;
+    -webkit-backdrop-filter: var(--backdrop-filter-frosted-glass) !important;
+}
+
+header.citizen-drawer__header{
+	background: oklch(var(--color-surface-1-oklch__l) var(--color-surface-1-oklch__c) var(--color-progressive-oklch__h) / var(--opacity-glass)) !important;
+}
+
+#citizen-main-menu.citizen-drawer__menu{
+	background: oklch(var(--color-surface-1-oklch__l) var(--color-surface-1-oklch__c) var(--color-progressive-oklch__h) / var(--opacity-glass)) !important;
+}
+
+/*=================================================================================
+Section 2: Common Rules
+==================================================================================*/
+/*common rules*/
+.pointer-events-none{
+	pointer-events: none !important;
+}
+
+.user-select-none{
+	-webkit-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+
+.no-underline-anchor a,
+.no-underline-anchor a:link,
+.no-underline-anchor a:visited,
+.no-underline-anchor a:active,
+.no-underline-anchor a:hover,
+.no-underline-anchor a:focus,
+.no-underline-anchor a:where(:not([role='button'])):hover {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-color: transparent !important;
+  -webkit-text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.no-underline-anchor a::after,
+.no-underline-anchor a::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.no-underline-anchor a:hover,
+.no-underline-anchor a:where(:not([role='button'])):hover {
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+
+/*==================================================================
+Section 3: System Message
+==================================================================*/
+/*1. [[MediaWiki:Editing]] */
+.edit-header a,
+.edit-header a:visited {
+  color: var(--primary-text-color) !important;
+  text-decoration: none !important;
+}
+
+.edit-header a:hover {
+  color: var(--primary-color) !important;
+  text-decoration: none !important;
+}
+
+/* =======================================
+Section 5: Footer Wordmark
+=========================================*/
+.mw-logo-wordmark {
+    background-image: url('https://static.wikitide.net/utaitewiki/8/8b/480px_utaitewiki-new.svg') !important;
+
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+
+     width: 208px !important; 
+     height: 69px !important; 
+}
+
+/*[[Category:Citizen Theme Gadgets]]*/

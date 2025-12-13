@@ -1,0 +1,453 @@
+/* All CSS here will be loaded for users of the Citizen skin */
+/*[[Category:Citizen Theme Gadgets]]*/
+
+/* ==========================================================================
+   ROOT VARIABLES & THEME FOUNDATIONS
+   ========================================================================== */
+:root {
+    /* Glassmorphism Settings */
+    --backdrop-blur-strength: 8px;
+    
+    /* Layout Opacities */
+    --opacity-mobile: 1.0;
+    --opacity-desktop: 0.90;
+    --opacity-desktop-dark: 0.70;
+
+	/* Base Root Variables (from Vocaloid Wiki) */
+    --template-bg-none: var(--theme-page-background-color);
+    --template-bg-box: #F5F5F5;
+    --template-border-box: #D3D3D3;
+    --template-header-box: #888;
+    --template-bg-simple: #F8F8F8;
+    --template-border-simple: #E0E0E0;
+    --template-whitenavy-bg: #FFF;
+    
+    /* No Connection Page for PWA */
+	--nc-bg-dark: #1a1a2e;
+	--nc-bg-mid: #16213e;
+	--nc-bg-light: #0f3460;
+	--nc-cyan: #00d4ff;
+	--nc-purple: #9b59b6;
+	--nc-pink: #ff6b9d;
+	--nc-btn-start: #7c3aed;
+	--nc-btn-end: #db2777;
+	--nc-text-light: #ffffff;
+	--nc-text-muted: #a0a0c0;
+	--nc-text-dark: #505070;
+	--nc-red: #ff6b6b;
+	--nc-yellow: #ffd93d;
+	--nc-green: #6bcb77;
+	
+	/* MediaWiki navbox */
+	--navbox-border: #aaa;
+	--navbox-bg: #fdfdfd;
+	--navbox-list-border: #fdfdfd;
+	--navbox-title-bg: #eaeeff;
+	--navbox-group-bg: #ddddff;
+	--navbox-subgroup-bg: #e6e6ff;
+	--navbox-even-bg: #f7f7f7;
+	--navbox-text-color: inherit; 
+}
+
+/* ==========================================================================
+   LIGHT THEME (DAY) - Primary Theme Variables
+   ========================================================================== */
+.skin-theme-clientpref-day {
+    /* Core Theme Colors */
+    --theme-page-background-color: #f5f8fa;
+    --theme-page-background-color--secondary: #e1e8ed;
+    --theme-page-background-color-quiet: #edf2f7;
+    --theme-page-background-color-quiet--hover: #e4ebf2;
+    --theme-page-background-color-opacity: 1.0;
+    --theme-link-color: #2b7bb9;
+    --theme-link-color-hover: #3498db;
+    --theme-accent-color: #5c9ece;
+    --theme-accent-color--rgb: 169, 204, 229;
+    --theme-accent-color--hover: #4b8bc4;
+    --theme-border-color: #cbd2d9;
+    
+    /* Background & Layout */
+    --background-image: url('https://static.wikitide.net/utaitewiki/b/b0/Site-background-light.png');
+    --background-color: var(--theme-page-background-color);
+    --background-color-quiet:  var(--theme-page-background-color-quiet);
+    --background-color-quiet--hover:  var(--theme-page-background-color-quiet--hover);
+    --container-bg: #ffffff;
+    --surface-bg: var(--theme-page-background-color--secondary);
+    --glass-background-rgb: 255, 255, 255; 
+    --glass-text-color: #333333;
+
+    /* Menu Card Styling */
+    --menu-card-bg: #ffffff;
+    --menu-card-border: 1px solid var(--theme-border-color);
+    
+    /* Basic UI Colors */
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    --primary-text-color: #202122;
+    --secondary-text-color: #54595d;
+    --subtitle-color: #a3b8c8;
+    --accent-color: var(--theme-accent-color);
+    --border-color: #5a6165;
+    
+    /* Header & Status Colors */
+    --header-text-color: #000000;
+    --nandemoya-bg-color: #c3e6f9;
+    --status-active-text-color: #008000;
+    --stats-number-color: #007bff;
+    --stats-label-color: #333;
+    
+    /* Button Theme Variables - Light Theme */
+    --theme-accent-label-color: #ffffff;
+    --background-color-progressive: #36c;
+    --background-color-progressive--hover: #4b77d6;
+    --border-color-progressive: #36c;
+    --border-color-progressive--hover: #4b77d6;
+    --color-progressive: #36c;
+    --color-progressive--hover: #4b77d6;
+    --color-inverted-fixed: #fff;
+    --background-color-base: #fff;
+    --color-base: #202122;
+    --color-base--hover: #404244;
+    --background-color-interactive-subtle: #f8f9fa;
+    --border-color-base: #a2a9b1;
+    
+    /* Tag Callout - Light Theme Colors */
+	--tag-accent-yellow: #FFE61C;
+	--tag-accent-yellow-fade: rgba(255, 230, 28, 0.05);
+	--tag-label-text: #000000;
+	--tag-header-text: #333333;
+	--tag-code-text: #2D2D2D;
+	--tag-desc-text: #4A4A4A;
+	--tag-item-bg: rgba(255, 255, 255, 0.7);
+	--tag-border-glow: rgba(0, 0, 0, 0.05);
+	--tag-label-shadow: rgba(0, 0, 0, 0.1);
+    
+    /* Shadows & Effects */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    
+    /* Icons */
+    --niconico-icon-filter: brightness(0) saturate(100%) invert(0%);
+    --niconico-icon-filter-hover: brightness(0) saturate(100%) invert(20%);
+    
+    /* Template Variables (Light Theme Override) */
+    
+    --birthday-calendar-bg-color: #e3f2fd;
+    --birthday-calender-border-color: #1976d2;
+    --birthday-calendar-box-shadow-color: rgba(33, 150, 243, 0.5);
+    --birthday-calendar-current-date-bold-bg-color: #2196f3;
+    --birthday-calender-current-date-hover-bg-color: #1976d2;
+    
+    /* n-notice */
+    --notice-tone-green-start: #2e7d32;
+    --notice-tone-green-end: #66bb6a;
+    --notice-tone-blue-start: var(--theme-accent-color);
+    --notice-tone-blue-end: var(--theme-link-color-hover);
+    --notice-tone-yellow-start: #f4c430;
+    --notice-tone-yellow-end: #ffe082;
+    --notice-tone-red-start: #e53935;
+    --notice-tone-red-end: #ff6b6b;
+    --notice-tone-purple-start: #8e24aa;
+    --notice-tone-purple-end: #ba68c8;
+    --notice-tone-gray-start: #9ca3af;
+    --notice-tone-gray-end: #e5e7eb;
+    
+    /* Forum specific variables */
+    --forum-bg: #ffffff;
+    --forum-header-bg: #f5f5f5;
+    --forum-text: #333333;
+    --forum-border: #e0e0e0;
+    --forum-row-hover: #f8f8f8;
+    --forum-link: #007bff;
+    --forum-link-hover: #0056b3;
+    --forum-new-badge: #ff4444;
+    
+    /* Empty page specific variables */
+	--empty-page-bg: #ffffff;
+	--empty-page-shadow: rgba(0, 0, 0, 0.08);
+	--empty-page-heading-color: #333;
+	--empty-page-heading-border: #eee;
+	--empty-page-text-color: #555;
+	--empty-page-subheading-color: #444;
+	--empty-page-bullet-color: #666;
+	--empty-page-link-color: #3366cc;
+	--empty-page-link-hover: #254c99;
+	--empty-page-input-bg: #fff;
+	--empty-page-input-text: #333;
+	--empty-page-input-border: #ddd;
+	--empty-page-button-bg: #3366cc;
+	--empty-page-button-hover: #254c99;
+	--empty-page-button-text: white;
+    
+    /* Custom Tabs Variables - Light Theme */
+    --custom-tabs-active-color: #ffffff;
+    --pi-header-bg-color: #ffffff;
+    --pi-tabber-bg-color: #f8fafc;
+    --pi-rows-color: #f1f5f9;
+    --theme-color-6: #3b82f6;
+    --theme-color-8: #e2e8f0;
+    --language-tabs-active-color: #ffffff;
+    --language-tabs-inactive-color: #f1f5f9;
+    --language-tabs-inactive-hover-color: #e2e8f0;
+    --secondary-tabs-active-color: #6366f1;
+    --secondary-tabs-inactive-color: #e0e7ff;
+    --secondary-tabs-inactive-hover-color: #c7d2fe;
+    --tertiary-tabs-active-color: #8b5cf6;
+    --tertiary-tabs-inactive-color: #ede9fe;
+    --tertiary-tabs-inactive-hover-color: #ddd6fe;
+}
+
+/* ==========================================================================
+   DARK THEME (NIGHT) - Primary Theme Variables
+   ========================================================================== */
+.skin-theme-clientpref-night {
+    /* Core Theme Colors */
+    --theme-page-background-color: #2b3233;
+    --theme-page-background-color--rgb: 43, 50, 51;
+    --theme-page-background-color-opacity: 0.70;
+    --theme-page-background-color--secondary: #494e52;
+    --theme-page-background-color-secondary--rgb: 73, 78, 82;
+    --theme-page-background-color-quiet: #353a3b;
+    --theme-page-background-color-quiet--hover: #3f4547;
+    --subtitle-color: #788087;
+    --theme-link-color: #5b858c;
+    --theme-link-color--rgb: 91, 133, 140;
+    --theme-link-color-hover: #69c0cf;
+    --theme-link-color--hover--rgb: 105, 192, 207;
+    --theme-accent-color: #778d91;
+    --theme-accent-color--rgb: 119, 141, 145;
+    --theme-accent-color--hover: #97b0b0;
+    --theme-accent-color--hover--rgb: 151, 176, 176;
+    --theme-border-color: #383d40;
+    --theme-border-color--rgb: 56, 61, 64;
+    
+    /* Background & Layout */
+    --background-image: url('https://static.wikitide.net/utaitewiki/4/4a/Utattemitanouta.png');
+    --background-color: transparent;
+    --container-bg: rgba(var(--theme-page-background-color--rgb), var(--theme-page-background-color-opacity));
+    --surface-bg: rgba(var(--theme-page-background-color-secondary--rgb), var(--theme-page-background-color-opacity));
+    --glass-background-rgb: 40, 39, 43; 
+    --glass-text-color: #ffffff;
+    
+    /* Menu Card Styling */
+    --menu-card-bg: var(--theme-page-background-color);
+    --menu-card-border: 1px solid var(--theme-border-color);
+
+    /* Basic UI Colors */
+    --primary-color: #ffffff;
+    --secondary-color: #2f3136;
+    --primary-text-color: #e3e3e3;
+    --secondary-text-color: #b1b1b1;
+    --accent-color: var(--theme-accent-color);
+    --border-color: #9aa5b0;
+    
+    /* Header & Status Colors */
+    --header-text-color: #ffffff;
+    --status-active-text-color: #43b581;
+    --stats-number-color: #5865F2;
+    --stats-label-color: #dcddde;
+    
+    /* MediaWiki navbox */
+    --navbox-border: #54595d;
+	--navbox-bg: #202122;
+	--navbox-list-border: #202122;
+	--navbox-title-bg: #2a2a2e;
+	--navbox-group-bg: #363636;
+	--navbox-subgroup-bg: #404040;
+	--navbox-even-bg: #2a2a2a;
+	--navbox-text-color: #eaecf0;
+    
+    /* Button Theme Variables - Dark Theme */
+    --theme-accent-label-color: #ffffff;
+    --background-color-progressive: #4dabf7;
+    --background-color-progressive--hover: #339af0;
+    --border-color-progressive: #4dabf7;
+    --border-color-progressive--hover: #339af0;
+    --color-progressive: #4dabf7;
+    --color-progressive--hover: #339af0;
+    --color-inverted-fixed: #000;
+    --background-color-base: #2d2d2d;
+    --color-base: #e3e3e3;
+    --color-base--hover: #ffffff;
+    --background-color-interactive-subtle: #3a3a3a;
+    --border-color-base: #555555;
+    
+    --tag-accent-yellow: #FFE61C;
+	--tag-accent-yellow-fade: rgba(255, 230, 28, 0.1);
+	--tag-label-text: #000000;
+	--tag-header-text: #E1E1E1;
+	--tag-code-text: #FFE61C;
+	--tag-desc-text: #B8B8B8;
+	--tag-item-bg: rgba(0, 0, 0, 0.3);
+	--tag-border-glow: rgba(255, 230, 28, 0.1);
+	--tag-label-shadow: rgba(0, 0, 0, 0.25);
+    
+    /* Shadows & Effects */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
+    /* Icons */
+    --niconico-icon-filter: brightness(0) saturate(100%) invert(100%);
+    --niconico-icon-filter-hover: brightness(0) saturate(100%) invert(85%);
+    
+    /* Template Variables (Dark Theme Override) */
+    --template-bg-none: var(--theme-page-background-color);
+    --template-bg-box: #30363C;
+    --template-border-box: #42474C;
+    --template-header-box: #5F5F5F;
+    --template-bg-simple: var(--template-bg-box);
+    --template-border-simple: var(--template-border-box);
+    --template-whitenavy-bg: #060E15;
+    --birthday-calendar-bg-color: #1a237e;
+    --birthday-calender-border-color: #82b1ff;
+    --birthday-calendar-box-shadow-color: rgba(61, 90, 254, 0.5);
+    --birthday-calendar-current-date-bold-bg-color: #3d5afe;
+    --birthday-calender-current-date-hover-bg-color: #536dfe;
+    
+    /* n-notice */
+    --notice-tone-green-start: #51cf66;
+    --notice-tone-green-end: #84e296;
+    --notice-tone-blue-start: var(--theme-link-color);
+    --notice-tone-blue-end: var(--theme-link-color-hover);
+    --notice-tone-yellow-start: #ffe61c;
+    --notice-tone-yellow-end: #fff3a8;
+    --notice-tone-red-start: #ff6b6b;
+    --notice-tone-red-end: #ffa5a5;
+    --notice-tone-purple-start: #ba68c8;
+    --notice-tone-purple-end: #d79be7;
+    --notice-tone-gray-start: #9aa5b0;
+    --notice-tone-gray-end: #cad1d9;
+    
+    /* Forum specific variables */
+    --forum-bg: #2d2d2d;
+    --forum-header-bg: #353535;
+    --forum-text: #e0e0e0;
+    --forum-border: #404040;
+    --forum-row-hover: #383838;
+    --forum-link: #4a9eff;
+    --forum-link-hover: #77b6ff;
+    --forum-new-badge: #ff5555;
+    
+    /* Empty page specific variables */
+	--empty-page-bg: transparent;
+	--empty-page-shadow: rgba(0, 0, 0, 0.2);
+	--empty-page-heading-color: #eee;
+	--empty-page-heading-border: #444;
+	--empty-page-text-color: #bbb;
+	--empty-page-subheading-color: #ccc;
+	--empty-page-bullet-color: #999;
+	--empty-page-link-color: #6699ff;
+	--empty-page-link-hover: #99bbff;
+	--empty-page-input-bg: #333;
+	--empty-page-input-text: #eee;
+	--empty-page-input-border: #555;
+	--empty-page-button-bg: #4477dd;
+	--empty-page-button-hover: #5588ee;
+	--empty-page-button-text: #ffffff;
+    
+	/* Custom Tabs Variables - Dark Theme */
+    --custom-tabs-active-color: #ffffff;
+    --pi-header-bg-color: #374151;
+    --pi-tabber-bg-color: #1f2937;
+    --pi-rows-color: #111827;
+    --theme-color-10: #1e40af;
+    --theme-color-9: #1e3a8a;
+    --theme-color-7: #3b82f6;
+    --language-tabs-active-color: #374151;
+    --language-tabs-inactive-color: #1f2937;
+    --language-tabs-inactive-hover-color: #374151;
+    --secondary-tabs-active-color: #4338ca;
+    --secondary-tabs-inactive-color: #312e81;
+    --secondary-tabs-inactive-hover-color: #4338ca;
+    --tertiary-tabs-active-color: #7c3aed;
+    --tertiary-tabs-inactive-color: #581c87;
+    --tertiary-tabs-inactive-hover-color: #7c3aed;
+}
+
+/* ==========================================================================
+   AUTO THEME (SYSTEM PREFERENCE) - Responsive Theme Variables
+   ========================================================================== */
+
+/* System Preference: Light Mode */
+@media (prefers-color-scheme: light) {
+    .skin-theme-clientpref-os {
+        --theme-page-background-color: #f5f8fa;
+        --theme-page-background-color--secondary: #e1e8ed;
+        --theme-link-color: #2b7bb9;
+        --theme-link-color-hover: #3498db;
+        --theme-accent-color: #5c9ece;
+        --theme-border-color: #cbd2d9;
+        --background-image: url('https://static.wikitide.net/utaitewiki/b/b0/Site-background-light.png');
+        --background-color: var(--theme-page-background-color);
+        --container-bg: #ffffff;
+        --surface-bg: var(--theme-page-background-color--secondary);
+        --primary-text-color: #202122;
+        --secondary-text-color: #54595d;
+        --accent-color: var(--theme-accent-color);
+        --glass-background-rgb: 255, 255, 255;
+        --glass-text-color: #333333;
+        --menu-card-bg: #ffffff;
+        --menu-card-border: 2px solid #144694;
+        
+        /* Custom Tabs Variables - Light Theme (System Preference) */
+        --custom-tabs-active-color: #ffffff;
+        --pi-header-bg-color: #ffffff;
+        --pi-tabber-bg-color: #f8fafc;
+        --pi-rows-color: #f1f5f9;
+        --theme-color-6: #3b82f6;
+        --theme-color-8: #e2e8f0;
+        --language-tabs-active-color: #ffffff;
+        --language-tabs-inactive-color: #f1f5f9;
+        --language-tabs-inactive-hover-color: #e2e8f0;
+        --secondary-tabs-active-color: #6366f1;
+        --secondary-tabs-inactive-color: #e0e7ff;
+        --secondary-tabs-inactive-hover-color: #c7d2fe;
+        --tertiary-tabs-active-color: #8b5cf6;
+        --tertiary-tabs-inactive-color: #ede9fe;
+        --tertiary-tabs-inactive-hover-color: #ddd6fe;
+    }
+}
+
+/* System Preference: Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .skin-theme-clientpref-os {
+        --theme-page-background-color: #28272b;
+        --theme-page-background-color--secondary: #494e52;
+        --theme-link-color: #5b858c;
+        --theme-link-color-hover: #69c0cf;
+        --theme-accent-color: #778d91;
+        --theme-border-color: #383d40;
+        --background-image: url('https://static.wikitide.net/utaitewiki/4/4a/Utattemitanouta.png');
+        --background-color: #1a1a1a;
+        --container-bg: var(--theme-page-background-color);
+        --surface-bg: var(--theme-page-background-color--secondary);
+        --primary-text-color: #e3e3e3;
+        --secondary-text-color: #b1b1b1;
+        --accent-color: var(--theme-accent-color);
+        --glass-background-rgb: 40, 39, 43;
+        --glass-text-color: #ffffff;
+        --menu-card-bg: var(--theme-page-background-color);
+        --menu-card-border: 2px solid #144694;
+        
+        /* Custom Tabs Variables - Dark Theme (System Preference) */
+        --custom-tabs-active-color: #ffffff;
+        --pi-header-bg-color: #374151;
+        --pi-tabber-bg-color: #1f2937;
+        --pi-rows-color: #111827;
+        --theme-color-10: #1e40af;
+        --theme-color-9: #1e3a8a;
+        --theme-color-7: #3b82f6;
+        --language-tabs-active-color: #374151;
+        --language-tabs-inactive-color: #1f2937;
+        --language-tabs-inactive-hover-color: #374151;
+        --secondary-tabs-active-color: #4338ca;
+        --secondary-tabs-inactive-color: #312e81;
+        --secondary-tabs-inactive-hover-color: #4338ca;
+        --tertiary-tabs-active-color: #7c3aed;
+        --tertiary-tabs-inactive-color: #581c87;
+        --tertiary-tabs-inactive-hover-color: #7c3aed;
+    }
+}

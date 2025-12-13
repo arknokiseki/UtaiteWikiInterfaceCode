@@ -1,0 +1,68 @@
+/* For [[Template:Item]] */
+.item {
+	display: inline;
+}
+
+.item .item-image {
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+}
+
+.item .item-image .hidden {
+	display: inline-block;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	top: -2px;
+}
+
+.item .item-image .hidden a {
+	display: inline-flex;
+}
+
+.item .item-icon {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	top: -5px;
+	left: -5px;
+	width: 14px;
+	height: 14px;
+}
+
+.item.newline {
+	display: inline-block;
+	text-align: center;
+}
+
+/* Add Unknown icon to missing img */
+.skin-fandomdesktop .item-image > a.new, .skin-fandomdesktop .item-image > span > span > a.new {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-image: url(https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Item_Unknown.png);
+    background-size: cover;
+    font-size: 0;
+}
+
+.skin-fandommobile .item-image > a.new, .skin-fandommobile .item-image > span > span > a.new {
+    position: relative;
+    display: flex;
+    height: 20px;
+    width: 20px;
+    background-image: url(https://static.wikia.nocookie.net/gensin-impact/images/4/4a/Item_Unknown.png);
+    background-size: cover;
+    font-size: 0;
+}
+
+/* Blueprint icon in [[Template:Shop]] */
+.skin-fandommobile .item .item-icon[data-offset='-4'] {
+    top: -4px;
+}
+
+.skin-fandommobile .item .item-icon[data-corner-size='14'] {
+    width: 14px;
+    height: 14px;
+}

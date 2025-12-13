@@ -1,0 +1,176 @@
+/*===============================
+Main page
+=================================*/
+body.rootpage-Utaite_Wiki .cs-footer .oo-ui-buttonWidget:has(.oo-ui-icon-speechBubbleAdd) {
+    display: none !important;
+}
+
+/*===============================
+RecentChanges page
+=================================*/
+html.skin-theme-clientpref-night .mw-changeslist h4 {
+    --color-surface-0-oklch__c: transparent !important;
+}
+
+/*=============================
+Upload Page
+==============================*/
+.upload-text-container {
+  position: relative;
+}
+
+/*
+.upload-text-container::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  width: 120px;
+  height: 120px;
+  background: url('https://static.wikitide.net/utaitewiki/6/65/Coe._Icon.png') no-repeat center;
+  background-size: contain;
+  z-index: 10;
+}
+*/
+
+/* ==========================================================================
+   Utaite Gallery Page
+   ========================================================================== */
+
+.singer-box{
+    width:300px;
+    border:1px solid #ccc;
+    padding:5px; 
+    margin:5px;
+    float:left;
+    text-align:center;
+}
+
+.singer-image{
+    width:275px;
+    height:200px;
+    overflow:hidden;
+    display:inline-block;
+}
+
+.singer-name{
+    text-align:center;
+    padding-top:5px;
+}
+
+/*=============================
+Noarticletext
+===============================*/
+
+.empty-page-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--empty-page-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--empty-page-shadow);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.empty-page-content h2 {
+  color: var(--empty-page-heading-color);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--empty-page-heading-border);
+  padding-bottom: 10px;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.empty-page-content p {
+  color: var(--empty-page-text-color);
+  line-height: 1.6;
+  margin-bottom: 25px;
+  transition: color 0.3s;
+}
+
+.create-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.create-form, .alternative-actions {
+  flex: 1;
+  min-width: 300px;
+}
+
+.create-form h3, .alternative-actions h3 {
+  color: var(--empty-page-subheading-color);
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  transition: color 0.3s;
+}
+
+.alternative-actions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.alternative-actions li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.alternative-actions li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--empty-page-bullet-color);
+  transition: color 0.3s;
+}
+
+.alternative-actions a {
+  color: var(--empty-page-link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.alternative-actions a:hover {
+  color: var(--empty-page-link-hover);
+  text-decoration: underline;
+}
+
+/* Enhance inputbox styling */
+.create-form .mw-inputbox-input {
+  padding: 10px;
+  border: 1px solid var(--empty-page-input-border);
+  border-radius: 4px;
+  font-size: 1em;
+  background-color: var(--empty-page-input-bg);
+  color: var(--empty-page-input-text);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.create-form .mw-inputbox-button {
+  background-color: var(--empty-page-button-bg);
+  color: var(--empty-page-button-text);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: bold;
+}
+
+.create-form .mw-inputbox-button:hover {
+  background-color: var(--empty-page-button-hover);
+}
+
+@media (max-width: 768px) {
+  .empty-page-container {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .create-options {
+    flex-direction: column;
+  }
+}
+/*[[Category:Citizen Theme Gadgets]]*/

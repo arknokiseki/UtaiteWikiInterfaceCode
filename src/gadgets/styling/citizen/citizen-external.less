@@ -1,0 +1,179 @@
+/*Genshin wiki*/
+/* MediaWiki:Edittools styling */
+.edittools-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 3px;
+}
+.edittools-list > code {
+	display: flex;
+	gap: 2px;
+}
+.edittools-list div.mw-collapsible {
+	padding: 0;
+    display: inline;
+}
+.edittools-list span.mw-collapsible-toggle { padding: 0 3px; }
+.edittools-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	border: 1px solid var(--border-color);
+	border-radius: 3px;
+	padding: 8px;
+	font-size: small
+}
+#edittools-description {
+	margin-top: 1em;
+	margin-bottom: 0.7em;
+}
+
+/* For [[Module:Formatting]] */
+.custom-formatting-code {
+	display: inline-block;
+	line-height: 21px;
+}
+.custom-formatting-code.code-block-table { display: table; }
+span.variable { opacity: 0.65; }
+span.variable::after {
+	opacity: 0.65;
+	content: ">";
+}
+span.variable::before {
+	opacity: 0.65;
+	content: "<";
+}
+.custom-formatting-nested { display: none; }
+.custom-formatting-resulting { display: inline; }
+.custom-formatting-code .custom-formatting-nested { display: inline-block; }
+.custom-formatting-code .custom-formatting-resulting { display: none; }
+/* End for [[Module:Formatting]] */
+
+/* Fixing sortable arrow icons in tables using "article-table fandom-table sortable" classes */
+/*.article-table.fandom-table.jquery-tablesorter th.headerSort.headerSortUp::before,*/
+/*.article-table.fandom-table.jquery-tablesorter th:not(.headerSortUp).headerSort::before { content: none; }*/
+/*.article-table.fandom-table.jquery-tablesorter th.headerSort.headerSortDown::before,*/
+/*.article-table.fandom-table.jquery-tablesorter th:not(.headerSortUp).headerSort::after {*/
+/*    clip-path: none;*/
+/*    -webkit-clip-path: none*/
+/*}*/
+/*.article-table.fandom-table.jquery-tablesorter th.headerSort.headerSortUp::after { display: flex }*/
+/*.article-table.fandom-table.jquery-tablesorter th.headerSort::after,*/
+/*.article-table.fandom-table.jquery-tablesorter th.headerSort::before { right: 0 }*/
+
+/* [[Template:Description]] styles */
+div.description-wrapper {
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    border-radius: 8px;
+    background: #bf8c4015;
+}
+div.description-content {
+    font-size: 15px;
+    text-align: left;
+    overflow: auto;
+    line-height: 1.35em;
+    padding: 12px 12px 12px 12px;
+}
+div.description-source {
+    font-size: 15px;
+    overflow: auto;
+    padding: 5px 12px;
+}
+hr.description-separator {
+    width: 97.5%;
+    margin: auto;
+}
+div.description-title {
+    font-size: 15px;
+    text-align: left;
+    overflow: auto;
+    padding: 10px 12px 6px;
+}
+ 
+/* Class to add text hidden from view that is usable by screen readers */
+.screen-reader-text { font-size: 0; }
+
+/* Remove coloring on parameter aliases on template data as it makes text hard to read */
+.mw-templatedata-doc-param-alias { color: inherit; }
+
+
+hr {
+    margin: 5px 0;
+    border: none;
+    height: 1px;
+    color: var(--theme-border-color);
+    background-color: var(--theme-border-color);
+}
+
+/* format code */
+code, .custom-formatting-code:not(.custom-formatting-plain) {
+    background-color: var(--theme-page-background-color--secondary);
+    border: 1px solid var(--theme-border-color);
+    border-radius: 2px;
+    padding: 1px 4px;
+    font-family: monospace;
+}
+/* For [[Module:Formatting]] */
+.custom-formatting-code {
+	display: inline-block;
+	line-height: 21px;
+}
+.custom-formatting-code.code-block-table { display: table; }
+span.variable { opacity: 0.65; }
+span.variable::after {
+	opacity: 0.65;
+	content: ">";
+}
+span.variable::before {
+	opacity: 0.65;
+	content: "<";
+}
+.custom-formatting-nested { display: none; }
+.custom-formatting-resulting { display: inline; }
+.custom-formatting-code .custom-formatting-nested { display: inline-block; }
+.custom-formatting-code .custom-formatting-resulting { display: none; }
+/* End for [[Module:Formatting]] */
+
+.mobileHide, .mobile-only, .no-desktop { display: none; }
+
+/* virtualyoutuber - fandom.com */
+/* Styles in "Tabs" template */
+/*not used anymore.*/
+
+/* from vocaloid wiki */
+/** Templates that use the same "box" style of colors (Template:Reputation, Template:Product Information, etc) **/
+
+.box-header {
+	display: block;
+	color: white;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 20px;
+	padding-left: 0.5em;
+	margin-top: 5px;
+	background-color: var(--template-header-box);
+}
+
+.box-content {
+	display: block;
+	padding: 0.5em;
+	border-top: 0;
+}
+
+.box-content, .scroll-box {
+	background-color: var(--template-bg-box);
+	border: 1px solid var(--template-border-box);
+}
+
+.simple-template {
+	background-color: var(--template-bg-simple);
+	border: 1px solid var(--template-border-simple);
+}
+
+/* Templates that use white or navy blue backgrounds (Template:Notify, Template:Lrc legend/base) */
+
+.whitenavy-template {
+	background-color: var(--template-whitenavy-bg);
+}
+/*[[Category:Citizen Theme Gadgets]]*/
