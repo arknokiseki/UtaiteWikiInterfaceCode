@@ -384,8 +384,7 @@ gadgets:
         - movablenotice.ts
         - movablenotice.less
       resourceLoader:
-        default: true
-        hidden: true
+        default: false
     birthday:
       description: "Adds confetti to pages in the 'Today's Birthdays' category."
       authors:
