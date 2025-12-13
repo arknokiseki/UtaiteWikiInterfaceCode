@@ -163,6 +163,9 @@ gadgets:
       code:
         - LinkPreview.ts
         - LinkPreview.less
+      resourceLoader:
+        default: true
+        hidden: true
     ShowbyGroup:
       description: "Show content by user group."
       authors:
@@ -380,6 +383,9 @@ gadgets:
       code:
         - movablenotice.ts
         - movablenotice.less
+      resourceLoader:
+        default: true
+        hidden: true
     birthday:
       description: "Adds confetti to pages in the 'Today's Birthdays' category."
       authors:
@@ -482,6 +488,9 @@ gadgets:
         - mediawiki.api
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
+      resourceLoader:
+        default: true
+        hidden: true
     massdelete:
       description: "Mass Delete tool (admin-only)."
       code:
@@ -492,6 +501,9 @@ gadgets:
         - ext.gadget.ToolsMenu
       rights:
         - delete
+      resourceLoader:
+        default: true
+        hidden: true
     massupload:
       description: "Mass Upload tool (admin-only)."
       code:
@@ -500,6 +512,9 @@ gadgets:
         - mediawiki.api
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
+      resourceLoader:
+        default: true
+        hidden: true
     masscategorization:
       description: "Mass Categorization tool (admin-only)."
       code:
@@ -508,3 +523,6 @@ gadgets:
         - mediawiki.api
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
+      resourceLoader:
+        default: true
+        hidden: true
