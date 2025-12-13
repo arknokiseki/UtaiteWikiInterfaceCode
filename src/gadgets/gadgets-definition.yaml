@@ -117,7 +117,7 @@ gadgets:
         default: true
         dependencies:
           - mediawiki.api
-          - oots-ui
+          - oojs-ui
           - mediawiki.page.watch.ajax
           - mediawiki.watchstar.widgets
     ToolsMenu:
