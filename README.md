@@ -1,7 +1,7 @@
 ## About
 Forked from [VocaloidLyricsWikiInterfaceCode](https://github.com/ccxtwf/VocaloidLyricsWikiInterfaceCode/tree/main)
 
-Inspired by [Miraheze Dev Scripts](https://github.com/lihaohong6/MirahezeDevScripts/tree/master) and [MoegirlPediaInterfaceCodes](https://github.com/MoegirlPediaInterfaceAdmins/MoegirlPediaInterfaceCodes), this is a repository that aims to enable development of wiki userscripts and styles on [Vocaloid Lyrics Wiki](https://vocaloidlyrics.miraheze.org). 
+Inspired by [Miraheze Dev Scripts](https://github.com/lihaohong6/MirahezeDevScripts/tree/master) and [MoegirlPediaInterfaceCodes](https://github.com/MoegirlPediaInterfaceAdmins/MoegirlPediaInterfaceCodes), this is a repository that aims to enable development of wiki userscripts and styles on [Utaite Wiki](https://utaite.wiki). 
 
 One main goal of this repository is to facilitate faster & easier feature development, from the development stage on an IDE to debugging on a MediaWiki instance.
 
