@@ -121,7 +121,12 @@ function core.is_css_color(s)
   if type(s) ~= "string" then return false end
   s = s:gsub("^%s+", ""):gsub("%s+$", "")
   if s == "" then return false end
-  if s:find('[;{}"\'<>\\]') then return false end
+  -- Plain substring search (4th arg true), not a pattern, so this security
+  -- check has no escaping subtleties. Parentheses are deliberately allowed:
+  -- var(), rgb() and hsl() need them.
+  for _, bad in ipairs({ ";", "{", "}", "<", ">", '"', "'", "\\" }) do
+    if s:find(bad, 1, true) then return false end
+  end
   local low = s:lower()
   if low:find("expression") or low:find("javascript") or low:find("url") then return false end
   if s:match("^#%x%x%x$") or s:match("^#%x%x%x%x$")
