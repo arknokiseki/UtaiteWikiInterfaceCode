@@ -9,6 +9,7 @@
 
 import type { UptodateEdits, TemplateCall } from './uptodate-params.js';
 import type { StatusDetection } from './status-detect.js';
+import { classifyColor, describeColor } from './css-color.js';
 
 export interface ModalOptions {
     /** Page being edited, shown in the header. */
@@ -123,14 +124,36 @@ export function openUptodateModal(options: ModalOptions): void {
 
     // --- Remaining named fields ---
     const inputs: Record<string, HTMLInputElement> = {};
+    // Swatch + verdict for bordercolor, since Freshness silently ignores values
+    // it does not recognise and falls back to its default colour.
+    let colorNote: HTMLElement | null = null;
+    let colorSwatch: HTMLElement | null = null;
+
     for (const field of NAMED_FIELDS) {
         const row = el('div', 'ute-field');
         row.appendChild(el('label', 'ute-label', field.label));
+
         const input = el('input', 'ute-input') as HTMLInputElement;
         input.type = 'text';
         input.value = currentValue(options.call, field.key);
-        row.appendChild(input);
+
+        if (field.key === 'bordercolor') {
+            const wrap = el('div', 'ute-color-row');
+            colorSwatch = el('span', 'ute-swatch');
+            wrap.appendChild(input);
+            wrap.appendChild(colorSwatch);
+            row.appendChild(wrap);
+        } else {
+            row.appendChild(input);
+        }
+
         row.appendChild(el('div', 'ute-hint', field.hint));
+
+        if (field.key === 'bordercolor') {
+            colorNote = el('div', 'ute-hint ute-color-note');
+            row.appendChild(colorNote);
+        }
+
         body.appendChild(row);
         inputs[field.key] = input;
     }
@@ -165,12 +188,30 @@ export function openUptodateModal(options: ModalOptions): void {
         return edits;
     }
 
+    function refreshColor(): void {
+        if (!colorNote || !colorSwatch) return;
+        const value = inputs['bordercolor'].value;
+        const kind = classifyColor(value);
+
+        colorNote.textContent = describeColor(value);
+        colorNote.className = 'ute-hint ute-color-note ute-color-' + kind;
+
+        // The browser is the authority on whether a colour is renderable, so
+        // just hand it the raw value and see whether it sticks.
+        colorSwatch.style.background = '';
+        if (kind !== 'empty' && kind !== 'invalid') {
+            colorSwatch.style.background = value.trim();
+        }
+        colorSwatch.style.visibility = kind === 'empty' ? 'hidden' : 'visible';
+    }
+
     function refresh(): void {
         previewBox.textContent = options.preview(collect());
         const empty = dateInput.value.trim() === '';
         saveBtn.disabled = empty;
         dateError.style.display = empty ? '' : 'none';
         dateError.textContent = empty ? 'A date is required.' : '';
+        refreshColor();
     }
 
     function onKeydown(e: KeyboardEvent): void {

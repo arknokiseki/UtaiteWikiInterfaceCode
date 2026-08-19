@@ -360,6 +360,41 @@ async function savePage(api, page, text, summary) {
     formatversion: 2
   });
 }
+function isHexColor(value) {
+  return /^#?[0-9a-fA-F]{6}$/.test(value.trim());
+}
+function isCssColor(value) {
+  const s = value.trim();
+  if (s === "") return false;
+  if (/[;{}"'<>\\]/.test(s)) return false;
+  const low = s.toLowerCase();
+  if (low.indexOf("expression") !== -1) return false;
+  if (low.indexOf("javascript") !== -1) return false;
+  if (low.indexOf("url") !== -1) return false;
+  if (/^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/.test(s)) return true;
+  if (/^[a-zA-Z][a-zA-Z0-9-]*$/.test(s)) return true;
+  if (/^var\(\s*--[\w-]+\s*(,[^()]*)?\)$/.test(s)) return true;
+  if (/^(rgba?|hsla?)\([\d\s.,%/a-z]*\)$/i.test(s)) return true;
+  return false;
+}
+function classifyColor(value) {
+  if (value.trim() === "") return "empty";
+  if (isHexColor(value)) return "hex";
+  if (isCssColor(value)) return "css";
+  return "invalid";
+}
+function describeColor(value) {
+  switch (classifyColor(value)) {
+    case "empty":
+      return "";
+    case "hex":
+      return "Valid. Fades toward grey as the list ages, reaching full grey at 30 months.";
+    case "css":
+      return "Accepted, and faded in the browser via color-mix(). Requires the Module:Freshness patch — without it this renders as the default colour.";
+    default:
+      return "Not a colour Freshness recognises. It will be ignored and the default colour used instead.";
+  }
+}
 const NAMED_FIELDS = [
   { key: "reason", label: "Reason", hint: 'Overrides the status line. Setting this forces "outdated".' },
   { key: "discography", label: "Discography", hint: "Set to yes when the discography is covered too." },
@@ -440,14 +475,28 @@ function openUptodateModal(options) {
   pinRow.appendChild(evidence);
   body.appendChild(pinRow);
   const inputs = {};
+  let colorNote = null;
+  let colorSwatch = null;
   for (const field of NAMED_FIELDS) {
     const row = el("div", "ute-field");
     row.appendChild(el("label", "ute-label", field.label));
     const input = el("input", "ute-input");
     input.type = "text";
     input.value = currentValue(options.call, field.key);
-    row.appendChild(input);
+    if (field.key === "bordercolor") {
+      const wrap = el("div", "ute-color-row");
+      colorSwatch = el("span", "ute-swatch");
+      wrap.appendChild(input);
+      wrap.appendChild(colorSwatch);
+      row.appendChild(wrap);
+    } else {
+      row.appendChild(input);
+    }
     row.appendChild(el("div", "ute-hint", field.hint));
+    if (field.key === "bordercolor") {
+      colorNote = el("div", "ute-hint ute-color-note");
+      row.appendChild(colorNote);
+    }
     body.appendChild(row);
     inputs[field.key] = input;
   }
@@ -475,12 +524,25 @@ function openUptodateModal(options) {
     edits["force-uptodate"] = pinInput.checked ? "yes" : null;
     return edits;
   }
+  function refreshColor() {
+    if (!colorNote || !colorSwatch) return;
+    const value = inputs["bordercolor"].value;
+    const kind = classifyColor(value);
+    colorNote.textContent = describeColor(value);
+    colorNote.className = "ute-hint ute-color-note ute-color-" + kind;
+    colorSwatch.style.background = "";
+    if (kind !== "empty" && kind !== "invalid") {
+      colorSwatch.style.background = value.trim();
+    }
+    colorSwatch.style.visibility = kind === "empty" ? "hidden" : "visible";
+  }
   function refresh() {
     previewBox.textContent = options.preview(collect());
     const empty = dateInput.value.trim() === "";
     saveBtn.disabled = empty;
     dateError.style.display = empty ? "" : "none";
     dateError.textContent = empty ? "A date is required." : "";
+    refreshColor();
   }
   function onKeydown(e) {
     if (e.key === "Escape") close();

@@ -264,3 +264,39 @@
     color: #ffffff;
     background: @ute-accent;
 }
+
+// --- bordercolor field: swatch + validity note ---
+.ute-color-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.ute-swatch {
+    flex: 0 0 auto;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid @ute-border;
+    border-radius: @ute-radius;
+    // Chequerboard shows through transparent or unrenderable values.
+    background-image:
+        linear-gradient(45deg, @ute-bg-subtle 25%, transparent 25%),
+        linear-gradient(-45deg, @ute-bg-subtle 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, @ute-bg-subtle 75%),
+        linear-gradient(-45deg, transparent 75%, @ute-bg-subtle 75%);
+    background-size: 8px 8px;
+    background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+
+    @{ute-dark-mode} & { border-color: @ute-dark-border; }
+}
+
+.ute-color-note {
+    &:empty { display: none; }
+
+    &.ute-color-invalid {
+        color: @ute-danger;
+        font-weight: 600;
+    }
+
+    &.ute-color-css { color: @ute-warn; }
+}

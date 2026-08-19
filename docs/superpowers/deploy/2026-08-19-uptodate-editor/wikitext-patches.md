@@ -88,6 +88,119 @@ Replace with:
 
 ---
 
+### 1d. Accept `var()`, X11 names and short hex for `bordercolor`
+
+**Problem.** `core.is_hex` accepts only `^#?%x%x%x%x%x%x$`. Anything else is
+silently discarded and the box renders `BASE_DEFAULT` with no warning. Two live
+pages hit this today:
+
+| Page | `bordercolor` | Renders as |
+|---|---|---|
+| Chogakusei | `magenta` | default `#c3e6f9` |
+| Chrono Reverse | `var(--primary-color)` | default `#c3e6f9` |
+
+Lua cannot resolve `var(--x)` or an X11 name to RGB, so it cannot fade them
+numerically. The browser can, via `color-mix()` — Lua computes only the
+percentage, so the ageing curve stays identical to the numeric fade.
+
+Verified against this wiki's sanitizer: `color-mix(...)`, `var(--x)`, X11
+names, `rgb()` and short hex all survive an inline `style` attribute intact,
+while `expression(...)` and attribute-breakout attempts are replaced with
+`/* insecure input */`.
+
+**Hex keeps the existing numeric path unchanged**, so the 26 pages that work
+today render byte-identically. Only the 2 broken ones change.
+
+Add next to `core.is_hex`:
+
+```lua
+-- Conservative allowlist of CSS colour syntaxes we are willing to emit into an
+-- inline style. Anything that could break out of the attribute is rejected
+-- here; MediaWiki's sanitizer is a second line of defence, not the first.
+function core.is_css_color(s)
+  if type(s) ~= "string" then return false end
+  s = s:gsub("^%s+", ""):gsub("%s+$", "")
+  if s == "" then return false end
+  if s:find('[;{}"\'<>\\]') then return false end
+  local low = s:lower()
+  if low:find("expression") or low:find("javascript") or low:find("url") then return false end
+  if s:match("^#%x%x%x$") or s:match("^#%x%x%x%x$")
+     or s:match("^#%x%x%x%x%x%x$") or s:match("^#%x%x%x%x%x%x%x%x$") then return true end
+  if s:match("^%a[%w%-]*$") then return true end                       -- magenta, rebeccapurple
+  if s:match("^var%(%s*%-%-[%w%-]+%s*%)$") then return true end         -- var(--x)
+  if s:match("^var%(%s*%-%-[%w%-]+%s*,[^()]*%)$") then return true end  -- var(--x, fallback)
+  if s:match("^rgba?%([%d%s%.,%%/]*%)$") then return true end
+  if s:match("^hsla?%([%d%s%.,%%/deg]*%)$") then return true end
+  return false
+end
+
+-- Fades an arbitrary CSS colour toward grey in the browser, since Lua cannot
+-- resolve var() or named colours to RGB. The percentage is still computed here,
+-- so the ageing curve matches core.fade exactly.
+function core.mix(css, months)
+  local f = clamp(months / core.FADE_MAX, 0, 1)
+  return "color-mix(in srgb, " .. css .. " " .. round((1 - f) * 100) .. "%, " .. core.GREY .. ")"
+end
+```
+
+Then in `core.decide`, find:
+
+```lua
+  local base = (params.base and core.is_hex(params.base)) and params.base or core.BASE_DEFAULT
+```
+
+Replace with:
+
+```lua
+  -- Hex keeps the exact numeric fade it has always had, so existing pages do
+  -- not shift. Other valid CSS colours are faded in the browser instead.
+  local raw = params.base
+  local base = (raw and core.is_hex(raw)) and raw or core.BASE_DEFAULT
+  local css = nil
+  if raw and not core.is_hex(raw) and core.is_css_color(raw) then css = raw end
+```
+
+And replace the `color` line from step 1b with an explicit branch, placed just
+before the `state` table:
+
+```lua
+  local color
+  if forced then
+    color = core.GREY
+  elseif pinned then
+    color = css or base          -- pinned pages show the colour at full strength
+  elseif css then
+    color = core.mix(css, months)
+  else
+    color = core.fade(base, months)
+  end
+```
+
+then in the `state` table use simply:
+
+```lua
+    color = color,
+```
+
+**Browser support.** `color-mix()` requires Chrome 111+, Firefox 113+, Safari
+16.2+ (all shipped 2023). Older browsers ignore the declaration and fall back to
+whatever `Template:Freshness/styles.css` sets, which degrades gracefully.
+
+### Verification for 1d
+
+1. `{{Uptodate|<3 months ago>|bordercolor=magenta}}` renders a magenta-ish
+   border, not the default blue.
+2. `{{Uptodate|<3 months ago>|bordercolor=var(--primary-color)}}` follows the
+   skin's primary colour.
+3. `{{Uptodate|<3 months ago>|bordercolor=#A97A3F}}` renders **exactly** the same
+   as before this patch — confirm against a saved screenshot or the current
+   value, since this path must not shift.
+4. `{{Uptodate|<40 months ago>|bordercolor=magenta}}` renders grey.
+5. `{{Uptodate|X|bordercolor=red;background:url(//evil.example/x)}}` produces no
+   style injection — MediaWiki replaces it with `/* insecure input */`.
+
+---
+
 ## 2. `Module:Freshness`
 
 In `p.render`, find:
