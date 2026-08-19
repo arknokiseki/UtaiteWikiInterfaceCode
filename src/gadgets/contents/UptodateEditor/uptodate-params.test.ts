@@ -36,6 +36,12 @@ describe('normalizeTemplateName', () => {
   test('strips a Template: prefix and leading colon', () => {
     expect(normalizeTemplateName(':Template:uptodate')).toBe('Uptodate');
   });
+
+  // Live infoboxes are written as `{{Utaite\n<!--Basic Information-->\n|cat=...}}`,
+  // so the name slice up to the first pipe really does contain a comment.
+  test('strips an HTML comment from the name slice', () => {
+    expect(normalizeTemplateName('Utaite\n<!--Basic Information Section-->\n')).toBe('Utaite');
+  });
 });
 
 describe('findUptodateCall', () => {
@@ -87,6 +93,18 @@ describe('findUptodateCall', () => {
   test('does not split on a pipe inside an HTML comment', () => {
     const call = findUptodateCall('{{Uptodate|D<!-- a|b -->|nocat=true}}')!;
     expect(call.params).toHaveLength(2);
+  });
+
+  test('matches when a comment precedes the first pipe', () => {
+    const call = findUptodateCall('{{Uptodate<!-- note -->|February 6, 2026}}');
+    expect(call).not.toBeNull();
+    expect(call!.params[0].value).toBe('February 6, 2026');
+  });
+
+  test('preserves a name-slice comment through a round-trip', () => {
+    const input = '{{Uptodate<!-- note -->|Old}}';
+    expect(applyEdits(input, {})).toBe(input);
+    expect(applyEdits(input, { date: 'New' })).toBe('{{Uptodate<!-- note -->|New}}');
   });
 
   test('reports offsets that bound the call', () => {

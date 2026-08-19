@@ -55,13 +55,20 @@ const TARGET_NAME = 'Uptodate';
 const DATE_ALIAS = 'updated-at';
 
 /**
- * Applies MediaWiki title normalization: underscores become spaces, the name
- * is trimmed and internally collapsed, an optional leading colon and
- * `Template:` prefix are stripped, and only the FIRST character is
- * case-folded. Interior case is significant, so `UpToDate` != `Uptodate`.
+ * Applies MediaWiki title normalization: HTML comments are stripped,
+ * underscores become spaces, the name is trimmed and internally collapsed,
+ * an optional leading colon and `Template:` prefix are stripped, and only the
+ * FIRST character is case-folded. Interior case is significant, so
+ * `UpToDate` != `Uptodate`.
+ *
+ * Comment stripping is not cosmetic: live infoboxes are written as
+ * `{{Utaite\n<!--Basic Information Section-->\n|cat=...}}`, so the name slice
+ * up to the first top-level pipe genuinely contains a comment. MediaWiki
+ * removes comments before resolving the name, and so must we.
  */
 export function normalizeTemplateName(name: string): string {
-    let n = name.replace(/_/g, ' ').trim().replace(/\s+/g, ' ');
+    let n = name.replace(/<!--[\s\S]*?-->/g, '');
+    n = n.replace(/_/g, ' ').trim().replace(/\s+/g, ' ');
     n = n.replace(/^:\s*/, '');
     n = n.replace(/^[Tt]emplate\s*:\s*/, '');
     if (n.length === 0) return n;

@@ -25,6 +25,13 @@ describe('extractStatusParam', () => {
     expect(raw).toBe('{{Graduated}} as Utaite<br/>\n{{Active}} as pro');
   });
 
+  // Real live articles (Chomaiyo, Moldio, Tsukimi) open the infobox with a
+  // section comment before the first parameter.
+  test('reads status when a comment precedes the first parameter', () => {
+    const text = '{{Utaite\n<!--Basic Information Section-->\n|cat = Utaite\n|status = {{Active}}\n}}';
+    expect(extractStatusParam(text)).toBe('{{Active}}');
+  });
+
   test('returns null when there is no status parameter', () => {
     expect(extractStatusParam('{{Utaite\n|gender=male\n}}')).toBeNull();
   });
