@@ -1,0 +1,89 @@
+== Overview ==
+
+Thin Scribunto glue between the wiki and [[Module:Freshness/core]]. It marshals template arguments (or a <code>/Songs</code> subpage's wikitext) into <code>core.decide</code>, builds the footer HTML that needs wikitext expansion, and returns the finished box.
+
+All of the freshness logic — thresholds, colour fading, wording, categories — lives in [[Module:Freshness/core]], which has no <code>mw</code> dependency and can therefore be tested outside the wiki. This module holds everything that '''does''' need <code>mw</code>.
+
+Invoked by {{T|Freshness}}, which in turn is what {{T|Uptodate}} forwards to.
+
+== Public Functions ==
+
+=== <code>render(frame)</code> ===
+
+Reads the parent frame's arguments and renders the box.
+
+'''Parameters:'''
+* <code>frame</code> (table): MediaWiki frame object. Arguments are read from <code>frame:getParent().args</code>, i.e. the arguments given to {{T|Freshness}}, not to <code>#invoke</code>.
+
+'''Returns:'''
+* <code>string</code>: the box HTML, followed by the expanded category wikitext
+
+'''Usage in wikitext:'''
+<pre>
+{{#invoke:Freshness|render}}
+</pre>
+
+'''Argument mapping'''
+
+{| class="wikitable"
+! Template argument !! Passed to core as !! Notes
+|-
+| <code>1</code> || <code>date</code> ||
+|-
+| <code>base</code>, else <code>bordercolor</code> || <code>base</code> || <code>base</code> wins when non-empty
+|-
+| <code>force-outdated=yes</code> or <code>status=outdated</code> || <code>force</code> (boolean) ||
+|-
+| <code>force-uptodate=yes</code> || <code>pin</code> (boolean) ||
+|-
+| <code>reason</code> || <code>reason</code> || any non-empty value also forces outdated
+|-
+| <code>discography</code> || <code>discography</code> ||
+|-
+| <code>nocat</code> || <code>nocat</code> ||
+|-
+| <code>needrom</code> || <code>needrom</code> ||
+|-
+| <code>customlatesteditor</code> || <code>customlatesteditor</code> ||
+|-
+| <code>lastedittext-nolink</code> || <code>lastedittext-nolink</code> ||
+|}
+
+=== <code>fromSubpage(frame)</code> ===
+
+Renders the box for the current page's <code>/Songs</code> subpage by reading the {{T|Uptodate}} or {{T|Outdated}} call out of that subpage's wikitext.
+
+'''Parameters:'''
+* <code>frame</code> (table): MediaWiki frame object
+
+'''Returns:'''
+* <code>string</code>: the rendered box, or an empty string when the subpage does not exist or contains no recognised call
+
+'''Note:''' {{T|Uptodate/sync}} does '''not''' use this function. It invokes [[Module:Uptodate]] instead, which parses the subpage separately. This function is the equivalent path inside the Freshness module.
+
+== Internal Helpers ==
+
+=== <code>now_table()</code> ===
+Returns today's date as <code>{ year, month, day }</code> in '''UTC''' (<code>os.date('!*t')</code>), which is what <code>core.decide</code> compares the supplied date against.
+
+=== <code>meta_html(frame, params)</code> ===
+Builds the <code>freshness-meta</code> footer — the "This page was last edited by … (Purge)" line. It is produced here rather than in core because it needs <code>frame:preprocess</code> to expand <code><nowiki>{{REVISIONUSER}}</nowiki></code>, <code><nowiki>{{fullurl:}}</nowiki></code> and friends.
+
+Honours <code>customlatesteditor</code> (replaces the editor name) and <code>lastedittext-nolink=true</code> (renders "last edited" as plain text rather than a diff link).
+
+=== <code>emit(frame, params)</code> ===
+Runs <code>core.decide</code>, then concatenates <code>core.render</code> with the '''expanded''' output of <code>core.categories</code>.
+
+The <code>frame:preprocess</code> around the categories is load-bearing: <code>#invoke</code> output is not re-parsed for template calls, and the category wikitext uses {{T|ForAllUtaite}}. Without the explicit expansion the page would display the literal text <code><nowiki>{{ForAllUtaite|...}}</nowiki></code> instead of categorizing.
+
+== Dependencies ==
+* [[Module:Freshness/core]] — all decision and rendering logic
+* <code>mw.title</code> — resolving the <code>/Songs</code> subpage in <code>fromSubpage</code>
+* <code>frame:preprocess()</code> — expanding the footer and the category wikitext
+* {{T|ForAllUtaite}} — chooses the utaite or youtaite category
+
+== See also ==
+* {{T|Freshness}} — the template that invokes this module
+* {{T|Uptodate}} — the wrapper editors normally use
+* [[Module:Freshness/core]] — thresholds, colour handling and wording
+* [[Module:Uptodate]] — the separate parser behind {{T|Uptodate/sync}}
