@@ -24,7 +24,9 @@ Executed under a real Lua VM (fengari), not just eyeballed:
 - `magenta` → `color-mix(in srgb, magenta 97%, #9a9a9a)`
 - `var(--primary-color)` → `color-mix(in srgb, var(--primary-color) 80%, #9a9a9a)`
 - unrecognised value → `#c2e3f6`, i.e. the default, exactly as today.
-- pinned → colour at full strength, `tier=fresh meter=100 category=up-to-date`.
+- pinned -> header label reads **"Marked as completed"** instead of "Up to date";
+  body line stays the ordinary "Song list last updated <date>."; colour, icon,
+  meter and category are untouched (`tier=fresh meter=100 category=up-to-date`).
 - forced and undated → `#9a9a9a`.
 - `core.render` produces the expected `border-color:` for every path.
 

@@ -588,6 +588,7 @@ function openUptodateModal(options) {
   if (window.uptodateEditorLoaded) return;
   window.uptodateEditorLoaded = true;
   const SUMMARY = "Update song list freshness via UptodateEditor";
+  const BUTTON_LABEL = "Update Freshness";
   function isPermitted() {
     const groups = mw.config.get("wgUserGroups") || [];
     const name = mw.config.get("wgUserName");
@@ -598,7 +599,7 @@ function openUptodateModal(options) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "ute-open";
-    button.textContent = "Update";
+    button.textContent = BUTTON_LABEL;
     button.setAttribute("aria-label", "Update song list freshness");
     return button;
   }
@@ -650,7 +651,7 @@ function openUptodateModal(options) {
       window.alert("UptodateEditor failed: " + (e && e.error && e.error.info || "unknown error."));
     } finally {
       button.disabled = false;
-      button.textContent = "Update";
+      button.textContent = BUTTON_LABEL;
     }
   }
   function init() {

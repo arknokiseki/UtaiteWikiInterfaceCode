@@ -65,26 +65,41 @@ Replace with:
 `category` already reads `(tier == "fresh") and "up-to-date" or "outdated"`, so
 it follows the pinned tier automatically — leave it alone.
 
-### 1c. Add a pinned message in `core.render`
+### 1c. Show the pinned state in the box header, not the body
 
-Find:
+A pinned list should read at a glance, so the wording replaces the header label
+(`Up to date`) rather than appending a sentence to the body line.
+
+Add beside `core.LABELS`:
 
 ```lua
-  elseif state.forced then
-    line = "This song list is flagged as outdated."
-  else
+-- Header label for a pinned list. It replaces "Up to date" in the box header
+-- rather than adding a sentence to the body, so the status reads at a glance.
+core.LABEL_PINNED = "Marked as completed"
+```
+
+Then in the `state` table, find:
+
+```lua
+    tier = tier, label = core.LABELS[tier], icon = core.ICONS[tier],
 ```
 
 Replace with:
 
 ```lua
-  elseif state.forced then
-    line = "This song list is flagged as outdated."
-  elseif state.pinned then
-    line = "Song list last updated <b>" .. esc_none(state.date)
-        .. "</b>. Pinned as complete — this singer is no longer active."
-  else
+    tier = tier,
+    label = pinned and core.LABEL_PINNED or core.LABELS[tier],
+    icon = core.ICONS[tier],
 ```
+
+`core.render` needs **no** pinned branch. The body line stays the ordinary
+"Song list last updated **date**.", and the icon, meter, category and colour are
+all deliberately left alone.
+
+> **If you already applied an earlier version of this step** that added an
+> `elseif state.pinned then` branch to `core.render`, remove it — the wording
+> lives in the header now, and keeping both would state it twice. The complete
+> files in `lua/` already have this correct.
 
 ---
 

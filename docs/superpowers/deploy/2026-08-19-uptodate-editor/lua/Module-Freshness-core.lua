@@ -8,6 +8,9 @@ core.FADE_MAX     = 30
 core.FRESH_MAX    = 6
 core.AGING_MAX    = 18
 core.LABELS = { fresh = "Up to date", aging = "Slightly outdated", outdated = "Outdated" }
+-- Header label for a pinned list. It replaces "Up to date" in the box header
+-- rather than adding a sentence to the body, so the status reads at a glance.
+core.LABEL_PINNED = "Marked as completed"
 core.ICONS  = { fresh = "fa-circle-check", aging = "fa-clock", outdated = "fa-triangle-exclamation" }
 core.CTA    = "Spot missing covers? Help by updating the list."
 
@@ -167,7 +170,9 @@ function core.decide(params, now)
 
   local state = {
     base = base, dated = dated, forced = forced, months = months,
-    tier = tier, label = core.LABELS[tier], icon = core.ICONS[tier],
+    tier = tier,
+    label = pinned and core.LABEL_PINNED or core.LABELS[tier],
+    icon = core.ICONS[tier],
     pinned = pinned,
     color = color,
     meter = forced and 3 or (pinned and 100 or core.meter(months)),
@@ -190,9 +195,6 @@ function core.render(state, meta_html)
     line = "Last updated <b>" .. esc_none(state.date) .. "</b>. Flagged as outdated."
   elseif state.forced then
     line = "This song list is flagged as outdated."
-  elseif state.pinned then
-    line = "Song list last updated <b>" .. esc_none(state.date)
-        .. "</b>. Pinned as complete — this singer is no longer active."
   else
     line = "Song list last updated <b>" .. esc_none(state.date) .. "</b>."
   end

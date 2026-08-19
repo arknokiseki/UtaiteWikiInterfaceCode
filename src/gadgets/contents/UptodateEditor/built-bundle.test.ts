@@ -89,7 +89,8 @@ test('E2E: injects the button into the live .freshness-cta', () => {
   install('Kogeinu', { Kogeinu: ARTICLE, 'Kogeinu/Songs': SONGS }, ['user', 'autoconfirmed'], 'Ed');
   const btn = document.querySelector('.freshness-cta .ute-open') as HTMLButtonElement;
   expect(btn).not.toBeNull();
-  expect(btn.textContent).toBe('Update');
+  // Label back-ported from prod, where it was edited by hand after deploy.
+  expect(btn.textContent).toBe('Update Freshness');
 });
 
 test('E2E: no button for anonymous users', () => {
