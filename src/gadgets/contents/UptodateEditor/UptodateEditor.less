@@ -1,0 +1,266 @@
+// Mirrors ModalBuilder.less tokens. Re-declared, never @imported:
+// cross-gadget @import breaks the build (see commit e05de9f).
+@ute-accent: #6366f1;
+@ute-radius: 6px;
+@ute-radius-lg: 12px;
+@ute-transition: 0.15s ease;
+
+@ute-text-primary: #18181b;
+@ute-text-muted: #71717a;
+@ute-bg: #ffffff;
+@ute-bg-subtle: rgba(0, 0, 0, 0.04);
+@ute-border: rgba(0, 0, 0, 0.1);
+@ute-danger: #ef4444;
+@ute-warn: #b45309;
+
+@ute-dark-text-primary: #fafafa;
+@ute-dark-text-muted: #a1a1aa;
+@ute-dark-bg: #1f1f23;
+@ute-dark-bg-subtle: rgba(255, 255, 255, 0.06);
+@ute-dark-border: rgba(255, 255, 255, 0.1);
+
+@ute-dark-mode: ~'.skin-theme-clientpref-night';
+
+// --- Trigger button, inside the freshness box ---
+.ute-open {
+    display: inline-block;
+    margin-left: 0.6em;
+    padding: 2px 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: @ute-text-primary;
+    background: @ute-bg-subtle;
+    border: 1px solid @ute-border;
+    border-radius: @ute-radius;
+    cursor: pointer;
+    transition: background @ute-transition, border-color @ute-transition;
+
+    &:hover:not(:disabled) {
+        border-color: @ute-accent;
+        background: fade(@ute-accent, 10%);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: default;
+    }
+
+    @{ute-dark-mode} & {
+        color: @ute-dark-text-primary;
+        background: @ute-dark-bg-subtle;
+        border-color: @ute-dark-border;
+    }
+}
+
+// --- Overlay and shell ---
+.ute-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ute-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 520px;
+    max-height: 90vh;
+    color: @ute-text-primary;
+    background: @ute-bg;
+    border-radius: @ute-radius-lg;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    @{ute-dark-mode} & {
+        color: @ute-dark-text-primary;
+        background: @ute-dark-bg;
+    }
+}
+
+.ute-header {
+    position: relative;
+    padding: 1rem 1.25rem 0.75rem;
+    border-bottom: 1px solid @ute-border;
+
+    @{ute-dark-mode} & { border-color: @ute-dark-border; }
+}
+
+.ute-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border: 0;
+}
+
+.ute-subtitle {
+    margin-top: 0.15rem;
+    font-size: 0.8rem;
+    color: @ute-text-muted;
+
+    @{ute-dark-mode} & { color: @ute-dark-text-muted; }
+}
+
+.ute-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.9rem;
+    padding: 0 0.3rem;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: @ute-text-muted;
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    &:hover { color: @ute-danger; }
+}
+
+.ute-body {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    overflow-y: auto;
+}
+
+// --- Fields ---
+.ute-field { margin-bottom: 1rem; }
+
+.ute-label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.ute-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem 0.55rem;
+    font-size: 0.9rem;
+    color: inherit;
+    background: transparent;
+    border: 1px solid @ute-border;
+    border-radius: @ute-radius;
+
+    &:focus {
+        outline: none;
+        border-color: @ute-accent;
+        box-shadow: 0 0 0 2px fade(@ute-accent, 20%);
+    }
+
+    @{ute-dark-mode} & { border-color: @ute-dark-border; }
+}
+
+.ute-hint {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: @ute-text-muted;
+
+    @{ute-dark-mode} & { color: @ute-dark-text-muted; }
+}
+
+.ute-error {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: @ute-danger;
+}
+
+.ute-check {
+    display: flex;
+    gap: 0.45rem;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+// --- Detection evidence ---
+.ute-evidence {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    font-size: 0.78rem;
+    border-left: 3px solid @ute-border;
+    border-radius: 0 @ute-radius @ute-radius 0;
+    background: @ute-bg-subtle;
+
+    @{ute-dark-mode} & {
+        background: @ute-dark-bg-subtle;
+        border-color: @ute-dark-border;
+    }
+
+    &.ute-confident { border-left-color: @ute-accent; }
+    &.ute-ambiguous,
+    &.ute-unknown { border-left-color: @ute-warn; }
+}
+
+.ute-raw {
+    margin-top: 0.35rem;
+    word-break: break-word;
+
+    code { white-space: pre-wrap; }
+}
+
+.ute-raw-label { font-weight: 600; }
+
+// --- Preview ---
+.ute-preview {
+    max-height: 8rem;
+    margin: 0;
+    padding: 0.5rem 0.65rem;
+    overflow: auto;
+    font-size: 0.78rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: @ute-bg-subtle;
+    border-radius: @ute-radius;
+
+    @{ute-dark-mode} & { background: @ute-dark-bg-subtle; }
+}
+
+// --- Footer ---
+.ute-footer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid @ute-border;
+
+    @{ute-dark-mode} & { border-color: @ute-dark-border; }
+}
+
+.ute-status {
+    flex: 1;
+    font-size: 0.78rem;
+    color: @ute-text-muted;
+
+    &.ute-status-error { color: @ute-danger; }
+}
+
+.ute-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    border-radius: @ute-radius;
+    cursor: pointer;
+    transition: opacity @ute-transition;
+
+    &:disabled { opacity: 0.55; cursor: default; }
+}
+
+.ute-btn-secondary {
+    color: inherit;
+    background: transparent;
+    border-color: @ute-border;
+
+    @{ute-dark-mode} & { border-color: @ute-dark-border; }
+}
+
+.ute-btn-primary {
+    color: #ffffff;
+    background: @ute-accent;
+}
