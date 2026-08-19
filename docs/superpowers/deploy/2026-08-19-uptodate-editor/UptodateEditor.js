@@ -162,7 +162,12 @@ function serialize(rawName, params) {
 function applyEdits(wikitext, edits) {
   const call = findUptodateCall(wikitext);
   if (!call) return null;
-  const params = call.params.map((p) => ({ ...p }));
+  const params = call.params.map((p) => ({
+    raw: p.raw,
+    name: p.name,
+    index: p.index,
+    value: p.value
+  }));
   const setNamed = (name, value) => {
     const idx = params.findIndex((p) => p.name === name);
     if (value === null) {

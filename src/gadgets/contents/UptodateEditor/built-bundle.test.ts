@@ -63,6 +63,28 @@ if (!built) {
 
 maybe('built bundle', () => {
 
+/**
+ * MediaWiki's ResourceLoader JavaScriptMinifier rejects object spread/rest
+ * with `Parse error: Unexpected: ...`, and refuses to serve the whole gadget.
+ * It accepts everything else we use — arrow functions, const, async/await, and
+ * even ES2020 optional chaining (Gadget-Datatables.js ships `?.` and parses).
+ *
+ * This bit us once: `{ ...p }` shipped and broke the live gadget. Vite's
+ * es2018 target keeps object spread as-is, so nothing upstream catches it.
+ */
+test('bundle contains no object spread or rest, which MediaWiki cannot parse', () => {
+  const source = fs.readFileSync(BUILT, 'utf8');
+  const offenders = source
+    .split('\n')
+    .map((line, i) => ({ line, n: i + 1 }))
+    // `{ ...x }` and `{ a, ...rest }` — but not rest params `(...args)`,
+    // which MediaWiki parses fine and several live gadgets already use.
+    .filter(({ line }) => /\{[^}\n]*\.\.\.[A-Za-z_$]/.test(line))
+    .map(({ line, n }) => n + ': ' + line.trim());
+
+  expect(offenders).toEqual([]);
+});
+
 test('E2E: injects the button into the live .freshness-cta', () => {
   install('Kogeinu', { Kogeinu: ARTICLE, 'Kogeinu/Songs': SONGS }, ['user', 'autoconfirmed'], 'Ed');
   const btn = document.querySelector('.freshness-cta .ute-open') as HTMLButtonElement;

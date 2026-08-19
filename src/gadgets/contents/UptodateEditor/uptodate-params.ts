@@ -216,7 +216,17 @@ export function applyEdits(wikitext: string, edits: UptodateEdits): string | nul
     const call = findUptodateCall(wikitext);
     if (!call) return null;
 
-    const params = call.params.map(p => ({ ...p }));
+    // Cloned field-by-field rather than with object spread: MediaWiki's
+    // ResourceLoader JavaScriptMinifier rejects `{...x}` with
+    // "Parse error: Unexpected: ...", even on MW 1.45. Other modern syntax
+    // (arrow functions, optional chaining, async/await) is fine — object
+    // spread specifically is not. Do not "simplify" this back.
+    const params: UptodateParam[] = call.params.map(p => ({
+        raw: p.raw,
+        name: p.name,
+        index: p.index,
+        value: p.value
+    }));
 
     const setNamed = (name: string, value: string | null): void => {
         const idx = params.findIndex(p => p.name === name);
