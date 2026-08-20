@@ -165,7 +165,6 @@ gadgets:
         - LinkPreview.less
       resourceLoader:
         default: true
-        hidden: true
     ShowbyGroup:
       description: "Show content by user group."
       authors:
@@ -234,6 +233,24 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+    UptodateEditor:
+      description: "Button + modal to update {{Uptodate}} parameters on song lists."
+      authors:
+        - makudoumee
+      code:
+        - UptodateEditor.ts
+        - UptodateEditor.less
+      resourceLoader:
+        default: true
+        hidden: true
+        actions:
+          - view
+        namespaces:
+          - 0
+        dependencies:
+          - mediawiki.api
+          - mediawiki.util
+          - mediawiki.user
 
   utility:
     getuserprofile:
@@ -488,8 +505,8 @@ gadgets:
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
       resourceLoader:
-        default: true
-        hidden: true
+        default: false
+        hidden: false
     massdelete:
       description: "Mass Delete tool (admin-only)."
       code:
@@ -501,8 +518,8 @@ gadgets:
       rights:
         - delete
       resourceLoader:
-        default: true
-        hidden: true
+        default: false
+        hidden: false
     massupload:
       description: "Mass Upload tool (admin-only)."
       code:
@@ -512,8 +529,8 @@ gadgets:
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
       resourceLoader:
-        default: true
-        hidden: true
+        default: false
+        hidden: false
     masscategorization:
       description: "Mass Categorization tool (admin-only)."
       code:
@@ -523,5 +540,5 @@ gadgets:
         - ext.gadget.ModalBuilder
         - ext.gadget.ToolsMenu
       resourceLoader:
-        default: true
-        hidden: true
+        default: false
+        hidden: false

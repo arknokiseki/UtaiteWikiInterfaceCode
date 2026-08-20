@@ -1,0 +1,124 @@
+== Overview ==
+
+The decision and rendering logic behind the song-list freshness box. This module is '''pure''': it never touches <code>mw</code>, takes the current date as an argument rather than reading the clock, and returns strings. That makes it testable outside the wiki, and keeps every threshold and wording choice in one readable place.
+
+It is required by [[Module:Freshness]], which supplies everything that does need <code>mw</code>.
+
+== Constants ==
+
+{| class="wikitable"
+! Name !! Value !! Meaning
+|-
+| <code>BASE_DEFAULT</code> || <code>#c3e6f9</code> || Colour used when none is given, or when the given one is unusable
+|-
+| <code>GREY</code> || <code>#9a9a9a</code> || Colour everything fades toward
+|-
+| <code>FRESH_MAX</code> || <code>6</code> || Under this many months, the list is "Up to date"
+|-
+| <code>AGING_MAX</code> || <code>18</code> || Under this many months, "Slightly outdated"; at or above, "Outdated"
+|-
+| <code>FADE_MAX</code> || <code>30</code> || Months until the colour is fully grey
+|-
+| <code>LABELS</code> || table || Header text per tier
+|-
+| <code>LABEL_PINNED</code> || <code>Marked as completed</code> || Header text used instead of "Up to date" when the list is pinned
+|-
+| <code>ICONS</code> || table || Font Awesome class per tier
+|-
+| <code>CTA</code> || string || The "Spot missing covers?" call to action
+|}
+
+== Public Functions ==
+
+=== <code>decide(params, now)</code> ===
+
+Works out the complete state of the box. This is where every judgement is made; <code>render</code> only formats the result.
+
+'''Parameters:'''
+* <code>params</code> (table): <code>date</code>, <code>base</code>, <code>force</code> (boolean), <code>pin</code> (boolean), <code>reason</code>, <code>discography</code>, <code>nocat</code>, <code>needrom</code>
+* <code>now</code> (table): <code>{ year =, month =, day = }</code>
+
+'''Returns:''' a state table containing <code>tier</code>, <code>label</code>, <code>icon</code>, <code>color</code>, <code>meter</code>, <code>category</code>, <code>months</code>, <code>dated</code>, <code>forced</code>, <code>pinned</code> and the passthrough fields.
+
+'''Precedence''' — these are checked in order, and the first match wins:
+# '''Forced''' — <code>force</code> is true, a <code>reason</code> was given, or the date is missing or unparseable. Tier is <code>outdated</code>, colour is flat grey, meter is 3%.
+# '''Pinned''' — <code>pin</code> is true and the date parsed. Tier is <code>fresh</code>, the header reads "Marked as completed", the meter is full and the colour does '''not''' fade.
+# '''By age''' — <code>classify(months)</code> decides between fresh, aging and outdated.
+
+An explicit outdated flag therefore always beats a pin.
+
+=== <code>render(state, meta_html)</code> ===
+
+Turns a state table into the box markup. <code>meta_html</code> is the pre-expanded footer from [[Module:Freshness]], and may be an empty string.
+
+The description line varies:
+* a <code>reason</code>, if one was given
+* "Last updated '''date'''. Flagged as outdated." when forced with a date
+* "This song list is flagged as outdated." when forced without one
+* "Song list last updated '''date'''." otherwise — including when pinned, since the pinned wording lives in the header instead
+
+When <code>discography</code> is set, "song list" in that line is widened to "song list and discography".
+
+=== <code>categories(state)</code> ===
+
+Returns the category wikitext, or an empty string when <code>nocat</code> is set. Uses {{T|ForAllUtaite}} to pick the utaite or youtaite variant, and appends [[:Category:Songlists requiring romanization]] when <code>needrom</code> is set.
+
+The caller must expand this with <code>frame:preprocess</code>; see [[Module:Freshness]].
+
+=== <code>parse_date(s)</code> ===
+
+Returns <code>year, month, day</code>, or <code>nil</code> when nothing matches. Accepted forms:
+* <code>2023年10月31日</code>
+* <code>2023-10-31</code>, <code>2023/10/31</code>, <code>2023.10.31</code>
+* <code>October 31, 2023</code> — month name full or abbreviated, comma and ordinal suffix optional
+
+=== Colour helpers ===
+
+{| class="wikitable"
+! Function !! Purpose
+|-
+| <code>is_hex(s)</code> || True only for exactly 6 hex digits, with or without a leading <code>#</code>
+|-
+| <code>is_css_color(s)</code> || True for any other CSS colour safe to place in an inline style: short hex, X11 names, <code>var(--x)</code>, <code>rgb()</code>, <code>hsl()</code>. Rejects anything containing <code>;</code> <code>{}</code> <code>&lt;&gt;</code> quotes or a backslash, and anything mentioning <code>expression</code>, <code>javascript</code> or <code>url</code>
+|-
+| <code>fade(hex, months)</code> || Blends a hex colour toward grey, reaching full grey at <code>FADE_MAX</code>
+|-
+| <code>mix(css, months)</code> || Emits <code>color-mix(in srgb, …)</code> so the browser performs the same fade for colours Lua cannot resolve to RGB
+|-
+| <code>hex_to_rgb</code>, <code>rgb_to_hex</code> || Conversion helpers used by <code>fade</code>
+|}
+
+Hex is faded in Lua; everything else is faded by the browser. Values that satisfy neither test fall back to <code>BASE_DEFAULT</code>.
+
+=== Other helpers ===
+
+{| class="wikitable"
+! Function !! Purpose
+|-
+| <code>classify(months)</code> || Maps a month count to <code>fresh</code>, <code>aging</code> or <code>outdated</code>
+|-
+| <code>months_between(y1,m1,d1,y2,m2,d2)</code> || Whole months elapsed, counting a partial month as incomplete
+|-
+| <code>meter(months)</code> || Progress-bar percentage, floored at 3% so the bar never vanishes
+|-
+| <code>ago(months)</code> || Human phrasing such as "this month", "5 months ago", "2 years 9 mo ago"
+|-
+| <code>split_params(body)</code> || Splits a template body into positional and named parameters
+|-
+| <code>from_subpage_params(text)</code> || Finds a {{T|Outdated}} or {{T|Uptodate}} call in subpage wikitext and returns its parameters, forcing outdated for the former
+|}
+
+== Technical Considerations ==
+
+=== Limitations ===
+* <code>split_params</code> and <code>from_subpage_params</code> match with a simple pattern and cannot handle a nested <code><nowiki>{{...}}</nowiki></code> inside a parameter value
+* <code>from_subpage_params</code> reads only the first recognised call on the page
+* <code>mix</code> relies on CSS <code>color-mix()</code>, which needs a browser from 2023 or later; older browsers fall back to the stylesheet default
+
+=== Dependencies ===
+None. This module deliberately requires nothing, not even <code>mw</code>.
+
+== See also ==
+* [[Module:Freshness]] — the frame glue that calls this module
+* {{T|Freshness}} — the template that renders the box
+* [[Template:Freshness/styles.css]] — the box styling

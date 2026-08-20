@@ -1,0 +1,1 @@
+* UptodateEditor[ResourceLoader|default|hidden|dependencies=mediawiki.api,mediawiki.util,mediawiki.user|actions=view|namespaces=0]|UptodateEditor.js|UptodateEditor.css
