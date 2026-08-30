@@ -1,4 +1,4 @@
-<includeonly>{{#invoke:Album|main}}{{Main other|[[Category:Singers with Albums or Singles]]|}}{{#ifeq:{{{type|}}}|collab|{{#invoke:Bucket|put
+<includeonly>{{#invoke:Album|main}}{{Main other|[[Category:Singers with Albums or Singles]]|}}{{#if:{{{imagealt3|}}}|{{Main other|[[Category:AlbumType2-imagealt3]]|}}|}}{{#ifeq:{{{type|}}}|collab|{{#invoke:Bucket|put
 |collab_albums
 |album_name = {{#invoke:Sanitize|strip_links|{{{albumtitle|}}}}}
 |album_display = {{#invoke:Sanitize|strip_links|{{{albumtitle|}}}}}

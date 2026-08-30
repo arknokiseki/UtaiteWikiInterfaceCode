@@ -39,6 +39,25 @@ const TARGETS: Target[] = [
     mode: 'replace',
     summary: 'Album: embed crossfades and Spotify, drop thead/tbody',
   },
+  // ORDER MATTERS. AlbumType2 must land before Track.
+  //
+  // Module:Album passes pre-migration <tr> output straight through, so the new
+  // template renders correctly while the old {{Track}} is still live. The
+  // reverse is not true: the old AlbumType2 splices whatever |track= holds
+  // into a <table> expecting rows, so records land as visible separator text.
+  // That is exactly how the first attempt broke all 166 pages.
+  {
+    page: 'Template:AlbumType2',
+    file: 'wiki/templates/AlbumType2.wikitext',
+    mode: 'replace',
+    summary: 'Album: render via Module:Album; Bucket collab index unchanged',
+  },
+  {
+    page: 'Template:Track',
+    file: 'wiki/templates/Track.wikitext',
+    mode: 'replace',
+    summary: 'Album: emit delimited records instead of <tr> markup',
+  },
   {
     page: 'MediaWiki:Gadget-citizen-templates.css',
     file: 'dist/gadgets/styling/citizen/citizen-templates.css',

@@ -173,9 +173,52 @@ Template:AlbumType2
     margin-top: 2px;
 }
 
+/* Small tracklists deliberately skip DataTables, so they no longer inherit
+   its chrome. These rules stand in for it: without them a gated table falls
+   back to bare wikitable and loses its box. */
 .album-track-table {
     width: 100%;
     table-layout: fixed;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 8px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.album-track-table th,
+.album-track-table td {
+    padding: 8px 12px;
+    border: 0;
+    border-bottom: 1px solid var(--secondary-text-color);
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.album-track-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.album-track-head th {
+    font-size: .85em;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    background-color: transparent;
+}
+
+.album-track-table tbody tr:hover td {
+    background-color: var(--background-color-quiet--hover, rgba(127, 127, 127, .08));
+}
+
+/* With table-layout: fixed and no widths every column is equal, which starves
+   the title. The spine guarantees column 2 is always Title, so it can be sized
+   here without the module needing to emit per-column widths. */
+.album-track-table th:nth-child(2),
+.album-track-table td:nth-child(2) {
+    width: 38%;
 }
 
 .album-track-n {
