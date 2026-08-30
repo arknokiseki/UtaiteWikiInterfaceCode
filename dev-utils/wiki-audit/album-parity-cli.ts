@@ -45,9 +45,6 @@ async function main(): Promise<void> {
     const label = `[${i + 1}/${titles.length}] ${page}`;
 
     try {
-      const current = await client.query({ action: 'parse', page, prop: 'text' });
-      await sleep(DELAY_MS);
-
       const source = await client.query({
         action: 'query',
         prop: 'revisions',
@@ -56,6 +53,20 @@ async function main(): Promise<void> {
         titles: page,
       });
       const wikitext: string = source.query.pages[0].revisions[0].slots.main.content;
+
+      // Both sides are rendered with action=parse&text=, so the template is
+      // the only variable. Comparing against action=parse&page= instead makes
+      // link display text differ in first-letter case — reproducible with the
+      // live template on both sides, so it is a render-mode artifact and not
+      // a template difference. See .scratch/diag4.ts.
+      const current = await client.query({
+        action: 'parse',
+        title: page,
+        text: wikitext,
+        prop: 'text',
+        contentmodel: 'wikitext',
+      });
+      await sleep(DELAY_MS);
 
       const candidate = await client.query({
         action: 'parse',

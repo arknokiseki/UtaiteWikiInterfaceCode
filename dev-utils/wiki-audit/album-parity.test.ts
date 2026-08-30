@@ -30,7 +30,7 @@ describe('album parity', () => {
   });
 
   it('strips markup from titles so styling changes do not register', () => {
-    const html = `<table><tbody><tr><td>1</td>
+    const html = `<table class="album-track-table"><tbody><tr><td>1</td>
       <td><a href="/wiki/Melt">Melt</a></td>
     </tr></tbody></table>`;
     expect(extractTrackFacts(html).titles).toEqual(['Melt']);
@@ -39,14 +39,14 @@ describe('album parity', () => {
   it('ignores decoration the new renderer folds into the title cell', () => {
     // The old markup carried info in its own Details column and had no credit
     // line at all, so counting these would flag every track as renamed.
-    const oldCell = `<table><tbody><tr><td>1</td><td>Melt</td><td>TV size</td></tr></tbody></table>`;
-    const newCell = `<table><tbody><tr><td>1</td><td>Melt<span class="album-track-info">TV size</span><span class="album-track-credit">lyrics, music: ryo</span></td><td>ryo</td></tr></tbody></table>`;
+    const oldCell = `<table class="album-track-table"><tbody><tr><td>1</td><td>Melt</td><td>TV size</td></tr></tbody></table>`;
+    const newCell = `<table class="album-track-table"><tbody><tr><td>1</td><td>Melt<span class="album-track-info">TV size</span><span class="album-track-credit">lyrics, music: ryo</span></td><td>ryo</td></tr></tbody></table>`;
     expect(extractTrackFacts(newCell).titles).toEqual(['Melt']);
     expect(compare(extractTrackFacts(oldCell), extractTrackFacts(newCell))).toEqual([]);
   });
 
   it('ignores a group badge folded into the title cell', () => {
-    const html = `<table><tbody><tr><td>1</td><td>Melt <span class="album-track-badge">Type A</span></td></tr></tbody></table>`;
+    const html = `<table class="album-track-table"><tbody><tr><td>1</td><td>Melt <span class="album-track-badge">Type A</span></td></tr></tbody></table>`;
     expect(extractTrackFacts(html).titles).toEqual(['Melt']);
   });
 
@@ -66,8 +66,30 @@ describe('album parity', () => {
 
   it('treats a dropped track as a regression, not a reordering', () => {
     const after = extractTrackFacts(`
-<table><tbody><tr><td>1</td><td>Melt</td><td>Soraru</td></tr></tbody></table>`);
+<table class="album-track-table"><tbody><tr><td>1</td><td>Melt</td><td>Soraru</td></tr></tbody></table>`);
     const diffs = compare(extractTrackFacts(BEFORE), after);
     expect(diffs.some((d) => /track count 2 -> 1/.test(d))).toBe(true);
+  });
+
+  it('ignores tables that are not album tracklists', () => {
+    // Shop, streaming and navbox markup all render as tables and all changed
+    // shape in the rewrite. Counting them made four pages look like they had
+    // lost tracks when their tracklists were byte-identical.
+    const html = `
+      <table class="album-track-table"><tbody>
+        <tr><td>1</td><td>Melt</td></tr>
+      </tbody></table>
+      <table class="wikitable navbox"><tbody>
+        <tr><td>Shops</td><td>Animate</td></tr>
+        <tr><td>Streams</td><td>Spotify</td></tr>
+      </tbody></table>`;
+    expect(extractTrackFacts(html).count).toBe(1);
+    expect(extractTrackFacts(html).titles).toEqual(['Melt']);
+  });
+
+  it('still reads a tracklist carrying extra classes', () => {
+    const html = `<table class="wikitable dataTable album-track-table" data-page-length="25"><tbody>
+      <tr><td>1</td><td>Melt</td></tr></tbody></table>`;
+    expect(extractTrackFacts(html).count).toBe(1);
   });
 });

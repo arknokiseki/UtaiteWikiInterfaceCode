@@ -44,10 +44,24 @@ function text(html: string): string {
  * is taken from the second cell — the first is the track number, which the
  * module preserves verbatim but which is not what we are comparing.
  */
+/**
+ * Only tables the album templates tag as tracklists.
+ *
+ * Both the old template and the module emit `album-track-table`. Without this
+ * filter the comparison also picks up shop, streaming and navbox tables, whose
+ * markup the rewrite legitimately restructures — which made four pages report
+ * lost tracks while their tracklists were identical.
+ */
+function trackTables(html: string): string[] {
+  return (html.match(/<table[^>]*>[\s\S]*?<\/table>/gi) ?? []).filter((t) =>
+    /<table[^>]*class="[^"]*album-track-table/i.test(t),
+  );
+}
+
 export function extractTrackFacts(html: string): TrackFacts {
   const titles: string[] = [];
 
-  for (const table of html.match(/<table[\s\S]*?<\/table>/gi) ?? []) {
+  for (const table of trackTables(html)) {
     const bodies = table.match(/<tbody[\s\S]*?<\/tbody>/gi) ?? [table];
     for (const body of bodies) {
       for (const row of body.match(/<tr[\s\S]*?<\/tr>/gi) ?? []) {
