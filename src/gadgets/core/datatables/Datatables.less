@@ -445,6 +445,56 @@ html.client-nojs .mw-parser-output table {
 DATATABLES RESPONSIVE CSS
 ==================================================================================================*/
 
+/*==================================================================================================
+Sectioned album tracklists
+
+A sectioned album renders one table per disc and does not initialise
+DataTables, so this bar carries the filtering instead. See album-filter.ts.
+==================================================================================================*/
+
+.album-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.album-filter-chip {
+    font: inherit;
+    font-size: .85em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    border: 1px solid var(--secondary-text-color);
+    background: transparent;
+    color: var(--secondary-text-color);
+}
+
+.album-filter-chip.is-active {
+    background: var(--primary-text-color);
+    color: var(--body-background-color);
+    font-weight: 600;
+}
+
+.album-filter-text {
+    font: inherit;
+    font-size: .9em;
+    padding: 5px 10px;
+    flex: 1;
+    min-width: 160px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--primary-text-color);
+}
+
+.album-filter-count {
+    margin-left: auto;
+    font-size: .85em;
+    color: var(--secondary-text-color);
+}
+
 /*
  * This combined file was created by the DataTables downloader builder:
  *   https://datatables.net/download

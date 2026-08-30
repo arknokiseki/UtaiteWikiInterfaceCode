@@ -1,3 +1,5 @@
+import { initAlbumFilter } from './album-filter';
+
 // ====================
 // Type Definitions
 // ====================
@@ -985,6 +987,15 @@ interface JQueryFactory extends JQueryStatic {
       $(this).addClass('dataTable-processed datatable-loaded');
       processTable($(this));
     });
+
+    // Sectioned album tracklists deliberately carry no DataTables instance —
+    // section headers would be sorted as data rows — so they get their own
+    // chip and text filter instead.
+    $content
+      .find('.album-tracklist[data-sectioned="true"]')
+      .each(function (this: HTMLElement) {
+        initAlbumFilter(this);
+      });
   };
 
   // --------------------------
