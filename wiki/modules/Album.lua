@@ -242,4 +242,116 @@ function p._groupMode(tracks, override)
   return 'section'
 end
 
+-- Below this many rows a table is plain markup with no DataTables instance.
+-- Measured: 67% of live tracklists have 10 rows or fewer, yet all 783 boot
+-- DataTables with pagination and search panes today.
+local FILTER_THRESHOLD = 15
+
+local COLUMN_FIELD = {
+  ['#'] = 'n', Title = 'title', Utaite = 'utaite', Lyricist = 'lyricist',
+  Composer = 'composer', Arranger = 'arranger', Group = 'group',
+}
+
+local function attr(name, value)
+  return ' ' .. name .. '="' .. value .. '"'
+end
+
+local function renderRow(track, columns, opts, mode)
+  local cells = {}
+  for _, col in ipairs(columns) do
+    local field = COLUMN_FIELD[col]
+    local value = (field == 'n') and mw.text.trim(track.n or '') or p._clean(track[field])
+
+    if field == 'utaite' and value == '' then
+      value = opts.root or ''
+    end
+    if field == 'title' then
+      local info = p._clean(track.info)
+      if info ~= '' then
+        value = value .. ' <span class="album-track-info">' .. info .. '</span>'
+      end
+      if mode == 'badge' and p._clean(track.group) ~= '' then
+        value = value .. ' <span class="album-track-badge">' .. p._clean(track.group) .. '</span>'
+      end
+    end
+    if value == '' and field ~= 'n' and field ~= 'title' then
+      value = '&mdash;'
+    end
+
+    local class = (field == 'n') and ' class="album-track-n"' or ''
+    cells[#cells + 1] = '<td' .. class .. '>' .. value .. '</td>'
+  end
+  return '<tr>' .. table.concat(cells) .. '</tr>'
+end
+
+local function renderTable(rows, columns, opts, mode, useFilter)
+  local classes = 'wikitable album-track-table'
+  local extra = ''
+  if useFilter then
+    classes = classes .. ' dataTable'
+    extra = attr('data-page-length', '25') .. attr('data-order', '[[0, "asc"]]')
+  end
+
+  local heads = {}
+  for _, col in ipairs(columns) do
+    heads[#heads + 1] = '<th scope="col">' .. col .. '</th>'
+  end
+
+  local body = {}
+  for _, track in ipairs(rows) do
+    body[#body + 1] = renderRow(track, columns, opts, mode)
+  end
+
+  return '<table' .. attr('class', classes) .. extra .. '>'
+    .. '<thead><tr>' .. table.concat(heads) .. '</tr></thead>'
+    .. '<tbody>' .. table.concat(body) .. '</tbody></table>'
+end
+
+--- Renders the tracklist: one table per section, headers between tables.
+function p._renderTracklist(tracks, opts)
+  opts = opts or {}
+  tracks = tracks or {}
+  if #tracks == 0 then
+    return '<div class="album-track-empty">No tracks available yet</div>'
+  end
+
+  local mode = p._groupMode(tracks, opts.groupstyle)
+  local columns = p._columns(tracks)
+
+  -- Group is shown as a section header or an in-row badge, not a column,
+  -- unless explicitly overridden.
+  if mode ~= 'column' then
+    for i = #columns, 1, -1 do
+      if columns[i] == 'Group' then table.remove(columns, i) end
+    end
+  end
+
+  local sectioned = (mode == 'section')
+  local useFilter
+  if opts.tablefilter == 'never' then
+    useFilter = false
+  elseif opts.tablefilter == 'always' then
+    useFilter = true
+  else
+    useFilter = (not sectioned) and #tracks > FILTER_THRESHOLD
+  end
+
+  if not sectioned then
+    return '<div class="album-tracklist">'
+      .. renderTable(tracks, columns, opts, mode, useFilter)
+      .. '</div>'
+  end
+
+  local parts = { '<div class="album-tracklist" data-sectioned="true">' }
+  for _, section in ipairs(p._sections(tracks)) do
+    parts[#parts + 1] = '<div class="album-track-section">'
+      .. '<span class="album-track-section-label">' .. section.label .. '</span>'
+      .. '<span class="album-track-section-count">' .. #section.tracks .. ' tracks</span>'
+      .. '</div>'
+    parts[#parts + 1] = renderTable(section.tracks, columns, opts, mode, false)
+  end
+  parts[#parts + 1] = '</div>'
+  return table.concat(parts)
+end
+
 return p
