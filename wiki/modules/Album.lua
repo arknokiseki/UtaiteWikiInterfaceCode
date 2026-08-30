@@ -544,8 +544,14 @@ function p.main(frame)
     tabber = tabber .. '|-|' .. tab.label .. '=\n' .. tab.content .. '\n'
   end
 
-  return built.card
+  -- One wrapper per album. Without it the card and the tabber are siblings
+  -- with nothing marking where an album ends, so consecutive albums run
+  -- together and there is no element to hang spacing on — a margin on the
+  -- card would separate it from its own tabs instead.
+  return '<div class="album">'
+    .. built.card
     .. frame:extensionTag('tabber', tabber, { class = 'wds-tabber dev-tabber album-tabs' })
+    .. '</div>'
 end
 
 return p

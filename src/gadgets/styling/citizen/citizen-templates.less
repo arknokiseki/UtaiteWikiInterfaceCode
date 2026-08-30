@@ -109,6 +109,14 @@ Template:Album
 /*======================================
 Template:AlbumType2
 =======================================*/
+
+/* One album. Spacing goes between albums rather than after every one, so a
+   single-album page gains no stray trailing gap while a discography of 33
+   still reads as separate records. */
+.album + .album {
+    margin-top: 2.75rem;
+}
+
 /* Base styles (desktop) */
 .album-row {
     display: flex;
