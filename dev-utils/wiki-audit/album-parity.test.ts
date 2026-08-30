@@ -31,9 +31,23 @@ describe('album parity', () => {
 
   it('strips markup from titles so styling changes do not register', () => {
     const html = `<table><tbody><tr><td>1</td>
-      <td><a href="/wiki/Melt">Melt</a> <span class="album-track-info">TV size</span></td>
+      <td><a href="/wiki/Melt">Melt</a></td>
     </tr></tbody></table>`;
-    expect(extractTrackFacts(html).titles).toEqual(['Melt TV size']);
+    expect(extractTrackFacts(html).titles).toEqual(['Melt']);
+  });
+
+  it('ignores decoration the new renderer folds into the title cell', () => {
+    // The old markup carried info in its own Details column and had no credit
+    // line at all, so counting these would flag every track as renamed.
+    const oldCell = `<table><tbody><tr><td>1</td><td>Melt</td><td>TV size</td></tr></tbody></table>`;
+    const newCell = `<table><tbody><tr><td>1</td><td>Melt<span class="album-track-info">TV size</span><span class="album-track-credit">lyrics, music: ryo</span></td><td>ryo</td></tr></tbody></table>`;
+    expect(extractTrackFacts(newCell).titles).toEqual(['Melt']);
+    expect(compare(extractTrackFacts(oldCell), extractTrackFacts(newCell))).toEqual([]);
+  });
+
+  it('ignores a group badge folded into the title cell', () => {
+    const html = `<table><tbody><tr><td>1</td><td>Melt <span class="album-track-badge">Type A</span></td></tr></tbody></table>`;
+    expect(extractTrackFacts(html).titles).toEqual(['Melt']);
   });
 
   it('reports no differences for equivalent renders', () => {

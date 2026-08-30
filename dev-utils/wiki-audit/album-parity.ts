@@ -15,9 +15,18 @@ export interface TrackFacts {
   titles: string[];
 }
 
+/**
+ * Decoration the new renderer folds into the title cell, which the old
+ * markup carried in separate columns or not at all. Removed before comparison
+ * so a restructured cell does not read as a renamed track.
+ */
+const DECORATION =
+  /<span class="album-track-(?:info|badge|credit)"[^>]*>[\s\S]*?<\/span>/gi;
+
 /** Strips tags and collapses whitespace, leaving comparable text. */
 function text(html: string): string {
   return html
+    .replace(DECORATION, ' ')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
