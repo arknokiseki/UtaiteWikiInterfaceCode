@@ -354,4 +354,60 @@ function p._renderTracklist(tracks, opts)
   return table.concat(parts)
 end
 
+-- Covers are effectively always 1:1. An explicit pixel width is used instead
+-- of |thumb| because thumb size follows each reader's own preference, which
+-- is why the current desktop cover can be cropped by overflow:hidden.
+local COVER_WIDTH = '220px'
+
+local META_ROWS = {
+  { label = 'Released',  key = 'datereleased' },
+  { label = 'Label',     key = 'label' },
+  { label = 'Featuring', key = 'singers' },
+  { label = 'Catalog',   key = 'catalognumber' },
+  { label = 'Artwork',   key = 'albumartist' },
+}
+
+local function displayTitle(args)
+  local title = p._clean(args.albumtitle)
+  if title ~= '' then return title end
+  for _, key in ipairs({ 'officialjaptitle', 'officialromtitle', 'officialengtitle' }) do
+    local v = p._clean(args[key])
+    if v ~= '' then return v end
+  end
+  return '<span class="album-error">albumtitle field must be filled</span>'
+end
+
+--- Renders the cover box and the metadata grid.
+function p._renderCard(args)
+  args = args or {}
+
+  local image = p._clean(args.image)
+  if image == '' then image = 'Template doc.png' end
+  local link = p._clean(args.imagelink)
+  local linkPart = (link ~= '') and ('|link=' .. link) or ''
+  local cover = '[[File:' .. image .. '|' .. COVER_WIDTH .. '|alt=' .. displayTitle(args) .. linkPart .. ']]'
+
+  local rows = {}
+  for _, row in ipairs(META_ROWS) do
+    local value = p._clean(args[row.key])
+    if value ~= '' then
+      rows[#rows + 1] = '<dt>' .. row.label .. '</dt><dd>' .. value .. '</dd>'
+    end
+  end
+
+  local sub = {}
+  for _, key in ipairs({ 'officialromtitle', 'officialengtitle' }) do
+    local v = p._clean(args[key])
+    if v ~= '' and v ~= displayTitle(args) then sub[#sub + 1] = v end
+  end
+
+  return '<div class="album-row">'
+    .. '<div class="album-cover">' .. cover .. '</div>'
+    .. '<div class="album-details">'
+    .. '<div class="album-title">' .. displayTitle(args) .. '</div>'
+    .. (#sub > 0 and ('<div class="album-subtitle">' .. table.concat(sub, ' \194\183 ') .. '</div>') or '')
+    .. '<dl class="album-meta">' .. table.concat(rows) .. '</dl>'
+    .. '</div></div>'
+end
+
 return p
