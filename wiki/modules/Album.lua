@@ -410,4 +410,88 @@ function p._renderCard(args)
     .. '</div></div>'
 end
 
+local LEGACY_COLUMNS = 7
+
+--- Wraps pre-migration {{Track}} markup in a fixed-column table, unchanged.
+local function renderLegacy(blob)
+  return '<div class="album-tracklist album-track-legacy">'
+    .. '<table class="wikitable album-track-table"><tbody>' .. blob .. '</tbody></table>'
+    .. '</div>'
+end
+
+--- Builds every renderable piece of the album. Frame-free so it stays testable.
+function p._build(args, root)
+  args = args or {}
+
+  local tracks = p._collectTracks(args)
+  local tracklist
+  local blob = args.track
+  if blob and blob ~= '' and p._isLegacyHtml(blob) then
+    tracklist = renderLegacy(blob)
+  else
+    tracklist = p._renderTracklist(tracks, {
+      groupstyle = args.groupstyle,
+      tablefilter = args.tablefilter,
+      root = root,
+    })
+  end
+
+  local tabs = {
+    { label = 'Tracklist', content = tracklist },
+  }
+
+  local gallery = p._clean(args.gallery)
+  if gallery ~= '' and p._clean(args.suppressacg) ~= 'true' then
+    tabs[#tabs + 1] = { label = 'Cover Art', content = '<div class="album-art">' .. gallery .. '</div>' }
+  end
+
+  local jpshops, shops = p._clean(args.jpshops), p._clean(args.shops)
+  if jpshops ~= '' or shops ~= '' then
+    local parts = { '<div class="album-shops">' }
+    if jpshops ~= '' then
+      parts[#parts + 1] = '<h4>Japan Only</h4><div class="shop-links">' .. jpshops .. '</div>'
+    end
+    if shops ~= '' then
+      parts[#parts + 1] = '<h4>International</h4><div class="shop-links">' .. shops .. '</div>'
+    end
+    parts[#parts + 1] = '</div>'
+    tabs[#tabs + 1] = { label = 'Shops & Downloads', content = table.concat(parts) }
+  end
+
+  local streams, spotify = p._clean(args.streams), p._clean(args.spotifyalbumid)
+  if streams ~= '' or spotify ~= '' then
+    tabs[#tabs + 1] = {
+      label = 'Streaming',
+      content = '<div class="album-streams">' .. streams .. '</div>',
+    }
+  end
+
+  local yt = p._clean(args.crossfadeyt)
+  if yt ~= '' then
+    tabs[#tabs + 1] = { label = 'YT Crossfade', content = '<div class="album-crossfade">' .. yt .. '</div>' }
+  end
+
+  local nnd = p._clean(args.crossfadennd)
+  if nnd ~= '' then
+    tabs[#tabs + 1] = { label = 'NND Crossfade', content = '<div class="album-crossfade">' .. nnd .. '</div>' }
+  end
+
+  return { card = p._renderCard(args), tracklist = tracklist, tabs = tabs }
+end
+
+--- Entry point. The only frame-aware function.
+function p.main(frame)
+  local args = require('Module:Arguments').getArgs(frame)
+  local root = mw.title.getCurrentTitle().rootText
+  local built = p._build(args, root)
+
+  local tabber = ''
+  for _, tab in ipairs(built.tabs) do
+    tabber = tabber .. '|-|' .. tab.label .. '=\n' .. tab.content .. '\n'
+  end
+
+  return built.card
+    .. frame:extensionTag('tabber', tabber, { class = 'wds-tabber dev-tabber album-tabs' })
+end
+
 return p
