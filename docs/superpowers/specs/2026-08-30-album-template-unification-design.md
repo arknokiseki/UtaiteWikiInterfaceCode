@@ -59,6 +59,7 @@ Empty-parameter ritual is widespread: `additionalshortinfo` is present on 95% of
 ### Non-goals
 
 - Rewriting `Template:Album` in this phase. It is redirected to the unified template only after AlbumType2 is proven.
+- Preserving `Template:Album`'s portable-infobox theming. It is explicitly dropped: when Album is redirected its pages adopt the new card wholesale.
 - Migrating existing pages to the new `t1*` scheme. Legacy dialects keep working indefinitely.
 - Changing `Template:Tabber`, `Module:Tabber`, or the TabberNeue extension.
 - Bucket / `Module:Bucket` collab-album indexing behaviour, which is carried over unchanged.
@@ -204,7 +205,32 @@ The image is emitted with an explicit pixel width rather than `thumb`, so render
 
 ### 5.3 Tracklist
 
-A column is rendered only if some track on that album fills it. Measured effect: the median album goes from 7 columns to 4.
+**Fixed spine, adaptive tail.** These five columns are always rendered:
+
+```
+# | Title | Utaite | Lyricist | Composer
+```
+
+`Arranger` and `Group` adapt — rendered only if some track on that album fills them. `Details` is removed as a column entirely; `info` becomes inline secondary text on the title, since it is empty in half its uses (3,113 of 6,224).
+
+`Utaite` is deliberately *not* adaptive. `{{Track}}` already falls back to the page's own singer when the field is blank:
+
+```
+<td>{{#if:{{{utaite|{{{singers|}}}}}}|{{{utaite|{{{singers}}}}}}|{{ROOTPAGENAME}}}}</td>
+```
+
+so the column is never actually empty, and making it adaptive would be a regression rather than a saving. That fallback is preserved.
+
+Measured on `Yuikonnu/Discography`, whose 32 albums span 4 distinct coverage shapes:
+
+| Column rule | Distinct header rows | Stable leading columns |
+|---|---|---|
+| Fully adaptive | 4 | 2 |
+| Adaptive with `Lyricist`/`Composer` pinned | 4 | 2 |
+| Optional columns moved to the tail | 4 | 4 |
+| **Fixed spine, `Utaite` always** | **2** | **5** |
+
+This is the answer to "intentional but also inconsistent": the first five columns never move, so a difference between two albums on a page reads as *this album has no arranger* rather than *this table is shaped differently*. Median album: 7 columns today → 5.
 
 `group` is never a column. It carries two distinct meanings:
 
@@ -249,9 +275,18 @@ DataTables treats every `<tr>` in `<tbody>` as a data row, so injected section-h
 
 This is not hypothetical: `世会色ユニバース` is 44 rows (past the threshold) *and* sectioned into three discs.
 
-Resolution: **a sectioned album renders one table per section**, each with its own heading, and DataTables is suppressed for that album by default. A disc is its own tracklist, so separate tables are the more faithful structure anyway, and the section headings already provide the navigation that filtering would otherwise supply. `|tablefilter=always` restores DataTables per section table for editors who want it.
+Resolution: **a sectioned album renders one table per section**, each with its own heading, and DataTables is suppressed for that album. A disc is its own tracklist, so separate tables are the more faithful structure anyway.
 
-Non-sectioned albums keep the plain >15-row threshold.
+### 6.2 Filtering must not be lost in the trade
+
+Suppressing DataTables would otherwise sacrifice one UX aspect to buy another. Instead a sectioned album gets a lightweight filter bar above its section tables:
+
+- **Group chips** — `All` · `Disc 1` · `Disc 2` · `Disc 3 (Limited Edition A only)` — show or hide whole section tables.
+- **One text input** filtering titles and credits **across all section tables**, with an `n of N` count.
+
+This is strictly better than what it replaces. DataTables' searchPanes could only facet within a single table and only while `group` was a column; the chip row filters the whole album, costs no library, and survives `group` no longer being a column. It is a small addition to the datatables gadget bundle, not a DataTables instance.
+
+Non-sectioned albums keep the plain >15-row DataTables threshold.
 
 ## 7. Performance budget
 
@@ -291,7 +326,11 @@ The repo already runs Jest (299 tests). Wiki-side logic is not covered by it, so
 
 ## 10. Open questions
 
-- Does the column set varying between albums on one page read as intentional or inconsistent? Visible on `Yuikonnu/Discography`, where some tables will have 4 columns and others 6.
-- §6.1 trades album-wide filtering for section structure on sectioned albums. For `世会色ユニバース` a reader can no longer filter all 44 tracks at once. Acceptable, or worth building a cheap album-level filter that spans the section tables?
-- Should the 7 loose `{{Track}}` calls and ~16 non-mainspace usages be migrated or left to render as raw records?
-- `Template:Album`'s portable-infobox theming is not carried over. When Album is redirected, its pages change appearance substantially — that likely deserves its own design pass.
+- Should the 7 loose `{{Track}}` calls and ~16 non-mainspace usages be migrated, or left to render as raw records?
+- The typo map in §4.4 is drawn from currently observed misspellings and will go stale. The maintenance category is the mechanism for catching new ones, but nobody is assigned to watch it.
+
+### Resolved during review
+
+- **Varying column counts** — resolved by the fixed spine in §5.3. Header shapes on `Yuikonnu/Discography` drop from 4 to 2, with 5 stable leading columns. Intentional *and* consistent, rather than a trade between them.
+- **Lost filtering on sectioned albums** — resolved by the chip + text filter in §6.2, which filters across section tables rather than within one. No UX aspect is sacrificed to buy another.
+- **`Template:Album` portable-infobox theming** — explicitly dropped, not deferred. It is not considered beneficial, so the eventual Album redirect adopts the new card wholesale with no portable-infobox compatibility work.
