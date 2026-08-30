@@ -88,4 +88,70 @@ function p._parseRecords(blob)
   return tracks
 end
 
+local TRACK_FIELDS = {
+  'title', 'info', 'utaite', 'lyricist', 'composer', 'arranger', 'group',
+}
+
+--- Reads one track's fields for index `idx` under a given prefix.
+local function readTrack(norm, prefix, idx)
+  local track = { n = tostring(idx) }
+  local any = false
+  for _, field in ipairs(TRACK_FIELDS) do
+    local v = p._clean(norm[prefix .. idx .. field])
+    track[field] = v
+    if v ~= '' then any = true end
+  end
+  if track.utaite == '' then
+    track.utaite = p._clean(norm[prefix .. idx .. 'singers'])
+  end
+  return track, any
+end
+
+--- Normalises every argument key once, repairing known misspellings.
+local function normaliseArgs(args)
+  local norm = {}
+  for k, v in pairs(args) do
+    if type(k) == 'string' then
+      norm[p._canonical(k)] = v
+    else
+      norm[k] = v
+    end
+  end
+  return norm
+end
+
+--- Builds the ordered track list from whichever dialect `args` uses.
+function p._collectTracks(args)
+  local norm = normaliseArgs(args)
+
+  local blob = norm.track
+  if blob and blob ~= '' then
+    if p._isLegacyHtml(blob) then return {} end
+    return p._parseRecords(blob)
+  end
+
+  -- Scan for the highest populated index rather than stopping at the first
+  -- gap; Template:Album's stop-at-gap behaviour silently drops later tracks.
+  local indices, seen = {}, {}
+  for key in pairs(norm) do
+    if type(key) == 'string' then
+      local prefix, idx = string.match(key, '^(t)(%d+)title$')
+      if not prefix then prefix, idx = string.match(key, '^(track)(%d+)title$') end
+      if prefix and not seen[prefix .. idx] then
+        seen[prefix .. idx] = true
+        indices[#indices + 1] = { prefix = prefix, idx = tonumber(idx) }
+      end
+    end
+  end
+
+  table.sort(indices, function(a, b) return a.idx < b.idx end)
+
+  local tracks = {}
+  for _, entry in ipairs(indices) do
+    local track, any = readTrack(norm, entry.prefix, entry.idx)
+    if any then tracks[#tracks + 1] = track end
+  end
+  return tracks
+end
+
 return p
