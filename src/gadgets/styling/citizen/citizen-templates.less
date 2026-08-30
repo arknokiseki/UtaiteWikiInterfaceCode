@@ -184,7 +184,12 @@ Template:AlbumType2
 /* Small tracklists deliberately skip DataTables, so they no longer inherit
    its chrome. These rules stand in for it: without them a gated table falls
    back to bare wikitable and loses its box. */
-.album-track-table {
+/* The Citizen skin sets .wikitable { display: block } for horizontal
+   scrolling. A table that is not display:table ignores table-layout and every
+   column width, which left ~370px of dead space to the right of the last
+   column. Selector is table.album-track-table so it outranks .wikitable. */
+table.album-track-table {
+    display: table;
     width: 100%;
     table-layout: fixed;
     border: 1px solid var(--secondary-text-color);
@@ -295,6 +300,7 @@ Template:AlbumType2
 
 /* Album Components */
 .tracklist,
+.album-tracklist,
 .streams,
 .crossfade {
     margin-top: 20px;
@@ -302,7 +308,13 @@ Template:AlbumType2
 
 .streams,
 .crossfade,
-.shops {
+.shops,
+/* Module:Album renames these; without them the non-tracklist tabs render
+   with no padding or border at all. */
+.album-streams,
+.album-crossfade,
+.album-shops,
+.album-art {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -449,7 +461,7 @@ Template:AlbumType2
         display: none;
     }
 
-    .album-track-table,
+    table.album-track-table,
     .album-track-table tbody,
     .album-track-table tr,
     .album-track-table td {
