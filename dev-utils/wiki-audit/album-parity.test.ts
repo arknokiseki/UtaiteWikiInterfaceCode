@@ -1,0 +1,59 @@
+// Imported without a .ts extension: this file is only ever run by Jest, never
+// executed directly by Node, so it does not need the allowImportingTsExtensions
+// override that the directly-executed wiki-audit CLIs rely on.
+import { extractTrackFacts, compare } from './album-parity';
+
+const BEFORE = `
+<table class="album-track-table"><tbody>
+<tr><td>1</td><td>Melt</td><td>Soraru</td></tr>
+<tr><td>2</td><td>Alone</td><td>Mafumafu</td></tr>
+</tbody></table>`;
+
+describe('album parity', () => {
+  it('counts track rows', () => {
+    expect(extractTrackFacts(BEFORE).count).toBe(2);
+  });
+
+  it('extracts titles from the second cell', () => {
+    expect(extractTrackFacts(BEFORE).titles).toEqual(['Melt', 'Alone']);
+  });
+
+  it('ignores header rows', () => {
+    const html = `<table class="album-track-table"><thead><tr><th>#</th><th>Title</th></tr></thead>
+      <tbody><tr><td>1</td><td>Melt</td></tr></tbody></table>`;
+    expect(extractTrackFacts(html).count).toBe(1);
+  });
+
+  it('aggregates across multiple tables', () => {
+    const html = BEFORE + BEFORE;
+    expect(extractTrackFacts(html).count).toBe(4);
+  });
+
+  it('strips markup from titles so styling changes do not register', () => {
+    const html = `<table><tbody><tr><td>1</td>
+      <td><a href="/wiki/Melt">Melt</a> <span class="album-track-info">TV size</span></td>
+    </tr></tbody></table>`;
+    expect(extractTrackFacts(html).titles).toEqual(['Melt TV size']);
+  });
+
+  it('reports no differences for equivalent renders', () => {
+    expect(compare(extractTrackFacts(BEFORE), extractTrackFacts(BEFORE))).toEqual([]);
+  });
+
+  it('reports a count change', () => {
+    const after = extractTrackFacts(BEFORE + BEFORE);
+    expect(compare(extractTrackFacts(BEFORE), after)[0]).toMatch(/track count 2 -> 4/);
+  });
+
+  it('reports a changed title', () => {
+    const after = extractTrackFacts(BEFORE.replace('Alone', 'Changed'));
+    expect(compare(extractTrackFacts(BEFORE), after)[0]).toMatch(/Alone.*Changed/);
+  });
+
+  it('treats a dropped track as a regression, not a reordering', () => {
+    const after = extractTrackFacts(`
+<table><tbody><tr><td>1</td><td>Melt</td><td>Soraru</td></tr></tbody></table>`);
+    const diffs = compare(extractTrackFacts(BEFORE), after);
+    expect(diffs.some((d) => /track count 2 -> 1/.test(d))).toBe(true);
+  });
+});
