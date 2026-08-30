@@ -1,7 +1,12 @@
 export type SizeTier = 'none' | 'stub' | 'thin' | 'adequate' | 'rich';
 
 export interface DocScoreInput {
-  /** The /doc page wikitext, or undefined when there is no doc. */
+  /**
+   * The /doc page wikitext, or undefined when NO /doc PAGE EXISTS.
+   * Existence is what `hasDoc` reports — not whether the file could be read,
+   * and not whether it has any content. An existing but empty doc is
+   * "documented" for coverage purposes and caught by sizeTier/gap instead.
+   */
   doc: string | undefined;
   /** The template's own source, used to extract its real parameter set. */
   source: string;
@@ -58,7 +63,7 @@ const HEADER_RX = /\{\{Documentation\/Header\}\}/i;
 
 export function scoreDoc(input: DocScoreInput): DocScore {
   const doc = input.doc ?? '';
-  const hasDoc = input.doc !== undefined && doc.length > 0;
+  const hasDoc = input.doc !== undefined;
 
   const actual = extractParameters(input.source);
   const documented = new Set(extractDocumentedParameters(doc));

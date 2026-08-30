@@ -11,7 +11,11 @@
     "build-show": "npm run build && npm run preview",
     "tests": "jest",
     "presync": "npm run build",
-    "sync": "node dev-sync/sync.ts"
+    "sync": "node dev-sync/sync.ts",
+    "wiki:fetch": "node --env-file=.env dev-utils/wiki-audit/fetch-cli.ts",
+    "wiki:analyze": "node --env-file=.env dev-utils/wiki-audit/analyze-cli.ts",
+    "wiki:report": "node dev-utils/wiki-audit/report-cli.ts",
+    "wiki:audit": "npm run wiki:fetch && npm run wiki:analyze && npm run wiki:report"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
