@@ -848,7 +848,9 @@ div.utaiteUnit  a.external.text::after,
 /* forbid reprint notice */
 div.forbidreprintnotice a.external.text::after,
 /* userblog list */
-div.listpages-container div.blog-card a.external.text::after
+div.listpages-container div.blog-card a.external.text::after,
+/* opt-out hook, added directly on the wiki and reconciled back into source */
+.no-external a.external.text::after
 {
   content: none !important;
   display: none !important;
@@ -1137,6 +1139,12 @@ Maintenance notice
     border-radius: var(--border-radius, 12px);
     box-shadow: var(--card-shadow, 0 4px 12px rgba(0,0,0,0.15));
     color: #ffffff;
+}
+
+/* Completion variant, added directly on the wiki and reconciled back into source */
+.maintenance-box.maintenance-box--completion {
+    --mb-accent-blue: #6741d9;
+    --mb-accent-theme: #9775fa;
 }
 
 .maintenance-box__deco {

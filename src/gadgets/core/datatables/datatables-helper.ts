@@ -27,13 +27,16 @@ interface ColumnWidthCalc {
 }
 
 interface DataTableOptions {
-  responsive?: {
-    details?: {
-      type?: string;
-      target?: string;
-    };
-  };
+  responsive?:
+    | false
+    | {
+        details?: {
+          type?: string;
+          target?: string;
+        };
+      };
   autoWidth?: boolean;
+  deferRender?: boolean;
   scrollX?: boolean;
   pageLength?: number;
   layout?: {
@@ -191,6 +194,10 @@ declare global {
     __dtLibLoading?: boolean;
     __dtUrlSearchPopstateBound?: boolean;
     previousViewportConfig?: ViewportConfig;
+    /** Supplied by a separate songlist gadget when it is loaded. */
+    SonglistRenderer?: {
+      getOptions(table: JQuery): Partial<DataTableOptions>;
+    };
   }
 }
 
@@ -822,15 +829,23 @@ interface JQueryFactory extends JQueryStatic {
       processedTables.set($table.get(0), true);
       if (!prepareTable($table)) return;
 
+      // Songlist tables ship with a separate mobile view and explicit header
+      // widths, so skip the responsive plugin and the autoWidth measurement
+      // pass. deferRender limits initial DOM creation to visible rows only.
+      const isSonglist = /\bdt-songlist-/.test($table.attr('class') || '');
+
       // Build options
       const options: DataTableOptions = {
-        responsive: {
-          details: {
-            type: 'inline',
-            target: 'tr',
-          },
-        },
-        autoWidth: true,
+        responsive: isSonglist
+          ? false
+          : {
+              details: {
+                type: 'inline',
+                target: 'tr',
+              },
+            },
+        autoWidth: !isSonglist,
+        deferRender: isSonglist,
         scrollX: false,
         pageLength: viewportConfig.pageLength,
         layout: {
@@ -850,6 +865,12 @@ interface JQueryFactory extends JQueryStatic {
           },
         },
       };
+
+      // Songlist tables supply their own DataTables options through a
+      // separate gadget, when that gadget is loaded.
+      if (isSonglist && window.SonglistRenderer) {
+        Object.assign(options, window.SonglistRenderer.getOptions($table));
+      }
 
       // Fixed widths opt-in
       const wantsFixedWidths =
@@ -951,9 +972,14 @@ interface JQueryFactory extends JQueryStatic {
       // Final adjustments
       setTimeout(() => {
         try {
-          dataTable.columns().adjust().draw(false);
-          if (dataTable.responsive && dataTable.responsive.recalc) {
-            dataTable.responsive.recalc();
+          // adjust() is a no-op when autoWidth is off and responsive.recalc()
+          // is unnecessary when the plugin is disabled, so skip both for
+          // songlists.
+          if (!isSonglist) {
+            dataTable.columns().adjust().draw(false);
+            if (dataTable.responsive && dataTable.responsive.recalc) {
+              dataTable.responsive.recalc();
+            }
           }
 
           if (wantsFixedWidths && options.columns) {
