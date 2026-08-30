@@ -1,0 +1,1 @@
+{{Notice|tone=#8e44ad|icon=[▣🝙▣]|header=AI Assistance|info=<small>This {{{type|content}}} was written with assistance from LLMs</small>}}

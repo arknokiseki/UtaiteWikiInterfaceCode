@@ -1,0 +1,10 @@
+<templatestyles src="Template:Red link/styles.css" /><!--
+--><span class="plainlinks redlink">[{{fullurl:{{{1}}}|{{{params|redlink=1}}}}} <span title="{{int:red-link-title<!--
+	-->|{{#if:{{FULLPAGENAME:{{{1}}}}}<!--
+		-->|{{FULLPAGENAME:{{{1}}}}}<!--
+		-->|{{{1}}}<!--
+	-->}}<!--
+-->}}">{{{2|{{{1}}}}}}</span>]</span><noinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->
+</noinclude>

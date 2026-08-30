@@ -1,0 +1,44 @@
+<includeonly><templatestyles src="UtaiteUnitMember/card/styles.css" /><!--
+--><div class="ugm-card" style="--ugm-color: {{{color|#06b6d4}}}; border-color: {{{color|#06b6d4}}};"><!--
+--><div class="ugm-gradient" style="background: linear-gradient(180deg, {{{color|#06b6d4}}} 0%, transparent 100%);"></div><!--
+--><div class="ugm-content"><!--
+
+--- HEADER ---
+--><div class="ugm-header"><!--
+--><div class="ugm-image-wrap ugm-pos-{{{imgpos|top}}} ugm-zoom-{{{imgzoom|1}}}">[[File:{{{image}}}|120x120px|alt={{{name}}}]]</div><!--
+--><div class="ugm-header-text"><!--
+--><div class="ugm-name">{{#ifeq:{{lc:{{{status|active}}}}}|terminated|{{{name}}}|[[{{{name}}}]]}}{{#if:{{{leader|}}}| 🔑}}</div><!--
+--><div class="ugm-desc">{{#if:{{{desc|}}}|{{{desc}}}|}}</div><!--
+--></div><!--
+--></div><!--
+
+--- TABBER ---
+-->{{TabberType2
+|tab1=Overview
+|content1=<table class="ugm-info-table">
+<tr><td class="ugm-label">Fan name</td><td class="ugm-value">{{#if:{{{fanname|}}}|{{{fanname}}}|<span class="ugm-unknown">unknown</span>}}</td></tr>
+<tr><td class="ugm-label">Oshi mark</td><td class="ugm-value ugm-oshimark">{{#if:{{{oshimark|}}}|{{{oshimark}}}|<span class="ugm-unknown">unknown</span>}}</td></tr>
+<tr><td class="ugm-label">Status</td><td class="ugm-value"><span class="ugm-status ugm-status--{{lc:{{{status|active}}}}}">{{{status|Active}}}</span></td></tr>
+</table>
+|hide1={{{hide1|}}}
+|tab2=Profile
+|content2=<div style="color: var(--accent-color)">{{#if:{{{profile|}}}|{{{profile}}}|{{#lsth:{{{name}}}|Profile}}}}</div>
+|hide2={{{hide2|}}}
+|tab3=Songs
+|content3={{#if:{{{yt1|}}}{{{yt2|}}}{{{nv1|}}}{{{nv2|}}}|{{{!}} class="ugm-songs-table"
+{{#if:{{{yt1|}}}|{{!}}-
+{{!}} {{#ev:youtube|{{{yt1}}}||inline|{{{yt1desc|}}}}}
+}}{{#if:{{{yt2|}}}|{{!}}-
+{{!}} {{#ev:youtube|{{{yt2}}}||inline|{{{yt2desc|}}}}}
+}}{{#if:{{{nv1|}}}|{{!}}-
+{{!}} {{#ev:niconico|{{{nv1}}}||inline|{{{nv1desc|}}}}}
+}}{{#if:{{{nv2|}}}|{{!}}-
+{{!}} {{#ev:niconico|{{{nv2}}}||inline|{{{nv2desc|}}}}}
+}}
+{{!}}}|<span class="ugm-unknown">No featured songs set yet.</span>}}
+|hide3={{{hide3|}}}
+}}<!--
+--></div><!--
+--></div></includeonly><noinclude>
+{{documentation}}
+</noinclude>

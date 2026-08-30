@@ -1,0 +1,142 @@
+{{Documentation/Header}}
+{{High Risk|Template:Uptodate|nocat=1|pagetype=Main}}
+
+Marks how current a utaite's covered song list is. The box ages by itself — the status, colour and progress meter are all derived from the date you give it, so a list drifts from '''Up to date''' to '''Outdated''' with no further edits.
+
+This is the template editors should normally use. It is a thin wrapper that forwards everything to {{T|Freshness}}, where the logic lives.
+
+==Where to put it==
+Place it at the top of the '''<code>/Songs</code> subpage''':
+
+<pre>
+{{Uptodate|October 31, 2023}}
+</pre>
+
+Then put {{T|Uptodate/sync}} on the article itself, which mirrors the same box without repeating the parameters:
+
+<pre>
+{{Uptodate/sync}}
+</pre>
+
+Editing only the subpage keeps the two in step. Putting {{T|Uptodate}} directly on an article also works, but then it has to be maintained in two places.
+
+The '''Update Freshness''' button on the rendered box opens an editor for these parameters, so in most cases you will not need to write them by hand.
+
+==How the status is chosen==
+Age is measured in whole months between the date given and today.
+
+{| class="dataTable sortable"
+! Age !! Status shown
+|-
+| under 6 months || Up to date
+|-
+| 6 to under 18 months || Slightly outdated
+|-
+| 18 months and over || Outdated
+|}
+
+Two flags override the age:
+* <code>force-uptodate=yes</code> pins the list as complete. The header reads '''Marked as completed''', the meter stays full and the colour stops fading. Use it for singers who are no longer active, where the list is finished and will never grow — otherwise their page is permanently and wrongly flagged as outdated.
+* <code>force-outdated=yes</code> (or <code>status=outdated</code>, or any <code>reason=</code>) forces '''Outdated'''. An explicit outdated flag always beats a pin.
+
+A missing or unparseable date is treated as outdated.
+
+==Accepted date formats==
+* <code>October 31, 2023</code> — month name full or abbreviated; the comma and an ordinal suffix such as <code>31st</code> are both optional
+* <code>2023-10-31</code>, <code>2023/10/31</code>, <code>2023.10.31</code>
+* <code>2023年10月31日</code>
+
+==Colour==
+<code>bordercolor</code> sets the box colour, which fades toward grey as the list ages and is fully grey at 30 months. A pinned list keeps its colour at full strength.
+
+* A '''6-digit hex''' value such as <code>#A97A3F</code> fades numerically.
+* '''Any other valid CSS colour''' — an X11 name like <code>magenta</code>, a variable like <code>var(--primary-color)</code>, <code>rgb()</code>, <code>hsl()</code>, or short hex — fades in the browser via <code>color-mix()</code>.
+* Anything else is ignored and the default <code>#c3e6f9</code> is used.
+
+==Examples==
+<pre>
+{{Uptodate|October 31, 2023}}
+{{Uptodate|October 31, 2023|bordercolor=#A97A3F}}
+{{Uptodate|May 12, 2021|force-uptodate=yes}}
+{{Uptodate|May 12, 2021|reason=Missing the 2024 covers}}
+{{Uptodate|October 31, 2023|discography=yes|needrom=true}}
+{{Uptodate|updated-at=October 31, 2023}}
+</pre>
+
+==Parameters==
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>updated-at</code> || <code>1</code> || Date || Date the song list was last checked. Usually written unnamed as the first parameter. See the accepted formats above. || date || – || required
+|-
+| <code>bordercolor</code> || <code>base</code> || Colour || Box colour, faded by age. See the colour section above. || string || <code>#c3e6f9</code> ||
+|-
+| <code>force-uptodate</code> || – || Marked as completed || Set to <code>yes</code> to pin the list as complete so it stops ageing. For singers who are no longer active. || string || – ||
+|-
+| <code>force-outdated</code> || – || Force outdated || Set to <code>yes</code> to force the '''Outdated''' status regardless of the date. || string || – ||
+|-
+| <code>status</code> || – || Status || Set to <code>outdated</code> as an alternative to <code>force-outdated</code>. || string || – ||
+|-
+| <code>reason</code> || – || Reason || Replaces the description line with your own text, and forces '''Outdated'''. || string || – ||
+|-
+| <code>discography</code> || – || Discography || Any non-empty value widens the wording to cover the discography as well as the song list. || string || – ||
+|-
+| <code>needrom</code> || – || Needs romanization || Set to <code>true</code> to also file the page under [[:Category:Songlists requiring romanization]]. || string || – ||
+|-
+| <code>nocat</code> || – || No category || Set to <code>true</code> to render the box without categorizing. Use in documentation and examples. || string || – ||
+|-
+| <code>customlatesteditor</code> || – || Custom editor || Overrides the "last edited by" name in the footer. || string || <code><nowiki>{{REVISIONUSER}}</nowiki></code> ||
+|-
+| <code>lastedittext-nolink</code> || – || Plain edit text || Set to <code>true</code> to render "last edited" as plain text instead of a diff link. || string || – ||
+|}
+
+==Parameters that no longer do anything==
+Older revisions of this template accepted more positional parameters, and many pages still carry them. They are harmless — leaving them in place does nothing — but do not add new ones.
+
+{| class="dataTable sortable"
+! Leftover !! Was !! Now
+|-
+| 2nd unnamed parameter || list type (<code>discography</code> / <code>playlist</code>) || ignored; use <code>discography=</code>
+|-
+| 3rd unnamed parameter || upload time (<code>HH:mm</code>) || ignored; the box works in whole months
+|-
+| <code>utdcolor</code> || header text colour || ignored here; still used by {{T|Outdated}}
+|}
+
+This is why so many live pages read <code><nowiki>{{Uptodate|October 31, 2023|||bordercolor=#A97A3F}}</nowiki></code> — the empty gaps are those retired parameters.
+
+==Categories==
+Unless <code>nocat=true</code> is set, the box files the page into one of:
+* [[:Category:Utaite with up-to-date covered song list]] / [[:Category:Youtaite with up-to-date covered song list]]
+* [[:Category:Utaite with outdated covered song list]] / [[:Category:Youtaite with outdated covered song list]]
+
+With <code>needrom=true</code> it also adds [[:Category:Songlists requiring romanization]].
+
+==See also==
+* {{T|Uptodate/sync}} — mirrors this box from a <code>/Songs</code> subpage onto the article
+* {{T|Freshness}} — the underlying template and its full interface
+* {{T|Outdated}} — the older standalone box
+* [[Module:Freshness/core]] — the thresholds and colour handling
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Marks how current a utaite's covered song list is. The box ages automatically from the date given.",
+"params": {
+"1": { "label": "Date", "description": "Date the song list was last checked, e.g. October 31, 2023 or 2023-10-31.", "type": "date", "required": true, "aliases": ["updated-at"] },
+"bordercolor": { "label": "Colour", "description": "Box colour, faded by age. 6-digit hex, an X11 name, var(...), rgb() or hsl().", "type": "string", "aliases": ["base"], "default": "#c3e6f9" },
+"force-uptodate": { "label": "Marked as completed", "description": "Set to 'yes' to pin the list as complete so it stops ageing. For singers who are no longer active.", "type": "string" },
+"force-outdated": { "label": "Force outdated", "description": "Set to 'yes' to force the Outdated status regardless of the date.", "type": "string" },
+"status": { "label": "Status", "description": "Set to 'outdated' as an alternative to force-outdated.", "type": "string" },
+"reason": { "label": "Reason", "description": "Replaces the description line with custom text and forces Outdated.", "type": "string" },
+"discography": { "label": "Discography", "description": "Any non-empty value widens the wording to cover the discography too.", "type": "string" },
+"needrom": { "label": "Needs romanization", "description": "Set to 'true' to also add Category:Songlists requiring romanization.", "type": "string" },
+"nocat": { "label": "No category", "description": "Set to 'true' to render the box without categorizing.", "type": "string" },
+"customlatesteditor": { "label": "Custom editor", "description": "Overrides the 'last edited by' name in the footer.", "type": "string" },
+"lastedittext-nolink": { "label": "Plain edit text", "description": "Set to 'true' to render 'last edited' as plain text instead of a diff link.", "type": "string" }
+},
+"paramOrder": ["1","bordercolor","force-uptodate","force-outdated","status","reason","discography","needrom","nocat","customlatesteditor","lastedittext-nolink"],
+"format": "inline"
+}
+</templatedata>
+</div>

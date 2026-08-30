@@ -1,0 +1,49 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": {
+				"en": "Column Count",
+				"cs": "Počet sloupců"
+			},
+			"description": {
+				"en": "Number of columns",
+				"cs": "Počet sloupců"
+			},
+			"type": "number"
+		},
+		"colwidth": {
+			"label": {
+				"en": "Column Width",
+				"cs": "Šířka sloupce"
+			},
+			"description": {
+				"en": "CSS <length> value of the `column-width` property",
+				"cs": "Hodnota CSS <length> vlastnosti `column-width`"
+			},
+			"type": "string"
+		},
+		"refs": {
+			"label": {
+				"en": "Notes",
+				"cs": "Poznámky"
+			},
+			"aliases": ["notes"],
+			"description": {
+				"en": "The list of {{NoteTag}}s",
+				"cs": "Seznam {{NoteTag}}"
+			},
+			"required": true,
+			"type": "content"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:templates]]
+}}</includeonly>

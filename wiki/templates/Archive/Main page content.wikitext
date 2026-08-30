@@ -1,0 +1,37 @@
+{{Archived}}
+{{Template:HeadingA|Utaite-related}}
+{|width=100% style="text-align:center;font-size:95%; line-height:2em;"
+|-valign="top"
+|width=25% style="padding-top:5px;padding-bottom:5px"|[[:Category:Famous Utattemita Songs|Songs]]
+|width=25% style="padding-top:5px;padding-bottom:5px"|[[Anikora|Anikora]]
+|width=25% style="padding-top:5px;padding-bottom:5px"|[[Utattemita Tours]]
+|width=25% style="padding-top:5px;padding-bottom:5px"|[[List of Collaboration Albums|Collaboration Albums]]
+|-valign="top"
+|width=25% style="padding-bottom:5px"|[[:Category:NND Groups|NND Groups]]
+|width=25% style="padding-bottom:5px"|[[:Category:NND Contests|NND Contests]]
+|width=25% style="padding-bottom:5px"|[[:Category:YT Groups|YT Groups]]
+|width=25% style="padding-bottom:5px"|[[:Category:YT Battles|YT Battles]]
+|}
+
+<noinclude>[[Category:Main page templates]]</noinclude>
+<noinclude>
+<!--
+{|width=100% style="font-size:88%; line-height:2em;"
+|colspan=2 style="background:#c3e6f9; text-align:center;"|'''Singers categorized by'''
+|-
+|
+{|width=100% style="line-height:2em;"
+|width=25%|Gender
+|width=25%|NND: [[:Category:NND Male Utaite|♂]] • [[:Category:NND Female Utaite|♀]]
+|width=25%|BB: [[:Category:BB Male Geji|♂]] • [[:Category:BB Female Geji|♀]]
+|width=25%|YT: [[:Category:YT Male Singers|♂]] • [[:Category:YT Female Singers|♀]] • [[:Category:YT Androgyne Singers|?]]
+|-
+{|width=100% style="line-height:2em;"
+|width=25%|Trap singers
+|width=25%|NND: [[:Category:NND Trap Utaite (Male)|♂]] • [[:Category:NND Trap Utaite (Female)|♀]]
+|width=25%|
+|width=25%|YT: [[:Category:YT Trap Singers|♂ ♀]]
+|}	
+|}
+-->
+</noinclude>

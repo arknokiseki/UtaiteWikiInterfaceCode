@@ -1,0 +1,32 @@
+<noinclude></noinclude><templatestyles src="MW version/styles.css" />
+<table class="mw-version mw-version-{{dir|{{PAGELANGUAGE}}}}
+{{#if:{{{version|}}}|mw-version-version mw-version-version-{{MW version/status|{{{version}}} }} }}
+{{#if:{{{version2|}}}|mw-version-version2 mw-version-version2-{{MW version/status|{{{version2}}} }} }}
+{{#ifeq:{{MW version/status|{{{version}}} }}|future
+|
+|{{#switch: {{{comment|}}}|and after|and later|+=mw-version-and-later}}
+}}"><tr>
+{{#if: {{{compact|}}} ||<td>{{{msg-mw-version}}}</td>}}
+<td class="mw-version-versionbox" title="{{#switch: {{{comment|}}}
+ |and after|and later|+=
+  {{{msg-latest-tooltip}}}
+ |#default=
+  {{#switch:{{MW version/status|{{#if:{{{version2|}}}|{{{version2}}}|{{{version|X.XX}}}}}}}
+  |unsupported= <!--T:1--> MediaWiki {{#if:{{{version2|}}}|{{{version2}}}|{{#if:{{{version|}}}|{{{version}}}|X.XX}}}} is an unsupported version
+  |legacy=      <!--T:2--> MediaWiki {{#if:{{{version2|}}}|{{{version2}}}|{{#if:{{{version|}}}|{{{version}}}|X.XX}}}} is a legacy version
+  |stable=      <!--T:3--> MediaWiki {{#if:{{{version2|}}}|{{{version2}}}|{{#if:{{{version|}}}|{{{version}}}|X.XX}}}} is a stable version
+  |future=      <!--T:4--> MediaWiki {{#if:{{{version2|}}}|{{{version2}}}|{{#if:{{{version|}}}|{{{version}}}|X.XX}}}} is a future version
+  |unknown=     <!--T:5--> MediaWiki {{#if:{{{version2|}}}|{{{version2}}}|{{#if:{{{version|}}}|{{{version}}}|X.XX}}}} is an unknown version
+  }}
+}}"><div class="mw-version-versionnumber">{{#switch: {{{comment|}}}
+ |and before|and earlier|-=<small><!--T:6--> &le;</small>
+ |and after|and later|+=<small><!--T:7--> &ge;</small>
+}} {{#if: {{{version|}}} | {{{version}}} | X.X }}{{#if: {{{version2|}}} | &#32;&ndash; {{{version2}}} }}</div>{{#if: {{{r|}}} |
+<small>{{Rev|{{{r}}}}}</small>}}{{#if: {{{gerrit change|}}} |
+<small>{{Gerrit search|{{{gerrit change}}}}}</small>}}</td>
+{{#switch: {{{comment|}}}
+|and before|and after|and earlier|and later|-|+|=
+|#default=<nowiki /><div style="display: none;">[[Template:MW version/list1]]</div>
+<td>{{{comment}}}</td>
+}}
+</tr></table>

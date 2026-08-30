@@ -1,0 +1,118 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+{{Uses TemplateStyles|Template:Nowrap/styles.css}}
+== Usage ==
+__NOTOC__
+{{Mbox
+| image = [[File:Walnut.png|30px|link=|alt=]]
+| text  = <code>&lt;code&gt;</code>-styled {{tlx|tl}} that can link to sister projects.
+}}
+
+This is the {{tlx|tl2}} template.
+
+{{tlc|tl2}} is similar to {{tlx|tl}}. '''Tl''' stands for '''T'''emplate '''l'''ink. {{tlf|tl2}} is a [[w:Macro (computer science)|macro]] [[Help:template|template]] used to display a template name as a link surrounded by braces, thus showing how the template name would be used in code. Its primary use is in instruction and documentation.
+
+{{tlc|tl2}} differs from {{tlc|tl}} in that it displays with a wider, monospaced text style (like {{tlc|tlx}}) and also takes the named parameters {{para|sister}} and {{para|lang}} so that it may also be used to list and link templates on other English and non-English-language sister projects.
+
+=== Related template ===
+{{tlx|tlx}} displays with the same enhanced presentation and can also expand several placeholder parameters to generate a sample template call.
+
+=== Usage ===
+: {{tlx|tl2|''template_name''}}
+:: equivalent to {{tlf|tl{{!}}''template_name''}}
+
+: {{tlx|tl2&nbsp;|sister{{=}}''sister_id''&nbsp;|''template_name''}}
+:: to display a template from a sister project (e.g. {{tlf|tl2&nbsp;{{!}}sister{{=}}V&nbsp;{{!}}''template_name''}} for Wikiversity)
+
+: {{tlx|tl2&nbsp;|lang{{=}}''lang_id''&nbsp;|sister{{=}}''sister_id''&nbsp;|''template_name''}}
+:: to display a template from a sister project in another language (e.g. {{tlf|tl2&nbsp;{{!}}lang{{=}}fr&nbsp;{{!}}sister{{=}}V&nbsp;{{!}}''template_name''}} for a template from the French Wikisource project)
+
+=== Examples ===
+{| class="wikitable"
+! Code
+! Result
+|-
+| <code><nowiki>{{tl|x0}}</nowiki></code>
+| {{tl|x0}}
+|-
+| <code><nowiki>{{tl2|x1}}</nowiki></code>
+| {{tl2|x1}}
+|-
+| <code><nowiki>{{tl2|sister=M|3x}}</nowiki></code>
+| {{tl2|sister=M|3x}}
+|-
+| <code><nowiki>{{tl2|sister=wikibooks|lang=de|WP}}</nowiki></code>
+| {{tl2|sister=wikibooks|lang=de|WP}}
+|}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link with 2 parameters",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string",
+			"autovalue": ""
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"nowrap": {
+			"label": "Nowrap?",
+			"description": "Whether to add “<span style=\"white-space: nowrap\">”",
+			"type": "boolean",
+			"default": "0",
+			"autovalue": "1"
+		},
+		"sister": {
+			"label": "Interwiki Prefix",
+			"description": "The interwiki prefix (see: “Special:Interwiki” for a list of valid prefixes)",
+			"type": "string"
+		},
+		"lang": {
+			"label": "Interlanguage Prefix",
+			"description": "The interwiki language prefix (see: “Special:Interwiki” for a list of valid prefixes)",
+			"type": "string"
+		}
+	},
+	"paramOrder": [
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"nowrap",
+		"sister",
+		"lang"
+	]
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories go here and interwikis go in Wikidata. -->
+[[Category:Internal template-link templates{{#translation:}}]]
+}}</includeonly>

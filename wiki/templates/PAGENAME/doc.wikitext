@@ -1,0 +1,9 @@
+{{Documentation subpage}}
+<!-- PLEASE ADD CATEGORIES AND INTERWIKIS AT THE BOTTOM OF THIS PAGE -->
+
+=== Usage ===
+This ''should'' never be used, but when someone provides the [[Help:Magic words#Page names|magic word "PAGENAME"]] with a piped parameter, it will prevent breakage. Parameter 1 will be used as the : parameter, other parameters will be discarded.
+<includeonly>
+<!-- CATEGORIES AND INTERWIKIS HERE, THANKS -->
+[[zh:Template:PAGENAME]]
+</includeonly>

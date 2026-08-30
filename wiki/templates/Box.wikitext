@@ -1,0 +1,33 @@
+<includeonly>
+{| style="border: 1px solid {{{bordercolor|silver}}}; width: {{{width|15vw}}} height: {{{height|auto}}}; overflow-y={{{overflow-y|visible}}};"
+!style="background: {{{bordercolor|silver}}};"|<div style="color: {{{headertextcolor|#006cb0}}} !important; background: {{{headercolor|#c3e6f9}}} !important; <!--background:linear-gradient(40deg, black -50%,{{{headercolor|#0f1f47}}} 50%,black 150%) !important--> text-align: {{{headeralign|center}}};"><span>{{{header|}}}</span></div>
+|-
+|style="background: {{{contentcolor|}}}; color: {{{contenttextcolor|white}}}; border-top: 1px solid {{{bordercolor|silver}}}; padding: {{{contentpadding|1em}}};"|<div><span>{{{content|}}}</span></div>
+|}</includeonly>
+
+<noinclude>
+<pre>{{Box
+|header = Default Box Design
+|content = Put whatever you want.
+}}</pre>{{Box|header = Default Box Design|content = Put whatever you want.}}<pre>{{Box
+|header = ''Custom Design''
+|headertextcolor = white
+|content = <center>You can also add formatting and html in the header and content</center>
+|bordercolor = gold
+|headercolor = red
+|contentcolor = navy
+|width = 50%
+|contentpadding = 2em
+|headeralign = right
+}}</pre>{{Box
+|header = ''Custom Design''
+|headertextcolor = white
+|content = <center>You can also add formatting and html in the header and content</center>
+|bordercolor = gold
+|headercolor = red
+|contentcolor = navy
+|contenttextcolor = white
+|width = 50%
+|contentpadding = 2em
+|headeralign = right
+}}</noinclude>

@@ -1,0 +1,31 @@
+/* Cell sizes for ambox/tmbox/imbox/cmbox/ombox/fmbox/dmbox message boxes */
+th.mbox-text, td.mbox-text {   /* The message body cell(s) */
+	padding: 0.25em 0.9em;     /* 0.9em left/right */
+}
+td.mbox-image {                /* The left image cell */
+	padding: 2px 0 2px 0.9em;  /* 0.9em left, 0px right */
+}
+td.mbox-imageright {           /* The right image cell */
+	padding: 2px 0.9em 2px 0;  /* 0px left, 0.9em right */
+}
+/* Footer and header message box styles */
+table.fmbox {
+    clear: both;
+    margin: 0.2em 0;
+    width: 100%;
+    border: 1px solid #a2a9b1;
+    background-color: var( --background-color-interactive-subtle, #f8f9fa );
+    color: var( --color-base, #202122 );
+    box-sizing: border-box;
+}
+table.fmbox-system {
+    background-color: var( --background-color-interactive-subtle, #f8f9fa );
+}
+table.fmbox-warning {
+    border: 1px solid #bb7070;  /* Dark pink */
+    background-color: #ffdbdb;  /* Pink */
+    color: #333;
+}
+table.fmbox-editnotice {
+    background-color: transparent;
+}

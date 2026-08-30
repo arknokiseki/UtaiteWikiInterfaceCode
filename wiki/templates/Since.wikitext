@@ -1,0 +1,33 @@
+<noinclude>
+<languages/>
+</noinclude><!--
+--><templatestyles src="Since/styles.css"/><span class="tpl-since"><translate><!--T:1--> Since <tvar name=1>{{trim| {{#if:{{{mw|}}}|{{#ifexist:MediaWiki {{{mw}}}|[[Special:MyLanguage/MediaWiki {{{mw}}}|MediaWiki {{{mw}}}]]|MediaWiki {{{mw}}}}}|}} {{#if:{{{1|{{{r|}}}}}}|&bull; {{Rev|{{{1|{{{r}}}}}}}}}} {{#if:{{{gerrit|}}}|&bull; [[gerrit:{{{gerrit|}}}|change {{{gerrit}}}]]}} {{#if:{{{mw|}}}{{{1|{{{r|}}}}}}{{{gerrit|}}}||<sup>when?</sup>}} }}</tvar></translate></span><!--
+--><noinclude>
+{{Documentation|content=
+{{Uses TemplateStyles|Template:Since/styles.css}}
+{{Since/doc}}
+
+<translate>
+== Usage == <!--T:2-->
+</translate>
+
+<pre>
+* Lorem ipsum. {{since|mw=1.41}}
+* Lorem ipsum. {{since|mw=1.41|gerrit=947502}}
+* Lorem ipsum. {{since|mw=1.18|r=1234}}
+* Lorem ipsum. {{since|gerrit=947502}}
+* Lorem ipsum. {{since|r=1234}}
+* Lorem ipsum. {{since}}
+</pre>
+
+* Lorem ipsum. {{since|mw=1.41}}
+* Lorem ipsum. {{since|mw=1.41|gerrit=947502}}
+* Lorem ipsum. {{since|mw=1.18|r=1234}}
+* Lorem ipsum. {{since|gerrit=947502}}
+* Lorem ipsum. {{since|r=1234}}
+* Lorem ipsum. {{since}}
+}}
+
+[[Category:MediaWiki version templates{{#translation:}}]]
+[[Category:Internal link templates{{#translation:}}|{{PAGENAME}}]]
+</noinclude>

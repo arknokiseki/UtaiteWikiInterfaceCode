@@ -1,0 +1,71 @@
+<includeonly>[[File:placeholder.png|600px|center]]
+'''Name''' was ...
+
+==Participating Groups==
+{{scrollbox|content = 
+* [http://www.youtube.com/user/username Groupname] ([[Member1]], [[Member2]], [[Member3]] and [[Member4]])
+* [https://www.youtube.com/channel/channelname Groupname] ([[Member1]], [[Member2]], [[Member3]] and [[Member4]])
+}}
+
+==Round 1 Entries==
+'''Theme:''' 
+* [http://www.youtube.com/watch?v=ytid Details] | [http://www.youtube.com/watch?v=ytid Results]
+{{scrollbox|content = 
+* '''"[http://www.youtube.com/watch?v=ytid Songname]"''' feat. groupname
+* "[http://www.youtube.com/watch?v=ytid Songname]" feat. groupname
+}}
+
+==Round X (Final) Entries==
+'''Theme:''' 
+{{YTvideo|song=Songname|group=Groupname|ytid}}
+{{YTvideo|song=Songname|group=Groupname|ytid|winner}}
+{{clr}}
+
+==Gallery==
+{{Gallery
+|
+}}
+
+==Trivia==
+
+==External Links==
+* [
+
+{{ref}}
+{{Category|YT Battles}}
+</includeonly><noinclude><pre>[[File:placeholder.png|600px|center]]
+'''Name''' was ...
+
+==Participating Groups==
+{{scrollbox|content = 
+* [http://www.youtube.com/user/username Groupname] ([[Member1]], [[Member2]], [[Member3]] and [[Member4]])
+* [https://www.youtube.com/channel/channelname Groupname] ([[Member1]], [[Member2]], [[Member3]] and [[Member4]])
+}}
+
+==Round 1 Entries==
+'''Theme:''' 
+* [http://www.youtube.com/watch?v=ytid Details] | [http://www.youtube.com/watch?v=ytid Results]
+{{scrollbox|content = 
+* '''"[http://www.youtube.com/watch?v=ytid Songname]"''' feat. groupname
+* "[http://www.youtube.com/watch?v=ytid Songname]" feat. groupname
+}}
+
+==Round X (Final) Entries==
+'''Theme:''' 
+{{YTvideo|song=Songname|group=Groupname|ytid}}
+{{YTvideo|song=Songname|group=Groupname|ytid|winner}}
+{{clr}}
+
+==Gallery==
+{{Gallery
+|
+}}
+
+==Trivia==
+
+==External Links==
+* [
+
+{{ref}}
+{{Category|YT Battles}}
+</pre></noinclude>

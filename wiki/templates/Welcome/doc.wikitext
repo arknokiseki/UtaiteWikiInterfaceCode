@@ -1,0 +1,11 @@
+{{Documentation/Header}}
+The standard welcome message left on a new editor's talk page. It points them at the [[Utaite Wiki:Tutorial|tutorial]] and the [[Utaite Wiki:Requirements|requirements]] before they create articles.
+
+Takes no parameters. Sign it yourself — the template does not add a signature.
+
+==Syntax==
+<pre>{{Welcome}} ~~~~</pre>
+
+==Usage==
+Substitute it rather than transcluding, so the message stays fixed even if this template is later reworded:
+<pre>{{subst:Welcome}} ~~~~</pre>

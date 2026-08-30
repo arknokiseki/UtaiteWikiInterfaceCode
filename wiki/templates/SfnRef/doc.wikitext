@@ -1,0 +1,6 @@
+{{Documentation/Header}}
+Generates a citation anchor ID for shortened footnotes, via <code><nowiki>{{#invoke:Citation|sfnref}}</nowiki></code>. Imported from Wikipedia — see [[wikipedia:Template:SfnRef]] for full usage.
+
+Used in the <code>ref</code> parameter of {{T|Cite book}} and {{T|Cite journal}} to give a citation a stable anchor.
+
+<pre>|ref = {{SfnRef|すとろべりーめもりー vol.1|2019}}</pre>

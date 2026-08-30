@@ -1,0 +1,27 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Time ago/core|v1=time=YYYY-MM-DD HH:mm:ss}}
+or
+{{T|Time ago/core|v1=time=YYYY-MM-DDTHH:mm:ss}}
+
+==Examples==
+{{T|Time ago/core|_Y_=1}}
+
+{{T|Time ago/core|time={{CURRENTYEAR}}-{{CURRENTMONTH}}-{{CURRENTDAY}} 14:54:45|_Y_=1}}
+</pre>
+
+{{T|Time ago/core|time={{CURRENTYEAR}}-{{CURRENTMONTH}}-{{CURRENTDAY}} 13:47:45|_Y_=1}}
+
+{{T|Time ago/core|time={{Time ago/ConvertTimestamp|{{REVISIONTIMESTAMP}}}}|_Y_=1}}
+<-- actually using {{T|Time ago/ConvertTimestamp|{{REVISIONTIMESTAMP}}}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

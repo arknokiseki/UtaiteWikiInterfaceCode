@@ -1,0 +1,209 @@
+{{Languages|Template:Flatlist/doc}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Flatlist/styles.css}}
+This template provides a WCAG/ISO-standards-compliant accessible alternative to comma or dash (or other single character) separated lists.
+
+== Usage ==
+{{Tlx|flatlist}} starts a horizontal list, such as:
+
+{{flatlist|
+* cat
+* dog
+* horse
+* cow
+* sheep
+* pig
+}}
+
+== Parameters ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "Used to create plain (i.e. unbulleted) lists.",
+		"cs": "Používá se k vytváření jednoduchých (tj. bez odrážek) seznamů."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Content",
+				"cs": "Obsah"
+			},
+			"description": {
+				"en": "The list to wrap.",
+				"cs": "Seznam k zabalení."
+			},
+			"suggested": true,
+			"type": "content"
+		},
+		"class": {
+			"label": {
+				"en": "Extra Classes",
+				"cs": "Extra třídy"
+			},
+			"description": {
+				"en": "Adds extra CSS classes to the containing div.",
+				"cs": "Přidá další třídy CSS do obsahující div."
+			},
+			"type": "string"
+		},
+		"style": {
+			"label": {
+				"en": "CSS Style",
+				"cs": "Styl CSS"
+			},
+			"description": {
+				"en": "Adds extra CSS properties to the containing div.",
+				"cs": "Přidá další vlastnosti CSS do obsahující div."
+			},
+			"example": "\n border: solid 1px silver;\n background: lightyellow;\n",
+			"type": "string"
+		},
+		"indent": {
+			"label": {
+				"en": "Indent",
+				"cs": "Odrážka"
+			},
+			"description": {
+				"en": "Indents the list by a number of standard indents (one indent being 1.6em), particularly handy for inclusion in an indented discussion thread.",
+				"cs": "Odsadí seznam o několik standardních odsazení (jedna odrážka je 1,6 em), což je zvláště užitečné pro zahrnutí do odsazeného diskusního vlákna."
+			},
+			"example": "2",
+			"type": "number"
+		}
+	},
+	"paramOrder": [
+		"class",
+		"style",
+		"indent",
+		"1"
+	]
+}
+</templatedata>
+
+== Examples ==
+<syntaxhighlight lang="mediawiki">
+ {{flatlist|
+ * cat
+ * dog
+ * horse
+ * cow
+ * sheep
+ * pig
+ }}
+</syntaxhighlight>
+
+produces:
+
+{{flatlist|
+* cat
+* dog
+* horse
+* cow
+* sheep
+* pig
+}}
+
+=== Syntax for ordered lists ===
+<syntaxhighlight lang="wikitext">
+{{flatlist|
+# first
+# second
+# third
+# fourth
+# fifth
+# sixth
+}}
+</syntaxhighlight>
+
+produces:
+
+{{flatlist|
+# first
+# second
+# third
+# fourth
+# fifth
+# sixth
+}}
+
+=== Using optional parameters ===
+<syntaxhighlight lang="mediawiki">
+{{flatlist |indent=2 
+|style=border:solid 1px silver; background:lightyellow; 
+|class=nowraplinks |
+* Alpine skiing at the 1936 Winter Olympics
+* Alpine skiing at the 1948 Winter Olympics
+* Alpine skiing at the 1952 Winter Olympics
+* Alpine skiing at the 1956 Winter Olympics
+* Alpine skiing at the 1960 Winter Olympics
+* Alpine skiing at the 1964 Winter Olympics
+}}
+</syntaxhighlight>
+
+produces:
+
+{{flatlist |indent=2 |style=border:solid 1px silver; background:lightyellow; |class=nowraplinks |
+* Alpine skiing at the 1936 Winter Olympics
+* Alpine skiing at the 1948 Winter Olympics
+* Alpine skiing at the 1952 Winter Olympics
+* Alpine skiing at the 1956 Winter Olympics
+* Alpine skiing at the 1960 Winter Olympics
+* Alpine skiing at the 1964 Winter Olympics
+}}
+
+== Technical details ==
+This template uses the <code>.hlist</code> [[w:Cascading Style Sheets|CSS]] class defined in the TemplateStyles to generate horizontal lists. It causes ordinary HTML list items to be displayed inline (horizontally), where they would normally display as block elements (vertically). The class also generates the interpuncts between list items and parentheses around nested lists.
+
+{| class="wikitable"
+! Wikitext
+! Expanded template
+! HTML
+|- style="vertical-align:top;"
+| <syntaxhighlight lang="wikitext">
+{{flatlist|
+* cat
+* dog
+* horse
+* cow
+* sheep
+* pig
+}}
+</syntaxhighlight>
+| {{#tag:pre|
+{{flatlist|
+* cat
+* dog
+* horse
+* cow
+* sheep
+* pig
+}}
+}}
+| <syntaxhighlight lang="html">
+<div class="hlist">
+<ul><li>cat</li>
+<li>dog</li>
+<li>horse</li>
+<li>cow</li>
+<li>sheep</li>
+<li>pig</li></ul>
+</div>
+</syntaxhighlight>
+|}
+
+== See also ==
+* {{tlx|multi-column numbered list}}
+* {{tlx|nowrap}}
+* {{tlx|pagelist}}
+* {{tlx|Hlist}} – Uses [[Module:List]]
+* {{ll|Help:Lists}}
+
+{{navbox lists}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Typing-aid templates{{#translation:}}]]
+[[Category:Formatting templates{{#translation:}}]]
+}}</includeonly>

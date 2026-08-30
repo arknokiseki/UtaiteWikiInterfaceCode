@@ -1,0 +1,70 @@
+{{Documentation/Header}}
+{{High Risk|Template:StructuredQuote2|nocat=1|pagetype=Main}}
+A styled pull-quote box with large decorative quotation marks in the wiki's accent color, an optional portrait image, and a flexible attribution line. Used for quoting utaite in interviews, streams, and social posts. See {{T|StructuredQuote}} for the earlier version.
+
+The attribution line is assembled from up to four parts, in order: <code>speaker</code>, then ", to ''receiver''", then ", ''attribution''", then ", ''source''". The whole line is omitted if none are supplied — and note that <code>receiver</code>, <code>attribution</code> and <code>source</code> only render when <code>speaker</code> is also set.
+
+==Syntax==
+{{T|StructuredQuote2|block=1
+|v1=text =
+|v2=image =
+|v3=speaker =
+|v4=receiver =
+|v5=attribution =
+|v6=source =
+|v7=clear =
+}}
+
+==Examples==
+===Basic===
+{{T|StructuredQuote2|_Y_=1|block=1
+|p1=text = I never expected so many people would listen to my covers.
+|p2=speaker = Utaite Name
+}}
+
+===With portrait and full attribution===
+{{T|StructuredQuote2|_Y_=1|block=1
+|p1=text = Thank you all for four wonderful years.
+|p2=image = Template doc.png
+|p3=speaker = Utaite Name
+|p4=receiver = fans
+|p5=attribution = during her 4th anniversary stream
+|p6=source = 2024.01.25
+}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>text</code> || – || Quote text || The quotation itself. || string || Text... ||
+|-
+| <code>image</code> || – || Image || Filename of a 50&nbsp;px portrait shown to the left of the quote, without the <code>File:</code> prefix. || wiki-file-name || – ||
+|-
+| <code>speaker</code> || – || Speaker || Who said it. '''Required for any attribution line to appear''' — the other attribution parameters are ignored without it. || string || – ||
+|-
+| <code>receiver</code> || – || Receiver || Who they said it to; renders as ", to ''receiver''". Requires <code>speaker</code>. || string || – ||
+|-
+| <code>attribution</code> || – || Attribution || Context such as an occasion or event. Requires <code>speaker</code>. || string || – ||
+|-
+| <code>source</code> || – || Source || A date or citation for the quote. Requires <code>speaker</code>. || string || – ||
+|-
+| <code>clear</code> || – || Clear || CSS <code>clear</code> value (<code>left</code>, <code>right</code>, <code>both</code>) to push the box below preceding floated elements such as infoboxes. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A styled pull-quote box with optional portrait and a flexible attribution line.",
+"params": {
+"text": { "label": "Quote text", "description": "The quotation itself.", "type": "string", "default": "Text...", "required": true },
+"image": { "label": "Image", "description": "50px portrait filename, without the 'File:' prefix.", "type": "wiki-file-name" },
+"speaker": { "label": "Speaker", "description": "Who said it. Required for any attribution line to render.", "type": "string" },
+"receiver": { "label": "Receiver", "description": "Who it was said to. Requires 'speaker'.", "type": "string" },
+"attribution": { "label": "Attribution", "description": "Context such as an occasion or event. Requires 'speaker'.", "type": "string" },
+"source": { "label": "Source", "description": "Date or citation. Requires 'speaker'.", "type": "string" },
+"clear": { "label": "Clear", "description": "CSS clear value to push the box below floated elements.", "type": "string" }
+},
+"paramOrder": ["text","image","speaker","receiver","attribution","source","clear"],
+"format": "block"
+}
+</templatedata>
+</div>

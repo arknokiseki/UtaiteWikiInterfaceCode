@@ -1,0 +1,159 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Nowrap/styles.css}}
+__TOC__
+{{-}}
+== Purpose and naming ==
+
+When a template name with braces is to be shown in documentation, the braces have to be escaped in some way so it doesn't become an actual call to the template. Instead of using {{tag|nowiki}} tags you can write it more simply and concisely by using the {{tlc|tlc}} template.
+
+It works similarly to {{tlc|tl}} and {{tlc|tlx}}, but doesn't make the template name into a link. When writing documentation you might want to avoid a lot of unnecessary links, since they can decrease readability. So on the first occurrence of a template name use {{tlx|tl}} or {{tlx|tlx}}, and then use {{tlc|tlc}} thereafter.
+
+===Basic operation===
+
+Here is how this template looks. Code is to the left; actual rendering to the right:
+
+:{{tlc|tlc|name|parameters}} = {{tlc|name|parameters}}
+
+==Documentation==
+
+===Functional details===
+
+* This template takes another ''template-name'' and some associated [[Help:Pipe trick|pipe-tricked]] [[m:Parameter#Parameters|(numbered) parameters]] (or 'pass parameters'), and displays them as an 'example demonstration' of how the ''template-name'' template could be coded, literally. Its primary use is in instruction and documentation.
+*Specifics here??? <!-- Coding details, other parameters (SUBST?), other notes? Cf. [[Template:Tlx]]. -->
+*Features of {{tlc|tlc}}:
+** It shows a template name and up to eight parameters.
+** It also shows empty parameters. (See examples hereafter.)
+** It prevents line wraps in their output.
+
+===Usage===
+
+{{tlc|Tlc|Template|first_parameter|second|third|fourth|...|eighth}} → {{Tlc|Template|first_parameter|second|third|fourth|fifth|sixth|seventh|eighth}}
+
+=== Examples ===
+
+Note: Wikitables make the {{tag|code}} tags transparent, unfortunately, so the "<code>code colouring</code>" is missing in these examples. 
+
+{| class="wikitable"
+! Code !! Result !! Comment
+|-
+| {{tlc|tlc}}
+| {{tlc}}
+| Shows its own syntax.
+|-
+| {{tlc|tlc|name}}
+| {{tlc|name}}
+| 
+|-
+| {{tlc|tlc|name|one}}
+| {{tlc|name|one}}
+| 
+|-
+| {{tlc|tlc|name|one|two}}
+| {{tlc|name|one|two}}
+| 
+|-
+| <code><nowiki>{{tlc|name|a|b|c|d|e|f|g|h|i|j}}</nowiki></code>
+| {{tlc|name|a|b|c|d|e|f|g|h|i}}
+| Shows up to eight parameters. The rest are dropped.
+|-
+| {{tlc|tlc|name|||three|four}}
+| {{tlc|name|||three|four}}
+| Also shows empty parameters.
+|-
+| {{tlc|tlc|name|||three||}}
+| {{tlc|name|||three||}}
+| Even shows empty parameters that come in the end.
+|-
+| {{tlc|tlc|name|one{{=}}a|two{{=}}b}}
+| {{tlc|name|one=a|two=b}}
+| The use of equal signs is a problem, but there is a fix; see next row.
+|-
+| {{tlc|tlc|name|one{{((}}{{=}}{{))}}a|two{{((}}{{=}}{{))}}b}}
+| {{tlc|name|one{{=}}a|two{{=}}b}}
+| Use <code><nowiki>{{=}}</nowiki></code> in place of an equal sign, so that it gets rendered properly.
+|}
+
+An alternative to using constructs such as <code><nowiki>{{=}}</nowiki></code> to prevent characters from getting interpreted syntactically is to use <syntaxhighlight lang=html inline><code><nowiki>...</nowiki></code></syntaxhighlight>, which will prevent '''all''' characters from being interpreted.  For example, in place of
+<syntaxhighlight lang=moin>{{tlc|name|one{{=}}{{tlc|IPA|/tʃ/}}|two}}</syntaxhighlight>
+you can use
+<syntaxhighlight lang=html><code><nowiki>{{name|one={{IPA|/tʃ/}}|two}}</nowiki></code></syntaxhighlight>
+Both render as
+<syntaxhighlight lang=moin>{{name|one={{IPA|/tʃ/}}|two}}</syntaxhighlight>
+
+If a vertical display with parameters on their own lines is desired, this can also be laid out manually in this manner, or more rapidly done with {{tag|pre}}.
+
+Here is the code to emulate {{tlc|tlc}} using {{tag|nowiki|open}}:
+
+{|
+! Using templates: !! Using {{tag|nowiki|open}}: !! Rendered result: 
+|-
+|style="padding-right: 50px;"| <code><nowiki>{{tlc|name|one{{=}}a|two{{=}}b}}</nowiki></code>
+|style="padding-right: 50px;"| <code><nowiki>&lt;code&gt;&lt;nowiki&gt;{{name|one=a|two=b}}&lt;/nowiki&gt;&lt;/code&gt;</nowiki></code>
+|<code><nowiki>{{name|one=a|two=b}}</nowiki></code>
+|}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link code",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string"
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"6": {
+			"label": "Parameter 5",
+			"description": "Fifth parameter value",
+			"type": "string"
+		},
+		"7": {
+			"label": "Parameter 6",
+			"description": "Sixth parameter value",
+			"type": "string"
+		},
+		"8": {
+			"label": "Parameter 7",
+			"description": "Seventh parameter value",
+			"type": "string"
+		},
+		"9": {
+			"label": "Parameter 8",
+			"description": "Eight parameter value",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+[[Category:Typing-aid templates{{#translation:}}]]
+}}</includeonly>

@@ -1,0 +1,7 @@
+span.redlink > a:link {
+	color: var(--color-destructive, #bf3c2c);
+}
+
+span.redlink > a:visited {
+	color: var(--color-destructive--visited, #9f5555);
+}

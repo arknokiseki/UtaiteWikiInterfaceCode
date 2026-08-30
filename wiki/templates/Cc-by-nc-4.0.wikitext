@@ -1,0 +1,25 @@
+<div class="boilerplate" id="c-cc-license" style="width:90%; margin:0 auto; padding:10px; border:1px solid #A8ACA8;">
+<div style="display:flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+<div>[[File:Creative-commons-license.png|200px]]</div>
+<div style="font-size: 1.4rem;">
+'''Attribution-NonCommercial-ShareAlike<br />4.0 International (CC BY-NC 4.0)'''
+</div>
+</div>
+
+<center>This is a human-readable summary of (and not a substitute for) the [https://creativecommons.org/licenses/by-nc/4.0/ license]</center>
+
+<center><strong>Attribution: {{{1}}}</strong></center>
+
+<center><h2 style="">You are free to:</h2></center>
+* '''Share''' – copy and redistribute the material in any medium or format.
+* '''Remix''' – remix, transform, and build upon the material.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+<center><h2 style="">Under the following terms:</h2></center>
+* '''Attribution''' – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+* '''NonCommercial''' – You may not use the material for commercial purposes.
+'''No additional restrictions''' – You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+</div>
+
+<includeonly>[[Category:Images]][[Category:Cc-by-nc-4.0 Images]][[Category:Media]]</includeonly>
+<noinclude>{{Documentation|Template:Cc-by-4.0/doc}}</noinclude>

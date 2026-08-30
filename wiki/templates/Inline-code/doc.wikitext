@@ -1,0 +1,55 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+== Usage ==
+: Some text, then <nowiki>{{Inline-code | 1=wfDebug( $text, $dest = 'all' );}}</nowiki> and more text.
+
+produces
+: Some text, then {{Inline-code | 1=wfDebug( $text, $dest = 'all' );}} and more text.
+
+Note that for PHP, using the shorter {{tlx|phpi}} might be easier.
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "An inline source code string.",
+	"format": "inline",
+	"params": {
+		"1": {
+			"aliases": ["code"],
+			"label": "Code",
+			"description": "The code to display.",
+			"required": true,
+			"type": "string"
+		},
+		"2": {
+			"aliases": ["lang"],
+			"label": "Language",
+			"description": "The programming language of the source code. List of valid values is at: Extension:SyntaxHighlight#Supported_languages",
+			"default": "php",
+			"example": "sql",
+			"suggested": true,
+			"type": "string"
+		},
+		"class": {
+			"label": "Class",
+			"type": "string"
+		},
+		"id": {
+			"label": "ID",
+			"type": "string"
+		},
+		"style": {
+			"label": "CSS Style",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+* {{tl|code}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Formatting templates]]
+}}</includeonly>

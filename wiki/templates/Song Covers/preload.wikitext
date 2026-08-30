@@ -1,0 +1,35 @@
+<includeonly>{{Song covers
+|yt1     = 
+|nnd1    = 
+|singer1 = 
+|yt2     = 
+|nnd2    = 
+|singer2 = 
+|yt3     = 
+|nnd3    = 
+|singer3 = 
+|yt4     = 
+|nnd4    = 
+|singer4 = 
+|yt5     = 
+|nnd5    = 
+|singer5 = 
+}}</includeonly><noinclude><pre>
+{{Song covers
+|yt1     = 
+|nnd1    = 
+|singer1 = 
+|yt2     = 
+|nnd2    = 
+|singer2 = 
+|yt3     = 
+|nnd3    = 
+|singer3 = 
+|yt4     = 
+|nnd4    = 
+|singer4 = 
+|yt5     = 
+|nnd5    = 
+|singer5 = 
+}}
+</pre></noinclude>

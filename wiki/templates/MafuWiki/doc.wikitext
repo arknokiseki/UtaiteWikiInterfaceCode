@@ -1,0 +1,4 @@
+<pre>{{MafuWiki|心恋花火_/_Uragoi_Hanabi|Uragoi Hanabi}}</pre>
+...results in:
+{{MafuWiki|心恋花火_/_Uragoi_Hanabi|Uragoi Hanabi}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

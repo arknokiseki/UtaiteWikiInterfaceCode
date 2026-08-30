@@ -1,0 +1,15 @@
+<includeonly><center><!--
+--><div style="width:97%; text-align:left; border:1px solid #ccc"><!--
+--><div style="font-size:110%; padding:7px 7px 0 7px; font-size:120%">'''{{FULLPAGENAME}}'''<!--
+--></div><!--
+--><div style="font-size:80%;padding:0 7px 7px 7px"><!--
+--><span class="plainlinks">This {{pagetype|subjectspace=yes}} was [{{fullurl:{{FULLPAGENAME}}|diff=cur}} last edited] by [[User:{{REVISIONUSER}}|{{REVISIONUSER}}]] '''{{time ago|{{Time ago/ConvertTimestamp|{{REVISIONTIMESTAMP}}}}}}'''. <span style="font-size: 0.8em;">''([{{fullurl:{{FULLPAGENAMEE}}|action=purge}} Purge])''</span><!--
+--></span> If you feel the list needs an update, please help by doing so.<span style="font-size: 0.8em;">''([[Utaite Wiki:Tutorial/Song Pages|Tutorial]])''</span><br/>'''Edit URL''': <div class="mw-collapsible mw-collapsed wikitable dataTable">[[/Lyrics|Lyrics]]・[[/Male Utaite|Male Utaite]]・[[/Male Utaite Groups|Male Utaite Groups]]・[[/Female Utaite|Female Utaite]]・[[/Female Utaite Groups|Female Utaite Groups]]・[[/Androgynous Utaite|Androgynous Utaite]]・[[/Units|Collaboration Units]]</div><!--
+--></div><!--
+--></div><!--
+--></center><!--
+--><br /><!--
+--><!--
+-->{{maintalkcat other|[[Category:Songs with up-to-date cover list]]||[[Category:Songs with up-to-date cover list]]|}}
+</includeonly><!--
+--><noinclude>[[Category:Article management templates]]{{Documentation}}</noinclude>

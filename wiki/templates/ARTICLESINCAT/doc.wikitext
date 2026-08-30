@@ -1,0 +1,64 @@
+{{Documentation/Header}}
+Returns the '''number of pages''' in a category, as a plain integer. Used to build the live counts on [[Utaite Wiki:Utaite List]] and its <code>/Number</code> subpages.
+
+It works by running a DPL query that emits <code>+1</code> per result, prefixing the whole thing with <code>0</code>, and evaluating the sum — so an empty category correctly returns <code>0</code> rather than a blank.
+
+==Syntax==
+{{T|ARTICLESINCAT|block=1
+|v1=cat =
+|v2=titleregexp =
+|v3=categoryregexp =
+|v4=nottitleregexp =
+|v5=cached =
+}}
+
+==Examples==
+{| class="wikitable"
+! Code !! Result
+|-
+| <code><nowiki>{{ARTICLESINCAT|cat=Male Utaite}}</nowiki></code> || {{ARTICLESINCAT|cat=Male Utaite}}
+|-
+| <code><nowiki>{{ARTICLESINCAT|cat=Male Utaite|titleregexp=^[0-9]+}}</nowiki></code> || {{ARTICLESINCAT|cat=Male Utaite|titleregexp=^[0-9]+}}
+|-
+| <code><nowiki>{{ARTICLESINCAT|cat=Male Utaite|titleregexp=(?i)^[z]}}</nowiki></code> || {{ARTICLESINCAT|cat=Male Utaite|titleregexp=(?i)^[z]}}
+|}
+
+Prefix a regex with <code>(?i)</code> to make it case-insensitive.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>cat</code> || – || Category || Category to count, without the <code>Category:</code> prefix. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>titleregexp</code> || – || Title regexp || Count only titles matching this regular expression. || string || – ||
+|-
+| <code>categoryregexp</code> || – || Category regexp || Count only pages whose categories match this regular expression. || string || – ||
+|-
+| <code>nottitleregexp</code> || – || Exclude title regexp || Exclude titles matching this regular expression. || string || – ||
+|-
+| <code>cached</code> || – || Allow cached results || Set to <code>true</code> to permit cached DPL results. || string || false ||
+|}
+
+{{Notice
+| header = Performance
+| info = <code>cached</code> defaults to '''false''', so every call runs a fresh query. On a page with many counts, pass <code>cached=true</code> unless the numbers must be exact to the minute.
+| border = orange
+}}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Returns the number of pages in a category as a plain integer.",
+"params": {
+"cat": { "label": "Category", "description": "Category to count, without the 'Category:' prefix.", "type": "string", "required": true },
+"titleregexp": { "label": "Title regexp", "description": "Count only titles matching this regular expression.", "type": "string" },
+"categoryregexp": { "label": "Category regexp", "description": "Count only pages whose categories match this regular expression.", "type": "string" },
+"nottitleregexp": { "label": "Exclude title regexp", "description": "Exclude titles matching this regular expression.", "type": "string" },
+"cached": { "label": "Allow cached results", "description": "Set to 'true' to permit cached DPL results.", "type": "string", "default": "false" }
+},
+"paramOrder": ["cat","titleregexp","categoryregexp","nottitleregexp","cached"],
+"format": "block"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Templates]]</includeonly>

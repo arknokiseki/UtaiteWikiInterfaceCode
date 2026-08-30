@@ -1,0 +1,3 @@
+<includeonly><span class="forum-link-item"><i class="fa-solid fa-{{{icon|link}}}"></i> [[{{{target|#}}}|{{{text|{{{target|Link}}}}}}]]</span></includeonly><noinclude>
+{{documentation}}
+</noinclude>

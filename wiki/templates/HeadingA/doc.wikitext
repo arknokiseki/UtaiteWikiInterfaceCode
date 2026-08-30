@@ -1,0 +1,9 @@
+;Description
+:This template produces an h2 heading enclosed in a coloured box.
+;Syntax
+:Type <code>{{t|HeadingA|Header title}}</code>.
+;Sample output
+:{{t|HeadingA|Header title}} gives...
+:{{HeadingA|Header title}}
+
+<includeonly>[[Category:General wiki templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

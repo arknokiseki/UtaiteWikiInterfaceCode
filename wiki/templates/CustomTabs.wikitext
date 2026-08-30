@@ -1,0 +1,69 @@
+<includeonly>{{#ifeq:{{#titleparts: {{FULLPAGENAMEE}} | 1 | 2}}|Songs|<div class="no-image-on-preview"></div>|{{#ifeq:{{#titleparts: {{FULLPAGENAMEE}} | 1 | 2 }}|Discography|<div class="no-image-on-preview"></div>|{{#ifeq:{{#titleparts: {{FULLPAGENAMEE}} | 1 | 2 }}|Gallery|<div class="no-image-on-preview"></div>|{{#ifeq:{{#titleparts: {{FULLPAGENAMEE}} | 1 | 2 }}|Media|<div class="no-image-on-preview"></div>|}}}}}}}}<div class="blacklist-pPreview"><!--
+--><div class="{{{class|custom-tabs-default}}} custom-tabs"><!--
+   -->{{#if:{{{tab1|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab1}}}|active-tab|{{#ifeq:{{PAGENAME}}|{{{rootpage|{{ROOTPAGENAME}}}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}{{!}}{{{tab1}}}|{{{tab1}}}{{!}}{{{tab1name|{{{tab1}}}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab2|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab2}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab2}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab2}}}|{{{tab2name|{{{tab2}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab3|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab3}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab3}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab3}}}|{{{tab3name|{{{tab3}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab4|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab4}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab4}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab4}}}|{{{tab4name|{{{tab4}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab5|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab5}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab5}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab5}}}|{{{tab5name|{{{tab5}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab6|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab6}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab6}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab6}}}|{{{tab6name|{{{tab6}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab7|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab7}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab7}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab7}}}|{{{tab7name|{{{tab7}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab8|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab8}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab8}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab8}}}|{{{tab8name|{{{tab8}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab9|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab9}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab9}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab9}}}|{{{tab9name|{{{tab9}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab10|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab10}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab10}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab10}}}|{{{tab10name|{{{tab10}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab11|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab11}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab11}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab11}}}|{{{tab11name|{{{tab11}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab12|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab12}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab12}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab12}}}|{{{tab12name|{{{tab12}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+   -->{{#if:{{{tab13|}}}|<!--
+      --><span class="{{#ifeq:{{#ifeq:{{{subpages|1}}}|1|{{SUBPAGENAME}}|{{FULLPAGENAME}}}}|{{{tab13}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab13}}}|active-tab|inactive-tab}}}}"><!--
+         -->[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab13}}}|{{{tab13name|{{{tab13}}}}}}]]<!--
+      --></span><!--
+   -->}}<!--
+--></div><!--
+--></div></includeonly><noinclude>{{Documentation|type=Design}}</noinclude>

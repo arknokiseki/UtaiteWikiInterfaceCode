@@ -1,0 +1,34 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Leychal various twitter bg.png
+|caption = her Twitter background
+|officialjapname = れいちゃる
+|officialromajiname = Leychal
+|YTusername = 
+|NNDuserpage = 6295770
+|mylist1 = 16126633
+|mylist1info = 
+|mylist2 = 20313906
+|mylist2info = collabs
+|mylist3 = 18765118
+|mylist3info = used in
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co476929
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Kochira, Koufuku Anshin Iinkai Desu.]]
+|examplennd = sm18129914
+|exampleyt = 9a7kar-8ZVs
+|description = '''Leychal''' ('''れいちゃる'''), also known under the names '''Sakatare''' ('''さかたれ''', stylized '''㋚㋕㋟㋹''') and '''Sakata Leychal''' ('''坂田れいちゃる''') is a female {{NNDict|Utaite}} whose deeper voice is thought to sound boyish. And as it is a {{VW|Len}}-typed voice, she is sometimes tagged as a wild Len (野生のレン, yasei no len). Her high voice however is noted to be sweet and lovely, and therefore she can be considered a "{{NNDict|Ryouseirui}}"
+
+As that, her voice fits well to cute Rock and Pop songs. She also often covers Rin Len original songs, such as her "How-to Sekai Seifuku"{{nnd|sm20328616}}, and has been noted to master both voice types equally well.
+
+Some might know her for her duet covers with fellow utaite [[kradness]], where she would sing the Rin parts, and kradness the Len parts.
+
+She is has been noted to be also good at drawing.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

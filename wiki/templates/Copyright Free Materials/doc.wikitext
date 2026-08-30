@@ -1,0 +1,12 @@
+{{Documentation/Header}}
+A licence box marking a file as copyright-free material. Place it on the file page; it files the file into [[:Category:Copyright Free Materials]] and the general media and licensing categories.
+
+Takes no parameters.
+
+==Syntax==
+{{T|Copyright Free Materials}}
+
+==See also==
+* [[Utaite Wiki:Licensing & Media]] — which licence tag to use
+* [[MediaWiki:Licenses]] — the upload dropdown
+<includeonly>[[Category:Picture categorization templates]]</includeonly>

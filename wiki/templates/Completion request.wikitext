@@ -1,0 +1,13 @@
+<includeonly><!--
+--><div class="maintenance-box maintenance-box--completion"><!--
+--><div class="maintenance-box__deco"></div><!--
+--><div class="maintenance-box__inner"><!--
+--><div class="maintenance-box__icon"><!--
+--><i class="fas fa-puzzle-piece"></i><!--
+--></div><!--
+--><div class="maintenance-box__content"><!--
+--><div class="maintenance-box__title">Completion Requested</div><!--
+--><div class="maintenance-box__desc">{{#if:{{{info|}}}|{{{info}}}|This {{{1|article}}} is incomplete. You can help the Utaite Wiki by adding the missing information.}}</div>
+</div><!--
+--></div><!--
+--></div>{{maintalkcat other|[[Category:Completion Requests]]||[[Category:Completion Requests]]|}}</includeonly><noinclude>{{doc}}[[Category:Article management templates]]</noinclude>

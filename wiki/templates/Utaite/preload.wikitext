@@ -1,0 +1,174 @@
+<!--! after editing the preload, don't forget to delete all of these comments!-->
+<!--!if songlist is uptodate, add this template: {{Uptodate|Month XX, 20XX}}. If not, use {{WIP|songlist}} instead. Uptodate template transclusion needs to be placed above the WIP template transclusion--> 
+<!--!Select at least one of the housekeeping template (the most suitable one to describe the article status now): {{empty}}/{{WIP}}/{{WIP|songlist}}/{{WIP|description}}/{{complete}}. Note: {{complete}} template is used to add the article completion request category, not to mark article as completed.--><!---->
+
+{{Utaite
+<!--Basic Information Section-->
+|gender              = <!--?Male/Female/Androgynous-->
+|status              = <!--? select: {{Active}} or {{Inactive}}-->
+|years               = <!--?20XX-20XX/present-->
+|fanmark             = 
+|affiliation         = 
+
+<!--Name Information Section-->
+|officialjapname     = 
+|officialromajiname  = 
+|officialengname     = 
+|officialnameinfo    = 
+|aka                 = 
+
+<!--Visual/Image Section-->
+|image               = 
+|imagesong           = 
+|imagegroup          = 
+|imagedescr          = 
+|officialillustrator = 
+|otherillustrator    = 
+
+<!--Personal Information Section-->
+|birthday            = 
+|birthmonth          = 
+|birthyear           = 
+|birthref            = 
+
+<!--Social Media Section-->
+|Instagram           = 
+|Instagraminfo       = 
+|Instagram2          = 
+|Instagram2info      = 
+|Twitter             = 
+|Twitterinfo         = main
+|Twitter2            = 
+|Twitter2info        = sub
+|Twitter3            = 
+|Twitter3info        = <!--? example:secret base-->
+|Twitcast            = 
+|Twitcastinfo        = 
+|Twitcast2           = 
+|Twitcast2info       = 
+|Marshmallow         = 
+|Marshmallowinfo     = 
+|Soundcloud          = 
+|Soundcloudinfo      = 
+|Soundcloud2         = 
+|Soundcloud2info     = 
+|Spotify             = 
+|Spotifyinfo         = 
+|Booth               = 
+|Boothinfo           = 
+
+<!--Line Section-->
+|Line                = 
+|Lineinfo            = 
+|Line2               = 
+|Line2info           = 
+|LinePage            = 
+|LinePageinfo        = 
+|Lineqrpage          = 
+|Lineqrpageinfo      = 
+
+<!--Other Social Platform Section-->
+|Tiktok              = 
+|Tiktokinfo          = 
+|Tiktok2             = 
+|Tiktok2info         = 
+|BBuserspace         = 
+|BBuserspaceinfo     = 
+|BBuserspace2        = 
+|BBuserspace2info    = 
+|Weibo               =
+|Weiboinfo           =
+|Weibo2              =
+|Weibo2info          =
+
+<!--YouTube Section-->
+|YThandle            = <!--!insert youtube handle without "@" symbol here-->
+|YTHinfo             = <!--!insert information of youtube channel 1-->
+|YThandledeleted     = <!--!true/false-->
+|YThandle2           = 
+|YTH2info            = 
+|YThandle2deleted    = 
+|YTchannel           = 
+|YTchannelinfo       = 
+|YTchanneldeleted    = 
+|YTchannel2          = 
+|YTchannel2info      = 
+|YTchannel2deleted   = 
+
+<!--Delete this section if not needed
+|YTusername          = 
+|YTinfo              = 
+|YTusernamedeleted   = 
+|YTusername2         = 
+|YT2info             = 
+|YTusername2deleted  = 
+-->
+
+<!--NicoNico Section-->
+|NNDuserpage         = 
+|NNDuserpageinfo     = 
+|NNDuserpage2        = 
+|NNDuserpage2info    = 
+
+<!--Mylist Section-->
+|mylist1             = 
+|mylist1info         = 
+|mylist2             = 
+|mylist2info         = 
+|mylist3             = 
+|mylist3info         = 
+|mylist4             = 
+|mylist4info         = 
+|mylist5             = 
+|mylist5info         = 
+
+<!--NicoNico Community Section-->
+|nicommu1            = 
+|nicommu1info        = 
+|nicommu2            = 
+|nicommu2info        =
+|NNDchannel1         = 
+|NNDchannel1info     = 
+
+<!--Website, other SNS-->
+|othersns            = <!--for example: [[File:Sou-website-Icon.png|20px|link=https://sou-official.jp/]]-->
+|othersns2           = 
+|othersns3           = 
+|othersns4           = 
+|othersns5           = 
+
+<!--Additional Information Section-->
+|partner             = 
+|otheractivity       = 
+}}
+
+{{#ev:youtube|youtubevideoid|300|inline|UtaiteName's Cover of Song Name (Original Producer Name)}}
+<!--?or
+{{#ev:nico|sm12345678|300|inline|UtaiteName's Cover of Song Name (Original Producer Name)}}
+
+--><!--or both
+<div style="text-align=center">{{#ev:youtube|youtubevideoid|300|inline|UtaiteName's Cover of Song Name (Original Producer Name)}}&nbsp;&nbsp;{{#ev:nico|sm12345678|300|inline|UtaiteName's Cover of Song Name (Original Producer Name)}}</div>-->
+
+==Profile==
+'''Romaji''' ('''Kanji''') is an {{NNDict|Utaite}}.
+
+==Affiliations and Collaboration Projects==
+
+==List of Covered Songs==
+{{Playlist|content = 
+# 
+}}
+
+==Discography==
+
+==Gallery==
+{{Gallery
+|
+}}
+
+==Trivia==
+
+==External Links==
+* [
+
+{{ref}}

@@ -1,0 +1,16 @@
+<pre>
+{{Tabber
+| Tab 1
+| Content of tab 1
+
+| Tab 2
+| Content of tab 2
+}}
+</pre>
+{{Tabber
+| Tab 1
+| Content of tab 1
+
+| Tab 2
+| Content of tab 2
+}}

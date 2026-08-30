@@ -1,0 +1,16 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+== Syntax ==
+{{T|Forum/pagination|p1=target}}
+
+== Example ==
+{{imbox
+| type      = style
+| image     = [[Image:Emblem-question-yellow.svg|40px|link=]]
+| style     = width: 60%; 
+| textstyle = color: white; font-weight: bold; font-style: italic;
+| text      = Note: This is just an example. The link will not work in this demo.
+}}
+
+
+{{T|Forum/pagination|target=Help desk|_Y_=1}}

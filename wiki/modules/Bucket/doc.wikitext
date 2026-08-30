@@ -1,0 +1,13 @@
+This is a wrapper module around [[Module:BucketPut]] and [[Module:BucketGet]], which allow you to perform Bucket operations through a pure wikitext interface in a manner similar with [[mw:Extension:Cargo|Extension:Cargo]].
+
+This module contains two invokable functions: <code>put</code> and <code>get</code>, which correspond to the appropriate functions in the respective modules.
+
+==Importing==
+Please copy (with attribution) or import this module along with all dependencies listed below:
+* [[Module:BucketPut]]
+* [[Module:BucketGet]]
+* [[Module:Arguments]] (your wiki may already have this module)
+* [[Module:Yesno]] (your wiki may already have this module)
+
+==Usage==
+{{Navigation}}

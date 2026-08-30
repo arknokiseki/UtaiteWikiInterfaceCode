@@ -1,0 +1,85 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Mono/styles.css|Template:Nowrap/styles.css}}
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link localized",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string"
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"6": {
+			"label": "Parameter 5",
+			"description": "Fifth parameter value",
+			"type": "string"
+		},
+		"7": {
+			"label": "Parameter 6",
+			"description": "Sixth parameter value",
+			"type": "string"
+		},
+		"8": {
+			"label": "Parameter 7",
+			"description": "Seventh parameter value",
+			"type": "string"
+		},
+		"9": {
+			"label": "Parameter 8",
+			"description": "Eight parameter value",
+			"type": "string"
+		},
+		"nowrap": {
+			"label": "Nowrap?",
+			"description": "Whether to add “<span style=\"white-space: nowrap\">”",
+			"default": "0",
+			"autovalue": "1",
+			"type": "boolean"
+		}
+	},
+	"paramOrder": [
+		"nowrap",
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9"
+	]
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+}}</includeonly>

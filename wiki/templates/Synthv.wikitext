@@ -1,0 +1,6 @@
+<includeonly>{{Interwiki|synthv|{{{1|}}}|{{{2|{{{1|}}}}}}|server=fandom}}</includeonly><noinclude>{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude>
+<noinclude>[[Category:Interwiki Templates]]
+</noinclude>

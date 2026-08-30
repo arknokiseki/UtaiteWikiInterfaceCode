@@ -1,0 +1,18 @@
+{{Documentation/Header}}
+A navbox linking the four utaite activity-status badges, showing each badge as its own link label. Placed on the documentation of each status template so editors can move between them.
+
+Takes no parameters.
+
+==Syntax==
+{{T|Status Templates}}
+
+==The family==
+* {{T|Active}} — currently active
+* {{T|Inactive}} — no longer active
+* {{T|Hiatus}} — on a temporary break
+* {{T|Graduated}} — formally retired
+
+{{T|Deceased}} is a memorial notice box rather than a status badge, and is deliberately not part of this navbox.
+
+''{{T|Status Templates Nav}} is a redirect to this template.''
+<includeonly>[[Category:Status Templates]]</includeonly>

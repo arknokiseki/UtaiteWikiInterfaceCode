@@ -1,0 +1,44 @@
+This is the shared documentation for the '''markup colour helpers''' — {{T|Markup}}, {{T|Placeholder}} and {{T|Example}}. All three render their argument as enlarged, coloured monospace text, and differ '''only in colour'''. They are used on tutorial, requirements and guideline pages to distinguish kinds of sample text at a glance.
+
+{| class="dataTable sortable"
+! Template !! Colour !! Use it for
+|-
+| {{T|Markup}} || green || Literal wiki markup an editor should type exactly as shown
+|-
+| {{T|Placeholder}} || blue || A slot the editor must replace with their own value
+|-
+| {{T|Example}} || pink || A sample value, shown for illustration only
+|}
+
+==Syntax==
+<pre>
+{{Markup|text}}
+{{Placeholder|text}}
+{{Example|text}}
+</pre>
+
+==Examples==
+{| class="wikitable"
+! Code !! Result
+|-
+| <code><nowiki>{{Markup|{{Utaite}}}}</nowiki></code> || {{Markup|<nowiki>{{Utaite}}</nowiki>}}
+|-
+| <code><nowiki>{{Placeholder|singer name}}</nowiki></code> || {{Placeholder|singer name}}
+|-
+| <code><nowiki>{{Example|Mafumafu}}</nowiki></code> || {{Example|Mafumafu}}
+|}
+
+Each takes a single unnamed parameter: the text to display. Wrap wiki markup in <code><nowiki><nowiki></nowiki></code> so it is shown rather than parsed.
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Renders text as enlarged coloured monospace, for distinguishing markup, placeholders and examples in documentation.",
+"params": {
+"1": { "label": "Text", "description": "The text to display.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<noinclude>[[Category:Template documentation]]</noinclude>

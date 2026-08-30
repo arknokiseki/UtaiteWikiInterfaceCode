@@ -1,0 +1,50 @@
+<includeonly>{{Coverlist}}{{TabberType2
+|id=utattemita-song-base
+|tab1=Main|content1=
+{{Utattemita
+|English=English Title
+|Kanji= Official Japanese Title
+|Romaji=Romaji Title
+|NND=nndvideoid (sm.....)
+|YT=ytvideoid
+|Image= Template doc.png
+|Vocal= {{VW|vocaloidname}}
+|Producers= {{VW|producername}} (music, lyrics)<br />[[Avatar Illustrators#H|illustrator name]] (illustration)<br /> <!--and other...-->
+}}
+|tab2=Lyrics|hide2={{#ifexist:{{PAGENAME}}/Lyrics|false|true}}|content2={{:{{PAGENAME}}/Lyrics}}
+|tab3=Cover List|content3={{TabberType2
+|id=utattemita-song-coverlist
+|hide1={{#ifexist: {{PAGENAME}}/Male Utaite|false|true}}|tab1=Male Utaite|content1={{/Male Utaite}}
+|hide2={{#ifexist: {{PAGENAME}}/Male Utaite Groups|false|true}}|tab2=Male Utaite Groups|content2={{/Male Utaite Groups}}
+|hide3={{#ifexist: {{PAGENAME}}/Female Utaite|false|true}}|tab3=Female Utaite|content3={{/Female Utaite}}
+|hide4={{#ifexist: {{PAGENAME}}/Female Utaite Groups|false|true}}|tab4=Female Utaite Groups|content4={{/Female Utaite Groups}}
+|hide5={{#ifexist: {{PAGENAME}}/Androgynous Utaite|false|true}}|tab5=Androgynous Utaite|content5={{/Androgynous Utaite}}
+|hide6={{#ifexist: {{PAGENAME}}/Units|false|true}}|tab6=Units|content6={{/Units}}
+}}}}
+
+[[Category:Famous Utattemita Songs]]</includeonly><noinclude><pre>{{Coverlist}}{{TabberType2
+|id=utattemita-song-base
+|tab1=Main|content1=
+{{Utattemita
+|English=English Title
+|Kanji= Official Japanese Title
+|Romaji=Romaji Title
+|NND=nndvideoid (sm.....)
+|YT=ytvideoid
+|Image= Template doc.png
+|Vocal= {{VW|vocaloidname}}
+|Producers= {{VW|producername}} (music, lyrics)<br />[[Avatar Illustrators#H|illustrator name]] (illustration)<br /> <!--and other...-->
+}}
+|tab2=Lyrics|hide2={{#ifexist:{{PAGENAME}}/Lyrics|false|true}}|content2={{:{{PAGENAME}}/Lyrics}}
+|tab3=Cover List|content3={{TabberType2
+|id=utattemita-song-coverlist
+|hide1={{#ifexist: {{PAGENAME}}/Male Utaite|false|true}}|tab1=Male Utaite|content1={{/Male Utaite}}
+|hide2={{#ifexist: {{PAGENAME}}/Male Utaite Groups|false|true}}|tab2=Male Utaite Groups|content2={{/Male Utaite Groups}}
+|hide3={{#ifexist: {{PAGENAME}}/Female Utaite|false|true}}|tab3=Female Utaite|content3={{/Female Utaite}}
+|hide4={{#ifexist: {{PAGENAME}}/Female Utaite Groups|false|true}}|tab4=Female Utaite Groups|content4={{/Female Utaite Groups}}
+|hide5={{#ifexist: {{PAGENAME}}/Androgynous Utaite|false|true}}|tab5=Androgynous Utaite|content5={{/Androgynous Utaite}}
+|hide6={{#ifexist: {{PAGENAME}}/Units|false|true}}|tab6=Units|content6={{/Units}}
+}}}}
+
+[[Category:Famous Utattemita Songs]]</pre>
+</noinclude>

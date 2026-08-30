@@ -1,0 +1,38 @@
+{{#ifexpr:0<noinclude>1</noinclude>+{{#ifeq:{{lc:{{SUBPAGENAME}}}}|{{lc:{{{subpage-name|sandbox}}}}}
+  |1
+  |0
+ }}
+ |{{ombox
+  |image = [[Image:Sandbox.svg|50px|alt=|link=]]
+  |text = This is the [[w:Template test cases|template sandbox]] page for {{#if:{{{1|}}}|[[{{{1|}}}]]|[[:{{NAMESPACE}}:{{BASEPAGENAME}}]]}}{{#if:{{REVISIONID}}
+   |&#32;([{{fullurl:Special:ComparePages | page1={{#if:{{{1|}}}|{{case preserving encode|{{{1|}}}}}|{{NAMESPACEE}}:{{BASEPAGENAMEE}}}}&page2={{FULLPAGENAMEE}}}} diff])
+   |<!-- hide when previewing -->
+  }}.{{#ifexist:{{#rel2abs: ../{{{testcases-name|testcases}}}}}
+   | <br/> See also the companion subpage for [[../{{{testcases-name|testcases}}}|test cases]].
+  }} 
+ }}{{{notice-for-sandbox|}}}{{#ifeq:{{lc:{{SUBPAGENAME}}}}|{{lc:{{{testcases-name|testcases}}}}}
+ }}
+ | <!-- not sandbox -->{{{notice-not-sandbox|}}}
+}}<noinclude>
+{{documentation|content=
+
+== Usage ==
+
+This is a template with no particular content (feel free to change to whatever you'd like) for sandbox/testing purposes.
+
+{{Sandbox/doc}}
+
+}}
+</noinclude>
+
+<noinclude>{| class="wikitable"
+|-
+|</noinclude>{{
+#switch: {{{1}}}
+  |A = {{{style="background:#ffb777;vertical-align:middle;text-align:center"|A}}}
+  |I = {{{style="background:#fff55d;vertical-align:middle;text-align:center"|I}}}
+  |R = {{{style="background:#83ff84;vertical-align:middle;text-align:center"|R}}}
+  |C = {{{style="background:#5ed6ff;vertical-align:middle;text-align:center"|CC}}}
+}}<noinclude>
+|}
+</noinclude>

@@ -1,0 +1,13 @@
+{{Documentation/Header}}
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+
+== Usage ==
+
+== See also ==
+* {{T|color}}
+
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go here and interwikis go in Wikidata. -->
+
+}}</includeonly>

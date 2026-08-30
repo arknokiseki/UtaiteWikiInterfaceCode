@@ -1,0 +1,8 @@
+<onlyinclude><!-- Subst of {{Tl2}} follows --><!--
+-->{{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|}}}}}|<templatestyles src="Template:Nowrap/styles.css" /><!--
+-->}}<code {{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|}}}}}|class="nowrap"}}><!--
+--><nowiki>{{</nowiki>[[:{{ {{{|safesubst:}}}#if: {{{sister|}}} | {{{sister}}}: }}{{ {{{|safesubst:}}}#if: {{{lang|}}} | {{{lang}}}: }}{{ {{{|safesubst:}}}ns:Template }}:{{{1}}}|{{{1}}}]]{{ {{{|safesubst:}}}#if: {{{2|}}} | &#124;{{{2}}} }}{{ {{{|safesubst:}}}#if: {{{3|}}} | &#124;{{{3}}} }}{{ {{{|safesubst:}}}#if: {{{4|}}} | &#124;{{{4}}} }}{{ {{{|safesubst:}}}#if: {{{5|}}} | &#124;{{{5}}} }}<nowiki>}}</nowiki><!--
+--></code><!--
+--><!-- Subst of {{Tl2}} ends --></onlyinclude>
+{{Documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->

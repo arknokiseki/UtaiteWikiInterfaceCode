@@ -1,0 +1,50 @@
+Generates VocaDB links for the external links template.
+
+== Parameters ==
+
+{| class="wikitable"
+! Parameter !! Description !! Example
+|-
+| <code>vocadb</code> || VocaDB ID number || <code>1355</code>
+|-
+| <code>vocadb2</code>, <code>vocadb3</code>, etc. || Additional VocaDB IDs || <code>2468</code>
+|-
+| <code>p = yes</code> || Link to Producer page instead of Song || 
+|-
+| <code>a = yes</code> || Link to Album page instead of Song || 
+|-
+| <code>vocadb = ok</code> || Hide VocaDB section entirely || 
+|}
+
+== Usage ==
+
+```
+{{T|Unofficial|vocadb=1355|_Y_=1}}
+```
+→ Links to song page
+
+```
+{{T|Unofficial|vocadb=1355|p=yes|_Y_=1}}
+```
+→ Links to producer page
+
+```
+{{T|Unofficial|vocadb=1355|a=yes|_Y_=1}}
+```
+→ Links to album page
+
+```
+{{T|Unofficial|vocadb=1355|vocadb2=2468|_Y_=1}}
+```
+→ Creates multiple links
+
+```
+{{T|Unofficial|vocadb=ok|_Y_=1}}
+```
+→ Hides VocaDB section
+
+== Output ==
+
+* **Song**: `[http://vocadb.net/S/1355 VocaDB]`
+* **Producer**: `[http://vocadb.net/P/1355 VocaDB (Producer)]`  
+* **Album**: `[http://vocadb.net/Al/1355 VocaDB (Album)]`

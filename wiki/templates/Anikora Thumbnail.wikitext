@@ -1,0 +1,1 @@
+{{LicenseBox|image=WIP descr.png|text=''This file is a thumbnail of a NND Anikora edition.''}}<includeonly>[[Category:Anikora Thumbnail]][[Category:Media]] [[Category:Image wiki templates]] [[Category:Licensing templates]]</includeonly><noinclude>{{documentation}}[[Category:Picture categorization templates]]</noinclude>

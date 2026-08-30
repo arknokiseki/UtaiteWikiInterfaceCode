@@ -1,0 +1,1 @@
+{{Notice|header=Up-to-date Content|border=green|style={{{style|}}}|mt={{{mt|10px}}}|width={{{width|100%}}}|info=The information contained in this page is up to date!<br />{{{details|}}}}}

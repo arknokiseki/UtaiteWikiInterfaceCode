@@ -1,0 +1,24 @@
+{{Documentation/Header}}
+Normalizes a page name into the full title that transcluding it would resolve to. A bare name such as <code>Foo</code> becomes <code>Template:Foo</code>; a colon-prefixed name such as <code>:Foo</code> becomes the article <code>Foo</code>; a name that already carries a namespace is returned unchanged.
+
+Used by link and demo templates that need to display or link to whatever a given transclusion actually points at.
+
+==Syntax==
+{{T|Transclude|v1=page name}}
+
+==Examples==
+{| class="dataTable"
+! Input !! Result
+|-
+| <code>Foo</code> || <code>Template:Foo</code>
+|-
+| <code>:Foo</code> || <code>Foo</code>
+|-
+| <code>Help:Foo</code> || <code>Help:Foo</code>
+|}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Page name || The page name to normalize. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}

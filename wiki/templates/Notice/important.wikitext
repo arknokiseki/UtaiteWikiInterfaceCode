@@ -1,0 +1,7 @@
+<includeonly>{{#css:
+@keyframes pulse{
+0%,
+100%{opacity:1}
+50%{opacity:0.6}
+}
+}}<div class="center-wrapper" style="display:flex;justify-content:center;margin:16px 0;"><div class="notice-container" style="background:var(--container-bg,#ffffff);border-radius:var(--border-radius,12px);overflow:hidden;box-shadow:var(--card-shadow,0 4px 12px rgba(0,0,0,0.15));width:100%;position:relative;"><div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--poll-accent-red,#dc3545),var(--poll-accent-blue,#007bff));"></div><div class="notice-header" style="padding:20px 20px 0;font-size:1.3em;font-weight:600;color:var(--primary-text-color,#202122);margin-bottom:8px;position:relative;z-index:2;">{{{header|}}}</div><div class="notice-content" style="padding:0 20px 20px;position:relative;z-index:2;"><span class="warning-flash" style="display:inline-flex;align-items:center;gap:8px;font-size:1em;color:var(--primary-text-color,#202122);line-height:1.6;"><i class="fas fa-exclamation-triangle" style="color:var(--poll-accent-red,#dc3545);animation:pulse 2s infinite;"></i>{{{info|}}}</span></div></div></div></includeonly><noinclude>Sample Output: {{Notice/important|header=CAUTION!!|info=SPAM = PERMANENT BAN}}</noinclude>

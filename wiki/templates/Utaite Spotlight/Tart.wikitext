@@ -1,0 +1,28 @@
+{{Utaite Spotlight/Design
+|image = 
+|caption = 
+|officialjapname = [[Tart Tatin|タルトタタン]]
+|officialromajiname = Tart Tatin
+|NNDuserpageID = 116931823
+|mylistID1 = 
+|mylist1info = 
+|mylistID2 = 
+|mylist2info = 
+|mylistID3 = 
+|mylist3info = 
+|mylistID4 = 
+|mylist4info = 
+|nicommuID1 = 
+|nicommu1info = 
+|nicommuID2 = 
+|nicommu2info = 
+|nicommuID3 = 
+|nicommu3info = 
+|exampletitle = [[ずうっといっしょ！ (ALWAYS BE WITH YOU XD)]]
+|examplennd = 
+|exampleyt = oFiwdmWHP18
+|description = '''Tart''' ('''タルト''') formerly known as '''Tron''' (''とろん, Turon'') is an {{NNDict|Utaite}} who started his singing journey at the age 15. He is known for his slightly nasal in tone yet gentle and nice to be heard. His singing style is similar like [[Eve]] as can be heard in his [https://youtu.be/mEn9vF4YHTg?si=LyZED1jjj6P6qmv9 How to Eat Life] cover. Moreover, he is a big fan of Eve and is also the reason he became an Utaite.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}
+<!-- Make the description as short as possible while capturing the essence of the utaite or singer. -->

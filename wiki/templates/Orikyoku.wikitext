@@ -1,0 +1,3 @@
+<includeonly><span class= "orikyoku-badge">✨Original</span>{{#if:{{{with|}}}|<span class= "orikyoku-badge__with{{#ifeq:{{{rainbow|}}}|true|-rainbow|}}">{{{with}}}</span>}}</includeonly><noinclude>
+{{doc}}
+</noinclude>

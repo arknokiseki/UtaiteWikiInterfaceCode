@@ -1,0 +1,16 @@
+This is a module for linking to [[Gerrit]], which is the code hosting site we use for MediaWiki and related projects.
+
+== A changeset ==
+
+A changeset is easy - for a specific ID, <code><nowiki>{{#invoke:Gerrit|link_automatic|55555}}</nowiki></code> will do the trick. You can also use the Change-Id, e.g. <code><nowiki>{{#invoke:Gerrit|link_automatic|I789abcdef}}</nowiki></code>, which will use Gerrit's search function to make the link. These will all show up as interwiki links, using the :gerrit prefix that is defined on MediaWiki.org. If you're exporting this module, be sure to set up that interwiki prefix on your wiki, too.
+
+== Search results ==
+
+If you just link to a string, e.g. <code><nowiki>{{#invoke:Gerrit|link_automatic|some string}}</nowiki></code>, the module will URL-encode it and link to the search page. You can also specify more exact constraints, as in <code><nowiki>{{#invoke:Gerrit|link_automatic|owner=MarkTraceur|project=mediawiki/extensions/UploadWizard}}</nowiki></code>, to make for more readable module invocations and link texts.
+
+{{#invoke:Gerrit|link_to_paths|repo=mediawiki/core|paths=includes/libs/rdbms,includes/db}}
+
+== Example ==
+* <code>55555</code><br>{{#invoke:Gerrit|link_automatic|55555}}
+* <code>Idb7c980bd</code><br>{{#invoke:Gerrit|link_automatic|Idb7c980bd}}
+* {{#invoke:Gerrit|link_automatic|owner=MarkTraceur|project=mediawiki/extensions/UploadWizard}}

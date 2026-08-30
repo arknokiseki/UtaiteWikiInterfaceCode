@@ -1,0 +1,30 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = eal twitter.png
+|caption = his Nico Nico Douga community and Twitter. Illust. by MACCO
+|officialjapname = エアル
+|officialromajiname = Eal
+|NNDuserpage = 163952
+|mylist1 = 21770264
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co409874 
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Matryoshka]]
+|examplennd = sm12201131
+|exampleyt = 
+|description = '''Eal''' ('''エアル''') is an {{NNDict|Utaite}} who has a deep and smooth voice with a velvety sound.
+
+Most of the time, he has a calm singing style, which at times can be described as soothing, to be heard his piano cover of "[[Pierrot]]"{{nnd|sm18123017}}.
+
+On the other side he can sing in a rather erotic voice, and therefore he's sometimes tagged with Erol (エロル) a pun with his name and "eroi".}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

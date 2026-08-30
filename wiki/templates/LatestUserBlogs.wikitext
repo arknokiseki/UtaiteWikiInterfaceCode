@@ -1,0 +1,18 @@
+<noinclude>
+{{documentation}}
+</noinclude><includeonly><!--
+-->{{#invoke:BlogCard|pinned}}<!--
+-->{{#dpl:
+|namespace=User_blog
+|count={{{count|5}}}
+|ordermethod=firstedit
+|order=descending
+|mode=userformat
+|addpagedate=true
+|titleregexp=/.
+|nottitleregexp=\.json${{!}}\.css${{!}}\.js$
+|nottitlematch={{#invoke:BlogCard|pinnedExclude}}
+|userdateformat=Y-m-d
+|format=¶,¶<!--
+--><div class="left-articles"><div class="listpages-container">²{LatestUserBlogItem¦page=%PAGE%¦title=%TITLE%¦date=%DATE%}²</div></div>}}<!--
+--></includeonly>

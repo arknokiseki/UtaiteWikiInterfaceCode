@@ -1,0 +1,12 @@
+<div class="no-image-on-preview"></div><div class="resource-tabs no-underline-anchor blacklist-pPreview" style="text-align:center !important; margin-bottom: 1em;"><!--
+--><div style="font-weight:700 !important; padding-bottom:7px;"><!--
+--><span class="icon">🧰</span>Tutorial Related Resources</div><!--
+-->{{tabs|subpages=0|namespace=|class=custom-tabs-secondary
+|tab1=Utaite Wiki:Requirements|tab1name=<i class="fa-solid fa-check-double"></i>&nbsp;Requirements
+|tab2=User_blog:Melonramune/Japanese_Translators_list|tab2name=<i class="fa-solid fa-language"></i>&nbsp;Translation Toolkit
+|tab3=Utaite_Wiki:FAQ|tab3name=<i class="fa-regular fa-circle-question"></i>&nbsp;FAQ
+|tab4=Utaite_Wiki:Qualifying_Singers_%26_Songs|tab4name=
+<i class="fa-regular fa-star"></i>&nbsp;Qualifying Singers and Songs
+}}<!--
+--></div><!--
+--><noinclude>[[Category:General wiki templates]]</noinclude>

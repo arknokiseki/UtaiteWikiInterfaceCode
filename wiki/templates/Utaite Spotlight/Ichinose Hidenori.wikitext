@@ -1,0 +1,37 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = 1nose old twitter thumbnail.png
+|caption = his former Twitter avatar
+|officialjapname = 一之瀬秀典
+|officialromajiname = Ichinose Hidenori
+|YTusername =
+|NNDuserpage = 2902905
+|NNDuserpageinfo = deleted
+|NNDuserpage2 = 22401010
+|NNDuserpage2info = current
+|mylist1 = 33708465
+|mylist1info = main
+|mylist2 = 36316613
+|mylist2info = collab
+|mylist3 = 32926678
+|mylist3info = mix, mastering
+|mylist4 = 21068137
+|mylist4info = as Vaz, deleted
+|mylist5 = 26682073
+|mylist5info = as Zuh, deleted
+|nicommu1 = co1724072
+|nicommu1info = main, current
+|nicommu2 = co1863981
+|nicommu2info = with [http://hx3project.web.fc2.com/ Hx3 Project]
+|nicommu3 = co1158796
+|nicommu3info = as Zuh, deleted
+|exampletitle = She
+|examplennd = sm19004583
+|exampleyt = OObZeMhNlTw
+|description = '''Ichinose Hidenori''' ('''一之瀬秀典''', Hidenori Ichinose), formerly known as '''Vaz''' and '''Zuh''', is an {{NNDict|Utaite}} known for his clear, powerful and emotive voice and for being a strong technical singer.
+
+Though his voice's stringy, almost raspy lilt lends itself best to rock and soft rock, he also covers slower songs like "[http://www.youtube.com/watch?v=2y2uxkBuHV8 Toys]"{{nnd|sm19702950}}.
+
+Offline, he is one of the five core members of the live performance and collaborative group [http://hx3project.web.fc2.com/index.html Hx3 Project].
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

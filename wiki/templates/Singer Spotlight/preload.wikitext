@@ -1,0 +1,26 @@
+{{Singer spotlight
+|image = placeholder.png
+|caption = The caption appears you hover over the picture if
+|officialjapname = 漢字
+|officialromajiname = romaji
+|NNDuserpageID = 1234567
+|mylistID1 = 1234567
+|mylist1info = info
+|mylistID2 = 
+|mylist2info = 
+|mylistID3 = 
+|mylist3info = 
+|mylistID4 = 
+|mylist4info = 
+|nicommuID1 = co1234567
+|nicommu1info = 
+|nicommuID2 = 
+|nicommu2info = 
+|nicommuID3 = 
+|nicommu3info = 
+|exampletitle = Song sample title
+|examplennd = sm1234567
+|exampleyt = 1q2w3e4r5t
+|description = '''Romaji''' ('''漢字''') is an {{NNDict|Utaite}}.........}}
+<!-- Make the description as short as possible while capturing the essence of the utaite or singer. -->
+[[Category:Singer_Spotlight--Utaite]]

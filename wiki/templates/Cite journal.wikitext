@@ -1,0 +1,2 @@
+<includeonly>{{#invoke:Citation|main|CitationClass=journal}}</includeonly><noinclude>
+{{Documentation|content=Usage: <br/>{{T|Cite journal|author=Lee|title=Study|journal=J Sci|volume=12|issue=3|pages=45–60|year=2020|doi=10.123/abc|refname=Lee2020|block=1|_Y_=1}}}}</noinclude>

@@ -1,0 +1,79 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+{{Documentation subpage}}
+{{Template shortcut|lot}}
+{{lua|Module:MultiReplace}}
+== Usage ==
+Simply add the [[Wikipedia:Help:Wikitext|wikitext]] markup {{tlx|Lowercase title}} at the beginning of a page (and optionally, at the beginning of its talk page). The markup will only decapitalize the first letter of the page's name in the title at the beginning of the page by default. 
+
+Some examples (in different [[Wikipedia:Namespace|namespaces]]):
+
+{| class="wikitable" width=370px
+|-
+! scope="col" | Page name
+! scope="col" | Will display
+|-
+! scope="row" | [[Aoru]]
+| aoru
+|-
+! scope="row" | [[Talk:Aoru]]
+| Talk:aoru
+|-
+! scope="row" | [[:Category:MacOS]]
+| Category:macOS
+|-
+! scope="row" | [[:Template:IPhone models]]
+| Template:iPhone models
+|}
+
+== Issues ==
+The template does '''not''' work together with other title modification templates: you need to use DISPLAYTITLE directly and make sure it's the last DISPLAYTITLE on the page. For example, to make "Example" italic and lowercase, use <code><nowiki>{{DISPLAYTITLE:''example''}}</nowiki></code>.
+
+When using the template on redirect pages, the template must be moved ''after'' the redirect, since otherwise it will break the redirection. This, however, limits the template to have an effect only when viewing the redirect page directly. Nevertheless, it is still useful in this scenario in order to document the proper capitalization of a term.
+
+When using on templates, please make sure to wrap it with a &lt;noinclude&gt; tag, so that transcluded pages don't get affected.
+
+== Technical ==
+This template wraps the [[Help:Magic words|magic word]] DISPLAYTITLE so that it works automatically in any namespace (main/article, talk, template, category, etc.) to decapitalise the first letter of the name of a page it is transcluded on. 
+
+<syntaxhighlight lang=sql>
+/* Page using a lowercase title, with or without {{lowercase}} */
+SELECT page_title, pp_value AS displaytitle
+FROM page
+JOIN page_props ON pp_page=page_id AND pp_propname="displaytitle"
+WHERE page_namespace=0
+AND CONVERT(pp_value USING utf8mb4) COLLATE utf8mb4_bin /* &#greek; */
+    REGEXP "^([_ :]+|<[^<>]+>)*([[:lower:]]|&#9[4-6][0-9];)"
+</syntaxhighlight>
+
+==TemplateData==
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"italic": {
+			"label": "Italic",
+			"description": "If this is specified with any value, italicize the title, except for any part in brackets.",
+			"type": "string"
+		},
+		"force": {
+			"label": "Fully italic",
+			"description": "If this AND \"italic\" have a value specified, then the whole title will be italic including any brackets.",
+			"type": "string"
+		},
+		"dab": {
+			"label": "Italicize disambiguation",
+			"description": "If this is specified with any value, italicize the part in brackets.",
+			"type": "string"
+		}
+	},
+	"description": "This template is used to make the first letter of the page title lowercase. It will not affect the page URL, just the displayed name."
+}
+</templatedata>
+
+== See also ==
+* [[Wikipedia:Naming conventions (technical restrictions)#Lowercase first letter]]
+
+<includeonly>{{Sandbox other||
+[[Category:Correct title templates]]
+}}</includeonly>

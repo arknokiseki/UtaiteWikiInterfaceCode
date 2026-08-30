@@ -1,0 +1,6 @@
+;Description
+:Use this template to label real-life photos of youtaite.
+;Syntax
+:Type <code>{{t|Youtaite Real Life Photos}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

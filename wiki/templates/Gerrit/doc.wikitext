@@ -1,0 +1,47 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:Gerrit}}
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "Link to a Gerrit change",
+		"cs": "Odkaz na změnu Gerrit",
+		"tr": "Gerrit değişikliğine bağlantı"
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Change number or change ID",
+				"cs": "Změna čísla nebo změna ID",
+				"tr": "Numarayı değiştir veya kimliği değiştir"
+			},
+			"description": {
+				"en": "Change number or Change-Id in Wikimedia's Gerrit",
+				"cs": "Změní číslo nebo změní ID v Gerritu Wikimedie",
+				"tr": "Wikimedia'nın Gerrit'indeki numarayı veya Change-Id'yi değiştirin"
+			},
+			"example": {
+				"en": "12345",
+				"cs": "12345",
+				"tr": "12345"
+			},
+			"required": true,
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== Example ==
+{{Template:Git/testcases}}
+
+== See also ==
+* {{tlx|Git}}
+* {{tlx|Git file}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:External link templates]]
+}}</includeonly>

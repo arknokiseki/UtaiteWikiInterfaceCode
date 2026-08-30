@@ -1,0 +1,50 @@
+<div class="mp-section">
+<div class="mp-section-head"><i class="fa-solid fa-user-shield"></i><h2 class="mp-section-title">Utaite Wiki Administration</h2></div>
+<center>{{TabberType2|tab1=Admins|content1=
+{{{!}} class="wikitable team-table"
+{{!}}'''Bureaucrat'''
+{{!}}'''Bureaucrat'''
+{{!}}'''Administrator'''
+{{!}}'''Content Moderator'''
+{{!}}-
+{{!}}[[File:Falulu.png|100px|border|link=]]
+{{!}}[[File:Cashmere.png|100px|border|link=]]
+{{!}}[[File:Ark.png|100px|border|link=]]
+{{!}}[[File:20230403 213255.png|100px|border|link=]]
+{{!}}-
+{{!}}'''[[User:Shiro Falulu|Falulu]]<br><small>[[User_talk:Shiro Falulu|talk]] • [https://x.com/shirofalulu Twitter] • {{Active|nocat=true}} </small>'''
+{{!}}'''[[User:Cashmerella|Sarah]]<br><small>[[User_talk:Cashmerella|talk]] • {{Active|nocat=true}}</small> '''
+{{!}}'''[[User:Ark|Ark]]<br><small>[[User_talk:Ark|talk]] • {{Active|nocat=true}} </small>'''
+{{!}}'''[[User:Frigidum1222|Frigidum1222]]<br><small>[[User_talk:Frigidum1222|talk]] • {{Active|nocat=true}} </small>'''
+{{!}}}
+|tab2=Past Admins|content2=
+<div class="team-table-container custom-scroll">
+{{{!}} class="wikitable" style="text-align:center; width:100%; overflow-x:scroll"
+{{!}}'''Bureaucrat'''
+{{!}}'''Bureaucrat'''
+{{!}}'''Bureaucrat'''
+{{!}}'''Bureaucrat'''
+{{!}}'''Administrator'''
+{{!}}'''Administrator'''
+{{!}}'''Content Moderator'''
+{{!}}'''Honorary Technician'''
+{{!}}-
+{{!}}[[File:JUN.png|90px|border|link=]]
+{{!}}[[File:Starikun and Sen.png|90px|border|link=]]
+{{!}}[[File:Raspomme.png|90px|border|link=]]
+{{!}}[[File:Esperancia.png|90px|border|link=]]
+{{!}}[[File:yunomin.png|90px|border|link=]]
+{{!}}[[File:metakakera.png|90px|border|link=]]
+{{!}}[[File:meo3chan.png|90px|border|link=]]
+{{!}}[[File:sbluen.png|90px|border|link=]]
+{{!}}-
+{{!}}'''[[User:BLUEBIRD|Jun]]<br><small>[[User_talk:BLUEBIRD|talk]] • {{Inactive|nocat=true}}</small> '''
+{{!}}'''[[User:Starikun|Starikun & Sen]]<br><small>[[User_talk:Starikun|talk]] • {{Inactive|nocat=true}}</small>'''
+{{!}}'''[[User:Raspomme|Raspomme]]<br><small>[[User_talk:Raspomme|talk]] • {{Inactive|nocat=true}}</small> '''
+{{!}}'''[[User:Esperancia|hope]]<br><small>[[User_talk:Esperancia|talk]] • {{Inactive|nocat=true}}</small>'''
+{{!}}'''[[User:ユノミ|ゆノミん]]<br><small>[[User_talk:ユノミ|talk]] • {{Inactive|nocat=true}}</small> '''
+{{!}}'''[[User:Meta-Kakera|Meta]]<br><small>[[User_talk:Meta-Kakera|talk]] • {{Inactive|nocat=true}}</small> '''
+{{!}}'''[[User:Meo3chan|Meo]]<br><small>[[User_talk:Meo3chan|talk]] • {{Inactive|nocat=true}}</small>'''
+{{!}}'''[[User:Sbluen|Sbluen]]<br><small>[[User_talk:Sbluen|talk]] • {{Inactive|nocat=true}}</small>'''
+{{!}}}
+</div>}}</center></div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

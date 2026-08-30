@@ -1,0 +1,9 @@
+<onlyinclude><!--
+-->{{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nested|}}}}}||<{{{tag|code}}}>}}<!--
+-->{{(((}}<noinclude>foo</noinclude><includeonly>{{{1}}}</includeonly><!--
+-->{{{{{|safesubst:}}}#ifeq:{{{2|}}}|{{{2}}}|{{!}}{{{2}}}}}<!--
+-->{{)))}}<!--
+-->{{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nested|}}}}}||</{{{tag|code}}}>}}<!--
+--></onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

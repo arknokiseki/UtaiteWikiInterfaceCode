@@ -1,0 +1,93 @@
+<includeonly>
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! style="text-align:center;background-color:#c3e6f9; color:#000000; padding:10px" |{{#if:{{{Name|}}}|<font size="5">{{{Name|}}}</font><br />|}}{{#if: {{{Kanji|}}}|{{#if: {{{Ruby|}}}|<font size="5"><ruby>{{{Kanji|}}}<rt>{{{Ruby}}}</rt></ruby></font>|<font size="5">{{{Kanji|}}}<br /></font>}}|}}{{#if:{{{Romaji|}}}|<font size="3">{{{Romaji|}}}</font><br />|}}{{#if: {{{English|}}}|<font size="3">{{{English|}}}</font><br />|}}{{#if:{{{Fanname|}}}|<b>Fan name: {{{Fanname|}}}　&nbsp;</b>|}}{{#if:{{{Fanmark|}}}|<b>Fan mark: {{{Fanmark|}}}</b>|}}
+|}
+<center><span style="{{{style|}}}">{{#if:{{{Gallery|}}}|{{{Gallery}}}|[[File:{{{Image}}}|{{{ImgWidth|700px}}}]]}}</span></center>
+{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center" width="100%"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Years Active
+{{!}} align="center" {{!}} {{{Years}}}
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Status
+{{!}} align="center" {{!}} {{{Status}}}
+{{!}}-
+{{!}}}
+{{#ifeq:{{{Sns|}}}|true|
+{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center" width="100%"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} SNS
+{{!}} align="center" {{!}} {{#if:{{{YouTube|}}}|{{YtC|@{{{YouTube}}}|{{{YouTubedesc|}}}||{{{YouTubedeleted|}}}}}|}}&nbsp;{{#if:{{{Twitter|}}}|{{Twitter|{{{Twitter|}}}|{{{Twitterinfo|}}}|deleted={{#if:{{{Twitterdeleted|}}}|true|}}}}|}}&nbsp;{{#if:{{{Instagram|}}}|{{Instagram|{{{Instagram}}}|{{{Instagraminfo|}}}}}|}}&nbsp;{{#if:{{{Line|}}}|{{Line|{{{Line}}}|{{#if:{{{Lineinfo|}}}|{{{Lineinfo}}}}}}}|}}&nbsp;{{#if:{{{LinePage|}}}|{{Line|{{{LinePage}}}|{{#if:{{{LinePageinfo|}}}|{{{LinePageinfo}}}|LinePage}}}}|}}&nbsp;{{#if:{{{Lineqrpage|}}}|{{Line|{{{Lineqrpage}}}|{{#if:{{{Lineqrpageinfo|}}}|{{{Lineqrpageinfo}}}|LineQR}}}}|}}&nbsp;{{#if:{{{Tiktok|}}}|{{Tiktok|{{{Tiktok}}}|{{{Tiktokinfo|}}}}}|}}&nbsp;&nbsp;{{#if:{{{Twitcast|}}}|{{Twitcast|{{{Twitcast}}}|size=20px|{{{Twitcastinfo|}}}|}}|}}&nbsp;{{#if:{{{Custom|}}}|{{{Custom}}}|}}&nbsp;
+{{!}}-
+{{!}}}
+|}}[[Category:Collaborative Groups]]</includeonly>
+<noinclude>__notoc__
+==Documentation==
+===Syntax===
+<pre>
+{{UtaiteCollabUnit
+|Kanji= 
+|Romaji= 
+|English= 
+|Image= 
+|Years= 
+|Status= 
+}}
+</pre>
+===Output===
+<pre>
+{{UtaiteCollabUnit
+|Name= Circle of Friends (COF)
+|Image= Circle of friends 2.png
+|Years= 2012
+|Status= {{Inactive|groups=true}}
+|Sns=true
+|Twitter=c_o_friends
+}}
+</pre>
+{{UtaiteCollabUnit
+|Name= Circle of Friends (COF)
+|Image= Circle of friends 2.png
+|Years= 2012
+|Status= {{Inactive|groups=true}}
+|Sns=true
+|Twitter=c_o_friends
+}}
+
+
+====Disbanded Group====
+<pre>
+{{UtaiteCollabUnit
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+}}
+</pre>
+{{UtaiteCollabUnit
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+}}
+</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

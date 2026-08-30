@@ -1,0 +1,54 @@
+This module is invoked from [[Template:Xpds]] and [[Template:Xpdp]] (s = same line, p = new paragraph), expansion demo templates that show the call of a variable, parser function or template, optionally its resulting wikitext, and the latter's rendering. They are used for testing and documenting variables, parser functions, templates, and wikitext and html features. The technical notes below apply partly to all templates, partly to the first four only.
+
+For parameters with explicit positive integer names the integer is reduced by 1 in the result (just like for implicit names, due to the position taken by the template name in the calls of the templates xpds and xpdp).
+
+Expressions for parameter values are replaced by their results.
+
+Without affecting the result the template call is written in a normalized form:
+*[[Manual:Newlines and spaces#Trimming on expansion|Values of named parameters are trimmed]].<ref name="system">This is done by the system upon invocation of the module, so not programmed in the module or the templates. To circumvent it the module would have to require an input string with pipes between the parameters replaced by a token. This would make it more cumbersome to enter the wikitext for the invocation.</ref>
+*Definitions of parameters with implicit or explicit positive integer names are ordered in ascending order.<ref name="system"/> Explicit names among them are removed. These parameters are put before the remaining ones.<ref name="system"/> Multiple definitions of the same parameter are replaced by the final one.<ref name="system"/>
+*In the parameter names and values (after the expansion mentioned above) any braces, pipes and/or equal signs are changed into <code><nowiki>{{(}}</nowiki></code>, <code><nowiki>{{)}}</nowiki></code>, <code><nowiki>{{!}}</nowiki></code>, and <code><nowiki>{{=}}</nowiki></code>, so that the parsing of the call is kept intact.<ref>There is no explicit way of telling the system that these characters should be considered plain text: if nowiki is used these tags are treated as part of the parameter name of value.</ref>
+
+Examples:
+----
+<code><nowiki>{{xpds|Foreach|hook|abc|4= ParserBeforePreprocess|5= ParserAfterTidy |delim= / }}</nowiki></code> gives:
+
+{{xpds|Foreach|hook|abc|4=ParserBeforePreprocess|5=ParserAfterTidy|delim=/}}
+----
+==Wikitext on the left==
+To display on the left-hand side the wikitext and not the rendering of the parameter values, some adjustments are made at that side:<ref>nowiki does not work</ref>
+*<code>&</code> is replaced by <code>&amp;amp;</code>
+*square brackets are replaced by <code>&amp;#91;</code> and <code>&amp;#93;</code>
+*newlines are replaced by <code><nowiki><br></nowiki></code>
+*spaces are replaced by <code>&amp;nbsp;</code>
+
+Examples:
+----
+{{xpds|2x|[[abc]]     }}
+----
+{{xpdp|xpds|2x|[[abc]] }}
+----
+{{xpds|2x|*abc
+}}
+----
+{{xpds|2x| a{{!}}b }}
+----
+{{xpds|2x| a{{=}}b }}
+----
+{{xpds|2x| a{{(}}{{(}}b }}
+----
+{{xpds|2x| a{{)}}{{)}}b }}
+----
+
+==Limitation==
+Parameters with explicit or implicit positive integer names have to form a set {1, 2, .. k} without gaps. A template call with for example an undefined parameter 1 and a defined parameter 2 is not supported (where an undefined parameter should not be confused with a parameter which is assigned as value the empty string, these ''are'' supported):<ref>The reason it that at the left side of the output these names are all implicit. The module cannot determine which were written explicitly in the invocation, except when there is a space or newline at the start or end of the value, then the parameter name was implicit. Writing all explicitly would give wrong output, since the righthand side is based on parameters being implicit or explicit (they would be trimmed in the latter case), in accordance with what they were in the invocation of the module. Writing extra pipes would assign the empty string to the undefined parameters in the gaps, which it not the same as them being undefined.</ref>
+
+<code><nowiki>{{xpds|2x|3=abc}}</nowiki></code> gives:
+{{xpds|2x|3=abc}}
+
+==See also==
+*[[Module:Xpd]]
+*[[m:Template:Xpd/doc]]
+
+==Notes==
+<references/>

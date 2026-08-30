@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Wp_zh|v1=PAGENAME|v2=Link Text}}
+
+==Examples==
+{{T|Wp_zh|p1=鏡音鈴、連|p2=Kagamine Rin/Len|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "鏡音鈴、連",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "Kagamine Rin/Len",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>

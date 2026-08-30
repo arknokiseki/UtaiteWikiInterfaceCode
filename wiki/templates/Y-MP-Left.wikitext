@@ -1,0 +1,4 @@
+<div style="display:flex;width: 100%;">
+<div style="width: 100%; height: 100%;">
+{{Y-MP-Editing}}
+<div class="news-note-container hide-on-mobile"><div class="news-note-inner-left"><div class="custom-scroll">{{Announcement}}</div><!--<div class="leftmost-note-container hide-on-mobile" style="border:2px solid #c3e6f9; border-radius: 1px; padding:5px; margin-bottom:10px; font-size: 20px"></div>--></div><div class="news-note-inner-right custom-scroll hide-on-mobile" style="margin-left: 1vw; overflow-y:scroll; height: 60vh;">{{MP-Blog}}</div></div></div></div><!--right flex is not applicable anymore since this commit (2024/10/05 00:07)-->

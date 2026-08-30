@@ -1,0 +1,23 @@
+<pre>
+{{NotableUtattemita/Table
+|entries={{NUTE
+|image=Amatsuki-tikyuusaigo.png
+|singer=Amatsuki
+|producer=* '''Vocal:''' [[Amatsuki]]
+* '''Arrange/Mix:''' [[Kain]]
+* '''Guitar:''' [https://x.com/rafmafma_gt rafma]
+* '''Storyboard/Illustration:''' [https://x.com/89hakuri Hakuri]
+* '''Movie:''' [https://x.com/86_oo_ HAR]
+|NND=
+|YT=6RFDqXT2bHY
+|description=Special cover version
+}}{{NUTE
+|singer=Mahito
+|image=Chikyuusaigocover.png
+|producer=* '''Vocal/Video:''' [[Mahito]]
+* '''Mix:''' 02
+* '''Illustration:''' Mariaanu
+|NND=
+|YT=UedYbfiTvzw
+}}}}
+</pre>

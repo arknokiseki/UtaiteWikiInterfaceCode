@@ -1,0 +1,24 @@
+{{Documentation/Header}}
+Returns a value depending on whether the current page is a documentation subpage. Used inside other templates to suppress categories, notices or demos when they are being shown on a <code>/doc</code> page rather than in real use.
+
+Also returns true for a translation subpage of a doc page (e.g. <code>/doc/de</code>) when the Translate extension is active.
+
+==Syntax==
+{{T|IsDocSubpage|block=1
+|v1=override =
+|v2=true =
+|v3=false =
+}}
+
+==Usage==
+<pre>{{#if:{{IsDocSubpage}}|shown only on /doc|shown everywhere else}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>override</code> || – || Subpage name || The subpage name to test for instead of <code>doc</code>. || string || doc ||
+|-
+| <code>true</code> || – || True value || Returned when the page '''is''' a doc subpage. || string || 1 ||
+|-
+| <code>false</code> || – || False value || Returned when the page is '''not''' a doc subpage. || string || ''(empty)'' ||
+|}

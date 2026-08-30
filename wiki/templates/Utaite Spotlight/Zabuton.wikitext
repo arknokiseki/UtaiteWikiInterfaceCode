@@ -1,0 +1,20 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Zabuton Twitter (song).png
+|caption = his Nico Nico Douga userpage
+|officialjapname = 座布団 
+|officialromajiname = Zabuton
+|NNDuserpage = 3946650
+|mylist1 = 17346684
+|mylist1info = 
+|mylist2 = 20750995
+|mylist2info = mixing
+|nicommu1 = co37076
+|exampletitle = twitter
+|examplennd = sm17429118
+|exampleyt = 
+|description = <small>'''Zabuton''' ('''座布団''', lit. sitting cushion) is a male {{NNDict|Utaite}} who started in early 2010.
+Most of his covers are labeled with "zenbu ore" (全部俺) meaning "all by me", as he is known to do beat-boxing and singing in acappella for the background music in those covers, an example being his "Mozaik Role"{{nnd|sm14168977}}.
+An exception of his trait, and the only non-acapella solo covers would be "[[Chocolate・Train]]"{{nnd|sm12523854}} and "[[Iroha Uta]]"{{nnd|sm10251410}}.</small>
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

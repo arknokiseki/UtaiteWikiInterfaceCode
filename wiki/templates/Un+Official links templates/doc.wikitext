@@ -1,0 +1,152 @@
+==Description==
+For use in the ==External links== section.
+
+*Official links have parameters  to keep sources organized.
+*Unofficial links have parameters  leading to other sources.
+
+==Parameters==
+===Official===
+{{t|Official}}
+; <code>web    =</code>
+: URLs that lead to official social accounts or websites of a producer.
+; <code>media  =</code>
+: URLs that lead to official playlists or illustrated media of a producer.
+; <code>prchs  =</code>
+: URLs that lead to official purchases of media.
+; <code>dwlds  =</code>
+: URLs that lead to official downloads of media or package contents.
+; <code>url    =</code>
+: URLs that lead to official miscellaneous content such as lyrics- if not packaged within downloads.
+
+===Unofficial===
+{{t|Unofficial}}
+; <code>hmiku    =</code>
+: [http://w.atwiki.jp/hmiku/ Hatsune Miku wiki] (初音ミク Wiki)  &nbsp;requires the ending url number. 
+: <code>http://w.atwiki.jp/hmiku/pages/<u>20</u>.html</code>
+
+; <code>nico  =</code>
+: [http://dic.nicovideo.jp/ Niconico Encyclopedia] (ニコニコ大百科)  &nbsp;requires the ending url number for a nico video.
+: <code>http://dic.nicovideo.jp/v/<u>sm1097445</u></code>
+
+; <code>nico2  =</code>
+: [http://dic.nicovideo.jp/ Niconico Encyclopedia] (ニコニコ大百科) (2)  &nbsp;requires a letter, a backslash "/", and the ending url content for a nico article.
+: <code>http://dic.nicovideo.jp/<u>v/sm1097445</u></code>
+: <code>https://dic.nicovideo.jp/<u>a/みくみくにしてあげる♪</u></code>
+
+; <code>vocadb =</code>
+: [http://vocadb.net/ Vocaloid Database]  &nbsp;requires the ending url number.
+: <code>http://vocadb.net/S/<u>1355</u></code>
+: Adding a number after <code>vocadb# =</code> will recreate more links.
+: Adding ' ok ' will hide section.
+
+; <code>p      = yes</code>
+: If this parameter is present the VocaDB link changes to point to a Producer page instead of Song pages. ''For producer pages only''.
+
+; <code>a      = yes</code>
+: If this parameter is present the VocaDB link changes to point to an Album page instead of Song pages. ''For album pages only''.
+
+; <code>utaitedb =</code>
+: [http://utaitedb.net/ Utaite Database]  &nbsp;requires the ending url number.
+: <code>http://utaitedb.net/S/<u>28956</u></code>
+
+; <code>mgp   =</code>
+: [https://zh.moegirl.org.cn Moegirlpedia] (萌娘百科)  &nbsp;requires the original title of the song.
+: <code>https://zh.moegirl.org.cn/<u>权御天下</u></code>
+
+; <code>pixiv   =</code>
+: [http://dic.pixiv.net/a/ Pixiv Encyclopedia] (ピクシブ百科事典)  &nbsp;requires the original title of the song.
+: <code>http://dic.pixiv.net/a/<u>みんなみくみくにしてあげる♪</u></code>
+
+; <code>tag    =</code>
+; <code>tag2   =</code>
+; <code>tag3   =</code>
+: [http://www.nicovideo.jp/tag/ Nicovideo]  &nbsp;requires a commonly used tag; spaces require underscoring.
+: <code>http://www.nicovideo.jp/tag/<u>みくみくにしてあげる</u></code>
+
+; <code>vlw    =</code>
+: [https://vocaloidlyrics.fandom.com/wiki/ VOCALOID Lyrics Wiki]  &nbsp;requires the original title of the song.
+: <code>https://vocaloidlyrics.fandom.com/wiki/<u>みくみくにしてあげる♪ (Miku Miku ni Shite Ageru♪)</u></code>
+
+; <code>url    =</code>
+: For extra miscellaneous urls.
+: <code><nowiki>[</nowiki>https://example.com/ Example_title]</code>
+
+==Examples==
+<pre>
+==External links==
+===Official===
+{{Official
+  |web   = 
+  |media = 
+  |prchs = 
+  |dwlds = 
+  |url   = [url name]
+}}
+
+===Unofficial===
+{{Unofficial
+  |at     = 
+  |nico   = sm
+  |nico2  = /Name
+  |vocadb = ok
+  |utadb  = ok
+  |mgp    = 
+  |pixiv  = 
+  |tag    = 
+  |vlw    = {{>subst:PAGENAME}}
+  |url    = [url name]
+}}
+</pre>
+
+<br />
+<pre>
+===Official===
+{{Official
+  |web   = [http://www.mosaictune.com/ MOSAIC.TUNE]
+  |media = [http://www.nicovideo.jp/user/70391 NicoVideo]
+  |prchs = [http://www.enterbrain.co.jp/magical-cute/sp/heartsnative/index.html Album]
+  |dwlds = [http://piapro.jp/t/-l3D Karaoke] (2012 version)
+  |url   = [http://piapro.jp/t/NTU7 Lyrics] (2012 version)
+}}
+
+===Unofficial===
+{{Unofficial
+  |at     = 20
+  |nico   = sm1097445
+  |nico2  = a/みくみくにしてあげる♪
+  |vocadb = 1355
+  |mgp    = 把你给MIKUMIKU掉
+  |pixiv  = みくみくにしてあげる♪
+  |tag    = みくみくにしてあげる
+  |vlw    = みくみくにしてあげる♪ (Miku Miku ni Shite Ageru♪)
+  |url    = {{VLW|みくみくにしてあげる♪ (Miku Miku ni Shite Ageru♪)}}
+*{{IW|utaite|Miku Miku ni Shite Ageru♪|UTAITE Wiki}}
+}}</pre>
+
+<br />
+;===Official===
+{{Official
+  |web   = [http://www.mosaictune.com/ MOSAIC.TUNE]
+  |media = [http://www.nicovideo.jp/user/70391 NicoVideo]
+  |prchs = [http://www.enterbrain.co.jp/magical-cute/sp/heartsnative/index.html Album]
+  |dwlds = [http://piapro.jp/t/-l3D Karaoke] (2012 version)
+  |url   = [http://piapro.jp/t/NTU7 Lyrics] (2012 version)
+}}
+
+;===Unofficial===
+{{Unofficial
+  |at     = 20
+  |nico   = sm1097445
+  |nico2  = a/みくみくにしてあげる♪
+  |vocadb = 1355
+  |mgp    = 把你给MIKUMIKU掉
+  |pixiv  = みくみくにしてあげる♪
+  |tag    = みくみくにしてあげる
+  |vlw    = みくみくにしてあげる♪ (Miku Miku ni Shite Ageru♪)
+  |url    = {{VLW|みくみくにしてあげる♪ (Miku Miku ni Shite Ageru♪)}}
+*{{IW|utaite|Miku Miku ni Shite Ageru♪|UTAITE Wiki}}
+}}
+
+{{WikiaLicense|UtauLyrics|Template:Links}}
+
+<includeonly>[[Category:Templates]] [[Category:Music templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

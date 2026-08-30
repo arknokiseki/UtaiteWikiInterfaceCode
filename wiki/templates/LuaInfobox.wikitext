@@ -1,0 +1,3 @@
+<includeonly>{{#invoke:LuaInfobox|main}}</includeonly><noinclude>
+{{documentation}}
+</noinclude>

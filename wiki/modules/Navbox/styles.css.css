@@ -1,0 +1,110 @@
+.navbox {
+	border: 1px solid var(--navbox-border);
+	box-sizing: border-box;
+	width: 100%;
+	margin: auto;
+	clear: both;
+	font-size: 88%;
+	text-align: center;
+	padding: 1px;
+	color: var(--navbox-text-color);
+}
+
+.navbox-inner,
+.navbox-subgroup {
+	width: 100%;
+}
+
+.navbox + .navbox-styles + .navbox {
+	margin-top: -1px;
+}
+
+.navbox th,
+.navbox-title,
+.navbox-abovebelow {
+	text-align: center;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+th.navbox-group {
+	white-space: nowrap;
+	/* @noflip */
+	text-align: right;
+}
+
+.navbox,
+.navbox-subgroup {
+	background: var(--navbox-bg);
+}
+
+.navbox-list {
+	border: var(--navbox-list-border);
+}
+
+.navbox th,
+.navbox-title {
+	/* Level 1 color */
+	background: var(--navbox-title-bg);
+}
+
+.navbox-abovebelow,
+th.navbox-group,
+.navbox-subgroup .navbox-title {
+	/* Level 2 color */
+	background: var(--navbox-group-bg);
+}
+
+.navbox-subgroup .navbox-group,
+.navbox-subgroup .navbox-abovebelow {
+	/* Level 3 color */
+	background: var(--navbox-subgroup-bg);
+}
+
+.navbox-even {
+	/* Even row striping */
+	background: var(--navbox-even-bg);
+}
+
+.navbox-odd {
+	/* Odd row striping */
+	background: transparent;
+}
+
+th.navbox-title1 {
+	border-left: 2px solid var(--navbox-bg);
+	width: 100%;
+}
+
+td.navbox-list1 {
+	text-align: left;
+	border-left-width: 2px;
+	border-left-style: solid;
+}
+
+.navbox .hlist td dl,
+.navbox .hlist td ol,
+.navbox .hlist td ul,
+.navbox td.hlist dl,
+.navbox td.hlist ol,
+.navbox td.hlist ul {
+	padding: 0.125em 0;
+}
+
+.navbox .hlist dd,
+.navbox .hlist dt,
+.navbox .hlist li {
+	white-space: nowrap;
+}
+
+.navbox .hlist dd dl,
+.navbox .hlist dt dl,
+.navbox .hlist li ol,
+.navbox .hlist li ul {
+	white-space: normal;
+}
+
+ol + .navbox-styles + .navbox,
+ul + .navbox-styles + .navbox {
+	margin-top: 0.5em;
+}

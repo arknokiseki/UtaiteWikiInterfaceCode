@@ -1,0 +1,32 @@
+{{Utaite Spotlight/Design|nnd=
+|image = Yukimi Community.png
+|caption = community
+|officialjapname = 雪見
+|officialromajiname = [[Yukimi]]
+|YTusername =
+|NNDuserpage = 25948964
+|mylist1 = 31528142
+|mylist1info = 
+|mylist2 =
+|mylist2info =
+|mylist3 =
+|mylist3info =
+|mylist4 =
+|mylist4info =
+|nicommu1 =  co1607532
+|nicommu1info = 
+|nicommu2 =
+|nicommu2info =
+|nicommu3 =
+|nicommu3info =
+|exampletitle = [[Streaming Heart]]
+|examplennd = sm23160807
+|exampleyt =
+|description = '''Yukimi''' ('''雪見'') is an {{NNDict|Utaite}} and mixer. He started covering songs in 2013. He also mixes for other utaites such as [[@gain]].
+
+Yukimi is also a member of Bomberman with [[Sou]], [[@gain]], [[Ivu.]], [[Meychan]] and [[Bee]].
+
+He often sings duets with [[@gain]] which usually reach more views than his solo covers. Their cover of "[[Tokyo Summer Session]]"{{nnd|sm26784309}} reached more than 70K views.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

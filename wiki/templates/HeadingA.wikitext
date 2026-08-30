@@ -1,0 +1,1 @@
+<div class="header-a" style="background-color: {{{3|#c3e6f9}}} !important;">{{#if:{{{4|}}}|[{{{4}}} {{{1|Example text}}}]|{{#if: {{{2|}}} | [[{{{2}}}|{{{1|Example text}}}]]|{{{1|Example text}}}}}}}</div><noinclude>[[Category:Main page templates|{{PAGENAME}}]]</noinclude>

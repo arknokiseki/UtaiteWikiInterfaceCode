@@ -1,0 +1,61 @@
+/* Need high specificity to beat MW build-in styles */
+table.wikitable.lua-infobox {
+    float: right;
+    display: table;
+    min-width: 300px;
+    max-width: 350px;
+    margin: 4px;
+    background-color: var(--background-color-neutral-subtle, #f8f9fa);
+    text-align: center;
+}
+
+@media ( max-width: 600px ) {
+    table.wikitable.lua-infobox {
+        width: 100%;
+        float: unset;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.lua-infobox .infobox-title {
+	font-size: larger;
+}
+
+.lua-infobox .infobox-title,
+.lua-infobox .infobox-row.infobox-header {
+    font-weight: bolder;
+    background-color: var(--background-color-progressive-subtle--active, #b6d4fb);
+}
+
+.lua-infobox .infobox-image-caption {
+    font-size: smaller;
+}
+
+.lua-infobox .infobox-label {
+    background-color: var(--background-color-neutral, #eaecf0);
+}
+
+/* Tabbing support: forked from Module:Tab/styles.css */
+.tab-button-container .tab-button:hover {
+    cursor: pointer;
+}
+
+.tab-panel-hidden {
+    display: none;
+}
+
+.infobox-tabs .tab-button {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0.15em 0.4em;
+    margin: 0.25em;
+    background-color: var(--background-color-progressive-subtle--hover, #dce3f9);
+}
+
+.infobox-tabs .tab-button.tab-button-selected {
+	color: var(--color-inverted, #fff);
+    background-color: var(--background-color-progressive--focus, #36c);
+}
+
+/* [[Category:Stylesheets]] */

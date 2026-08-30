@@ -1,0 +1,5 @@
+<div class="mw-collapsible mw-collapsed" data-expandtext="{{{expandtext|{{int:collapsible-expand}}}}}" data-collapsetext="{{{collapsetext|{{int:collapsible-collapse}}}}}"><div class="mw-collapsible-content">
+{{{2|}}}
+</div></div><noinclude>
+{{doc}}
+[[Category:General wiki templates]]</noinclude>

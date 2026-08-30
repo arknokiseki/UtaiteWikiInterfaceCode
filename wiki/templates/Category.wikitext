@@ -1,0 +1,1 @@
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|preload||[[Category:{{{1}}}]]}}</includeonly><noinclude>{{doc}}[[Category:Assistant templates]]</noinclude>

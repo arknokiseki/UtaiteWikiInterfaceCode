@@ -1,0 +1,10 @@
+;Description
+:This template is used on song pages to automatically add the "Songs published in x" category. This template should only be used for the first release date (e.g. if a song was first released on an album, that date has primacy; if a song later got a remix, the date of the original takes primacy). The first parameter is the year in which the song was released, the second parameter (which is optional) is the month in which the song was released (formatted as the first three letters of the month, so February becomes "Feb"). The third parameter (which is optional) is the day of the month on which the song was released (e.g. "1" if the song was released on the first of May).
+
+;Syntax
+:Type <code>{{t|Date}}</code> somewhere.
+
+;Samples
+:<code><nowiki>{{Date|Year|Month|Day}}</nowiki></code>
+
+<noinclude>{{FandomLicense|vocaloidlyrics|Template:Date/doc}}</noinclude>

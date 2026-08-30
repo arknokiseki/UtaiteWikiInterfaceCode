@@ -1,0 +1,51 @@
+<noinclude>{{Archived}}</noinclude><includeonly>
+{|style="text-align: center;|{{{Cover1}}}|{{{Cover2}}}|{{{Cover3}}}|{{{Cover4}}}|}
+</includeonly><noinclude>
+__NOTOC__
+<h2>Usage:</h2>
+<pre>
+{{Utattemita
+|Cover1=
+|Cover2=
+|Cover3=
+|Cover4=
+}}
+</pre>
+
+<pre>
+{{Utattemita Box
+|Cover1=
+{{NotableUtattemita
+|image= Mutya ALWAYS BE WITH YOU XD.png
+|title= [[Mutya]]
+|producer=<br/>Mix: [https://x.com/ani_haltto はるっと]<br/>Illustration: [https://x.com/Tone_RnRn/media rintaro]<br/>Movie: [https://x.com/tumotarot tumo]
+|NND=
+|YT= _6Ime3rv028
+|description=
+}}
+|Cover2=
+{{NotableUtattemita
+|image= SILVANA Parasite.png
+|title= [[SILVANA]]
+|producer=<br/>Mix: [[SILVANA]]<br/>Thumbnail: [https://x.com/konati__e/status/1512024532122431488 @konati__e]
+|NND=
+|YT= xmfeDU_ogBQ
+}}
+|Cover3={{NotableUtattemita
+|image= Yukimi Parasite.png
+|title= [[Yukimi]]
+|producer=<br/>Mix: [[Yukimi]]<br/>Illustration : 鈴
+|NND=
+|YT= KOw7F6SZxdk
+|description=
+}}
+|Cover4={{NotableUtattemita
+|image= Ivudot Parasite.png
+|title= [[Ivudot]]
+|producer= <br/>Mix: [https://x.com/yoshi_kennn @yoshi_kennn]<br/>Thumbnail: [https://x.com/fuyu_koke/status/1696580640341144003 fuo]
+|NND=
+|YT= Fhb-02IJz0g
+|description=
+}}
+}}
+</pre></noinclude>

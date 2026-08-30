@@ -1,0 +1,5 @@
+<includeonly>{{Interwiki|vocaloidlyrics|{{#replace:{{{1}}}| |_}}|{{{2|{{#replace:{{{1}}}|-P |P }}}}}|server=miraheze}}</includeonly><noinclude>{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

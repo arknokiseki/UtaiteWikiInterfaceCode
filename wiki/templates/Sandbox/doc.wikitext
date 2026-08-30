@@ -1,0 +1,19 @@
+<templatedata>
+{
+	"description": "Sandbox in the template namespace, created for testing purposes.  None of the parameters defined in TemplateData currently do anything, but you can change them to see how the new editor works.",
+	"params": {
+		"date": {
+			"aliases": [
+				"Date"
+			],
+			"description": "The current date ",
+			"type": "string",
+			"required": true
+		},
+		"page": {
+			"description": "The name of the page",
+			"type": "string/wiki-page-name"
+		}
+	}
+}
+</templatedata>

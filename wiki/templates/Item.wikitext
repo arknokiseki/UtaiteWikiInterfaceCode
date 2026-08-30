@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:Item|main}}</includeonly><noinclude>{{Documentation|type=Image}}</noinclude>

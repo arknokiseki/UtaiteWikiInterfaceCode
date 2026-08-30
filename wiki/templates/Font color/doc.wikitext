@@ -1,0 +1,43 @@
+{{Documentation/Header}}
+{{High Risk|Template:Font color|nocat=1|pagetype=Main}}
+Colors inline text, optionally over a background color. Any valid CSS color works (named colors, <code>#rgb</code>/<code>#rrggbb</code>, <code>rgb()</code>). Supports <code>safesubst:</code>.
+
+==Syntax==
+Two forms, depending on whether a background color is supplied:
+{{T|Font color|block=1
+|v1=text-color
+|v2=text
+}}
+{{T|Font color|block=1
+|v1=text-color
+|v2=background-color
+|v3=text
+}}
+
+==Examples==
+* {{T|Font color|_Y_=1|p1=red|p2=Sekihan}}
+* {{T|Font color|_Y_=1|p1=white|p2=#3a7bd5|p3=Soraru}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Text color || CSS color for the text. || string || inherit ||
+|-
+| <code>2</code> || – || Text / background color || The '''text''' (two-argument form), or the '''background color''' when parameter 3 is given. || string || – ||
+|-
+| <code>3</code> || – || Text || The text to color, when parameter 2 is a background color. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Colors inline text, with an optional background color.",
+"params": {
+"1": { "label": "Text color", "description": "CSS color for the text.", "type": "string", "required": true },
+"2": { "label": "Text / background color", "description": "The text to color, or a background color if parameter 3 is used.", "type": "string", "required": true },
+"3": { "label": "Text", "description": "The text to color, when parameter 2 is a background color.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

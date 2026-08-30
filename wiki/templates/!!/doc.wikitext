@@ -1,0 +1,4 @@
+<pre>{{!!}}</pre>
+...results in:
+{{!!}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

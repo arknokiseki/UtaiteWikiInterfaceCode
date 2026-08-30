@@ -1,0 +1,91 @@
+/**
+ * {{cmbox}} (category message box) styles
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+table.cmbox {
+	margin: 3px 10%;
+	border-collapse: collapse;
+	border: 1px solid var(--border-color-base, #a2a9b1);
+	/* Default "notice" blue */
+	background-color: #dfe8ff;
+	/* temp fix for dark mode */
+	color: #222;
+	box-sizing: border-box;
+}
+
+/* An empty narrow cell */
+.cmbox td.mbox-empty-cell {
+	border: none;
+	padding: 0;
+	width: 1px;
+}
+
+/* The message body cell(s) */
+.cmbox th.mbox-text,
+.cmbox td.mbox-text {
+	border: none;
+	/* 0.9em left/right */
+	padding: 0.25em 0.9em;
+	/* Make all mboxes the same width regardless of text length */
+	width: 100%;
+}
+
+/* The left image cell */
+.cmbox td.mbox-image {
+	/* 0.9em left, 0px right */
+	/* @noflip */
+	padding: 2px 0 2px 0.9em;
+}
+
+/* The right image cell */
+.cmbox td.mbox-imageright {
+	/* 0px left, 0.9em right */
+	/* @noflip */
+	padding: 2px 0.9em 2px 0;
+}
+
+table.cmbox-notice {
+	/* Blue */
+	background-color: #d8e8ff;
+}
+
+table.cmbox-speedy {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	/* Red */
+	border: 4px solid #b32424;
+}
+
+table.cmbox-delete,
+table.cmbox-speedy {
+	/* Pink */
+	background-color: #ffdbdb;
+}
+
+table.cmbox-content {
+	/* Orange */
+	background-color: #ffe7ce;
+}
+
+table.cmbox-style {
+	/* Yellow */
+	background-color: #fff9db;
+}
+
+table.cmbox-move {
+	/* Purple */
+	background-color: #e4d8ff;
+}
+
+table.cmbox-protection {
+	/* Gray-gold */
+	background-color: #efefe1;
+}
+
+@media screen and (max-width: 720px) {
+  table.cmbox {
+	margin: 3px auto;
+  }
+}

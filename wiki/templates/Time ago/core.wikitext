@@ -1,0 +1,44 @@
+<includeonly>{{#switch:<!--
+    -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 31557600|6|<!--
+        -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 2678400|5|<!--
+            -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 604800|4|<!--
+                -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 86400|3|<!--
+                    -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 3600|2|<!--
+                        -->{{#ifexpr:abs({{#time:U|{{{time|}}}}}-{{#time:U}}) >= 60|1|0<!--
+                        -->}}<!--
+                    -->}}<!--
+                -->}}<!--
+            -->}}<!--
+        -->}}<!--
+    -->}}
+    |0 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/1)}}}} {{plural|{{#var:val}}|second|seconds}}
+    |1 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/60)}}}} {{plural|{{#var:val}}|minute|minutes}}
+    |2 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/3600)}}}} {{plural|{{#var:val}}|hour|hours}}
+    |3 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/86400)}}}} {{plural|{{#var:val}}|day|days}}
+    |4 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/604800)}}}} {{plural|{{#var:val}}|week|weeks}}
+    |5 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/2678400)}}}} {{plural|{{#var:val}}|month|months}}
+    |6 = {{#vardefine:val|{{#expr:floor(abs({{#time:U|{{{time|}}}}}-{{#time:U}})/31557600)}}}} {{plural|{{#var:val}}|year|years}}
+}} {{#ifexpr:({{#time:U}}-{{#time:U|{{{time|}}}}})<0|from now|ago}}</includeonly><noinclude>[[Category:Assistant templates]]{{documentation}}</noinclude><!--
+
+
+<includeonly>{{#ifeq:{{#time:U|{{{1|}}}}}|Invalid time
+|Invalid time parameter
+|{{#switch:{{#time:U|{{{1|}}}}}
+  |0={{plural:{{#expr:floor(({{#time:U}} - {{{1}}}))|second|seconds}}}}
+  |1={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/60)|minute|minutes}}}}
+  |2={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/3600)|hour|hours}}}}
+  |3={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/86400)|day|days}}}}
+  |4={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/604800)|week|weeks}}}}
+  |5={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/2678400)|month|months}}}}
+  |6={{plural:{{#expr:floor(({{#time:U}} - {{{1}}})/31557600)|year|years}}}}
+}} ago}}</includeonly><noinclude>
+== Usage ==
+<pre>{{Time ago/core|TIMESTAMP}}</pre>
+
+This template displays how long ago a given timestamp occurred.
+
+Examples:
+# {{Time ago/core|1731956123}} 
+# {{Time ago/core|{{#time:U|-1 hour}}}}
+
+[[Category:Assistant templates]]</noinclude>-->

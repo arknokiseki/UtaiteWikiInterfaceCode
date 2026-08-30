@@ -1,0 +1,1 @@
+{{CURRENTYEAR}}-{{CURRENTMONTH}}-{{CURRENTDAY2}}<noinclude>[[Category:Templates]]</noinclude>

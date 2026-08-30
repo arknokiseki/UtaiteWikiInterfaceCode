@@ -1,0 +1,21 @@
+{{Utaite Spotlight/Design|nnd =
+|image = Katakiri Rekka 00.png
+|caption = Nico Nico Douga
+|officialjapname = 片霧烈火
+|officialromajiname = Katakiri Rekka
+|NNDuserpage = 13289514
+|mylist1 = 14077755
+|mylist1info = utattemita  
+|nicommu1 = 
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Senbonzakura
+|examplennd = sm18863892
+|exampleyt = AXqwJDu1c3s
+|description = '''Katakiri Rekka''' ('''片霧烈火''') is a female {{NNDict|Utaite}}, but she is more well known as an anime song artist (e.g. for Higurashi no Naku Koro ni) and has her own doujin circle called "CLOSED/UNDERGROUND".<br>She has a very powerful and versatile voice that can reach high and low notes easily, but has the ability to have a voice that is quite {{NNDict|Loli}}, like in her parody of "World is Mine"{{nnd|sm7906039}}.<br>She tends to include choruses in her covers.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,55 @@
+.nmbox {
+	/* clear: both; */
+	background: #f8f9fa;
+	border: 1px solid var( --border-color-base, #a2a9b1 );
+	box-sizing: border-box;
+	margin: 2px 0;
+	padding: 0;
+}
+.nmbox * {
+	box-sizing: border-box;
+}
+.nmbox-header {
+	background: #eaecf0;
+	padding: 4px 0.5em;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap
+}
+.nmbox .mbox-image {
+	display: inline-block;
+	padding-right: 1em;
+}
+.nmbox-text {
+	border-top: 1px solid var( --border-color-base, #a2a9b1 );
+	width: 100%;
+	padding: 4px 0.5em;
+}
+@media screen and (min-width: 768px) {
+	.nmbox-header {
+		display: table-cell;
+		border-right: 1px solid var( --border-color-base, #a2a9b1 );
+		width: 1%;
+	}
+	.nmbox-text {
+		border-top: none;
+		display: table-cell;
+	}
+}
+
+@media screen {
+	html.skin-theme-clientpref-night .nmbox-header,
+	html.skin-theme-clientpref-night  .nmbox {
+	    background: transparent;
+	    color: inherit;
+	}
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    /* automatic mode */
+    html.skin-theme-clientpref-os .nmbox-header,
+    html.skin-theme-clientpref-os  .nmbox {
+    	background: transparent;
+    	color: inherit;
+    }
+}

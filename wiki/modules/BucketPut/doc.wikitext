@@ -1,0 +1,99 @@
+{{Dependencies|Module:Arguments|Module:Yesno}}
+Module designed to allow putting data into Bucket tables directly from wikitext. This documentation is designed around the [[Module:Bucket]] wrapper; replacing any <code>{<nowiki />{#invoke:Bucket|put</code> with <code>{<nowiki />{#invoke:BucketPut|put</code> works perfectly fine.
+
+==Parameters==
+With the exception of [[#Using template args]], this module must be invoked directly. The first argument is the name of the Bucket that you want to store your data inside. The example at the bottom will use [[mh:bucket:Bucket:character|Bucket:character]].
+
+There are certain rules that define how a parameter is parsed:
+*All unnamed parameters (minus the first) will be ignored. All parameters with an empty value (e.g. <code>arg1</code> in <code>|arg1 = |arg2 = ...</code>) will also be ignored.
+*<code>|argname-option = value</code> will set <code>argname</code>'s <code>option</code> configuration value to <code>value</code>. Invalid options will yield an error. Valid options are:
+**<code>type</code>: See [[#Typing]].
+**<code>delimiter</code>: See [[#Repeated values]]. Aliases: <code>delim</code>.
+**<code>required</code>: [[Module:Yesno|Yesno]] parameter, if true then makes <code>argname</code> a required parameter. Aliases: <code>notnull</code>.
+*<code>|+option = value</code> will set the configuration value <code>option</code> to <code>value</code>. Invalid options will yield an error. See [[#Configuration]] for valid options.
+*<code>|argname = value</code>, where <code>argname</code> does not follow one of the above patterns, will save <code>argname</code> as <code>value</code>.
+
+==Typing==
+Bucket comes with minimal built-in type validation: you are expected to validate fields yourself using Lua. This can lead to some confusing behaviour, for example, when using the INTEGER type:
+*The string <code>"98"</code> will be saved as 98.
+*The string <code>"98q828"</code> will be saved as 98.
+*The string <code>"a98"</code> will be saved as 0.
+
+Therefore, this module allows typed arguments. The format of a typed argument is <code>|attack-type = int</code> for <code>|attack = 5000</code>, which will validate that the parameter follows the format of the "int" type defined below. This example perfectly follows the int format, so the Bucket will have the <code>attack</code> field set to <code>5000</code>. If it didn't, the module would throw an error.
+
+===Basic types===
+*<code>text</code> is for TEXT and PAGE. If type is not specified, <code>text</code> will be assumed.
+*<code>int</code> is for INTEGER. Supported aliases: <code>integer</code>.
+*<code>num</code> is for DOUBLE. Supported aliases: <code>float</code>, <code>double</code>, <code>number</code>.
+*<code>bool</code> is for BOOLEAN. Supported aliases: <code>boolean</code>, <code>yesno</code>.
+
+===Other types===
+*<code>timestamp</code> is used for dates, and normalises them to ISO 8601 format. Under the hood it uses <syntaxhighlight lang="lua" inline>mw.language.getContentLanguage():formatDate("c", t)</syntaxhighlight> where <code>t</code> is the inputted time. Supported aliases: <code>date</code>, <code>time</code>, <code>datetime</code>.
+*<code>unixtime</code> is similar to <code>timestamp</code>, but instead normalises the dates to Unix time. Use this one if you want to store timestamps as INTEGERs rather than TEXT.
+
+==Repeated values==
+Bucket allows for repeated values, which means you can store a list of values rather than just a single one. To make a value repeated, use the <code>...-delimiter</code> argument to store the value's delimiter.
+
+For example, if you have
+<pre>
+|type = Green, Blue
+|type-delimiter = ,
+</pre>
+then this module will store <syntaxhighlight lang="lua" inline>{ 'Green', 'Blue' }</syntaxhighlight> as the <code>type</code> field in the database.
+
+Repeated values configuration:
+*<code>|argname-delimiter = ;</code>: will set the delimiter for <code>argname</code> to <code>;</code>.
+
+Notes:
+*All arguments are trimmed, so for example here you only need to put the split argument as <code>,</code> and the end result will store <code>Blue</code> rather than <code>&nbsp;Blue</code>.
+*There is a special case of <code>\n</code>: if you put <code>\n</code> inside the delimiter then the delimiter will be interpreted as a newline. To make implementation simple, this special case only applies if there isn't a <code>\</code> before the line, i.e. <code style="white-space: nowrap;">...-delimiter = ;\n</code> means semicolon followed by newline, <code style="white-space: nowrap;">... = ;\\n</code> means semicolon followed by <code style="white-space: nowrap;">\n</code>, and <code style="white-space: nowrap;">... = ;\\\n</code> means semicolon followed by <code style="white-space: nowrap;">\\n</code>.
+*You can combine repeated values with types, for example <pre>{{#invoke:Bucket|put|bucketname&#10;|argname = 5.78;4;51.2;43.21&#10;|argname-type = num&#10;|argname-delimiter = ;&#10;}}</pre>This will store <code>argname</code> as <syntaxhighlight lang="lua" inline>{ 5.78, 4, 51.2, 43.21 }</syntaxhighlight>.
+
+==Configuration==
+*<code>sub</code>. This determines the subobject/subversion (the bit after the # in the autogenerated <code>page_name_sub</code>).
+*<code>templateargs</code>: list of values to read from the template that wraps the <code>#invoke</code>, rather than from the <code>#invoke</code> itself. Comma-separated list of values, whitespace gets trimmed. Saves you having to write <code><nowiki>|server = {{{server|}}}</nowiki></code> for every argument you want to save to Bucket. Example available at [[#Using template args]].
+*<code>nosave</code>: do you actually call <code>bucket.put</code>? Mainly useful for debugging the module.
+*<code>log</code>: do you log all the data you've generated? Mainly useful for debugging the module.
+
+==Examples==
+<syntaxhighlight lang="wikitext">
+{{#invoke:Bucket|put|character
+|name = Buck
+|hp = 1000
+|hp-type = int
+|attack = 50
+|attack-type = int
+|type = Green, Blue
+|type-type = text
+|type-delimiter = ,
+|rarity = well-done
+|is_obtainable = yes
+|is_obtainable-type = bool
+|+sub = Buck
+}}
+</syntaxhighlight>
+
+===Using template args===
+If Template:Banner looks like:
+<syntaxhighlight lang="wikitext">
+{{#invoke:Bucket|put
+|banners
+|+templateargs = server, name_jp, name_en, image, rateup_character, limited, start_date, end_date
+|rateup_character-delimiter = ,
+}}
+</syntaxhighlight>
+
+The template can be used like:
+<syntaxhighlight lang="wikitext">
+{{Banner
+| id = 1
+| server = JP
+| name_jp = 拝啓、はじまりの季節へ
+| name_en =
+| image = Starter_Banner.png
+| rateup_character = Hoshino,Shiroko
+| limited = no
+| start_date = 2021-02-04T12:00+09
+| end_date = 2021-02-11T12:00+09
+}}
+</syntaxhighlight>

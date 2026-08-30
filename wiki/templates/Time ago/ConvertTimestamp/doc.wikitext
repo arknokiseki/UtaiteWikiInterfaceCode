@@ -1,0 +1,18 @@
+{{Documentation/Header}}
+This template converts YYYYMMDDHHmmss format to YYYY-MM-DD HH:mm:ss format.<br/>
+Usage: {{T|Time ago/ConvertTimestamp|{{REVISIONTIMESTAMP}}|_Y_=1}}
+==Syntax==
+{{T|Time ago/ConvertTimestamp|v1=YYYYMMDDHHmmss}}
+
+==Examples==
+{{T|Time ago/ConvertTimestamp|p1=20241018100054|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

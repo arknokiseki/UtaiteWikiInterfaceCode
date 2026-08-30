@@ -1,0 +1,45 @@
+<onlyinclude><span class="nowraplinks">{{#switch:
+{{#ifexist:{{FULLPAGENAME}}/sandbox     |sandbox     |
+{{#ifexist:{{FULLPAGENAME}}/Sandbox     |Sandbox     |
+{{#ifexist:{{FULLPAGENAME}}/test sandbox|test sandbox|
+{{#ifexist:{{FULLPAGENAME}}/Test sandbox|Test sandbox|
+{{#ifexist:{{FULLPAGENAME}}/test        |test        |
+{{#ifexist:{{FULLPAGENAME}}/Test        |Test        |
+}} }} }} }} }} }}
+ | sandbox      = [[Template:{{PAGENAME}}/sandbox     |{{Replace|{{{local}}}|$$|/sandbox}}]]
+ | Sandbox      = [[Template:{{PAGENAME}}/Sandbox     |{{Replace|{{{local}}}|$$|/Sandbox}}]]
+ | test sandbox = [[Template:{{PAGENAME}}/test sandbox|{{Replace|{{{local}}}|$$|/test sandbox}}]]
+ | Test sandbox = [[Template:{{PAGENAME}}/Test sandbox|{{Replace|{{{local}}}|$$|/Test sandbox}}]]
+ | test         = [[Template:{{PAGENAME}}/test        |{{Replace|{{{local}}}|$$|/test}}]]
+ | Test         = [[Template:{{PAGENAME}}/Test        |{{Replace|{{{local}}}|$$|/Test}}]]
+ | #default     = [[Project:Sandbox                   |{{{general}}}]]
+<!--ENDswitch-->}}</span></onlyinclude>
+{{documentation|content=
+
+Subtemplate of {{tl|Intricate template}} to ease internationalization and localization.
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Subtemplate of {{Intricate template}} to ease internationalization and localization.",
+	"format": "inline",
+	"params": {
+		"general": {
+			"label": "General Sandbox Link Label",
+			"description": "The label for the link to the general sandbox at [[Project:Sandbox]]",
+			"example": "general sandbox",
+			"required": true,
+			"type": "line"
+		},
+		"local": {
+			"label": "Local Sandbox Link Label",
+			"description": "The label for the link to the local sandbox subpage, the sequence `$$` will be replaced with the subpage name.",
+			"example": "local $$",
+			"required": true,
+			"type": "line"
+		}
+	}
+}
+</templatedata>
+}}

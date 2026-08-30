@@ -1,0 +1,104 @@
+=== Song page layout ===
+{{TabberType2
+|tab1=Notifications|content1=
+===Notifications===
+See the documentations: {{t|WIP/doc}} for a list of notifications commonly seen on song pages. Use when needed.
+
+|tab2=Background|content2=
+===Background===
+
+Every song page should provide information about the its history. For example:
+
+* A {{t|StructuredQuote}} by the author(producer), the song's original description, or a popularized interpretation(s).
+* Its series plot, instrumental and genre usage, video contents, public issues or impact, commercialization, remixes etc.
+* Remember to be objective and unbiased; don't place personal opinions within the article. The comment section is available for such opinions.
+
+* The {{t|WIP|Background}} template will inform readers of the section's progress.
+* If the above examples are not possible then place: ''No further details about this song were given.''
+
+|tab3=Lyrics|content3=
+===Lyrics===
+
+With some exceptions of [[Nyanyanyanyanyanyanya!|repetitive lyrics]] and NSFW lyrics, every song page will have a lyric layout.
+
+* As stated above: {{color|#CF1020|Machine translations of Japanese, Korean, and Chinese characters will not be accepted.}}
+* Latin alphabet will use the <nowiki><poem style="margin-left:1em;"></nowiki>...</poem> code.
+* Non-Latin alphabets or scripts that require romanization will use a table format.
+* Translations into another language will use either format depending on the circumstance.
+* Lyrics with multiple singers will use the {{t|Lrc color}} templates. This color-codes the content.
+*Lyrical articles that are hinting at NSFW (Not Safe For Work - meaning content that is heavily sexualized, heavy gore, or outright cannibalism) but not explicitly stating such, are fine. However, if lyrics straight up talk about NSFW, then the lyrics for that article will have to be omitted. For more information, check out [[w:Fandom_Community_Guidelines#Don't%20post%20porn,%20shock%20images,%20or%20explicit%20descriptions%20of%20sex|Fandom's community guidelines]].
+** Lyrics that include the sexualization of minors will be deleted immediately.
+
+{{TabberType2
+|tab1=English format|content1=
+====English format====
+* English lyrics are relatively simple.
+|tab2=Romanized format|content2=
+====Romanized format====
+* VOCALOID Wiki uses a table layout to present lyrics that have romanization. The original lyrics are on the left and the romanization is on the right.
+|}}
+
+|tab4=Songs with translations|content4=
+===Songs with translations===
+
+If a song has translation(s), add "Translation retrieved from [https://www.example.com source]" at the top inside the tab for that language (inside the lyrics template), then add [[Category:Songs with Translation]] on the bottom of the page
+
+|tab5=References|content5=
+===References===
+
+If there are needs to cite sources or minor trivia within the background section or lyrics then create a reference.
+*Creditable sources include official websites, tweets, blog posts, Nicopedia, etc.
+*If you want to place a '''citation''' - they appear like so: <sup>[[:File:placeholder.png|<nowiki>[1]</nowiki>]]</sup> and link to the References section automatically
+**The markup is {{markup|<nowiki><ref>[</nowiki>}}{{placeholder|<nowiki>http://www.websitelinkname.com Displaytext</nowiki>}}{{markup|<nowiki>]</ref></nowiki>}} where the display text could be something like {{example|Mafumafu's Tweet about his favorite food}}
+*If you have '''one source''' that you need to link to in different parts of the page, source them like so
+**{{markup|<nowiki><ref name="</nowiki>}}{{placeholder|Name}}{{markup|">[}}{{placeholder|<nowiki>http://www.linkofwebsite.com DisplayTitle</nowiki>}}{{markup|]</ref>}} for the first occurence
+**{{markup|<nowiki><ref name="</nowiki>}}{{placeholder|Name}}{{markup|"/>}} for any other occurences
+**Notice how {{placeholder|Name}} needs to be the same
+*If you '''don't know the source''', use {{markup|<nowiki>{{cite}}</nowiki>}} instead
+
+|tab6=External links|content6=
+===External links===
+
+Every song page should have outside content to link to. This can include a official promotional art, public downloads, and social posts. Unofficial linkage can include articles and lyric sources.
+
+Use the following templates and format to mark each section:
+
+<code>===Official===</code><br />
+{{t|Official}} 
+
+<code>===Unofficial===</code><br />
+{{t|Unofficial}}
+|tab7=Category|content7=
+
+===Category===
+
+Every song page should have a category to be sorted into. 
+
+; <code><nowiki>[[</nowiki>Category:Original songs]]</code>
+: Is the default category for all song pages, minus covers which is categorized into <code><nowiki>[[</nowiki>Category:Cover songs]]</code>.
+; <code><nowiki>[[</nowiki>Category:LANGUAGE_here songs]]</code>
+: Calls for a certain language a song's lyrics are presented in, such as English for example. If a song is multilingual heavy then multiple language categories can be used.
+; <code><nowiki>[[</nowiki>Category:Songs featuring Utaite_name]]</code>
+: Is the category to specify the singer featured in the song. E.g. [[:Category:Songs featuring Mafumafu]].
+; <code><nowiki>[[</nowiki>Category:OTHER_here]]</code>
+: Other categories are the result of 'other media appearances' or miscellaneous subjects.
+
+|tab8=Gallery|content8=
+
+===Gallery===
+
+This section can include official artwork, concept art, merchandise, and so on.
+
+Using the following format:
+<pre>
+==Gallery==
+<gallery hideaddbutton="true">
+File.png|Caption
+</gallery>
+</pre>
+
+|tab9=Trivia|content9=
+===Trivia===
+
+This section is not required as the Background section should handle much of it. However, some exceptions can include easter eggs or missed lyrical implications. E.g. {{VW|ダブルラリアット (Double Lariat)}}
+}}

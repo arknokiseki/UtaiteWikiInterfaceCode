@@ -1,0 +1,19 @@
+{{Documentation/Header}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>
+
+<!-- Template Description -->
+==Syntax==
+{{T|NNDsample|v1=id=id|v2=singer=singer|v3=song=song|v4=producer=producer|v5=dim=dim}}
+
+==Examples==
+{{T|NNDsample|p1=id=sm45075717|p2=singer=Yuuki Aoi|p3=song=Nighty Night|p4=producer=[[Mafumafu]]|dim=400|_Y_=1}}{{clr}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

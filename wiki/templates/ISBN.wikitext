@@ -1,0 +1,1 @@
+<includeonly>ISBN [[Special:BookSources/{{{1}}}|{{{1}}}]]</includeonly><noinclude>{{documentation}}</noinclude>

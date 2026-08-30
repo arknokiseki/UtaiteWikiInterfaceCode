@@ -1,0 +1,35 @@
+<includeonly><!--
+--><div <!--
+   -->class="<!--
+      -->giw-collapsible mw-collapsible <!--
+      -->{{#if:{{{collapsed|}}}|mw-collapsed}} <!--
+      -->{{#if:{{{clamp|}}}|giw-collapsible-clamped}} <!--
+   -->" <!--
+   -->style="<!--
+      -->{{{style|}}}<!--
+   -->" <!--
+   -->data-expandtext="<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_left_arrow|}}}||{{{expand_arrow|▼}}}}}<!--
+      -->{{{expand_text|{{{2|Placeholder Button}}}}}}<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_right_arrow|}}}||{{{expand_arrow|▼}}}}}<!--
+   -->" <!--
+   -->data-collapsetext="<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_left_arrow|}}}||{{{collapse_arrow|▲}}}}}<!--
+      -->{{{collapse_text|{{{2|Placeholder Button}}}}}}<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_right_arrow|}}}||{{{collapse_arrow|▲}}}}}<!--
+   -->"<!--
+-->><!--
+-->{{#if:{{{openonly|}}}|{{#if:{{{clamp|}}}|<br>{{{1|Placeholder Content}}}}}<div class="mw-collapsible-content" {{#if:{{{collapsed|}}}|style="display: none"}}><!--
+      -->|{{#if:{{{clamp|}}}|<br>{{{1|Placeholder Content}}}}}<div class="mw-collapsible-content" {{#if:{{{collapsed|}}}|style="display: none"}}>
+{{#if:{{{clamp|}}}||{{{1|Placeholder Content}}}}}<!--
+      --></div><!--
+   --></div><!--
+-->}}</includeonly><noinclude>{{Documentation|type=Design|content=
+{{T|Collapsible/Draft|expand_text=Expand|collapse_text=Collapse|clamp=1|collapsed=1|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet malesuada lorem. Vivamus in nunc semper, dapibus felis sed, hendrerit nibh. Praesent id magna vel turpis vehicula tempus vel et magna. Praesent pharetra rhoncus elit, vel luctus eros porttitor id. Etiam non luctus nibh. Duis commodo imperdiet sollicitudin. Ut ut tortor ac nunc vulputate tristique vel nec sapien. Nulla sit amet metus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus consequat eros, in viverra dui. Suspendisse vehicula eu arcu sed tempor. Fusce et justo at sapien pharetra efficitur condimentum a turpis.
+
+Vestibulum ante nunc, dignissim id dolor vitae, efficitur lacinia est. Nulla urna magna, iaculis nec dui sed, tincidunt dignissim purus. Duis vehicula convallis lectus, ut dapibus urna condimentum a. Donec volutpat vel enim vel semper. Nunc egestas, quam et efficitur dignissim, nunc lectus imperdiet tellus, nec pretium metus risus nec risus. Pellentesque mauris massa, cursus a lobortis suscipit, laoreet id dui. Etiam sed justo at odio ultricies sagittis vitae id quam. Vivamus eleifend dolor eu euismod gravida. Sed eu tortor malesuada, pharetra justo ut, lobortis sem. Ut porta neque ut magna ullamcorper tempus.|_Y_=1}}
+
+{{T|Collapsible/Draft|expand_text=Expand|collapse_text=Collapse|collapsed=1|Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet malesuada lorem. Vivamus in nunc semper, dapibus felis sed, hendrerit nibh. Praesent id magna vel turpis vehicula tempus vel et magna. Praesent pharetra rhoncus elit, vel luctus eros porttitor id. Etiam non luctus nibh. Duis commodo imperdiet sollicitudin. Ut ut tortor ac nunc vulputate tristique vel nec sapien. Nulla sit amet metus libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer cursus consequat eros, in viverra dui. Suspendisse vehicula eu arcu sed tempor. Fusce et justo at sapien pharetra efficitur condimentum a turpis.
+
+Vestibulum ante nunc, dignissim id dolor vitae, efficitur lacinia est. Nulla urna magna, iaculis nec dui sed, tincidunt dignissim purus. Duis vehicula convallis lectus, ut dapibus urna condimentum a. Donec volutpat vel enim vel semper. Nunc egestas, quam et efficitur dignissim, nunc lectus imperdiet tellus, nec pretium metus risus nec risus. Pellentesque mauris massa, cursus a lobortis suscipit, laoreet id dui. Etiam sed justo at odio ultricies sagittis vitae id quam. Vivamus eleifend dolor eu euismod gravida. Sed eu tortor malesuada, pharetra justo ut, lobortis sem. Ut porta neque ut magna ullamcorper tempus.|_Y_=1}}
+}}</noinclude>

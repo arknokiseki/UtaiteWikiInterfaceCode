@@ -1,0 +1,40 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{tl|{{PAGENAME}}}} is a variant of {{Tl|Tl}} for templates which should be [[Wikipedia:Template substitution|substituted]] ''without'' any parameters. For substituted templates ''with'' parameters, try {{tl|Tlsx}}.
+
+== Usage ==
+ <nowiki>{{Tls|template name}}</nowiki>
+
+== Example ==
+{| class="wikitable"
+! Code
+! Result
+|-
+| {{Tlx|Tls|x4}}
+| {{Tls|x4}}
+|}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link with subst",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"type": "wiki-template-name",
+			"required": true
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+[[Category:Typing-aid templates{{#translation:}}]]
+}}</includeonly>

@@ -1,0 +1,3 @@
+<onlyinclude><includeonly>{{#invoke:Uses TemplateStyles|main}}</includeonly></onlyinclude>
+{{Uses TemplateStyles|Template:Uses TemplateStyles/example.css|nocat=true}}
+{{documentation}}

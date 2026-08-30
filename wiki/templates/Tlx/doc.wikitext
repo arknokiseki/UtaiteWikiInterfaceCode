@@ -1,0 +1,180 @@
+{{Languages|Template:Tlx/doc}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:Template link general}}
+{{Uses TemplateStyles|Template:Mono/styles.css|Template:Nowrap/styles.css}}
+
+This template creates example usage syntax for a template, and links the name to the template page. The name is derived from "'''T'''emplate '''l'''ist e'''x'''panded". 
+
+Up to 7 pass parameters (numbered) for the specified template are displayed as 'placeholders', and more parameters are shown as "<code>|</code>''...''".
+
+== Examples ==
+{| class="wikitable"
+! Code
+! Result
+! style="width:20em" | Remark
+|-
+| {{tlx|tlx|x0}}
+| {{tlx|SISTER=m:|x0}}
+|
+|-
+| {{tlx|tlx|x1|one}}
+| {{tlx|x1|one}}
+|
+|-
+| {{tlx|tlx|x2|one|two}}
+| {{tlx|SISTER=m:|x2|one|two}}
+|
+|-
+| {{tlx|tlx|x3|1<code>&#124;</code>2<code>&#124;</code>3}}
+| {{tlx|SISTER=m:|x3|1|2|3}}
+|
+|-
+| {{tlx|tlx|x4|1<code>&#124;</code>2<code>&#124;</code>3|4}}
+| {{tlx|SISTER=m:|x4|1|2|3|4}}
+| up to 7 parameters, then ...
+|-
+| {{tlx|tlx|x4|1<code>&#124;</code>2<code>&#124;</code>3&amp;#124;4}}
+| {{tlx|SISTER=m:|x4|1|2|3&#124;4}}
+| style="text-align: right;" | <syntaxhighlight inline lang="html">&#124;</syntaxhighlight> for more
+|-
+| {{tlx|tlx|x1|x&#61;u}}
+| {{tlx|x1|x=u}}
+| '''=''' won't work
+|-
+| {{tlx|tlx|x1|x&amp;#61;u}}
+| {{tlx|x1|x&#61;u}}
+| style="text-align: right;" | <syntaxhighlight inline lang="html">&#61;</syntaxhighlight> is okay
+|-
+| {{tlx|tlx|x1|&lt;nowiki&gt;x&#61;u&lt;/nowiki&gt;}}
+| {{tlx|x1|<nowiki>x=u</nowiki>}}
+| style="text-align: right;" | sticky nowiki is okay
+|-
+| {{tlx|tlx|x1|3=2=x=u}}
+| {{tlx|x1|2=x=u}}
+| style="text-align: right;" | numbered parameter is okay
+|-
+| {{tlx|tlx|x1|x{{magic word|{{=}}}}u}}
+| {{tlx|x1|x{{=}}u}}
+| style="text-align: right;" | {{magic word|mono=1|nowrap=1|{{=}}}} is okay
+|-
+| {{tlx|tlx|x2|&#160;|two}}
+| {{tlx|SISTER=m:|x2| |two}}
+| empty won't work
+|-
+| {{tlx|tlx|x2|&amp;#32;|two}}
+| {{tlx|SISTER=m:|x2|&#32;|two}}
+| style="text-align: right;" | <syntaxhighlight inline lang="html">&#32;</syntaxhighlight> is okay
+|-
+| {{tlx|tlx|x2|&amp;nbsp;|two}}
+| {{tlx|SISTER=m:|x2|&nbsp;|two}}
+| style="text-align: right;" | <syntaxhighlight inline lang="html">&nbsp;</syntaxhighlight> is okay
+|-
+| {{tlx|tlx|x2| &amp;#124; two}}
+| {{tlx|SISTER=m:|x2| &#124; two}}
+| style="text-align: right;" | <syntaxhighlight inline lang="html">&#124;</syntaxhighlight> is okay
+|-
+| {{tlx|tlx|x2| {{magic word|!}} two}}
+| {{tlx|SISTER=m:|x2| {{!}} two}}
+| style="text-align: right;" | {{magic word|!|code=1}} is dubious
+|-
+| {{tlx|tlx|x2|<nowiki>2=</nowiki>|<nowiki>3=two</nowiki>}}
+| {{tlx|SISTER=m:|x2|2=|3=two}}
+| empty really doesn't work
+|-
+| {{tlx|tlx|x2|<nowiki>3=two</nowiki>|<nowiki>2=one</nowiki>}}
+| {{tlx|SISTER=m:|x2|3=two|2=one}}
+| style="text-align: right;" | right to left okay
+|}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template list expanded",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string"
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"6": {
+			"label": "Parameter 5",
+			"description": "Fifth parameter value",
+			"type": "string"
+		},
+		"7": {
+			"label": "Parameter 6",
+			"description": "Sixth parameter value",
+			"type": "string"
+		},
+		"8": {
+			"label": "Overflow",
+			"description": "Overflow shown as ...",
+			"type": "string"
+		},
+		"nowrap": {
+			"label": "Nowrap?",
+			"description": "Whether to add “<span style=\"white-space: nowrap\">”",
+			"default": "0",
+			"autovalue": "1",
+			"type": "boolean"
+		},
+		"alttext": {
+			"label": "Display Text",
+			"description": "Displayed link text.",
+			"type": "line",
+			"default": "{{{1}}}"
+		},
+		"SISTER": {
+			"label": "Interwiki",
+			"description": "Optional InterWiki link prefix",
+			"deprecated": "Include the interwiki prefix in the template name and optionally use the “alttext” parameter.",
+			"type": "string"
+		}
+	},
+	"paramOrder": [
+		"nowrap",
+		"alttext",
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"SISTER"
+	]
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+[[Category:Semantic markup templates{{#translation:}}]]
+}}</includeonly>

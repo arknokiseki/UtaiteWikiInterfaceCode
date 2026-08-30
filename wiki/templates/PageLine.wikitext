@@ -1,0 +1,6 @@
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! colspan="2" style="background-color:#c3e6f9;padding:2px;" |
+|}
+<noinclude>
+[[Category: Template]]
+</noinclude>

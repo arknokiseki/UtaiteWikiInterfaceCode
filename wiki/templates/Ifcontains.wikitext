@@ -1,0 +1,12 @@
+<!--
+-->{{#ifexpr:{{#len:{{{1}}}}} > 1000<!--
+-->|<!--
+  --><!--do nothing, as the string will be too long for processing--><!--
+-->|<!--
+  -->{{#ifexpr:{{#rpos:{{{1}}}|{{{2}}}}} > -1<!--
+  -->|<!--
+    -->{{{3|{{{then|}}}}}}<!--
+  -->|<!--
+    -->{{{4|{{{else|}}}}}}<!--
+  -->}}<!--
+-->}}<noinclude>{{documentation}}</noinclude>

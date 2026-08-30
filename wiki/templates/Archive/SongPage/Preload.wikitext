@@ -1,0 +1,89 @@
+{{archived}}
+
+{{SongBox
+  |color     = #a19bbf; color:#FFFFFF
+  |image     = Template doc.png
+  |songtitle     = "'''タイトル'''"<br />Romaji: Taitoru<br />English: Title
+  |original upload date = {{Date|2015|March|6}}
+  |#views     = {{v|nn|9021}}, {{v|yt|10045}}
+  |singer   = [[Template:SongBox|Original Vocaloid/Human Singer(s)]]
+  |producer = Producer name (music, lyrics)<br />[[Template:SongBox|Illustrator name]] (illustration)<br />[[Template:SongBox|Video editor name]] (video)
+  |link     = {{LL|nn|1}}{{LL|yt|1}}
+  |description = Template documentation
+}}
+
+{{Lyrics
+|Singer = 
+|Jap = <poem>歌詞
+</poem>
+|Kor = <poem>가사
+</poem>
+|Chi = <poem>
+</poem>
+|Rom = <poem>Transliteration
+</poem>
+|Eng = <poem>Lyrics/translation
+</poem>}}
+
+==Male Covers==
+<!--one row of song covers template is five columns.-->
+{{Song covers
+|yt1 = ytvideoid1
+|nnd1 = nndvideoid1
+|singer1 = singer name or [[singer name]] if article exists.
+|yt2 = ytvideoid2
+|nnd2 = nndvideoid2
+|singer2 = [[singername1 x singername2]] if duet
+|yt3 = 
+|nnd3 = 
+|cd3 = #Album name in first article link page
+|singer3 = [[firstarticlelink]] x [[secondarticlelink]]
+|yt4 = ytvideoid4
+|nnd4 = nndvideoid4
+|singer4 = [[singername1 x singername2]] if duet
+|yt5 = ytvideoid5
+|nnd5 = nndvideoid5
+|singer5 = [[singername1 x singername2]] if duet
+}}
+
+<!--one row of song covers template is five columns.-->
+==Female Covers==
+{{Song covers
+|yt1 = ytvideoid1
+|nnd1 = nndvideoid1
+|singer1 = singer name or [[singer name]] if article exists.
+|yt2 = ytvideoid2
+|nnd2 = nndvideoid2
+|singer2 = [[singername1 x singername2]] if duet
+|yt3 = 
+|nnd3 = 
+|cd3 = #Album name in first article link page
+|singer3 = [[firstarticlelink]] x [[secondarticlelink]]
+|yt4 = ytvideoid4
+|nnd4 = nndvideoid4
+|singer4 = [[singername1 x singername2]] if duet
+|yt5 = ytvideoid5
+|nnd5 = nndvideoid5
+|singer5 = [[singername1 x singername2]] if duet
+}}
+
+<!--one row of song covers template is five columns.-->
+==Other Covers==
+{{Song covers
+|yt1 = ytvideoid1
+|nnd1 = nndvideoid1
+|singer1 = singer name or [[singer name]] if article exists.
+|yt2 = ytvideoid2
+|nnd2 = nndvideoid2
+|singer2 = [[singername1 x singername2]] if duet
+|yt3 = 
+|nnd3 = 
+|cd3 = #Album name in first article link page
+|singer3 = [[firstarticlelink]] x [[secondarticlelink]]
+|yt4 = ytvideoid4
+|nnd4 = nndvideoid4
+|singer4 = [[singername1 x singername2]] if duet
+|yt5 = ytvideoid5
+|nnd5 = nndvideoid5
+|singer5 = [[singername1 x singername2]] if duet
+}}

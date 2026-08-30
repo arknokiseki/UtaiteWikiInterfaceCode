@@ -1,0 +1,15 @@
+{{Module rating|release}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+This module allows wikitext to read values from data modules.
+
+== Usage ==
+
+ <nowiki>{{</nowiki>#invoke:Data|{{var|Module:ModuleName}}|{{var|key1}}|{{var|key2}}|{{var|key3}}|...<nowiki>}}</nowiki>
+Read data value {{var|key1}}.{{var|key2}}.{{var|key3}} from {{var|Module:ModuleName}}.
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Utility modules]]
+}}</includeonly><noinclude>
+[[Category:Module documentation pages]]
+</noinclude>

@@ -1,0 +1,63 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page, and interwikis go on Wikidata. -->
+{{Lua|Module:Uses TemplateStyles}}
+
+This template is used to show that templates have been converted to use {{ll|Help:TemplateStyles|TemplateStyles}}. It is placed at the top of the template's /doc page. It automatically adds the template to [[:Category:{{#invoke:Data|Module:Uses TemplateStyles/config|default_category}}]], or to one of its subcategories.
+
+== Usage ==
+
+; Basic : {{tlx|Uses TemplateStyles|''TemplateStyles page name''}}
+
+; All parameters : {{tlx|Uses TemplateStyles|''TemplateStyles page 1''|''TemplateStyles page 2''|''TemplateStyles page 3''|...|category{{=}}''custom category''|nocat{{=}}''true''}}
+
+The first TemplateStyles page name is required.
+
+=== TemplateStyles sandboxes ===
+Note that if a sandbox version of the TemplateStyle exists, it will also be linked. This is only for sandbox versions. The subpage name of the sandbox version should be the same, but as a subpage of the templates sandbox. For example, if the TemplateStyles page name is <code>Template:Foo/styles.css</code>, then the sandbox version should be <code>Template:Foo/sandbox/styles.css</code>
+
+== Examples ==
+=== One style page ===
+{{tlx|Uses TemplateStyles|Template:Arrowlist/styles.css}}
+{{Uses TemplateStyles{{\sandbox}}|Template:Arrowlist/styles.css|nocat=true}}
+{{clear}}
+
+=== Multiple style pages ===
+{{tlx|Uses TemplateStyles|Template:Arrowlist/styles.css|Template:Routemap/styles.css}}
+{{Uses TemplateStyles{{\sandbox}}|Template:Arrowlist/styles.css|Template:Routemap/styles.css|nocat=true}}
+{{clear}}
+
+=== Sandbox version of style page exists ===
+{{tlx|Uses TemplateStyles|Template:Uses TemplateStyles/example.css}}
+{{Uses TemplateStyles{{\sandbox}}|Template:Uses TemplateStyles/example.css|nocat=true}}
+{{clear}}
+
+=== No style pages specified ===
+{{tlx|Uses TemplateStyles}}
+{{Uses TemplateStyles{{\sandbox}}|nocat=true}}
+{{clear}}
+
+== Categories ==
+=== Template category ===
+This template adds pages to [[:Category:{{#invoke:Data|Module:Uses TemplateStyles/config|default_category}}]] if the page is in the template namespace, and it is not on any of the subpages /doc, /sandbox, /sandbox2 or /testcases. You can specify a different category with the {{para|category}} parameter, e.g. {{para|category|Uses list TemplateStyles}}.
+{{#if:{{#invoke:Data|Module:Uses TemplateStyles/config|error_category}}|
+=== Error category ===
+If no modules are specified, the transcluded page will be added to [[:Category:{{#invoke:Data|Module:Uses TemplateStyles/config|error_category}}]].
+}}{{#if:{{#invoke:Data|Module:Uses TemplateStyles/config|protection_conflict_category}}|
+=== Protection level category ===
+TemplateStyles should have the same protection level as the template they are used on. If a difference is detected, the transcluded page will be added to [[:Category:{{#invoke:Data|Module:Uses TemplateStyles/config|protection_conflict_category}}]].
+}}
+=== Category suppression ===
+To suppress all categories, use {{para|nocat|true}}. (As well as "true", the values "yes", "y", and "1" will also work.)
+
+== TemplateData ==
+{{TemplateData header}}
+{{#invoke:TNT|doc|Uses TemplateStyles}}
+
+== See also ==
+* {{tl|Lua}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+{{#if:{{#invoke:Data|Module:Uses TemplateStyles/config|default_category}}|
+[[Category:{{#invoke:Data|Module:Uses TemplateStyles/config|default_category}}{{#translation:}}| ]]
+}}
+}}</includeonly>

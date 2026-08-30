@@ -1,0 +1,7 @@
+<includeonly>{{#switch:{{#invoke:Effective protection level|edit|{{FULLPAGENAME}}}}
+|*=[[Category:Pages with incorrect protection templates]]
+|autoconfirmed={{#tag:indicator|[[File:Semi-protection-shackle-keyhole.svg|20px|link=Project:Protected page|alt=Permanently protected {{module other|module|template}}|This high-risk {{module other|module|template}} is permanently semi-protected to prevent vandalism]]|name="pp-default"}}[[Category:{{module other|Modules subject to page protection|Semi-protected templates}}|{{PAGENAME}}]]
+|sysop={{#tag:indicator|[[File:Full-protection-shackle-keyhole.svg|20px|link=Project:Protected page|alt=Permanently protected {{module other|module|template}}|This high-risk {{module other|module|template}} is permanently protected to prevent vandalism]]|name="pp-default"}}[[Category:{{module other|Modules subject to page protection|Fully protected templates}}|{{PAGENAME}}]]
+}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

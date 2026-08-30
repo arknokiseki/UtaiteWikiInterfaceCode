@@ -1,0 +1,47 @@
+{{Documentation/Header}}
+{{High Risk|Template:Completion request|nocat=1|pagetype=Main}}
+Displays a "Completion Requested" notice box and files the page into [[:Category:Completion Requests]], marking an article that is missing substantial information. Use it to invite editors to expand a page — for a page actively being reworked, use {{T|Maintenance}} instead.
+
+Categorization applies on '''article''' and '''category''' pages only; it is skipped in other namespaces, so the template is safe to demonstrate in documentation.
+
+==Syntax==
+{{T|Completion request|block=1
+|v1=noun
+|v2=info =
+}}
+
+==Examples==
+===Default===
+{{T|Completion request|_Y_=1}}
+
+===Naming what is incomplete===
+The first positional parameter fills in the noun in the default sentence.
+{{T|Completion request|_Y_=1|p1=section}}
+
+===Custom message===
+<code>info</code> replaces the default sentence entirely and takes precedence over the positional parameter.
+{{T|Completion request|_Y_=1|p1=info = This discography is missing releases from 2019 onward.}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Content type || The noun used in the default message, as in "This ''section'' is incomplete." Ignored when <code>info</code> is set. || string || article ||
+|-
+| <code>info</code> || – || Custom message || A full replacement for the default message. Overrides parameter 1. || string || – ||
+|}
+
+==See also==
+* {{T|Maintenance}} — for content actively being reworked
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A 'Completion Requested' notice box for articles missing substantial information.",
+"params": {
+"1": { "label": "Content type", "description": "Noun used in the default message, e.g. 'article' or 'section'. Ignored if 'info' is set.", "type": "string", "default": "article" },
+"info": { "label": "Custom message", "description": "Full replacement for the default message. Overrides parameter 1.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

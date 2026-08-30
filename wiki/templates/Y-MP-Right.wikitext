@@ -1,0 +1,10 @@
+<font face="century gothic"><div style="border: 2px solid #CD201F; border-radius: 1px; padding: 5px; margin-bottom: 10px;"> <div class="mp-birthday-header" style="background: #CD201F; border: 1px solid #CD201F; border-radius: 1px; padding: 10px; margin-bottom: 10px; font-size: 200%; font-weight: bolder; width: 100%; text-align: left; color: #ffffff;"><span class="mp-birthday-header-text">A Note ♪</span></div>
+Please keep in mind that being on this wiki is '''''not''''' a "requirement" to be a Youtaite!
+As long as you enjoy singing you ''are'' a singer so please sing to your heart's content and most of all, have fun ❤</div></font>
+<div style="border: 2px solid #CD201F; border-radius: 1px; padding: 5px; margin-bottom: 10px;"> <div class="mp-birthday-header" style="background: #CD201F; border: 1px solid #CD201F; border-radius: 1px; padding: 10px; margin-bottom: 10px; font-size: 200%; font-weight: bolder; width: 100%; text-align: left; color: #ffffff;"><span class="mp-birthday-header-text">{{#fab:discord}}&nbsp;Discord</span></div><div class="header">Feel free to join our Discord!</div>
+{{DiscordIntegrator
+| id = 1085024965914529833
+| theme = dark
+| width = 100%
+| height = 250px
+}}</div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

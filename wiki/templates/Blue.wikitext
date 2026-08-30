@@ -1,0 +1,3 @@
+<span style="color:var(--color-progressive,#36c);">{{{1}}}</span><noinclude>{{documentation}}
+[[Category:Formatting templates|{{PAGENAME}}]]
+</noinclude>

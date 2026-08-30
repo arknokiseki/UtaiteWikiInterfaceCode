@@ -1,0 +1,1 @@
+{{Notice|image=Ambox_current_red_Asia_Australia.svg|header=Outdated Content|width={{{width|100%}}}|mt={{{mt|10px}}}|mb={{{mb|}}}|tone=yellow|info=The information contained {{{scope|in this page}}} is outdated<br />{{{details|}}}}}

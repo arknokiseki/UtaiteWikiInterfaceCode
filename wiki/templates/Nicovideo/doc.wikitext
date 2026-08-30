@@ -1,0 +1,55 @@
+== Nicovideo Template Documentation ==
+
+=== Syntax ===
+<pre>{{Nicovideo|linkid|description|type}}</pre>
+
+=== Parameters ===
+{| class="wikitable"
+! Parameter !! Description !! Values
+|-
+| 1. <code>linkid</code>
+| The ID of the NicoNico Douga content (required)
+| Video ID, user ID, mylist ID, community ID, or channel ID
+|-
+| 2. <code>description</code>
+| A short description or title for the link (optional)
+| Any text. If omitted, a default description based on the content type will be used.
+|-
+| 3. <code>type</code>
+| Specifies the type of content (optional)
+| 
+* <code>video (default)</code>
+* <code>user</code>
+* <code>mylist</code>
+* <code>community (end of service)</code>
+* <code>channel</code>
+|}
+
+=== Examples ===
+
+1. Default video link:
+<pre>{{Nicovideo|sm34159150}}
+or
+{{Nicovideo|sm34159150|Video Description|video}}</pre>
+Output:<br />
+{{Nicovideo|sm34159150}}
+or
+{{Nicovideo|sm34159150|Wolpis Carter's Cosmos|video}}
+
+2. User page with description:
+<pre>{{Nicovideo|1796335|Soraru's Page|user}}</pre>
+Output: {{Nicovideo|1796335|Soraru's Page|user}}
+
+3. Mylist with description:
+<pre>{{Nicovideo|16016171|Amatsuki's Utattemita Collection|mylist}}</pre>
+Output:{{Nicovideo|16016171|Amatsuki's Utattemita Collection|mylist}}
+
+4. Community link ([https://blog.nicovideo.jp/niconews/225559.html End of Service Notice]):
+<pre>{{Nicovideo|co54321|Our Music Community|community}}</pre>
+Output: {{Nicovideo|co54321|Music Community|community}}
+
+5. Channel link with default description:
+<pre>{{Nicovideo|alfakyun||channel}}</pre>
+Output:{{Nicovideo|alfakyun||channel}}
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly>

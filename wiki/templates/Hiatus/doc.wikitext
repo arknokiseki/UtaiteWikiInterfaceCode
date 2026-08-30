@@ -1,0 +1,36 @@
+{{Documentation/Header}}
+{{Status Templates}}
+Displays a '''HIATUS''' status badge and, in the main namespace, files the page under the matching activity category. Used on utaite and group pages that are on a temporary break. Part of the status template family — see {{T|Active}}, {{T|Inactive}} and {{T|Graduated}}.
+
+==Syntax==
+{{T|Hiatus|block=1
+|v1=nocat =
+|v2=groups =
+}}
+
+==Examples==
+* {{T|Hiatus|_Y_=1|p1=nocat = true}}
+* <code><nowiki>This utaite is under {{Hiatus}}.</nowiki></code> — badge '''and''' categorizes under [[:Category:Hiatus Utaite]]
+* <code><nowiki>{{Hiatus|groups=true}}</nowiki></code> — badge and categorizes under [[:Category:Hiatus Groups]]
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>nocat</code> || – || No category || Set to <code>true</code> to show the badge '''without''' categorizing (use in docs and examples). || string || – ||
+|-
+| <code>groups</code> || – || Group || Set to <code>true</code> to categorize into [[:Category:Hiatus Groups]] instead of [[:Category:Hiatus Utaite]]. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Shows a HIATUS status badge and categorizes the page as a utaite or group on hiatus.",
+"params": {
+"nocat": { "label": "No category", "description": "Set to 'true' to display the badge without categorizing.", "type": "string" },
+"groups": { "label": "Group", "description": "Set to 'true' to categorize as a group on hiatus instead of a utaite.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Status Templates]]</includeonly>

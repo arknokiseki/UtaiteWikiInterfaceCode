@@ -1,0 +1,54 @@
+<noinclude></noinclude>
+<includeonly><!--
+ -->{{#if:{{IsDocSubpage|override={{{override|doc}}}|false=}}
+     | <!--(this template has been transcluded on a /doc or /{{{override}}} page)-->
+</includeonly><!--
+
+      -->{{#ifeq:{{{doc-notice|show}}} |show
+          | {{Mbox
+             | type = notice
+             | style = margin-bottom:1.0em;
+             | image-noformat = [[File:OOjs UI icon book-ltr.svg|40px|alt=|class=skin-invert]]
+             | text =
+'''<!--T:4--> This is a [[Wikipedia:Template documentation|documentation]] {{Mw|Special:MyLanguage/Help:Subpages|subpage}} for {{{1|[[:{{SUBJECTSPACE}}:{{BASEPAGENAME}}]]}}}.'''<br /><!--
+-->{{#if:{{{text2|}}}{{{text1|}}}
+  |<!--T:5--> It contains usage information, {{Mw|[[Special:MyLanguage/Help:Categories|categories]]}} and other content that is not part of the original {{{text2|{{{text1}}}}}}.
+  |<!--T:10--> It contains usage information, {{Mw|Special:MyLanguage/Help:Categories|categories}} and other content that is not part of the original {{SUBJECTSPACE}} page.
+  }}
+            }}
+         }}<!--
+
+      -->{{DEFAULTSORT:{{{defaultsort|{{PAGENAME}}}}}}}<!--
+
+      -->{{#if:{{{inhibit|}}} |<!--(don't categorize)-->
+          |   <includeonly><!--
+               -->{{#ifexist:{{NAMESPACE}}:{{BASEPAGENAME}}
+                   | [[Category:{{#switch:{{SUBJECTSPACE}}
+                           | Template | Project = Template
+                           | Module   = Module
+                           | User     = User
+                           | #default = MediaWiki
+                       }} documentation pages]]
+                   | [[Category:Documentation subpages without corresponding pages]]
+                  }}<!--
+           --></includeonly>
+         }}<!--
+
+(completing initial #ifeq: at start of template:)
+--><includeonly>
+     | <!--(this template has not been transcluded on a /doc or /{{{override}}} page)-->
+    }}<!--
+--></includeonly>
+<noinclude>
+{{Documentation|content=
+== Usage == <!--T:6-->
+
+<!--T:7-->
+Use this template on Template Documentation subpage (/doc).
+
+== See also == <!--T:8-->
+*{{tl|Documentation}}
+*{{tl|tl}}
+
+}}
+</noinclude>

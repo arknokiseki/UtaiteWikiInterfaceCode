@@ -1,0 +1,39 @@
+{{Documentation subpage}}
+<!-- PLEASE ADD CATEGORIES WHERE INDICATED AT THE BOTTOM OF THIS PAGE -->
+
+This template is to help facilitate the displaying of variable names (in mathematics, computer source code, etc.) with the semantically correct <code><nowiki><var>...</var></nowiki></code>, which also renders the variable in italics, as is customary, ''and'' to do so in a serif font. This is ''specifically'' for the use of the characters "I" (upper-case i) and "l" (lower-case L), which in many sans-serif fonts can be difficult to distinguish. The template also very slightly adjusts the font size of the enclosed variable, to account for typical difference in [[:en:w:X-height|x-height]] between non-fancy serif (e.g., Times and Times New Roman) and sans-serif (e.g. Arial and Helvetica) typefaces.  The template should not be used generally, but only for "I" and "l", and perhaps other cases where a known visual ambiguity can be shown to exist in common sans-serif fonts for readers without acute vision.  It is recommended to use {{tlx|var|1}} rather than {{tlx|varserif|1}} for "1" (numeral one), as it is usually more clearly distinguishable from "I" and "l" in sans-serif than serif fonts.
+
+{{tlx|Varserif}} need not be used for variables that simply ''contain'' "I" or "l", only for cases in which readers are likely to be unable to distinguish them visually.
+
+The {{tlx|varserif}} method is preferred to simply italicizing and using inline style to specify the font, for [[:en:w:WP:Accessibility|accessibility]], [[:en:wpSeparation of presentation and content|content/presentation separation]], [[:en:w:Semantic Web|semantic Web]], and [[:en:w:WP:METADATA|metadata]] reasons; XHTML's <code><nowiki><var></nowiki></code> element has semantic meaning, while simple font changes like italicizing does not.
+
+Because the font styling in the template is done entirely with [[:en:w:Cascading Style Sheets|CSS]], it has no effect at all upon content semantics, nor does it change the output for users of [[:en:w:Screen reader|screen reader]] software.
+
+Example: 
+: <code><nowiki>{{varserif|I}}</nowiki></code>
+outputs:
+: <code><nowiki><var style="font-size:118%;font-family:serif;">I</var></nowiki></code>
+which renders as:
+: {{varserif|I}}
+
+;Comparisons:
+: <code><nowiki>{{var|I}}</nowiki></code> = {{var|I}}
+: <code><nowiki>{{var|l}}</nowiki></code> = {{var|l}}
+: <code><nowiki>{{var|1}}</nowiki></code> = {{var|1}}
+: <code><nowiki>{{varserif|I}}</nowiki></code> = {{varserif|I}}
+: <code><nowiki>{{varserif|l}}</nowiki></code> = {{varserif|l}}
+: <code><nowiki>{{varserif|1}}</nowiki></code> = {{varserif|1}}
+
+Please note that {{tnull|varserif}} is not a panacea; its treatment of the numeral "1" is easily mistaken for the letter "l" (lower-case "L") in many serif fonts.
+
+; Recommended usage:
+: <code><nowiki>{{varserif|I}}</nowiki></code> = {{varserif|I}}
+: <code><nowiki>{{varserif|l}}</nowiki></code> = {{varserif|l}}
+: <code><nowiki>{{var|1}}</nowiki></code> = {{var|1}}
+: <code><nowiki>{{var|</nowiki>{{var|variable}}<nowiki>}}</nowiki></code> for any other variable
+
+
+<includeonly>
+<!-- CATEGORIES BELOW THIS LINE, PLEASE: -->
+[[Category:Semantic markup templates]]
+</includeonly>

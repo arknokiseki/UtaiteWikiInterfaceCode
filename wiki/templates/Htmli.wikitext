@@ -1,0 +1,3 @@
+{{inline-code|{{{1}}}|lang=html}}<noinclude>{{doc}}
+[[Category:Formatting templates]]
+</noinclude>

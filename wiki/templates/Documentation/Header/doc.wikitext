@@ -1,0 +1,6 @@
+{{Documentation/Header}}
+{{Lua|Documentation}}
+Creates a header for template documentation.
+
+Some of the wording is borrowed from Wikipedia: {{w|Template:Documentation subpage}}
+<noinclude></noinclude>

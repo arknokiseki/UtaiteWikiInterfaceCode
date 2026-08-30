@@ -1,0 +1,37 @@
+<div class="mp-related-wikis">
+<div class="mp-section-head"><i class="fa-solid fa-house-signal"></i><h2 class="mp-section-title">Related Wikis & External Links</h2></div>
+
+<div class="mp-related-group">
+<div class="mp-related-group-label">Miraheze</div>
+<div class="mp-related-logos">
+[[File:vocaloidlyrics.png|120px|link=https://vocaloidlyrics.miraheze.org/|Vocaloid Lyrics Wiki]]
+[[File:480px_utaitewiki-new.svg|120px|link=https://utaite.miraheze.org/|Utaite Wiki]]
+</div>
+</div>
+
+<div class="mp-related-group">
+<div class="mp-related-group-label">Wikia / Fandom</div>
+<div class="mp-related-logos">
+[[File:Vocaloid-wordmark.png|link=https://vocaloid.fandom.com|Vocaloid Wiki]]
+[[File:Utaite-wordmark.png|link=https://utaite.fandom.com|Old home]]
+[[File:Ensou-wordmark.png|link=https://ensoushitemita.fandom.com|Ensoushitemita Wiki]]
+[[File:Odorite-wordmark.png|link=https://odorite.fandom.com|Odorite Wiki]]
+</div>
+</div>
+
+<div class="mp-related-group">
+<div class="mp-related-group-label">External Wikis</div>
+<div class="mp-related-logos">
+[[File:Touhou.png|120px|link=http://en.touhouwiki.net/|Touhou Wiki]]
+[[File:UtaiteDB.png|120px|link=https://utaitedb.net|UtaiteDB]]
+</div>
+</div>
+
+<div class="mp-related-group">
+<div class="mp-related-group-label">External Pages</div>
+<div class="mp-related-logos">
+[[File:Ofuro.png|120px|link=https://ofurotaimu.dreamwidth.org|Ofurotaimu]]
+[[File:Nnp.png|120px|link=http://dic.nicovideo.jp/|Nicovideo Dictionary (JP)]]
+</div>
+</div>
+</div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

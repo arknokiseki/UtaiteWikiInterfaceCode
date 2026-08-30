@@ -1,0 +1,45 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Ricon|v1=user right|v2=tooltip}}
+
+==Examples==
+{{T|Ricon|p1=bureaucrat|p2=The bureaucrat icon (wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=administrator|p2=The administrator icon (wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=interface-admin|p2=The interface administrator icon (wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=content-moderator|p2=The content moderator icon (wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=staff|p2=The staff icon (unofficial, wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=wiki-specialist|p2=The wiki specialist icon (unofficial, wiki-exclusive)|_Y_=1}}{{clr}}
+{{T|Ricon|p1=thread-moderator|p2=The thread moderator icon (wiki-exclusive)|_Y_=1}}{{clr}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"user right": {
+			"label": "user right",
+			"description": "user right",
+			"example": "administrator",
+			"type": "string",
+			"suggestedvalues": [
+				"bureaucrat",
+				"administrator",
+				"content-moderator",
+				"staff",
+				"wiki-specialist",
+				"thread-moderator"
+			],
+			"required": true
+		},
+		"tooltip": {
+			"label": "tooltip",
+			"description": "tooltip",
+			"example": "The administrator icon",
+			"type": "string"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>

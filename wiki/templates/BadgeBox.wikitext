@@ -1,0 +1,10 @@
+<onlyinclude><div class="badge-box blacklist-pPreview" style="
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+"><div style="font-weight: bold; margin-right: 10px; color: var(--primary-text-color) !important;">{{{title|Badges:}}}</div><div style="display: flex; flex-wrap: wrap; gap: 6px;">{{Badges}}</div></div></onlyinclude><noinclude>{{doc}}</noinclude>

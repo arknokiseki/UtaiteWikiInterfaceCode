@@ -1,0 +1,46 @@
+{| class="wikitable" cellspacing="1/6" cellpadding="3" border="0" align="center"  width="100%" style="min-width: 100% !important;"
+|+<div style="text-align:center;background-color:#c3e6f9; color:#000000; padding:5px"><font size="3"><data source="" span="7"><center>{{#switch:{{{month|}}}
+|01=January|02=February|03=March|04=April|05=May|06=June
+|07=July|08=August|09=September|10=October|11=November|12=December
+|=Month}}</center></data></font></div>
+|- style="vertical-align: top;" valign="top"
+{{Birthday Calendar/util|month={{{month|}}}|day=01|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=02|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=03|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=04|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=05|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=06|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=07|cat={{{cat|Utaite}}}}}
+|-
+{{Birthday Calendar/util|month={{{month|}}}|day=08|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=09|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=10|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=11|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=12|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=13|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=14|cat={{{cat|Utaite}}}}}
+|-
+{{Birthday Calendar/util|month={{{month|}}}|day=15|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=16|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=17|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=18|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=19|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=20|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=21|cat={{{cat|Utaite}}}}}
+|-
+{{Birthday Calendar/util|month={{{month|}}}|day=22|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=23|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=24|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=25|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=26|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=27|cat={{{cat|Utaite}}}}}
+{{Birthday Calendar/util|month={{{month|}}}|day=28|cat={{{cat|Utaite}}}}}
+|-
+{{#switch:{{{month|}}} |02={{#ifexpr:{{CURRENTJSTYEAR}} mod 4 = 0|{{Birthday Calendar/util|month={{{month|}}}|day=29|cat={{{cat|Utaite}}}}}|}}|#default={{Birthday Calendar/util|month={{{month|}}}|day=29|cat={{{cat|Utaite}}}}}}}
+{{#switch:{{{month|}}} |02= |#default={{Birthday Calendar/util|month={{{month|}}}|day=30|cat={{{cat|Utaite}}}}}}}
+{{#switch:{{{month|}}} |01|03|05|07|08|10|12={{Birthday Calendar/util|month={{{month|}}}|day=31|cat={{{cat|Utaite}}}}}|#default=}}
+|}
+{{#ifeq: {{FULLPAGENAME}}|Birthday Calendar||
+{{{!}}cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+{{!}}<div style="text-align:center;background-color:#c3e6f9; color:#000000; padding:5px"><data source="" span="7"><center>[[Birthday Calendar|'''Full calendar here''']]</center></data></div>
+{{!}}}}<noinclude>{{doc}}</noinclude>

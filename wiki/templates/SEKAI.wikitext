@@ -1,0 +1,5 @@
+<includeonly>{{Interwiki|projectsekai|{{{1|}}}|{{{2|<!---->{{{1|}}}<!---->}}}|server={{{server|mh}}}}}</includeonly><noinclude>{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

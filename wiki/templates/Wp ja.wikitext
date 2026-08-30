@@ -1,0 +1,6 @@
+<includeonly>[[wikipedia:ja:{{{1}}}|{{{2|{{{1}}}}}}]]</includeonly><noinclude>
+{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

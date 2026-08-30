@@ -1,0 +1,30 @@
+{{Documentation/Header}}
+A bordered box that displays a user's badges in a wrapping row, rendered by {{T|Badges}}. Used on user pages.
+
+==Syntax==
+{{T|BadgeBox|v1=title =}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>title</code> || – || Title || Label shown to the left of the badges. || string || Badges: ||
+|}
+
+==Example==
+See:
+* [[User:Ark]]
+* [[User:Shiro Falulu]]
+* [[User:Cashmerella]]
+* [[User:Frigidum1222]]
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A bordered box displaying a user's badges in a wrapping row.",
+"params": {
+"title": { "label": "Title", "description": "Label shown to the left of the badges.", "type": "string", "default": "Badges:" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

@@ -1,0 +1,17 @@
+<includeonly><table class="dpl-nav"><tr><td><!--
+
+-->{{#ifexpr:{{{total|0}}} > {{{count|0}}}|{{#ifexpr:{{{offset|0}}} > 0|{{#dplvar:set|lwrbound|{{#ifexpr:{{#expr:{{{offset|0}}} - {{{count|100}}}}} < 0|0|{{#expr:{{{offset|0}}} - {{{count|100}}}}}}}}}<!--
+-- Start or x - x button --
+-->{{#ifexpr:{{{count|100}}} > {{{offset|0}}}|<span>Start</span>|<span class="plainlinks">[{{fullurl:{{{page}}}}} Start]</span>}}<span class="plainlinks" style="font-weight: bold">[{{fullurl:{{{page}}}|DPL_count={{{count|100}}}&DPL_offset={{#dplvar:lwrbound}}}} {{#expr:{{#dplvar:lwrbound}} + 1}} - {{{offset|0}}}]</span>}}<!--
+--><span class="dpl-nav-active" style="font-weight: bold">{{#expr:{{{offset|0}}} + 1}} - {{#expr:{{{offset|0}}} + {{{count|100}}}}}</span><!--
+
+-->{{#ifexpr:{{{total|0}}} - {{{count|100}}} > {{{offset|0}}}|{{#ifexpr:{{{total|0}}} - 2 * {{{count|100}}} <= {{{offset|0}}}|
+    <span class="plainlinks" style="font-weight: bold">[{{fullurl:{{{page}}}|DPL_count={{{count|100}}}&DPL_offset={{#expr:{{{offset|0}}} + {{{count|100}}}}}}} {{#expr:{{{offset|0}}} + {{{count|100}}} + 1}} - {{{total|0}}}]</span>|
+    <span class="plainlinks" style="font-weight: bold">[{{fullurl:{{{page}}}|DPL_count={{{count|100}}}&DPL_offset={{#expr:{{{offset|0}}} + {{{count|100}}}}}}} {{#expr:{{{offset|0}}} + {{{count|100}}} + 1}} - {{#expr:{{{offset|0}}} + 2 * {{{count|100}}}}}]</span>}}}}<!--
+
+-->{{sp}}({{{total|0}}} total)}}<!--
+
+--></td></tr></table></includeonly><noinclude>
+{{documentation}}
+<!-- Add categories to the /doc subpage -->
+</noinclude>

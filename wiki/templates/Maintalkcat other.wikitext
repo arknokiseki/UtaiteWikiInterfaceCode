@@ -1,0 +1,26 @@
+{{#switch:
+  <!--If no or empty "demospace" parameter then detect namespace-->
+  {{#if:{{{demospace|}}} 
+  | {{lc: {{{demospace}}} }}    <!--Use lower case "demospace"-->
+  | {{#ifeq:{{NAMESPACE}}|{{ns:0}}
+    | main
+    | {{#ifeq:{{NAMESPACE}}|{{TALKSPACE}}
+      | talk
+      | {{#ifeq:{{NAMESPACE}}|Category
+        | category
+        | other
+        }} 
+      }}
+    }}
+  }} 
+| main     = {{{1|}}}
+| talk     = {{{2|}}}
+| category = {{{3|}}}
+| other
+| #default = {{{4|}}}
+
+}}<!--End switch--><noinclude>
+
+{{documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->
+</noinclude>

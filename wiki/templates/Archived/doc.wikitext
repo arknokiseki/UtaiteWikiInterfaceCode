@@ -1,0 +1,34 @@
+{{Documentation/Header}}
+A notice marking a page as archived and no longer maintained. It adapts its wording to the namespace it sits in, and files the page into a matching archive category — [[:Category:Archived Article]] in mainspace, or <code>Archived ''Namespace''</code> elsewhere.
+
+On template pages it adds "Please refrain from using this template."
+
+==Syntax==
+{{T|Archived|block=1
+|v1=width =
+|v2=info =
+}}
+
+==Example==
+<pre>{{Archived|info=Superseded by {{Tabber}}.}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>width</code> || – || Width || CSS width of the notice box. || string || 80% ||
+|-
+| <code>info</code> || – || Extra info || Additional text appended to the notice — typically what to use instead. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A notice marking a page as archived, with namespace-aware wording and categorization.",
+"params": {
+"width": { "label": "Width", "description": "CSS width of the notice box.", "type": "string", "default": "80%" },
+"info": { "label": "Extra info", "description": "Additional text, typically what to use instead.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

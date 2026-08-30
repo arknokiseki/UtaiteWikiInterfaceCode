@@ -1,0 +1,1 @@
+in<noinclude>[[Category:Demo templates|{{PAGENAME}}]]</noinclude>

@@ -1,0 +1,37 @@
+{{Documentation/Header}}
+{{High Risk|Template:Active|nocat=1|pagetype=Main}}
+{{Status Templates Nav}}
+
+Displays an '''ACTIVE''' status badge and, in the main namespace, files the page under the matching activity category. Used on utaite and group pages to mark current activity status. See {{T|Inactive}} for the opposite state.
+
+==Syntax==
+{{T|Active|block=1
+|v1=nocat =
+|v2=groups =
+}}
+
+==Examples==
+* {{T|Active|_Y_=1|p1=nocat = true}}
+* <code><nowiki>{{Active}}</nowiki></code> — badge '''and''' categorizes the page as an active singer
+* <code><nowiki>{{Active|groups=true}}</nowiki></code> — badge and categorizes as an active '''group'''
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>nocat</code> || – || No category || Set to <code>true</code> to show the badge '''without''' categorizing (use in docs and examples). || string || – ||
+|-
+| <code>groups</code> || – || Group || Set to <code>true</code> to categorize into [[:Category:Active Groups]] instead of [[:Category:Active Singers]]. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Shows an ACTIVE status badge and categorizes the page as an active singer or group.",
+"params": {
+"nocat": { "label": "No category", "description": "Set to 'true' to display the badge without categorizing.", "type": "string" },
+"groups": { "label": "Group", "description": "Set to 'true' to categorize as an active group instead of an active singer.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

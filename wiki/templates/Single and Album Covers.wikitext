@@ -1,0 +1,2 @@
+{{LicenseBox|image=WIP descr.png|text=''This file  is the cover of a single or an album released by singers.''}}{{fairuse}}<includeonly>[[Category:Single and Album Covers]][[Category:Media]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]][[Category:Licensing templates]][[Category:Image wiki templates]]</noinclude>

@@ -1,0 +1,17 @@
+<includeonly>{{disambig}}
+{{BASEPAGENAMEE}} may refer to:
+* [[pagename 1]]
+* male utaite [[pagename 2]]
+* female odorite [[pagename 3]]
+* vocaloid producer {{Wp|pagename4}}
+* project SEKAI {{SEKAI|pagename5}}
+<!--...etc-->
+</includeonly><noinclude><pre>{{disambig}}
+{{BASEPAGENAMEE}} may refer to:
+* [[pagename 1]]
+* male utaite [[pagename 2]]
+* female odorite [[pagename 3]]
+* vocaloid producer {{Wp|pagename4}}
+* project SEKAI {{SEKAI|pagename5}}
+<!--...etc-->
+</pre></noinclude>

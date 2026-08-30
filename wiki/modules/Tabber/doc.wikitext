@@ -1,0 +1,59 @@
+{{Documentation/Header}}
+Builds a [[mw:Extension:TabberNeue|TabberNeue]] tabbed interface from numbered parameters, with optional per-tab hiding and optional stable anchors for deep-linking.
+
+Normally used through {{T|Tabber}} rather than invoked directly. {{T|TabberType2}} and <code>Module:TabberType2</code> are redirects kept for backward compatibility.
+
+== Entry point ==
+<pre>{{#invoke:Tabber|main}}</pre>
+<code>p.main</code> is the only exported function. Arguments are read with [[Module:Arguments]], so they may come from either the <code>#invoke</code> frame or the calling template's frame, and blank values are stripped.
+
+== Parameters ==
+{| class="dataTable sortable"
+! Parameter !! Description !! Default
+|-
+| <code>tab''N''</code> || Label for tab ''N''. || –
+|-
+| <code>content''N''</code> || Body of tab ''N''. || empty
+|-
+| <code>hide''N''</code> || Omits tab ''N'' entirely when the value is <code>true</code>. || –
+|-
+| <code>id</code> || Base identifier enabling deep-linkable anchors. See below. || –
+|}
+
+== Behaviour ==
+=== Tabs are scanned sequentially ===
+The module counts up from <code>tab1</code> and '''stops at the first missing number'''. A gap silently discards everything after it — with <code>tab1</code>, <code>tab2</code> and <code>tab4</code> defined, the fourth tab never renders. Always number tabs consecutively.
+
+=== Hiding is an exact match ===
+<code>hide''N''</code> hides a tab only when its value lowercases to exactly <code>true</code>. Any other value — including <code>yes</code>, <code>1</code> or <code>on</code> — leaves the tab visible.
+
+=== Empty output ===
+If no tabs survive (none defined, or all hidden), the module returns an empty string rather than an empty tabber shell.
+
+=== The <code>id</code> parameter and instance numbering ===
+When <code>id</code> is supplied the module derives an effective identifier by appending an '''instance number''':
+
+: <code>id</code> + <code>-</code> + ''instance'' → e.g. <code>my-id-0</code>
+
+That number comes from a module-level counter that starts at <code>0</code> and increments on '''every invocation during the page parse''' — so the first tabber on a page is <code>0</code>, the second <code>1</code>, and so on. Each tab's label is then prefixed with it, producing anchors of the form:
+
+: <code>#my-id-0-Overview</code>
+
+{{Notice
+| header = Deep links are position-dependent
+| info = Because the instance number is assigned in parse order, '''adding or removing a tabber earlier on the page renumbers every tabber below it''' and breaks any existing links into them. Treat deep links as stable only while the page's tabber count and order stay fixed.
+| border = orange
+}}
+
+The module also adds the class <code>js-custom-tabber</code> and a <code>data-tabber-id</code> attribute so that [[MediaWiki:Gadget-CustomTabber.js]] can find the element. That gadget is what restores the clean tab labels — the raw prefixed labels are what TabberNeue would otherwise display. '''Deep-linking therefore depends on that gadget being enabled.'''
+
+== Output ==
+A <code><nowiki><tabber></nowiki></code> extension tag whose body is a sequence of <code>|-|Label=</code> blocks, wrapped in a container with the classes <code>wds-tabber dev-tabber</code>, plus <code>js-custom-tabber</code> when <code>id</code> is set.
+
+== Dependencies ==
+* [[Module:Arguments]] — argument handling
+* [[mw:Extension:TabberNeue|TabberNeue]] extension — renders the tag
+* [[MediaWiki:Gadget-CustomTabber.js]] — label cleanup and deep-linking
+
+== See also ==
+* {{T|Tabber}} — the editor-facing wrapper

@@ -1,0 +1,41 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|n/a|editlinks=1|docpage=n/a/doc}}
+<templatedata>
+{
+	"description": {
+		"en": "One of several templates for styling individual table cells with standard contents and colors.",
+		"cs": "Jedna z několika šablon pro styling jednotlivých buněk tabulky se standardním obsahem a barvami."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Text",
+				"cs": "Text"
+			},
+			"description": {
+				"en": "Text to be displayed instead of the default.",
+				"cs": "Text, který se má zobrazit namísto výchozího."
+			},
+			"default": "N/A",
+			"type": "content"
+		},
+		"style": {
+			"label": {
+				"en": "CSS Style",
+				"cs": "Styl CSS"
+			},
+			"description": {
+				"en": "A semicolon separated list of additional CSS rules to be applied to the table cell.",
+				"cs": "Středníkem oddělený seznam dalších pravidel CSS, která mají být aplikována na buňku tabulky."
+			},
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Table cell templates]]
+}}</includeonly>

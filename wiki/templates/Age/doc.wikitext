@@ -1,0 +1,73 @@
+{{Documentation/Header}}
+Calculates a person's age in whole years from their birth date. Returns a bare number, so it can be dropped inline anywhere.
+
+By default it measures against '''today's date in JST''' (via {{T|CURRENTJSTYEAR}}, {{T|CURRENTJSTMONTH}} and {{T|CURRENTJSTDAY}}), but an explicit reference date can be supplied to compute the age as of any other day.
+
+==Syntax==
+{{T|Age|block=1
+|v1=birth year
+|v2=birth month
+|v3=birth day
+|v4=reference year
+|v5=reference month
+|v6=reference day
+}}
+
+The first three parameters are '''required'''. Omitting any of them produces an expression error rather than a blank.
+
+==Examples==
+{| class="wikitable"
+! Code !! Result !! Note
+|-
+| <code><nowiki>{{Age|2000|12|31}}</nowiki></code> || {{Age|2000|12|31}} || Age today (JST)
+|-
+| <code><nowiki>{{Age|2000|12|31|2020|6|1}}</nowiki></code> || {{Age|2000|12|31|2020|6|1}} || Age on 1 June 2020 — birthday not yet reached that year
+|-
+| <code><nowiki>{{Age|2000|12|31|2021|12|31}}</nowiki></code> || {{Age|2000|12|31|2021|12|31}} || Age exactly on the birthday
+|}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Birth year || Four-digit year of birth. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>2</code> || – || Birth month || Month of birth, <code>1</code>–<code>12</code>. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>3</code> || – || Birth day || Day of the month of birth. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>4</code> || – || Reference year || Year to measure the age at. || number || <code><nowiki>{{CURRENTJSTYEAR}}</nowiki></code> ||
+|-
+| <code>5</code> || – || Reference month || Month to measure the age at. || number || <code><nowiki>{{CURRENTJSTMONTH}}</nowiki></code> ||
+|-
+| <code>6</code> || – || Reference day || Day to measure the age at. || number || <code><nowiki>{{CURRENTJSTDAY}}</nowiki></code> ||
+|}
+
+==How it works==
+The template subtracts the birth year from the reference year, then subtracts one more if the birthday has not yet occurred in that year:
+
+: ''age'' = (''ref year'' − ''birth year'') − ( ''ref month'' < ''birth month'', '''or''' same month and ''ref day'' < ''birth day'' )
+
+Two consequences worth knowing:
+* '''Zero-padded values are fine.''' <code>06</code> is read as 6, so values from the JST templates can be passed straight through.
+* '''No validation.''' A birth date in the future returns a negative number, and an impossible date such as <code>2</code>/<code>31</code> is not rejected.
+
+==Used by==
+{{T|Utaite}} and {{T|Youtaite}} (automatic age in the infobox) · {{T|Bd}} · {{T|BirthdayEntry}} · {{T|ProcessSingerPage/Birthday}}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Calculates age in whole years from a birth date, measured against today in JST or an explicit reference date.",
+"params": {
+"1": { "label": "Birth year", "description": "Four-digit year of birth.", "type": "number", "required": true },
+"2": { "label": "Birth month", "description": "Month of birth, 1-12.", "type": "number", "required": true },
+"3": { "label": "Birth day", "description": "Day of the month of birth.", "type": "number", "required": true },
+"4": { "label": "Reference year", "description": "Year to measure the age at. Defaults to the current JST year.", "type": "number" },
+"5": { "label": "Reference month", "description": "Month to measure the age at. Defaults to the current JST month.", "type": "number" },
+"6": { "label": "Reference day", "description": "Day to measure the age at. Defaults to the current JST day.", "type": "number" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Assistant templates]]</includeonly>

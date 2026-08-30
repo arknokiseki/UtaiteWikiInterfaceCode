@@ -1,0 +1,40 @@
+<noinclude>
+This template displays information about a graduated member of an utaite group.
+
+
+=== Usage<nowiki>:</nowiki> === 
+<pre>
+{{GraduatedUtaiteGroupMember
+|image=
+|name=
+|color=
+|desc=
+|fanname=
+|oshimark=
+|reason=
+|leader= (write "yes" without quotation mark if he/she/they are the leader, otherwise, don't add this parameter)
+}}
+</pre>
+
+
+=== Parameters<nowiki>:</nowiki> ===
+* image: The filename of the member's portrait image
+* name: The name of the member
+* color: (Optional) The member's associated color
+* desc: (Optional) The member's '''really''' short description, e.g. that one yellow member (for shiki from Stapola)
+* fanname: (Optional) The member's fans name
+* oshimark: (Optional) The member's oshi mark
+* reason: (Optional) Reason of graduation
+
+</noinclude>
+<includeonly>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <div style="flex: 0 1 200px; max-width: 200px; border: 1px solid #ccc; border-radius: 5px; padding: 10px; text-align: center; box-sizing: border-box;">
+    <div style="width: 100%; height: 200px; overflow: hidden; margin-bottom: 10px;">
+      [[File:{{{image}}}|200x200px|center]]
+    </div>
+    <h4 style="margin: 0 0 10px 0;" font-weight: 700;">{{#ifeq: {{lc:{{{status|active}}}}}|Graduated|{{{name}}}|[[{{{name}}}]]}}{{#if: {{{leader|}}}|元🔑}}</h4>{{#if: {{{desc|}}}|<p style="margin: 5px 0;"><span style="font-weight: 700;">{{{desc}}}</span></p>}}{{#if: {{{color|}}}|<p style="margin: 5px 0;">Color: <span style="color: {{{color}}}; font-weight: 700;">{{{color}}}</span></p>}}{{#if: {{{fanname|}}}|<p style="margin: 5px 0;">Fan name: <span style="font-weight: 700;">{{{fanname}}}</span></p>}}{{#if: {{{oshimark|}}}|<p style="margin: 5px 0;">Oshi Mark: <span style="font-weight: 700;">{{{oshimark}}}</span></p>}}{{#if: {{{status|}}}|<p style="margin: 5px 0;">Status: <span style="color:#FFCC33; font-weight: 700;">Graduated</span></p>|}}{{#if: {{{reason|}}}|<p style="margin: 5px 0;">Reason: <span style="font-weight: 700;">{{{reason}}}</span></p>}}
+  </div>
+</div>
+</includeonly>
+<noinclude>{{documentation}}</noinclude>

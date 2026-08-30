@@ -1,0 +1,5 @@
+{{documentation subpage}}
+{{Uses TemplateStyles|Module:LuaInfobox/styles.css}}
+{{dependencies|Module:Arguments|Module:ACandy}}
+{{clear}}
+'''Module:LuaInfobox''' is a module that implements the {{tl|LuaInfobox}} template. Please see the template page for usage instructions.

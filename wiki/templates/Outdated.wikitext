@@ -1,0 +1,25 @@
+<includeonly><!--
+--><div class="blacklist-pPreview"><!--
+--><center><!--
+--><div class="uptodate-container" style="border:3px solid {{{bordercolor|#787276}}} !important;"><!--
+--><div class="uptodate-header-text" style="background:{{{bordercolor|#787276}}} !important; color:{{{utdcolor|#000}}} !important">Outdated</div><!--
+--><div class="uptodate-content-container"><!--
+--><div class="uptodate-content-text"><!--
+-->This utaite's {{#ifexist:{{ROOTPAGENAME}}/Songs|[[{{ROOTPAGENAME}}/Songs|song list]]|song list}}{{#if:{{{discography|}}}|&nbsp;and {{#ifexist:{{ROOTPAGENAME}}/Discography|[[{{ROOTPAGENAME}}/Discography|discography]]|discography}}|}} {{#if:{{{discography|}}}|are|is}} outdated. {{#if:{{{reason|}}}|{{{reason}}}|The last update was on '''{{{1|Unknown Date}}}'''{{#ifeq:{{{1|}}}|||&nbsp;({{time ago|{{Time ago/FormatDate|{{{1}}}|{{{3|}}}}}}})}}}}.<!--
+--></div><!--
+--><div class="uptodate-content-text-2" style=""><!--
+--><span class="plainlinks">This {{pagetype|subjectspace=yes}} was [{{fullurl:{{FULLPAGENAME}}|diff=cur}} last edited] by [[User:{{REVISIONUSER}}|{{REVISIONUSER}}]]<!--
+--><span class="timeago hide-on-mobile hide-on-desktop" data-timestamp="{{REVISIONTIMESTAMP}}"><!--
+--><i class="fa-solid fa-spinner fa-spin-pulse"></i></span>. <span class="uptodate-purge-button" style="font-size: 9px !important;">''<!--
+-->([{{fullurl:{{FULLPAGENAMEE}}|action=purge}} Purge])''<!--
+--></span><!--
+--></span><!--
+-->&nbsp;If you feel the list needs an update, please help by doing so.<!--
+--></div><!--
+--></div><!--
+--></div><!--
+--></center><!--
+--></div><!--
+--></includeonly><!--
+-->{{#ifeq:{{{nocat|}}}|true||{{maintalkcat other|<includeonly>{{ForAllUtaite|[[Category:Utaite with outdated covered song list]]|[[Category:Youtaite with outdated covered song list]]}}</includeonly>|||}}}}<!--
+--><noinclude>{{documentation}}</noinclude>

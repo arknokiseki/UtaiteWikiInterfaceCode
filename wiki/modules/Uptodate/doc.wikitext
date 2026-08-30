@@ -1,0 +1,98 @@
+== Overview ==
+
+This Scribunto Lua module extracts `{{T|Uptodate}}` templates from a `/Songs` subpage and reprocesses them for display on the current page. It's designed to centralize up-to-date content notifications by pulling them from related subpages.
+
+== Public Functions == 
+
+=== `getUptodateFromSubpage(frame)` ===
+
+Extracts an `{{T|Uptodate}}` template from the current page's `/Songs` subpage and renders it on the current page.
+
+**Parameters:**
+- `frame` (table): MediaWiki frame object containing the current context
+
+**Returns:**
+- `string`: Rendered HTML output of the `{{T|Uptodate}}` template or an error message
+
+**Usage in wikitext:**
+<pre>
+{{#invoke:Uptodate|getUptodateFromSubpage}}
+</pre>
+
+== Functionality Details ==
+
+=== 1. Page Resolution ===
+* Determines the current page's root name using `mw.title.getCurrentTitle().rootText`
+* Constructs the target subpage path as `{RootPage}/Songs`
+* Validates that the target subpage exists
+
+=== 2. Content Extraction ===
+* Retrieves the full wikitext content from the `/Songs` subpage
+* Searches for `{{T|Uptodate}}` template usage with case-insensitive matching
+* Handles both parameterized and non-parameterized template calls
+
+=== 3. Template Parsing ===
+The module uses two regex patterns to locate the template:
+
+**Primary Pattern:**
+<pre>
+"{{%s*[Uu]ptodate%s*|([^}]*)}}"
+</pre>
+Matches: `{{T|Uptodate|param1|param2=value}}`
+
+**Fallback Pattern:**
+<pre>
+"{{%s*[Uu]ptodate%s*}}"
+</pre>
+Matches: `{{T|Uptodate}}`
+
+=== 4. Parameter Processing ===
+* Splits template parameters by pipe (`|`) delimiter
+* Distinguishes between positional parameters (`param`) and named parameters (`name=value`)
+* Parses up to 10 positional parameters
+* Excludes the `nocat` parameter from reprocessing
+
+=== 5. Template Reconstruction ===
+* Rebuilds the template call with extracted parameters
+* Maintains parameter order: positional parameters first, then named parameters
+* Uses `frame:preprocess()` to render the final template
+
+== Error Handling ==
+
+The module provides specific error messages for common failure scenarios:
+
+{| class="wikitable"
+! Error Condition
+! Error Message
+|-
+| Subpage doesn't exist
+| <code>Songs subpage does not exist: {PageName}/Songs</code>
+|-
+| Content retrieval fails
+| <code>Could not retrieve content from: {PageName}/Songs</code>
+|-
+| Template not found
+| <code>Uptodate template not found in: {PageName}/Songs</code>
+|}
+
+All errors are wrapped in <nowiki><div class="error"></nowiki> elements for proper styling.
+
+== Technical Considerations ==
+
+=== Limitations ===
+* Only processes the first `{{T|Uptodate}}` template found
+* Limited to 10 positional parameters
+* Requires exact `/Songs` subpage naming convention
+* Cannot handle nested template calls within parameters
+
+=== Dependencies ===
+* `mw.title` - Page title manipulation
+* `mw.text` - String processing utilities
+* `frame:preprocess()` - Template rendering
+
+== Integration Notes ==
+
+This module is typically used in maintenance workflows where:
+# Content is organized with main pages and `/Songs` subpages
+# Up-to-date notifications need to be centrally managed
+# Template parameters should be preserved across page boundaries

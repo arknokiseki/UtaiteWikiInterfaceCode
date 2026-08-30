@@ -1,0 +1,5 @@
+<includeonly>{{MessageBox
+| header = Uh Oh! This page is protected and only admins can edit it.
+| text = Seems like a lot vandalism has occurred on this page so we're locking it!
+| image = Kottaro sub 2.png
+}}{{#ifeq:{{{nocat|}}}|true||[[Category:Protected Pages]]}}</includeonly><noinclude>{{Documentation}}[[Category:Template/Notice]]</noinclude>

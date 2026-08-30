@@ -1,0 +1,147 @@
+{{Documentation/Header}}
+The '''Bots''' and '''Nobots''' templates tell bots and other automated editing tools and scripts that they either should or should not edit a page that has the template. The templates can be used to block most bots (all bots that have implemented this functionality) or specific bots by name or function. For example, this can be used to opt-in or opt-out from user talk bot messages or to cause maintenance bots to avoid certain pages. These templates should be used carefully outside userspace to avoid blocking useful bot edits.
+
+Explicitly opting-in has the advantage of receiving useful changes or targeted posts a bot might otherwise skip by following "opt-out" behavior by default. Users should be aware that by opting-out of bot posts, they will not be notified of matters relating to material they have edited or uploaded, which are tagged or scanned by bots per policy.
+
+In particular, in the encyclopedia spaces:
+* Avoid using the template as a blunt instrument
+* Address the root problem with the bot owner or bot community
+* Remove the template tag once the underlying problem has been resolved.
+
+==Important notes==
+Most bots will NOT understand these templates when they are indirectly transcluded.
+
+Most bots will not disregard the template if it is inside of '''<nowiki><now</nowiki><nowiki>iki> ... </now</nowiki><nowiki>iki></nowiki>''' tags.  For example, if you are discussing the templates with another editor, please use the {{t|t}} template, e.g. <code><nowiki>{{t|nobots}}</nowiki></code>, which will show {{t|nobots}}, rather than <code><nowiki><no</nowiki><nowiki>wiki>{{nobots}}</now</nowiki><nowiki>iki></nowiki></code>, which will possibly be parsed as intending to ban bots from the page.
+
+==Syntax==
+ '''<nowiki>{{nobots}}</nowiki>'''                Ban all compliant bots (shortcut that takes no parameters)
+ '''<nowiki>{{bots}}</nowiki>'''                  Allow all bots (shortcut that takes no parameters)
+
+ '''<nowiki>{{bots|allow=<botlist>}}</nowiki>'''  Ban all compliant bots not in the list
+ '''<nowiki>{{bots|deny=<botlist>}}</nowiki>'''   Ban all compliant bots in the list
+
+ ''Where <botlist> is a comma-delimited string of bot usernames (AWB can be used for all AWB-based bots):''
+   '''<nowiki>{{bots|allow=SineBot,Legobot}}</nowiki>'''
+   '''<nowiki>{{bots|deny=AWB}}</nowiki>'''
+
+ ''<botlist> can also be "none" or "all" as in the following examples:''
+   '''<nowiki>{{bots|allow=all}}</nowiki>'''      Allow all bots
+   '''<nowiki>{{bots|allow=none}}</nowiki>'''     Ban all compliant bots
+
+   '''<nowiki>{{bots|deny=all}}</nowiki>'''       Ban all compliant bots
+   '''<nowiki>{{bots|deny=none}}</nowiki>'''      Allow all bots
+
+Bots are not bound to observe the nobots template; it will depend on their functionality, their owners and their terms of approval.
+
+==Incorrect syntax==
+This syntax looks correct, but depending on the individual bot may not have the intended effect. This statement may deny neither Bot1 nor Bot2, only one of the two bots, or both bots as intended.
+
+ '''<nowiki>{{bots|deny=Bot1|deny=Bot2}}</nowiki>''' INCORRECT
+
+Instead, write:
+
+ '''<nowiki>{{bots|deny=Bot1,Bot2}}</nowiki>'''      CORRECT
+
+==Implementation==
+*[[mw:Pywikibot|Pywikibot]] supports bots and nobots since ''r4096''. The templates may be ignored using a parameter.
+*Since version 3.2.0.0 {{w|Wikipedia:AutoWikiBrowser|AutoWikiBrowser}} fully supports <nowiki>{{bots}} and {{nobots}}</nowiki>. Additionally, pseudo-username ''AWB'' can be specified to ban all AWB-based bots from the page. However, AWB has an option to ignore these templates.
+
+===Example implementations===
+====PHP====
+<syntaxhighlight lang="php">
+function allowBots( $text, $user ) {
+    if (preg_match('/\{\{(nobots|bots\|allow=none|bots\|deny=all|bots\|optout=all|bots\|deny=.*?'.preg_quote($user,'/').'.*?)}}/iS',$text))
+        return false;
+    if (preg_match('/\{\{(bots\|allow=all|bots\|allow=.*?'.preg_quote($user,'/').'.*?)}}/iS', $text))
+        return true;
+    if (preg_match('/\{\{(bots\|allow=.*?)}}/iS', $text))
+        return false;
+    return true;
+}
+</syntaxhighlight>
+
+====Perl====
+<syntaxhighlight lang="perl">
+sub allow_bots {
+    my($text, $user, $opt) = @_;
+    return 0 if $text =~ /{{[nN]obots}}/;
+    return 1 if $text =~ /{{[bB]ots}}/;
+    if($text =~ /\{\{[bB]ots\s*\|\s*allow\s*=\s*(.*?)\s*}}/s){
+        return 1 if $1 eq 'all';
+        return 0 if $1 eq 'none';
+        my @bots = split(/\s*,\s*/, $1);
+        return (grep $_ eq $user, @bots) ? 1 : 0;
+    }
+    if($text =~ /\{\{[bB]ots\s*\|\s*deny\s*=\s*(.*?)\s*}}/s){
+        return 0 if $1 eq 'all';
+        return 1 if $1 eq 'none';
+        my @bots = split(/\s*,\s*/, $1);
+        return (grep $_ eq $user, @bots) ? 0 : 1;
+    }
+    if(defined($opt) && $text =~ /\{\{[bB]ots\s*\|\s*optout\s*=\s*(.*?)\s*}}/s){
+        return 0 if $1 eq 'all';
+        my @opt = split(/\s*,\s*/, $1);
+        return (grep $_ eq $opt, @opt) ? 0 : 1;
+    }
+    return 1;
+}
+</syntaxhighlight>
+
+====VB.NET====
+<syntaxhighlight lang="vbnet">
+Public Shared Function AllowBots(ByVal text As String, ByVal user As String) As Boolean
+    Return Not Regex.IsMatch(text, "\{\{(nobots|bots\|(allow=none|deny=(?!none).*(" & user.Normalize() & "|all)|optout=all))\}\}", RegexOptions.IgnoreCase)
+End Function
+</syntaxhighlight>
+
+====C#====
+<syntaxhighlight lang="csharp">
+public static bool AllowBots(string text, string user)
+{
+    return !Regex.IsMatch(text, @"\{\{(nobots|bots\|(allow=none|deny=(?!none).*(" + user.Normalize() + @".*|all)|optout=all))\}\}", RegexOptions.IgnoreCase);
+}
+</syntaxhighlight>
+
+====Java====
+<syntaxhighlight lang="java">
+public static boolean allowBots(String text, String user)
+{
+      return !text.matches("(?si).*\\{\\{(nobots|bots\\|(allow=none|deny=([^\\}]*?" + user + "[^\\}]*?|all)|optout=all))\\}\\}.*");
+}
+</syntaxhighlight>
+
+====JavaScript====
+<syntaxhighlight lang="javascript">
+function allowBots(text, user){
+  if (!new RegExp("\\{\\{\\s*(nobots|bots[^}]*)\\s*\\}\\}", "i").test(text)) return true;
+  return (new RegExp("\\{\\{\\s*bots\\s*\\|\\s*deny\\s*=\\s*([^}]*,\\s*)*" + user.replace(/([\(\)\*\+\?\.\-\:\!\=\/\^\$])/g, "\\$1") + "\\s*(?=[,\\}])[^}]*\\s*\\}\\}", "i").test(text)) ? false : new RegExp("\\{\\{\\s*((?!nobots)|bots(\\s*\\|\\s*allow\\s*=\\s*((?!none)|([^}]*,\\s*)*" + user.replace(/([\(\)\*\+\?\.\-\:\!\=\/\^\$])/g, "\\$1") + "\\s*(?=[,\\}])[^}]*|all))?|bots\\s*\\|\\s*deny\\s*=\\s*(?!all)[^}]*|bots\\s*\\|\\s*optout=(?!all)[^}]*)\\s*\\}\\}", "i").test(text);
+}
+</syntaxhighlight>
+
+====Python====
+This code assumes that the [http://pypi.python.org/pypi/mwparserfromhell/ mwparserfromhell] library was installed and imported in the current script.
+<syntaxhighlight lang="python">
+def allow_bots(text, user):
+	user = user.lower().strip()
+	text = mwparserfromhell.parse(text)
+	for tl in text.filter_templates():
+		if tl.name.matches(['bots', 'nobots']):
+			break
+	else:
+		return True
+	for param in tl.params:
+		bots = [x.lower().strip() for x in param.value.split(",")]
+		if param.name == 'allow':
+			if ''.join(bots) == 'none': return False
+			for bot in bots:
+				if bot in (user, 'all'):
+					return True
+		elif param.name == 'deny':
+			if ''.join(bots) == 'none': return True
+			for bot in bots:
+				if bot in (user, 'all'):
+					return False
+	if (tl.name.matches('nobots') and len(tl.params) == 0):
+		return False
+	return True
+</syntaxhighlight>

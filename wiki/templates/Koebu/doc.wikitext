@@ -1,0 +1,17 @@
+<small class="tw-text-red-500">'''Notice: Due to the shutdown of Koebu, those links will not work anymore.'''</small>
+
+;Description
+:This template is used to link to an koebu song page.
+;Syntax
+:Place <code><nowiki>{{Koebu|<koeid>}}</nowiki></code> and substitute <koeid> with the latter part of the koebu song link. If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Koebu|b32a341f7f8f803d9b2f1645b240f16b3649d0ab|soraru's Natsu no Hi to, Yuurei to, Kamisama cover on Koebu description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Koebu|b32a341f7f8f803d9b2f1645b240f16b3649d0ab|soraru's Natsu no Hi to, Yuurei to, Kamisama cover on Koebu description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

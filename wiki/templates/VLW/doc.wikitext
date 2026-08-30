@@ -1,0 +1,8 @@
+<!--{{WIP|template}}-->
+<pre>{{VLW|Amaki Ao}}</pre>
+<pre>{{VLW|Giga-P}}</pre>
+
+...results in:<br />
+<ol><li>{{VLW|Amaki Ao}}</li>
+<li>{{VLW|Giga-P}}</li>
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

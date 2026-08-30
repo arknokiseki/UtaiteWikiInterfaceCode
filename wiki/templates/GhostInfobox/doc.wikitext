@@ -1,0 +1,14 @@
+{{Documentation/Header}}
+Places an empty, permanently hidden portable infobox on a page. It renders an <code><nowiki><infobox></nowiki></code> containing a single unpopulated data row, wrapped in a <code>display:none</code> container, so nothing is visible to readers.
+
+Its purpose is to make a page count as having an infobox for tooling that keys off one, without showing an infobox to the reader. It takes no parameters.
+
+Currently used on [[Nayuta (female)/Discography]].
+
+==Syntax==
+{{T|GhostInfobox}}
+
+==Usage==
+<pre>{{GhostInfobox}}</pre>
+Place it anywhere on the page; position has no visual effect.
+<includeonly>[[Category:Infobox Templates]]</includeonly>

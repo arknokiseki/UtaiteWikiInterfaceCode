@@ -1,0 +1,18 @@
+<includeonly>
+{| class="dataTable" data-page-length="{{{pagelength|25}}}" data-order='[[0, "asc"]]' data-search-panes="true"
+! Rank
+! Video
+! data-searchpane="true" | Utaite
+! Title
+|-
+{{{entries|}}}
+|}
+</includeonly><noinclude>
+[[User:Ark|Ark]] is managing data collection. To contribute, please leave a message on his [[User talk:Ark|talk page]].
+<br/>
+Usage:
+<pre>
+{{UtaColle/Table|pagelength=25|entries={{UtaColle/Row|rank=1|nnd=sm46024234|utaite=[[Kokoa]]|title=SPiCa}}}}
+</pre>
+[[Category:Templates]]
+</noinclude>

@@ -1,0 +1,334 @@
+== UtaiteUnitMember template ==
+__notoc__
+The '''UtaiteUnitMember''' template displays the member roster of an utaite unit as a card grid. One transclusion renders '''all''' members via numbered parameters — no more stacking one transclusion per member inside a manual flex <code>&lt;div&gt;</code>.
+
+Rendering is handled by [[Module:UtaiteUnitMember]]; styling lives in [[Template:UtaiteUnitMember/styles.css]] (all classes prefixed <code>uum-</code>).
+<tabber>Usage=
+=== Usage ===
+
+Use the following syntax. Number each member's parameters consecutively (<code>1, 2, 3, …</code>) — the module stops at the first missing <code>name#</code>, so a gap in the numbering ends the list.
+
+<pre>
+{{UtaiteUnitMember
+|variant=
+|image1=
+|name1=
+|color1=
+|desc1=
+|fanname1=
+|oshimark1=
+|status1=
+|leader1= yes (ONLY ADD THIS PARAMETER IF HE/SHE/THEY ARE A LEADER)
+|image2=
+|name2=
+...
+}}
+</pre>
+
+==== Example ====
+
+<pre>
+{{UtaiteUnitMember
+|fit=contain
+|image1=Sixfonia_lan_lan_profile.png
+|name1=LAN
+|color1=#a9276d
+|oshimark1=[[File:Sixfonia.png|16x16px]]
+|leader1=yes
+|image2=Sixfonia_kosame_profile.png
+|name2=Ameno Kosame
+|color2=#188599
+|oshimark2=[[File:Sixfonia.png|16x16px]]
+|image3=Sixfonia_illma_profile.png
+|name3=Illma
+|color3=#441e6b
+|oshimark3=[[File:Sixfonia.png|16x16px]]
+|image4=Sixfonia_hima72_profile.png
+|name4=Hima72
+|color4=#91191a
+|oshimark4=[[File:Sixfonia.png|16x16px]]
+|image5=Sixfonia_mikoto_profile.png
+|name5=Mikoto
+|color5=#7c6114
+|oshimark5=[[File:Sixfonia.png|16x16px]]
+|image6=Sixfonia_suchi_profile.png
+|name6=Suchi
+|color6=#2c4e2d
+|oshimark6=[[File:Sixfonia.png|16x16px]]
+}}
+</pre>
+
+==== Output ====
+{{UtaiteUnitMember
+|fit=contain
+|image1=Sixfonia_lan_lan_profile.png
+|name1=LAN
+|color1=#a9276d
+|oshimark1=[[File:Sixfonia.png|16x16px]]
+|leader1=yes
+|image2=Sixfonia_kosame_profile.png
+|name2=Ameno Kosame
+|color2=#188599
+|oshimark2=[[File:Sixfonia.png|16x16px]]
+|image3=Sixfonia_illma_profile.png
+|name3=Illma
+|color3=#441e6b
+|oshimark3=[[File:Sixfonia.png|16x16px]]
+|image4=Sixfonia_hima72_profile.png
+|name4=Hima72
+|color4=#91191a
+|oshimark4=[[File:Sixfonia.png|16x16px]]
+|image5=Sixfonia_mikoto_profile.png
+|name5=Mikoto
+|color5=#7c6114
+|oshimark5=[[File:Sixfonia.png|16x16px]]
+|image6=Sixfonia_suchi_profile.png
+|name6=Suchi
+|color6=#2c4e2d
+|oshimark6=[[File:Sixfonia.png|16x16px]]
+}}
+
+|-|Parameters=
+=== Parameters ===
+
+==== Grid-level parameters ====
+
+{| class="wikitable"
+! Parameter !! Description !! Required?
+|-
+| variant || Card style for the whole grid: <code>default</code>, <code>fullimage</code>, or <code>compact</code>. See the ''Variants'' tab. Unknown or empty values fall back to <code>default</code>. || No
+|-
+| perrow || Maximum number of cards per row. If omitted, the module picks a balanced split automatically (e.g. 6 members → 3/3, 5 → 3/2, 7 → 4/3) instead of letting rows wrap unevenly like 5/1. Narrow screens still wrap to fewer per row. || No
+|-
+| fit || How portraits fill their frame, for the whole grid. Default crops to fill (<code>cover</code>); set <code>contain</code> to show the whole image letterboxed — useful for tall full-body renders. || No
+|-
+| imgpos || Which part of the portrait to keep when cropping, for the whole grid. Any CSS <code>object-position</code> value, e.g. <code>top</code> (keeps faces in full-body art), <code>center</code>, <code>50% 20%</code>. || No
+|}
+
+==== Per-member parameters (replace # with 1, 2, 3, …) ====
+
+{| class="wikitable"
+! Parameter !! Description !! Required?
+|-
+| name# || The name of the utaite unit member. Also the link target for the name and portrait. || Yes
+|-
+| image# || The filename of the member's portrait image. This should be an image that has been uploaded to the wiki. (<code>img#</code> also works.) || No
+|-
+| desc# || Short description of the member, e.g. Dice no. 1 for Liura from Ireisu. || No
+|-
+| color# || The member's associated color. Hex (e.g. <code>#a9276d</code>) or a CSS color name (e.g. <code>Red</code>). Shown as a swatch + value, and used for the card's accent (top bar / name dot / left edge, depending on variant). Invalid values fall back to the wiki theme color. || No
+|-
+| fanname# || The member's fans name. || No
+|-
+| oshimark# || The member's oshi mark, typically an emoji, special character, or a small image like <code><nowiki>[[File:Sixfonia.png|16x16px]]</nowiki></code>. || No
+|-
+| status# || The member's current status (e.g., active, inactive, hiatus). Case-insensitive. Default is active. || No
+|-
+| leader# || '''Only add this parameter if he/she/they are a leader of the group.''' You can fill this parameter with "yes" without quotation mark. A crown badge appears on the card and expands to a "LEADER" label on hover. More than one member can be a leader. || No
+|-
+| fit# || Per-member override of the grid-level <code>fit</code> parameter (<code>contain</code> to letterbox this member's portrait only). || No
+|-
+| imgpos# || Per-member override of the grid-level <code>imgpos</code> parameter, e.g. <code>top</code> for one member whose full-body render gets cropped badly. || No
+|}
+
+==== Regarding Status Parameter ====
+* '''active''': Currently an active member of the group and actively performing as an utaite.
+* '''hiatus''': Temporarily paused from activities, but still a member of the group.
+* '''inactive''': Not currently performing as an utaite.
+* '''graduated''': Former member who has officially left the group.
+* '''terminated''': The member's contract or association with the group was forcibly ended due to serious issues, such as a scandal. Terminated members are rendered as plain text — neither the name nor the portrait links to their page. You should still use the [[:Template:TerminatedUtaiteGroupMember|Terminated Utaite Group Member Template]] to exclude terminated members from the [[:Category:Utaite_Groups|Utaite Groups Category Page]]/[[Template:UtaiteGroupGallery|Utaite Group Gallery Template]].
+
+Statuses outside this list are displayed as written but styled like <code>active</code>.
+
+|-|Variants=
+=== Variants ===
+
+The <code>variant</code> parameter switches the card style for the whole grid.
+
+==== default ====
+Vertical 200px card: color bar on top, portrait, then one info line each for description, color, fan name, oshi mark, and a status pill.
+
+{{UtaiteUnitMember
+|image1=template_doc.png
+|name1=Member Name
+|desc1=Member Description
+|color1=Red
+|fanname1=yessir
+|oshimark1=🎤
+|status1=inactive
+}}
+
+==== fullimage ====
+200×280 card where the portrait fills the whole card — best for transparent-background renders. The name sits on a bottom gradient overlay with a dot in the member's color; a rotated corner ribbon shows the status; extra info (description, fan name, oshi mark, color) slides up on hover. Graduated and terminated members are desaturated until hovered.
+
+<pre>
+{{UtaiteUnitMember
+|variant=fullimage
+|image1=... |name1=... (same per-member parameters)
+}}
+</pre>
+
+{{UtaiteUnitMember
+|variant=fullimage
+|image1=template_doc.png
+|name1=Member Name
+|desc1=Member Description
+|color1=Red
+|fanname1=yessir
+|oshimark1=🎤
+|leader1=yes
+}}
+
+==== compact ====
+Small horizontal 250px card: portrait strip on the left, a 4px edge in the member's color, name + description + status on the right. Fan name and color are revealed on hover. Good for large rosters or sidebar-ish sections.
+
+<pre>
+{{UtaiteUnitMember
+|variant=compact
+|image1=... |name1=... (same per-member parameters)
+}}
+</pre>
+
+{{UtaiteUnitMember
+|variant=compact
+|image1=template_doc.png
+|name1=Member Name
+|desc1=Member Description
+|color1=Red
+|fanname1=yessir
+|oshimark1=🎤
+}}
+
+|-|Styling=
+=== Styling ===
+
+Cards are laid out in a centered, wrapping flex grid with a 16px gap; they wrap to the next line as needed, depending on the page width and the number of members. All CSS classes are prefixed <code>uum-</code> and live in [[MediaWiki:Common.css]]. The design uses Citizen skin custom properties with fixed fallbacks, so it holds up in both light and dark mode.
+
+==== Regarding the styling based on the utaite status ====
+Each status has a fixed color used by the status pill (default), corner ribbon (fullimage), and status line (compact):
+* active — green
+* hiatus — orange
+* inactive — grey
+* graduated — purple (card dimmed in fullimage/compact)
+* '''terminated''' — red (card dimmed in fullimage/compact; name and portrait unlinked)
+
+==== Example ====
+<pre>
+{{UtaiteUnitMember
+|image1=template_doc.png
+|name1=Utaite 1
+|color1=#91191a
+|fanname1=none
+|oshimark1=none
+|leader1=yes
+|image2=template_doc.png
+|name2=Utaite 2
+|color2=#7c6114
+|fanname2=none
+|oshimark2=none
+|status2=active
+|image3=template_doc.png
+|name3=Utaite 3
+|color3=#2c4e2d
+|fanname3=none
+|oshimark3=none
+|status3=hiatus
+|image4=template_doc.png
+|name4=Utaite 4
+|color4=#2c4e2d
+|fanname4=none
+|oshimark4=none
+|status4=inactive
+|image5=template_doc.png
+|name5=Utaite 5
+|color5=#2c4e2d
+|fanname5=none
+|oshimark5=none
+|status5=graduated
+|image6=template_doc.png
+|name6=Utaite 6
+|color6=#2c4e2d
+|fanname6=none
+|oshimark6=none
+|status6=terminated
+}}
+</pre>
+
+==== Output ====
+{{UtaiteUnitMember
+|image1=template_doc.png
+|name1=Utaite 1
+|color1=#91191a
+|fanname1=none
+|oshimark1=none
+|leader1=yes
+|image2=template_doc.png
+|name2=Utaite 2
+|color2=#7c6114
+|fanname2=none
+|oshimark2=none
+|status2=active
+|image3=template_doc.png
+|name3=Utaite 3
+|color3=#2c4e2d
+|fanname3=none
+|oshimark3=none
+|status3=hiatus
+|image4=template_doc.png
+|name4=Utaite 4
+|color4=#2c4e2d
+|fanname4=none
+|oshimark4=none
+|status4=inactive
+|image5=template_doc.png
+|name5=Utaite 5
+|color5=#2c4e2d
+|fanname5=none
+|oshimark5=none
+|status5=graduated
+|image6=template_doc.png
+|name6=Utaite 6
+|color6=#2c4e2d
+|fanname6=none
+|oshimark6=none
+|status6=terminated
+}}
+
+|-|Legacy syntax=
+=== Legacy syntax (deprecated) ===
+
+Before the module rewrite, each member was a separate transclusion using unnumbered parameters, wrapped in a manual flex <code>&lt;div&gt;</code>:
+
+<pre>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;text-align: center;">
+{{UtaiteUnitMember
+|image=Member1.jpg
+|name=Member 1
+|color=Red
+|leader=yes
+}}
+{{UtaiteUnitMember
+|image=Member2.jpg
+|name=Member 2
+|color=Blue
+}}
+</div>
+</pre>
+
+This '''still renders''' — the module falls back to unnumbered parameters when no <code>name1</code> is present, treating the transclusion as a single-member grid — but it is deprecated. Pages still using it are collected in [[:Category:Pages using legacy UtaiteUnitMember syntax]]; please migrate them to the numbered syntax and remove the wrapper <code>&lt;div&gt;</code>.
+
+|-|Notes=
+=== Notes ===
+
+* Make sure to upload the member images to the wiki before using them in the template.
+* Only <code>name#</code> is required per member. Optional fields that are not provided simply do not appear on the card (status always appears, defaulting to active).
+* Number members consecutively — the module stops at the first missing <code>name#</code>.
+* Rows wrap symmetrically: with more members than fit one row, the module caps the grid width so e.g. 6 members render as 3/3 rather than 5/1. Use <code>perrow</code> to force a specific maximum per row. Legacy (unnumbered) transclusions can't do this, since each one only knows about its own single member.
+* Portraits are cropped to fill their frame by default (<code>object-fit: cover</code>, center crop). If members' art gets cropped badly — e.g. tall full-body renders losing heads — set <code>imgpos=top</code> to crop from the bottom instead, or <code>fit=contain</code> to letterbox the whole image. Both work grid-wide or per member (<code>imgpos3=top</code>).
+* To change the overall layout or styling of the cards, edit the <code>uum-</code> rules in [[MediaWiki:Common.css]]; to change structure or parameters, edit [[Module:UtaiteUnitMember]]. The template page itself is only a thin <code>#invoke</code> wrapper.
+</tabber>
+See also: 
+*{{tl|UtaiteUnitMember/card}} (subtemplate)
+*{{tl|UtaiteUnitMember/text}} (subtemplate)
+
+<includeonly>[[Category:Template documentation]]</includeonly>

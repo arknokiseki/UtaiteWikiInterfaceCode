@@ -1,0 +1,66 @@
+<templatedata>
+{
+	"params": {
+		"part": {
+			"aliases": [
+				"1"
+			],
+			"label": {
+				"en": "Outdated parts",
+				"cs": "Zastaralé části"
+			},
+			"description": {
+				"en": "Textual description of what parts are outdated",
+				"cs": "Textový popis toho, které části jsou zastaralé"
+			},
+			"example": {
+				"en": "installing MediaWiki on Windows 95 systems",
+				"cs": "instalace MediaWiki v systémech Windows 95"
+			}
+		},
+		"inaccurate": {
+			"label": {
+				"en": "Inaccurate",
+				"cs": "Nepřesné"
+			},
+			"description": {
+				"en": "If it has any non-blank value, it means that the page is not only outdated, but also inaccurate",
+				"cs": "Pokud má nějakou neprázdnou hodnotu, znamená to, že stránka je nejen zastaralá, ale také nepřesná"
+			},
+			"type": "line"
+		},
+		"reason": {
+			"label": {
+				"en": "Reason",
+				"cs": "Důvod"
+			},
+			"description": {
+				"en": "Reason why the page is outdated",
+				"cs": "Důvod, proč je stránka zastaralá"
+			}
+		},
+		"date": {
+			"label": {
+				"en": "Tag date",
+				"cs": "Datum označení"
+			},
+			"description": {
+				"en": "Date when the page was tagged as outdated",
+				"cs": "Datum, kdy byla stránka označena jako zastaralá"
+			},
+			"type": "line"
+		},
+		"2": {
+			"label": {
+				"en": "Last update",
+				"cs": "Poslední aktualizace"
+			},
+			"description": {
+				"en": "Date when the page was last updated",
+				"cs": "Datum, kdy byla stránka naposledy aktualizována"
+			},
+			"type": "line"
+		}
+	}
+}
+</templatedata>

@@ -1,0 +1,27 @@
+<includeonly><div class="forum-new-topic-container">
+<div class="forum-new-topic-title">
+<i class="fa-solid fa-pen-to-square"></i>
+Start a New Discussion
+</div>
+<inputbox>
+type={{{type|create}}}
+bgcolor={{{bgcolor|}}}
+width={{{width|}}}
+page={{{page|}}}
+default={{{default|}}}
+preload={{{preload|Template:Forumheader/{{PAGENAME}}}}}
+editintro={{{editintro|}}}
+buttonlabel={{{buttonlabel|}}}
+hidden={{{hidden|}}}
+buttonlabel={{{buttonlabel|Add new topic}}}
+labeltext={{{labeltext|}}}
+break={{{break|no}}}
+prefix={{{prefix|Forum:}}}
+placeholder={{{placeholder|}}}
+minor={{{minor|false}}}
+inline={{{inline|}}}
+</inputbox>
+</div></includeonly><noinclude>
+{{documentation}}
+[[Category:Forum templates]]
+</noinclude>

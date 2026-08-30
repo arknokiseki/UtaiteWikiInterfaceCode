@@ -1,0 +1,15 @@
+;Description
+:This template is used to mark pages for deletion, categorizing them in [[:Category:Candidates for deletion]].
+;Syntax
+:Type <code>{{t|delete}}</code> on the page to be deleted.'''
+
+Example: 
+===For all editors===
+<pre>{{delete|reason=<b>Empty Page</b>}}</pre>
+{{delete|reason=<b>Empty Page</b>}}
+<hr/>
+===Only for admins===
+<pre>{{delete|reason=<b>Empty Page</b>|deletiondate=2084-11-30}}</pre>
+{{delete|reason=<b>Empty Page</b>|deletiondate=2084-11-30}}
+
+<includeonly>[[Category:Article management templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

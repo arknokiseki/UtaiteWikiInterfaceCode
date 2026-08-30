@@ -1,0 +1,1 @@
+{{#invoke:Gerrit|link_automatic|project={{{project|}}}|owner={{{owner|}}}|status={{{status|}}}|{{{1|}}}}}

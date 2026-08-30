@@ -1,0 +1,28 @@
+<noinclude>{{Documentation subpage}}</noinclude>
+This template can be used on any template, module, or other documentation subpage.
+
+== Usage ==
+{{T|Documentation subpage|style=code}}<br>
+'''OR'''<br>
+{{T|Documentation subpage|[[<nowiki />main page to link to]]|style=code}}
+
+== Customization of text ==
+To manually change the text of the template, the "<code>text1=<var>your text here</var></code>" and/or "<code>text2=<var>your other text here</var></code>" parameters can be specified. "<code>text1=</code>" changes the automatic text on the first line to your own word(s). "<code>text2=</code>" changes the automatic text on the second line to your own word(s). If "<code>text1=</code>" parameter is specified without the "<code>text2=</code>" parameter, both the first and second line of text will be custom based on the text given in the "<code>text1=</code>" parameter.
+
+Example usage:
+
+{{T|Documentation subpage|text1{{=}}custom first and second line text|style=code}}
+
+{{T|Documentation subpage|text2{{=}}custom second line text only|style=code}}
+
+{{T|Documentation subpage|text1{{=}}custom first line text|text2{{=}}custom second line text|style=code}}
+
+== How it is displayed ==
+This template should be placed at the top of "/doc" pages. It changes output depending on where it is viewed:
+* On a "/doc" page, it displays a box explaining template documentation and links to the template page.
+* On other pages (i.e., pages transcluding the "/doc" page), the template will not show. The template page itself (which contains {{T|Documentation|style=code}}) will automatically note that the documentation is [[mw:Help:Transclusion|transcluded]] from a subpage.
+
+== Functions ==
+In addition to the output message, the template categorizes pages to [[:Category:Template documentation]], [[:Category:Module documentation]],  [[:Category:User page documentation]], or similar (named after the subject space), but only for documentation pages in namespaces with the subpage feature. It defaults the [[w:Help:Category#Sort parameters|sort key]] to the page name without namespace (i.e., "Foo" on "Template:Foo", so it would be sorted in categories under 'F').
+{{FandomLicense|doors-game|Template:Documentation_subpage/doc}}
+<includeonly>[[Category:Documentation templates| {{PAGENAME}}]]</includeonly>

@@ -1,0 +1,55 @@
+{{Documentation/Header}}
+Embeds a '''bilibili''' cover video as a sample, via the EmbedVideo extension. The bilibili counterpart to the <code>ytsample</code> and <code>nndsample</code> parameters of {{T|Utaite}}.
+
+==Syntax==
+{{T|BBsample|block=1
+|v1=id =
+|v2=song =
+|v3=singer =
+|v4=producer =
+|v5=dim =
+|v6=align =
+|v7=alt =
+}}
+
+The video ID may also be given as the '''second positional parameter'''.
+
+==Example==
+<pre>{{BBsample|id=BV1xx411c7XD|song=Song Title|singer=Hanser|producer=Producer Name}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>id</code> || <code>2</code> || Video ID || The bilibili video ID. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>song</code> || – || Song || Song title, used in the caption. || string || A sample of a cover song ||
+|-
+| <code>singer</code> || – || Singer || Performer credited in the caption. || string || {{T|BBsample/name}} ||
+|-
+| <code>producer</code> || – || Producer || Adds ", originally composed by …" to the caption. || string || – ||
+|-
+| <code>dim</code> || – || Dimensions || Player width. || string || 300px ||
+|-
+| <code>align</code> || – || Alignment || Float alignment of the player. || string || left ||
+|-
+| <code>alt</code> || – || Caption override || Replaces the entire generated caption. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Embeds a bilibili cover video as a sample.",
+"params": {
+"id": { "label": "Video ID", "description": "The bilibili video ID.", "type": "string", "aliases": ["2"], "required": true },
+"song": { "label": "Song", "description": "Song title used in the caption.", "type": "string", "default": "A sample of a cover song" },
+"singer": { "label": "Singer", "description": "Performer credited in the caption.", "type": "string" },
+"producer": { "label": "Producer", "description": "Adds 'originally composed by' to the caption.", "type": "string" },
+"dim": { "label": "Dimensions", "description": "Player width.", "type": "string", "default": "300px" },
+"align": { "label": "Alignment", "description": "Float alignment.", "type": "string", "default": "left" },
+"alt": { "label": "Caption override", "description": "Replaces the generated caption entirely.", "type": "string" }
+},
+"paramOrder": ["id","song","singer","producer","dim","align","alt"],
+"format": "block"
+}
+</templatedata>
+</div>

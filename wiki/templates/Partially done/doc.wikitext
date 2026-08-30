@@ -1,0 +1,71 @@
+* Part of the series: {{tl|to do}}, {{tl|in progress}}, {{tl|partially done}}, {{tl|done}}, {{tl|not done}}:
+
+* {{to do}}
+* {{in progress}}
+* {{partially done}}
+* {{done}}
+* {{not done}}
+
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": {
+				"en": "Text",
+				"cs": "Text",
+				"fr": "Texte"
+			},
+			"description": {
+				"en": "Field to change the displayed text",
+				"cs": "Pole pro změnu zobrazeného textu",
+				"fr": "texte affiché"
+			},
+			"default": {
+				"en": "\"Partially done\" ",
+				"fr": "\"Partiellement fait\"",
+				"bg": "\"Незавършено\" ",
+				"cs": "\"Částečně hotové\" ",
+				"de": "\"Teilweise abgeschlossen\" ",
+				"es": "\"Hecho parcialmente\" ",
+				"hu": "\"Részben kész\"",
+				"id": "\"Sebagian terselesaikan\"",
+				"mk": "\"Делумно извршено\"",
+				"nl": "\"Gedeeltelijk klaar\"",
+				"pt": "\"Parcialmente concluído\"",
+				"pt-br": "\"Parcialmente concluído\"",
+				"ru": "\"Частично сделано\"",
+				"sv": "\"Delvis klart\"",
+				"tr": "\"Kısmen yapıldı\"",
+				"uk": "\"Частково зроблено\"",
+				"ar": "منفذ جزئيا",
+				"fa": "فارسی",
+				"hi": "अर्ध-पूर्ण",
+				"th": "สำเร็จแล้วบางส่วน",
+				"zh": "部分完成",
+				"ja": "部分的に完了",
+				"ko": "부분 완료"
+			},
+			"type": "string"
+		},
+		"size": {
+			"description": {
+				"en": "Size of the icon.",
+				"cs": "Velikost ikony.",
+				"fr": "taille de l'icône"
+			},
+			"label": {
+				"en": "Size",
+				"cs": "Velikost",
+				"fr": "Taille"
+			},
+			"default": "18",
+			"type": "number"
+		}
+	},
+	"format": "inline",
+	"description": {
+		"en": "Used to show the status of a realised item, function, action, etc.",
+		"fr": "Utilisé pour indiquer l'état d'un élément partiellement réalisé, d'une fonction, d'une action, etc."
+	}
+}
+</templatedata>

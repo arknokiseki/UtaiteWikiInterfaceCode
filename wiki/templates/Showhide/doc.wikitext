@@ -1,0 +1,37 @@
+{{Documentation/Header}}
+Wraps content in a collapsible <code>NavFrame</code> box with a clickable header. The box starts '''collapsed'''.
+
+==Syntax==
+{{T|Showhide|block=1
+|v1=header
+|v2=content
+}}
+
+==Example==
+{{T|Showhide|Click to expand|Hidden content goes here.|_Y_=1}}
+
+{{clr}}
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Header || Always-visible header text that toggles the box. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>2</code> || – || Content || The content revealed when expanded. || content || – ||
+|}
+
+==See also==
+* {{T|Scrollbox}} — for long content that should scroll rather than collapse
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Wraps content in a collapsible box that starts collapsed.",
+"params": {
+"1": { "label": "Header", "description": "Visible header text that toggles the box.", "type": "string", "required": true },
+"2": { "label": "Content", "description": "Content revealed when expanded.", "type": "content" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:General wiki templates]]</includeonly>

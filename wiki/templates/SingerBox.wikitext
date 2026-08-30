@@ -1,0 +1,9 @@
+<includeonly>{{#if:{{{name|}}}|<div class="singer-box"><!--
+  --><div class="singer-image"><!--
+    -->{{#ifeq:{{{image|}}}||
+      [[File:404simple.png|275px|link={{{name|}}}|center]]
+    |[[File:{{{image}}}|275px|link={{{name|}}}|center]]}}<!--
+  --></div><!--
+  --><div class="singer-name">[[{{{name}}}]]</div><!--
+--></div>|}}</includeonly><noinclude>{{doc}}[[Category:Templates Used in Main Content]]
+</noinclude>

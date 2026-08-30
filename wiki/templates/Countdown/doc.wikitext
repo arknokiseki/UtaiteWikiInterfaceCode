@@ -1,0 +1,52 @@
+{{Documentation/Header}}
+A live countdown timer to a scheduled date and time. The template renders a container with <code>data-</code> attributes; the visible ticking numbers are produced by the wiki's countdown JavaScript, so nothing appears if scripts are disabled.
+
+==Syntax==
+{{T|Countdown|block=1
+|v1=endTime =
+|v2=timezone =
+|v3=title =
+|v4=style =
+|v5=align =
+}}
+
+==Example==
+{{T|Countdown
+|endTime = 2029-05-05 15:37:25
+|timezone = UTC+9
+|title = Season 3 Launch!
+|style = card
+|align = center
+|_Y_=1
+}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>endTime</code> || – || End time || Target date and time, as <code>YYYY-MM-DD HH:MM:SS</code>. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>timezone</code> || – || Timezone || Timezone the end time is expressed in. || string || UTC+9 ||
+|-
+| <code>title</code> || – || Title || Caption shown above the timer. Omitted renders no title. || string || – ||
+|-
+| <code>style</code> || – || Style || Visual variant, applied as the CSS class <code>countdown-style-…</code>. || string || card ||
+|-
+| <code>align</code> || – || Alignment || Applied as the CSS class <code>countdown-align-…</code>. || string || left ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A live JavaScript countdown timer to a scheduled date and time.",
+"params": {
+"endTime": { "label": "End time", "description": "Target date and time as YYYY-MM-DD HH:MM:SS.", "type": "string", "required": true },
+"timezone": { "label": "Timezone", "description": "Timezone of the end time.", "type": "string", "default": "UTC+9" },
+"title": { "label": "Title", "description": "Caption above the timer.", "type": "string" },
+"style": { "label": "Style", "description": "Visual variant.", "type": "string", "default": "card" },
+"align": { "label": "Alignment", "description": "Alignment variant.", "type": "string", "default": "left" }
+},
+"paramOrder": ["endTime","timezone","title","style","align"],
+"format": "block"
+}
+</templatedata>
+</div>

@@ -1,0 +1,6 @@
+<includeonly>{{#if:{{{1|}}}|{{GroupBox|name={{{1}}}{{!}}{{{1}}}|image={{#if:{{#invoke:Group|getParameter|{{{1}}}|image}}|{{#invoke:Group|getParameter|{{{1}}}|image}}|Unknown}}|'''Group not found. Please ensure the name is correct.'''}}}}</includeonly>
+<noinclude>
+==Example:==
+<pre>{{ProcessSingerPage/GroupProfile/noCat|After the Rain}}{{ProcessSingerPage/GroupProfile/noCat|Anmitsuya}}</pre>
+==Output:==
+{{ProcessSingerPage/GroupProfile/noCat|After the Rain}}{{ProcessSingerPage/GroupProfile/noCat|Anmitsuya}}</noinclude>

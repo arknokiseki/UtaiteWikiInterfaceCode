@@ -1,0 +1,16 @@
+<includeonly>{{Notice
+|tone=rgb(234, 158, 36);
+|icon=<i class="fas fa-ban fa-fade" style="color: rgb(234, 158, 36);"></i>
+|header=Deprecated
+|info=This {{#switch: {{NAMESPACE}}
+  | Template = template
+  | Module   = module
+  | #default = page
+}} is deprecated and may be removed in a future update. Please use the updated replacement instead. If you have questions, visit the [[{{TALKPAGENAME}}|talk page]] or contact an administrator.
+|width=100%
+|image=
+|border=orange
+|style=
+}}</includeonly><noinclude>
+{{Notice/deprecated}}
+</noinclude>

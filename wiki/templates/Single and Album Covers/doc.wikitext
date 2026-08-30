@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images as single or album covers.
+;Syntax
+:Type <code>{{t|Single and Album Covers}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

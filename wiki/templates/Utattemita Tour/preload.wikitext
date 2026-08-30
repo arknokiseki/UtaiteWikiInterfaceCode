@@ -1,0 +1,259 @@
+<includeonly>{{Utattemita tours
+|namejap        = Japanese
+|nameeng        = Translation
+|date           = Month XX, 20XX - Month XX, 20XX
+|openingyt      = 
+|openingnnd     = 
+|endingyt       = 
+|endingnnd      = 
+
+|track1title    = Title in Romaji
+|track1nnd      = 
+|track1about    = 
+|track1original = 
+|track1utaite   = 
+
+|track2title    = 
+|track2nnd      = 
+|track2about    = 
+|track2original = 
+|track2utaite   = 
+
+|track3title    = 
+|track3nnd      = 
+|track3about    = 
+|track3original = 
+|track3utaite   = 
+
+|track4title    = 
+|track4nnd      = 
+|track4about    = 
+|track4original = 
+|track4utaite   = 
+
+|track5title    = 
+|track5nnd      = 
+|track5about    = 
+|track5original = 
+|track5utaite   = 
+
+|track6title    = 
+|track6nnd      = 
+|track6about    = 
+|track6original = 
+|track6utaite   = 
+
+|track7title    = 
+|track7nnd      = 
+|track7about    = 
+|track7original = 
+|track7utaite   = 
+
+|track8title    = 
+|track8nnd      = 
+|track8about    = 
+|track8original = 
+|track8utaite   = 
+
+|track9title    = 
+|track9nnd      = 
+|track9about    = 
+|track9original = 
+|track9utaite   = 
+
+|track10title    = 
+|track10nnd      = 
+|track10about    = 
+|track10original = 
+|track10utaite   = 
+
+|track11title    = 
+|track11nnd      = 
+|track11about    = 
+|track11original = 
+|track11utaite   = 
+
+|track12title    = 
+|track12nnd      = 
+|track12about    = 
+|track12original = 
+|track12utaite   = 
+
+|track13title    = 
+|track13nnd      = 
+|track13about    = 
+|track13original = 
+|track13utaite   = 
+
+|track14title    = 
+|track14nnd      = 
+|track14about    = 
+|track14original = 
+|track14utaite   = 
+
+|track15title    = 
+|track15nnd      = 
+|track15about    = 
+|track15original = 
+|track15utaite   = 
+
+|track16title    = 
+|track16nnd      = 
+|track16about    = 
+|track16original = 
+|track16utaite   = 
+
+|track17title    = 
+|track17nnd      = 
+|track17about    = 
+|track17original = 
+|track17utaite   = 
+
+|track18title    = 
+|track18nnd      = 
+|track18about    = 
+|track18original = 
+|track18utaite   = 
+
+|track19title    = 
+|track19nnd      = 
+|track19about    = 
+|track19original = 
+|track19utaite   = 
+
+|track20title    = 
+|track20nnd      = 
+|track20about    = 
+|track20original = 
+|track20utaite   = 
+}}</includeonly><noinclude><pre>
+{{Utattemita tours
+|namejap        = Japanese
+|nameeng        = Translation
+|date           = Month XX, 20XX - Month XX, 20XX
+|openingyt      = 
+|openingnnd     = 
+|endingyt       = 
+|endingnnd      = 
+
+|track1title    = Title in Romaji
+|track1nnd      = 
+|track1about    = 
+|track1original = 
+|track1utaite   = 
+
+|track2title    = 
+|track2nnd      = 
+|track2about    = 
+|track2original = 
+|track2utaite   = 
+
+|track3title    = 
+|track3nnd      = 
+|track3about    = 
+|track3original = 
+|track3utaite   = 
+
+|track4title    = 
+|track4nnd      = 
+|track4about    = 
+|track4original = 
+|track4utaite   = 
+
+|track5title    = 
+|track5nnd      = 
+|track5about    = 
+|track5original = 
+|track5utaite   = 
+
+|track6title    = 
+|track6nnd      = 
+|track6about    = 
+|track6original = 
+|track6utaite   = 
+
+|track7title    = 
+|track7nnd      = 
+|track7about    = 
+|track7original = 
+|track7utaite   = 
+
+|track8title    = 
+|track8nnd      = 
+|track8about    = 
+|track8original = 
+|track8utaite   = 
+
+|track9title    = 
+|track9nnd      = 
+|track9about    = 
+|track9original = 
+|track9utaite   = 
+
+|track10title    = 
+|track10nnd      = 
+|track10about    = 
+|track10original = 
+|track10utaite   = 
+
+|track11title    = 
+|track11nnd      = 
+|track11about    = 
+|track11original = 
+|track11utaite   = 
+
+|track12title    = 
+|track12nnd      = 
+|track12about    = 
+|track12original = 
+|track12utaite   = 
+
+|track13title    = 
+|track13nnd      = 
+|track13about    = 
+|track13original = 
+|track13utaite   = 
+
+|track14title    = 
+|track14nnd      = 
+|track14about    = 
+|track14original = 
+|track14utaite   = 
+
+|track15title    = 
+|track15nnd      = 
+|track15about    = 
+|track15original = 
+|track15utaite   = 
+
+|track16title    = 
+|track16nnd      = 
+|track16about    = 
+|track16original = 
+|track16utaite   = 
+
+|track17title    = 
+|track17nnd      = 
+|track17about    = 
+|track17original = 
+|track17utaite   = 
+
+|track18title    = 
+|track18nnd      = 
+|track18about    = 
+|track18original = 
+|track18utaite   = 
+
+|track19title    = 
+|track19nnd      = 
+|track19about    = 
+|track19original = 
+|track19utaite   = 
+
+|track20title    = 
+|track20nnd      = 
+|track20about    = 
+|track20original = 
+|track20utaite   = 
+}}
+</pre></noinclude>

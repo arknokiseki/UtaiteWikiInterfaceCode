@@ -1,0 +1,2 @@
+{{LicenseBox|image=WIP descr.png|text=''This file is an official icon or logo.''}}{{Fairuse}}<includeonly>[[Category:Icons and Logos]][[Category:Media]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]][[Category:Image wiki templates]] [[Category:Licensing templates]]</noinclude>

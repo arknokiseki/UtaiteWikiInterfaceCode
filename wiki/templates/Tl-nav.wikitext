@@ -1,0 +1,72 @@
+<onlyinclude><includeonly>{{Navbar|Tl-nav|text=These tables:|style=float: right;}}</includeonly>
+<div style="overflow-x: auto; margin: 1em 0; clear: both;">
+{| class="wikitable plainrowheaders" style="margin: 0 auto;"
+|+ Comparison of template-linking templates according to the styles of generated text and link produced
+|- style="background-color: #fee;"
+! scope="col" rowspan="2"| Text style ↓
+! scope="col" rowspan="2"| {{tlx|tlg}} options{{NoteTag|name="TlTfn1"}}<br />to achieve text style
+! scope="col" colspan="3"| Link style
+|- style="background-color: #fee;"
+! scope="col"| Linked
+! scope="col"| Unlinked
+! scope="col"| Linked with subst
+|-
+! scope="row" style="font-weight: bold; text-align: center;" | {{tlx|tlg}} options{{NoteTag|name="TlTfn1"}}<br />to achieve link style
+| {{n/a}}
+| {{n/a|DEFAULT}}
+| <code>nolink=1</code>
+| <code>subst=1</code>
+|-
+! scope="row" style="font-weight: normal; text-align: left;" | normal
+| {{n/a|DEFAULT}}
+| {{Unbulleted list
+| {{tlg|tlg}}<wbr/>{{NoteTag|name="TlTfn1"}}
+| {{tl|tl}}
+| {{tlp|tlp|1|2|...}}<wbr/>{{NoteTag|name="TlTfn2"}}
+}}
+| {{Unbulleted list
+| {{tlf|tlf}}<wbr/>{{NoteTag|name="TlTfn2"}}<br/><sup><[[Template:tlf|template link]]></sup>
+}}
+| {{Unbulleted list
+| {{tls|tls}}
+| {{tlsu|Template:tlsu}}<wbr/>{{NoteTag|name="TlTfn3"}}
+}}
+|-
+! scope="row" style="font-weight: normal; text-align: left;" | <code>code</code>
+| <code>code=1</code>
+| {{Unbulleted list
+| {{tl2|tl2}}
+}}
+| {{Unbulleted list
+| {{tlc|tlc}}<wbr/>{{NoteTag|name="TlTfn2"}}<br/><sup><[[Template:tlc|template link]]></sup>
+| {{tnull|tnull}}<br/><sup><[[Template:tnull|template link]]></sup>
+}}
+| {{Unbulleted list
+| {{tlxs|tlxs}}
+}}
+|-
+! scope="row" style="font-weight: normal; text-align: left;" | {{mono|monospace}}
+| <code>mono=1</code><wbr/>{{NoteTag|name="TlTfn4"}}
+| rowspan="3" | {{Unbulleted list
+| {{tlx|tlx}}<wbr/>{{NoteTag|name="TlTfn4"}}
+| {{tll|tll}}<wbr/>{{NoteTag|name="TlTfn4"}}
+}}
+| colspan="2" rowspan="3" {{n/a}}
+|-
+! scope="row" style="font-weight: normal; text-align: left;" | <code style="background:transparent;border:none;color:var(--color-emphasized,#101418);">plaincode</code>
+| <code>plaincode=1</code><wbr/>{{NoteTag|name="TlTfn5"}}
+|-
+! scope="row" style="font-weight: normal; text-align: left;" | <kbd>kbd</kbd>
+| <code>kbd=1</code><wbr/>{{NoteTag|name="TlTfn6"}}
+|}
+</div>
+{{NoteFoot|refs=
+{{NoteTag|name="TlTfn1"|{{tl2|tlg}} is the most general template, allowing any combination of text style and/or link style options.}}
+{{NoteTag|name="TlTfn2"|Prevents wrapping of text by placing it inside <syntaxhighlight inline lang="html"><span style="white-space:nowrap">...</span></syntaxhighlight> tags.}}
+{{NoteTag|name="TlTfn3"|Allows links to templates in any namespace.}}
+{{NoteTag|name="TlTfn4"|Displays monospaced font using <syntaxhighlight inline lang="html"><span style="font-family:monospace">...</span></syntaxhighlight>.}}
+{{NoteTag|name="TlTfn5"|{{tlc|<nowiki/>tlg|plaincode{{=}}1}} uses {{ll|Help:Formatting#&lt;code&gt;|<syntaxhighlight lang=html inline><code style="background:transparent;border:none">...</code></syntaxhighlight>}}.}}
+{{NoteTag|name="TlTfn6"|{{tlc|<nowiki/>tlg|kbd{{=}}1}} uses {{tag|kbd|open}} tags.}}
+}}</onlyinclude>
+{{Documentation|{{translatable-doc}}}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

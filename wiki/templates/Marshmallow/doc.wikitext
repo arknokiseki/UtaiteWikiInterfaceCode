@@ -1,0 +1,5 @@
+==Code==
+<pre>{{Marshmallow|jpafu1zu4e3qrmx|ARKHE's Marshmallow}}</pre>
+
+==Output==
+{{Marshmallow|jpafu1zu4e3qrmx|ARKHE's Marshmallow}}

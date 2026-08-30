@@ -1,0 +1,10 @@
+<includeonly>[[wikipedia:{{{1|}}}|{{{2|{{{1|}}}}}}]]&nbsp;([[File:Wikipedia Icon.png|15px|middle|link=|alt=Wikipedia icon]])</includeonly><noinclude>{{documentation|content={{nobots}}
+Link to article and display article name:<br />
+{{T|w/Draft|Apple|_Y_=1}}
+
+Link to article and display text different from article name:<br />
+{{T|w/Draft|Apple|Fruit of God|_Y_=1}}
+
+Link to article in [[wikipedia:meta:List of Wikipedias|another language]] and display article title or any text:<br />
+{{T|w/Draft|es:Manzana|Fruit of God|_Y_=1}}
+}}</noinclude>

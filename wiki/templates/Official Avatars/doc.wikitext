@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images as official utaite avatar illustrations.
+;Syntax
+:Type <code>{{t|Official Avatars}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

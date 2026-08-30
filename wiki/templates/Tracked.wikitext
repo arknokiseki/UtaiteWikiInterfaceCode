@@ -1,0 +1,16 @@
+<onlyinclude><templatestyles src="Template:Tracked/styles.css"
+/><div class="tpl-tracked plainlinks {{#if:{{{1|}}}|mw-trackedTemplate}} float-{{{float|{{dir|{{pagelang}}|left|right}}}}}"><!--
+--><!--T:1--> Tracked in [[phabricator:|Phabricator]]<br/><!--
+-->{{#if:{{{1|}}}|'''[[phabricator:{{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}|<span class="trakfab-{{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}"><!--T:2--> Task {{ #ifeq: {{padleft: | 1 | {{ uc: {{{1}}} }} }} | T | {{ uc: {{{1}}} }} | T{{ #expr: {{{1}}} + 2000 }} }}</span>]]'''<br/>}}<!--
+--><span class="{{trim|1=status {{#switch:{{lc:{{{2|}}}}}
+  |resolved|fixed=resolved
+}}}}"><!--
+-->{{#switch:{{lc:{{{2|}}}}}
+  |resolved|fixed=<!--T:3--> Resolved
+  |invalid=<!--T:4--> Invalid
+  |duplicate=<!--T:5--> Duplicate
+  |declined|wontfix=<!--T:6--> Declined
+  |stalled|later=<!--T:7--> Stalled
+  |open=<!--T:8--> Open
+}}</span></div></onlyinclude>
+{{documentation}}

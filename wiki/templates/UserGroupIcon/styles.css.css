@@ -1,0 +1,244 @@
+/* ============================================
+   User Group Icon Template Styles
+   ============================================ */
+
+/* Mobile visibility utilities */
+.mobile-hidden {
+    display: inline;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+/* Tooltip cursor */
+.role-badge-tooltip {
+    cursor: help;
+}
+
+/* Base badge icon styles */
+.badge-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    margin-right: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge-icon:hover {
+    transform: translateY(-1px);
+}
+
+/* Icon styles */
+.badge-icon i {
+    line-height: 1;
+}
+
+/* === ROLE-SPECIFIC STYLES === */
+
+/* Bureaucrat */
+.badge-bureaucrat {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #f1c40f;
+}
+
+.badge-bureaucrat i {
+    color: #f1c40f;
+}
+
+.badge-bureaucrat:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Interface Admin */
+.badge-interface-admin {
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-interface-admin i {
+    color: white;
+}
+
+.badge-interface-admin:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Administrator */
+.badge-administrator {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-administrator i {
+    color: white;
+}
+
+.badge-administrator:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Content Moderator */
+.badge-content-moderator {
+    background: linear-gradient(135deg, #4834d4, #6c5ce7);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-content-moderator i {
+    color: white;
+}
+
+.badge-content-moderator:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Staff */
+.badge-staff {
+    background: linear-gradient(135deg, #3742fa, #5352ed);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-staff i {
+    color: white;
+}
+
+.badge-staff:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Wiki Specialist */
+.badge-wiki-specialist {
+    background: linear-gradient(135deg, #2ed573, #7bed9f);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-wiki-specialist i {
+    color: white;
+}
+
+.badge-wiki-specialist:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Thread Moderator */
+.badge-thread-moderator {
+    background: linear-gradient(135deg, #ffa502, #ff6348);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.badge-thread-moderator i {
+    color: white;
+}
+
+.badge-thread-moderator:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* === SIZE VARIANTS === */
+
+/* Small size (14px) */
+.badge-small {
+    width: 14px;
+    height: 14px;
+}
+
+.badge-small i {
+    font-size: 7px;
+}
+
+.badge-small.badge-bureaucrat {
+    border-width: 1.5px;
+}
+
+/* Medium size (18px) - Default */
+.badge-medium {
+    width: 18px;
+    height: 18px;
+}
+
+.badge-medium i {
+    font-size: 9px;
+}
+
+/* Large size (24px) */
+.badge-large {
+    width: 24px;
+    height: 24px;
+}
+
+.badge-large i {
+    font-size: 12px;
+}
+
+.badge-large.badge-bureaucrat {
+    border-width: 3px;
+}
+
+/* === ACCESSIBILITY === */
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .badge-icon {
+        transition: none;
+    }
+    
+    .badge-icon:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .badge-icon {
+        border: 2px solid currentColor;
+    }
+    
+    .badge-bureaucrat {
+        border-width: 3px;
+    }
+}
+
+/* === DARK MODE SUPPORT === */
+
+@media (prefers-color-scheme: dark) {
+    .badge-icon {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .badge-bureaucrat {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    }
+    
+    .badge-icon:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+    
+    .badge-bureaucrat:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+    .badge-icon {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+    
+    .badge-icon:hover {
+        transform: none;
+    }
+}

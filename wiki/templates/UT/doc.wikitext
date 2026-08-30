@@ -1,0 +1,4 @@
+<pre>{{UT|English tour name|2010}}</pre>
+...results in:
+{{UT|English tour name|2010}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

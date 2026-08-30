@@ -1,0 +1,14 @@
+<includeonly>| style="text-align:center" | {{{rank|}}}
+| style="text-align:center" | {{#if:{{{nnd|}}}|{{nnd|{{{nnd}}}}}|{{Nnd/nonv}}}}
+| style="min-width:150px" | {{{utaite|}}}
+| style="min-width:250px" | {{{title|}}}
+|-
+</includeonly><noinclude>
+One row of {{tl|UtaColle/Table}}. Parameters:
+* <code>rank</code> &mdash; ranking position
+* <code>nnd</code> &mdash; niconico video id, e.g. <code>sm46024234</code>
+* <code>utaite</code> &mdash; either internal article link (<span style="color: cyan; font-weight: 800; font-size: 1.4em;"><nowiki>[[</nowiki></span><code><article></code><span style="color: cyan; font-weight: 800; font-size: 1.4em;"><nowiki>]]</nowiki></span>) or plain scraped uploader name
+* <code>title</code> &mdash; romanized title if available, otherwise the raw Japanese title
+
+Generated automatically; see {{tl|UtaColle/Table}}.
+</noinclude>

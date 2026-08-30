@@ -1,0 +1,6 @@
+;Description
+:This template is used to mark text as needing sourcing.
+;Syntax
+:Place <code>{{t|cite}}</code> after unsourced and/or questionable text so that its implication is self explanatory as to what is lacking citation. If necessary, use the article's talk page to discuss further details.
+
+<includeonly>[[Category:Assistant templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

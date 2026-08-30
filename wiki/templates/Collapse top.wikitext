@@ -1,0 +1,166 @@
+<noinclude>
+</noinclude><!--
+--><div style="display:{{{display|block}}};margin-{{dir|{{pagelang}}|right|left}}:{{{indent|0}}};{{{extrastyle|}}}"><!-- NOTE: width renders incorrectly if added to main STYLE section
+  --><table class="mw-collapsible {{#if:{{{expand|}}}|| mw-collapsed}}" style="margin-top:.2em; border:{{{border|1px}}} solid {{{b-color|silver}}};text-align:{{dir|{{pagelang}}|right|left}}; width: {{{width|100%}}};"><tr><th style="font-size:{{{title-font-size|112%}}};background:{{{bg|var(--background-color-neutral-subtle, #f8f9fa)}}};color:{{{fc|inherit}}};text-align:{{#if:{{{left|}}}
+  | {{dir|{{pagelang}}|right|left}}
+  | center
+  }}">{{{1|{{{title|{{{reason|{{{header|{{{heading|Extended content}}}}}}}}}}}}}}}</th></tr><!--
+  -->{{#if:{{{warning|{{{2|}}}}}}
+  | <tr><td style="text-align:center;font-style:italic">{{#if:{{{2|}}}|{{{2}}}|The following is a closed debate. {{Strong
+    |style=color:var(--color-error, #bf3c2c)
+    |1=Please do not modify it.
+    }}<!--/Strong-->}}</td></tr>
+  }}<!--
+  --><tr><td style="font-size:{{{font-size|112%}}};background:{{{bg2|var(--background-color-base, #fff)}}};color:{{{fc2|inherit}}};border:solid {{{border2|1px silver}}};padding:{{{padding|8px}}}"><!--
+--><noinclude>
+<div style="width:100%;text-align:center">''The following content has been placed in a collapsed box for improved usability.''</div>
+{{Collapse bottom}}
+{{Documentation|content=
+
+The {{Tlx|Collapse top}} template, and its paired template {{Tlx|Collapse bottom}}, are used for placing a collapse box around a talk page discussion.
+
+== Usage ==
+Place {{Tlx|Collapse top}} and {{Tlx|Collapse bottom}} around the text to be collapsed.
+For example:
+
+<syntaxhighlight lang="wikitext">
+{{Collapse top|title=This is the title text}}
+Sample contents text
+{{Collapse bottom}}
+</syntaxhighlight>
+
+produces:
+
+{{Collapse top|title=This is the title text}}
+Sample contents text
+{{Collapse bottom}}
+
+{{Tlx|Collapse bottom}} should always be placed on its own line.
+
+== Parameters ==
+This template takes the following parameters, all of which are optional.
+They are case-sensitive.
+Those that take CSS measurements require them in CSS format (e.g. <code style="color: #006400">1em</code> not <code style="color:#8B0000">1&nbsp;em</code>).
+
+; {{Para|1}} <span style="font-weight:normal">(or first unnamed parameter)</span>, {{Para|title}}, {{Para|reason}}, {{Para|header}}, {{Para|heading}}
+: Will give the collapsed box a title, which occurs on the same line as the ''show'' link and is always visible. It defaults to "Extended content".
+: For example, <code><nowiki>{{Collapse top|title=This is the title text}}</nowiki></code> or <code><nowiki>{{Collapse top|This is the title text}}</nowiki></code>. Note: The shorter, unnamed markup will not work if the title value contain an equals (<code>=</code>) character.
+; {{Para|warning|yes}}
+: Will display a default warning line under the main title which reads "The following is a closed debate. {{Strong|style=color:red|Please do not modify it.}}"
+: Any non-empty value supplied to this parameter will have this effect (i.e. {{Para|warning|<span style="color:red">no</span>}} will not work as expected).
+; {{Para|2}} <span style="font-weight:normal">(or second unnamed parameter)</span>
+: This is optional warning-line text. It will override the standard warning line above; it is not necessary to also use {{Para|warning|yes}} in this case, though doing so is harmless.
+; {{Para|left|yes}}
+: Will align the title along the left margin (in RTL languages, along the right margin instead).
+: By default, text is centered, specifically between the left edge of the green box and the left edge of the "show" link.
+: Any non-empty value supplied to this parameter will have this effect (i.e. {{Para|left|<span style="color:#8B0000">no</span>}} will not work as expected).
+; {{Para|expand|yes}}
+: Will leave the material uncollapsed with the border and coloring. Default is to collapse the material.
+: Any non-empty value supplied to this parameter will have this effect (i.e. {{Para|expand|<span style="color:#8B0000">no</span>}} will not work as expected).
+; {{Para|bg}}
+: Sets the background color of the title of the collapsible bar. Defaults to "#F8FCFF", a whitish color. Named colors are listed at [[List of colors]].
+: For example, <code><nowiki>{{Collapse top|This is the title text|bg=#008000}}</nowiki></code> or <code><nowiki>{{Collapse top|This is the title text|bg=green}}</nowiki></code> (numeric HTML color codes require the leading <code>#</code>).
+; {{Para|fc}}
+: Sets the font color of the title of the collapsible bar. Defaults to "black".
+: See {{Para|bg}}, above, for details on color options.
+; {{Para|border}}
+: Sets the width of the border line on the collapsed material. Defaults to <code>1px</code>.
+: For example, <code><nowiki>{{Collapse top|border=2px}}</nowiki></code>; going much thicker than this is not very useful.
+; {{Para|b-color}}
+: Sets the border color. Defaults to <code>silver</code> (<code>#C0C0C0</code>).
+: See {{Para|bg}}, above, for details on color options.
+; {{Para|padding}}
+: Sets the padding (distance from borders) on the collapsed material inside the colored area. Defaults to <code>8px</code>.
+; {{Para|width}}
+: Sets the width of the overall template relative to the page (or a block element containing the collapse box). This should virtually always be given as a percentage, e.g. {{Para|width|50%}}, or in relative <code>em</code> units, e.g. {{Para|width|30em}}. Pixel-based values should be avoided, as they are effectively meaningless – the result will be different depending on each user's browser and local CSS settings (which browser and operating system it is, zoom level, font sizes, etc.).
+; {{Para|border2}}
+: Sets the properties of the border of the box that appears when template is expanded. Defaults to <code>1px silver</code> (there is no provision to change from a solid line).
+: For example, <code><nowiki>{{Collapse top|border2=2px}}</nowiki></code> (only width or color will be changed if only one value is supplied).
+: See {{Para|bg}}, above, for details on color options.
+; {{Para|bg2}}
+: Sets the background color of the box that appears when template is expanded; defaults to <code>white</code> (<code>#FFF</code>).
+: See {{Para|bg}}, above, for details on color options.
+; {{Para|indent}}
+: Indents the box from the left of the page. Defaults to no indentation. Each <code>:</code> in talk page markup is approximately equivalent to <code>1.6em</code> of indent (e.g., to match <code>::::</code> indentation level, use {{Para|indent|6.4em}}). You can also use a percentage value.
+: Pixel-based values should be avoided (see {{Para|width}}, above, for the reason).
+
+
+== Examples == 
+
+* Adding a box title (if omitted, default is "Extended content") – <syntaxhighlight lang="wikitext" inline>{{Collapse top|This is the title text}}</syntaxhighlight>
+
+{{Collapse top|This is the title text}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Adding a standard warning line – <syntaxhighlight lang="wikitext" inline>{{Collapse top|This is the title text|warning=true}}</syntaxhighlight>
+
+{{Collapse top|This is the title text|warning=true}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Adding a custom warning line – <syntaxhighlight lang="wikitext" inline>{{Collapse top|This is the title text|This is a custom warning line}}</syntaxhighlight>
+
+{{Collapse top|This is the title text|This is a custom warning line}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Aligning box title along left margin – <syntaxhighlight lang="wikitext" inline>{{Collapse top|left=true}}</syntaxhighlight>
+
+{{Collapse top|left=true}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Changing background color – <syntaxhighlight lang="wikitext" inline>{{Collapse top|bg=#F0F2F5}}</syntaxhighlight>
+
+{{Collapse top|bg=#F0F2F5}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Adding extra padding – <syntaxhighlight lang="wikitext" inline>{{Collapse top|padding=5em}}</syntaxhighlight>
+
+{{Collapse top|padding=5em}}
+{{Lorem ipsum}}
+{{Collapse bottom}}
+
+* Archiving a section – The markup below:
+
+<syntaxhighlight lang="wikitext">{{Collapse top}}
+== Section header ==
+Sample contents text
+{{Collapse bottom}}</syntaxhighlight>
+
+
+
+must be rewritten as:
+
+
+<syntaxhighlight lang="wikitext">{{Collapse top|Section header}}
+Sample contents text
+{{Collapse bottom}}</syntaxhighlight>
+
+
+
+The end result:
+
+
+{{Collapse top|Section header}}
+Sample contents text
+{{Collapse bottom}}
+
+
+== TemplateData == 
+
+{{Collapse top/doc}}
+
+
+== See also == 
+
+* {{Tl|Collapse bottom}}
+* {{Tl|Hidden archive top}} {{int|and}} {{Tl|Hidden archive bottom}}
+* {{Tl|Hidden begin}} {{int|and}} {{Tl|Hidden end}}
+* {{Tl|Hidden}}}
+
+[[Category:Formatting templates]]
+}}
+</noinclude>

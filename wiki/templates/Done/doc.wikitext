@@ -1,0 +1,56 @@
+* Part of the series: {{tl|to do}}, {{tl|in progress}}, {{tl|partially done}}, {{tl|done}}, {{tl|not done}}:
+
+* {{to do}}
+* {{in progress}}
+* {{partially done}}
+* {{done}}
+* {{not done}}
+
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": {
+				"cs": "Text",
+				"en": "Text",
+				"fr": "Texte",
+				"pt-br": "Texto"
+			},
+			"description": {
+				"en": "Field to change the displayed text",
+				"cs": "Pole pro změnu zobrazeného textu",
+				"fr": "texte affiché",
+				"pt-br": "Substituir o texto de exibição."
+			},
+			"default": {
+				"en": "\"Done\"",
+				"fr": "\"Fait\"",
+				"pt-br": "“Concluído”"
+			},
+			"type": "string"
+		},
+		"size": {
+			"description": {
+				"en": "Size of the icon.",
+				"cs": "Velikost ikony.",
+				"fr": "taille de l'icône",
+				"pt-br": "Tamanho do ícone."
+			},
+			"label": {
+				"en": "Size",
+				"cs": "Velikost",
+				"fr": "Taille",
+				"pt-br": "Tamanho"
+			},
+			"default": "18",
+			"type": "number"
+		}
+	},
+	"format": "inline",
+	"description": {
+		"en": "Used to show the status of a realised item, function, action, etc.",
+		"fr": "Utilisé pour indiquer l'état d'un élément réalisé, d'une fonction, d'une action, etc.",
+		"pt-br": "Utilizada para exibir o estado de um item, função ou ação realizada."
+	}
+}
+</templatedata>

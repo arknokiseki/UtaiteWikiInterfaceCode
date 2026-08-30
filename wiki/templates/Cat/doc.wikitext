@@ -1,0 +1,10 @@
+==Description==
+Use in templates so that a page will only be categorized if it belongs to the <code>main</code> or <code>category</code> namespace.
+
+==Parameters==
+; <code>1=</code>
+: Category name.
+; <code>2=</code>
+: (optional) Sort key.
+
+<includeonly>[[Category:Templates/Back-end]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

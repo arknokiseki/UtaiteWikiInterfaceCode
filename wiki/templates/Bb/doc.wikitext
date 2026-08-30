@@ -1,0 +1,12 @@
+;Description
+:This template is used to link to a Bilibili Video.
+;Syntax
+:Place <code><nowiki>{{Bb|<bilibilivideoid>|description}}</nowiki></code> and substitute <bilibilivideoid> with the latter part of the Bilibili Video link (e.g., if the link is https://www.bilibili.com/video/BV1Aw411Z7VS, the bilibilivideoid will be "BV1Aw411Z7VS"). If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:{{T|Bb|BV1Aw411Z7VS|Akie's original song: 将遗憾写成歌|_Y_=1}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

@@ -1,0 +1,19 @@
+<includeonly><!--
+
+-->{{Track|n
+|title=
+|additionalshortinfo=
+|singers=<!--remove this field if you want to use page name-->
+|lyricist=
+|composer=
+|arranger=
+}}<!--remove collapsed field if you don't want the track details to be collapsed when the page loads.).--></includeonly><noinclude><pre><!--
+
+-->{{Track|n
+|title=
+|additionalshortinfo=
+|singers=<!--remove this field if you want to use page name-->
+|lyricist=
+|composer=
+|arranger=
+}}</pre></noinclude>

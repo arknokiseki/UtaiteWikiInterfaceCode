@@ -1,0 +1,19 @@
+<includeonly>{{#dpl:
+  |uses=Template:Singer
+  |category={{{category|}}}
+  |includesubpages=false
+  |mode=userformat
+  |format=,²{SingerBox,}²,
+  |include={Singer}:%TITLE%,{Singer}:image
+  |secseparators=¦name=,,¦image=,
+  |ordermethod=titlewithoutnamespace
+  |titleregexp={{{titleregexp|}}}
+  |categoryregexp={{{categoryregexp|}}}
+  |nottitleregexp={{{nottitleregexp|}}}
+  |titlematch={{{beginwith|}}}%{{{endwith|}}}
+  |count={{{count|100}}}
+  |noresultsheader=<br /><b>No Singer(s) exist for this category</b>
+  |allowcachedresults={{{cached|true}}} 
+}}</includeonly><noinclude>
+{{doc}}
+</noinclude>

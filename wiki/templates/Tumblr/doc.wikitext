@@ -1,0 +1,4 @@
+<pre>{{tumblr|tumblrusername|Illustratorname}}</pre>
+...results in:
+{{tumblr|tumblrusername|Illustratorname}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

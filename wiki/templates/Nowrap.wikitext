@@ -1,0 +1,3 @@
+<onlyinclude><templatestyles src="Template:Nowrap/styles.css"/><span class="nowrap">{{{1}}}</span></onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

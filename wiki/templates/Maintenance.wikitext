@@ -1,0 +1,15 @@
+<includeonly><!--
+--><div class="maintenance-box"><!--
+--><div class="maintenance-box__deco"></div><!--
+--><div class="maintenance-box__inner"><!--
+--><div class="maintenance-box__icon"><!--
+--><i class="fas fa-cog fa-spin"></i><!--
+--></div><!--
+--><div class="maintenance-box__content"><!--
+--><div class="maintenance-box__title">Under Maintenance</div><!--
+--><div class="maintenance-box__desc">{{#if:{{{info|}}}|{{{info}}}|This {{{1|content}}} is currently being updated. We apologize for any inconvenience.}}</div>
+</div><!--
+--></div><!--
+--></div></includeonly><noinclude>
+{{doc}}
+</noinclude>

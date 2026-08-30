@@ -1,0 +1,2 @@
+{{High Risk}}
+For more information, see [[w:c:dev:Global Lua Modules/Hatnote]].

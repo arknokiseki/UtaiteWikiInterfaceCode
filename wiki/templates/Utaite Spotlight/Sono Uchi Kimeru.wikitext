@@ -1,0 +1,34 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Sono Uchi Kimeru.png
+|caption = Twitter
+|officialjapname = そのうち決める
+|officialromajiname = Sono Uchi Kimeru
+|YTusername =
+|NNDuserpage = 26636719
+|mylist1 = 36664947
+|mylist1info =
+|mylist2 =
+|mylist2info =
+|mylist3 =
+|mylist3info =
+|mylist4 =
+|mylist4info =
+|nicommu1 = co2001582
+|nicommu1info =
+|nicommu2 =
+|nicommu2info =
+|nicommu3 =
+|nicommu3info =
+|exampletitle = Kimi no Oto
+|examplennd = sm21227944
+|exampleyt = Jsq495ghnyg
+|description = '''Sono Uchi Kimeru''' ('''そのうち決める''') is a relatively new {{NNDict|Utaite}}, having only started in April 2013.
+
+His first cover, "Afterglow"{{nnd|sm20567680}}, was rather popular when uploaded, having 15K views and 850 Mylists.
+
+Currently, his most popular cover would be his 3rd one, "Shiwa"{{nnd|sm22029175}}, with 48K views as of January 2014.
+
+Sono Uchi Kimeru's voice is deep and strong. He is noted to have a beautiful vibrato as well.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,1 @@
+{{Archived}}<includeonly>{{uptodate|Month XX, 20XX|discography}}</includeonly><noinclude>Example: <nowiki>{{uptodate|</nowiki>{{MONTHNAME|{{CURRENTMONTH}}}} {{CURRENTDAY}}, {{CURRENTYEAR}}|discography}}<br/>Output: <br/>{{uptodate|{{MONTHNAME|{{CURRENTMONTH}}}} {{CURRENTDAY}}, {{CURRENTYEAR}}|discography}}</noinclude>

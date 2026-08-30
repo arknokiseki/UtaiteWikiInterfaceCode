@@ -1,0 +1,5 @@
+<includeonly>{{Interwiki|kpop|{{{1|}}}|{{{2|{{#replace:{{{1}}}|-P |P }}}}}|server=fandom}}</includeonly><noinclude>{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

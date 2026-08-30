@@ -1,0 +1,60 @@
+{{Documentation subpage}}
+<!-- Please place categories where indicated at the bottom of this page and interwikis at Wikidata (see [[Wikipedia:Wikidata]]) -->
+
+This is the {{tl|used in system}} message box.
+
+It is meant to be put at the top of the documentation for templates and modules that are used in the Wikipedia user interface.
+
+'''Note!''' It is normal that some of the links in the message box are red. 
+
+== Usage ==
+
+The template can be used as is. But it can also take some parameters: 
+* First parameter allows you to change the second half of the heading text. See examples below.
+* Second parameter is the name of some other talk page if you want discussion to be made there instead. But a better option might be to redirect the talkpage of your template to that other talkpage.
+
+Here are some examples:
+
+<pre>
+{{used in system| in many system messages | Template talk:High Risk }}
+</pre>
+
+{{used in system| in many system messages | Template talk:High Risk }}
+
+<pre>
+{{used in system| in many system messages }}
+</pre>
+
+{{used in system| in many system messages }}
+
+<pre>
+{{used in system| | Template talk:High Risk }}
+</pre>
+
+{{used in system| | Template talk:High Risk }}
+
+The full code for a /doc page top can look like this:
+
+<pre>
+{{documentation subpage}}
+{{used in system| in many system messages }}
+<!-- Please place categories where indicated at the bottom of this page and interwikis at Wikidata (see [[Wikipedia:Wikidata]]) -->
+</pre>
+
+== Technical details ==
+
+The [[/sandbox]] and [[/testcases]] links are the standard names for such subpages. If those pages are created then the green /doc box for the template will detect them and link to them in its heading. For instance see the top of this documentation.
+
+== See also ==
+
+* {{tl|high-risk}} – For the most high-use (high-risk) templates.
+* {{tl|high-use}} – For the slightly less high-risk templates.
+* {{tl|intricate template}}
+* [[Wikipedia:Template test cases]]
+* [[Wikipedia:High-risk templates]]
+* {{tl|pp-template}} – The protection template that usually is put on high-risk templates.
+
+<includeonly>{{sandbox other||
+<!-- Categories below this line, please; interwikis at Wikidata -->
+[[Category:Templates]]
+}}</includeonly>

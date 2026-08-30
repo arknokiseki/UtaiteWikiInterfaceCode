@@ -1,0 +1,371 @@
+<div style="float:left; margin:auto" class="fifth-wrapper"><infobox theme="fifth">
+<group row-items="1">
+<data source="singer1"><format><center>{{#if:{{{box1|}}}|[[File:Defaultbox.png|link=]]|
+	{{#if:{{{url1|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+		-->{{#if:{{{title1|}}}|<!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1}}}'''</div></div><!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1}}}'''</div></div><!--
+		-->}}</div>|
+		{{#if:{{{cd1|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd1}}}|{{#expr:{{#pos:{{{cd1}}}|#}}+1}}}}}}}'''</div></div><!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd1}}}|{{#expr:{{#pos:{{{cd1}}}|#}}+1}}}}}}}'''</div></div></div>|
+			{{#if:{{{nnd1|}}}|[[File:Nicovideo.png|120px|link=]]|
+				{{#if:{{{yt1|}}}|[[File:YouTubeThumb.png|120px|link=]]|
+					{{#if:{{{bb1|}}}|[[File:bilibili.png|link=]]|
+						{{#if:{{{koe1|}}}|[[File:Defaultkoebu.png|link=]]|
+							{{#if:{{{sc1|}}}|[[File:Defaultsoundcloud.png|link=]]|
+								{{#if:{{{tm1|}}}|[[File:Defaulttmbox.png|link=]]|
+									<div style="width:120px; height:90px; overflow:hidden;"></div>
+								}}
+							}}
+						}}
+					}}
+				}}
+			}}
+		}}
+	}}
+}}{{clr}}
+</center></format></data>
+<data source="singer1"><format><center><!--
+-->{{#if:{{{box1|}}}|[https://www.box.com/s/{{{box1}}} box]|<!--
+
+ -->{{#if:{{{url1|}}}|[{{{url1}}}]|<!--
+
+  -->{{#if:{{{cd1|}}}|[[<!--
+-->{{#ifeq:{{#pos:{{{cd1}}}|#}}|0|<!--
+ -->{{#sub:{{{singer1}}}|2|{{#expr:{{#pos:{{{singer1}}}|{{#ifeq: {{#rpos:{{{singer1}}}|{{!}}}}|-1|]]|{{!}}}}}}-2}}}}{{{cd1}}}|<!--
+ -->{{{cd1}}}<!--
+-->}}|album]]|<!--
+
+   -->{{#if:{{{koe1|}}}|[http://koebu.com/koe/{{{koe1}}} koebu]|<!--
+
+    -->{{#if:{{{sc1|}}}|[https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{sc1}}} SoundCloud]|<!--
+
+     -->{{#if:{{{tm1|}}}|TmBox|<!--
+
+      -->{{#if:{{{bb1|}}}|[http://www.bilibili.com/video/{{{bb1}}} BB]<!--
+ -->{{#if:{{{yt1|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.youtube.com/watch?v={{{yt1}}} YT]}}<!--
+ -->{{#if:{{{nnd1|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.nicovideo.jp/watch/{{{nnd1}}} NND]}}|<!--
+
+
+       -->{{#if:{{{yt1|}}}|<!--
+        -->[http://www.youtube.com/watch?v={{{yt1}}} YT] |<!--
+         --> <span style="color: grey;">YT</span> <!--
+
+       -->}} <span style="color: grey;">{{!}}</span> <!--
+
+       -->{{#if:{{{nnd1|}}}|<!--
+        -->[http://www.nicovideo.jp/watch/{{{nnd1}}} NND] |<!--
+         --> <span style="color: grey;">NND</span> <!--
+
+       -->}}<!--
+      -->}}<!--
+     -->}}<!--
+    -->}}<!--
+   -->}}<!--
+  -->}}<!--
+ -->}}<!--
+-->}}<!--
+
+
+--></center></format></data>
+<data source="singer1"><format><center>{{{singer1}}}<br><br></center></format></data>
+</group>
+</infobox></div>
+<div style="float:left; margin:auto" class="fifth-wrapper"><infobox theme="fifth">
+<group row-items="1">
+<data source="singer2"><format><center>{{#if:{{{box2|}}}|[[File:Defaultbox.png|link=]]|
+	{{#if:{{{url2|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+		-->{{#if:{{{title2|}}}|<!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title2}}}'''</div></div><!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title2}}}'''</div></div><!--
+		-->}}</div>|
+		{{#if:{{{cd2|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd2}}}|{{#expr:{{#pos:{{{cd2}}}|#}}+1}}}}}}}'''</div></div><!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd2}}}|{{#expr:{{#pos:{{{cd2}}}|#}}+1}}}}}}}'''</div></div></div>|
+			{{#if:{{{nnd2|}}}|[[File:Nicovideo.png|120px|link=]]|
+				{{#if:{{{yt2|}}}|[[File:YouTubeThumb.png|120px|link=]]|
+					{{#if:{{{bb2|}}}|[[File:bilibili.png|link=]]|
+						{{#if:{{{koe2|}}}|[[File:Defaultkoebu.png|link=]]|
+							{{#if:{{{sc2|}}}|[[File:Defaultsoundcloud.png|link=]]|
+								{{#if:{{{tm2|}}}|[[File:Defaulttmbox.png|link=]]|
+									<div style="width:120px; height:90px; overflow:hidden;"></div>
+								}}
+							}}
+						}}
+					}}
+				}}
+			}}
+		}}
+	}}
+}}{{clr}}
+</center></format></data>
+<data source="singer2"><format><center><!--
+-->{{#if:{{{box2|}}}|[https://www.box.com/s/{{{box2}}} box]|<!--
+
+ -->{{#if:{{{url2|}}}|[{{{url2}}}]|<!--
+
+  -->{{#if:{{{cd2|}}}|[[<!--
+-->{{#ifeq:{{#pos:{{{cd2}}}|#}}|0|<!--
+ -->{{#sub:{{{singer2}}}|2|{{#expr:{{#pos:{{{singer2}}}|{{#ifeq: {{#rpos:{{{singer2}}}|{{!}}}}|-1|]]|{{!}}}}}}-2}}}}{{{cd2}}}|<!--
+ -->{{{cd2}}}<!--
+-->}}|album]]|<!--
+
+   -->{{#if:{{{koe2|}}}|[http://koebu.com/koe/{{{koe2}}} koebu]|<!--
+
+    -->{{#if:{{{sc2|}}}|[https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{sc2}}} SoundCloud]|<!--
+
+     -->{{#if:{{{tm2|}}}|TmBox|<!--
+
+      -->{{#if:{{{bb2|}}}|[http://www.bilibili.com/video/{{{bb2}}} BB]<!--
+ -->{{#if:{{{yt2|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.youtube.com/watch?v={{{yt2}}} YT]}}<!--
+ -->{{#if:{{{nnd2|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.nicovideo.jp/watch/{{{nnd2}}} NND]}}|<!--
+
+
+       -->{{#if:{{{yt2|}}}|<!--
+        -->[http://www.youtube.com/watch?v={{{yt2}}} YT] |<!--
+         --> <span style="color: grey;">YT</span> <!--
+
+       -->}} <span style="color: grey;">{{!}}</span> <!--
+
+       -->{{#if:{{{nnd2|}}}|<!--
+        -->[http://www.nicovideo.jp/watch/{{{nnd2}}} NND] |<!--
+         --> <span style="color: grey;">NND</span> <!--
+
+       -->}}<!--
+      -->}}<!--
+     -->}}<!--
+    -->}}<!--
+   -->}}<!--
+  -->}}<!--
+ -->}}<!--
+-->}}<!--
+
+
+--></center></format></data>
+<data source="singer2"><format><center>{{{singer2}}}<br><br></center></format></data>
+</group>
+</infobox></div>
+<div style="float:left; margin:auto" class="fifth-wrapper"><infobox theme="fifth">
+<group row-items="1">
+<data source="singer3"><format><center>{{#if:{{{box3|}}}|[[File:Defaultbox.png|link=]]|
+	{{#if:{{{url3|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+		-->{{#if:{{{title3|}}}|<!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title3}}}'''</div></div><!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title3}}}'''</div></div><!--
+		-->}}</div>|
+		{{#if:{{{cd3|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd3}}}|{{#expr:{{#pos:{{{cd3}}}|#}}+1}}}}}}}'''</div></div><!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd3}}}|{{#expr:{{#pos:{{{cd3}}}|#}}+1}}}}}}}'''</div></div></div>|
+			{{#if:{{{nnd3|}}}|[[File:Nicovideo.png|120px|link=]]|
+				{{#if:{{{yt3|}}}|[[File:YouTubeThumb.png|120px|link=]]|
+					{{#if:{{{bb3|}}}|[[File:bilibili.png|link=]]|
+						{{#if:{{{koe3|}}}|[[File:Defaultkoebu.png|link=]]|
+							{{#if:{{{sc3|}}}|[[File:Defaultsoundcloud.png|link=]]|
+								{{#if:{{{tm3|}}}|[[File:Defaulttmbox.png|link=]]|
+									<div style="width:120px; height:90px; overflow:hidden;"></div>
+								}}
+							}}
+						}}
+					}}
+				}}
+			}}
+		}}
+	}}
+}}{{clr}}
+</center></format></data>
+<data source="singer3"><format><center><!--
+-->{{#if:{{{box3|}}}|[https://www.box.com/s/{{{box3}}} box]|<!--
+
+ -->{{#if:{{{url3|}}}|[{{{url3}}}]|<!--
+
+  -->{{#if:{{{cd3|}}}|[[<!--
+-->{{#ifeq:{{#pos:{{{cd3}}}|#}}|0|<!--
+ -->{{#sub:{{{singer3}}}|2|{{#expr:{{#pos:{{{singer3}}}|{{#ifeq: {{#rpos:{{{singer3}}}|{{!}}}}|-1|]]|{{!}}}}}}-2}}}}{{{cd3}}}|<!--
+ -->{{{cd3}}}<!--
+-->}}|album]]|<!--
+
+   -->{{#if:{{{koe3|}}}|[http://koebu.com/koe/{{{koe3}}} koebu]|<!--
+
+    -->{{#if:{{{sc3|}}}|[https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{sc3}}} SoundCloud]|<!--
+
+     -->{{#if:{{{tm3|}}}|TmBox|<!--
+
+      -->{{#if:{{{bb3|}}}|[http://www.bilibili.com/video/{{{bb3}}} BB]<!--
+ -->{{#if:{{{yt3|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.youtube.com/watch?v={{{yt3}}} YT]}}<!--
+ -->{{#if:{{{nnd3|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.nicovideo.jp/watch/{{{nnd3}}} NND]}}|<!--
+
+
+       -->{{#if:{{{yt3|}}}|<!--
+        -->[http://www.youtube.com/watch?v={{{yt3}}} YT] |<!--
+         --> <span style="color: grey;">YT</span> <!--
+
+       -->}} <span style="color: grey;">{{!}}</span> <!--
+
+       -->{{#if:{{{nnd3|}}}|<!--
+        -->[http://www.nicovideo.jp/watch/{{{nnd3}}} NND] |<!--
+         --> <span style="color: grey;">NND</span> <!--
+
+       -->}}<!--
+      -->}}<!--
+     -->}}<!--
+    -->}}<!--
+   -->}}<!--
+  -->}}<!--
+ -->}}<!--
+-->}}<!--
+
+
+--></center></format></data>
+<data source="singer3"><format><center>{{{singer3}}}<br><br></center></format></data>
+</group>
+</infobox></div>
+<div style="float:left; margin:auto" class="fifth-wrapper"><infobox theme="fifth">
+<group row-items="1">
+<data source="singer4"><format><center>{{#if:{{{box4|}}}|[[File:Defaultbox.png|link=]]|
+	{{#if:{{{url4|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+		-->{{#if:{{{title4|}}}|<!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title4}}}'''</div></div><!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title4}}}'''</div></div><!--
+		-->}}</div>|
+		{{#if:{{{cd4|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd4}}}|{{#expr:{{#pos:{{{cd4}}}|#}}+1}}}}}}}'''</div></div><!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd4}}}|{{#expr:{{#pos:{{{cd4}}}|#}}+1}}}}}}}'''</div></div></div>|
+			{{#if:{{{nnd4|}}}|[[File:Nicovideo.png|120px|link=]]|
+				{{#if:{{{yt4|}}}|[[File:YouTubeThumb.png|120px|link=]]|
+					{{#if:{{{bb4|}}}|[[File:bilibili.png|link=]]|
+						{{#if:{{{koe4|}}}|[[File:Defaultkoebu.png|link=]]|
+							{{#if:{{{sc4|}}}|[[File:Defaultsoundcloud.png|link=]]|
+								{{#if:{{{tm4|}}}|[[File:Defaulttmbox.png|link=]]|
+									<div style="width:120px; height:90px; overflow:hidden;"></div>
+								}}
+							}}
+						}}
+					}}
+				}}
+			}}
+		}}
+	}}
+}}{{clr}}
+</center></format></data>
+<data source="singer4"><format><center><!--
+-->{{#if:{{{box4|}}}|[https://www.box.com/s/{{{box4}}} box]|<!--
+
+ -->{{#if:{{{url4|}}}|[{{{url4}}}]|<!--
+
+  -->{{#if:{{{cd4|}}}|[[<!--
+-->{{#ifeq:{{#pos:{{{cd4}}}|#}}|0|<!--
+ -->{{#sub:{{{singer4}}}|2|{{#expr:{{#pos:{{{singer4}}}|{{#ifeq: {{#rpos:{{{singer4}}}|{{!}}}}|-1|]]|{{!}}}}}}-2}}}}{{{cd4}}}|<!--
+ -->{{{cd4}}}<!--
+-->}}|album]]|<!--
+
+   -->{{#if:{{{koe4|}}}|[http://koebu.com/koe/{{{koe4}}} koebu]|<!--
+
+    -->{{#if:{{{sc4|}}}|[https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{sc4}}} SoundCloud]|<!--
+
+     -->{{#if:{{{tm4|}}}|TmBox|<!--
+
+      -->{{#if:{{{bb4|}}}|[http://www.bilibili.com/video/{{{bb4}}} BB]<!--
+ -->{{#if:{{{yt4|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.youtube.com/watch?v={{{yt4}}} YT]}}<!--
+ -->{{#if:{{{nnd4|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.nicovideo.jp/watch/{{{nnd4}}} NND]}}|<!--
+
+
+       -->{{#if:{{{yt4|}}}|<!--
+        -->[http://www.youtube.com/watch?v={{{yt4}}} YT] |<!--
+         --> <span style="color: grey;">YT</span> <!--
+
+       -->}} <span style="color: grey;">{{!}}</span> <!--
+
+       -->{{#if:{{{nnd4|}}}|<!--
+        -->[http://www.nicovideo.jp/watch/{{{nnd4}}} NND] |<!--
+         --> <span style="color: grey;">NND</span> <!--
+
+       -->}}<!--
+      -->}}<!--
+     -->}}<!--
+    -->}}<!--
+   -->}}<!--
+  -->}}<!--
+ -->}}<!--
+-->}}<!--
+
+
+--></center></format></data>
+<data source="singer4"><format><center>{{{singer4}}}<br><br></center></format></data>
+</group>
+</infobox></div>
+<div style="float:left; margin:auto" class="fifth-wrapper"><infobox theme="fifth">
+<group row-items="1">
+<data source="singer5"><format><center>{{#if:{{{box5|}}}|[[File:Defaultbox.png|link=]]|
+	{{#if:{{{url5|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+		-->{{#if:{{{title5|}}}|<!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title5}}}'''</div></div><!--
+		--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title5}}}'''</div></div><!--
+		-->}}</div>|
+		{{#if:{{{cd5|}}}|<div style="position: relative; width:120px; height:90px">[[File:Defaultcd.png|link=]]<!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd5}}}|{{#expr:{{#pos:{{{cd5}}}|#}}+1}}}}}}}'''</div></div><!--
+			--><div style="width:120px; position: absolute; left: 0px; bottom: 7px; text-align:center; font-size:90%; line-height:20px"><div style="background-color:#FFFFFF; opacity:0.7; border-radius:10px; padding-left:5px; padding-right:5px">'''{{{title1|{{#sub:{{{cd5}}}|{{#expr:{{#pos:{{{cd5}}}|#}}+1}}}}}}}'''</div></div></div>|
+			{{#if:{{{nnd5|}}}|[[File:Nicovideo.png|120px|link=]]|
+				{{#if:{{{yt5|}}}|[[File:YouTubeThumb.png|120px|link=]]|
+					{{#if:{{{bb5|}}}|[[File:bilibili.png|link=]]|
+						{{#if:{{{koe5|}}}|[[File:Defaultkoebu.png|link=]]|
+							{{#if:{{{sc5|}}}|[[File:Defaultsoundcloud.png|link=]]|
+								{{#if:{{{tm5|}}}|[[File:Defaulttmbox.png|link=]]|
+									<div style="width:120px; height:90px; overflow:hidden;"></div>
+								}}
+							}}
+						}}
+					}}
+				}}
+			}}
+		}}
+	}}
+}}{{clr}}
+</center></format></data>
+<data source="singer5"><format><center><!--
+-->{{#if:{{{box5|}}}|[https://www.box.com/s/{{{box5}}} box]|<!--
+
+ -->{{#if:{{{url5|}}}|[{{{url5}}}]|<!--
+
+  -->{{#if:{{{cd5|}}}|[[<!--
+-->{{#ifeq:{{#pos:{{{cd5}}}|#}}|0|<!--
+ -->{{#sub:{{{singer5}}}|2|{{#expr:{{#pos:{{{singer5}}}|{{#ifeq: {{#rpos:{{{singer5}}}|{{!}}}}|-1|]]|{{!}}}}}}-2}}}}{{{cd5}}}|<!--
+ -->{{{cd5}}}<!--
+-->}}|album]]|<!--
+
+   -->{{#if:{{{koe5|}}}|[http://koebu.com/koe/{{{koe5}}} koebu]|<!--
+
+    -->{{#if:{{{sc5|}}}|[https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{sc5}}} SoundCloud]|<!--
+
+     -->{{#if:{{{tm5|}}}|TmBox|<!--
+
+      -->{{#if:{{{bb5|}}}|[http://www.bilibili.com/video/{{{bb5}}} BB]<!--
+ -->{{#if:{{{yt5|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.youtube.com/watch?v={{{yt5}}} YT]}}<!--
+ -->{{#if:{{{nnd5|}}}|<span style="color: grey;">&nbsp;{{!}}&nbsp;</span>[http://www.nicovideo.jp/watch/{{{nnd5}}} NND]}}|<!--
+
+
+       -->{{#if:{{{yt5|}}}|<!--
+        -->[http://www.youtube.com/watch?v={{{yt5}}} YT] |<!--
+         --> <span style="color: grey;">YT</span> <!--
+
+       -->}} <span style="color: grey;">{{!}}</span> <!--
+
+       -->{{#if:{{{nnd5|}}}|<!--
+        -->[http://www.nicovideo.jp/watch/{{{nnd5}}} NND] |<!--
+         --> <span style="color: grey;">NND</span> <!--
+
+       -->}}<!--
+      -->}}<!--
+     -->}}<!--
+    -->}}<!--
+   -->}}<!--
+  -->}}<!--
+ -->}}<!--
+-->}}<!--
+
+
+--></center></format></data>
+<data source="singer5"><format><center>{{{singer5}}}<br><br></center></format></data>
+</group>
+</infobox></div>
+{{clr}}<noinclude>{{documentation}}</noinclude>

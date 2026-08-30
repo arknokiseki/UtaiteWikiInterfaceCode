@@ -1,0 +1,1 @@
+[[File:Marshmallow.png|22x22px|link=https://marshmallow-qa.com/{{{1}}}|{{#if:{{{2|}}}|{{{2}}}}}]]<noinclude>{{documentation}}{{SNS Template}}</noinclude>

@@ -1,0 +1,23 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = Boron.png
+|caption = Nico Nico Douga
+|officialjapname = ぼろん
+|officialromajiname = Boron 
+|NNDuserpage = 852933
+|mylist1 = 4141262
+|mylist1info = utattemita
+|mylist2 = 37146194
+|mylist2info = collaborations 
+|nicommu1 = co449305
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Mozaik Role
+|examplennd = sm11535931
+|exampleyt = 2JqnqSLOKNw
+|description = '''Boron''' ('''ぼろん''') is an {{NNDict|Utaite}} who is probably most well known for his addition of raps during breaks in the vocals. His raps are known to be fluid and quite fast, like in his cover of "Senbonzakura"{{nnd|sm19173132}}, with little to no pauses. His regular singing voice is somewhat dry and he maintains a medium powered voice throughout most of his singing.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

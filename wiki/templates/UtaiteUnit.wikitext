@@ -1,0 +1,140 @@
+<includeonly><div id="utaite-schema-data" style="display:none;"
+  data-name="{{PAGENAME}}"
+  data-type="MusicGroup"
+  data-ythandle="{{{YouTube|}}}"
+  data-twitter="{{{Twitter|}}}"
+  data-instagram="{{{Instagram|}}}"
+  data-tiktok="{{{Tiktok|}}}"
+  data-twitcast="{{{Twitcast|}}}"
+  data-soundcloud="{{{Soundcloud|}}}">
+</div><!--
+-->{{Maintalkcat other
+|{{#seo:
+  |title_mode=replace
+  |title={{PAGENAME}}{{#if:{{{Kanji|}}}| ({{{Kanji}}})}} — Utaite Wiki
+  |description={{PAGENAME}}{{#if:{{{Kanji|}}}| ({{{Kanji}}}{{#if:{{{Romaji|}}}|, {{{Romaji}}}}})}} is a Japanese utaite {{#switch:{{{Type|}}}|group=group|duet=duet|collab=collaborative project|unit}}{{#if:{{{Years|}}}|, active {{{Years}}}}}{{#if:{{{Agency|}}}|, affiliated with {{{Agency}}}}}.{{#if:{{{Status|}}} Status: {{{Status}}}.}}{{#if:{{{Fanname|}}} Fan name: {{{Fanname}}}.}} See members, covers, discography, and their SNS on Utaite Wiki.
+  |keywords=utaite, {{PAGENAME}}{{#if:{{{Kanji|}}}|, {{{Kanji}}}}}{{#if:{{{Romaji|}}}|, {{{Romaji}}}}}{{#if:{{{English|}}}|, {{{English}}}}}, utaite {{#switch:{{{Type|}}}|group=group|duet=duet unit|collab=collab unit|unit}}, utattemita, Japanese cover singers, 歌ってみた, 歌い手{{#switch:{{{Type|}}}|group=グルップ|duet=デュエットユニット|collab=ユニット|}}
+  |image={{{Image|}}}
+  |image_alt={{PAGENAME}} — Japanese utaite {{#switch:{{{Type|}}}|group=group|duet=duet unit|collab=collab unit|unit}}
+  |type=ProfilePage
+  |site_name=Utaite Wiki
+  |locale=en_US
+  |twitter_card=summary_large_image
+}}<!--
+-->|<!--
+-->|{{#seo:
+  |title_mode=replace
+  |title={{PAGENAME}}{{#if:{{{Kanji|}}}| ({{{Kanji}}})}} — Utaite Wiki
+  |description={{PAGENAME}}{{#if:{{{Kanji|}}}| ({{{Kanji}}}{{#if:{{{Romaji|}}}|, {{{Romaji}}}}})}} is a Japanese utaite {{#switch:{{{Type|}}}|group=group|duet=duet|collab=collaborative project|unit}}{{#if:{{{Years|}}}|, active {{{Years}}}}}{{#if:{{{Agency|}}}|, affiliated with {{{Agency}}}}}.{{#if:{{{Status|}}} Status: {{{Status}}}.}}{{#if:{{{Fanname|}}} Fan name: {{{Fanname}}}.}} See members, covers, discography, and their SNS on Utaite Wiki.
+  |keywords=utaite, {{PAGENAME}}{{#if:{{{Kanji|}}}|, {{{Kanji}}}}}{{#if:{{{Romaji|}}}|, {{{Romaji}}}}}{{#if:{{{English|}}}|, {{{English}}}}}, utaite {{#switch:{{{Type|}}}|group=group|duet=duet unit|collab=collab unit|unit}}, utattemita, Japanese cover singers, 歌ってみた, 歌い手{{#switch:{{{Type|}}}|group=グルップ|duet=デュエットユニット|collab=ユニット|}}
+  |image={{{Image|}}}
+  |image_alt={{PAGENAME}} — Japanese utaite {{#switch:{{{Type|}}}|group=group|duet=duet unit|collab=collab unit|unit}}
+  |type=ProfilePage
+  |site_name=Utaite Wiki
+  |locale=en_US
+  |twitter_card=summary_large_image
+}}|}}<!--
+--><div class="utaiteUnit"><!--
+--><div class="blacklist-pPreview"><!--
+-->{{#if:{{{Type|}}}|{{{!}} cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! style="text-align:center;background-color:#c3e6f9; color:#000000; padding:10px" {{!}}<!--
+--><!--START: NAME SECTION--><!--
+-->{{#if:{{{Name|}}}|<!--START: if "Name" exist
+--><span style="font-size: 1.2em;"><!--
+-->{{{Name|}}}<!--
+--></span><!--
+--><br /><!--
+-->|}}<!--KAN/ROM/ENG NAME
+-->{{#if: {{{Kanji|}}}|<!--START: if "Kanji" exist
+-->{{#if: {{{Ruby|}}}|<!--START: if "Ruby" exist
+--><span style="font-size: 1.2em;"><ruby>{{{Kanji|}}}<rt>{{{Ruby}}}</rt></ruby></span>|<!--START: if "Ruby" not exist
+--><span style="font-size: 1.2em;">{{{Kanji|}}}<br /></span><!--END: if "Ruby"
+-->}}|<!--START:if "Kanji" not exist
+-->}}<!--END: if "Kanji"
+-->{{#if:{{{Romaji|}}}|<!--START: if "Romaji"
+--><span style="font-size: 0.9em;">{{{Romaji|}}}</span><br />|<!--START: if "Romaji" not exist
+-->}}<!--END: if "Romaji"
+-->{{#if: {{{English|}}}|<!--START: if "English"
+--><span style="font-size: 0.9em;>{{{English|}}}</span><br />|<!--START: if "English" does not exist
+-->}}<!--END: if "English"
+--><!--END: NAME SECTION--><!--START: FANNAME & FANMARK SECTION
+-->{{#if:{{{Fanname|}}}|<b>Fan name: {{{Fanname|}}}　&nbsp;</b>|}}{{#if:{{{Fanmark|}}}|<b>Fan mark: {{{Fanmark|}}}</b>|}}
+{{!}}}<!--END: FANNAME & FANMARK SECTION
+--><center><!--START: IMAGE SECTION
+--><span style="{{{style|}}}"><!--
+-->{{#if:{{{Gallery|}}}|<!--
+-->{{{Gallery}}}|<!--
+-->{{#if:{{{Image|}}}|[[File:{{{Image}}}|{{{ImgWidth|700px}}}|{{{ImageDescr|}}}]]<br/><small>{{{ImageDescr|}}}</small>|<!--
+-->}}<!--
+-->}}<!--
+--></span><!--
+--></center><!--START: AGENCY SECTION
+-->{{#if:{{{Agency|}}}|<!--START: if "Agency"
+-->{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center"  width="100%" style="min-width: 100% !important;"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Years Active
+{{!}} align="center" {{!}} {{{Years}}}
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Status
+{{!}} align="center" {{!}} {{{Status}}}
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Agency
+{{!}} align="center" {{!}} <b>[[{{{Agency}}}]]</b>
+{{!}}-
+{{!}}}|<!--START: if "Agency" does not exist
+-->{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center" width="100%" style="min-width: 100% !important;"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Years Active
+{{!}} align="center" {{!}} {{{Years}}}
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Status
+{{!}} align="center" {{!}} {{{Status}}}
+{{!}}-
+{{!}}} }}<!--END: if "Agency" --><!--END: AGENCY SECTION--><!--START: SNS SECTION--><!--
+-->{{#ifeq:{{{Sns|}}}|true|<!--
+-->{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center" width="100%" style="min-width: 100% !important;"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} SNS
+{{!}} align="center" {{!}}<!--SNS SECTION--><!--
+YOUTUBE
+-->{{#if:{{{YouTube|}}}|{{YtC|@{{{YouTube}}}|{{{YouTubedesc|}}}||{{{YouTubedeleted|}}}}}&nbsp;|}}<!--
+-->{{#if:{{{YouTube2|}}}|{{YtC|@{{{YouTube2}}}|{{{YouTube2desc|}}}||{{{YouTube2deleted|}}}}}&nbsp;|}}<!--
+TWITTER
+-->{{#if:{{{Twitter|}}}|{{Twitter|{{{Twitter|}}}|{{{Twitterinfo|}}}|deleted={{#if:{{{Twitterdeleted|}}}|true|}}}}&nbsp;|}}<!--
+-->{{#if:{{{Twitter2|}}}|{{Twitter|{{{Twitter2|}}}|{{{Twitter2info|}}}|deleted={{#if:{{{Twitter2deleted|}}}|true|}}}}&nbsp;|}}<!--
+INSTAGRAM
+-->{{#if:{{{Instagram|}}}|{{Instagram|{{{Instagram}}}|{{{Instagraminfo|}}}|IGWidth={{{IGWidth|}}}}}&nbsp;|}}<!--
+TIKTOK
+-->{{#if:{{{Tiktok|}}}|{{Tiktok|{{{Tiktok}}}|{{{Tiktokinfo|}}}|size=14px}}&nbsp;|}}<!--
+NND
+-->{{#if:{{{Nnd|}}}|{{Nicovideo|{{{Nnd}}}|{{{Nndinfo|}}}|user|IconWidth={{{NNDIconWidth|}}}}}&nbsp;|}}<!--
+LINE
+-->{{#if:{{{Line|}}}|{{Line|{{{Line}}}|{{#if:{{{Lineinfo|}}}|{{{Lineinfo}}}}}}}&nbsp;|}}<!--
+-->{{#if:{{{LinePage|}}}|{{Line|{{{LinePage}}}|{{#if:{{{LinePageinfo|}}}|{{{LinePageinfo}}}|LinePage}}|LinePage}}&nbsp;|}}<!--
+-->{{#if:{{{Lineqrpage|}}}|{{Line|{{{Lineqrpage}}}|{{#if:{{{Lineqrpageinfo|}}}|{{{Lineqrpageinfo}}}}}|LineQR}}&nbsp;|}}<!--
+TWITCAST
+-->{{#if:{{{Twitcast|}}}|{{Twitcast|{{{Twitcast}}}|size=14px|{{{Twitcastinfo|}}}|}}&nbsp;|}}<!--
+BOOTH
+-->{{#if:{{{Booth|}}}|{{Booth|{{{Booth|}}}|{{{Boothinfo|}}}|deleted={{#if:{{{Boothinfo|}}}|true|}}}}&nbsp;|}}<!--
+CUSTOM
+-->{{#if:{{{Custom|}}}|{{{Custom}}}&nbsp;|}}
+{{!}}-
+{{!}}} }}<!--END: SNS SECTION, START: LOGO SECTION
+-->{{#if:{{{Logo|}}}|
+{{{!}} class="wikitable" cellspacing="1" cellpadding="3" border="0" align="center" width="100%" style="min-width: 100% !important;"
+! style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" {{!}} Logo
+{{!}} align="center" {{!}}[[File:{{{Logo}}}|100px]]
+{{!}}-
+{{!}}} }}<!--END: LOGO SECTION
+-->{{#ifeq:{{{Type}}}|group|{{main other|{{#titleicon_file:peoplegroup-turquoise.svg}}[[Category:Utaite Groups]]|}}|<!--
+-->{{#ifeq:{{{Type}}}|collab|{{maintalkcat other|||[[Category:Collaborative Groups]]|}}|<!--
+-->{{#ifeq:{{{Type}}}|duet|{{main other|[[Category:Duet Units]]|<!--
+-->}}|<!--
+-->}}<!--
+-->}}<!--
+-->}}<!--
+-->|<span style="color:#cc6544; font-weight:bolder;">Error: "Type" field cannot be left blank.</span>{{main other|[[Category:Utaite Unit Transclusion with Wrong Syntax]]<!--
+-->}}<!--
+-->}}<!--
+--></div><!--
+--></div><!--
+--></includeonly><!--
+--><noinclude>__notoc__{{documentation}}</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

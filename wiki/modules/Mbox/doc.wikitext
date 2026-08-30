@@ -1,0 +1,2 @@
+{{Documentation/Header}}
+This module implements {{T|MessageBox}}. It uses [[w:c:dev:Module:Mbox|Module:Mbox]] on the Dev Wiki.

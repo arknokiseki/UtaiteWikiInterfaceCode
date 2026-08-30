@@ -1,0 +1,120 @@
+{{Dependencies|Module:Arguments}}
+This module is written to simplify the process of retrieving and formatting data from Bucket, with the goal of helping editors who are not familiar with Lua transition to Bucket.
+
+The syntax resembles the Cargo extension, though changes were made to simplify the Lua implementation.
+
+==Querying data==
+See [[mh:bucket:querying data|querying data]] for detailed documentaion.
+
+==Formatting output==
+See [[mh:bucket:formatting output|formatting output]] for detailed documentation.
+
+==Limitations==
+This module cannot cover all use cases of Cargo or DPL4. Therefore, the workaround for rare use cases is to write your own Lua modules to aggregate data and call that module in the output step. For example, suppose you want the ability to compute the average value of a repeated column, write a module to do so and invoke it in <code>userformat</code>.
+<syntaxhighlight lang=wikitext>
+{{#invoke:Bucket|get
+|some_table
+...
+|format=userformat
+|userformat=<nowiki>
+Name: %name%. 
+Average: {{#invoke:Compute|avg|%values%}}. 
+</nowiki>
+}}
+</syntaxhighlight>
+
+==Parameter reference==
+
+{| class="wikitable"
+! Parameter
+! Type
+! Description
+|-
+| <code>1</code> (required)
+| string
+| The name of the bucket to query
+|-
+| <code>select</code> or <code>fields</code> (required)
+| string
+| Comma-separated list of columns to retrieve, with optional aliases. Aliases apply throughout the full pipeline.
+|-
+| <code>join on</code> or <code>join</code>
+| string
+| Column pairs to join buckets, in format <code>left=right</code>, separated by commas
+|-
+| <code>where</code>
+| string
+| Filter conditions using comparison operators and boolean logic
+|-
+| <code>filter</code>
+| string
+| Post-query filter conditions. Supports comparison operators, boolean logic, and string operators <code>CONTAINS</code>, <code>ICONTAINS</code>, <code>MATCH</code>. Applied after the query executes, unlike <code>where</code>.
+|-
+| <code>group by</code>
+| string
+| Comma-separated columns to group by
+|-
+| <code>group-sort</code>
+| string
+| Sorting for values within groups (same format as <code>order by</code>)
+|-
+| <code>order by</code>
+| string
+| Comma-separated columns to sort by, with optional <code>ASC</code> or <code>DESC</code>
+|-
+| <code>limit</code>
+| number
+| Maximum number of results to return
+|-
+| <code>offset</code>
+| number
+| Number of results to skip
+|-
+| <code>format</code>
+| string
+| Output format: <code>table</code>, <code>template</code>, or <code>userformat</code> (default: <code>table</code>)
+|-
+| <code>template</code>
+| string
+| Template name for <code>format=template</code> (required for that format)
+|-
+| <code>userformat</code>
+| string
+| Formatter string for <code>format=userformat</code> (required for that format)
+|-
+| <code>delimiter</code>
+| string
+| Separator between rows (supports <code>\n</code> for newlines)
+|-
+| <code>column-format</code>
+| string
+| Custom format for a specific column using <code>%s</code> placeholder
+|-
+| <code>column-label</code>
+| string
+| Display name for a column in output (table header, template parameter name, userformat placeholder), where <code>column</code> is the column name or alias as declared in <code>select</code>. Does not affect earlier operations.
+|-
+| <code>column-delimiter</code>
+| string
+| Delimiter for table values in a column (supports <code>\n</code> for newlines)
+|-
+| <code>aggregate</code>
+| string
+| Comma-separated aggregation specs for <code>group by</code>, e.g. <code>COUNT(col) as alias, TABLE(col2) as alias2</code>
+|-
+| <code>column-agg</code>
+| string
+| Template string for a <code>FORMAT</code> aggregation output column, using <code>%colname%</code> placeholders
+|-
+| <code>intro</code>
+| string
+| Text to display before results (if results exist)
+|-
+| <code>outro</code>
+| string
+| Text to display after results (if results exist)
+|-
+| <code>default</code>
+| string
+| Text to display if no results are found (default: "No result")
+|}

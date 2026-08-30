@@ -1,0 +1,2 @@
+{{Documentation/Header}}
+The documentation of this module is available at the Developer Wiki: [[w:c:dev:Global_Lua_Modules/Arguments]]

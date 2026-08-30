@@ -1,0 +1,4 @@
+<pre>{{about|utaite Ryo-kun (りょーくん)|{{NNDict|Namanushi}} Ryoukun (りょうくｎ)}}</pre>
+...results in:
+{{about|utaite Ryo-kun (りょーくん)|{{NNDict|Namanushi}} Ryoukun (りょうくｎ)}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

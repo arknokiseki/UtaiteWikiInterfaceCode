@@ -1,0 +1,13 @@
+<onlyinclude>{{#switch:
+|=
+<!--T:1--> Use this template to produce the character(s) "{{tmpl|0=<includeonly>{{#tag:nowiki|{{ {{BASEPAGENAME}} }}}}</includeonly><noinclude>{{small|1=[''$1'']}}</noinclude>|character(s) appear here}}" as ordinary text rather than as part of a link (<code><nowiki>[[&nbsp;]]</nowiki></code>), [[Special:MyLanguage/Help:Transclusion|transclusion]] (<code><nowiki>{{&nbsp;}}</nowiki></code>), variable (<code><nowiki>{{{&nbsp;}}}</nowiki></code>), etc.<!--
+ -->{{#if:{{{entity|}}} |<br/><!--T:2--> The [[:en:Character encodings in HTML#Character references|HTML character code]] "<code>&amp;{{{entity}}};</code>" may also be used to produce the same result.}}
+__NOTOC__
+
+== Similar templates == <!--T:3-->
+
+{{Escape template list}}
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Template:Auxiliary template common notice|noshift=1|uselang={{#if:{{pagelang}}|{{pagelang}}|{{int:lang}}}}}}
+}}</onlyinclude>
+{{Documentation}}

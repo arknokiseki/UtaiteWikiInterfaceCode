@@ -1,0 +1,81 @@
+==Parameters==
+; <code>bgcolor     =</code>
+: <nowiki>{{＃}}</nowiki>000000 to <nowiki>{{＃}}</nowiki>ffffff. Usage of rgb, rgba, X11 color names, and hsl value is accommodated.
+: note: please use <nowiki>{{＃}}</nowiki> template if you use hex code. This applies to bgsecondary, textcolor, and textsecondary too.
+; <code>bgsecondary =</code>
+: <nowiki>{{＃}}</nowiki>000000 to <nowiki>{{＃}}</nowiki>ffffff. Usage of rgb, rgba, X11 color names, and hsl value is accommodated.
+; <code>textcolor     =</code>
+: <nowiki>{{＃}}</nowiki>000000 to <nowiki>{{＃}}</nowiki>ffffff. Usage of rgb, rgba, X11 color names, and hsl value is accommodated.
+; <code>textsecondary =</code>
+: <nowiki>{{＃}}</nowiki>000000 to <nowiki>{{＃}}</nowiki>ffffff. Usage of rgb, rgba, X11 color names, and hsl value is accommodated.
+; <code>ytvideo     =</code>
+: The embeded YouTube video to display. If this parameter exist, image will be hidden.
+; <code>nicovideo     =</code>
+: The embeded Nico Video to display. If this parameter exist, image will be hidden.
+; <code>ytvideodesc     =</code>
+: The embeded YouTube video description.
+; <code>nicovideodesc     =</code>
+: The embeded Nico Video description.
+; <code>image     =</code>
+: The file name of an image to display. If either ytvideo or nicovideo parameter exist, it will be hidden.
+; <code>songtitle     =</code>
+: To title Song, add <code><nowiki>"'''This Format'''"</nowiki></code>.
+: To title translations use plain text format below it.
+; <code>original upload date      =</code>
+: The month, date, and year the song was first published.
+: To hide this section add&nbsp;<code> date      = none</code>
+; <code>#views     =</code>
+: To link views add this format&nbsp;{{t|V|abbr|NUM}}.
+: To hide this section add&nbsp;<code> views     = none</code>
+; <code>singer   =</code>
+: To link [[Utaite]], add <code><nowiki>[[This Format]]</nowiki></code>.
+: To link wikis see [[:Template:Interwiki/doc|Interwiki/doc]] for more information.
+; <code>producer =</code>
+: To link [[Producer]]s add <code><nowiki>[[This Format]]</nowiki></code> or <code><nowiki>[https://x.com/x_username This Format]</nowiki></code>.
+: To link wikis see [[:Template:Interwiki/doc|Interwiki/doc]] for more information.
+; <code>link     =</code>
+: To link websites add this format&nbsp;{{t|LL|abbr|URL}}.
+: To hide this section add&nbsp; <code>links     = none</code>
+; <code>description     =</code>
+: use plain text format.
+
+==Examples==
+<pre>{{SongBox
+  |bgcolor     = Aquamarine
+  |textcolor = 	hsl(337, 86%, 47%)
+  |bgsecondary    = {{＃}}8B40FF
+  |textsecondary = 	{{＃}}FFFF66
+  |ytvideo=_qZ4YnhjeP8
+  |ytvideodesc=YT video cover
+  |nicovideo=sm29058965
+  |nicovideodesc=nico video cover
+  |image     = Template doc.png
+  |songtitle     = "'''タイトル'''"<br />Romaji: Taitoru<br />English: Title
+  |original upload date = {{Date|2015|March|6}}
+  |#views     = {{v|nn|1}}
+  |singer   = [[Template:SongBox|Singer(s)]]
+  |producer = {{color|#278dbe|Producer}} (music, lyrics)<br />[[Template:SongBox|Illustrator name]] (illustration)<br />[[Template:SongBox|Video editor name]] (video)
+  |link     = {{LL|nn|1}}
+  |description = Template documentation
+}}
+</pre><br />
+{{SongBox
+  |bgcolor     = Aquamarine
+  |textcolor = 	hsl(337, 86%, 47%)
+  |bgsecondary    = {{＃}}8B40FF
+  |textsecondary = 	{{＃}}FFFF66
+  |ytvideo=_qZ4YnhjeP8
+  |ytvideodesc=YT video cover
+  |nicovideo=sm29058965
+  |nicovideodesc=nico video cover
+  |image     = Template doc.png
+  |songtitle     = "'''タイトル'''"<br />Romaji: Taitoru<br />English: Title
+  |original upload date = {{Date|2015|March|6}}
+  |#views     = {{v|nn|1}}
+  |singer   = [[Template:SongBox|Singer(s)]]
+  |producer = {{color|#278dbe|Producer}} (music, lyrics)<br />[[Template:SongBox|Illustrator name]] (illustration)<br />[[Template:SongBox|Video editor name]] (video)
+  |link     = {{LL|nn|1}}
+  |description = Template documentation
+}}
+{{WikiaLicense|VocaloidLyrics|Template:Infobox Song}} (modified by utaite fandom community)
+<includeonly>[[Category:Templates]] [[Category:Music templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

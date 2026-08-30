@@ -1,0 +1,16 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+{{Distinguish|Template:P|Template:Para|Template:Param}}
+== Usage ==
+<pre>
+{{Parameter|prop}}
+{{Parameter|search|required}}
+</pre>
+== Example ==
+* {{parameter|prop}} - Lorem.
+* {{parameter|search|required}} - Ipsum.
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Typing-aid templates]]
+[[Category:Formatting templates]]
+}}</includeonly>

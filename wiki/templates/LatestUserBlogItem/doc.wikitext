@@ -1,0 +1,100 @@
+{{Documentation/Header}}
+This template is used by {{t|LatestUserBlogs}} to format individual blog post items.
+
+== Parameters ==
+* '''page''' - The full page name (e.g., "User blog:Username/Post Title")
+* '''title''' - The post title without namespace
+* '''user''' - The last editor/author
+* '''date''' - The last edit date
+
+== Usage ==
+This template formats individual blog entries for display in the latest user blogs list. It creates a standardized layout showing the blog post title, author, and publication date.
+
+== Syntax ==
+{{T|{{BASEPAGENAMEE}}|v1=page=|v2=title=|v3=user=|v4=date=}}
+
+== Parameters (detailed) ==
+{| class="wikitable"
+|-
+! Parameter !! Required !! Description !! Example
+|-
+| page || Yes || Full page name including namespace || <code>User blog:JohnDoe/My Adventure</code>
+|-
+| title || Yes || Post title without the namespace prefix || <code>My Adventure</code>
+|-
+| user || Yes || Username of the blog author/last editor || <code>JohnDoe</code>
+|-
+| date || Yes || Last edit date in wiki format || <code>2024-01-15</code>
+|-
+| pinned || No || Any value except <code>no</code> marks the post as pinned: adds a thumbtack icon and the <code>blog-card-pinned</code> class || <code>yes</code>
+|}
+
+== Examples ==
+=== Basic usage ===
+{{T|{{BASEPAGENAME}}|page=User blog:Example/Sample Post|title=Sample Post|user=Example|date=2024-01-15|block=1}}
+
+=== Multiple entries ===
+{{T|{{BASEPAGENAME}}|page=User blog:Alice/Travel Adventures|title=Travel Adventures|user=Alice|date=2024-01-10|block=1}}
+{{T|{{BASEPAGENAME}}|page=User blog:Bob/Game Review|title=Game Review|user=Bob|date=2024-01-08|block=1}}
+
+== Output ==
+The template generates a formatted list item with:
+* Linked blog post title
+* Author attribution
+* Publication date
+* Consistent styling for the blog list
+
+== See also ==
+* {{t|LatestUserBlogs}} - Main template that uses this formatter
+* [[Help:User blogs]] - General help for user blogs
+* [[Special:RecentChanges]] - Recent wiki activity
+
+== Template Data ==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"page": {
+			"label": "Page name",
+			"description": "Full page name including namespace (e.g., 'User blog:Username/Post Title')",
+			"type": "wiki-page-name",
+			"required": true,
+			"example": "User blog:JohnDoe/My Adventure"
+		},
+		"title": {
+			"label": "Post title",
+			"description": "The blog post title without namespace prefix",
+			"type": "string",
+			"required": true,
+			"example": "My Adventure"
+		},
+		"user": {
+			"label": "Author",
+			"description": "Username of the blog author or last editor",
+			"type": "wiki-user-name",
+			"required": true,
+			"example": "JohnDoe"
+		},
+		"date": {
+			"label": "Date",
+			"description": "Last edit date of the blog post",
+			"type": "date",
+			"required": true,
+			"example": "2024-01-15"
+		},
+		"pinned": {
+			"label": "Pinned",
+			"description": "Set to mark the post as pinned (thumbtack icon). Used by the pinned-posts feature in LatestUserBlogs.",
+			"type": "string",
+			"required": false,
+			"example": "yes"
+		}
+	},
+	"description": "Formats individual blog post entries for the LatestUserBlogs template display",
+	"format": "inline"
+}
+</templatedata>
+
+[[Category:Blog templates]]
+[[Category:Formatting templates]]

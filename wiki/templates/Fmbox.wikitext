@@ -1,0 +1,3 @@
+{{#invoke:Message box|fmbox}}<noinclude>
+{{documentation}}
+</noinclude>

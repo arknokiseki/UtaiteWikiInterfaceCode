@@ -1,0 +1,40 @@
+== Spotify artist link template ==
+
+This template creates a link to a Spotify artist page with the Spotify logo.
+
+=== Usage ===
+<pre>
+{{Spotify artist
+|1= <!-- Spotify artist ID (required) -->
+|2= <!-- Description (optional) -->
+}}
+</pre>
+
+=== Parameters ===
+{| class="wikitable"
+! Parameter !! Description !! Type !! Required
+|-
+| 1 || Spotify artist ID || String || Yes
+|-
+| 2 || Description || String || No
+|}
+
+=== Examples ===
+==== With description ====
+<pre>
+{{Spotify|5WbJGPIGG5oCaVgMsfXZgu|天月}}
+</pre>
+Result: 
+{{Spotify|5WbJGPIGG5oCaVgMsfXZgu|天月}}
+
+==== Without description ====
+<pre>
+{{Spotify|5WbJGPIGG5oCaVgMsfXZgu}}
+</pre>
+Result: 
+{{Spotify|5WbJGPIGG5oCaVgMsfXZgu}}
+
+=== See also ===
+* [[Help:Templates]]
+* [[Help:Links]]
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly>

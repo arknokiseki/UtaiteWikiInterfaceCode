@@ -1,0 +1,16 @@
+{{WeeklyTop3}}
+<div class="mp-side-group">
+<div class="mp-side-head"><i class="fa-brands fa-discord"></i>&nbsp;Community</div>
+<div style="text-align:center; font-size:0.9em; margin-bottom:0.5em;">Feel free to join [https://discord.gg/jAw6ytcVKA our Discord]!</div>
+{{DiscordIntegrator
+| id = 1085024965914529833
+| theme = dark
+| width = 100%
+| height = 250px
+}}
+</div>
+
+<div class="mp-a-note">
+<span class="mp-a-note-label"><i class="fa-brands fa-itunes-note"></i>A Note ♪</span>
+Please keep in mind that being on this wiki is '''''not''''' a "requirement" to be an utaite/YouTube singer! As long as you enjoy singing you ''are'' a singer so please sing to your heart's content and most of all, have fun <span class="mp-a-note-heart">❤</span>
+</div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

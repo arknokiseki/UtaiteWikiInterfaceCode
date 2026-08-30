@@ -1,0 +1,58 @@
+{{Documentation/Header}}
+Shared documentation for '''[[Module:JST]] and the JST date templates'''.
+
+The wiki server runs on '''UTC''', but this wiki's subject matter is Japan-centric, so dates shown to readers should be '''Japan Standard Time''' (JST, UTC+9). This module returns the current JST date and time in a chosen format, and each template below is a one-line wrapper around one format code.
+
+Internally the module takes the current UTC timestamp and adds 32,400 seconds — exactly nine hours — then formats the result. JST has no daylight saving and no sub-hour offset, so the shift is constant year-round.
+
+== The templates ==
+None of these take parameters. Each one simply calls the module with its format code.
+
+{| class="dataTable sortable"
+! Template !! Code !! Renders right now !! Format
+|-
+| {{T|CURRENTJSTYEAR}} || <code>Y</code> || {{CURRENTJSTYEAR}} || Four-digit year, '''not''' zero-padded
+|-
+| {{T|CURRENTJSTMONTH}} || <code>m</code> || {{CURRENTJSTMONTH}} || Month, zero-padded to two digits
+|-
+| {{T|CURRENTJSTSTRMONTH}} || <code>F</code> || {{CURRENTJSTSTRMONTH}} || Full month name in English
+|-
+| {{T|CURRENTJSTMONTHF}} || <code>F</code> || {{CURRENTJSTMONTHF}} || Full month name in English — '''identical to {{T|CURRENTJSTSTRMONTH}}'''
+|-
+| {{T|CURRENTJSTDAY}} || <code>d</code> || {{CURRENTJSTDAY}} || Day of month, zero-padded to two digits
+|-
+| {{T|CURRENTJSTHOUR}} || <code>H</code> || {{CURRENTJSTHOUR}} || Hour on a 24-hour clock, zero-padded
+|-
+| {{T|CURRENTMINUTE}} || <code>i</code> || {{CURRENTMINUTE}} || Minute, zero-padded
+|-
+| {{T|CURRENTSECOND}} || <code>s</code> || {{CURRENTSECOND}} || Second, zero-padded
+|-
+| {{T|CURRENTJSTDOW}} || <code>dow</code> || {{CURRENTJSTDOW}} || Weekday as Japanese character + English abbreviation
+|-
+| {{T|CURRENTJSTDOWEN}} || <code>dow_en</code> || {{CURRENTJSTDOWEN}} || Weekday, English abbreviation
+|-
+| {{T|CURRENTJSTDOWENF}} || <code>dow_en_full</code> || {{CURRENTJSTDOWENF}} || Weekday, full English name
+|-
+| {{T|CURRENTJSTDOWJAP}} || <code>dow_jap</code> || {{CURRENTJSTDOWJAP}} || Weekday, single Japanese character
+|-
+| {{T|CURRENTJSTDOWJAPF}} || <code>dow_jap_full</code> || {{CURRENTJSTDOWJAPF}} || Weekday, full Japanese name
+|}
+
+An unrecognised format code returns an '''empty string''', not an error.
+
+== Which to use ==
+MediaWiki's own <code><nowiki>{{CURRENTYEAR}}</nowiki></code>, <code><nowiki>{{CURRENTHOUR}}</nowiki></code> and friends report '''server time (UTC)'''. Use the JST templates above wherever a date is shown to readers or compared against Japanese dates.
+
+There is no built-in <code>CURRENTMINUTE</code> or <code>CURRENTSECOND</code> magic word in MediaWiki, which is why {{T|CURRENTMINUTE}} and {{T|CURRENTSECOND}} carry no <code>JST</code> in their names — they are not shadowing anything. Minutes and seconds are identical in both zones regardless, since JST is a whole-hour offset.
+
+{{Notice
+| header = {{T|CURRENTDATE}} is not part of this family
+| info = {{T|CURRENTDATE}} is built from the '''UTC''' magic words <code><nowiki>{{CURRENTYEAR}}-{{CURRENTMONTH}}-{{CURRENTDAY2}}</nowiki></code>, despite its similar name. Mixing it with the JST templates on one page can show two different dates for the nine hours each day when the two zones disagree.
+| border = orange
+}}
+
+== Zero-padding ==
+<code>m</code>, <code>d</code>, <code>H</code>, <code>i</code> and <code>s</code> are always padded to two digits; <code>Y</code> is not. The padding matters: {{T|ProcessBirthdayCategory}} and {{T|Birthday Calendar}} match against categories like <code><nowiki>[[Category:Birthday/06/30]]</nowiki></code>, so <code><nowiki>{{CURRENTJSTMONTH}}</nowiki></code> can be passed straight through, while a hand-typed <code>6</code> would match nothing.
+
+== Used by ==
+{{T|Age}} · {{T|Bd}} · {{T|Utaite}} · {{T|Youtaite}} · {{T|Outdated}} · {{T|Uptodate}} · {{T|BirthdayEntry}} · {{T|Birthday Calendar}} · {{T|ProcessBirthdayCategory}}

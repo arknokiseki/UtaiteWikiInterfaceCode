@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to a Bento.me profile page.
+;Syntax
+:Place <code><nowiki>{{Bento|<profilename>}}</nowiki></code> and substitute <profilename> with the latter part of the Bento profile url (e.g., if the link is https://bento.me/angxxangie, the <profilename> will be "angxxangie"). If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Bento|angxxangie|anG twitcast description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Bento|angxxangie|anG twitcast description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

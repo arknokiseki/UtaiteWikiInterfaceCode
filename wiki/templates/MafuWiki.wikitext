@@ -1,0 +1,5 @@
+<includeonly>{{Interwiki|mafumafu|{{{1|}}}|{{{2|{{{1}}}}}}|server=fandom}}</includeonly><noinclude>{{documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

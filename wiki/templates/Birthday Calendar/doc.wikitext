@@ -1,0 +1,62 @@
+{{Documentation/Header}}
+Renders a full month as a seven-column grid, listing every utaite born on each day. Today's cell is highlighted. Used on [[Birthday Calendar]] and [[Youtaite Wiki:Birthday Calendar]].
+
+Each day cell is produced by {{T|Birthday Calendar/util}}, which runs its own DPL query against <code><nowiki>[[Category:Birthday/MM/DD]]</nowiki></code>. Those categories come from the {{T|Utaite}} infobox — see {{T|ProcessBirthdayCategory}} for the full picture, including the requirement that <code>birthref</code> be filled in.
+
+{{Notice
+| header = Performance
+| info = One call runs '''up to 31 separate DPL queries''' — one per day. Place it on its own page rather than embedding it in a busy article, and avoid transcluding it more than once per page.
+| border = orange
+}}
+
+== Syntax ==
+{{T|Birthday Calendar|block=1
+|v1=month =
+|v2=cat =
+}}
+
+== Examples ==
+<pre>{{Birthday Calendar|month=06}}</pre>
+<pre>{{Birthday Calendar|month=02|cat=Youtaite}}</pre>
+
+A live example is not included here because of the query cost — see [[Birthday Calendar]] for the rendered result.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>month</code> || – || Month || Month to render, '''zero-padded to two digits''' (<code>01</code>–<code>12</code>). If omitted, the header reads "Month" and no days match. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>cat</code> || – || Category filter || Restricts results to pages in a category ending with this text. || string || Utaite ||
+|}
+
+== Day handling ==
+{| class="dataTable"
+! Month !! Days rendered
+|-
+| February, leap year || 1–29
+|-
+| February, common year || 1–28
+|-
+| April, June, September, November || 1–30
+|-
+| All other months || 1–31
+|}
+
+Leap years are detected with <code>{{CURRENTJSTYEAR}} mod 4</code>. This ignores the 100/400-year century rule, which is correct for every year from 1901 to 2099.
+
+== Footer link ==
+When the template is used on any page other than [[Birthday Calendar]], it appends a '''"Full calendar here"''' link back to that page.
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A full month grid listing utaite born on each day, with today highlighted.",
+"params": {
+"month": { "label": "Month", "description": "Month to render, zero-padded to two digits (01-12).", "type": "number", "required": true },
+"cat": { "label": "Category filter", "description": "Restrict to pages in a category ending with this text.", "type": "string", "default": "Utaite" }
+},
+"paramOrder": ["month","cat"],
+"format": "block"
+}
+</templatedata>
+</div>

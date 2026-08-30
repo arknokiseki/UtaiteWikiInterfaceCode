@@ -1,0 +1,5 @@
+<includeonly><templatestyles src="Twitcast/styles.css" />{{#ifeq:{{{stream}}}|true|[https://twitcasting.tv/{{{channel|{{{1|}}}<!---->}}}/movie/{{{v_id|{{{2}}}<!---->}}} {{Twitcast/icon|size={{{size|}}}|color={{{color|#fff}}}}}]|<!--
+-->{{#ifeq:{{{icon-only}}}|true|{{Twitcast/icon|size={{{size|}}}|color={{{color|#fff}}}}}|<!--
+-->[https://twitcasting.tv/{{{1}}} {{Twitcast/icon|size={{{size|}}}|color={{{color|#fff}}}}}]<!--
+-->|}}<!--
+-->}}</includeonly><noinclude>{{documentation}}</noinclude>

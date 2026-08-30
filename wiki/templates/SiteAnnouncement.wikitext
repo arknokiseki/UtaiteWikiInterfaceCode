@@ -1,0 +1,15 @@
+<noinclude><templatestyles src="Utaite Wiki/Styles.css" />__NOTOC__</noinclude><div class="mp-announcement"><div class="header">Announcements</div>
+{{MessageBox
+|class=site-notice
+|header=Site Notice
+|text=<nowiki/>
+* '''July 15''': The main page now features the '''Weekly Top 3''' — the week's most viewed utattemita on YouTube and Niconico! Full rankings and monthly upload roundups are in [[User blog:Arknomahounorobotto/monthly/2026/July|the bot's monthly blog]].
+* '''July 12''': {{T|UtaiteUnitMember}} has been rewritten: one transclusion now renders the whole unit members, with three card styles (variants) to choose from. See the [[Template:UtaiteUnitMember|template docs]]. 
+* '''February 10''': Help us improve the wiki by following the [[UW:SFG|songlist formatting guidelines]]!
+* '''January 21''': We now have a Notion site to guide editors! Check out the [https://ark-utaitewiki.notion.site/Utaite-Wiki-How-to-Basic-2879ed8ecd0a8052bce9fe758e575cb3 Utaite Wiki How-to-Basic page] to learn how to do many™ things on the wiki.
+<div style="text-align:center; font-size: 0.875em">Important changes will be logged [[Forum:Changelog|here]]</div>
+|id=main-page-site-notice
+}}
+<div style="font-size: 80%; text-align:right;">[[Template:SiteAnnouncement|View this template]]</div>
+<noinclude>[[Category:Notice templates]]
+</noinclude><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

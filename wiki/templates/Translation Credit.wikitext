@@ -1,0 +1,6 @@
+<noinclude>{{Documentation}}</noinclude><includeonly><div class="translation-credit" style="text-align:center">{{#switch: {{{type|community}}}
+  | official = '''Official Translation''' 
+  | community = '''Community Translation'''
+  | collaborative = '''Collaborative Translation'''
+}}&nbsp;by {{{translator|}}}{{#if: {{{date|}}}|&nbsp;({{{date|}}})}}{{#if: {{{notes|}}}|<br>{{{notes|}}}}}{{#if: {{{revision_info|}}}|<br>'''Revision:''' {{{revision_info|}}}}}
+</div></includeonly>

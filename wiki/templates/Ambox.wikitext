@@ -1,0 +1,3 @@
+<onlyinclude>{{#invoke:Message box|ambox}}</onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

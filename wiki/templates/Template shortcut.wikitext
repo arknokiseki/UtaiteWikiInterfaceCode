@@ -1,0 +1,15 @@
+<onlyinclude><indicator name="tpl-shortcut">{{Badge|content=<!--T:1--> {{PLURAL:<includeonly>{{#invoke:Loops|numArgs}}</includeonly><noinclude>1</noinclude>|shortcut|shortcuts}}: <!--
+--><noinclude>{{mono|nowrap=1|&#123;&#123;{{No redirect|Template:tsh|tsh}}&#125;&#125;}}</noinclude><!--
+-->{{#invoke:Loops|forNumArgs| {{mono|nowrap=1|{{#if:{{yesno|{{{target|}}}}}<!--
+	-->|²{tl¦$1}²<!--
+	-->|&#123;&#123;²{No redirect¦Template:$1¦$1}²&#125;&#125;<!--
+-->}}}} }}<!--
+-->}}</indicator></onlyinclude>
+{{Documentation|content=
+{{Lua|Module:Loops}}
+== TemplateData ==
+{{Template:Template shortcut/doc}}
+
+== See also == <!--T:2-->
+* {{tlx|Shortcut}}
+}}

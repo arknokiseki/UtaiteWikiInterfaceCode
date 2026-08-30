@@ -1,0 +1,3 @@
+{{LicenseBox|image=WIP descr.png|text=''This file  is the fan depictions, mainly used in the infobox.''}}{{Fairuse}}<!--
+--><includeonly>[[Category:Fan Depictions]][[Category:Media]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]][[Category:Image wiki templates]] [[Category:Licensing templates]]</noinclude>

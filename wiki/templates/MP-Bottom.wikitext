@@ -1,0 +1,2 @@
+<div class="tw-text-center hide-on-mobile tw-text-sm tw-font-bold">The current background image on Utaite Wiki is the "歌ってみたのうた" MV thumbnail, courtesy of [https://x.com/_akiakane　秋赤音]</div><!--<div class="site-background-credit hide-on-desktop">The current background image on Utaite Wiki is the "歌ってみたのうた" MV thumbnail, courtesy of [https://x.com/_akiakane　秋赤音]</div>-->
+<noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

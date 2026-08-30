@@ -1,0 +1,7 @@
+;There are currently 3 known preload templates here
+PAGE TEMPLATES:
+{{t|Singer/preload}}
+{{t|UtaiteGroup/preload}}
+
+BOX TEMPLATES:
+{{t|Song box/preload}}

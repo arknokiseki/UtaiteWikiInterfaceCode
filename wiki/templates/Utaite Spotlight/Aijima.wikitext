@@ -1,0 +1,29 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = aijima tumblr.png
+|caption = Aijima as seen in his Tumblr
+|officialjapname = 愛島
+|officialromajiname = Aijima
+|NNDuserpage = 276638
+|mylist1 = 21782192
+|mylist1info = utattemita
+|mylist2 = 19099704
+|mylist2info = as producer
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co412486
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Sayoko]]
+|examplennd = sm15849750
+|exampleyt = 
+|description = '''Aijima''' ('''愛島''') is a producer-{{NNDict|Utaite}}. One might know him from his producer name under {{VW|Mikito-P}}, however, he seldom covers songs.
+
+Aijima has a rather deep mid-ranged voice with a chilly characteristic and nasal sound; the songs he covers are also rather slow paced.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

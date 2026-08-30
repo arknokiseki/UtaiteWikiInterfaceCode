@@ -1,0 +1,31 @@
+{{Module rating|release}}
+
+This module provides a way to retrieve the group required to perform a given action on a page. It currently tests the following criteria:
+* The page being in the MediaWiki namespace: sysop
+* The page being a JavaScript or CSS subpage in userspace: interfaceadmin
+* The page being a JSON subpage in userspace: sysop
+* The page being protected: sysop or autoconfirmed
+* The page being used in a cascading-protected page: sysop
+* The page's title matching the titleblacklist: sysop or autoconfirmed
+* A file being moved: sysop
+* A page being moved: autoconfirmed
+* A file being uploaded: uploader
+* Anything else: *
+
+
+== Usage ==
+'''Warning:''' This module will use up to 4 expensive parser function calls each time it is ran. It should only be used if the exact effective protection level is necessary. Otherwise, consider using title.protectionLevels instead.
+=== From other modules ===
+To load this module:
+<syntaxhighlight lang="lua">
+local effectiveProtectionLevel = require('Module:Effective protection level')._main
+</syntaxhighlight>
+
+The function accepts two parameters. The first is a string containing the action to check, which must be one of "edit", "create", "move", "upload", or "autoreview". The second is optional, and can either be the name of the page to check, or a title returned from the mw.title functions. If the second parameter is omitted, the page being displayed is the one checked against. The return value is a string containing the name of the group required to perform the given action.
+
+=== From wikitext ===
+The parameters are the same as when it is called directly.
+ {{<nowiki/>#invoke:Effective protection level|''action''|''title''}}
+
+== See also ==
+* [[Module:Effective protection expiry]]

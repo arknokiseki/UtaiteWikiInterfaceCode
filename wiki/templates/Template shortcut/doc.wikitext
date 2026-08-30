@@ -1,0 +1,85 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Template shortcut/doc}}
+<templatedata>
+{
+	"description": {
+		"cs": "Tato šablona zobrazuje jednoho nebo více zástupců šablony.",
+		"en": "This template displays one or more of a template's shortcuts.",
+		"pt-br": "Esta predefinição exibe um ou mais atalhos de uma predefinição."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Shortcut 1",
+				"cs": "Zkratka 1",
+				"pt-br": "Atalho 1"
+			},
+			"description": {
+				"en": "Template shortcut 1.",
+				"cs": "Zástupce šablony 1.",
+				"pt-br": "Primeiro atalho da predefinição."
+			},
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": {
+				"en": "Shortcut 2",
+				"cs": "Zkratka 2",
+				"pt-br": "Atalho 2"
+			},
+			"description": {
+				"en": "Template shortcut 2.",
+				"cs": "Zástupce šablony 2.",
+				"pt-br": "Segundo atalho da predefinição."
+			},
+			"type": "wiki-template-name"
+		},
+		"3": {
+			"label": {
+				"en": "Shortcut 3",
+				"cs": "Zkratka 3",
+				"pt-br": "Atalho 3"
+			},
+			"description": {
+				"en": "Template shortcut 3.",
+				"cs": "Zástupce šablony 3.",
+				"pt-br": "Terceiro atalho da predefinição."
+			},
+			"type": "wiki-template-name"
+		},
+		"4": {
+			"label": {
+				"en": "Shortcut 4",
+				"cs": "Zkratka 4",
+				"pt-br": "Atalho 4"
+			},
+			"description": {
+				"en": "Template shortcut 4.",
+				"cs": "Zástupce šablony 4.",
+				"pt-br": "Quarto atalho da predefinição."
+			},
+			"type": "wiki-template-name"
+		},
+		"5": {
+			"label": {
+				"en": "Shortcut 5",
+				"cs": "Zkratka 5",
+				"pt-br": "Atalho 5"
+			},
+			"description": {
+				"en": "Template shortcut 5.",
+				"cs": "Zástupce šablony 5.",
+				"pt-br": "Quinto atalho da predefinição."
+			},
+			"type": "wiki-template-name"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Shortcut templates{{#translation:}}]]
+}}</includeonly>

@@ -1,0 +1,4 @@
+<pre>{{JPOP|MAN WITH A MISSION}}</pre>
+...results in:
+{{JPOP|MAN WITH A MISSION}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

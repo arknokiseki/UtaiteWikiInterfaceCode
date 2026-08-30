@@ -1,0 +1,4 @@
+<pre>{{AC|Spring|2010}}</pre>
+...results in:
+{{AC|Spring|2010}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

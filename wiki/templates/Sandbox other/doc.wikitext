@@ -1,0 +1,40 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+<templatedata>
+{
+	"description": {
+		"en": "This template displays different output on sandbox and documentation pages than other ones.",
+		"cs": "Tato šablona zobrazuje jiný výstup na karanténě a stránkách dokumentace než ostatní."
+	},
+	"params": {
+		"1": {
+			"label": {
+				"en": "sandbox text",
+				"cs": "text pískoviště"
+			},
+			"description": {
+				"en": "Text displayed on sandbox (/sandbox) and documentation (/doc) subpages. Usually this doesn’t contain categories, but it may contain a link to the main template.",
+				"cs": "Text zobrazený na podstránkách sandbox (/sandbox) a dokumentace (/doc). Obvykle neobsahuje kategorie, ale může obsahovat odkaz na hlavní šablonu."
+			},
+			"type": "content",
+			"suggested": true
+		},
+		"2": {
+			"label": {
+				"en": "normal text",
+				"cs": "normální text"
+			},
+			"description": {
+				"en": "Text displayed everywhere except for sandbox and documentation subpages. Usually this contains categories for the template.",
+				"cs": "Text zobrazený všude kromě sandboxu a podstránek dokumentace. Obvykle obsahuje kategorie pro šablonu."
+			},
+			"type": "content",
+			"suggested": true
+		}
+	}
+}
+</templatedata>
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go here and interwikis go in Wikidata. -->
+[[Category:Templates]]
+}}</includeonly>

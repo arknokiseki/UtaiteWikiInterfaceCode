@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:PageNotice|notice|type=js}}</includeonly><noinclude>{{Documentation|type=Notice}}</noinclude>

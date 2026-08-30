@@ -1,0 +1,53 @@
+<includeonly>{{#vardefine:templatepage|{{#if:{{{1|}}}|{{{1|}}}|{{#switch:{{SUBPAGENAME}}
+|doc|Draft={{SUBJECTSPACE}}:{{BASEPAGENAME}}
+|#default={{SUBJECTPAGENAME}}
+}}}}}}{{#vardefine:namespace|{{#switch:{{NAMESPACE:{{#var:templatepage}}}}
+|Module=Lua module
+|#default=template
+}}}}<!--
+-->{{#vardefine:numberofpages|<!--
+      -->{{formatnum:{{#replace:<!--
+         -->{{#ifeq:{{{pagetype|-}}}|-<!--
+            -->|{{NUMBEROFPAGES}}<!--
+            -->|{{#dpl:
+                |namespace={{#switch:{{{pagetype|}}}|Main|main=|#default={{{pagetype|}}}}}
+                |format=,
+                |resultsheader=%TOTALPAGES%
+                }}<!--
+         -->}}<!--
+      -->|{{Extension DPL}}}}|R}}<!--
+   -->}}{{#vardefine:totalpages|{{#replace:{{#ifeq:{{{pagetype|-}}}|-<!--
+   -->|{{#dpl:
+   |uses={{{1|{{NAMESPACE}}:{{ROOTPAGENAME}}}}}
+   |format=,
+   |resultsheader=%TOTALPAGES%
+   }}<!--
+   -->|{{#dpl:
+   |uses={{{1|{{NAMESPACE}}:{{ROOTPAGENAME}}}}}
+   |format=,
+   |resultsheader=%TOTALPAGES%
+   |namespace={{#switch:{{{pagetype|}}}|Main|main=|#default={{{pagetype|}}}}}
+   }}<!--
+-->}}|{{Extension DPL}}}}}}{{#vardefine:system|
+{{#DPL:|uses={{{1|{{NAMESPACE}}:{{ROOTPAGENAME}}}}}|namespace=MediaWiki}}
+}}{{#vardefine:highrisk|
+{{#var:system}}{{#ifexpr:{{#var:totalpages}} > 10000|1}}
+}}{{#vardefine:highuse|
+{{#ifexpr:{{formatnum:{{#var:totalpages}}|R}} / {{#var:numberofpages}} > 0.10 or {{formatnum:{{#var:totalpages}}|R}} / {{formatnum:{{NUMBEROFPAGES}}|R}} > 0.10 or {{#var:totalpages}} > 1000|1}}{{#var:system}}
+}}<!--
+-->{{#if:{{#var:highuse}}|
+{{MessageBox
+|class   = highrisk
+|type    = important
+|image   = {{#if:{{#var:system}}|MediaWiki-2020-Icon.svg|Icon Emoji Paimon's Paintings 29 Navia 3.png}}
+|style   = background-color:rgba(200,0,0,0.2)
+|header  = {{#if:{{#var:highrisk}}|<big>WARNING:</big>}} {{#if:{{#var:system|}}|This {{#var:namespace}} is used in system messages, and|This {{#var:namespace}} is used}} {{#ifeq:{{{pagetype|-}}}|-|on|on pages in the {{#ifeq:{{{pagetype|}}}||Main|{{{pagetype|}}}}} namespace. It can be found on}} [[Special:WhatLinksHere/{{#var:templatepage}}|{{#iferror:{{formatnum:{{#var:totalpages}}}}|a very large number of|{{formatnum:{{#var:totalpages}}}}}} pages]]{{#iferror:{{formatnum:{{#var:totalpages}}}}|.|, or on about {{#expr:{{formatnum:{{#var:totalpages}}|R}} / {{#var:numberofpages}} * 100 round 2}}% of {{#ifeq:{{{pagetype|-}}}|-|all|those}} pages.}} {{#ifeq:{{{pagetype|-}}}|-||Additionally, this {{#var:namespace}} is used on {{#expr:{{formatnum:{{#var:totalpages}}|R}} / {{formatnum:{{NUMBEROFPAGES}}|R}} * 100 round 2}}% of all pages.}}
+|text    = {{#if:{{#var:system}}|Edits will '''immediately''' change the MediaWiki user interface.|Edits to this {{#var:namespace}} will be widely noticed.}} <!--
+-->To avoid large-scale disruption{{#ifexpr:{{#var:totalpages}} > 10000|&nbsp;and unnecessary server load}}, any changes to this {{#var:namespace}} {{#if:{{#var:highrisk}}|<u>must</u>|should}} be tested in its {{Exists|{{#var:templatepage}}/Draft|[[{{#var:templatepage}}/Draft|sandbox]]|sandbox}} or {{Exists|{{#var:templatepage}}/testcases|[[{{#var:templatepage}}/testcases|testcase]]|testcases}} subpages<!--
+-->{{#ifeq:{{NAMESPACE}}|Module|.|, or in your own [[Special:MyPage|user space]].}}<!--
+--> {{#ifeq:{{PROTECTIONLEVEL:edit|{{#var:templatepage}}}}|sysop<!--
+   -->|The tested changes can then be added to this page in one single edit by an [[Genshin Impact Wiki:User Rights#Administrator|administrator]] or a [[Genshin Impact Wiki:User Rights#Content Moderator|content moderator]].<!--
+   -->|The tested changes can then be added to this page in one single edit. {{#if:{{#var:highrisk}}|<strong>This page must be fully protected.</strong>}}<!--
+-->}} {{#if:{{#var:system}}|The following MediaWiki pages use this {{#var:namespace}}: {{#var:system}}}}
+|comment = Please consider discussing any changes in the [https://discord.gg/genshinwiki wiki's Discord].
+}}{{Namespace|template={{#ifeq:{{{nocat}}}|1||{{#if:{{#ifeq:{{SUBPAGENAME}}|Draft|1}}{{#ifeq:{{SUBPAGENAME}}|doc|1}}{{#ifeq:{{SUBPAGENAME}}|testcases|1}}||[[Category:High-Risk Templates]]}}}}|module={{#ifeq:{{{nocat}}}|1||{{#if:{{#ifeq:{{SUBPAGENAME}}|Draft|1}}{{#ifeq:{{SUBPAGENAME}}|doc|1}}{{#ifeq:{{SUBPAGENAME}}|testcases|1}}||[[Category:High-Risk Modules]]}}}}}}|}}</includeonly><noinclude>{{Documentation|type=Notice}}</noinclude>

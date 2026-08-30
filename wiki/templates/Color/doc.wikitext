@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Color|v1=red|v2=blue}}
+
+==Examples==
+{{T|Color|p1=red|p2=blue|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Color",
+			"description": "Color of the text.",
+			"type": "string",
+			"default": "Unknown",
+			"suggested": true
+		},
+        "2": {
+			"label": "Text",
+			"description": "Text to be colored.",
+			"type": "string",
+			"default": "Unknown",
+			"suggested": true
+		}
+    }
+}
+</templatedata>

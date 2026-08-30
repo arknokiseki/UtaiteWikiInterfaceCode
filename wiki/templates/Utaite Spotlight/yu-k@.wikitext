@@ -1,0 +1,23 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = yu-k@ maji love.png
+|caption = her collab cover of Maji LOVE 1000%
+|officialjapname = 柚花 / ゆうか
+|officialromajiname = yu-k@
+|NNDuserpage = 5951903
+|mylist1 = 18336721
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|nicommu1 = co310579
+|nicommu1info = 
+|exampletitle = [[Mozaik Role]]
+|examplennd = sm11458672
+|exampleyt = 
+|description = '''yu-k@''' pronounced '''Yuuka''' ('''ゆうか''' or '''柚花'''), is an {{NNDict|Utaite}}.
+
+She has a mid-ranged slightly deep voice with a feminine mature and solid, somewhat smooth tone, while being less proficient with higher notes, she can sing fairly well in a deeper range.
+
+She often collaborates with other utaite, for example her collab of "[[Maji LOVE 1000%]]"{{nnd|sm16322126}}.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

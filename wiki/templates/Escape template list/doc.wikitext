@@ -1,0 +1,16 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "A list of templates (and magic words) used to escape wikitext markup from initial processing.",
+		"cs": "Seznam šablon (a kouzelných slov), které se používají k opuštění označení wikitextu z počátečního zpracování."
+	},
+	"params": {}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Documentation shared content templates{{#translation:}}]]
+}}</includeonly>

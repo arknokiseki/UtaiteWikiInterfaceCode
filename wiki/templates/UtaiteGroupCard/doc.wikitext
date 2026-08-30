@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+A rich group card built entirely from a group's own page. Given a group name it reads the image, kanji name and description from that page's infobox via <code><nowiki>{{#invoke:UtaiteUnit|getParameter}}</nowiki></code> and <code><nowiki>{{#invoke:Utaite|getParameter}}</nowiki></code>, then renders the member list with <code><nowiki>{{#invoke:UtaiteGroups|processPage}}</nowiki></code>.
+
+Because everything is pulled live, a card never needs updating when the group's page changes.
+
+Prefers the infobox's <code>Image2</code> field, falling back to <code>Image</code>.
+
+==Syntax==
+{{T|UtaiteGroupCard|v1=group page name}}
+
+==Usage==
+Wrap a set of cards in a gallery container:
+<pre>
+<div class="utaite-groups-gallery">
+{{UtaiteGroupCard|IRREGULAR DICE}}
+{{UtaiteGroupCard|StarLight PolaRis}}
+{{UtaiteGroupCard|Chrono Reverse}}
+</div>
+</pre>
+
+<div class="utaite-groups-gallery">{{UtaiteGroupCard|IRREGULAR DICE}}{{UtaiteGroupCard|StarLight PolaRis}}{{UtaiteGroupCard|Chrono Reverse}}</div>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Group page || Exact page name of the group. All displayed data is read from that page. || wiki-page-name || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+==See also==
+* {{T|GroupBox}} — a simpler image-and-name card
+<includeonly>[[Category:Templates Used in Main Content]]</includeonly>

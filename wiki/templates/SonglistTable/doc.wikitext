@@ -1,0 +1,42 @@
+{{Notice/maintenance}}
+{{WIP|template}}
+<!-- <pre>
+{{SonglistTable
+|entry=
+{{SonglistEntry|1
+|title=アンチクロックワイズ (anti-clockwise)
+|yt=gOLN_d7YW94
+|nnd=sm30958220
+|feat={{feat|[[Mafumafu]]}}
+|info={{Orikyoku|with=[[After the Rain]]}}<br/>(Clockwork Planet ED)
+|date=2017.04.03
+}}
+{{SonglistEntry|2
+|title=人生ムリゲーム (Jinsei Muri Game)
+|yt=maNJAxLsshw
+|nnd=
+|feat={{feat|[[Mafumafu]]}}{{feat|[[Uratanuki|Urata]]}}{{feat|[[Tonari no Sakata|Sakata]]}}
+|info={{Orikyoku|with=[[SoraMafuUraSaka]]}}
+|date=2023.12.18
+}}
+}}</pre>
+{{SonglistTable
+|entry=
+{{SonglistEntry|1
+|title=アンチクロックワイズ (anti-clockwise)
+|yt=gOLN_d7YW94
+|nnd=sm30958220
+|feat={{feat|[[Mafumafu]]}}
+|info={{Orikyoku|with=[[After the Rain]]}}<br/>(Clockwork Planet ED)
+|date=2017.04.03
+}}
+{{SonglistEntry|2
+|title=人生ムリゲーム (Jinsei Muri Game)
+|yt=maNJAxLsshw
+|nnd=
+|feat={{feat|[[Mafumafu]]}}{{feat|[[Uratanuki|Urata]]}}{{feat|[[Tonari no Sakata|Sakata]]}}
+|info={{Orikyoku|with=[[SoraMafuUraSaka]]}}
+|date=2023.12.18
+}}
+}}
+ -->

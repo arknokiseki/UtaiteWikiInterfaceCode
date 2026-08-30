@@ -1,0 +1,16 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+This template is the same as [[Template:Xpds]], except that it starts the result of the template, variable or parser function call to be demonstrated in a new paragraph. This is in particular important if the rendering of the resulting wikitext depends on this, such as in the case of a table or list.
+
+The template uses [[Module:Xpd]]; see also [[Module talk:Xpd]].
+
+Example: 
+
+<code><nowiki>{{xpdp|2x|*abc</nowiki><br>}}</code> gives:
+
+{{xpdp|2x|*abc
+}}
+
+==See also==
+*[[Template:Xpd]]
+*[[m:Template:Xpd/doc]]

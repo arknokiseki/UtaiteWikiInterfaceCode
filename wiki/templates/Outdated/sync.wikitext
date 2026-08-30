@@ -1,0 +1,22 @@
+<includeonly>{{#invoke:Outdated|getOutdatedFromSubpage}}</includeonly><noinclude>
+== Usage ==
+This template synchronizes the Outdated template from the "/Songs" subpage to display on the main page.
+
+Simply use: <code><nowiki>{{Outdated/sync}}</nowiki></code>
+
+The template will automatically:
+# Look for the current page's "/Songs" subpage
+# Find the <nowiki>{{Outdated}}</nowiki> template usage on that subpage
+# Extract all parameters from that usage
+# Display the same Outdated template on the main page with those parameters
+
+This allows editors to only update the Outdated template on the "/Songs" subpage, and the main page will automatically stay synchronized.
+
+== Example ==
+If the "/Songs" subpage contains:
+<pre>{{Outdated|January 15, 2024|bordercolor=#ff6b6b|discography=yes}}</pre>
+
+Then using <code><nowiki>{{Outdated/sync}}</nowiki></code> on the main page will display the same Outdated template with those exact parameters.
+
+[[Category:Synchronization templates]]
+</noinclude>

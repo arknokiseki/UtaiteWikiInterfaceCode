@@ -1,0 +1,8 @@
+<h2 class="yakunitatsukamo" style="font-family: 'Arial', sans-serif; text-align: center; font-weight: 600;">These might be helpful...</h2>
+<div class="link-container">
+<div class="link-box">[[Template:Singer/doc|Singer Documentation]]</div>
+<div class="link-box">[[Template:Album/doc|Album Documentation]]</div>
+<div class="link-box">[[Template:Gallery/doc|Gallery Documentation]]</div>
+<div class="link-box">[[Tutorial]]</div>
+<div class="link-box">[[Requirements]]</div>
+</div>

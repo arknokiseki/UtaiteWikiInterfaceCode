@@ -1,0 +1,72 @@
+{{Documentation/Header}}
+Renders a single birthday card: a 100&nbsp;px portrait, a linked page name, the birth date, and the utaite's age transition for the year.
+
+It is normally called automatically by {{T|ProcessSingerPage/Birthday}}, which reads the values off a page's {{T|Utaite}} infobox — see {{T|ProcessBirthdayCategory}} for how the whole birthday system fits together. You can also call it directly with explicit values.
+
+== Syntax ==
+{{T|BirthdayEntry|block=1
+|v1=name =
+|v2=image =
+|v3=birthyear =
+|v4=birthmonth =
+|v5=birthday =
+}}
+
+== Examples ==
+=== With a known birth year ===
+{{T|BirthdayEntry|_Y_=1|block=1
+|p1=name = Example Singer
+|p2=image = Template doc.png
+|p3=birthyear = 2000
+|p4=birthmonth = 10
+|p5=birthday = 1
+}}
+
+=== With an unknown birth year ===
+Passing <code>Unknown</code> suppresses both the year and the age line.
+{{T|BirthdayEntry|_Y_=1|block=1
+|p1=name = Example Singer
+|p2=image = Template doc.png
+|p3=birthyear = Unknown
+|p4=birthmonth = 10
+|p5=birthday = 1
+}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>name</code> || – || Name || The utaite's page name. Used as the caption and the link target. || wiki-page-name || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>image</code> || – || Image || Portrait filename, without the <code>File:</code> prefix. The literal value <code>Unknown</code> substitutes <code>Unknown.png</code>. || wiki-file-name || Template doc.png ||
+|-
+| <code>birthyear</code> || – || Birth year || Four-digit year. Set to <code>Unknown</code> to hide the year and the age line entirely. || number || – ||
+|-
+| <code>birthmonth</code> || – || Birth month || Numeric month <code>01</code>–<code>12</code>, converted to a month name. || number || – ||
+|-
+| <code>birthday</code> || – || Birth day || Numeric day of the month. || number || – ||
+|}
+
+== The age line ==
+When a birth year is known, the card shows a transition rather than a single number:
+
+: '''''(age last year)'' → ''(age this year)'''''
+
+Both values come from {{T|Age}}. This makes the card read as a birthday greeting — "24 → 25" — rather than a static age.
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A single birthday card with portrait, linked name, birth date and age transition.",
+"params": {
+"name": { "label": "Name", "description": "The utaite's page name.", "type": "wiki-page-name", "required": true },
+"image": { "label": "Image", "description": "Portrait filename without the 'File:' prefix. 'Unknown' uses Unknown.png.", "type": "wiki-file-name", "default": "Template doc.png" },
+"birthyear": { "label": "Birth year", "description": "Four-digit year, or 'Unknown' to hide the year and age.", "type": "number" },
+"birthmonth": { "label": "Birth month", "description": "Numeric month 01-12.", "type": "number" },
+"birthday": { "label": "Birth day", "description": "Numeric day of the month.", "type": "number" }
+},
+"paramOrder": ["name","image","birthyear","birthmonth","birthday"],
+"format": "block"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Features in Early Development]]</includeonly>

@@ -1,0 +1,458 @@
+;Description
+:Use this template to put content in minitabs. It supports up to 10 tabs.
+;Syntax
+<pre>{{MiniTabs
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+| <title> | <content>
+}}</pre>
+;Example
+:Input:
+
+<pre>{{MiniTabs
+| Type A |
+{{Album|type=unit
+|albumtitle = [https://amatsuki.jp/musics/5675 Sore wa Kitto Koi deshita.]
+|image = それはきっと恋でした。_通常盤.png
+|datereleased = June 27, 2018
+|crossfadennd = 
+|crossfadeyt = NrLSkyOk4rE
+|shops = {{l|cdjapan|KICS-3731}}{{l|amazon|B07BT21D44}}
+|streams = {{l|spotify|01wtZlz2X8GDHjsWrzDF2V}}
+|track1title = Astro Lost
+|track1info = {{yt|WGNioH7ndVw}}
+|track1lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track2title =  Kimi dake wa. (Album Mix)
+|track2info = {{yt|VsTeCBvfSBs}} Theme Song of TV Drama "#Hashtag"
+|track2lyricist = [[Natsushiro Takaaki]], Amatsuki
+|track2composer = [[Natsushiro Takaaki]]
+|track2arranger = {{VW|KaiseiP}} (Takuya Watanabe)
+
+|track3title = Kitto Aitte
+|track3info = {{yt|GUhTYBLefzg}}
+|track3lyricist = [[ShounenT]] (Tomohisa Sakou), Amatsuki
+|track3composer = [[ShounenT]] (Tomohisa Sakou)
+|track3arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track4title = Getsuyoubi no Yuuutsu
+|track4info = {{yt|E5Jy_h1eHzY}}
+|track4lyricist = HoneyWorks
+|track4composer = HoneyWorks
+|track4arranger = HoneyWorks
+
+|track5title =  DiVE!!
+|track5info = {{yt|7dK-1mErg7w}} Opening Theme of TV Anime "[https://digimon.fandom.com/wiki/Digimon_Universe_App_Monsters Digimon Universe App Monsters]"
+|track5lyricist = {{VW|LeftyMonster-P}}, Amatsuki
+|track5composer = {{VW|LeftyMonster-P}}
+|track5arranger = Nakayama Masato
+
+|track6title = Mr.Fake  {{yt|QemU5T44I_U}}
+|track6info = Theme Song of TV Drama "Tomodachi Game"
+|track6lyricist = Shou Watanabe, Amatsuki
+|track6composer = Shou Watanabe
+|track6arranger = Masato Nakayama
+
+|track7title = Marionette Lovers
+|track7info = {{yt|h-RnsC3zsQU}}
+|track7lyricist = [[Halyosy]]
+|track7composer = [[Halyosy]]
+|track7arranger = [[Halyosy]]
+
+|track8title = Kaishin no Ichigeki
+|track8info = {{yt|h-Q7AVA1e0qN4}}
+|track8lyricist = Amatsuki
+|track8composer = Amatsuki
+|track8arranger = Kusumi Kuusuke, kain
+
+|track9title =  Heroic Syndrome
+|track9info = {{yt|-AXeGfRy1kE}}
+|track9lyricist = [[Mafumafu]], [[Nqrse]]
+|track9composer = [[Mafumafu]]
+|track9arranger = {{VW|Kemu}} (Shouta Horie)
+
+|track10title = Boku no Koto nara Wasurete kurete Ii yo
+|track10info = {{yt|7S8Lz3_fMHI}}
+|track10lyricist = saku, Amatsuki
+|track10composer = saku, Amatsuki
+|track10arranger = saku
+
+|track11title = Garbage Monster (Garakuta Monster)
+|track11info = {{yt|biFOUOB9u4g}}
+|track11lyricist = [[Eve]]
+|track11composer = [[Eve]]
+|track11arranger = Numa
+
+|track12title = Sing! Swim! Swing!
+|track12info = {{yt|q2Ylk3wxRpU}}
+|track12lyricist = halyosy
+|track12composer = halyosy
+|track12arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track13title = Flight Light ~ Hoshikuzu to Boeing ~
+|track13info = {{yt|ynb6Us5RFXI}}
+|track13lyricist = {{VW|MikitoP}}
+|track13composer = 
+|track13arranger = {{VW|MikitoP}}
+
+|track14title =  Tsunageru {{yt|LgDHZoczBGo}}
+|track14info = The Theme Song for Docomo Tohoku Reconstruction and Revitalization 'Smile Bridge Rainbow Project'
+|track14lyricist = Kei Hayashi
+|track14composer = Kei Hayashi
+|track14arranger = {{VW|Tanahashi UNA Nobuhito}}
+
+|track15title = Idea
+|track15info = {{yt|uF8PdY_Ug14}}
+|track15lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata), Amatsuki
+|track15composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track15arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track16title = Kimi ga Boku no Kokoro ni Mahou o Kaketa
+|track16info = {{yt|MTuZW3eCtkU}}
+|track16lyricist = Amatsuki
+|track16composer = Amatsuki
+|track16arranger = Takuya Watanabe
+
+|track17title = Voice Letter
+|track17info = 
+}}
+| Type B | 
+{{Album|type=unit
+|albumtitle = [https://amatsuki.jp/musics/5675 Sore wa Kitto Koi deshita.]
+|image = それはきっと恋でした。_ラブレター盤.png
+|datereleased = June 27, 2018
+|crossfadennd = 
+|crossfadeyt = NrLSkyOk4rE
+|shops = {{l|cdjapan|KICS-93731}}{{l|amazon|B07BT6N21S}}
+|streams = {{l|spotify|01wtZlz2X8GDHjsWrzDF2V}}
+|track1title = Astro Lost
+|track1info = {{yt|WGNioH7ndVw}}
+|track1lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track2title =  Kimi dake wa. (Album Mix)
+|track2info = {{yt|VsTeCBvfSBs}} Theme Song of TV Drama "#Hashtag"
+|track2lyricist = [[Natsushiro Takaaki]], Amatsuki
+|track2composer = [[Natsushiro Takaaki]]
+|track2arranger = {{VW|KaiseiP}} (Takuya Watanabe)
+
+|track3title = Kitto Aitte
+|track3info = {{yt|GUhTYBLefzg}}
+|track3lyricist = [[ShounenT]] (Tomohisa Sakou), Amatsuki
+|track3composer = [[ShounenT]] (Tomohisa Sakou)
+|track3arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track4title = Getsuyoubi no Yuuutsu
+|track4info = {{yt|E5Jy_h1eHzY}}
+|track4lyricist = HoneyWorks
+|track4composer = HoneyWorks
+|track4arranger = HoneyWorks
+
+|track5title =  DiVE!!
+|track5info = {{yt|7dK-1mErg7w}} Opening Theme of TV Anime "[https://digimon.fandom.com/wiki/Digimon_Universe_App_Monsters Digimon Universe App Monsters]"
+|track5lyricist = {{VW|LeftyMonster-P}}, Amatsuki
+|track5composer = {{VW|LeftyMonster-P}}
+|track5arranger = Nakayama Masato
+
+|track6title = Mr.Fake  {{yt|QemU5T44I_U}}
+|track6info = Theme Song of TV Drama "Tomodachi Game"
+|track6lyricist = Shou Watanabe, Amatsuki
+|track6composer = Shou Watanabe
+|track6arranger = Masato Nakayama
+
+|track7title = Marionette Lovers
+|track7info = {{yt|h-RnsC3zsQU}}
+|track7lyricist = [[Halyosy]]
+|track7composer = [[Halyosy]]
+|track7arranger = [[Halyosy]]
+
+|track8title = Kaishin no Ichigeki
+|track8info = {{yt|h-Q7AVA1e0qN4}}
+|track8lyricist = Amatsuki
+|track8composer = Amatsuki
+|track8arranger = Kusumi Kuusuke, kain
+
+|track9title =  Heroic Syndrome
+|track9info = {{yt|-AXeGfRy1kE}}
+|track9lyricist = [[Mafumafu]], [[Nqrse]]
+|track9composer = [[Mafumafu]]
+|track9arranger = {{VW|Kemu}} (Shouta Horie)
+
+|track10title = Boku no Koto nara Wasurete kurete Ii yo
+|track10info = {{yt|7S8Lz3_fMHI}}
+|track10lyricist = saku, Amatsuki
+|track10composer = saku, Amatsuki
+|track10arranger = saku
+
+|track11title = Garbage Monster (Garakuta Monster)
+|track11info = {{yt|biFOUOB9u4g}}
+|track11lyricist = [[Eve]]
+|track11composer = [[Eve]]
+|track11arranger = Numa
+
+|track12title = Sing! Swim! Swing!
+|track12info = {{yt|q2Ylk3wxRpU}}
+|track12lyricist = halyosy
+|track12composer = halyosy
+|track12arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track13title = Flight Light ~ Hoshikuzu to Boeing ~
+|track13info = {{yt|ynb6Us5RFXI}}
+|track13lyricist = [[MikitoP]]
+|track13composer = 
+|track13arranger = [[MikitoP]]
+
+|track14title =  Tsunageru {{yt|LgDHZoczBGo}}
+|track14info = The Theme Song for Docomo Tohoku Reconstruction and Revitalization 'Smile Bridge Rainbow Project'
+|track14lyricist = Kei Hayashi
+|track14composer = Kei Hayashi
+|track14arranger = {{VW|Tanahashi UNA Nobuhito}}
+
+|track15title = Idea
+|track15info = {{yt|uF8PdY_Ug14}}
+|track15lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata), Amatsuki
+|track15composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track15arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track16title = Kimi ga Boku no Kokoro ni Mahou o Kaketa
+|track16info = {{yt|MTuZW3eCtkU}}
+|track16lyricist = Amatsuki
+|track16composer = Amatsuki
+|track16arranger = Takuya Watanabe
+
+|track17title = Voice Letter
+|track17info = 
+}}
+}}
+</pre>
+
+:Output:
+
+{{MiniTabs
+| Type A |
+{{Album|type=unit
+|albumtitle = [https://amatsuki.jp/musics/5675 Sore wa Kitto Koi deshita.]
+|image = それはきっと恋でした。_通常盤.png
+|datereleased = June 27, 2018
+|crossfadennd = 
+|crossfadeyt = NrLSkyOk4rE
+|shops = {{l|cdjapan|KICS-3731}}{{l|amazon|B07BT21D44}}
+|streams = {{l|spotify|01wtZlz2X8GDHjsWrzDF2V}}
+|track1title = Astro Lost
+|track1info = {{yt|WGNioH7ndVw}}
+|track1lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track2title =  Kimi dake wa. (Album Mix)
+|track2info = {{yt|VsTeCBvfSBs}} Theme Song of TV Drama "#Hashtag"
+|track2lyricist = [[Natsushiro Takaaki]], Amatsuki
+|track2composer = [[Natsushiro Takaaki]]
+|track2arranger = {{VW|KaiseiP}} (Takuya Watanabe)
+
+|track3title = Kitto Aitte
+|track3info = {{yt|GUhTYBLefzg}}
+|track3lyricist = [[ShounenT]] (Tomohisa Sakou), Amatsuki
+|track3composer = [[ShounenT]] (Tomohisa Sakou)
+|track3arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track4title = Getsuyoubi no Yuuutsu
+|track4info = {{yt|E5Jy_h1eHzY}}
+|track4lyricist = HoneyWorks
+|track4composer = HoneyWorks
+|track4arranger = HoneyWorks
+
+|track5title =  DiVE!!
+|track5info = {{yt|7dK-1mErg7w}} Opening Theme of TV Anime "[https://digimon.fandom.com/wiki/Digimon_Universe_App_Monsters Digimon Universe App Monsters]"
+|track5lyricist = {{VW|LeftyMonster-P}}, Amatsuki
+|track5composer = {{VW|LeftyMonster-P}}
+|track5arranger = Nakayama Masato
+
+|track6title = Mr.Fake  {{yt|QemU5T44I_U}}
+|track6info = Theme Song of TV Drama "Tomodachi Game"
+|track6lyricist = Shou Watanabe, Amatsuki
+|track6composer = Shou Watanabe
+|track6arranger = Masato Nakayama
+
+|track7title = Marionette Lovers
+|track7info = {{yt|h-RnsC3zsQU}}
+|track7lyricist = [[Halyosy]]
+|track7composer = [[Halyosy]]
+|track7arranger = [[Halyosy]]
+
+|track8title = Kaishin no Ichigeki
+|track8info = {{yt|h-Q7AVA1e0qN4}}
+|track8lyricist = Amatsuki
+|track8composer = Amatsuki
+|track8arranger = Kusumi Kuusuke, kain
+
+|track9title =  Heroic Syndrome
+|track9info = {{yt|-AXeGfRy1kE}}
+|track9lyricist = [[Mafumafu]], [[Nqrse]]
+|track9composer = [[Mafumafu]]
+|track9arranger = {{VW|Kemu}} (Shouta Horie)
+
+|track10title = Boku no Koto nara Wasurete kurete Ii yo
+|track10info = {{yt|7S8Lz3_fMHI}}
+|track10lyricist = saku, Amatsuki
+|track10composer = saku, Amatsuki
+|track10arranger = saku
+
+|track11title = Garbage Monster (Garakuta Monster)
+|track11info = {{yt|biFOUOB9u4g}}
+|track11lyricist = [[Eve]]
+|track11composer = [[Eve]]
+|track11arranger = Numa
+
+|track12title = Sing! Swim! Swing!
+|track12info = {{yt|q2Ylk3wxRpU}}
+|track12lyricist = halyosy
+|track12composer = halyosy
+|track12arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track13title = Flight Light ~ Hoshikuzu to Boeing ~
+|track13info = {{yt|ynb6Us5RFXI}}
+|track13lyricist = {{VW|MikitoP}}
+|track13composer = 
+|track13arranger = {{VW|MikitoP}}
+
+|track14title =  Tsunageru {{yt|LgDHZoczBGo}}
+|track14info = The Theme Song for Docomo Tohoku Reconstruction and Revitalization 'Smile Bridge Rainbow Project'
+|track14lyricist = Kei Hayashi
+|track14composer = Kei Hayashi
+|track14arranger = {{VW|Tanahashi UNA Nobuhito}}
+
+|track15title = Idea
+|track15info = {{yt|uF8PdY_Ug14}}
+|track15lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata), Amatsuki
+|track15composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track15arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track16title = Kimi ga Boku no Kokoro ni Mahou o Kaketa
+|track16info = {{yt|MTuZW3eCtkU}}
+|track16lyricist = Amatsuki
+|track16composer = Amatsuki
+|track16arranger = Takuya Watanabe
+
+|track17title = Voice Letter
+|track17info = 
+}}
+| Type B | 
+{{Album|type=unit
+|albumtitle = [https://amatsuki.jp/musics/5675 Sore wa Kitto Koi deshita.]
+|image = それはきっと恋でした。_ラブレター盤.png
+|datereleased = June 27, 2018
+|crossfadennd = 
+|crossfadeyt = NrLSkyOk4rE
+|shops = {{l|cdjapan|KICS-93731}}{{l|amazon|B07BT6N21S}}
+|streams = {{l|spotify|01wtZlz2X8GDHjsWrzDF2V}}
+|track1title = Astro Lost
+|track1info = {{yt|WGNioH7ndVw}}
+|track1lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track1arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track2title =  Kimi dake wa. (Album Mix)
+|track2info = {{yt|VsTeCBvfSBs}} Theme Song of TV Drama "#Hashtag"
+|track2lyricist = [[Natsushiro Takaaki]], Amatsuki
+|track2composer = [[Natsushiro Takaaki]]
+|track2arranger = {{VW|KaiseiP}} (Takuya Watanabe)
+
+|track3title = Kitto Aitte
+|track3info = {{yt|GUhTYBLefzg}}
+|track3lyricist = [[ShounenT]] (Tomohisa Sakou), Amatsuki
+|track3composer = [[ShounenT]] (Tomohisa Sakou)
+|track3arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track4title = Getsuyoubi no Yuuutsu
+|track4info = {{yt|E5Jy_h1eHzY}}
+|track4lyricist = HoneyWorks
+|track4composer = HoneyWorks
+|track4arranger = HoneyWorks
+
+|track5title =  DiVE!!
+|track5info = {{yt|7dK-1mErg7w}} Opening Theme of TV Anime "[https://digimon.fandom.com/wiki/Digimon_Universe_App_Monsters Digimon Universe App Monsters]"
+|track5lyricist = {{VW|LeftyMonster-P}}, Amatsuki
+|track5composer = {{VW|LeftyMonster-P}}
+|track5arranger = Nakayama Masato
+
+|track6title = Mr.Fake  {{yt|QemU5T44I_U}}
+|track6info = Theme Song of TV Drama "Tomodachi Game"
+|track6lyricist = Shou Watanabe, Amatsuki
+|track6composer = Shou Watanabe
+|track6arranger = Masato Nakayama
+
+|track7title = Marionette Lovers
+|track7info = {{yt|h-RnsC3zsQU}}
+|track7lyricist = [[Halyosy]]
+|track7composer = [[Halyosy]]
+|track7arranger = [[Halyosy]]
+
+|track8title = Kaishin no Ichigeki
+|track8info = {{yt|h-Q7AVA1e0qN4}}
+|track8lyricist = Amatsuki
+|track8composer = Amatsuki
+|track8arranger = Kusumi Kuusuke, kain
+
+|track9title =  Heroic Syndrome
+|track9info = {{yt|-AXeGfRy1kE}}
+|track9lyricist = [[Mafumafu]], [[Nqrse]]
+|track9composer = [[Mafumafu]]
+|track9arranger = {{VW|Kemu}} (Shouta Horie)
+
+|track10title = Boku no Koto nara Wasurete kurete Ii yo
+|track10info = {{yt|7S8Lz3_fMHI}}
+|track10lyricist = saku, Amatsuki
+|track10composer = saku, Amatsuki
+|track10arranger = saku
+
+|track11title = Garbage Monster (Garakuta Monster)
+|track11info = {{yt|biFOUOB9u4g}}
+|track11lyricist = [[Eve]]
+|track11composer = [[Eve]]
+|track11arranger = Numa
+
+|track12title = Sing! Swim! Swing!
+|track12info = {{yt|q2Ylk3wxRpU}}
+|track12lyricist = halyosy
+|track12composer = halyosy
+|track12arranger = [https://ja.wikipedia.org/wiki/%E4%BD%90%E3%80%85%E6%9C%A8%E8%A3%95_(%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%B7%E3%83%A3%E3%83%B3) Hiroshi Sasaki]
+
+|track13title = Flight Light ~ Hoshikuzu to Boeing ~
+|track13info = {{yt|ynb6Us5RFXI}}
+|track13lyricist = [[MikitoP]]
+|track13composer = 
+|track13arranger = [[MikitoP]]
+
+|track14title =  Tsunageru {{yt|LgDHZoczBGo}}
+|track14info = The Theme Song for Docomo Tohoku Reconstruction and Revitalization 'Smile Bridge Rainbow Project'
+|track14lyricist = Kei Hayashi
+|track14composer = Kei Hayashi
+|track14arranger = {{VW|Tanahashi UNA Nobuhito}}
+
+|track15title = Idea
+|track15info = {{yt|uF8PdY_Ug14}}
+|track15lyricist = {{VW|LeftyMonster-P}} (Ryo Miyata), Amatsuki
+|track15composer = {{VW|LeftyMonster-P}} (Ryo Miyata)
+|track15arranger = {{VW|LeftyMonster-P}} (Ryo Miyata)
+
+|track16title = Kimi ga Boku no Kokoro ni Mahou o Kaketa
+|track16info = {{yt|MTuZW3eCtkU}}
+|track16lyricist = Amatsuki
+|track16composer = Amatsuki
+|track16arranger = Takuya Watanabe
+
+|track17title = Voice Letter
+|track17info = 
+}}
+}}<noinclude>[[Category:Template documentation]]</noinclude>

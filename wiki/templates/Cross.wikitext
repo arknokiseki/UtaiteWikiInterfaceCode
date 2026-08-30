@@ -1,0 +1,14 @@
+[[File:OOjs UI icon close-ltr-destructive.svg|{{#if:{{{1|}}}|{{{1}}}|20}}px|link=|alt=]]<span style="display:none">N</span><!--template:cross--><noinclude>
+{{Documentation|content=
+This template is used to insert [[Special:MyLanguage/Help:Tables|wikitables]].
+
+== Usage ==
+* {{tlx|Cross}} → {{Cross}}
+* {{tlx|Cross|40}} →{{Cross|40}}
+
+== Parameters ==
+; <code>1</code>
+: The image width. Default is 20.
+}}
+[[Category:Templates{{#translation:}}]]
+</noinclude>

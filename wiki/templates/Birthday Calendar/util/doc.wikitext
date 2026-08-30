@@ -1,0 +1,14 @@
+{{Documentation/Header}}
+Renders one day cell for {{T|Birthday Calendar}}, listing every utaite born on that day via a DPL query against <code><nowiki>[[Category:Birthday/MM/DD]]</nowiki></code>. The cell gains the <code>current-date</code> class when its month and day match today's JST date.
+
+Called only by {{T|Birthday Calendar}}, once per day of the month — see that template's documentation for parameters and the wider birthday system.
+
+'''This template emits a table header cell''' (<code>!scope="col"</code>), so it only works inside an open table row.
+
+<pre>{{Birthday Calendar/util|month=06|day=30|cat=Utaite}}</pre>
+
+==Example==
+<div style="font-family: monospace; background-color: #222222; padding: 10px; border: 1px solid #ddd; white-space: pre;"><nowiki>{{Birthday Calendar/util|</nowiki>month={{CURRENTJSTSTRMONTH}}|day={{CURRENTJSTDAY}}}}</div>
+{{Template:Birthday Calendar/util|month={{CURRENTJSTMONTH}}|day={{CURRENTJSTDAY}}}}
+<div style="font-family: monospace; background-color: #222222; padding: 10px; border: 1px solid #ddd; white-space: pre;"><nowiki>{{Birthday Calendar/util|</nowiki>month={{CURRENTJSTSTRMONTH}}|day={{#expr:{{CURRENTJSTDAY}}-3}}}}</div>
+{{Template:Birthday Calendar/util|month={{CURRENTJSTMONTH}}|day={{#expr:{{CURRENTJSTDAY}}-3}}}}

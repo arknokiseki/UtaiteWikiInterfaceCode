@@ -1,0 +1,32 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Mii.png
+|caption = her NND userpage
+|officialjapname = みい
+|officialromajiname = Mii
+|YTusername = 
+|NNDuserpage = 26466132
+|mylist1 = 37328332
+|mylist1info = utattemita
+|mylist2 = 30930811
+|mylist2info = sing, dance
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co1632410
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Shinkai Shoujo]]
+|examplennd = sm21017932
+|exampleyt = Zdxy3rZwQBg
+|description = '''Mii''' ('''みい''') is a relatively new female {{NNDict|Utaite}} who started in early 2012.
+
+She has a clear voice that sometimes has a slight nasal hint to it. She can hit high notes with ease, but is capable of singing in a slightly deeper tone when necessary, as seen in her "Ikasama Life Game"{{nnd|sm18694470}}. As shown in her duet with [[MARiA]] in "[http://www.youtube.com/watch?v=K41o6S6ut88 Invisible"]{{nnd|sm22297496}}, Mii can sing with quite a lot of strength.
+
+A lot of her covers are used in DANCEROID covers, many of which she participates in as an [[wikia:odorite|odorite]].
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,2 @@
+<includeonly>{{#ifeq:{{{icon-only}}}|true|<span style="{{#if:{{{size|}}}|font-size: {{{size}}}; |}} color:#fff !important; text-shadow:2px 2px 5px #69C9D0,-1.5px -1.5px 3px #EE1D52 !important;"><i class="fa-brands fa-tiktok"></i></span>|<!--
+--><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}">[https://tiktok.com/@{{{1}}} <span style="{{#if:{{{size|}}}|font-size: {{{size}}}; |}} color:#fff !important; text-shadow:2px 2px 5px #69C9D0,-1.5px -1.5px 3px #EE1D52 !important;"><i class="fa-brands fa-tiktok"></i></span>]</abbr>}}</includeonly><noinclude>{{documentation}}</noinclude>

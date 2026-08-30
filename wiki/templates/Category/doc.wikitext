@@ -1,0 +1,28 @@
+{{Documentation/Header}}
+{{High Risk|Template:Category|nocat=1|pagetype=Main}}
+Adds the current page to <code>[[:Category:&lt;name&gt;]]</code> from within a template. Categorization is skipped automatically on <code>/preload</code> subpages, so it is safe inside a preloadable template. A helper for '''programmatic''' categorization — for ordinary pages, add categories directly.
+
+==Syntax==
+{{T|Category|v1=category-name}}
+
+==Examples==
+The example below is shown as code only — a live call would categorize this documentation page.
+* {{T|Category|p1=Active Singers}} → adds the page to [[:Category:Active Singers]]
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Category name || Category name, '''without''' the <code>Category:</code> prefix. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Adds the current page to the named category (skipped on /preload subpages).",
+"params": {
+"1": { "label": "Category name", "description": "Category name without the 'Category:' prefix.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

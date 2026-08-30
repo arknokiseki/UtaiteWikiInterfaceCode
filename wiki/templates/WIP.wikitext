@@ -1,0 +1,15 @@
+<div class="blacklist-pPreview">{{#ifeq:{{{tutorial|}}}|true|{{Tutorial}}|}}
+{{#switch:{{{1|}}}
+|description=<div style="display:table;margin:0 auto;width:77%;text-align:left"><div style="float:left;padding:5px">[[File:WIP descr.png|link=|100px]]</div><div style="font-size:110%; color:#5bb3e1; padding:10px 10px 0 10px">'''''"At the point where 0 and 1 cross is calculation that is of miscommunication"'''''</div><div style="font-size:90%">This article's description has not met the wiki's standard, and needs further elaboration. Help {{SITENAME}} by [{{fullurl:{{FULLPAGENAME}}|action=edit}} expanding it]!</div></div><includeonly>{{maintalkcat other|[[Category:Articles with insufficient description]][[Category:Incomplete Articles]]||[[Category:Articles with insufficient description]]|}}</includeonly>
+
+|songlist=<div style="display:table;margin:0 auto;width:77%;text-align:left"><div style="float:left;padding:5px">[[File:WIP song.png|link=|100px]]</div><div style="font-size:110%; color:#00e0ff; padding:10px 10px 0 10px">'''''"To the musicians who give us songs, We offer our voices that measures up to their dreams"'''''</div><div style="font-size:90%">This article's songlist is not completed and up-to-date. Help {{SITENAME}} by [{{fullurl:{{FULLPAGENAME}}|action=edit}} adding onto it]!</div></div><includeonly>{{maintalkcat other|[[Category:Articles with incomplete songlist]][[Category:Incomplete Articles]]||[[Category:Articles with incomplete songlist]]|}}</includeonly>
+
+|=<div style="display:table;margin:0 auto;width:77%;text-align:left"><div style="float:left;padding:5px">[[File:WIP.png|link=|100px]]</div><div style="font-size:110%; color:#1daadd; padding:10px 10px 0 10px">'''''"What should I do about such feelings? Can't you tell me? Just a little?"'''''</div><div style="font-size:90%">This article is lacking a lot of information. Help {{SITENAME}} and add [{{fullurl:{{FULLPAGENAME}}|action=edit}} additional information] about the singer!</div></div><includeonly>{{maintalkcat other|[[Category:Articles lacking information]][[Category:Incomplete Articles]]||[[Category:Articles lacking information]]|}}</includeonly>
+
+|template=<div style="display:table;margin:0 auto;width:77%;text-align:left"><div style="float:left;padding:5px">[[File:okochamasensou1.png|link=|100px]]</div><div style="font-size:110%; color:#1daadd; padding:10px 10px 0 10px">'''''"Let me cook!(｀≧ ^≦*)"'''''</div><div style="font-size:90%">WIP template.</div></div>
+<!--Song Section-->
+|background=<div style="display:table;margin:0 auto;width:77%;text-align:left"><div style="float:left;padding:5px">[[File:Mafu XVAON2im.png|link=|100px]]</div><div style="font-size:110%; color:#1daadd; padding:10px 10px 0 10px">'''''"Work In Progress:Background"'''''</div><div style="font-size:90%">The background section of this song is currently under development. Help {{SITENAME}} by [{{fullurl:{{FULLPAGENAME}}|action=edit}} expanding it]!</div></div>
+
+}}{{clr}}</div>
+<noinclude>{{clr}}{{documentation}}</noinclude>
+<noinclude>[[Category:Article management templates|{{PAGENAME}}]]</noinclude>

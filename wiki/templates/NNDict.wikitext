@@ -1,0 +1,1 @@
+<includeonly>[[Nico Nico Dictionary#{{{1}}}|{{#if:{{{2|}}}|{{{2}}}|{{lcfirst:{{{1}}}}}}}]]</includeonly><noinclude>{{documentation}}</noinclude>

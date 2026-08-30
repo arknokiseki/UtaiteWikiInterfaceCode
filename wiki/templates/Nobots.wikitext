@@ -1,0 +1,3 @@
+#redirect [[Template:Bots]]
+[[Category:Bot Templates|Nobots]]
+[[Category:Redirect Pages]]

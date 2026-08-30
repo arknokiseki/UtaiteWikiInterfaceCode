@@ -1,0 +1,35 @@
+{{Documentation/Header}}
+{{High Risk|Template:Sup|nocat=1|pagetype=Main}}
+Wraps text in <code><nowiki><sup></nowiki></code> tags to render it as superscript. Most often used for ordinal suffixes and short annotations inside song lists and prose.
+
+==Syntax==
+{{T|Sup|v1=text}}
+
+==Examples==
+{| class="wikitable"
+! Code !! Result
+|-
+| <code><nowiki>{{Sup|th}}</nowiki></code> || {{Sup|th}}
+|-
+| <code><nowiki>4{{Sup|th}} anniversary</nowiki></code> || 4{{Sup|th}} anniversary
+|}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Text || The text to render as superscript. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Renders text as superscript.",
+"params": {
+"1": { "label": "Text", "description": "The text to render as superscript.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+
+{{WikiaLicense|sound-horizon-lyrics|Template:Sup}}

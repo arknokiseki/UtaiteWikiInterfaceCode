@@ -1,0 +1,1 @@
+<includeonly><span class="tw-grayscale mobile-img-grayscale-100">[[File:Koebu.png|19px|link=|Koebu: {{{1|}}}{{#if:{{{2|}}}|,&nbsp;{{{2}}}}}|class=koebu mobile-img-grayscale-100]]</span></includeonly><noinclude>{{documentation}}{{SNS Template}}</noinclude>

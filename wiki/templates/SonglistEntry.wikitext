@@ -1,0 +1,48 @@
+<includeonly>|-
+| class="dt-type-numeric" | {{{1|?}}}
+| <span class="slcrud-title-text">{{{title|?}}}</span>
+| {{#if:{{{yt|}}}|{{yt|{{{yt}}}|{{{ytinfo|}}}}}|{{yt|no link available|forcedisabled=true}}}}{{#if:{{{nnd|}}}|{{nnd|{{{nnd}}}|{{{nndinfo|}}}}}|{{UWI|icon=nicovideo}}}}{{#if:{{{bb|}}}|{{bb|{{{bb|}}}}}|}}{{{otherstreamingservices|{{{oss|}}}}}}
+| {{#if:{{{feat|}}}|{{{feat}}}|&ndash;}}
+| {{#if:{{{info|}}}|{{{info}}}|N/A}}
+| class="dt-type-date" | {{#if:{{{date|}}}|{{{date}}}|N/A}}
+</includeonly><noinclude>
+<h2>Syntax</h2>
+<pre>
+{{SonglistEntry|1
+|title=Song Title
+|yt=YouTubeID
+|nnd=sm12345678
+|bb=BV1Aw411Z7VS
+|feat={{feat|[[Singer Name]]}}
+|info={{Orikyoku|with=[[Producer]]}}
+|date=2025.05.01
+}}
+</pre>
+
+<h2>Parameters</h2>
+{| class="wikitable"
+! Parameter !! Description
+|-
+| <code>1</code> (positional) || Row number
+|-
+| <code>title</code> || Song title (plain text)
+|-
+| <code>yt</code> || YouTube video ID (optional)
+|-
+| <code>nnd</code> || NicoNico video ID, e.g. <code>sm12345</code> (optional)
+|-
+| <code>bb</code> || Bilibili video ID, e.g. <code>BV1Aw411Z7VS</code> (optional)
+|-
+| <code>ytinfo</code> / <code>nndinfo</code> || Tooltip text for the video link
+|-
+| <code>feat</code> || Featured artist(s) — use <code>{{feat&#124;Name}}</code>
+|-
+| <code>info</code> || Additional information — accepts wikitext
+|-
+| <code>oss</code> / <code>otherstreamingservices</code> || Extra streaming links appended after YT/NND/BB
+|-
+| <code>date</code> || Upload date, e.g. <code>2025.05.01</code>
+|}
+
+{{Documentation}}
+</noinclude>

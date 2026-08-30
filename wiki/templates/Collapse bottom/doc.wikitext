@@ -1,0 +1,11 @@
+<noinclude>{{Documentation subpage}}
+{{timw|{{BASEPAGENAME}}}}
+</noinclude>
+<!-- PUT HERE THE DOCUMENTATION -->
+Use with {{tl|Collapse top}}.
+
+From Wikipedia: [[w:Template:Collapse bottom]]
+<includeonly>
+<!-- PUT HERE THE CATEGORIES OF THE TEMPLATE -->
+[[Category:Formatting templates]]
+</includeonly>

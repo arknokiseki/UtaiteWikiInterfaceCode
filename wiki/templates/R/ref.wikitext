@@ -1,0 +1,4 @@
+<includeonly>{{#tag:ref||name={{{1}}}|group={{{2}}}}}{{#if:{{{3}}}|<sup class="reference nowrap"><nowiki>:</nowiki>{{{3}}}</sup>}}</includeonly><noinclude>
+
+[[Category:内部テンプレート]]
+</noinclude>

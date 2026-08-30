@@ -1,0 +1,20 @@
+{{Module rating|alpha}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:TableTools}}
+
+Lua module implementing features similar to {{ll|Extension:Loops}}.
+
+{{-}}
+== Usage ==
+<code><nowiki>{{</nowiki>#invoke:Loops|''function_name''<nowiki>}}</nowiki></code>
+
+== See also ==
+* [[wikia:dev:Module:Loops]]
+* [[wikia:dev:Global Lua Modules/Loops]]
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Modules{{#translation:}}]]
+}}</includeonly><noinclude>
+[[Category:Module documentation pages{{#translation:}}]]
+</noinclude>

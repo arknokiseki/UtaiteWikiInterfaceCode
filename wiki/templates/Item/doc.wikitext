@@ -1,0 +1,140 @@
+{{Documentation/Header}}
+{{High Risk}}
+{{Lua|Item}}
+{{CSS|Gadget-Item}}
+This template creates the icon and link for an [[item]].
+
+==Syntax==
+This template has 2 unnamed parameters:
+* {{F|1}} &mdash; Name of the item. If set to Unknown no link is set. '''''Mandatory'''''
+* {{F|2}} &mdash; Size of the icon. Default {{F|40}}.
+* {{F|link}} &mdash; Sets another page to be linked.
+* {{F|text}} &mdash; Displays another text instead of the name of the item.
+* {{F|notext}} &mdash; Set to {{F|1}} to omit the complete text. The picture will no longer behave like an inline-block.
+* {{F|blueprint}} &mdash; Set to {{F|1}} to display the blueprint icon in the top-left corner.
+* {{F|count}} / {{F|x}} &mdash; Quantity of the item. Part of the text.
+* {{F|note}} &mdash; Displays the input as a note after the item text and count.
+* {{F|type}} &mdash; Keyword to determine the file's suffix and prefix:
+** {{F|Item}} ''Default''
+** {{F|Enemy}}
+** {{F|Wildlife}}
+** {{F|Outfit}}
+** {{F|Book}}
+** {{F|Weapon}}
+** {{F|Character}}
+* {{F|white}} &mdash; Set to {{F|1}} to add the "White" suffix to file name.
+* {{F|ref}} &mdash; Append a reference to the item text.
+* {{F|comma}} &mdash; Append a comma to the item text following AmE rules.
+* {{F|dot}} &mdash; Append a dot to the item text following AmE rules.
+* {{F|commaspc}} &mdash; Append a comma and a space to the item text following AmE rules.
+* {{F|dotspc}} &mdash; Append a dot and a space to the item text following AmE rules.
+
+==Examples==
+{{T|Item|_Ybr_=1}}<br>
+{{T|Item|p1=Unknown|_Ybr_=1}}<br>
+{{T|Item|p1=Mora|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=20|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=80|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=link=Flora|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=text=Not Lamp Grass|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=notext=1|_Ybr_=1}}<br>
+{{T|Item|p1=Alchemist's Crafting Bench|p2=blueprint=1|_Ybr_=1}}<br>
+{{T|Item|p1=Open-Air Workshop|p2=20|p3=blueprint=1|_Ybr_=1}}<br>
+{{T|Item|p1=Primogem|p2=x=20|_Ybr_=1}}<br>
+{{T|Item|p1=Small Lamp Grass|p2=x=2|_Ybr_=1}}<br>
+{{T|Item|p1=Dull Blade|p2=type=Weapon|_Ybr_=1}}<br>
+{{T|Item|p1=Rex Incognito|p2=type=Book|_Ybr_=1}}<br>
+{{T|Item|p1=Lisa|p2=type=Character|_Ybr_=1}}<br>
+{{T|Item|p1=Inazuma|p2=type=Emblem|p3=white=1|_Ybr_=1}}<br>
+{{T|Item|p1=Missing File|_Ybr_=1}}<br>
+{{T|Item|p1=Missing File|p2=80|_Ybr_=1}}<br>
+{{T|Item|p1=Canned Knowledge "Swordfighting Techniques VIII"|_Ybr_=1}}<br>
+{{T|Item|p1=Canned Knowledge "Swordfighting Techniques VIII"|p2=comma=1|_Ybr_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"aliases": [
+				"name"
+			],
+			"label": "Name",
+			"description": "Name of item and file name.",
+			"type": "string",
+			"default": "Unknown",
+			"suggested": true
+		},
+		"2": {
+			"aliases": [
+				"size"
+			],
+			"label": "Image Size",
+			"description": "Size of Item",
+			"example": "20",
+			"type": "number",
+			"default": "40",
+			"suggested": true
+		},
+		"type": {
+			"label": "Item Type",
+			"description": "The type of item to add as prefix to file name. Automatically adds suffix when needed.",
+			"example": "Weapon, Character, Enemy",
+			"type": "string",
+			"default": "Item"
+		},
+		"text": {
+			"label": "Display Text",
+			"description": "Link displayed to the right if image.",
+			"type": "string",
+			"default": "Value of name."
+		},
+		"link": {
+			"label": "Link",
+			"description": "Link of image and text.",
+			"type": "wiki-page-name",
+			"default": "Value of name."
+		},
+		"blueprint": {
+			"label": "Blueprint",
+			"description": "Show furnishing blueprint icon in top left of image.",
+			"example": "1",
+			"type": "boolean"
+		},
+		"notext": {
+			"label": "No Text",
+			"description": "Hide item name and link.",
+			"example": "1",
+			"type": "boolean"
+		},
+		"white": {
+			"label": "White",
+			"description": "Adds White to suffix of file name.",
+			"example": "1",
+			"type": "boolean"
+		},
+		"x": {
+			"aliases": [
+				"count"
+			],
+			"label": "Item Count",
+			"description": "Number of Items. Displayed with ×.",
+			"example": "1",
+			"type": "number"
+		}
+	},
+	"description": "Create item image and link.",
+	"format": "inline",
+	"paramOrder": [
+		"1",
+		"2",
+		"x",
+		"type",
+		"text",
+		"link",
+		"blueprint",
+		"notext",
+		"white"
+	]
+}
+</templatedata>

@@ -1,0 +1,140 @@
+/**
+ * {{tmbox}} (talk page message box) styles
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+table.tmbox {
+	margin: 4px 10%;
+	border-collapse: collapse;
+	/* Default "notice" gray-brown */
+	border: 1px solid #c0c090;
+	background-color: #f8eaba;
+	/* temp fix for dark mode */
+	color: #222;
+	min-width: 80%;
+	box-sizing: border-box;
+}
+
+@media screen and (max-width: 720px) {
+  table.tmbox {
+	margin: 4px auto;
+  }
+}
+
+.tmbox.mbox-small {
+	/* reset the min-width of tmbox above */
+	min-width: 0;
+}
+
+/**
+ * For tmboxes inside other templates. "body.mediawiki" ensures that
+ * this declaration overrides other styles (including mbox-small above)
+ */
+body.mediawiki .mbox-inside .tmbox {
+	margin: 2px 0;
+	/* For Safari and Opera */
+	width: 100%;
+}
+
+.mbox-inside .tmbox.mbox-small {
+	/**
+	 * "small" tmboxes should not be small when also "nested",
+	 * so reset styles that are set in ".tmbox.mbox-small" below.
+	 */
+	line-height: 1.5em;
+	font-size: 100%;
+}
+
+/* An empty narrow cell */
+td.mbox-empty-cell {
+	border: none;
+	padding: 0;
+	width: 1px;
+}
+
+/* The message body cell(s) */
+th.mbox-text, td.mbox-text {
+	border: none;
+	/* 0.9em left/right */
+	padding: 0.25em 0.9em;
+	/* Make all mboxes the same width regardless of text length */
+	width: 100%;
+}
+
+/* The left image cell */
+td.mbox-image {
+	border: none;
+	/* 0.9em left, 0px right */
+	/* @noflip */
+	padding: 2px 0 2px 0.9em;
+	text-align: center;
+}
+
+/* The right image cell */
+td.mbox-imageright {
+	border: none;
+	/* 0px left, 0.9em right */
+	/* @noflip */
+	padding: 2px 0.9em 2px 0;
+	text-align: center;
+}
+
+table.tmbox-speedy {
+	/* Pink */
+	background-color: #fee7e6;
+}
+
+table.tmbox-delete,
+table.tmbox-speedy {
+	/* Red */
+	border-color: #b32424;
+	border-width: 2px;
+}
+
+table.tmbox-content {
+	/* Orange */
+	border-color: #f28500;
+	border-width: 2px;
+}
+
+table.tmbox-style {
+	/* Yellow */
+	border-color: #fc3;
+	border-width: 2px;
+}
+
+table.tmbox-move {
+	/* Purple */
+	border-color: #9932cc;
+	border-width: 2px;
+}
+
+table.tmbox-protection,
+table.tmbox-notice {
+	/* Gray-brown */
+	border-color: #c0c090;
+	border-width: 1px;
+}
+
+/**
+ * {{tmbox|small=1}} styles
+ *
+ * These ".mbox-small" classes must be placed after all other
+ * ".tmbox" classes. "html body.mediawiki .tmbox"
+ * is so they apply only to talk page message boxes.
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+
+/* For the "small=yes" option. */
+html body.mediawiki .tmbox.mbox-small {
+	clear: right;
+	float: right;
+	margin: 4px 0 4px 1em;
+	box-sizing: border-box;
+	width: 238px;
+	font-size: 88%;
+	line-height: 1.25em;
+}

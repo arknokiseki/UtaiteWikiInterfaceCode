@@ -1,0 +1,10 @@
+<div style="border:2px solid #CD201F; border-radius: 1px; padding:5px; margin-bottom:10px;" class="mp-edit-container">
+<div style="background:#CD201F; border:1px solid #c3e6f9; border-radius: 1px; padding:10px; margin-bottom:10px; font-size: 200%; font-weight: bolder; width: 100%; text-align: left;" class="mp-edit-header"><span style="color: #ffeeff;" class="mp-edit-header-text">Before You Edit!</span></div><loggedout>
+
+<center><strong>Please [[Special:Userlogin|log in/create account]] before you start editing.</strong></center>
+</loggedout><center><span class="mp-edit-emphasis">IMPORTANT:</span> <strong>READ the [[Tutorial|Tutorial/Guidelines]]</strong> <u><strong>ALL THE WAY TO THE END</strong></u> <strong>before you start editing!</strong><br /><br /><!--[[Special:Community|Community]]</center><br />--></center>'''Anyone''' is welcome to contribute and improve the articles here to make them more informative for everyone.
+*Make sure to check out the [[Utaite Wiki:FAQ|FAQ]] and [[tutorial]] first if you have any questions regarding editing.
+*If you would like to create some singer articles, please attempt to make them as complete as possible.
+*The '''requirements''' for adding a singer article can be [[Utaite Wiki:Requirements|found here]]. Please make sure to read them carefully before creating an article.
+
+<center style="font-size:130%;">[[:Category:Incomplete Articles|Lend a Hand?]] | Need help? Ask at the [[Forum:Index|Forum]]!<div class="mainpage-statistic">{{MP-Statistic}}</div></center></div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

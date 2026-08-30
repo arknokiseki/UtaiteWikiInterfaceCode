@@ -1,0 +1,239 @@
+{{Documentation subpage}}
+{{Uses TemplateStyles|Module:LuaInfobox/styles.css}}
+{{Dependencies|Module:LuaInfobox|Module:Arguments|Module:ACandy}}
+This template implements a simple interface to construct an infobox. It can either be used to create an infobox directly on a content page or to create an infobox template.
+
+{{clear}}
+==Basic usage ==
+{{LuaInfobox
+| title = Miraheze
+| image = Miraheze Logo.svg
+| image-size = 150px
+| caption = Honeycomb logo of Miraheze
+| -header :: Basic info
+| Founded :: 2015
+| Operator :: Wikitide Foundation
+| -header :: Statistics
+| Number of wikis :: {{NUMBEROFWIKIS}}
+| Number of active wikis :: {{NUMBEROFACTIVEWIKIS}}
+| :: Some arbitrary text. You can even put a <div style{{=}}"color: red">div</div> here.
+}}
+
+Unlike other infoboxes, the labels and data are separated by <code>::</code> instead of <code>=</code>. These parameters are presented in the infobox in order.
+
+<syntaxhighlight lang=wikitext>
+{{LuaInfobox
+| title = Miraheze
+| image = Miraheze Logo.svg
+| image-size = 150px
+| caption = Honeycomb logo of Miraheze
+
+| -header :: Basic info
+| Founded :: 2015
+| Operator :: Wikitide Foundation
+
+| -header :: Statistics
+| Number of wikis :: {{NUMBEROFWIKIS}}
+| Number of active wikis :: {{NUMBEROFACTIVEWIKIS}}
+| :: Some arbitrary text. You can even put a <div style{{=}}"color: red">div</div> here.
+}}
+</syntaxhighlight>
+
+==Customizing the infobox==
+This infobox can be customized in several ways. 
+
+The <code>class</code> argument adds a class to the infobox, and a custom stylesheet can modify it. It is also possible to add inline styles to this infobox. See the list of possible parameters for more information.
+
+==Tabbing==
+===Prerequisite===
+{{GadgetInstructions|name=Tab}}<!-- 
+Empty template used for adding a category that loads the Tab gadget
+-->
+{{Tab}}
+===Simple tabbing===
+{{LuaInfobox
+|title = Shiroko
+|-tabs :: Variant 1 :: Variant 2
+
+|Name :: Shiroko
+
+|-tab-start :: 1
+|Age :: 17
+|Hobby :: Cycling
+
+|-tab-start :: 2
+|Age :: 21
+|Hobby :: Jogging
+|-tab-end :: 2
+
+|Affiliation :: Abydos
+}}
+The wikitext below creates a simple infobox with tabs. Argument <code>-tabs :: tab name 1 :: tab name 2 :: ...</code> creates buttons, while <code>-tab-start :: 1</code> specifies the beginning of the content for tab 1. Note that <code>-tab-end</code> is optional if it is immediately followed by the start of another tab or the end of the template.
+<syntaxhighlight lang="wikitext">
+{{LuaInfobox
+|title = Shiroko
+|-tabs :: Variant 1 :: Variant 2
+
+|Name :: Shiroko
+
+<!-- Content for variant 1-->
+|-tab-start :: 1
+|Age :: 17
+|Hobby :: Cycling
+
+<!-- Content for variant 2-->
+|-tab-start :: 2
+|Age :: 21
+|Hobby :: Jogging
+|-tab-end :: 2
+
+<!-- This is shared between both tabs -->
+|Affiliation :: Abydos
+}}
+</syntaxhighlight>
+
+===Advanced tabbing===
+{{LuaInfobox
+|title=Shiroko
+|-tabs :: Variant 1 :: Variant 2
+
+|Name :: Shiroko
+
+|-tab-start :: 1
+|Age :: 17
+|Hobby :: Cycling
+
+|-tab-start :: 2
+|Age :: 21
+|-header :: Special abilities
+|Ability 1 :: Drone attack
+|Ability 2 :: Self-buff
+|-tab-end :: 2
+
+|-header :: Other information
+|Affiliation :: Abydos
+|Club :: Foreclosure Task Force
+
+|-tab-start :: 1
+|Friend(s) :: Hoshino
+}}
+Below is an advanced example. Note that:
+# Tab content can contain extra rows. For example, variant 2 not only has extra rows ("Ability 1" and "Ability 2") but also an extra header ("Special abilities").
+# Tab content does not need to be continuous. For example, variant 1's content is present both at the beginning and the end of the infobox.
+
+<syntaxhighlight lang="wikitext" copy>
+{{LuaInfobox
+|title=Shiroko
+|-tabs :: Variant 1 :: Variant 2
+
+|Name :: Shiroko
+
+|-tab-start :: 1
+|Age :: 17
+|Hobby :: Cycling
+
+|-tab-start :: 2
+|Age :: 21
+|-header :: Special abilities
+|Ability 1 :: Drone attack
+|Ability 2 :: Self-buff
+|-tab-end :: 2
+
+|-header :: Other information
+|Affiliation :: Abydos
+|Club :: Foreclosure Task Force
+
+|-tab-start :: 1
+|Friend(s) :: Hoshino
+}}
+</syntaxhighlight>
+
+==Using it as the basis of other infoboxes==
+This template is intended to be used as a basis for other infoboxes. Suppose we have an infobox for a person, we could write it as follows. Note how we are able to apply arbitrary templates before sending data to the infobox. This provides us flexibility while the implementation remains simple.
+
+If we want to skip a row when data is missing, the parameter can be left empty. The <code>office</code> parameter below gives an example.
+<syntaxhighlight lang="wikitext" copy>
+<includeonly>{{LuaInfobox
+| title = {{{name|}}}
+| -header :: Basic info
+| Name :: {{{name|}}}
+| Birthday :: {{{birthday|}}}
+| Age :: {{ Calculate age | {{{birthday|}}} }}
+| -header :: Career
+| Institution :: [[{{{institution|}}}]]
+| {{ #if: {{{office|}}} | Office :: {{{office|}}} | }}
+}}</includeonly>
+</syntaxhighlight>
+
+==All parameters==
+<templatedata>
+{
+	"params": {
+		"title": {
+			"label": "Title",
+			"description": "The title shown at the top of the infobox",
+			"type": "string",
+			"suggested": true
+		},
+		"image": {
+			"label": "Image",
+			"description": "The image to be shown on top of the infobox",
+			"type": "wiki-file-name"
+		},
+		"caption": {
+			"label": "Caption",
+			"description": "Captions for the image",
+			"type": "string"
+		},
+		"title-style": {
+			"description": "CSS styling applied to the infobox title",
+			"type": "string"
+		},
+		"style": {
+			"description": "CSS styling applied to the entire infobox",
+			"example": "background-color: lightblue",
+			"type": "string"
+		},
+		"header-style": {
+			"description": "CSS styling applied to every infobox header",
+			"type": "string"
+		},
+		"label-style": {
+			"description": "CSS styling applied to every infobox label",
+			"type": "string"
+		},
+		"data-style": {
+			"description": "CSS styling applied to every infobox data cell",
+			"type": "string"
+		},
+		"image-size": {
+			"label": "Image size",
+			"description": "The size of the image",
+			"example": "150px",
+			"type": "string"
+		},
+		"class": {
+			"description": "A custom class added to the infobox that can be used for styling",
+			"type": "string"
+		}
+	},
+	"paramOrder": [
+		"title",
+		"image",
+		"image-size",
+		"caption",
+		"class",
+		"style",
+		"title-style",
+		"header-style",
+		"label-style",
+		"data-style"
+	],
+	"format": "block",
+	"description": "Note that infobox labels and data are passed using unnamed parameters separated by :: as shown above."
+}
+</templatedata>
+
+<includeonly>
+[[Category:Infobox_templates]]
+</includeonly>

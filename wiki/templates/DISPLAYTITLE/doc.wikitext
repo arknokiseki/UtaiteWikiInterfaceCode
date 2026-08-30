@@ -1,0 +1,5 @@
+==Description==
+<nowiki>{{</nowiki>DISPLAYTITLE:}} directly invokes magic word to set the formatting of the title of the page which contains it.
+:<nowiki>{{</nowiki>DISPLAYTITLE|Example Title}}
+
+<includeonly>[[Category:Templates|{{PAGENAME}}]] [[Category:General wiki templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

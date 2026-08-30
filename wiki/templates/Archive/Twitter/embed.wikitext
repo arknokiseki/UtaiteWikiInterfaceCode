@@ -1,0 +1,4 @@
+<noinclude>{{Archived}}</noinclude><includeonly>{{#if:{{{handle|}}}|
+{{#tag:twitter | | screen-name={{{handle}}} | width={{{width|20vh}}} | height={{{height|400}}} | chrome={{{chrome|transparent noborders}}} | tweet-limit={{{limit|}}} }}
+|<span style="color:red; font-weight: bold">⚠️The handle field cannot be left blank.</span>}}</includeonly>
+<noinclude>{{Twitter/embed|handle=_amatsuki_}}</noinclude>

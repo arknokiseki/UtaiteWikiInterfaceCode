@@ -1,0 +1,14 @@
+<onlyinclude>{{nmbox
+| image = [[File:OOjs UI icon puzzle-ltr.svg|22px|link=]]
+| header = Message box templates
+| text = {{flatlist|1=
+* {{tll|ambox}}
+* {{tll|cmbox}}
+* {{tll|fmbox}}
+* {{tll|imbox}}
+* {{tll|nmbox}}
+* {{tll|ombox}}
+* {{tll|tmbox}}
+}}
+}}</onlyinclude>
+[[Category:Navigation templates]]

@@ -1,0 +1,20 @@
+==YouTube Playlist Button==
+<pre>{{Playlist|content = 
+# "Songname" (2010.12.31)
+|ytp=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf}}</pre>
+...results in:
+{{Playlist|content = 
+# "Songname" (2010.12.31)
+|ytp=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf}}
+
+==YouTube Playlist Player==
+<div style="background-color: rgba(255, 255, 0, 0.1); padding: 8px 12px; border-left: 4px solid #ffff00; margin: 8px 0;"><strong>Limitation:</strong>Maximum playlists limited by 200</div>
+<pre>{{Playlist|content = 
+# "Songname" (2010.12.31)
+|ytpplayer=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf|dimensions=720x480|pldesc=[[Aoi Yuuki]]'s Covered Song Playlist|urlargs=autoplay=1&loop=1}}</pre>
+...results in:
+{{Playlist|content = 
+# "Songname" (2010.12.31)
+|ytpplayer=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf|dimensions=720x480|pldesc=[[Aoi Yuuki]]'s Covered Song Playlist|urlargs=autoplay=1&loop=1}}
+
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

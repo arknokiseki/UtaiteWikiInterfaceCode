@@ -1,0 +1,16 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Auxiliary template common notice}}
+
+== TemplateData ==
+<templatedata>
+{
+	"description": "This template produces {| as ordinary text",
+	"format": "inline",
+	"params": {}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Table templates]]
+}}</includeonly>

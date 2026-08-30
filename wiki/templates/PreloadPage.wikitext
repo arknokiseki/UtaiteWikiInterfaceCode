@@ -1,0 +1,3 @@
+{{#ifeq:{{NAMESPACE}}|Template|{{#ifeq:{{lc:{{#sub:{{PAGENAME}}|-7}}}}|preload|{{clr}}<br/><hr>When editing (choose) a preload template from the menu or (subst:) it and the contents will be placed during editing. 
+
+See [[Template:PreloadPage/doc|documentation page]] for more information.[[Category:Preload templates]]}}}}<noinclude>{{documentation}}[[Category:General wiki templates|{{PAGENAME}}]]</noinclude>

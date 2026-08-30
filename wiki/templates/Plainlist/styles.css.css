@@ -1,0 +1,12 @@
+/**
+ * Unbulleted lists
+ */
+.plainlist ul {
+	line-height: inherit;
+	list-style: none none;
+	margin: 0;
+}
+
+.plainlist ul li {
+	margin-bottom: 0;
+}

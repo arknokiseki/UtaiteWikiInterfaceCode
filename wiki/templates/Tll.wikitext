@@ -1,0 +1,24 @@
+<onlyinclude><!--
+--><templatestyles src="Template:Mono/styles.css"/><!--
+-->{{#if:{{yesno|{{{nowrap|}}}}}<!--
+	-->|<templatestyles src="Template:Nowrap/styles.css"/><!--
+-->}}<span class="
+	monospaced
+	{{#if:{{yesno|{{{nowrap|}}}}}|nowrap}}
+"><!--
+-->{{((}}<!--
+--><includeonly>[[Special:MyLanguage/Template:{{{{{|safesubst:}}}ucfirst:{{{1}}}}}|{{{1}}}]]</includeonly><!--
+--><noinclude>[[Special:MyLanguage/{{translatable}}|Template link localized]]</noinclude><!--
+-->{{{{{|safesubst:}}}#ifeq:{{{2|}}}|{{{2}}}|{{!}}{{{2}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{3|}}}|{{{3}}}|{{!}}{{{3}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{4|}}}|{{{4}}}|{{!}}{{{4}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{5|}}}|{{{5}}}|{{!}}{{{5}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{6|}}}|{{{6}}}|{{!}}{{{6}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{7|}}}|{{{7}}}|{{!}}{{{7}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{8|}}}|{{{8}}}|{{!}}{{{8}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{9|}}}|{{{9}}}|{{!}}{{{9}}}}}<!--
+-->{{))}}<!--
+--></span><!--
+--></onlyinclude>
+{{Documentation}}
+<!-- Categories go on the /doc subpage and interwikis go on Wikidata. -->

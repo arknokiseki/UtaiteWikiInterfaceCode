@@ -1,0 +1,11 @@
+<pre>{{Tobeadded}}</pre>
+...resulted in: 
+{{Tobeadded}}
+
+<pre>{{Tobeadded|section}}</pre>
+...resulted in: 
+{{Tobeadded|section}}
+
+<pre>{{Tobeadded|article}}</pre>
+...resulted in: 
+{{Tobeadded|article}}

@@ -1,0 +1,33 @@
+<includeonly><center>
+{| class="song-template" style="margin:0 auto; width:100%; max-width:500px; border-collapse:collapse; font-family:Roboto, Arial, sans-serif; border:1px solid var(--border-color); border-radius:10px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1);"
+|-
+| colspan="2" style="background-color: {{#if:{{{bgcolor|}}}|{{{bgcolor}}}|transparent}}; color: {{#if:{{{textcolor|}}}|{{{textcolor}}} !important|var(--header-text-color)}}; font-size:1.5em; padding:15px; text-align:center;" | '''{{{songtitle}}}'''
+|-
+| colspan="2" style="padding:10px; text-align:center" | {{#if: {{{ytvideo|}}}|{{#if: {{{nicovideo|}}}|{{#ev:youtube|{{{ytvideo}}}|200|inline|{{{ytvideodesc|}}}}}&nbsp;&nbsp;&nbsp;{{#ev:niconico|{{{nicovideo}}}|200|inline|{{{nicovideodesc|}}}}}|{{#ev:youtube|{{{ytvideo}}}|300|center|{{{ytvideodesc|}}}}}}}|{{#if: {{{nicovideo|}}}|{{#ev:niconico|{{{nicovideo}}}|300|center|{{{nicovideodesc|}}}}}|{{#if: {{{image|}}}|[[File:{{{image}}}|300px|center|border]]}}}}}}
+|-
+| style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; width:30%; border-bottom:1px solid var(--border-color);" | '''Original Upload Date'''
+| style="padding:10px; text-align:left; border-bottom:1px solid var(--border-color);" | {{{original upload date}}}
+|-
+| style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; border-bottom:1px solid var(--border-color);" | '''Singer'''
+| style="padding:10px; text-align:left; border-bottom:1px solid var(--border-color);" | {{{singer}}}
+|-
+| style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; border-bottom:1px solid var(--border-color);" | '''Producer(s)'''
+| style="padding:10px; text-align:left; border-bottom:1px solid var(--border-color);" | {{{producer}}}
+|-
+| style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; border-bottom:1px solid var(--border-color);" | '''Views'''
+| style="padding:10px; text-align:left; border-bottom:1px solid var(--border-color);" | {{{#views}}}
+|-
+| style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; border-bottom:1px solid var(--border-color);" | '''Links'''
+| style="padding:10px; text-align:left; border-bottom:1px solid var(--border-color);" | {{{link}}}
+|-
+| colspan="2" style="background-color: {{#if:{{{bgsecondary|}}}|{{{bgsecondary}}}|transparent}}; {{#if:{{{textsecondary|}}}|color:{{{textsecondary}}}|}}; padding:10px; font-weight:bold; text-align:left; border-bottom:1px solid var(--border-color);" | '''Description'''
+|-
+| colspan="2" style="padding:10px; text-align:left;" | <div class="mw-collapsible">{{{description|}}}</div>
+|}</center></includeonly>
+__NOTOC__
+<includeonly>[[Category:Songs]]</includeonly>
+<noinclude>{{Documentation}}</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

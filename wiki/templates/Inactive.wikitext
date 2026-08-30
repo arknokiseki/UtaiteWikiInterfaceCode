@@ -1,0 +1,3 @@
+<includeonly>{{#ifeq:{{{nocat|}}}|true|<span class="status-templates inactive-template">INACTIVE</span>|<span class="status-templates inactive-template">INACTIVE</span>{{#ifeq:{{{groups|}}}|true|{{Main other|[[Category:Inactive Groups]]}}|{{main other|[[Category:Inactive Singers]]}}}}}}</includeonly><noinclude>
+{{doc}}[[Category:Status Templates]]
+</noinclude>

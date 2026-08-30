@@ -1,0 +1,8 @@
+{{#dpl:
+  |category={{{cat|cat}}}
+  |includesubpages=false
+  |mode=inline
+  |inlinetext=,&nbsp;
+  |ordermethod=titlewithoutnamespace
+  |noresultsheader=<br /><b>No members found</b>
+}}

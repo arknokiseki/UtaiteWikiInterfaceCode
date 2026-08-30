@@ -1,0 +1,5 @@
+<includeonly>{{#if:{{{1|}}}|<!--
+--><div style="margin: 5px 0;">[https://youtube.com/playlist?list={{{1}}} <span style="display:inline-block; color:#d20438 !important; padding:6px 12px; background:#d20438 !important; border-radius:1em; font-family: Arial, sans-serif;"> <i class="fa fa-play" style="color: #ffffff!important; text-decoration:none !important;"></i> <span style="color: #ffffff!important; text-decoration:none !important;">Open Playlist on YouTube</span><!--
+--></span>]<!--
+--></div>|}}</includeonly><noinclude>
+{{doc}}</noinclude>

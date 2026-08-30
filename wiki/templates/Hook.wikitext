@@ -1,0 +1,6 @@
+<onlyinclude>{{#if: {{{extension|}}}<!--
+	-->| {{ll|Extension:{{{extension}}}/Hooks/{{{1}}}|{{{2|{{{1}}}}}}}}<!--
+	-->| {{ll|Manual:Hooks/{{{1}}}|{{{2|{{{1}}}}}}}}<!--
+-->}}</onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

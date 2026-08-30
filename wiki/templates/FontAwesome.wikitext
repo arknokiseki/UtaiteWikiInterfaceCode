@@ -1,0 +1,2 @@
+<includeonly><i class="fa-{{{type|solid}}} fa-{{{icon|star}}} {{{class|}}}" 
+  style="color: {{{color|#ffff00}}}; {{#if:{{{size|}}}|font-size: {{{size}}};}} {{#if:{{{animation-duration|}}}|--fa-animation-duration: {{{animation-duration}}};}} {{#if:{{{animation-iteration-count|}}}|--fa-animation-iteration-count: {{{animation-iteration-count}}};}} {{#if:{{{rotate-angle|}}}|--fa-rotate-angle: {{{rotate-angle}}};}} {{{style|}}}"></i></includeonly><noinclude>{{doc}}{{Shortcut|Template:FA}}</noinclude>

@@ -1,0 +1,9 @@
+<onlyinclude>{{<includeonly>safesubst:</includeonly>#invoke:Template link general|main<!--
+-->|mono=true<!--
+--><includeonly><!--
+	-->|1={{safesubst:#if:{{{SISTER|}}}|{{{SISTER}}}:Template:{{{1}}}|{{{1}}}}}<!--
+	-->|alttext{{safesubst:#ifeq:{{{alttext|}}}|{{{alttext}}}|¬}}={{safesubst:#if:{{{SISTER|}}}|{{{1}}}}}<!--
+--></includeonly><!--
+-->}}</onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

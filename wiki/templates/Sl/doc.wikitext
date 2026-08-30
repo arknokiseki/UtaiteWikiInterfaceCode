@@ -1,0 +1,149 @@
+== Overview ==
+This template is designed to generate links to a wide variety of music streaming services and online music shops. It supports different platforms based on user input and displays an icon (with a link to the respective item) for the specified website.
+
+== Parameters ==
+{| class="wikitable"
+! No. !! Parameter !! Description
+|-
+| '''1'''||'''Platform Name''' (mandatory) || The name of the website/platform for which you want to generate the link. Example: ''amazon'', ''itunes'', ''spotify'', etc.
+|-
+| '''2'''||'''Item/Album ID''' (mandatory) || The unique identifier of the item (e.g., album ID or product ID). This ID is used in the URL to direct users to the correct page.
+|-
+| '''3'''||'''Store Name''' (optional) || If applicable, the name of the store or artist when using platforms like Booth. If this parameter is not required for the chosen platform, it can be left empty.
+|-
+| '''4'''||'''Region Specification''' (optional) || Use this parameter to specify whether the item is available only in Japan (''JP'') or internationally (''intl''). This information will be displayed next to the link.
+|}
+
+== Supported Platforms ==
+Below is a list of supported platforms with examples of how to use the template for each one:
+
+{| class="wikitable"
+! Platform !! Platform Name (1) !! Example URL Generated !! Icon !! Status
+|-
+| Amazon || '''amazon''' || <nowiki>http://www.amazon.co.jp/dp/{ID}</nowiki> || [[File:Amazon.png|12px|link=|]] || Available
+|-
+| Amazon Music || '''amazonmusic''' || <nowiki>https://music.amazon.com/albums/{ID}</nowiki> || [[File:Amazonmusic.png|12px|link=|]] || Available
+|-
+| Amazon Music Japan || '''amazonmusicjp''' || <nowiki>https://music.amazon.co.jp/albums/{ID}</nowiki> || [[File:Amazonmusicjp.png|12px|link=|]] || Available
+|-
+| AWA || '''awa''' || <nowiki>https://s.awa.fm/album/{ID}</nowiki> || [[File:Awa.png|12px|link=|]] || Available
+|-
+| YouTube || '''yt''' || <nowiki>https://www.youtube.com/watch?v={ID}</nowiki> || [[File:Yt.png|12px|link=|]] || Available
+|-
+| YouTube Music || '''youtubemusic''' || <nowiki>https://music.youtube.com/playlist?list={ID}</nowiki> || [[File:Youtubemusic.png|12px|link=|]] || Available
+|-
+| iTunes || '''itunes''' || <nowiki>https://itunes.apple.com/jp/album/{ID}</nowiki> || [[File:Itunes.png|12px|link=|]] || Available
+|-
+| iTunes Japan || '''itunesjp''' || <nowiki>https://music.apple.com/jp/album/{ID}</nowiki> || [[File:Itunesjp.png|12px|link=|]] || Available
+|-
+| Booth<ref>[https://utaite.fandom.com/wiki/Template:L/doc#Supported_Platforms:~:text=Edition%7D%7D%3C/td%3E%0A%20%20%20%20%3Ctd%3E-,%7B%7Bl%7Cbooth%7C2592696%7Crelu%7CJP%7D%7D,-%3C/td%3E%0A%20%20%20%20%3Ctd%3E%7B%7Bl How to utilize booth in L template?]</ref> || '''booth''' || <nowiki>https://{Store}.booth.pm/items/{ID}</nowiki> || [[File:Booth.png|12px|link=|]] || Available
+|-
+| Spotify Album || '''spotify''' || <nowiki>https://open.spotify.com/album/{ID}</nowiki> || [[File:Spotify.png|12px|link=|]] || Available
+|-
+| Spotify Track || '''spotify-track''' || <nowiki>https://open.spotify.com/track/{ID}</nowiki> || [[File:Spotify-track.png|12px|link=|]] || Available
+|-
+| Animate || '''animate''' || <nowiki>http://www.animate-onlineshop.jp/pd/{{{ID}}}/</nowiki> || [[File:Animate.png|12px|link=|]] || Available
+|-
+| Animate International || '''animate-intl''' || <nowiki>https://www.animate.shop/products/{{{ID}}}</nowiki> || [[File:Animate-intl.png|12px|link=|]] || Available
+|-
+| Mora || '''mora''' || <nowiki>https://mora.jp/package/{ID}</nowiki> || [[File:Mora.png|12px|link=|]] || Available
+|-
+| Ototoy || '''ototoy''' || <nowiki>https://ototoy.jp/_/default/p/{ID}</nowiki> || <span style="background-color: white">[[File:Ototoy.png|12px|link=|]]</span> || Available
+|-
+| CDJapan || '''cdjapan''' || <nowiki>http://www.cdjapan.co.jp/product/{ID}</nowiki> || [[File:Cdjapan.png|12px|link=|]] || Available
+|-
+| Nicochokuhan || '''nicochokuhan''' || <nowiki>http://chokuhan.nicovideo.jp/products/detail/{ID}</nowiki> || [[File:nicochokuhan.png|12px|link=|]] || Unavailable
+|-
+| d-stage || '''d-stage''' || <nowiki>http://d-stage.com/shop/detail.php?seq={{{2}}}</nowiki> || [[File:D-stage.png|12px|link=|]] || Unavailable
+|-
+| Fasic || '''fasic''' || <nowiki>http://shop.fasic.jp/?pid={{{2}}}</nowiki> || [[File:Fasic.png|12px|link=|]] || Available
+|-
+| HMV || '''hmv''' || <nowiki>http://www.hmv.co.jp/product/detail/{ID}</nowiki> || [[File:Hmv.png|12px|link=|]] || Available
+|-
+| Melonbooks || '''melonbooks''' || <nowiki>http://www.melonbooks.co.jp/detail/detail.php?product_id={ID}</nowiki> || [[File:Melonbooks.png|12px|link=|]] || Available
+|-
+| Victor || '''victor''' || <nowiki>https://victor-store.jp/item/{ID}</nowiki> || [[File:Victor.png|12px|link=|]] || Available
+|-
+| Three/Lagoa || '''three''' || <nowiki>http://www.lagoa.jp/shopdetail/{ID}</nowiki> || [[File:Three.png|12px|link=|]] || Unavailable
+|-
+| Toranoana || '''toranoana''' || <nowiki>https://ec.toranoana.jp/tora_r/ec/item/{ID}</nowiki> || [[File:Toranoana.png|12px|link=|]] || Available
+|-
+| Toranoana (Old Link) || '''toranoana2''' || <nowiki>http://www.toranoana.jp/mailorder/article/{ID}.html</nowiki> || [[File:Toranoana.png|12px|link=|]] || Available
+|-
+| Universal Music Japan || '''universal''' || <nowiki>https://store.universal-music.co.jp/product/{ID}</nowiki> || [[File:Universal.png|12px|link=|]] || Available
+|-
+| Tower Records || '''tower''' || <nowiki>http://tower.jp/item/{ID}</nowiki> || [[File:Tower.png|12px|link=|]] || Available
+|-
+| Tsutaya || '''tsutaya''' || <nowiki>http://shop.tsutaya.co.jp/cd/product.html?janCd={ID}</nowiki> || [[File:Tsutaya.png|12px|link=|]] || Available
+|-
+| Gamers || '''gamers''' || <nowiki>https://www.gamers.co.jp/pd/{ID}</nowiki> || [[File:Gamers.png|12px|link=|]] || Available
+|-
+| Gamers (Old Link) || '''gamers2''' || <nowiki>http://www.gamers-onlineshop.jp/pd/{ID}</nowiki> || [[File:Gamers.png|12px|link=|]] || Unavailable
+|-
+| Rakuten || '''rakuten''' || <nowiki>http://books.rakuten.co.jp/rb/{ID}</nowiki> || [[File:Rakuten.png|12px|link=|]] || Available
+|-
+| Act Family || '''actfamily''' || <nowiki>http://actfamily.shop-pro.jp/?pid={ID}</nowiki> || [[File:Actfamily.png|12px|link=|]] || Available
+|-
+| Joysound || '''joysound''' || <nowiki>http://mstore.utasuki.jp/utasuki/{ID}/goods/goods_detail.html</nowiki> || [[File:Joysound.png|12px|link=|]] || Unavailable
+|-
+| 7Net || '''7net''' || <nowiki>https://7net.omni7.jp/detail/{ID}</nowiki> || [[File:7net.png|12px|link=|]] || Available
+|-
+| 7Net (Old Link) || '''7net2''' || <nowiki>http://www.7netshopping.jp/cd/detail/-/accd/{ID}</nowiki> || [[File:7net.png|12px|link=|]] || Unavailable
+|-
+| RecoChoku || '''recochoku''' || <nowiki>http://recochoku.jp/album/{ID}</nowiki> || [[File:Recochoku.png|12px|link=|]] || Available (JP Only)
+|-
+| Akibaoo || '''akibaoo''' || <nowiki>http://www.akibaoo.com/c/item/{ID}</nowiki> || [[File:Akibaoo.png|12px|link=|]] || Available
+|-
+| Due || '''due''' || <nowiki>http://d-ue.jp/item/{ID}</nowiki> || [[File:Due.png|12px|link=|]] || Unavailable (Kadokawa Cyber Attack)
+|-
+| Village Vanguard Online Store JP || '''vvstore''' || <nowiki>https://vvstore.jp/products/detail/{ID}</nowiki> || [[File:vvstore.png|12px|link=|]] || Available
+|-
+| bunkyodo || '''bunkyodo''' || <nowiki>http://www.bunkyodojoy.com/shop/g/{ID}</nowiki> || [[File:Bunkyodo.png|12px|link=|]] || Unavailable
+|}
+
+== Usage Examples ==
+Here are a few examples showing how to use the template for different platforms:
+
+<pre>
+ <table>
+  <tr>
+    <td>{{sl|amazon|amazonid|Limited Edition}}</td>
+    <td>{{sl|booth|2592696|relu|JP}}</td>
+    <td>{{sl|amazonmusic|amazonmusicalbumid|Limited Edition}}</td>
+    <td>{{sl|amazonmusicjp|amazonmusicalbumid|Limited Edition}}</td>
+    <td>{{sl|spotify|spotifyalbumid|Limited Edition}}</td>
+    <td>{{sl|spotify-track|spotifytrackid|Regular Edition}}</td>
+    <td>{{sl|yt|ytvideoid|MV}}</td>
+    <td>{{sl|animate-intl|productid|description|intl}}</td>
+  </tr>
+ </table>
+</pre>
+...results in:
+<table>
+<tr>
+<td>{{sl|amazon|amazonid|Limited Edition}}</td>
+<td>{{sl|booth|2592696|relu|JP}}</td>
+<td>{{sl|amazonmusic|amazonmusicalbumid|Limited Edition}}</td>
+<td>{{sl|amazonmusicjp|amazonmusicalbumid|Limited Edition}}</td>
+<td>{{sl|spotify|spotifyalbumid|Limited Edition}}</td>
+<td>{{sl|spotify-track|spotifytrackid|Regular Edition}}</td>
+<td>{{sl|yt|ytvideoid|MV}}</td>
+<td>{{sl|animate-intl|productid|description|intl}}</td>
+<td>{{sl|universal|tyct39095}}</td>
+</tr>
+</table>
+<small style='color:red'>
+For booth link, for example, if the link is https://relu.booth.pm/items/2592696, the format is: <pre>{{sl|booth|2592696|relu|JP}}</pre>
+<ol>
+<li>The zeroth index will always be the 'l' template (lowercase 'L').</li>
+<li>The first index is 'booth'.</li>
+<li>The second index is the product ID, in this case, '2592696'.</li>
+<li>The third index is the subdomain of the booth, here it is 'relu'.</li>
+<li>The last index will be 'JP' if it is specific to Japan; otherwise, it is left blank for international.</li>
+<li>Sorry for the inconvenience, but there is no index for description in this format for now just for booth shop template.</li>
+</ol>
+</small>
+
+This concludes the documentation for the template. It’s designed to be flexible, supporting various platforms and use cases, while maintaining a clean and user-friendly design.
+__NOTOC__
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

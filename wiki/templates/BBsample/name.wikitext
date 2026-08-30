@@ -1,0 +1,5 @@
+<includeonly>{{#ifeq:{{#rpos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(NND)}}|-1|{{#ifeq:{{#rpos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(YT)}}|-1|{{#ifeq:{{#rpos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(female)}}|-1|{{#ifeq:{{#rpos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(male)}}|-1|{{{BASEPAGENAME|{{BASEPAGENAME}}}}}
+|{{#sub:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}||{{#pos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(male)}}}}}}
+|{{#sub:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}||{{#pos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(female)}}}}}}
+|{{#sub:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}||{{#pos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(YT)}}}}}}
+|{{#sub:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}||{{#pos:{{{BASEPAGENAME|{{BASEPAGENAME}}}}}|(NND)}}}}}}</includeonly><noinclude>{{BASEPAGENAME}}</noinclude>

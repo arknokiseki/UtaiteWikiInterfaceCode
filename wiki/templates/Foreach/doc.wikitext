@@ -1,0 +1,27 @@
+<noinclude>{{Documentation subpage}}
+{{timw|Foreach}}
+</noinclude>
+== Purpose ==
+To repeatedly use a template for each argument in a pipe delimited list. The template handles up to 100 list items.
+
+Coming here to use this template in a new page, or put it somewhere it has not been used before? Consider using [[Template:Fe]] instead.
+
+== Example ==
+;Create comma delimited links to each hook in a list:
+{{tlx|foreach|hook|delim{{=}}, |ParserBeforePreprocess|ParserAfterTidy}} → {{foreach|hook|delim=,|ParserBeforePreprocess|ParserAfterTidy}}
+
+Compare:
+
+{{xpds|fe|hook|, |ParserBeforePreprocess|ParserAfterTidy}}
+
+== Usage ==
+{{tlx|foreach|delim{{=}}''delim''|''templatename''|''item1''|''item2''...}}
+
+* ''templatename'' - the name of a template that takes at least one parameter. Only the first parameter will be used, so the remaining parameters must be optional.
+* ''item1'' - the first item to pass to the template, resulting in <code><nowiki>{{</nowiki>''templatename''|''item1''}}</code>.
+* ''item2'',... - (optional) the second and following items to pass to the template, resulting in <code><nowiki>{{</nowiki>''templatename''|''item2''}}</code>, etc.
+* ''delim'' - (optional) a delimiter that should be inserted between the list items after the template ''templatename'' has been applied to each.
+
+== See also ==
+* [[Template:Fe]]
+* {{Q|Q10966397}}

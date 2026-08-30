@@ -1,0 +1,29 @@
+<includeonly>{{#expr:0{{#dpl:debug=0
+	| mode               = userformat
+	| listseparators     = ,1,+,0
+	| category           = {{{cat|}}}
+    | titleregexp        = {{{titleregexp|}}}
+    | categoryregexp     = {{{categoryregexp|}}}
+    | nottitleregexp     = {{{nottitleregexp|}}}
+    | allowcachedresults = {{{cached|false}}}
+}}}}</includeonly><noinclude>[[Category:Templates|{{PAGENAME}}]]
+==Statistics==
+===Utaite===
+Number of Male Utaite: {{ARTICLESINCAT|cat=Male Utaite}}<br/>
+Number of Female Utaite: {{ARTICLESINCAT|cat=Female Utaite}}<br/>
+Number of Androgynous Utaite: {{ARTICLESINCAT|cat=Androgynous Utaite}}<br/>
+Number of Male Youtaite: {{ARTICLESINCAT|cat=Male Youtaite}}<br/>
+Number of Female Youtaite: {{ARTICLESINCAT|cat=Female Youtaite}}<br/>
+Number of Androgynous Youtaite: {{ARTICLESINCAT|cat=Androgynous Youtaite}}<br/>
+Number of Male Utaite Start With Number: {{ARTICLESINCAT|cat=Male Utaite|titleregexp=^[0-9]+}}<br/>
+Number of Male Utaite Start With Y: {{ARTICLESINCAT|cat=Male Utaite|titleregexp=(?i)^[y]}}<br/>
+Number of Male Utaite Start With Z: {{ARTICLESINCAT|cat=Male Utaite|titleregexp=(?i)^[z]}}
+
+
+===Units===
+Number of Utaite Groups: {{ARTICLESINCAT|cat=Utaite Groups}}<br/>
+Number of Collaborative Units: {{ARTICLESINCAT|cat=Collaborative Groups}}<br/>
+Number of Duet Units: {{ARTICLESINCAT|cat=Duet Units}}<br/>
+
+{{doc}}
+</noinclude>

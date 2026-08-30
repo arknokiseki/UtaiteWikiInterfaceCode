@@ -1,0 +1,5 @@
+<onlyinclude>{{ll
+| 1 = :Category:{{#ifeq:{{NAMESPACENUMBER:{{{1}}}}}|14|{{PAGENAME:{{{1}}}}}|{{{1}}}}}
+| 2 <includeonly>{{#ifeq:{{{2|}}}|{{{2}}}||¬}}</includeonly> = {{{2}}}
+| nsp = {{yesno|{{{nsp|¬}}}|yes=|no=0|¬={{#ifeq:{{NAMESPACENUMBER:{{{1}}}}}|14||0}}}}
+}}</onlyinclude>{{Documentation}}

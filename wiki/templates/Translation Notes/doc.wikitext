@@ -1,0 +1,95 @@
+== Translation Notes ==
+Template for providing translation notes, explanations of cultural references, wordplay, and other contextual information.
+
+== Usage ==
+<pre>
+{{Translation Notes
+|notes=
+* [1] Line X: Explanation
+* [2] Line Y: Cultural reference
+* [3] Line Z: Wordplay details
+}}
+</pre>
+
+== Parameters ==
+{| class="wikitable"
+! Parameter
+! Required
+! Description
+! Example
+|-
+| notes
+| Yes
+| Bulleted list of translation notes
+| * [1] Line 2: Wordplay with "kae"
+|}
+
+== Format Guidelines ==
+* Use numbered notes: [1], [2], [3], etc.
+* Reference specific line numbers
+* Include:
+** Cultural references
+** Wordplay explanations
+** Alternative meanings
+** Important context
+** Translation choices
+
+== Examples ==
+
+=== Basic Notes ===
+<pre>
+{{Translation Notes
+|notes=
+* [1] Line 1: "Sakura" refers to cherry blossoms
+* [2] Line 3: Wordplay with "kae" (かえ) meaning both "return" and "change"
+}}
+</pre>
+{{Translation Notes
+|notes=
+* [1] Line 1: "Sakura" refers to cherry blossoms
+* [2] Line 3: Wordplay with "kae" (かえ) meaning both "return" and "change"
+}}
+
+=== Cultural References ===
+<pre>
+{{Translation Notes
+|notes=
+* [1] Line 2: "七五三" (shichi-go-san) refers to a traditional coming-of-age ceremony
+* [2] Line 4: The phrase "猫を被る" (neko wo kaburu) means "to pretend to be innocent"
+* [3] Line 7: Reference to the summer festival tradition of goldfish scooping (金魚すくい)
+}}
+</pre>
+{{Translation Notes
+|notes=
+* [1] Line 2: "七五三" (shichi-go-san) refers to a traditional coming-of-age ceremony
+* [2] Line 4: The phrase "猫を被る" (neko wo kaburu) means "to pretend to be innocent"
+* [3] Line 7: Reference to the summer festival tradition of goldfish scooping (金魚すくい)
+}}
+
+=== Complex Explanations ===
+<pre>
+{{Translation Notes
+|notes=
+* [1] Lines 1-3: Extended metaphor comparing life to a game of cards
+* [2] Line 5: The word "春" (haru) creates a double meaning:
+** As a noun: "spring"
+** As a verb stem: "to stretch"
+* [3] Lines 8-9: References the Japanese saying "猿も木から落ちる" (even monkeys fall from trees)
+}}
+</pre>
+{{Translation Notes
+|notes=
+* [1] Lines 1-3: Extended metaphor comparing life to a game of cards
+* [2] Line 5: The word "春" (haru) creates a double meaning:
+** As a noun: "spring"
+** As a verb stem: "to stretch"
+* [3] Lines 8-9: References the Japanese saying "猿も木から落ちる" (even monkeys fall from trees)
+}}
+
+== Best Practices ==
+* Be clear and concise
+* Always reference line numbers
+* Explain only what's necessary
+* Include sources when relevant
+* Order notes chronologically
+* Use consistent formatting

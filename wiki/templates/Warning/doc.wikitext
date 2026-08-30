@@ -1,0 +1,16 @@
+<templatedata>
+{
+	"format": "inline",
+	"params": {
+		"1": {
+			"aliases": [
+				"msg"
+			],
+			"label": { "en": "Content" },
+			"description": {"en": "The optional content, leave empty to produce an inline warning icon." },
+			"suggested": true,
+			"type": "content"
+		}
+	}
+}
+</templatedata>

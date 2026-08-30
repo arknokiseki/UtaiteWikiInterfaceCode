@@ -1,0 +1,29 @@
+{{Utaite Spotlight/Design|site=nnd, yt
+|image = YuukiAoi3.png
+|caption = booth.pm
+|officialjapname = 結城碧
+|officialromajiname = Aoi Yuuki
+|Twitter = panda__aoi
+|YThandle=@otakukunnsaa
+|NNDuserpage = 91400165
+|mylist1 = 66483158
+|mylist1info = main
+|mylist2 = 67189873
+|mylist2info = featured
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = 
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Alice in Reitouko]]
+|examplennd = sm38097871
+|exampleyt = 94mBLGM-U8g
+|description = '''Yuuki Aoi''' ('''結城碧''') is a male {{NNDict|Utaite}} and voice actor who debuted in September 2019, known for his remarkable ability to perform across a wide vocal range including both male and female voices. His versatility is exemplified in his "[https://www.youtube.com/watch?v=b_UqgMH0RMw Music Wizard of Oz]" cover where he performs seven different roles, while his most popular cover is "[https://www.youtube.com/watch?v=94mBLGM-U8g Alice in Reitouko]" which has surpassed 100,000 views. 
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

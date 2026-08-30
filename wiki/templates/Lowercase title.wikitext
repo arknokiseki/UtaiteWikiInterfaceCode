@@ -1,0 +1,13 @@
+<includeonly>{{DISPLAYTITLE: {{#if: {{NAMESPACE}}|{{NAMESPACE}}:}}{{#if: {{{italic|}}}
+  | {{#if: {{{force|}}}
+    | ''{{lcfirst:{{PAGENAME}}}}''
+    | {{#invoke:MultiReplace|main|{{lcfirst:{{PAGENAME}}}}|^(.*)(%b())$|''%1''%2|.*|''%1''}}
+    }}
+  | {{#if: {{{dab|}}}
+    | {{#invoke:MultiReplace|main|{{lcfirst:{{PAGENAME}}}}|{{Title disambig text|{{PAGENAME}}}}|''{{Title disambig text|{{PAGENAME}}}}''}}
+    | {{lcfirst:{{PAGENAME}}}}
+    }}
+  }}
+}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

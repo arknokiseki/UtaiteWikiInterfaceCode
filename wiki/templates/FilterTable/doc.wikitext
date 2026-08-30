@@ -1,0 +1,193 @@
+{{Documentation subpage}}
+{{Uses TemplateStyles|Template:FilterTable/styles.css}}
+This template adds filter buttons to a table so that users can selectively show table rows. For a general idea of what this template looks like on a wiki, see:
+* Stella Sora Wiki: [[mh:stellasora:Template:FilterTable|example 1]] and [[mh:stellasora:Characters|example 2]].
+* Strinova Wiki:[[mh:strinova:Characters|example]].
+
+== Example 1 ==
+Below is a simple usage example. Note that the table and the filters are separate. The <code>table</code> argument contains the <code>id</code> of the target table.
+
+This filter only has a single row, which filters wikis by their category. The <code>column</code> argument specifies which column to search for. In this case, it is the second column. Note that by default only exact matches will be considered, so "Animation" will only match rows whose second column is "Animation" but not "Animations". 
+
+The table '''must''' have a header row, as the script will otherwise break as a result.
+{{T/Example|<nowiki>
+{{FilterTable
+|table=filter-table-example-1
+|1=
+
+{{FilterTable/row
+|column=2
+|label=Category:
+|Gaming
+|Animation
+|Technology
+}}
+
+}}
+
+{| id="filter-table-example-1" class="wikitable sortable"
+! Name !! Category
+|-
+| Stella Sora Wiki || Gaming
+|-
+| Pleasant Goat Wiki || Animation
+|-
+| Rolling Sky Wiki || Gaming
+|-
+| Equestripedia || Animation
+|-
+| LCP Wiki || Technology
+|}
+</nowiki>}}
+
+== Example 2 ==
+This is an advanced example for this template. Each row is accompanied by explanatory comments.
+{{T/Example|<nowiki>
+{{FilterTable
+|table=filter-table-example-2
+|1=
+
+<!--
+This reset button resets all selections and is useful when there are many filter rows.
+-->
+{{FilterTable/row | reset=true }}
+
+<!--
+This is not too different from example 1 except the "all" argument, which adds a button to remove all selections and revert to showing everything. It is not necessary when there are 3 buttons but becomes more useful when there are more.
+-->
+{{FilterTable/row
+|column=2
+|label=Category:
+|all=true
+|Gaming
+|Animation
+|Technology
+}}
+
+<!--
+This row does 2 things.
+1. It shows an image in the button. Since we don't want to search for the icon itself, we specify in query1 and query2 that the search query is simply "English" and "Chinese".
+2. Because table cells contain flag images as well, we can no longer filter by exact text matches. Instead, we use mode=contains to match any cell that contains the search query ("English" or "Chinese").
+-->
+{{FilterTable/row
+|column=3
+|label=Language:
+|all=true
+|mode=contains
+|1=[[File:Flag_of_the_United_Kingdom_(3-5).svg|20px|link=]] English
+|query1=English
+|2=[[File:Flag_of_China.svg|20px|link=]] Chinese
+|query2=Chinese
+}}
+
+<!--
+This row itself isn't too special. However, the table only shows icons, so performing text matches on the table would fail. See the explanation below the table for how to work around this issue.
+-->
+{{FilterTable/row
+|column=4
+|label=Socials:
+|all=true
+|mode=contains
+|1=Discord
+|2=Twitter
+|3=YouTube
+}}
+
+<!--
+This row adds a search box which searches for text in all columns.
+-->
+{{FilterTable/row | search = true | label=Search: }}
+
+<!--
+Any element with class "filter-counter-total" will be populated with the total number of rows. Any element with class "filter-counter" will be populated with the current number of rows after filters are applied.
+-->
+<div>Showing <span class="filter-counter"></span> of <span class="filter-counter-total"></span> wikis.</div>
+
+}}
+</nowiki>}}
+
+{| id="filter-table-example-2" class="wikitable sortable"
+! Name !! Category !! Language !! Socials
+|-
+| Stella Sora Wiki || Gaming || [[File:Flag_of_the_United_Kingdom_(3-5).svg|20px]] English || data-search="DiscordTwitter" | [[File:Discord_logo_cropped.png|20px]][[File:Logo of Twitter.svg|20px]]
+|-
+| Pleasant Goat Wiki || Animation || [[File:Flag_of_the_United_Kingdom_(3-5).svg|20px]] English || data-search="TwitterYouTube" | [[File:Logo_of_Twitter.svg|20px]] [[File:YouTube full-color icon (2017).svg|20px]]
+|-
+| Rolling Sky Wiki || Gaming || [[File:Flag_of_China.svg|20px]] Chinese || data-search="Twitter" | [[File:Logo_of_Twitter.svg|20px]]
+|-
+| Equestripedia || Animation || [[File:Flag_of_the_United_Kingdom_(3-5).svg|20px]] English || data-search="Discord" | [[File:Discord_logo_cropped.png|20px]]
+|-
+| LCP Wiki || Technology || [[File:Flag_of_the_United_Kingdom_(3-5).svg|20px]] English || data-search="Discord" | [[File:Discord_logo_cropped.png|20px]]
+|}
+
+Note that the last table column only contains icons without text. To specify a hidden text that can be searched for, you can use the <code>data-search</code> attribute in the <code><nowiki><td></nowiki></code> element. For example, Stella Sora's row is as follows. The <code>data-search="DiscordTwitter"</code> part makes this table cell searchable for both Discord and Twitter.
+<syntaxhighlight lang="wikitext">
+| Stella Sora Wiki || Gaming || [[File:Flag_of_the_United_Kingdom_(3-5).svg|20px]] English || data-search="DiscordTwitter" | [[File:Discord_logo_cropped.png|20px]][[File:Logo of Twitter.svg|20px]]
+</syntaxhighlight>
+If the <code>data-search</code> attribute is used for a column, it must be present on all rows. This shouldn't be a problem if you are using some automated way to generate data.
+
+== Additional template options ==
+{{tl|FilterTable/row}} also accepts a <code>class</code> argument, which adds a custom class to the row. It can be used to customize this row of buttons. For example, if an icon in a button has a greater height than the others, buttons will no longer have uniform height. The <code>class=extra-line-height</code> argument will increase the line height and in most cases ensure that all buttons have the same height.
+
+== Raw HTML structure ==
+if you prefer to not use/customize pre-built templates, below is a minimal HTML structure that works with the JavaScript and can be customized and built upon.
+<syntaxhighlight lang="wikitext">
+<templatestyles src="FilterTable/styles.css"/><div class="filter-wrapper" data-table-id="filter-table-example">
+
+<div class="filter-row">
+<div class="filter-button filter-reset">Reset all</div>
+</div>
+
+<div class="filter-row " data-col="2">
+<div class="filter-button">Gaming</div>
+<div class="filter-button">Animation</div>
+<div class="filter-button">Technology</div>
+</div>
+
+<div class="filter-row " data-col="3" data-mode="contains">
+<div class="filter-button is-all">All</div>
+<div class="filter-button" data-query="English">[[File:Flag_of_the_United_Kingdom_(3-5).svg|20px|link=]] English</div>
+<div class="filter-button" data-query="Chinese">[[File:Flag_of_China.svg|20px|link=]] Chinese</div>
+</div>
+
+<div class="filter-row " data-col="4" data-mode="contains">
+<div class="filter-button is-all">All</div>
+<div class="filter-button">Discord</div>
+<div class="filter-button">Twitter</div>
+<div class="filter-button">YouTube</div>
+</div>
+
+<div class="filter-search"></div>
+
+<div>Showing <span class="filter-counter"></span> of <span class="filter-counter-total"></span> wikis.</div>
+
+</div>
+</syntaxhighlight>
+
+As for the table, it can also be built with HTML. Because MediaWiki disallows the <code><thead></code> element, the heading must also be inside a table row.
+
+<syntaxhighlight lang="html">
+<table class="wikitable" id="filter-table-example">
+<tr>
+<th>Name</th>
+<th>Socials</th>
+</tr>
+<tr>
+<td>Stinova Wiki</td>
+<td data-search="Discord">[[File:Discord_logo_cropped.png|20px]]</td>
+</tr>
+<tr>
+<td>LCP Wiki</td>
+<td data-search="Twitter">[[File:Logo of Twitter.svg|20px]]</td>
+</tr>
+</table>
+</syntaxhighlight>
+
+== Other recommendations ==
+Constructing the table by hand would be extremely tedious and can be made more difficult when the search field needs to be specified by <code>data-search</code>. Consider using some automated way of generating the table, such as the Cargo extension or a Lua module. See [[meta:Help:How to manage structured data|a guide on managing structured data on Meta]] for details.
+
+== See also ==
+This template is inspired by [https://wiki.biligame.com/wiki/%E7%AD%9B%E9%80%89%E5%88%97%E8%A1%A8 筛选列表 on BWiki], though the codebase is not derived from it.
+<includeonly>
+[[Category:Templates]]
+</includeonly>

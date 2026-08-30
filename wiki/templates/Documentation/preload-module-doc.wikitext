@@ -1,0 +1,5 @@
+<includeonly>{{Documentation/Header}}
+{{subst:#ifeq:{{subst:#titleparts:{{subst:BASEPAGENAME}}|0|-1}}|data
+|Data module for [[Module:{{subst:#titleparts:{{subst:BASEPAGENAME}}|-1|0}}]].
+|This module implements {{T|{{subst:BASEPAGENAME}}}}. {{subst:#ifexist:Module:{{subst:BASEPAGENAME}}/data|Data stored in the [[Module:{{subst:ROOTPAGENAME}}/data|data module]].}}
+}}</includeonly><noinclude>{{Documentation|type=Preload}}</noinclude>

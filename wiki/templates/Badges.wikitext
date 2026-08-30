@@ -1,0 +1,12 @@
+<noinclude></noinclude><onlyinclude><div class="blacklist-pPreview"><templatestyles src="Template:UserGroupIcon/styles.css" />{{#ifeq:{{FULLPAGENAMEE}}|User:Frigidum1222|{{UserGroupIcon|content-moderator|Content Moderator}}[[File:Upbbtest.svg|20px|link=|Page Builder Beta Tester]][[File:Editor.png|20px|link=|Top 1 in Songlist Leaderboard 2024]]|
+{{#ifeq:{{FULLPAGENAMEE}}|User:Makudoumee|{{UserGroupIcon|interface-admin|Interface Administrator}}{{UserGroupIcon|administrator|Administrator}}|
+{{#ifeq:{{FULLPAGENAMEE}}|User:Shiro_Falulu|{{UserGroupIcon|bureaucrat|Bureaucrat}}{{UserGroupIcon|interface-admin|Interface Administrator}}{{UserGroupIcon|administrator|Administrator}}|
+{{#ifeq:{{FULLPAGENAMEE}}|UserWiki:Cashmerella|{{UserGroupIcon|bureaucrat|Bureaucrat}}{{UserGroupIcon|administrator|Administrator}}|
+{{#ifeq:{{FULLPAGENAMEE}}|User:Arknomahounorobotto|[[File:Badge-Bot.svg|20px|link=|Bot]]
+
+<!--closing tag-->
+|Currently none or to be added}}
+|Currently none or to be added}}
+|Currently none or to be added}}
+|Currently none or to be added}}
+|Currently none or to be added}}</div></onlyinclude><noinclude><div class="no-image-on-preview"></div>{{documentation}}</noinclude>

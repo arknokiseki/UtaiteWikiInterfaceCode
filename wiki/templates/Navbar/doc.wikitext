@@ -1,0 +1,148 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Navbar/doc}}
+<templatedata>
+{
+	"description": {
+		"en": "Adds edit links to navboxes and other templates",
+		"cs": "Přidá odkazy na úpravy do navboxů a dalších šablon",
+		"tr": "Gezinti kutularına ve diğer şablonlara düzenleme bağlantıları ekler",
+		"fr": "Ajoute des liens de modification aux boîtes de navigation et aux autres modèles"
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Template name",
+				"cs": "Název šablony",
+				"tr": "Şablon adı",
+				"fr": "Nom du modèle"
+			},
+			"description": {
+				"en": "The template for which to create navbar links",
+				"cs": "Šablona, pro kterou se mají vytvářet odkazy na navigační liště",
+				"tr": "Gezinti çubuğu bağlantılarının oluşturulacağı şablon",
+				"fr": "Modèle pour lequel les liens de la barre de navigation seront créés."
+			},
+			"autovalue": "{{subst:PAGENAME}}",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"text": {
+			"label": {
+				"en": "Text",
+				"cs": "Text",
+				"tr": "Metin",
+				"fr": "Texte"
+			},
+			"description": {
+				"en": "Custom leading text",
+				"cs": "Vlastní úvodní text",
+				"tr": "Özel satır aralığı metni",
+				"fr": "Texte principal personnalisé."
+			},
+			"default": {
+				"en": "This box:",
+				"cs": "Box:",
+				"tr": "Bu kutu:"
+			},
+			"type": "line"
+		},
+		"mini": {
+			"label": {
+				"en": "Mini?",
+				"cs": "Mini?",
+				"tr": "Mini mi?",
+				"fr": "Minimal"
+			},
+			"description": {
+				"en": "Only emit “v · d · e”",
+				"cs": "Omezené zobrazení “v · d · e”",
+				"tr": "Yalnızca “g · t · d” yayınlar",
+				"fr": "Affichage restreint “v · d · e”"
+			},
+			"type": "boolean"
+		},
+		"plain": {
+			"label": {
+				"en": "Plain?",
+				"cs": "Jasné?",
+				"tr": "Düz mü?",
+				"fr": "Brut"
+			},
+			"description": {
+				"en": "Omit leading text",
+				"cs": "Vynechat úvodní text",
+				"tr": "Baştaki metni çıkar",
+				"fr": "Affichage sans texte principal."
+			},
+			"default": "{{{mini}}}",
+			"type": "boolean"
+		},
+		"brackets": {
+			"label": {
+				"en": "Brackets?",
+				"cs": "Závorky?",
+				"tr": "Parantezler mi?",
+				"fr": "Crochets"
+			},
+			"description": {
+				"en": "Surround links with brackets",
+				"cs": "Ohraničení článků závorkami [ ]",
+				"tr": "Parantezli çevre bağlantıları",
+				"fr": "Les liens seront entre crochets [ ]"
+			},
+			"type": "boolean"
+		},
+		"noedit": {
+			"label": {
+				"en": "No Edit",
+				"cs": "Neupravovat",
+				"tr": "Düzenleme Yok",
+				"fr": "Sans édition"
+			},
+			"description": {
+				"en": "Omit the “Edit” link",
+				"cs": "Vynechat odkaz “Upravit”",
+				"tr": "“Düzenle” bağlantısını atlayın",
+				"fr": "Le lien pour modifier n'est pas affiché."
+			},
+			"type": "boolean"
+		},
+		"style": {
+			"label": {
+				"en": "Style",
+				"cs": "Styl",
+				"tr": "Stil",
+				"fr": "Style"
+			},
+			"description": {
+				"en": "The CSS style attribute",
+				"cs": "Atribut stylu CSS",
+				"tr": "CSS stil özelliği",
+				"fr": "Attribut du style CSS."
+			},
+			"type": "string"
+		},
+		"fontstyle": {
+			"label": {
+				"en": "Font Style",
+				"cs": "Styl fontu",
+				"tr": "Yazı Tipi Stili",
+				"fr": "Style de fonte"
+			},
+			"description": {
+				"en": "The CSS style attribute for text",
+				"cs": "Atribut stylu CSS pro text",
+				"tr": "Metin için CSS stil niteliği",
+				"fr": "Attribut CSS de style pour le texte."
+			},
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Formatting templates{{#translation:}}]]
+}}</includeonly>

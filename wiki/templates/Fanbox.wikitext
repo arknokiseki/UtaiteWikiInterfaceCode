@@ -1,0 +1,1 @@
+<includeonly>{{#if:{{{1}}}|[[File:Fanbox.png|{{{size|16x16px}}}|link=https://{{{1}}}.fanbox.cc|{{#if:{{{2|}}}|{{{2}}}}}]]|error: first parameter not provided}}</includeonly><noinclude>{{documentation}}[[Category:SNS Template]]</noinclude>

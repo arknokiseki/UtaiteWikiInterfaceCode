@@ -1,0 +1,58 @@
+{{Documentation/Header}}
+A memorial notice box placed at the top of the page of a singer who has passed away. It renders a pale blue {{T|Notify}} box with a candle icon, asks readers to be respectful, and links to the wiki's [[Project:Policy|policies and guidelines]] and the [[Forum:Departure|Departure forum]].
+
+Pages using it are filed under [[:Category:Deceased Utaite]]. Categorization is limited to the main namespace, so the template is safe to demonstrate in documentation.
+
+Unlike the inline badges {{T|Active}}, {{T|Inactive}}, {{T|Hiatus}} and {{T|Graduated}}, this is a full-width notice box and is not part of {{T|Status Templates}}.
+
+==Syntax==
+{{T|Deceased|block=1
+|v1=種類 =
+|v2=ref =
+}}
+
+Note that the first parameter name is the Japanese word <code>種類</code> ("type"), not a romanized name.
+
+==Examples==
+===Default===
+Without parameters the notice reads "utaite", which suits most pages.
+{{T|Deceased|_Y_=1}}
+
+===Other singing communities===
+<code>種類</code> sets which singing community the person belonged to, so the wording fits the subject — for example <code>youtaite</code> for English-speaking singers or <code>geji</code> for Chinese singers.
+{{T|Deceased|_Y_=1|p1=種類 = geji}}
+{{T|Deceased|_Y_=1|p1=種類 = youtaite}}
+
+===With a source===
+<code>ref</code> appends a citation directly after "as confirmed by reported sources".
+<pre>
+{{Deceased|ref = <ref>[https://twitter.com/example official announcement]</ref>}}
+</pre>
+{{Deceased|ref = <ref>[https://twitter.com/example official announcement]</ref>}}
+
+
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>種類</code> || – || Singer category || The singing community the person belonged to, used as the noun in the opening sentence — for example <code>utaite</code> (Japanese), <code>youtaite</code> (English-speaking) or <code>geji</code> (Chinese). Written in lowercase, as it appears mid-sentence. || string || utaite ||
+|-
+| <code>ref</code> || – || Reference || A citation confirming the passing, using <code><nowiki><ref></nowiki></code> tags. Appended after "as confirmed by reported sources". || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A memorial notice box for the page of a singer who has passed away.",
+"params": {
+"種類": { "label": "Singer category", "description": "The singing community the person belonged to, used as the noun in the notice — e.g. 'utaite' (Japanese), 'youtaite' (English-speaking), 'geji' (Chinese). Lowercase.", "type": "string", "default": "utaite" },
+"ref": { "label": "Reference", "description": "Citation confirming the passing, using <ref> tags.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+
+''This template is inspired by {{VW|Template:Deceased Producer|Vocaloid Wiki's "Deceased Producer" template}}.''
+
+{{Ref}}

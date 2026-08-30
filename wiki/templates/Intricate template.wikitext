@@ -1,0 +1,19 @@
+<noinclude></noinclude>{{#switch:
+| =
+{{ombox
+| type = style
+| style = margin: 4px 0;border: 2px solid #f4c430; background-color: var(--background-color-warning-subtle,#ffe); border-inline-start-width: 8px;
+| image = [[File:OOjs UI icon alert-yellow.svg|40x40px|alt=|link=]]
+| text ={{#if:{{{namespace|}}}
+  |'''<!--T:1--> This {{{namespace}}} employs intricate features of template syntax.'''
+  |'''<!--T:6--> This template employs intricate features of template syntax.'''
+  }}
+<div style="font-size:95%; padding-bottom:2px"><!--T:2--> You are encouraged to familiarize yourself with its setup and {{Mw|Help:Extension:ParserFunctions|parser functions}} before editing the template. <!--T:3--> If your edit causes unexpected problems, please {{Mw|Special:MyLanguage/Help:Reverting#Undo|undo}} it quickly, as this template may appear on a large number of pages.<br />
+<!--T:4--> Remember that you can conduct experiments, and should test all improvements, in either the {{Intricate template/sandbox link|general=general sandbox|local=local $$}} or your user space before changing anything here.</div>
+}}<includeonly>{{#if:{{{nocat|}}}|| {{#ifeq: {{PAGENAME}} | {{BASEPAGENAME}} | [[Category:Intricate templates{{#translation:}}]] }} }}</includeonly>
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Template:Intricate template|noshift=1|uselang={{int:lang}}}}
+}}<noinclude>
+{{Documentation|Template:Intricate template/doc}}
+[[Category:Alert templates{{#translation:}}]]
+</noinclude>

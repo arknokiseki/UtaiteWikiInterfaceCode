@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:Uptodate|getUptodateFromSubpage}}</includeonly><noinclude>{{documentation}}[[Category:Synchronization templates]]</noinclude>

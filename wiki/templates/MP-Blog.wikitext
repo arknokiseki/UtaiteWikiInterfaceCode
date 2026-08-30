@@ -1,0 +1,5 @@
+<div class="mp-section">
+<div class="mp-section-head"><i class="fa-solid fa-blog"></i><h2 class="mp-section-title">Recent Blogs</h2></div>
+<div class="mp-scroll-box" style="height:{{{height|230px}}}; font-size:140%;"><div class="plainlinks" style="text-align:center; line-height:1em;">[{{fullurl:{{FULLPAGENAME}}|action=purge}} <small>↑ REFRESH ↓</small>]</div>
+<div style="font-size:85%; line-height:1em;">{{LatestUserBlogs|count={{{count|5}}}|}}</div></div></div>
+<noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

@@ -1,0 +1,8 @@
+<noinclude>{| class="wikitable"
+|-
+|</noinclude>style="background: #D1E8EF; vertical-align: middle; text-align: {{{align|center}}};" class="table-cast"|{{{1|Runner-up}}}<noinclude>
+|}
+{{Documentation|Template:Table cell templates/doc}}
+[[Category:Television table cell templates]]
+[[Category:Big Brother (franchise) templates]]
+</noinclude>

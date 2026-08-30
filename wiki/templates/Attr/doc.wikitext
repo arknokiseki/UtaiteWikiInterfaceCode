@@ -1,0 +1,39 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+== Usage ==
+=== Examples ===
+* {{tlx|tag|ref|open|params{{=}}{{tlx|attr|group|"note"}}}} → {{tag|ref|open|params={{attr|group|"note"}}}}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+    "description": "This template provides a quick way to mention an XML-style attribute in a preformatted way. Mainly used with the {{tag}} and {{xtag}} templates.",
+    "params": {
+        "1": {
+            "label": "Name",
+            "description": "The name of the X/HT/ML attribute.",
+            "type": "content",
+            "required": true,
+            "example": "foo"
+        },
+        "2": {
+            "label": "Value",
+            "description": "The value of the X/HT/ML attribute.",
+            "type": "content",
+            "suggested": true,
+            "example": "\"bar\""
+        }
+    }
+}
+</templatedata>
+
+== See also ==
+* {{tlx|tag}} — for HTML/XML tags
+* {{tlx|para}} — for MediaWiki template parameters
+
+{{#tag:syntaxhighlight||lang=text|class=wds-is-hidden|style=display:none!important}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Semantic markup templates]]
+}}</includeonly>

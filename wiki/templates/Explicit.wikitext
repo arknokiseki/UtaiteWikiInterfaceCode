@@ -1,0 +1,5 @@
+<noinclude>{{FandomLicense|Vocaloid|Template:Explicit}}</noinclude>{{Notify
+  | 1 = #e50000
+  | 2 = !!
+  | 3 = '''This subject has mature content'''{{#if:{{{1|}}}|, such as: '''{{{1}}}'''}}. View at your own risk.<br /><small>More subjects categorized [[:Category:Mature content|here]].</small>
+}}<includeonly>[[Category:Mature content]]</includeonly><noinclude>{{documentation}}</noinclude>

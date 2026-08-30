@@ -1,0 +1,4 @@
+<pre>{{KPOP|Stray Kids}}</pre>
+...results in:
+{{KPOP|Stray Kids}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

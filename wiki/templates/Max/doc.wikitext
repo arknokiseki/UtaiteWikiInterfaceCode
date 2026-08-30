@@ -1,0 +1,42 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+Returns the maximum of up to three numeric values. Ignores invalid or empty inputs and automatically adjusts based on how many valid values are provided.
+
+==Syntax==
+{{T|Max|v1=|v2=|v3=}}
+
+==Examples==
+{{T|Max|v1=5|v2=8|v3=2}} → 8<br/>
+{{T|Max|v1=7|v2=abc|v3=3}} → 7<br/>
+{{T|Max|v1=|v2=4|v3=}} → 4<br/>
+{{T|Max|v1=hello|v2=|v3=}} → (no output)<br/>
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+-->
+<templatedata>
+{
+  "description": "Returns the maximum of up to three numeric values, ignoring empty or non-numeric inputs.",
+  "params": {
+    "v1": {
+      "label": "Value 1",
+      "description": "First numeric value",
+      "type": "number",
+      "required": false
+    },
+    "v2": {
+      "label": "Value 2",
+      "description": "Second numeric value",
+      "type": "number",
+      "required": false
+    },
+    "v3": {
+      "label": "Value 3",
+      "description": "Third numeric value",
+      "type": "number",
+      "required": false
+    }
+  }
+}
+</templatedata>

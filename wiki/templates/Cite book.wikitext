@@ -1,0 +1,9 @@
+<includeonly>{{#invoke:Citation|main|CitationClass=book}}</includeonly><noinclude>
+{{Documentation|content=Usage: <br/>{{T|Cite book
+ |和書
+ |date = 2019-06-14
+ |title = すとろべりーめもりー vol.1
+ |publisher = {{Wp ja|サニーサイドアップ}}（STPR BOOKS）
+ |isbn = 978-4-909196-03-3
+ |ref = {{SfnRef|すとろべりーめもりー vol.1|2019}}
+ |block=1|_Y_=1}}}}</noinclude>

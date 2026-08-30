@@ -1,0 +1,2 @@
+{{#if:{{{1|}}}|{{PAGENAME:{{{1|}}}}}|{{PAGENAME}}}}<noinclude>
+{{Documentation}}</noinclude>

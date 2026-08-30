@@ -1,0 +1,132 @@
+<noinclude></noinclude><includeonly>{{Module other|{{ombox
+ | type      = notice
+ | image     = {{#switch: {{{1|}}}
+   | pre-alpha | prealpha | pa = [[File:OOjs UI icon text-style.svg|40x40px|link=]]
+   | alpha | a                 = [[File:OOjs UI icon bold-a.svg|40x40px|link=]]
+   | beta | b                  = [[File:OOjs UI icon bold-b.svg|40x40px|link=]]
+   | release | r | general | g = [[File:OOjs UI icon check-constructive.svg|40x40px|link=]]
+   | protected | protect | p   = [[File:{{#if:{{CASCADINGSOURCES:{{FULLPAGENAME}}}}|Cascade-protection-shackle.svg|{{#ifeq:{{PROTECTIONLEVEL:edit}}|sysop|Full-protection-shackle-red.svg|Semi-protection-shackle-no-text.svg}}}}|40x40px|link=]]
+   | semiprotected | semiprotect | semi = [[File:Semi-protection-shackle.svg|40x40px|link=]]
+   | #default = [[File:OOjs UI icon alert-destructive.svg|40x40px|link=]]
+  }}
+ | style     = 
+ | textstyle = 
+ | text      = {{#switch: {{{1|}}}
+   | pre-alpha | prealpha | pa = <!--T:1--> This module is rated as [[Special:MyLanguage/Category:Modules in pre-alpha development|pre-alpha]]. <!--T:2--> It is unfinished, and may or may not be in active development. <!--T:3--> It should not be used from article namespace pages. <!--T:4--> Modules remain pre-alpha until the original editor (or someone who takes one over if it is abandoned for some time) is satisfied with the basic structure.<!--
+   -->{{#ifexpr:
+         <!-- No category for /doc or /sandbox subpages -->
+         {{IsDocSubpage|false=0}} or {{#ifeq:{{SUBPAGENAME}}|sandbox|1|0}}
+       || {{#ifeq: {{{nocat|}}} | true | <!-- No category if user sets nocat=true --> | [[Category:Modules in pre-alpha development|{{PAGENAME}}]] }}
+      }}
+   | alpha | a                 = <!--T:20--> This module is rated as [[Special:MyLanguage/Category:Modules in alpha|alpha]]. <!--T:21--> It is ready for third party input, and may be used on a few pages to see if problems arise, but should be watched. <!--T:22--> Suggestions for new features or changes in their input and output mechanisms are welcome.<!--
+   -->{{#ifexpr:
+         <!-- No category for /doc or /sandbox subpages -->
+         {{IsDocSubpage|false=0}} or {{#ifeq:{{SUBPAGENAME}}|sandbox|1|0}}
+       || {{#ifeq: {{{nocat|}}} | true | <!-- No category if user sets nocat=true --> | [[Category:Modules in alpha|{{PAGENAME}}]] }}
+      }}
+   | beta | b                  = <!--T:23--> This module is rated as [[Special:MyLanguage/Category:Modules in beta|beta]], and is ready for widespread use. <!--T:24--> It is still new and should be used with some caution to ensure the results are as expected.<!--
+   -->{{#ifexpr:
+         <!-- No category for /doc or /sandbox subpages -->
+         {{IsDocSubpage|false=0}} or {{#ifeq:{{SUBPAGENAME}}|sandbox|1|0}}
+       || {{#ifeq: {{{nocat|}}} | true | <!-- No category if user sets nocat=true --> | [[Category:Modules in beta|{{PAGENAME}}]] }}
+      }}
+   | release | r | general | g = <!--T:25--> This module is rated as [[Special:MyLanguage/Category:Modules for general use|ready for general use]]. <!--T:26--> It has reached a mature form and is thought to be bug-free and ready for use wherever appropriate. <!--T:27--> It is ready to mention on help pages and other resources as an option for new users to learn. <!--T:28--> To reduce server load and bad output, it should be improved by [[w:WP:TESTCASES|sandbox testing]] rather than repeated trial-and-error editing.<!--
+   -->{{#ifexpr:
+         <!-- No category for /doc or /sandbox subpages -->
+         {{IsDocSubpage|false=0}} or {{#ifeq:{{SUBPAGENAME}}|sandbox|1|0}}
+       || {{#ifeq: {{{nocat|}}} | true | <!-- No category if user sets nocat=true --> | [[Category:Modules for general use|{{PAGENAME}}]] }}
+      }}
+   | protected | protect | p   = <!--T:29--> This module is [[Special:MyLanguage/Category:Modules subject to page protection|subject to {{#if:{{CASCADINGSOURCES:{{FULLPAGENAME}}}}|cascading|page}} protection]]. <!--T:30--> It is a highly visible module in use by a very large number of pages. <!--T:31--> Because vandalism or mistakes would affect many pages, and even trivial editing might cause substantial load on the servers, it is [[Special:MyLanguage/Project:Protected page|protected]] from editing.<!--
+   -->{{#ifexpr:
+         <!-- No category for /doc or /sandbox subpages -->
+         {{IsDocSubpage|false=0}} or {{#ifeq:{{SUBPAGENAME}}|sandbox|1|0}}
+       || {{#ifeq: {{{nocat|}}} | true | <!-- No category if user sets nocat=true --> | [[Category:Modules subject to page protection|{{PAGENAME}}]] }}
+      }}
+   | #default                  = {{error|1=<!--T:17--> Module rating is invalid or not specified.}}
+  }}
+}}|{{error|1=<!--T:18--> Error: <!--T:19--> {{tl|Module rating}} must be placed in the Module namespace.}}|demospace={{{demospace|<noinclude>module</noinclude>}}}}}</includeonly><noinclude>
+{{documentation|content=
+
+<!--T:5--> This template is used to rate [[Lua/Overview|Lua modules]] by quality.
+<!--T:6--> It is placed at the top of the module's /doc subpage.
+<!--T:7--> It produces a message informing users about the rating system, and it also places the module into a tracking category.
+
+
+== Usage == <!--T:8-->
+
+<!--T:9-->
+Basic usage:
+
+{{pre|{{tlx|module rating|''rating''}}}}
+
+<!--T:10--> Without categories:
+{{pre|{{tlx|module rating|''rating''|3=nocat=true}}}}
+
+<!--T:32--> If {{tlx|Module rating}} is used outside the Module namespace, an error message is shown: {{module rating}}
+
+
+== Ratings == <!--T:11-->
+
+<!--T:33--> The rating should be placed in the first positional parameter.
+<!--T:34--> There are five different ratings: '''pre-alpha'''{{int|comma-separator}}'''alpha'''{{int|comma-separator}}'''beta'''{{int|comma-separator}}'''release'''{{int|and}}{{int|word-separator}}'''protected'''.
+<!--T:35--> There are also short alias codes for each of the ratings.
+
+{{(!}} class="wikitable"
+! <!--T:12--> Rating
+! <!--T:13--> Aliases
+! <!--T:14--> Result
+{{!}}-
+{{!}} <code>pre-alpha</code>
+{{!}} <code>prealpha</code><br/><code>pa</code>
+{{!}} {{module rating|pre-alpha|nocat=true|demospace=Module}}
+{{!}}-
+{{!}} <code>alpha</code>
+{{!}} <code>a</code>
+{{!}} {{module rating|alpha|nocat=true|demospace=module}}
+{{!}}-
+{{!}} <code>beta</code>
+{{!}} <code>b</code>
+{{!}} {{module rating|beta|nocat=true|demospace=module}}
+{{!}}-
+{{!}} <code>release</code>
+{{!}} <code>r</code><br/><code>general</code><br/><code>g</code>
+{{!}} {{module rating|release|nocat=true|demospace=module}}
+{{!}}-
+{{!}} <code>protected</code>
+{{!}} <code>protect</code><br/><code>p</code>
+{{!}} {{module rating|protected|nocat=true|demospace=module}}
+{{!}}-
+{{!}} <!--T:36--> ''Anything else or if missing''
+{{!}}
+{{!}} {{module rating|prdaskidkated|nocat=true|demospace=module}}
+{{!}}-
+{{!)}}
+
+== TemplateData ==
+{{Module rating/doc}}
+
+
+== Categories == <!--T:15-->
+
+<!--T:37-->
+The template will put modules in one of the following categories, according to the rating specified:
+
+
+* {{ll|Category:Modules in pre-alpha development}}
+* {{ll|Category:Modules in alpha}}
+* {{ll|Category:Modules in beta}}
+* {{ll|Category:Modules for general use}}
+* {{ll|Category:Modules subject to page protection}}
+
+<!--T:38--> These categories are suppressed on pages ending with /doc.
+<!--T:39--> To suppress categories on all pages, you can use the code {{para|nocat|true}}.
+
+
+== See also == <!--T:16-->
+
+* {{tl|module-rating categories}}
+* [[Lua]]
+* {{tl|Lua}}
+
+}}
+</noinclude>

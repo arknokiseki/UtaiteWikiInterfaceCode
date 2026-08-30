@@ -1,0 +1,51 @@
+<languages/>
+<onlyinclude>
+{{rellink|extraclasses=mw-tpl-seealso|{{{altphrase|<!--T:1--> See also}}}{{msgnw:int:colon-separator/{{TRANSLATIONLANGUAGE}}}}{{#invoke:See also|main<noinclude>|1={{{1}}}</noinclude>|msg-empty-array='''<!--T:2--> Error: [[Special:MyLanguage/Template:See also|Template must be given at least one article name]]'''}}}}
+</onlyinclude>
+{{Documentation|content=
+{{Lua|Module:See also}}
+
+<!--T:5--> {{tlx|See also}} is used to create [[w:Wikipedia:Hatnote|hatnotes]] to point to a small number of other, related, titles at the '''top''' of [[w:Help:Section|article sections]] according to [[w:Wikipedia:Layout|Wikipedia:Layout]].
+<!--T:6--> It is not for use in the "See also" ''section'' at the bottom of an article.
+
+ {{Tlx|See also|2=<!--T:7--> Article 1|3=''label 1{{=}}<!--T:22--> label1''|4=<!--T:24--> Article 2|5=''label 2{{=}}<!--T:25--> label2''|6=...}}
+
+
+<!--T:26-->
+* Any number of articles can be listed (at least one should be provided).
+
+<!--T:10-->
+* The word "and" is always placed between the final two entries.
+
+<!--T:12-->
+* You can use parameters label 1, label 2 and so on to specify alternative labels for the links.
+
+<!--T:27-->
+* Parameter <code>ll</code> makes this template use {{tl|ll}}, which provides automatic linking to translation in user language, as well as using a translated default link text (overriding with <code>label <var>n</var></code> still applies).
+
+:<!--T:13--> adding newline characters will break article links <!-- presumably because of the leading ":" -->
+
+
+==Example== <!--T:14-->
+
+{{(}}{{!}} class="wikitable" cellspacing="0" cellpadding="0"
+! <!--T:15--> Code
+! <!--T:16--> Result
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article}} {{!}}{{!}} {{See also|Article}}
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article|3=label 1=<!--T:17--> Alternative title for Article}} {{!}}{{!}} {{See also|Article|label 1=<!--T:18--> Alternative title for Article}}
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article|Article 2}} {{!}}{{!}} {{See also|Article|Article 2}}
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article|Article 2|Article 3}} {{!}}{{!}} {{See also|Article|Article 2|Article 3}}
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article|Article 2|<nowiki>ll=TRUE</nowiki>}} {{!}}{{!}} {{See also|Article|Article 2|ll=TRUE|l1=Article translated|l2=Article 2 translated}}
+{{!}}-
+{{!}} valign="top" {{!}} {{Tlx|See also|Article|Article 2|4=l2=<!--T:19--> Alternative title for Article 2}} {{!}}{{!}} {{See also|Article|Article 2|l2=<!--T:20--> Alternative title for Article 2}}
+{{!}}{{)}}
+
+{{See also/doc}}
+
+}}
+[[Category:Templates]]

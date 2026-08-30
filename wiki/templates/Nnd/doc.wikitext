@@ -1,0 +1,7 @@
+;Description
+:This template is used to link to the Nico Nico Douga original of a song.
+;Syntax
+:Place <code><nowiki>{{nnd|<number>}}</nowiki></code> nearby the title, and substitute <number> with the latter part of the NND link. If necessary, use the article's talk page to discuss further details.
+
+example: {{T|nnd|sm0000000|_Y_=1}}
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

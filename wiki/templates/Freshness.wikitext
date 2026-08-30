@@ -1,0 +1,1 @@
+<templatestyles src="Template:Freshness/styles.css" /><includeonly>{{#invoke:Freshness|render}}</includeonly><noinclude>{{documentation}}</noinclude>

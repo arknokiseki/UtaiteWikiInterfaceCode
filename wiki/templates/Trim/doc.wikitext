@@ -1,0 +1,11 @@
+{{Documentation/Header}}
+Returns its argument with surrounding whitespace removed, or nothing at all if the argument is blank. Template parameter expansion trims named parameters automatically, so this is mainly useful for normalizing values passed through several layers of templates, and for collapsing whitespace-only input to a true empty string.
+
+==Syntax==
+{{T|Trim|v1=text}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Text || The value to trim. Blank input returns nothing. || string || – ||
+|}

@@ -1,0 +1,43 @@
+<includeonly>{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+|-
+| colspan="2" class="utattemita-header"|{{{songtitle}}}
+|-
+| class="utattemita-cell utattemita-image" |[[File:{{{image}}}|frameless|upright=1.2]]
+| class="utattemita-cell utattemita-details" |
+  {| class="utattemita-details"
+  |-
+  ! Links
+  | {{#if:{{{NND|{{{nnd|}}}}}}|{{nnd|{{{NND|{{{nnd|}}}}}}|{{{NNDdesc|}}}}}|{{Nnd/nonv}}}} {{#if:{{{YT|{{{yt|}}}}}}|{{Yt|{{{YT|{{{yt|}}}}}}|{{{YTdesc|}}}}}|{{Yt/noyt}}}} {{#if:{{{BB|}}}|{{BBSpace|{{{BB}}}|{{{BBdesc|}}}|video}}|}}
+  |}
+|-
+| colspan="2" class="utattemita-producers" | <span style="color: #000 !important">Producer(s)</span>
+|-
+| colspan="2" class="utattemita-producers-content" | {{scrollbox|{{{Producers|{{{producer|}}}}}}|height={{{sbh|100}}}}}
+|-
+{{#if:{{{malesingers|}}}|
+{{!}} colspan="2" class="nicollabo-male" {{!}} <span style="color: #000 !important;">Male singers</span>
+{{!}}-
+{{!}} colspan="2" class="utattemita-producers-content" {{!}} {{{malesingers|}}}
+{{!}}-
+|}}
+{{#if:{{{femalesingers|}}}|
+{{!}} colspan="2" class="nicollabo-female" {{!}} <span style="color: #000 !important">Female singers</span>
+{{!}}-
+{{!}} colspan="2" class="utattemita-producers-content" {{!}} {{{femalesingers|}}}
+{{!}}-
+|}}
+{{#if:{{{androgynesingers|}}}|
+{{!}} colspan="2" class="nicollabo-androgyne" {{!}} <span style="color: #000 !important">Androgyne singers</span>
+{{!}}-
+{{!}} colspan="2" class="utattemita-producers-content" {{!}} {{{androgynesingers|}}}
+{{!}}-
+|}}
+{{#if:{{{Date|}}}|
+{{!}} colspan="2" class="utattemita-producers" {{!}} <span style="color: #000 !important">Date Published</span>
+{{!}}-
+{{!}} colspan="2" class="utattemita-producers-content" {{!}} {{{Date|}}}
+{{!}}-
+|}}
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! colspan="2" style="background-color:#c3e6f9;padding:2px;"|
+|}__NOTOC__</includeonly><includeonly>{{main other|[[Category:Utattemita Songs]][[Category:Famous Utattemita Songs]]}}</includeonly><includeonly>{{main other|[[Category:Famous Utattemita Songs]][[Category:Nico Nicollabo Songs]]}}</includeonly><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,24 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+
+== Usage ==
+
+{{tlx|tlsu|fullpagename}}<br>
+{{tlx|tlsu|fullpagename|param}}<br>
+{{tlx|tlsu|fullpagename|1|2|3|4|5|6|7|8|9&#124;10}}<br>
+{{tlx|tlsu|fullpagename|1|2|3|4|5|6|7|8|9&#124;10&amp;#124;more}}<br>
+{{tlx|tlsu|fullpagename|param&amp;#61;value}}<br>
+''Up to 10 placeholders for parameters of the specified template''
+
+This template is nearly identical to [[Template:Tls]], except that it is intended for all [[Help:Namespaces|namespace]] transclusions and you can include parameters. For example, you can enter a subpage in your user space ({{tlsu|User:Example/Talk message|param1&#61;y|param2|etc.}}).
+
+== See also ==
+
+*{{tl|tls}} for full documentation
+
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+[[Category:Utility templates{{#translation:}}]]
+}}</includeonly>

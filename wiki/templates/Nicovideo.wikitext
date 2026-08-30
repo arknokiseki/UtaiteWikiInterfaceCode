@@ -1,0 +1,10 @@
+<includeonly>{{#switch:{{{3|video}}}
+  |video=<abbr title={{#if:{{{2|}}}|&nbsp;{{{2}}}}}><span data-nnd-id="{{{1}}}">[https://www.nicovideo.jp/watch/{{{1}}} <span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>]</span></abbr>
+  |user=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}"><span data-nnd-id="{{{1}}}">[https://www.nicovideo.jp/user/{{{1}}} <span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>]</span></abbr>
+  |mylist=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}"><span class="nnd-link" data-nnd-id="{{{1}}}">[https://www.nicovideo.jp/mylist/{{{1}}} <span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>]</span></abbr>
+  |community=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}|nicovideo community end of service: {{{1}}}}}"><span class="nnd-link dead-icon-link" data-nnd-id="{{{1}}}" data-nnd-url="https://com.nicovideo.jp/community/{{{1}}}"><span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span></span></abbr>
+  |disabled=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}|no link available}}"><span class="nnd-link dead-icon-link" data-nnd-id="{{{1}}}"><span class="niconico-icon white nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span></span></abbr>
+  |channel=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}"><span class="nnd-link" data-nnd-id="{{{1}}}">[https://ch.nicovideo.jp/{{{1}}} <span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>]</span></abbr>
+  |#default=<abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}"><span class="nnd-link" data-nnd-id="{{{1}}}">[https://www.nicovideo.jp/watch/{{{1}}} <span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>]</span></abbr>
+}}</includeonly><!--
+--><noinclude>{{Documentation}}</noinclude>

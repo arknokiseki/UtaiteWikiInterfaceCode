@@ -1,0 +1,19 @@
+<includeonly><!--
+-->{| align=left width=200px style="border:0px; text-align:center; line-height:1.0em;"
+|{{#if: {{{image|}}}
+| [[file:{{{image}}}|200x112px|center|border]]}}
+|-
+| style="font-size:90%; padding:2px; border:2px; border-style:none; border-radius:10px; background:#c3e6f9; color:black;}}" | '''{{{title}}}'''
+|-
+|{{#if: {{{producer|}}}
+| '''Producer(s)''': {{{producer}}}}}
+|-
+|
+|-
+|{{#if:{{{NND|}}}|{{nnd|{{{NND|}}}}}|[[File:NoNv.png|link=]]}}{{#if:{{{YT|}}}|[[File:Yt.png|link=http://www.youtube.com/watch?v={{{YT}}}]]|[[File:NoYt.png|link=]]}}
+|-
+|{{#if: {{{description|}}}
+|<div class="mw-collapsible mw-collapsed">{{{description}}}</div>}}
+|}</includeonly><noinclude>
+{{doc}}
+</noinclude>

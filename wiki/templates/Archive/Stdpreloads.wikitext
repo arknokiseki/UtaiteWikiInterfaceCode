@@ -1,0 +1,44 @@
+{{Archived}}
+(choose from this list)
+Article Management
+-- Up to date
+-- Empty
+-- WIP
+-- Completion Request
+-- Redirect
+
+Singer Pages
+-- Singer
+-- Album
+-- Album/2
+-- Commercially Featured
+
+Famous Utattemita Songs
+-- Page Template
+-- Song Covers
+-- Song Chorus
+-- Nicollabo
+
+Affiliations
+-- Collab Album
+-- Album/2
+-- Group
+-- YouTube Battle
+-- Utattemita Tour
+-- Anikora
+
+Miscellaneous
+-- Illustrator
+-- Singer Spotlight
+
+Linking Templates
+-- NND Link Icon
+-- Anikora Note
+-- Utattemita Tour Note
+-- YouTube Battle Note
+-- Collaboration Album Link
+-- Touhou Wiki Link
+-- VOCALOID Wiki Link
+-- Avatar Illustrator Credit
+-- Pixiv Credit
+-- Category

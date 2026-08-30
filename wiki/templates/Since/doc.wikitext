@@ -1,0 +1,62 @@
+<templatedata>
+{
+	"params": {
+		"mw": {
+			"label": {
+				"de": "MediaWiki-Version",
+				"en": "MediaWiki version",
+				"fr": "Version Mediawiki"
+			},
+			"type": "string",
+			"description": {
+				"de": "Version von MediaWiki",
+				"en": "Version of MediaWiki",
+				"fr": "Version de MediaWiki"
+			},
+			"example": "1.41"
+		},
+		"r": {
+			"aliases": [
+				"1"
+			],
+			"label": {
+				"de": "SVN-Revisionsnummer",
+				"en": "SVN revision number",
+				"fr": "Révision SVN"
+			},
+			"type": "number",
+			"description": {
+				"de": "Revisionsnummer im SVN",
+				"en": "Revision number in SVN",
+				"fr": "Numéro de révision dans SVN"
+			},
+			"example": {
+				"en": "1234"
+			}
+		},
+		"gerrit": {
+			"label": "Gerrit change",
+			"description": {
+				"de": "Gerrit-Änderungsnummer oder -Change-Id-Hash",
+				"en": "Gerrit change number or Change-Id hash",
+				"fr": "Numéro de modification dans Gerrit ou valeur de hachage du  Change-Id"
+			},
+			"type": "string",
+			"example": {
+				"en": "947502"
+			}
+		}
+	},
+	"format": "inline",
+	"paramOrder": [
+		"mw",
+		"gerrit",
+		"r"
+	],
+	"description": {
+		"de": "Wird verwendet, um auf eine Objektlebenszyklus-Versions-ID zu verweisen. Wenn kein Parameter angegeben wird, wird ein Fragezeichen angezeigt, um darauf hinzuweisen, dass die Informationen nicht bekannt sind.",
+		"en": "Used to make reference to an object lifecycle version ID. A question mark is displayed when no parameter is provided showing that information in not known.",
+		"fr": "Utilisé pour faire référence à la version d'un objet dans le temps. Lorsqu'aucun paramètre n'est fourni, un point d'interrogation est affiché pour indiquer que l'information n'est pas connue."
+	}
+}
+</templatedata>

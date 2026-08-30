@@ -1,0 +1,9 @@
+<onlyinclude><!--
+-->{{#if:{{yesno|{{{nowrap|}}}}}|<templatestyles src="Template:Nowrap/styles.css"/>}}<!--
+-->{{#tag:syntaxhighlight|{{{code|{{{1}}}}}}|inline=1
+{{#if:{{{id|}}}| id = {{{id|}}}}}
+| class = {{#if:{{yesno|{{{nowrap|}}}}}|nowrap}} {{{class|}}}
+| style = {{{style|}}}
+| lang  = {{{lang|{{{2|php}}}}}}
+}}</onlyinclude>
+{{Documentation}}

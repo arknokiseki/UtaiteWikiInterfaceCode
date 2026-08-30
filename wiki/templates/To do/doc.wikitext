@@ -1,0 +1,50 @@
+* Part of the series: {{tl|to do}}, {{tl|in progress}}, {{tl|partially done}}, {{tl|done}}, {{tl|not done}}:
+
+* {{to do}}
+* {{in progress}}
+* {{partially done}}
+* {{done}}
+* {{not done}}
+
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": {
+				"en": "Text",
+				"cs": "Text",
+				"fr": "Texte"
+			},
+			"description": {
+				"en": "Field to change the displayed text",
+				"cs": "Pole pro změnu zobrazeného textu",
+				"fr": "texte affiché"
+			},
+			"default": {
+				"en": "\"To do\" ",
+				"fr": "\"À faire\""
+			},
+			"type": "string"
+		},
+		"size": {
+			"description": {
+				"en": "Size of the icon.",
+				"cs": "Velikost ikony.",
+				"fr": "taille de l'icône"
+			},
+			"label": {
+				"en": "Size",
+				"cs": "Velikost",
+				"fr": "Taille"
+			},
+			"default": "18",
+			"type": "number"
+		}
+	},
+	"format": "inline",
+	"description": {
+		"en": "Used to show the status of an item to be done, function, action, etc.",
+		"fr": "Utilisé pour indiquer l'état d'un élément à faire, d'une fonction, d'une action, etc."
+	}
+}
+</templatedata>

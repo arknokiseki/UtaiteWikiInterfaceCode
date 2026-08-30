@@ -1,0 +1,81 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{tsh|tlsx}}
+{{tlx|tlxs|template|first parameter|second|third|fourth|fifth|sixth|seventh|eight|ninth}} → {{tlxs|template|first parameter|second|third|fourth|fifth|sixth|seventh|eight|ninth}}
+;Purpose: Similar to {{tlx|tlx}} but for templates which should be [[Manual:Substitution|substituted]] instead.
+
+Up to six parameters for the specified template are displayed as placeholders, more parameters are shown as "<code>|</code>''...''".
+
+== Usage ==
+ <nowiki>{{tlxs|</nowiki>{{var|template name}}|{{var|params ...}}<nowiki>}}</nowiki>
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link expanded with subst",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string"
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"6": {
+			"label": "Parameter 5",
+			"description": "Fifth parameter value",
+			"type": "string"
+		},
+		"7": {
+			"label": "Parameter 6",
+			"description": "Sixth parameter value",
+			"type": "string"
+		},
+		"link subst": {
+			"label": "Link “Subst” Prefix?",
+			"description": "Whether the “subst” prefix should link to “Help:Substitution”",
+			"default": "1",
+			"autovalue": "0",
+			"type": "boolean"
+		}
+	},
+	"paramOrder": [
+		"link subst",
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6",
+		"7"
+	]
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+}}</includeonly>

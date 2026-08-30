@@ -1,0 +1,86 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Hatnote/styles.css}}
+This template produces formatted text, following the guideline for a '''hatnote'''.
+:<code><nowiki>{{hatnote|Example hatnote text.}}</nowiki></code> &rarr;<br/><!-- a construct to show hatnote as expected (using newline) -->
+{{hatnote|Example hatnote text.}}
+
+Broadly speaking, a hatnote should answer a readers' question (maybe preemptively): ''Am I on the right page?''
+
+== Function ==
+This template is primarily used to add a correctly formatted ''hatnote'' to a page. Often, but not always, this is a ''disambiguation link'' at the top of article pages. It places an HTML <code>div-</code> / <code>div</code> block around the text entered as its only argument, which provides standardized formatting (contents are indented and italicized in most displays); it also isolates the contained code to make sure that it is interpreted correctly.
+
+This template is also used as the "meta-template" for additional specialized disambiguation link templates.
+
+The template does not automatically create links of any kind. Links and other desired formatting must be explicitly added, using normal [[Help:Wiki markup|Wikipedia markup]].
+
+== Usage ==
+
+ {{((}}hatnote{{!}}''text''{{))}}
+
+== Parameters ==
+
+This template accepts the following parameters:
+* <code>1</code> - the hatnote text (required)
+
+== Example ==
+
+* <code><nowiki>{{hatnote|Example hatnote text}}</nowiki></code> → {{hatnote|Example hatnote text}}
+
+== Technical details ==
+
+The HTML code produced by this template looks like this:
+
+* <code>{{#tag:syntaxhighlight|{{^(}}div role="note" class="hatnote"{{)^}}|lang=html|inline=1|style=
+    border:0
+}}''hatnote text''{{#tag:syntaxhighlight|{{^(}}/div{{)^}}|lang=html|inline=1|style=
+    border:0
+}}</code>
+
+{{TemplateData header|noheader=1}}
+<templatedata>
+{
+	"description": {
+		"en": "Template for creating a standard hatnote. A hatnote is a short note placed at the top of an article or section to direct users to related pages",
+		"cs": "Šablona pro vytvoření standardní hatnote. Hatnote je krátká poznámka umístěná v horní části článku nebo sekce, která uživatele nasměruje na související stránky"
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"aliases": [
+				"text"
+				],
+			"label": "Text",
+			"description": {
+				"en": "This field should contain the text that will be displayed in the hatnote.",
+				"cs": "Toto pole by mělo obsahovat text, který se zobrazí v hatnote."
+			},
+			"type": "string",
+			"required": true,
+			"example": {
+				"en": "Insert text here.",
+				"cs": "Sem vložte text."
+			}
+		},
+		"extraclasses": {
+			"label": {
+				"en": "Extra classes",
+				"cs": "Extra třídy"
+			},
+			"description": {
+				"en": "Comma-separated list of CSS class names",
+				"cs": "Seznam názvů tříd CSS oddělených čárkami"
+			},
+			"type": "string"
+		}
+	},
+  "paramOrder": [
+    "1",
+    "extraclasses"
+  ]
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Hatnote templates| ]]
+}}</includeonly>

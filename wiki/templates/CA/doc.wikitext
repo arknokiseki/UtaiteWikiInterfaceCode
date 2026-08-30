@@ -1,0 +1,5 @@
+<pre>{{CA|Albumname|Anchorname|Lable|2010.12.31|placeholder.png}}</pre>
+...results in:<br/>
+
+{{CA|Albumname|Anchorname|Lable|2010.12.31|Template doc.png}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

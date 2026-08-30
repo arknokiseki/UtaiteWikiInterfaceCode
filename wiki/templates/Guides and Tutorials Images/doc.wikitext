@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images that serve as tutorials, guides, or rule explanations.
+;Syntax
+:Type <code>{{t|Guides and Tutorials Images}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

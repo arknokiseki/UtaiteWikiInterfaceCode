@@ -1,0 +1,137 @@
+<includeonly>{{Languages|Template:Ambox}}</includeonly>
+{{Documentation/Header}}
+{{Mbox templates}}
+{{Documentation subpage}}
+{{High-use|8000}}
+{{Lua|Module:Message box}}
+
+This is the Ambox or '''Article message box''' meta-template.
+
+[[mw:Extension:MobileFrontend|MobileFrontend]] will treat this template as a "[[mw:Reading/Web/Projects/Mobile Page Issues#Page issues definition|page issue]]". If you don't want that to occur, you may use a different message box template (listed [[mw:Reading/Web/Projects/Mobile Page Issues#Page issues definition|here]], but basically any template that does not identify itself as an "ambox" is not an issue). See [[mw:Reading/Web/Projects/Mobile Page Issues|Reading/Web/Projects/Mobile Page Issues]].
+
+== Parameters ==
+=== <code>type</code> ===
+The <code>type</code> parameter defines the colour of the left bar, and the image that is used by default. The type is chosen not on aesthetics but is based on the type of issue that the template describes. The seven available types and their default images are shown below.
+{{Ambox
+| nocat = true
+| type  = speedy
+| text  = type=<u>speedy</u> — Speedy deletion issues, such as {{tl|speedy}}.
+}}
+{{Ambox
+| nocat = true
+| type  = delete
+| text  = type=<u>delete</u> — Deletion issues, such as {{tl|delete}}.
+}}
+{{Ambox
+| nocat = true
+| type  = content
+| text  = type=<u>content</u> — Content issues, such as {{tl|Update}} and {{tl|Expand}}.
+}}
+{{Ambox
+| nocat = true
+| type  = style
+| text  = type=<u>style</u> — Style issues, such as {{tl|cleanup}} and {{tl|Documentation needed}}.
+}}
+{{Ambox
+| nocat = true
+| type  = notice
+| text  = type=<u>notice</u> — Notices, such as {{tl|Extension exception}} and {{tl|Translating}}.
+}}
+{{Ambox
+| nocat = true
+| type  = move
+| text  = type=<u>move</u> — Merge, split and transwiki proposals, such as {{tl|Merge}} and {{tl|Move to Commons}}.
+}}
+{{Ambox
+| nocat = true
+| type  = protection
+| text  = type=<u>protection</u> — Protection notices, such as {{tl|Pp-cascading}} and {{tl|protectedinterface}}.
+}}
+
+If no <code>type</code> parameter is given the template defaults to {{para|type|notice}}.
+
+=== <code>small=left</code> ===
+{{Ambox
+| nocat = true
+| type  = speedy
+| text  = type=<u>speedy</u> — Speedy deletion issues, such as {{tl|speedy}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = delete
+| text  = type=<u>delete</u> — Deletion issues, such as {{tl|delete}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = content
+| text  = type=<u>content</u> — Content issues, such as {{tl|Update}} and {{tl|Expand}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = style
+| text  = type=<u>style</u> — Style issues, such as {{tl|cleanup}} and {{tl|Documentation needed}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = notice
+| text  = type=<u>notice</u> — Notices, such as {{tl|Extension exception}} and {{tl|Translating}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = move
+| text  = type=<u>move</u> — Merge, split and transwiki proposals, such as {{tl|Merge}} and {{tl|Move to Commons}}.
+| small = left
+}}
+{{Ambox
+| nocat = true
+| type  = protection
+| text  = type=<u>protection</u> — Protection notices, such as {{tl|Pp-cascading}} and {{tl|protectedinterface}}.
+| small = left
+}}
+
+== See also ==
+{{Mbox templates}}
+Other pages:
+* [[w:Template:Mbox]]
+* [[w:Wikipedia:Ambox CSS classes]] — Describes how to use the ambox CSS classes directly in [[mw:Help:Table|wikitable]]s and [[w:HTML element#Tables|HTML tables]].
+* [[w:Wikipedia:Article message boxes]] — The style guideline for creating article message boxes.
+* [[w:Wikipedia talk:Article message boxes]] — For discussion about these matters.
+
+== TemplateData ==
+<!--{{TemplateData header}}-->
+{{Mbox/TemplateData}}
+<!--templatedata>
+{
+	"params": {
+		"type": {
+			"type": "line",
+			"suggestedvalues": [
+				"speedy",
+				"delete",
+				"content",
+				"style",
+				"notice",
+				"move",
+				"protection"
+			]
+		},
+		"text": {
+			"type": "string",
+			"suggested": true
+		}
+	},
+	"description": {
+		"en": "This is a generic article message box.",
+		"cs": "Toto je obecné okno se zprávou článku."
+	}
+}
+</templatedata-->
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Mbox templates]]
+}}</includeonly>

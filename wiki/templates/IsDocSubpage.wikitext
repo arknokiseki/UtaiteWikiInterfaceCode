@@ -1,0 +1,11 @@
+<onlyinclude><includeonly>{{#ifexpr: (
+	{{#ifeq:{{lc:{{SUBPAGENAME}}}}|{{lc:{{{override|doc}}}}}|1|0}} or (
+		{{#ifeq:{{lc:{{#titleparts:{{FULLPAGENAME}}|-1|-2}}}}|{{lc:{{{override|doc}}}}}|1|0}}
+		and {{#if:{{#translation:}}|1|0}}
+	)
+)<!--
+	-->|{{{true|1}}}<!--
+	-->|{{{false|}}}<!--
+-->}}</includeonly></onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

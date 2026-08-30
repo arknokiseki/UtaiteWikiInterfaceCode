@@ -1,0 +1,4 @@
+<pre>{{pixiv|pixivid1|Illustrator1|pixivid2|Illustrator2}}</pre>
+...results in:
+{{pixiv|pixivid1|Illustrator1|pixivid2|Illustrator2}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

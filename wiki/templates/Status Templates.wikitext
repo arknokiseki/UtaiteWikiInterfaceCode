@@ -1,0 +1,13 @@
+{{Navbox
+|bodyclass  = 
+|name       = Status Templates
+|title      = Status Templates
+|titlestyle = 
+|image      = 
+|above      = 
+
+|group1     = 
+|list1      = <span class="no-underline-anchor">[[Template:Active|{{Active}}]] ・ [[Template:Inactive|{{Inactive}}]] {{·}} [[Template:Hiatus|{{Hiatus}}]] {{·}} [[Template:Graduated|{{Graduated}}]]</span>
+
+|below      = - Status Template Navigation -
+}}<noinclude>{{doc}}</noinclude>

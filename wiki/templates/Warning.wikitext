@@ -1,0 +1,47 @@
+<onlyinclude>{{#if: {{{msg|{{{1|}}}}}}|<table class="warning-message" style="background-color: var( --background-color-error-subtle, #ffe9e5 ); color: var( --color-base, #202122 ); border: 1px var( --border-color-error, #9f3526 ) solid; box-sizing: border-box; margin: 0.5em 0; padding: 0.5em;"><tr><td style="white-space: nowrap; vertical-align: top;">}}<span style="position: relative; top: -2px;">[[File:OOjs_UI_icon_notice-destructive.svg|18px|alt=<!--T:1--> Warning|link=]]</span> '''<!--T:2--> Warning:''' {{#if: {{{msg|{{{1|}}}}}}|</td><td style="padding-{{dir|{{pagelang}}|right|left}}: 0.5em vertical-align: top;">{{{msg|{{{1|}}}}}}</td></tr></table>}}</onlyinclude>
+{{Documentation|content=
+
+== Usage == <!--T:3-->
+
+<!--T:4-->
+This template has two possible usages:
+
+<!--T:5-->
+# Will have the text flow below when the warning text is too long
+
+<!--T:6-->
+# Uses a table to indent the text.
+
+=== Method 1 === <!--T:7-->
+
+<!--T:8--> The following displays the warning icon and the word "Warning:".
+<!--T:17--> You can follow this with whatever text/images/markup you like.
+
+<!--T:9--> Wiki Code:
+
+ <nowiki>{{warning}}</nowiki> <!--T:10--> Don't do that!
+
+{{warning}} <!--T:11--> Don't do that!
+
+
+=== Method 2 === <!--T:12-->
+
+<!--T:13-->
+The following includes the text passed to the template, and uses a table to stop the text flowing round the icon.
+
+<!--T:14-->
+Wiki Code:
+
+
+ <nowiki>{{warning|1=</nowiki><!--T:15--> Here is a long warning, which is sufficiently wordy to run onto a second line (unless you have a really large screen!), which would normally cause it to wrap round the icon, but because we passed it as a parameter it keeps its left alignment straight.<nowiki>}}</nowiki> 
+
+{{warning|1=<!--T:16--> Here is a long warning, which is sufficiently wordy to run onto a second line (unless you have a really large screen!), which would normally cause it to wrap round the icon, but because we passed it as a parameter it keeps its left alignment straight.}}
+
+== See also == <!--T:18-->
+
+* {{tl|Caution}}
+* {{tl|Fixtext}}
+* {{tl|Note}}
+* {{tl|Tip}}
+}}
+[[Category:Warning templates{{#translation:}}]]

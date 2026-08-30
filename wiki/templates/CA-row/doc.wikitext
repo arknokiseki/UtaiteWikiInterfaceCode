@@ -1,0 +1,60 @@
+{{Documentation/Header}}
+Renders one album row for [[List of Collaboration Albums]].
+
+'''This template is never called by hand.''' It is a row formatter for a [[mw:Extension:Bucket|Bucket]] query: the list page runs <code><nowiki>{{#invoke:Bucket|get}}</nowiki></code> against the <code>collab_albums</code> table and passes each result row to this template via <code>format = template</code>. Its parameters are supplied by the query's <code>select</code> aliases, not by an editor.
+
+It also emits raw table-row markup (it begins with <code>|-</code>), so it only works inside an open wikitable.
+
+== How the data gets there ==
+The pair works as a Bucket write/read cycle:
+* {{T|CA}} sits on an album label page and '''writes''' a row into <code>collab_albums</code> via <code><nowiki>{{#invoke:Bucket|put}}</nowiki></code>.
+* {{T|CA-row}} '''reads''' those rows back on [[List of Collaboration Albums]] and formats each one.
+
+So adding an album means editing the label page with {{T|CA}} — never this template, and never the list page.
+
+== Usage ==
+The list page opens a wikitable, runs the query, then closes it:
+<pre>
+{| class="wikitable dataTable"
+! Name/Content !! Release !! Label/Producer
+{{#invoke:Bucket|get
+|collab_albums
+|select = album_name as name, album_display as display, page_name as label, release_text as release, release_date as date, cover_image as image
+|where = year < 2011
+|group by = image, date
+|order by = date ASC
+|limit = 1000
+|format = template
+|template = CA-row
+}}
+|}
+</pre>
+
+The <code>select</code> aliases must match the parameter names below — renaming an alias silently breaks the corresponding cell.
+
+== Parameters ==
+{| class="dataTable sortable"
+! Parameter !! Bucket column !! Description !! Default
+|-
+| <code>name</code> || <code>album_name</code> || Album name. Used as the anchor target in the label-page link. || –
+|-
+| <code>display</code> || <code>album_display</code> || Text shown for the album. Falls back to <code>name</code>. || <code>name</code>
+|-
+| <code>label</code> || <code>page_name</code> || The label page the album belongs to. Empty or <code>N/A</code> renders as "Misc. Albums". || Misc. Albums
+|-
+| <code>date</code> || <code>release_date</code> || Normalized release date, displayed as <code>Y.m.d</code>. '''Takes precedence over <code>release</code>.''' || –
+|-
+| <code>release</code> || <code>release_text</code> || Raw release text. Shown only when <code>date</code> is empty. || –
+|-
+| <code>image</code> || <code>cover_image</code> || Cover image filename, shown at 100&nbsp;px. || Template doc.png
+|}
+
+== Output ==
+Each call renders three cells:
+# '''Name/Content''' — hidden sort key, cover image, and a link to <code><nowiki>[[label#name|display]]</nowiki></code>
+# '''Release''' — an {{T|anchor}} plus the bolded date
+# '''Label/Producer''' — a link to the label page
+
+== See also ==
+* {{T|CA}} — writes album rows into the Bucket table
+* {{T|Track}} — the equivalent row template for album tracklists

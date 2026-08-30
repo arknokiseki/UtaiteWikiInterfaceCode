@@ -1,0 +1,30 @@
+{{Utaite Spotlight/Design|site=yt
+|image = Anmo.jpg
+|caption = 
+|officialjapname = あんも
+|officialromajiname =  Anmo
+|YTusername = 
+|NNDuserpage = 22286623
+|mylist1 = 26627561
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co2143437
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Outer Science
+|examplennd = sm22118452
+|exampleyt = 
+|description = '''Anmo''' ('''あんも''') is an {{NNDict|Utaite}} who started back in 2012. Some people find his voice attractive and sometimes describe him as 'Ikemen'. 
+
+His collaboration with other utaite, such as [http://www.nicovideo.jp/watch/sm27244329 Jump Relay] are not found in his mylist.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

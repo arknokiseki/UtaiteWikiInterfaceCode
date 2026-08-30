@@ -1,0 +1,5 @@
+<includeonly><div style="border:1px solid black; margin:1em; margin-top:3em;"><div style="background:#ddd; color:#111; padding:1em; margin:0em;">'''Template documentation''' <span style="font-size:85%;">(for the above template, sometimes hidden or invisible)</span></div><div style="padding:1em; padding-bottom:0em; margin:0em;">{{tocright}}
+{{{{{1|}}}/doc}}
+</div><br style="clear:both;"/><div style="background:#ddd; color:#111; padding:0.5em; margin:0em; font-size:85%; text-align:right;">Visit [[Template:{{{1|}}}/doc]] to edit this text! ([[Template:Documentation|How does this work]]?)</div></div></includeonly><noinclude>[[Category:Templates]]
+{{documentation}}
+</noinclude>

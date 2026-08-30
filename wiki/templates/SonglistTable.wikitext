@@ -1,0 +1,19 @@
+<includeonly><div class="songlist-desktop" style="{{#ifeq:{{{listview|}}}|true|display:none !important;|}}">
+{| class="datatable dt-songlist-{{BASEPAGENAMEE}}" data-page-length="25" data-order='[[0, "asc"]]' data-json="{{{json|}}}"
+|- class="thead"
+! scope="col" class="dt-type-num" style="width: {{{entrynocolwidth|5%}}};" | No.
+! scope="col" style="width: {{{titlecolwidth|20%}}};" | Title
+! scope="col" style="width: {{{sscolwidth|15%}}};" | Streaming Services
+! scope="col" style="width: {{{featcolwidth|15%}}};" | Featured Artists<br/>(Along With)
+! scope="col" style="width: {{{infocolwidth|15%}}};" | Additional Information
+! scope="col" class="dt-type-date" style="width: {{{datecolwidth|15%}}};" | Date
+|-
+|}
+</div>{{#ifeq:{{{listview|}}}|true|
+<div class="songlist-desktop">{{#invoke:SonglistFromJson|renderMobile|json={{{json|}}}}}</div>
+|
+<div class="songlist-mobile">{{#invoke:SonglistFromJson|renderMobile|json={{{json|}}}}}</div>
+}}
+{{main other|[[Category:Pages using SonglistTable Template]]|}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

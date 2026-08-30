@@ -1,0 +1,6 @@
+;Description
+:Use this template to label fan-made character depictions, mainly for use in infoboxes.
+;Syntax
+:Type <code>{{t|Fan Depictions}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

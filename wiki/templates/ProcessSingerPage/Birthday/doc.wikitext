@@ -1,0 +1,18 @@
+{{Documentation/Header}}
+Takes a utaite's page name and renders their birthday card. It reads <code>image</code>, <code>birthyear</code>, <code>birthmonth</code> and <code>birthday</code> off that page's {{T|Utaite}} infobox using <code><nowiki>{{#invoke:Utaite|getParameter}}</nowiki></code>, substituting <code>Unknown</code> for anything missing, then passes the values to {{T|BirthdayEntry}}.
+
+Called only by {{T|ProcessBirthdayCategory}}, once per DPL result — see that template's documentation for the wider birthday system. Calling it with no page name outputs '''not exist'''.
+
+Example:
+<pre>
+{{ProcessSingerPage|Amatsuki}}
+{{ProcessSingerPage|Rairu}}
+{{ProcessSingerPage|@gain}}
+</pre>
+
+{{ProcessSingerPage/Birthday|Amatsuki}}
+{{ProcessSingerPage/Birthday|Rairu}}
+{{ProcessSingerPage/Birthday|@gain}}
+[[Category:Features in Early Development]]
+
+<includeonly>[[Category:Features in Early Development]]</includeonly>

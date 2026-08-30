@@ -1,0 +1,3 @@
+<includeonly><span class="self-cover-badge select-none">🔁Self-cover</span></includeonly><noinclude>
+{{doc}}
+</noinclude>

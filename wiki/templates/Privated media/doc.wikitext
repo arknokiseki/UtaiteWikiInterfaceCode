@@ -1,0 +1,33 @@
+{{Documentation/Header}}
+{{High Risk|Template:Privated media|nocat=1|pagetype=Main}}
+Adds a compact "Privated" badge to song list entries, marking a video that still exists but has been set to private. Optionally shows the platform icon for the site involved. See {{T|Deleted media}} for videos that have been removed entirely.
+
+==Syntax==
+{{T|Privated media|v1=site =}}
+
+==Examples==
+* {{T|Privated media|_Y_=1}}
+* {{T|Privated media|_Y_=1|p1=site = yt}}
+* {{T|Privated media|_Y_=1|p1=site = nnd}}
+
+Used in a full song list line:
+<pre>* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Privated media|site=nnd}}</pre>
+* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Privated media|site=nnd}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>site</code> || – || Site || Platform icon to show beside the badge: <code>yt</code> for YouTube or <code>nnd</code> for Nico Nico Douga. Leave empty for a plain badge with no icon. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A compact 'Privated' badge for private videos in song lists.",
+"params": {
+"site": { "label": "Site", "description": "Platform icon: 'yt' for YouTube, 'nnd' for Nico Nico Douga. Empty for no icon.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

@@ -1,0 +1,1 @@
+<includeonly>{{#ev:youtubeplaylist|{{{plid}}}|{{{dimensions|}}}|{{{alignment|inline}}}|{{{pldesc|}}}|{{{container|}}}|{{{urlargs|}}}|{{{autoresize|}}}|{{{valignment|}}}}}</includeonly><noinclude>__NOTOC__{{Documentation}}</noinclude>

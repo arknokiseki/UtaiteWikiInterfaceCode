@@ -1,0 +1,339 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Lyrics|v1=Singer=Singer Name|v2=Japtitle=Japanese Title|v3=Jap=Japanese Lyrics|v4=Japnote=Note for Japanese Lyrics|v5=Chititle=Chinese Title|v6=Chi=Chinese Lyrics|v7=Chinote=Note for Chinese Lyrics|v8=Kortitle=Korean Title|v9=Kor=Korean Lyrics|v10=Kornote=Note for Korean Lyrics|v11=Romtitle=Romanized Title|v12=Rom=Romanized Lyrics|v13=Romnote=Note for Romanized Lyrics|v14=Engtitle=English Title|v15=Eng=English Lyrics/Translation|v16=Engnote=Note for English Lyrics|v17=ContentHeader=|v18=Content=|block=1}}
+
+==Examples==
+{{Lyrics
+|Singer =
+|Japtitle=CELEBRATION
+|Jap = <poem>
+きっと僕らの物語は 続いていくから
+君がそばにいて笑うなら
+何もいらないんだよ
+ずっと残酷で救いようもない世界は変わらないけれど
+さぁ今⽇までの⽇々を讃え合おう
+祝福の歌を響かせよう
+ 
+⻑い道のりをここまで歩いて来たんだ
+⼿探りで迷い⾒えない⽇もあった
+純粋な想い ただひたすらに⼀杯で
+誰かに認められたくて歌っていたっけ
+ 
+痛みを知らない⼦供のように
+無邪気に誰かを傷つけていた
+飲み込まれないに虚勢を張っていたんだろう
+後悔も全て背負って⾏くんだ
+果てを⽬指して 誇れるように
+ 
+きっと僕らの物語は続いていくから
+君がそばにいて笑うなら
+何もいらないんだよ
+ずっと残酷で救いようもない世界は
+変わらないけれど
+さぁ今⽇までの⽇々を讃え合おう
+祝福の歌を響かせよう
+ 
+別れを選んだ⼈もいました
+想いがすれ違う時もあった
+あれほど互いの夢を語り合ったのに
+涙を流してぶつけ合ったあの⾔葉を
+胸に抱いて
+歩くよ 今
+ 
+きっと僕らの物語に終わりはないから
+悲しみや痛みさえ全て
+抱えて来たんだよ
+今⽇も世界のどこかで悲劇は⽣まれ続けるけど
+さぁ幸せの意味を探しにいこう
+祝福の歌を響かせよう
+ 
+何者でもない僕らは
+「なにか」になりたくて足掻いてた
+踏み出した一歩は「未来」だった
+たったひとつだけ 君が前を向けるように
+この声を証に残すよ あぁ
+ 
+きっと僕らの物語は続いていくから
+君がそばにいて笑うなら 何もいらないんだよ
+ずっと残酷で救いようもない世界で⾒つけた答えを
+いま抱きしめて 君と分かち合おう
+祝福の歌を響かせよう
+ 
+Lalala</poem>
+
+|Chititle=CELEBRATION
+|Chi = <poem>我們的故事一定會繼續下去
+只要你在我身邊綻放笑容
+我就什麼也不要了
+雖然殘酷又無可救藥的世界不會改變
+但來吧，我們一起來讚揚至今的日子吧
+響起祝福的歌聲
+
+遙遠的路程走到現在
+也有摸索失迷著的日子
+純粹的思緒 想起當年一心想要
+被人認可才持續唱歌
+
+像個不知疼痛的孩子
+無辜地傷害了別人
+想必是為了不被埋沒 才虛張聲勢吧
+將一切後悔扛著前行
+直至終點 為了讓自己驕傲
+
+我們的故事一定會繼續下去
+只要你在我身邊綻放笑容
+我就什麼也不要了
+雖然殘酷又無可救藥的世界
+不會改變
+但是來吧，我們一起讚揚至今的日子吧
+響起祝福的歌聲
+
+有選擇離別的人
+也有錯過的時候
+我們互相暢談了那麼多彼此的夢想
+將那些淚水衝突下的言語
+銘記於心
+現在 我要繼續往前走
+
+我們的故事一定沒有結束
+懷著所有的痛苦和傷悲
+來到這裡
+今日世界的角落也持續發生悲劇
+但是來吧 我們一起去尋找幸福的意義吧
+響起祝福的歌聲
+
+當不了誰的我們
+一心想要成為「什麼」而摸索
+踏出的第一步就是未來
+只為了一件事 希望你能往前看
+我留下這個聲音作為證據 啊啊
+
+我們的故事一定會繼續下去
+只要你在我身邊綻放 笑容 我就什麼也不要了
+將在殘酷又無可救藥的世界裡找到的答案
+懷抱著，與你分享
+響起祝福的歌聲
+
+Lalala
+Lalala</poem>
+|Romnote=<b>romaji in this page is using Hepburn romanization system</b>
+|Romtitle=CELEBRATION
+|Rom = <poem>
+kitto bokura no monogatari wa tsudzuiteiku kara
+kimi ga soba ni ite warau nara
+nani mo iranai ndayo
+zutto zankoku de sukuiyou mo nai sekai wa kawaranai keredo
+saa kyou made no hibi o tataeaou
+shukufuku no uta o hibikaseyou
+
+nagai michinori o koko made aruitekita nda
+tesaguri de mayoi mienai hi mo atta
+junsui na omoi tada hitasura ni ippai de
+dare ka ni mitomeraretakute utatteita kke
+
+itami o shiranai kodomo no you ni
+mujaki ni dare ka o kizutsuketeita
+nomikomarenai ni kyosei o hatteita ndarou
+koukai mo subete seotteiku nda
+hate o mezashite hokoreru you ni
+
+kitto bokura no monogatari wa tsudzuiteiku kara
+kimi ga soba ni ite warau nara
+nani mo iranai ndayo
+zutto zankoku de sukuiyou mo nai sekai wa kawaranai keredo
+saa kyou made no hibi o tataeaou
+shukufuku no uta o hibikaseyou
+
+wakare o eranda hito mo imashita
+omoi ga surechigau toki mo atta
+are hodo tagai no yume o katariatta no ni
+namida o nagashite butsukeatta ano kotoba o
+mune ni daite
+aruku yo ima
+
+kitto bokura no monogatari ni owari wa nai kara
+kanashimi ya itami sae subete
+kakaetekita ndayo
+kyou mo sekai no doko ka de higeki wa umaretsudzukeru kedo
+saa shiawase no imi o sagashi ni ikou
+shukufuku no uta o hibikaseyou
+
+nanimono de mo nai bokura wa
+<b>"nanika"</b> ni naritakute agaiteta
+fumidashita ippo wa <b>"mirai"</b> datta
+tatta hitotsu dake kimi ga mae o mukeru you ni
+kono koe o akashi ni nokosu yo aa
+
+kitto bokura no monogatari wa tsudzuiteiku kara
+kimi ga soba ni ite warau nara nani mo iranai ndayo
+zutto zankoku de sukuiyou mo nai sekai de mitsuketa kotae o
+ima dakishimete kimi to wakachiaou
+shukufuku no uta o hibikaseyou
+
+Lalala</poem>
+|Engtitle=CELEBRATION
+|Eng =<poem>
+Our story will definitely go on and on
+As long as you smile by my side
+I want nothing at all
+Though this cruel helpless world won’t change
+But let’s celebrate every day we’ve come so far
+Let the song of celebration sound
+
+We’ve come a long way
+There were the days I couldn’t see what I was looking for
+With this pure thought,
+I used to sing because I wanted to be accepted by others
+
+Just like a kid not knowing the pain,
+I hurt someone innocently
+I guess I was bluffing so I wouldn’t be drowned out
+I’ll carry all the regrets with me
+To the end of the line, to be proud of myself
+
+Our story will definitely go on and on
+As long as you smile by my side
+I want nothing at all
+Though this cruel helpless world won’t change
+But let’s celebrate every day we’ve come so far
+Let the song of celebration sound
+
+Some people chose to leave
+Sometimes our heart didn’t match
+We’ve talked to each other about so many of our dreams
+Those words that we exchanged in tears
+I’ll remember them in my heart
+I’m gonna move on now
+
+Our story will definitely go on and on
+Holding together the sadness and the pain
+Embraced them all to this day
+The tragedy goes on today somewhere in the world
+But come on, let’s find the meaning of happiness
+Let the song of celebration sounds
+
+We can't be anything
+We're struggling to be "what we want to be"
+The first step we took was the future
+I only want one thing, for you to be able to look forward
+I’m leaving this sound as the evidence
+
+Our story will definitely go on and on
+As long as you smile by my side
+I want nothing at all
+I’ll embrace it and will share it with you
+Let the song of celebration sound
+
+Lalala
+Lalala</poem>
+|_Y_=1}}
+
+==TemplateData==
+<templatedata>
+{
+  "description": "Displays multilingual song lyrics including Japanese, Chinese, Korean, Romanized, and English lyrics, along with optional titles and notes.",
+  "params": {
+    "Singer": {
+      "label": "Singer",
+      "description": "Name of the singer or performing artist.",
+      "type": "string"
+    },
+    "Japtitle": {
+      "label": "Japanese Title",
+      "description": "Title of the song in Japanese.",
+      "type": "string"
+    },
+    "Jap": {
+      "label": "Japanese Lyrics",
+      "description": "Lyrics in Japanese.",
+      "type": "content"
+    },
+    "Japnote": {
+      "label": "Japanese Lyrics Note",
+      "description": "Additional notes about the Japanese lyrics.",
+      "type": "string"
+    },
+    "Chititle": {
+      "label": "Chinese Title",
+      "description": "Title of the song in Chinese.",
+      "type": "string"
+    },
+    "Chi": {
+      "label": "Chinese Lyrics",
+      "description": "Lyrics in Chinese.",
+      "type": "content"
+    },
+    "Chinote": {
+      "label": "Chinese Lyrics Note",
+      "description": "Additional notes about the Chinese lyrics.",
+      "type": "string"
+    },
+    "Kortitle": {
+      "label": "Korean Title",
+      "description": "Title of the song in Korean.",
+      "type": "string"
+    },
+    "Kor": {
+      "label": "Korean Lyrics",
+      "description": "Lyrics in Korean.",
+      "type": "content"
+    },
+    "Kornote": {
+      "label": "Korean Lyrics Note",
+      "description": "Additional notes about the Korean lyrics.",
+      "type": "string"
+    },
+    "Romtitle": {
+      "label": "Romanized Title",
+      "description": "Title of the song in romanized script.",
+      "type": "string"
+    },
+    "Rom": {
+      "label": "Romanized Lyrics",
+      "description": "Romanized version of the lyrics.",
+      "type": "content"
+    },
+    "Romnote": {
+      "label": "Romanized Lyrics Note",
+      "description": "Additional notes about the romanized lyrics.",
+      "type": "string"
+    },
+    "Engtitle": {
+      "label": "English Title",
+      "description": "English title or translated title of the song.",
+      "type": "string"
+    },
+    "Eng": {
+      "label": "English Lyrics/Translation",
+      "description": "English lyrics or translation of the song.",
+      "type": "content"
+    },
+    "Engnote": {
+      "label": "English Lyrics Note",
+      "description": "Additional notes about the English lyrics.",
+      "type": "string"
+    },
+    "ContentHeader": {
+      "label": "Content Header",
+      "description": "Header shown above extra content block (optional).",
+      "type": "string"
+    },
+    "Content": {
+      "label": "Content",
+      "description": "Extra content or notes not included in the other fields.",
+      "type": "content"
+    }
+  },
+  "paramOrder": [
+    "Singer",
+    "Japtitle", "Jap", "Japnote",
+    "Chititle", "Chi", "Chinote",
+    "Kortitle", "Kor", "Kornote",
+    "Romtitle", "Rom", "Romnote",
+    "Engtitle", "Eng", "Engnote",
+    "ContentHeader", "Content"
+  ],
+  "format": "block"
+}
+</templatedata>

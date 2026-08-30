@@ -1,0 +1,10 @@
+<includeonly>!scope="col" style="width:14%;vertical-align: top;" {{#ifeq:{{CURRENTJSTMONTH}}|{{{month}}}|{{#ifeq:{{CURRENTJSTDAY}}|{{{day}}}|class="current-date"|}}|}}|
+<center><b>{{{day|}}}</b><br />{{#dpl:
+  |categorymatch=Birthday/{{{month|}}}/{{{day|}}}<&>%{{{cat|Utaite}}}
+  |format=,¶ <div>[[%TITLE%]]</div>
+  |ordermethod=title
+  |resultsheader=
+  |resultsfooter=
+  |noresultsheader=
+}}</center></includeonly><noinclude>{{doc}}
+</noinclude>

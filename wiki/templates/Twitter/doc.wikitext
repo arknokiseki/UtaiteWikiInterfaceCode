@@ -1,0 +1,22 @@
+;Description
+:This template is used to link to a X profile.
+;Syntax
+:Place <code><nowiki>{{Twitter|<username>|description*|deleted*=}}</nowiki></code> and substitute <username> with the latter part of the Utaite's X Profile link. If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Twitter|Coe_oo|Coe's X description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Twitter|Coe_oo|Coe's X description}}
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Twitter|deletedaccount|RetiredUtaite1's X description|deleted=true}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Twitter|deletedaccount|RetiredUtaite1's X description|deleted=true}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+:use "deleted" field as shown above.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

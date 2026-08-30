@@ -1,0 +1,4 @@
+<includeonly>==References==
+<div class="reflist4" style="max-height: 300px; overflow: auto;" >
+<references/>
+</div></includeonly><noinclude>{{doc}}[[Category:Templates|{{PAGENAME}}]]</noinclude>

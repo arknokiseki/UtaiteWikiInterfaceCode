@@ -1,0 +1,122 @@
+<noinclude><!--
+-->{{#ifeq:{{SUBPAGENAME}}|doc||{{Documentation subpage}}}}<!--
+--><languages /><!--
+--></noinclude>{{#switch:<translate></translate>
+| =
+<includeonly>{{Languages|Module:Message box/doc}}</includeonly>
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+<!-- {{Shared Template Warning|Module:Message box}} -->
+{{Used in system}}
+{{module rating|r}}
+{{module rating|p}}
+{{Lua|Module:Message box/configuration|Module:Arguments|Module:Category handler|Module:Yesno}}
+{{Uses TemplateStyles
+| Module:Message box/ambox.css
+| Module:Message box/cmbox.css
+| Module:Message box/fmbox.css
+| Module:Message box/imbox.css
+| Module:Message box/ombox.css
+| Module:Message box/tmbox.css
+}}
+
+<translate><!--T:1--> This is a meta-module that implements the message box templates <tvar name=1>{{separated entries|{{tlx|mbox}}|{{tlx|ambox}}|{{tlx|cmbox}}|{{tlx|fmbox}}|{{tlx|imbox}}|{{tlx|ombox}}|{{tlx|tmbox}}|separator=<nowiki/>{{int|lang={{TRANSLATIONLANGUAGE}}|comma-separator}}<nowiki/>|conjunction=<nowiki/>{{int|lang={{TRANSLATIONLANGUAGE}}|and}}{{int|lang={{TRANSLATIONLANGUAGE}}|word-separator}}<nowiki/>}}</tvar>.</translate>
+<translate><!--T:2--> It is intended to be used from Lua modules, and should not be used directly from wiki pages.</translate>
+<translate><!--T:3--> If you want to use this module's functionality from a wiki page, please use the individual message box templates instead.</translate>
+
+<translate>
+== Usage == <!--T:4-->
+
+<!--T:5-->
+To use this module from another Lua module, first you need to load it.
+</translate>
+
+<syntaxhighlight lang="lua">
+local messageBox = require('Module:Message box')
+</syntaxhighlight>
+
+<translate><!--T:6--> To create a message box, use the <tvar name=1><code>main</code></tvar> function.</translate>
+<translate><!--T:7--> It takes two parameters:</translate>
+
+{{Unordered list
+|1=
+<translate><!--T:8--> the first is the box type (as a string).</translate>
+|2=
+<translate><!--T:9--> the second is a table containing the message box parameters.</translate>
+}}
+
+<syntaxhighlight lang="lua">
+local box = messageBox.main( boxType, {
+	param1 = param1,
+	param2 = param2,
+	-- <translate nowrap><!--T:10--> More parameters...</translate>
+})
+</syntaxhighlight>
+
+<translate>
+<!--T:11-->
+There are seven available box types:
+</translate>
+
+{{(!}} class="wikitable"
+! <translate><!--T:12--> Box type</translate>
+! <translate><!--T:13--> Template</translate>
+! <translate><!--T:14--> Purpose</translate>
+{{!}}-
+{{!}} <code>mbox</code>
+{{!}} {{tlx|mbox}}
+{{!}} <translate><!--T:15--> For message boxes to be used in multiple namespaces</translate>
+{{!}}-
+{{!}} <code>ambox</code>
+{{!}} {{tlx|ambox}}
+{{!}} <translate><!--T:16--> For article message boxes</translate>
+{{!}}-
+{{!}} <code>cmbox</code>
+{{!}} {{tlx|cmbox}}
+{{!}} <translate><!--T:17--> For category message boxes</translate>
+{{!}}-
+{{!}} <code>fmbox</code>
+{{!}} {{tlx|fmbox}}
+{{!}} <translate><!--T:18--> For interface message boxes</translate>
+{{!}}-
+{{!}} <code>imbox</code>
+{{!}} {{tlx|imbox}}
+{{!}} <translate><!--T:19--> For file namespace message boxes</translate>
+{{!}}-
+{{!}} <code>tmbox</code>
+{{!}} {{tlx|tmbox}}
+{{!}} <translate><!--T:20--> For talk page message boxes</translate>
+{{!}}-
+{{!}} <code>ombox</code>
+{{!}} {{tlx|ombox}}
+{{!}} <translate><!--T:21--> For message boxes in other namespaces</translate>
+{{!)}}
+
+<translate>
+<!--T:22-->
+See the template page of each box type for the available parameters.
+</translate>
+
+<translate nowrap>
+== Usage from <tvar name=1><code>#invoke</code></tvar> == <!--T:23-->
+</translate>
+
+<translate><!--T:24--> As well as the <tvar name=1><code>main</code></tvar> function, this module has separate functions for each box type.</translate>
+<translate><!--T:25--> They are accessed using the code <tvar name=1>{{magic word|ext=Scribunto|nowrap=1|code=1|#invoke|[[Module:Message box|Message box]]<nowiki>|mbox|...</nowiki>}}</tvar>, <tvar name=2>{{tlc|#invoke:Message box|ambox|...}}</tvar>, etc.</translate>
+<translate><!--T:26--> These will work when called from other modules, but they access code used to process arguments passed from <tvar name=1>{{tlc|#invoke:...}}</tvar>, and so calling them will be less efficient than calling <tvar name=2><code>main</code></tvar>.</translate>
+
+<translate>
+== Technical details == <!--T:27-->
+
+<!--T:28-->
+The module uses the same basic code for each of the templates listed above; the differences between each of them are configured using the data at <tvar name=1>[[Module:Message box/configuration]]</tvar>.
+</translate>
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Modules{{#translation:}}]]
+}}</includeonly><noinclude>
+[[Category:Module documentation pages{{#translation:}}]]
+</noinclude>
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Module:Message box/doc|noshift=1|uselang={{int:lang}}}}
+}}

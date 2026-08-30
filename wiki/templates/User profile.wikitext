@@ -1,0 +1,2 @@
+{{LicenseBox|image=WIP descr.png|text=''This file is to be used on a user profile page.''}}<includeonly>[[Category:User Profiles]][[Category:Media]] [[Category:Image wiki templates]] [[Category:Licensing templates]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]]</noinclude>

@@ -1,0 +1,165 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Distinguish/doc}}
+<templatedata>
+{
+	"description": {
+		"en": "Adds warning \"Not to be confused\" on the reader's page, with a short list of related pages.",
+		"cs": "Přidává upozornění \"Aby nedošlo k záměně\" na stránku čtenáře s krátkým seznamem souvisejících stránek.",
+		"fr": "Ajoute un avertissement \"A ne pas confondre avec\" sur la page du lecteur, avec une liste courte de pages associées."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Page 1",
+				"cs": "Stránka 1"
+			},
+			"description": {
+				"en": "Full name of related page",
+				"cs": "Celý název související stránky",
+				"fr": "Nom complet de la page relative à laquelle vous voulez faire référence."
+			},
+			"example": {
+				"cs": "Article_old  Article/doc  Special:MyLanguage/Articles",
+				"fr": "Article_old  Article/doc  Special:MyLanguage/Articles"
+			},
+			"required": true,
+			"type": "wiki-page-name"
+		},
+		"2": {
+			"label": {
+				"en": "Page 2",
+				"cs": "Stránka 2"
+			},
+			"description": {
+				"en": "Full name of related page",
+				"cs": "Celý název související stránky",
+				"fr": "Nom complet de la page relative à laquelle vous voulez faire référence."
+			},
+			"type": "wiki-page-name"
+		},
+		"3": {
+			"label": {
+				"en": "Page 3",
+				"cs": "Stránka 3"
+			},
+			"description": {
+				"en": "Full name of related page",
+				"cs": "Celý název související stránky",
+				"fr": "Nom complet de la page relative à laquelle vous voulez faire référence."
+			},
+			"type": "wiki-page-name"
+		},
+		"4": {
+			"label": {
+				"en": "Page 4",
+				"cs": "Stránka 4"
+			},
+			"description": {
+				"en": "Full name of related page",
+				"cs": "Celý název související stránky",
+				"fr": "Nom complet de la page relative à laquelle vous voulez faire référence."
+			},
+			"type": "wiki-page-name"
+		},
+		"l1": {
+			"aliases": [
+				"label 1"
+			],
+			"label": {
+				"en": "Label 1",
+				"cs": "Štítek 1"
+			},
+			"description": {
+				"en": "Custom label for the link, instead of the page name.",
+				"cs": "Vlastní štítek pro odkaz místo názvu stránky.",
+				"fr": "Texte alternatif affiché pour remplacer le nom de la page relative. "
+			},
+			"example": {
+				"fr": "Archives Documentation Actualités"
+			},
+			"default": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Copie de Nom de page"
+			},
+			"type": "line"
+		},
+		"l2": {
+			"aliases": [
+				"label 2"
+			],
+			"label": {
+				"en": "Label 2",
+				"cs": "Štítek 2"
+			},
+			"description": {
+				"en": "Custom label for the link, instead of the page name.",
+				"cs": "Vlastní štítek pro odkaz místo názvu stránky.",
+				"fr": "Texte alternatif affiché pour remplacer le nom de la page relative. "
+			},
+			"default": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Copie de Nom de page"
+			},
+			"type": "line"
+		},
+		"l3": {
+			"aliases": [
+				"label 3"
+			],
+			"label": {
+				"en": "Label 3",
+				"cs": "Štítek 3"
+			},
+			"description": {
+				"en": "Custom label for the link, instead of the page name.",
+				"cs": "Vlastní štítek pro odkaz místo názvu stránky.",
+				"fr": "Texte alternatif affiché pour remplacer le nom de la page relative. "
+			},
+			"default": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Copie de Nom de page"
+			},
+			"type": "line"
+		},
+		"l4": {
+			"aliases": [
+				"label 4"
+			],
+			"label": {
+				"en": "Label 4",
+				"cs": "Štítek 4"
+			},
+			"description": {
+				"en": "Custom label for the link, instead of the page name.",
+				"cs": "Vlastní štítek pro odkaz místo názvu stránky.",
+				"fr": "Texte alternatif affiché pour remplacer le nom de la page relative. "
+			},
+			"default": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Copie de Nom de page"
+			},
+			"type": "line"
+		}
+	},
+	"paramOrder": [
+		"1",
+		"l1",
+		"2",
+		"l2",
+		"3",
+		"l3",
+		"4",
+		"l4"
+	]
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Hatnote templates{{#translation:}}]]
+}}</includeonly>

@@ -1,0 +1,1 @@
+<includeonly><span class="nnd-link" data-nnd-id="{{{1}}}" style="opacity: 0.5; display: inline-block !important; vertical-align: middle; position: relative;">[[File:Niconico.svg|link=|20px|{{{2|No Nicovideo link available}}}]]</span></includeonly><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,45 @@
+<pre>{{Album
+|albumtitle      = Albumtitle
+|image           = Template_doc.png
+|datereleased    = Month DD, YYYY
+|crossfadeyt     = ytid
+|crossfadennd    = nndid
+|albumartist     = Albumartist
+|shops           = {{l|amazon|amazonid|Limited Edition}}
+|download        = {{l|amazon|B0D6N1G3LP|Download on Amazon|JP}}
+|streams         = {{l|spotify|79ZwoNbVVQjkMrY6dm6iFG|Limited Edition}}{{l|amazonmusicjp|B0CY242R5D|Limited Edition|JP}}{{l|amazonmusic|B0CM6VBMKQ|Limited Edition}}{{l|youtubemusic|OLAK5uy_lA9-VqOWge72IsydYLnfVMxC3z2O-i1kA|Single}}
+
+|track1title     = Track1title
+|track1info      = (Track1info)
+|track1utaite    = [[Track1utaite]]
+|track1lyricist  = Track1lyricist
+|track1composer  = Track1composer
+|track1arranger  = Track1arranger
+}}</pre>
+...results in:
+{{Album
+|albumtitle      = Albumtitle
+|image           = Template_doc.png
+|datereleased    = Month DD, YYYY
+|crossfadeyt     = ytid
+|crossfadennd    = nndid
+|albumartist     = Albumartist
+|shops           = {{l|amazon|amazonid|Limited Edition}}
+|download        = {{l|amazon|B0D6N1G3LP|Download on Amazon|JP}}
+|streams         = {{l|spotify|79ZwoNbVVQjkMrY6dm6iFG|Limited Edition}}{{l|amazonmusicjp|B0CY242R5D|Limited Edition|JP}}{{l|amazonmusic|B0CM6VBMKQ|Limited Edition}}{{l|youtubemusic|OLAK5uy_lA9-VqOWge72IsydYLnfVMxC3z2O-i1kA|Single}}
+
+|track1title     = Track1title
+|track1info      = (Track1info)
+|track1utaite    = [[Track1utaite]]
+|track1lyricist  = Track1lyricist
+|track1composer  = Track1composer
+|track1arranger  = Track1arranger
+
+|track3title     = Track3title
+|track3info      = (Track3info)
+<!--|track3utaite    = [[Track3utaite]]-->
+|track3lyricist  = Track3lyricist
+|track3composer  = Track3composer
+|track3arranger  = Track3arranger
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

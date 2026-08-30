@@ -1,0 +1,16 @@
+{{Htmli|{{#tag:nowiki|{{{1}}}}}}}<noinclude>
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Content",
+			"description": "The HTML code to be displayed.",
+			"type": "string",
+			"required": true
+		}
+	},
+	"description": "Display HTML code inline with syntax highlighting"
+}
+</templatedata>
+[[Category:Formatting templates]]
+</noinclude>

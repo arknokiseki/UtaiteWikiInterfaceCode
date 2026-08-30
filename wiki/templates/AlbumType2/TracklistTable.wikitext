@@ -1,0 +1,17 @@
+<includeonly><div class="tracklist"><div class="track-item">{{{tracksectionprefix|{{{tsp|}}}}}}<!--
+-->
+<table class="wikitable dataTable" data-page-length="25" data-order='[[0, "asc"]]' data-search-panes="true">
+<tr>
+<th scope="col" style="width: {{{trackcolwidth|5%}}};">Track</th>
+<th scope="col" style="width: {{{titlecolwidth|20%}}};">Title</th>
+<th scope="col" style="width: {{{detailscolwidth|15%}}};">Details</th>
+<th scope="col" style="width: {{{utaitecolwidth|12%}}};">Utaite</th>
+<th scope="col" style="width: {{{lyricistcolwidth|12%}}};">Lyricist</th>
+<th scope="col" style="width: {{{composercolwidth|12%}}};">Composer</th>
+<th scope="col" style="width: {{{arrangercolwidth|12%}}};">Arranger</th>
+{{#ifeq:{{{hasgroup|}}}|true|<th scope="col" style="width: {{{arrangercolwidth|12%}}};">Group</th>|}}
+</tr>
+{{{track|<tr><td colspan="7">No tracks available yet</td></tr>}}}
+</table>
+{{{tracksectionsuffix|{{{tss|}}}}}}</div></div>
+</includeonly>

@@ -1,0 +1,7 @@
+<noinclude></noinclude><!--
+-->{{cross|{{{size|18}}} }}&nbsp;'''{{ {{{|safesubst:}}}#if:{{{1|}}}|{{ucfirst:{{{1}}}}}|<!--T:1--> Not done}}'''<!--template:not done--><!--
+--><noinclude>
+{{documentation}}
+
+[[Category:Utility templates|{{PAGENAME}}]]
+</noinclude>

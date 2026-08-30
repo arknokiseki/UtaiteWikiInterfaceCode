@@ -1,0 +1,105 @@
+==Description==
+:This template is a shorthand for <nowiki>[[miraheze:_wiki name_:<pagename>]]</nowiki>.
+:It links a page from an existing Miraheze wiki or Fandom wiki.
+
+==How to Make a New Interwiki Template?==
+Here, you just need to fill this preload and all done~
+<inputbox>
+type=create
+preload=Template:Interwiki/Preload
+default=Template:YourTemplateName
+width=50
+placeholder=Enter singer name
+</inputbox>
+
+Example of YourTemplateName: MafuWiki, AmatsukiWiki, EveWiki, OdoWiki, EnsouWiki, etc
+
+==Samples==
+:<code><nowiki>{{templatename|PAGENAME}}</nowiki></code> 
+:<code><nowiki>{{templatename|wiki name|page name}}</nowiki></code> if you want to link a page.
+:<code><nowiki>{{templatename|wiki name|page name|name}}</nowiki></code> if you want the link to appear in another name.
+
+==Examples==
+'''Interwiki'''
+* {{t|Interwiki|IW}}
+This template can link to a variety of Fandom pages.
+
+* {{t|UtaiteWiki|UW}}
+This template is a shorthand for <nowiki>[[wikia:utaite:]] (this wiki)</nowiki>. 
+
+* {{t|Vocaloid|VW}}
+This template is a shorthand for <nowiki>[[wikia:vocaloid:]]</nowiki>. 
+
+* {{t|vocaloidlyrics|VLW}}
+This template is a shorthand for <nowiki>[[wikia:vocaloid:]]</nowiki>. 
+
+* {{t|Utau}}
+This template is a shorthand for <nowiki>[[wikia:utau:]]</nowiki>. 
+
+* {{t|Synthv|SVW}}
+This template is a shorthand for <nowiki>[[wikia:synthv:]]</nowiki>.
+
+* {{t|SEKAI|PSW}}
+This template is a shorthand for <nowiki>[[wikia:vocaloid:]]</nowiki>. 
+
+* {{t|Odorite|OW}}
+This template is a shorthand for <nowiki>[[wikia:odorite:]]</nowiki>. 
+
+* {{t|JPOP}}
+This template is a shorthand for <nowiki>[[wikia:jpop:]]</nowiki>. 
+
+* {{t|KPOP}}
+This template is a shorthand for <nowiki>[[wikia:kpop:]]</nowiki>. 
+
+* {{t|virtualyoutuber|VYW/VTW}}
+This template is a shorthand for <nowiki>[[wikia:virtualyoutuber:]]</nowiki>. 
+
+* {{t|Cevio|CW}}
+This template is a shorthand for <nowiki>[[wikia:cevio:]]</nowiki>.
+
+* {{t|Deepvocal|DVW}}
+This template is a shorthand for <nowiki>[[wikia:deepvocal:]]</nowiki>.
+
+* {{t|Wp|Wp}}
+This template is a shorthand for <nowiki>[[Wikipedia:]]</nowiki>.
+
+* <nowiki>{{Wp|Wp|name|lang=de}}</nowiki>
+This template is a shorthand for <nowiki>[[Wikipedia:de:]]</nowiki>, link to non-English Wikipedia if any language code is specified. For the code list please refer to {{wp|List of Wikipedias#List|this page}}.
+
+* {{t|Wp:ja|Wp}}
+This template is a shorthand for <nowiki>[[Wikipedia:ja:]]</nowiki>.
+
+* {{t|Wp:zh|Wp}}
+This template is a shorthand for <nowiki>[[Wikipedia:zh:]]</nowiki>.
+
+* {{t|Wt|Wt}}
+This template is a shorthand for <nowiki>[[Wiktionary:]]</nowiki>.
+
+'''Lyrics wikis'''
+
+* {{t|VLW|VLW}}
+This template is a shorthand for <nowiki>[[wikia:vocaloidlyrics:]]</nowiki>.
+
+* {{t|ULW|ULW}}
+This template is a shorthand for <nowiki>[[wikia:utaulyrics:]]</nowiki>.
+
+'''Outside wikis'''
+* {{t|UDB}}
+'''UtaiteDB''' - This template is a shorthand for <nowiki>https://utaitedb.net/</nowiki>ID. Add "Ar/" before ID for singers or singer groups. 
+
+* {{t|Utau2.0|UW2.0}}
+This template is a shorthand for <nowiki>http://utau.wiki/utau:</nowiki>Name. Use "this-format".
+
+* {{t|VDB}}
+'''VocaDB''' - This template is a shorthand for <nowiki>https://vocadb.net/</nowiki>ID. Add "Ar/" before ID for artists/ voicebanks/ creators/ groups/ companies. Add "T/" before ID for software/ technology.
+
+'''License'''
+
+* {{t|WikiaLicense|wiki|pagename}} or {{t|FandomLicense|wiki|pagename}}
+This template can link to a variety of Wikia pages.
+
+* {{t|Wikipedia|pagename}}
+This template can link to a variety of Wikipedia pages.
+
+{{WikiaLicense|vocaloid|Template:Interwiki/doc}}
+<includeonly>[[Category:Templates]] [[Category:Interwiki link templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|*]]</noinclude>

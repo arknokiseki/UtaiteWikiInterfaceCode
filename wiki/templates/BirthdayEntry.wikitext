@@ -1,0 +1,31 @@
+<includeonly>
+{| cellspacing="0" cellpadding="0" border="0" align="center"
+|[[File:{{#ifeq:{{{image|Template doc.png}}}|Unknown|Unknown.png|{{{image|Template doc.png}}}}}|100x100px|0px-0px-100px-100px]]
+|<div style="text-align:left; padding: 1em">
+[[{{{name}}}]]<br />{{#if:{{{birthmonth|}}}|
+    {{#switch:{{{birthmonth}}}|
+        01=January|
+        02=February|
+        03=March|
+        04=April|
+        05=May|
+        06=June|
+        07=July|
+        08=August|
+        09=September|
+        10=October|
+        11=November|
+        12=December 
+    }}{{#if:{{{birthday|}}}|&nbsp;{{{birthday}}}}}{{#ifeq:{{{birthyear}}}|Unknown| | , {{{birthyear}}}}}||
+}}
+{{#if:{{{birthyear|}}}|{{#ifeq:{{{birthyear}}}|Unknown||
+<br />
+'''{{Age|{{{birthyear}}}|{{{birthmonth}}}|{{{birthday}}}|{{#expr:{{CURRENTJSTYEAR}}-1}}}} → {{Age|{{{birthyear}}}|{{{birthmonth}}}|{{{birthday}}}}} '''
+}}}}
+|-
+|</div>
+|}
+</includeonly>
+<noinclude>{{doc}}
+[[Category:Features in Early Development]]
+</noinclude>

@@ -1,0 +1,72 @@
+{{Uses TemplateStyles|Template:Nmbox/styles.css}}
+
+<templatedata>
+{
+	"description": {
+		"en": "This is a meta-template for generating navigation boxes to go at the bottom of pages.",
+		"cs": "Toto je meta-šablona pro generování navigačních polí, která se mají přesunout na konec stránek.",
+		"tr": "Bu, sayfaların alt kısmına gitmek üzere gezinme kutuları oluşturmak için bir meta şablondur."
+	},
+	"format": "block",
+	"params": {
+		"image": {
+			"label": {
+				"en": "Logo image",
+				"cs": "Obrázek loga",
+				"tr": "Logo resmi"
+			},
+			"description": {
+				"en": "A logo image.",
+				"cs": "Obrázek loga",
+				"tr": "Bir logo resmi"
+			},
+			"type": "wiki-file-name"
+		},
+		"header": {
+			"label": {
+				"en": "Header",
+				"cs": "Záhlaví",
+				"tr": "Başlık"
+			},
+			"description": {
+				"en": "A header notice.",
+				"cs": "Upozornění v záhlaví.",
+				"tr": "Bir başlık uyarısı"
+			},
+			"type": "wiki-page-name",
+			"required": true
+		},
+		"text": {
+			"label": {
+				"en": "Text",
+				"cs": "Text",
+				"tr": "Metin"
+			},
+			"description": {
+				"en": "Description notice.",
+				"cs": "Upozornění s popisem.",
+				"tr": "Açıklama uyarısı"
+			},
+			"type": "content",
+			"required": true
+		}
+	}
+}
+</templatedata>
+
+=== Examples ===
+
+<pre>
+{{nmbox
+ | image = [[File:Geographylogo.png|25px|Languages|link=]]
+ | header = [[Project:Language policy|{{Languages/Title|{{SUBPAGENAME}}}}]]&nbsp;
+ | text = Languages code
+}}
+</pre>
+{{nmbox
+ | image = [[File:Geographylogo.png|25px|Languages|link=]]
+ | header = [[Project:Language policy|{{Languages/Title|{{SUBPAGENAME}}}}]]&nbsp;
+ | text = Languages code
+}}<includeonly>
+[[Category:Mbox templates]]
+</includeonly>

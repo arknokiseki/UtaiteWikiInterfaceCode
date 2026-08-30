@@ -1,0 +1,1 @@
+<includeonly><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}">[https://www.deviantart.com/{{{1}}} <span style="color: #4dc47d;"><i class="fa-brands fa-deviantart"></i></span>]</abbr></includeonly><noinclude>__notoc__{{Documentation}}[[Category:SNS Template]]</noinclude>

@@ -1,0 +1,55 @@
+<includeonly>
+{| class="dataTable" data-page-length="{{{pagelength|25}}}" data-order='[[1, "asc"]]' data-search-panes="true"
+! data-searchpane="true" | Cover Art
+! data-searchpane="true" | Singer
+! data-searchpane="true" | Producer
+! data-searchpane="true" | Links
+! data-searchpane="true" | Description
+|-
+{{{entries|}}}
+|}
+</includeonly><noinclude>
+<pre>
+{{NotableUtattemita/Table
+|entries={{NUTE
+|image=Amatsuki-tikyuusaigo.png
+|singer=Amatsuki
+|producer=* '''Vocal:''' [[Amatsuki]]
+* '''Arrange/Mix:''' [[Kain]]
+* '''Guitar:''' [https://x.com/rafmafma_gt rafma]
+* '''Storyboard/Illustration:''' [https://x.com/89hakuri Hakuri]
+* '''Movie:''' [https://x.com/86_oo_ HAR]
+|NND=
+|YT=6RFDqXT2bHY
+|description=Special cover version
+}}{{NUTE
+|singer=Mahito
+|image=Chikyuusaigocover.png
+|producer=* '''Vocal/Video:''' [[Mahito]]
+* '''Mix:''' 02
+* '''Illustration:''' Mariaanu
+|NND=
+|YT=UedYbfiTvzw
+}}}}
+</pre>
+{{NotableUtattemita/Table
+|entries={{NUTE
+|image=Amatsuki-tikyuusaigo.png
+|singer=Amatsuki
+|producer=* '''Vocal:''' [[Amatsuki]]
+* '''Arrange/Mix:''' [[Kain]]
+* '''Guitar:''' [https://x.com/rafmafma_gt rafma]
+* '''Storyboard/Illustration:''' [https://x.com/89hakuri Hakuri]
+* '''Movie:''' [https://x.com/86_oo_ HAR]
+|NND=
+|YT=6RFDqXT2bHY
+|description=Special cover version
+}}{{NUTE
+|singer=Mahito
+|image=Chikyuusaigocover.png
+|producer=* '''Vocal/Video:''' [[Mahito]]
+* '''Mix:''' 02
+* '''Illustration:''' Mariaanu
+|NND=
+|YT=UedYbfiTvzw
+}}}}</noinclude>

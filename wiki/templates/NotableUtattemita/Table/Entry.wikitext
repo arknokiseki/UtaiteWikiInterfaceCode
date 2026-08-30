@@ -1,0 +1,19 @@
+<includeonly>
+| {{#if:{{{YT|}}}
+| <span class="text-center">{{#ev:youtube|{{{YT}}}|200|inline}}</span>
+| {{#if:{{{NND|}}}
+| <span class="text-center">{{#ev:niconico|{{{NND}}}|200|inline}}</span>
+| {{#if:{{{image|}}}
+| [[File:{{{image}}}|200x112px|center|border]]
+| [[File:{{PAGENAME}}.png|200x112px|center|border]]
+}}}}}}
+| style="min-width:150px" | {{#ifeq:{{{customlink|}}}|true|{{{singer}}}|[[{{{singer}}}|{{#if:{{{alias|}}}|{{{alias}}}|{{{singer}}}}}]]}}
+| style="min-width:200px" | <div class="{{#if:{{{producer|}}}|mw-collapsible|}}">
+{{{producer|}}}
+</div>
+| style="text-align:center" | <div>{{#if:{{{NND|}}}|{{nnd|{{{NND|}}}}}|{{Nnd/nonv}}}}&nbsp;{{#if:{{{YT|}}}|{{yt|{{{YT}}}|{{ROOTPAGENAME}}}}|{{Yt/noyt}}}}&nbsp;{{#if:{{{BB|}}}|{{BBSpace|{{{BB}}}||video}}|{{BBSpace/nobb}}}}</div>
+| style="min-width:150px" | <div class="{{#if:{{{description|}}}|{{#ifeq:{{{descnocollapse}}}|true||mw-collapsible}}|}}">
+{{{description|<span style="color: red; font-weight:light;">No description available</span>}}}
+</div>
+|-
+</includeonly><noinclude>{{documentation}}</noinclude>

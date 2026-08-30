@@ -1,0 +1,4 @@
+<pre>{{bd|2000|12|31}}</pre>
+...results in:
+{{bd|2000|12|31}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

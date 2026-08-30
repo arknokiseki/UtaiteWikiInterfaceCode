@@ -1,0 +1,1 @@
+<includeonly><span class= "orikyoku-badge__featuring">{{{1}}}</span></includeonly><noinclude>{{doc}}</noinclude>

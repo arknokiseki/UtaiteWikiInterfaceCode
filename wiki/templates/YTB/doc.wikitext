@@ -1,0 +1,4 @@
+<pre>{{YTB|YTChorus Chorus Battle}}</pre>
+...results in:
+{{YTB|YTChorus Chorus Battle}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

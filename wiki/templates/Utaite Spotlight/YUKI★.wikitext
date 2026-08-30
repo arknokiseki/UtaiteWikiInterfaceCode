@@ -1,0 +1,25 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = YUKI smiling.png
+|caption = her collab cover of "✿ smiling -NICO Carnival- ✿"
+|officialjapname = ユキ
+|officialromajiname = YUKI★
+|NNDuserpage = 12742076 
+|mylist1 = 13295310
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|nicommu1 = co284240
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Cold Hand
+|examplennd = sm14125838
+|exampleyt = jIRGhCviBoc
+|description = '''YUKI★''' is a female {{NNDict|Utaite}} with a deep and slightly husky {{VW|Len}}-type voice, who however is noted, to also be good at singing in a cute girl's voice, making her a "{{NNDict|Ryouseirui}}". As her voice resembles that of VOCALOID {{VW|Kagamine Len}}'s, she is noted for covering mainly original songs by him. Her voice fits ballad songs very well. She also often uses improvisation in her covers, and is said to be good with her chorus work. Besides singing, she often illustrates her own PVs.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,4 @@
+<pre>{{AI|Akiakane|Akiakane}}</pre>
+...results in:
+{{AI|Akiakane|Akiakane}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

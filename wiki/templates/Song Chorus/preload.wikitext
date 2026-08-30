@@ -1,0 +1,14 @@
+<includeonly>{{Song chorus
+|yt      = 
+|nnd     = 
+|creator = 
+|number  = 
+|singers = 
+}}</includeonly><noinclude><pre>
+{{Song chorus
+|yt      = 
+|nnd     = 
+|creator = 
+|number  = 
+|singers = 
+}}</pre></noinclude>

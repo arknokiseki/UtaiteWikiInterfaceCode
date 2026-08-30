@@ -1,0 +1,1 @@
+<includeonly>{{UT|Tourname in English|20XX}}</includeonly><noinclude>{{T|UT|Tourname in English|20XX|_Y_=1}}</noinclude>

@@ -1,0 +1,50 @@
+==Usage==
+===Standard Usage===
+<pre>
+{{Utattemita
+|Title=test
+|Image=Template doc.png
+|Vocal=yes
+|Nnd2=sm24141
+|YT=1214af2
+|Producers=yes<br /> yes<br /> yes<br /> yes<br /> yes<br /> yes
+}}
+</pre>
+<br/>
+'''Output'''
+{{Utattemita
+|Title=test
+|Image=Template doc.png
+|Vocal=yes
+|NND=sm12345
+|YT=ab12cd34
+|Producers=yes<br /> yes<br /> yes<br /> yes<br /> yes<br /> yes
+}}
+<br/>
+===With Date Parameter===
+<pre>
+{{Utattemita
+|English=test
+|Kanji=テスト
+|Romaji=tesuto
+|Date=November 20, 2024
+|Image=Template doc.png
+|Vocal=yes
+|Nnd2=sm24141
+|YT=1214af2
+|Producers=yes<br /> yes<br /> yes<br /> yes<br /> yes<br /> yes
+}}
+</pre>
+<br/>
+'''Output'''
+{{Utattemita
+|English=test
+|Kanji=テスト
+|Romaji=tesuto
+|Date=November 20, 2024
+|Image=Template doc.png
+|Vocal=yes
+|NND=sm12345
+|YT=ab12cd34
+|Producers=yes<br /> yes<br /> yes<br /> yes<br /> yes<br /> yes
+}}

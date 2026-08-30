@@ -1,0 +1,38 @@
+{{Documentation/Header}}
+A compact card for a utaite group — a 275&nbsp;px image above a linked group name — for use in group galleries. The group counterpart to {{T|SingerBox}}.
+
+==Syntax==
+{{T|GroupBox|block=1
+|v1=name =
+|v2=image =
+}}
+
+==Examples==
+{{T|GroupBox|_Y_=1|block=1
+|p1=name = Circle of Friend
+|p2=image = Circle of friends 2.png
+}}
+{{clr}}
+
+Passing <code>image=Unknown</code> substitutes the placeholder file; omitting <code>image</code> entirely shows a grey "No Image" block instead.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>name</code> || – || Name || The group's page name, used as the caption and link target. || wiki-page-name || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>image</code> || – || Image || Image filename without the <code>File:</code> prefix. <code>Unknown</code> uses the placeholder; omitted shows a grey "No Image" block. || wiki-file-name || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A compact card for a utaite group, with image and linked name.",
+"params": {
+"name": { "label": "Name", "description": "The group's page name.", "type": "wiki-page-name", "required": true },
+"image": { "label": "Image", "description": "Image filename without the 'File:' prefix. 'Unknown' uses a placeholder.", "type": "wiki-file-name" }
+},
+"format": "block"
+}
+</templatedata>
+</div>

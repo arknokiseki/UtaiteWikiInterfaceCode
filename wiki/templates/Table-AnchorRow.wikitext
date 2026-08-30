@@ -1,0 +1,6 @@
+<onlyinclude>{{#if:{{{1|<noinclude>1</noinclude>}}}{{{2|}}}{{{3|}}}{{{4|}}}{{{5|}}}{{{6|}}}{{{7|}}}{{{8|}}}{{{9|}}}{{{10|}}}{{{11|}}}|
+{{!}}- style="visibility:collapse!important"
+{{!}} colspan="{{{colspan|4}}}" {{!}} <noinclude>{{#tag:nowiki|</noinclude>{{#invoke:Transclude|Anchor<noinclude>|{{{1}}}</noinclude>}}}}</onlyinclude>}}
+
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

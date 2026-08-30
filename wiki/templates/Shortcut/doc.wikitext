@@ -1,0 +1,88 @@
+<templatedata>
+{
+	"description": {
+		"en": "This template displays one or more of a page's shortcuts.",
+		"cs": "Tato šablona zobrazuje jednu nebo více zkratek stránky."
+	},
+	"format": "inline",
+	"params": {
+		"template": {
+			"label": {
+				"en": "Template?",
+				"cs": "Šablona?"
+			},
+			"description": {
+				"en": "Whether this is a list of shortcuts for a Template. See also: {{Template shortcut}}",
+				"cs": "Zda se jedná o seznam zkratek pro šablonu. Viz také: {{Template shortcut}}"
+			},
+			"default": "0",
+			"deprecated": "Use {{Template shortcut}}",
+			"type": "boolean"
+		},
+		"1": {
+			"label": {
+				"en": "Shortcut 1",
+				"cs": "Zkratka 1"
+			},
+			"description": {
+				"en": "Page/template shortcut 1",
+				"cs": "Zástupce stránky/šablony 1"
+			},
+			"required": true,
+			"type": "wiki-page-name"
+		},
+		"2": {
+			"label": {
+				"en": "Shortcut 2",
+				"cs": "Zkratka 2"
+			},
+			"description": {
+				"en": "Page/template shortcut 2",
+				"cs": "Zástupce stránky/šablony 2"
+			},
+			"type": "wiki-page-name"
+		},
+		"3": {
+			"label": {
+				"en": "Shortcut 3",
+				"cs": "Zkratka 3"
+			},
+			"description": {
+				"en": "Page/template shortcut 3",
+				"cs": "Zástupce stránky/šablony 3"
+			},
+			"type": "wiki-page-name"
+		},
+		"4": {
+			"label": {
+				"en": "Shortcut 4",
+				"cs": "Zkratka 4"
+			},
+			"description": {
+				"en": "Page/template shortcut 4",
+				"cs": "Zástupce stránky/šablony 4"
+			},
+			"type": "wiki-page-name"
+		},
+		"5": {
+			"label": {
+				"en": "Shortcut 5",
+				"cs": "Zkratka 5"
+			},
+			"description": {
+				"en": "Page/template shortcut 5",
+				"cs": "Zástupce stránky/šablony 5"
+			},
+			"type": "wiki-page-name"
+		}
+	},
+	"paramOrder": [
+		"template",
+		"1",
+		"2",
+		"3",
+		"4",
+		"5"
+	]
+}
+</templatedata>

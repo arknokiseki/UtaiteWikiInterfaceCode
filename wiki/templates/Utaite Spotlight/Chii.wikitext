@@ -1,0 +1,22 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Chii.png
+|caption = her NND userpage
+|officialjapname = ちい
+|officialromajiname = Chii
+|YTusername = 
+|NNDuserpage = 2372249
+|mylist1 = 12080003
+|mylist1info = utattemita
+|mylist2 = 12080006
+|mylist2info = ensoushitemita
+|mylist3 = 20323120
+|mylist3info = choruses
+|nicommu1 = 
+|nicommu1info = 
+|exampletitle = [[「Nee.」]]
+|examplennd = sm10362667
+|exampleyt = vIFKdwz13GU
+|description = '''Chii''' ('''ちい''') is a male {{NNDict|Utaite}} who began his career around mid-2009, recognized for his slightly rough yet powerful voice with well-developed lower and mid-range registers and distinctive vibrato, as demonstrated in his "Mozaik Role" {{yt|HXdlacIIbf8}}{{nnd|sm11510861}}. Despite his vocal strengths, he sometimes struggles with higher notes, occasionally avoiding high-pitched yelling sections in covers like his "Roshin Yuukai" {{nnd|sm6721043}}. He later redid the aforementioned song at [http://www.nicovideo.jp/watch/sm7211798 this link]{{nnd|sm7211798}}, where he attempted the higher vocal sections he had previously avoided.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to a DeviantArt profile.
+;Syntax
+:Place <code><nowiki>{{Deviantart|<username>|description*}}</nowiki></code> and substitute <username> with the latter part of the Utaite's Deviantart Profile link. If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Deviantart|jubyphonicp|Juby Phonic's DeviantArt description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Deviantart|jubyphonicp|Juby Phonic's DeviantArt description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

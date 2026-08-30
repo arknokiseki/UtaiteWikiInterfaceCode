@@ -1,0 +1,30 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = Shakemii twitter banner.png
+|caption = his Twitter banner. Illust. by Hane (はね)
+|officialjapname = しゃけみー
+|officialromajiname = Shakemii
+|YThandle = @shakemii
+|NNDuserpage = 24177488
+|mylist1 = 30163780
+|mylist1info = 
+|mylist2 = 33497295
+|mylist2info = collabs
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co1500674
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Henceforth]]
+|examplennd = 
+|exampleyt = gFmLZS92S18
+|description = '''Shakemii''' ('''しゃけみー''') is a male {{NNDict|Utaite}}, known for his rough voice, who is good in putting power behind his voice, as that, he also often covers songs of the Rock genre.
+
+He can go rather high, such as to be seen in his cover of "Raspberry＊Monster"{{nnd|sm21067358}} and has a fair amount of songs sung in his higher voice, but he just equally well excels with singing in a deeper voice, as in his "Outer Science"{{nnd|sm21992418}}, showing, that he has got a large voice range.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,23 @@
+{{Utaite Spotlight/Design|nnd =
+|image = Fujikura.png
+|caption = Nico Nico Douga
+|officialjapname = フジクラ
+|officialromajiname = Fujikura
+|NNDuserpage = 17749683
+|mylist1 = 20511440
+|mylist1info = utattemita
+|mylist2 = 26337335
+|mylist2info = choruses 
+|mylist3 = 23575025
+|mylist3info = favorites
+|exampletitle = [[Senbonzakura]]
+|examplennd = sm15664851
+|exampleyt = 
+|description = '''Fujikura''' ('''フジクラ''') is a female {{NNDict|Utaite}} who started in mid-2010.
+
+She has a sort of nasal and coarse, yet strong voice; she also has a powerful singing style, often to the point of screaming, which can be seen in her duet cover of "Invisible"{{nnd|sm16816791}}.
+
+She tends to cover duets with [[Tawashi]]; both tend to scream as much as possible.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

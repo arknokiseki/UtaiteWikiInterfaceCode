@@ -1,0 +1,95 @@
+{{High Risk|nocat=1}}
+This is the shared documentation for the '''main page fragments''' — the building blocks of [[Utaite Wiki]] and [[Youtaite Wiki]]. They are '''not general-purpose templates'''. Each one renders a single section of one specific page, so they are split out only to keep the main pages editable in small pieces.
+
+To change what appears on a main page, edit the '''fragment''', not the main page itself.
+
+== Page composition ==
+The two main pages share most fragments and swap in <code>Y-</code> prefixed variants for the Youtaite-specific parts.
+
+=== [[Utaite Wiki]] (primary main page) ===
+<pre>
+{{MP-Welcome}}              ← greeting line
+{{MP-Banner}}               ← hero banner + wiki statistics
+{{SiteAnnouncement}}        ← site notice          (shared)
+{{MP-Editing}}              ← "Before You Edit!" notice
+{{ProcessBirthdayCategory}} ← today's birthdays    (shared)
+{{MP-Admins}}               ← staff table          (shared)
+{{Announcement}}            ← wiki news feed       (shared)
+{{MP-Blog|height=400px}}    ← recent blogs         (shared)
+{{MP-Right}}                ← right column, contains {{WeeklyTop3}} + {{DiscordIntegrator}}
+{{NNDfooter}}               ← related wikis        (shared)
+</pre>
+
+=== [[Youtaite Wiki]] (secondary main page) ===
+<pre>
+{{Y-MP-Welcome}}            ← greeting line, red theme
+{{Y-MP-Banner}}             ← hero banner, red theme
+{{SiteAnnouncement}}        ← site notice          (shared)
+{{Y-MP-Editing}}            ← "Before You Edit!", contains {{MP-Statistic}}
+{{ProcessBirthdayCategory|cat=Youtaite}}           (shared, filtered)
+{{MP-Admins}}               ← staff table          (shared)
+{{Announcement}}            ← wiki news feed       (shared)
+{{MP-Blog}}                 ← recent blogs         (shared)
+{{Y-MP-Right}}              ← right column, contains {{DiscordIntegrator}}
+{{NNDfooter}}               ← related wikis        (shared)
+{{MP-Bottom}}               ← background image credit
+</pre>
+
+Two container variants also assemble these fragments: {{T|MP-Mobile}} (mobile layout) and {{T|Y-MP-Left}} (Youtaite left column).
+
+== Fragment reference ==
+{| class="dataTable sortable"
+! Fragment !! Used on !! Renders
+|-
+| {{T|MP-Welcome}} || Utaite Wiki, MP-Mobile || "Welcome to the Utaite Wiki ♪" greeting line.
+|-
+| {{T|MP-Banner}} || Utaite Wiki, MP-Mobile || Hero banner image with live edit/article/file counts.
+|-
+| {{T|MP-Editing}} || Utaite Wiki, MP-Mobile || "Before You Edit!" guidance notice.
+|-
+| {{T|MP-Right}} || Utaite Wiki || Right-hand column wrapper. Contains {{T|WeeklyTop3}} and {{T|DiscordIntegrator}}.
+|-
+| {{T|WeeklyTop3}} || Utaite Wiki, MP-Right || '''Bot-maintained.''' Weekly top 3 most-viewed utattemita. Updated automatically by [[User:Arknomahounorobotto]] — '''do not edit manually.'''
+|-
+| {{T|SiteAnnouncement}} || both main pages, MP-Mobile || Dated site notices in a message box.
+|-
+| {{T|Announcement}} || both main pages || Scrolling "Wiki News" feed of blog links.
+|-
+| {{T|MP-Admins}} || both main pages || Tabbed table of bureaucrats, admins and content moderators.
+|-
+| {{T|MP-Blog}} || both main pages || Recent user blogs, with a purge link. Accepts <code>height</code>.
+|-
+| {{T|NNDfooter}} || both main pages || "Related Wikis & External Links" logo grid.
+|-
+| {{T|DiscordIntegrator}} || both main pages, MP-Right, Y-MP-Right || Embedded Discord widget. Accepts <code>id</code>, <code>theme</code>, <code>width</code>, <code>height</code>.
+|-
+| {{T|Y-MP-Welcome}} || Youtaite Wiki || Greeting line, Youtaite red theme.
+|-
+| {{T|Y-MP-Banner}} || Youtaite Wiki || Hero banner, Youtaite red theme.
+|-
+| {{T|Y-MP-Editing}} || Youtaite Wiki, Y-MP-Left || "Before You Edit!" notice. Contains {{T|MP-Statistic}}.
+|-
+| {{T|Y-MP-Right}} || Youtaite Wiki || Right-hand column wrapper for the Youtaite page.
+|-
+| {{T|MP-Statistic}} || Y-MP-Editing, Y-MP-Left, Youtaite Wiki || Wiki statistics boxes. '''Youtaite side only''', despite the neutral name.
+|-
+| {{T|MP-Bottom}} || Youtaite Wiki || Background image credit line. '''Youtaite side only''', despite the neutral name.
+|}
+
+== Parameters ==
+Most fragments take no parameters. The exceptions:
+{| class="dataTable sortable"
+! Template !! Parameter !! Description !! Default
+|-
+| {{T|MP-Blog}} || <code>height</code> || CSS height of the scroll box. || 230px
+|-
+| {{T|DiscordIntegrator}} || <code>1</code> / <code>id</code> || Discord server ID. || –
+|-
+| {{T|DiscordIntegrator}} || <code>theme</code> || Widget theme, e.g. <code>dark</code>. || –
+|-
+| {{T|DiscordIntegrator}} || <code>width</code> || Widget width. || 100%
+|-
+| {{T|DiscordIntegrator}} || <code>height</code> || Widget height. || 90%
+|}
+
+<noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,5 @@
+<includeonly>{{#switch:{{{1}}}
+  |#default = {{External|{{{1}}}-ico|{{{2}}}|{{{3|}}}}} {{External|{{{1}}}-url|{{{2}}}}} {{#if:{{{3|}}}|<small>({{{3}}})</small>}}
+
+  |00 = {{External|00-url|{{{2}}}|{{{3|}}}}} {{#if:{{{4|}}}|<small>({{{4}}})</small>}}
+}}</includeonly><noinclude>{{External/doc}}</noinclude>
