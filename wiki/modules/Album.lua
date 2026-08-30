@@ -51,4 +51,41 @@ function p._canonical(key)
   return key
 end
 
+local RS = '\30'
+local FS = '\31'
+
+local RECORD_FIELDS = {
+  'n', 'title', 'info', 'utaite', 'lyricist', 'composer', 'arranger', 'group',
+}
+
+--- True when |track= still holds pre-migration {{Track}} markup.
+-- Template edits purge dependent pages lazily, so a cached page can deliver
+-- old <tr> output to the new module. Detecting it lets us pass it through
+-- rather than requiring the two template edits to be ordered.
+function p._isLegacyHtml(blob)
+  blob = blob or ''
+  if string.find(blob, RS, 1, true) then return false end
+  return string.find(blob, '<tr', 1, true) ~= nil
+end
+
+--- Splits a |track= blob of {{Track}} records into track tables.
+function p._parseRecords(blob)
+  local tracks = {}
+  for record in string.gmatch(blob or '', RS .. '([^' .. RS .. ']*)') do
+    local track, i = {}, 1
+    -- Trailing empty fields are preserved by appending a sentinel separator.
+    for field in string.gmatch(record .. FS, '([^' .. FS .. ']*)' .. FS) do
+      local key = RECORD_FIELDS[i]
+      if key then
+        track[key] = (key == 'n') and mw.text.trim(field) or p._clean(field)
+      end
+      i = i + 1
+    end
+    if track.title and track.title ~= '' then
+      tracks[#tracks + 1] = track
+    end
+  end
+  return tracks
+end
+
 return p
