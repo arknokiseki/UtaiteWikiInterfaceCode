@@ -19,7 +19,10 @@ mw = {
   },
   title = {
     getCurrentTitle = function()
-      return { rootText = _TEST_ROOT or 'Test Singer' }
+      return {
+        rootText = _TEST_ROOT or 'Test Singer',
+        namespace = _TEST_NS or 0,
+      }
     end,
   },
 }
@@ -30,6 +33,8 @@ export interface LuaModule {
   eval(expr: string): string;
   /** Sets the value ROOTPAGENAME resolves to. */
   setRoot(name: string): void;
+  /** Sets the namespace getCurrentTitle() reports. Mainspace is 0. */
+  setNamespace(ns: number): void;
 }
 
 export function loadLuaModule(path: string, globalName = 'M'): LuaModule {
@@ -58,6 +63,9 @@ export function loadLuaModule(path: string, globalName = 'M'): LuaModule {
     },
     setRoot(name: string): void {
       exec(`_TEST_ROOT = ${JSON.stringify(name)}`, 'set-root', false);
+    },
+    setNamespace(ns: number): void {
+      exec(`_TEST_NS = ${Number(ns)}`, 'set-ns', false);
     },
   };
 }
