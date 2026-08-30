@@ -392,7 +392,9 @@ Template:AlbumType2
         font-size: 1em;
     }
 
-    .album-track-table thead {
+    /* MediaWiki does not whitelist <thead>, so the header is a normal row
+       carrying .album-track-head. A thead selector would never match. */
+    .album-track-head {
         display: none;
     }
 

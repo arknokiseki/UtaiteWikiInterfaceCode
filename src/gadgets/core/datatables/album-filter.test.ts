@@ -9,17 +9,19 @@ function build(): HTMLElement {
       <span class="album-track-section-label">Disc 1</span>
       <span class="album-track-section-count">2 tracks</span>
     </div>
-    <table class="album-track-table"><tbody>
+    <table class="album-track-table">
+      <tr class="album-track-head"><th>#</th><th>Title</th><th>Utaite</th></tr>
       <tr><td class="album-track-n">1</td><td>Melt</td><td>Soraru</td></tr>
       <tr><td class="album-track-n">2</td><td>Alone</td><td>Mafumafu</td></tr>
-    </tbody></table>
+    </table>
     <div class="album-track-section">
       <span class="album-track-section-label">Disc 2</span>
       <span class="album-track-section-count">1 tracks</span>
     </div>
-    <table class="album-track-table"><tbody>
+    <table class="album-track-table">
+      <tr class="album-track-head"><th>#</th><th>Title</th><th>Utaite</th></tr>
       <tr><td class="album-track-n">3</td><td>Fragments</td><td>Soraru</td></tr>
-    </tbody></table>`;
+    </table>`;
   document.body.appendChild(root);
   return root;
 }
@@ -60,10 +62,10 @@ describe('album filter bar', () => {
     input.value = 'soraru';
     input.dispatchEvent(new Event('input'));
 
-    const rows = root.querySelectorAll<HTMLElement>('tbody tr');
-    expect(rows[0].style.display).toBe('');
-    expect(rows[1].style.display).toBe('none');
-    expect(rows[2].style.display).toBe('');
+    const rows = root.querySelectorAll<HTMLElement>('tr:not(.album-track-head)');
+    expect(rows[0].style.display).toBe(''); // Melt — Soraru
+    expect(rows[1].style.display).toBe('none'); // Alone — Mafumafu
+    expect(rows[2].style.display).toBe(''); // Fragments — Soraru
     expect(root.querySelector('.album-filter-count')!.textContent).toBe('2 of 3');
   });
 
@@ -84,5 +86,25 @@ describe('album filter bar', () => {
     root.removeAttribute('data-sectioned');
     initAlbumFilter(root);
     expect(root.querySelector('.album-filter-chip')).toBeNull();
+  });
+
+  it('does not count the header row as a track', () => {
+    // MediaWiki strips <thead> and auto-inserts <tbody>, so the header row
+    // sits among the data rows and would otherwise be filtered like a track.
+    const root = build();
+    initAlbumFilter(root);
+    expect(root.querySelector('.album-filter-count')!.textContent).toBe('3 of 3');
+  });
+
+  it('keeps header rows visible when a text filter is applied', () => {
+    const root = build();
+    initAlbumFilter(root);
+    const input = root.querySelector<HTMLInputElement>('.album-filter-text')!;
+    input.value = 'fragments';
+    input.dispatchEvent(new Event('input'));
+
+    const heads = root.querySelectorAll<HTMLElement>('.album-track-head');
+    // Disc 1 is hidden entirely; Disc 2 still shows, so its header must remain.
+    expect(heads[1].style.display).toBe('');
   });
 });

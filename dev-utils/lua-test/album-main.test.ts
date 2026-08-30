@@ -53,4 +53,49 @@ describe('Module:Album assembly', () => {
     expect(html).toContain('<td>Old</td>');
     expect(html).toContain('album-track-legacy');
   });
+
+  // _build takes an `expand` callback so it stays frame-free and testable;
+  // main passes frame:preprocess. #invoke output is not re-expanded for
+  // parser functions, so generated {{#ev:}} wikitext must go through it.
+  const buildX = (o: Record<string, string>) =>
+    `M._build(${luaTable(o)}, 'Test Singer', function(s) return '<<' .. s .. '>>' end)`;
+
+  const tabContent = (o: Record<string, string>, label: string) =>
+    m.eval(
+      `(function() for _,t in ipairs(${buildX(o)}.tabs) do if t.label == '${label}' then return t.content end end return '' end)()`,
+    );
+
+  it('embeds the YouTube crossfade rather than printing the id', () => {
+    const html = tabContent({ ...base, crossfadeyt: 'oGOLMXW2E3Y' }, 'YT Crossfade');
+    expect(html).toContain('<<{{#ev:youtube|oGOLMXW2E3Y||inline|}}>>');
+  });
+
+  it('passes the YouTube description through', () => {
+    const html = tabContent(
+      { ...base, crossfadeyt: 'abc', ytxfddesc: 'Official crossfade' },
+      'YT Crossfade',
+    );
+    expect(html).toContain('{{#ev:youtube|abc||inline|Official crossfade}}');
+  });
+
+  it('embeds the NND crossfade', () => {
+    const html = tabContent({ ...base, crossfadennd: 'sm12345' }, 'NND Crossfade');
+    expect(html).toContain('<<{{#ev:niconico|sm12345||inline|}}>>');
+  });
+
+  it('embeds the Spotify album, which the first cut dropped', () => {
+    const html = tabContent({ ...base, spotifyalbumid: '3oaULsMEJ1' }, 'Streaming');
+    expect(html).toContain('<<{{#ev:spotifyalbum|3oaULsMEJ1}}>>');
+  });
+
+  it('still shows a Streaming tab with only streams and no spotify id', () => {
+    const html = tabContent({ ...base, streams: '{{LType2|spotify|x}}' }, 'Streaming');
+    expect(html).toContain('{{LType2|spotify|x}}');
+    expect(html).not.toContain('#ev:spotifyalbum');
+  });
+
+  it('keeps the crossfade heading from the old template', () => {
+    const html = tabContent({ ...base, crossfadeyt: 'abc' }, 'YT Crossfade');
+    expect(html).toContain('Crossfade Preview');
+  });
 });

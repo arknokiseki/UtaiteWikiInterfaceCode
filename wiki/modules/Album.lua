@@ -331,9 +331,13 @@ local function renderTable(rows, columns, opts, mode, useFilter)
     body[#body + 1] = renderRow(track, columns, opts, mode)
   end
 
+  -- No <thead>/<tbody>: MediaWiki does not whitelist them, so it escapes the
+  -- tags into visible page text and then inserts its own <tbody> anyway. The
+  -- header row therefore lands among the data rows and needs its own class as
+  -- a hook for the mobile stylesheet and the filter gadget.
   return '<table' .. attr('class', classes) .. extra .. '>'
-    .. '<thead><tr>' .. table.concat(heads) .. '</tr></thead>'
-    .. '<tbody>' .. table.concat(body) .. '</tbody></table>'
+    .. '<tr class="album-track-head">' .. table.concat(heads) .. '</tr>'
+    .. table.concat(body) .. '</table>'
 end
 
 --- Renders the tracklist: one table per section, headers between tables.
@@ -449,8 +453,13 @@ local function renderLegacy(blob)
 end
 
 --- Builds every renderable piece of the album. Frame-free so it stays testable.
-function p._build(args, root)
+-- `expand` turns generated wikitext into html. #invoke output is NOT
+-- re-expanded for parser functions, so any {{#ev:}} this module composes must
+-- be passed through frame:preprocess or it renders as literal text — which is
+-- how the crossfade tabs came to show a bare video id.
+function p._build(args, root, expand)
   args = args or {}
+  expand = expand or function(s) return s end
 
   local tracks = p._collectTracks(args)
   local tracklist
@@ -489,20 +498,34 @@ function p._build(args, root)
 
   local streams, spotify = p._clean(args.streams), p._clean(args.spotifyalbumid)
   if streams ~= '' or spotify ~= '' then
+    local parts = { '<div class="album-streams"><h4>Stream on:</h4><div>', streams, '</div>' }
+    if spotify ~= '' then
+      parts[#parts + 1] = expand('{{#ev:spotifyalbum|' .. spotify .. '}}')
+    end
+    parts[#parts + 1] = '</div>'
+    tabs[#tabs + 1] = { label = 'Streaming', content = table.concat(parts) }
+  end
+
+  --- Renders one crossfade tab through the given embed service.
+  local function crossfade(label, service, id, description)
     tabs[#tabs + 1] = {
-      label = 'Streaming',
-      content = '<div class="album-streams">' .. streams .. '</div>',
+      label = label,
+      content = '<div class="album-crossfade">'
+        .. '<h4>Crossfade Preview</h4>'
+        .. '<p>Listen to a preview of the entire album below:</p>'
+        .. expand('{{#ev:' .. service .. '|' .. id .. '||inline|' .. description .. '}}')
+        .. '</div>',
     }
   end
 
   local yt = p._clean(args.crossfadeyt)
   if yt ~= '' then
-    tabs[#tabs + 1] = { label = 'YT Crossfade', content = '<div class="album-crossfade">' .. yt .. '</div>' }
+    crossfade('YT Crossfade', 'youtube', yt, p._clean(args.ytxfddesc))
   end
 
   local nnd = p._clean(args.crossfadennd)
   if nnd ~= '' then
-    tabs[#tabs + 1] = { label = 'NND Crossfade', content = '<div class="album-crossfade">' .. nnd .. '</div>' }
+    crossfade('NND Crossfade', 'niconico', nnd, p._clean(args.nndxfddesc))
   end
 
   return { card = p._renderCard(args), tracklist = tracklist, tabs = tabs }
@@ -512,7 +535,9 @@ end
 function p.main(frame)
   local args = require('Module:Arguments').getArgs(frame)
   local root = mw.title.getCurrentTitle().rootText
-  local built = p._build(args, root)
+  local built = p._build(args, root, function(wikitext)
+    return frame:preprocess(wikitext)
+  end)
 
   local tabber = ''
   for _, tab in ipairs(built.tabs) do

@@ -31,7 +31,10 @@ function readSections(root: HTMLElement): Section[] {
       header,
       table,
       label: header.querySelector('.album-track-section-label')?.textContent?.trim() ?? '',
-      rows: [...table.querySelectorAll<HTMLElement>('tbody tr')],
+      // MediaWiki strips <thead> and inserts its own <tbody>, so the header
+      // row sits among the data rows and must be excluded explicitly — and
+      // left visible when filtering hides the tracks beneath it.
+      rows: [...table.querySelectorAll<HTMLElement>('tr:not(.album-track-head)')],
     });
   });
 

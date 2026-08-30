@@ -95,4 +95,26 @@ describe('Module:Album tracklist rendering', () => {
   it('omits the credit span when a track has no credits', () => {
     expect(render(tracks([{ title: 'Melt', n: '1' }]))).not.toContain('album-track-credit');
   });
+
+  it('emits no thead or tbody, which MediaWiki strips and escapes', () => {
+    const html = render(many(3));
+    expect(html).not.toContain('<thead');
+    expect(html).not.toContain('<tbody');
+  });
+
+  it('marks the header row so CSS and the filter can identify it', () => {
+    // Without thead the header <tr> lands in MediaWiki's auto-inserted tbody
+    // alongside the data rows, so it needs an explicit hook.
+    const html = render(many(3));
+    expect(html).toContain('<tr class="album-track-head">');
+    expect((html.match(/album-track-head/g) ?? []).length).toBe(1);
+  });
+
+  it('still emits one header row per section table', () => {
+    const t = tracks([
+      { title: 'A', n: '1', group: 'Disc 1' },
+      { title: 'B', n: '2', group: 'Disc 2' },
+    ]);
+    expect((render(t).match(/album-track-head/g) ?? []).length).toBe(2);
+  });
 });
