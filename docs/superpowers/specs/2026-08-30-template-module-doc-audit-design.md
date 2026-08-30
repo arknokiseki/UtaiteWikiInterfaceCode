@@ -161,17 +161,40 @@ Template:Album        2009-12-13  wikia:utaite>Default
 Module:Utaite         2024-09-02  Ark                  (no prefix — native)
 ```
 
-Two sources, in priority order:
+**Purpose.** Provenance is not collected to label origin for its own sake. It
+**splits the writing backlog**, which is the single highest-leverage output of
+this audit. Measured on the 45 undocumented module roots:
 
-1. **`list=logevents&letype=import`** — explicit `Special:Import` records
-   (20+ present, e.g. the `Module:Bucket*` family, `Module:Check for unknown parameters`).
-2. **First revision per page** — `rvdir=newer`, capturing user, comment, timestamp.
+| | count | consequence |
+|---|---|---|
+| native (no prefix) | 19 | must be written from scratch; only this wiki can |
+| imported (`mw>`, `wikia>`, `mh>`, `wp>`, `meta>`) | 26 | upstream documentation already exists — import or link it |
 
-First revisions are collected with a `list=allrevisions&arvdir=newer` sweep per
-namespace (metadata only, ~500/request), falling back to per-page
-`rvdir=newer&rvlimit=1` if the sweep proves heavier than the 566 individual
-calls it replaces. Results are cached in the manifest keyed by revid and are not
-re-fetched while the page's latest revid is unchanged.
+58% of the module backlog therefore needs sourcing rather than authoring.
+`Module:Yesno`, `TableTools`, `Namespace detect`, `Category handler` and
+`Lua banner` are well-documented upstream libraries; `Module:Utaite`,
+`UtaiteUnit` and `SonglistFromJson` are bespoke. Treating those two groups
+identically would waste the majority of the effort.
+
+**Method — one source, not two.** The **first revision** of each page
+(`rvdir=newer&rvlimit=1`, capturing user, comment and timestamp) is sufficient
+and authoritative. `Special:Import` log events are deliberately *not* used: they
+are strictly redundant (transwiki import preserves the original history, so the
+first revision already carries the prefix), and strictly narrower (they miss
+every page imported outside a logged `Special:Import`). The only thing the log
+adds is when a page landed on this wiki, which nothing in this audit needs.
+
+**Cost.** Measured at 568 ms/page, so ~5.4 minutes for 566 roots. A
+`list=allrevisions&arvdir=newer` sweep was evaluated and **rejected**: it walks
+the namespace's entire revision history from 2013 forward, and in testing spent
+122 requests to resolve only 32 pages. Results are cached in the manifest keyed
+by revid and are not re-fetched while a page's latest revid is unchanged.
+
+**Limit to record honestly.** The `wikia>` prefix identifies Fandom but not
+*which* Fandom wiki, so upstream docs for those cannot be located
+automatically; `mw>`, `wp>` and `meta>` resolve directly to mediawiki.org,
+Wikipedia and Meta. Copy-paste imports that left no interwiki prefix are
+undetectable by this method and will read as native.
 
 The confirmed lineage of the documentation system is **Fandom** — Dev-wiki
 `Dev:*` modules, reportedly by way of the Genshin Impact wiki — *not* Wikipedia
@@ -251,17 +274,21 @@ inventory material last.
 1. **At a glance** — four numbers only: template coverage, module coverage,
    deletion candidates, snapshot timestamp. Not a KPI wall.
 2. **Coverage** — documented / thin / missing, split Template vs Module.
-3. **Priority queue** — the core deliverable. Undocumented templates ranked by
-   *usage × doc-gap*, so high-transclusion, zero-doc pages surface first. This
-   is what converts the audit into a work queue for the follow-up project.
+3. **Priority queue** — the core deliverable, **split by provenance into
+   "write" and "source"**. Undocumented pages are ranked by *usage × doc-gap*
+   so high-transclusion, zero-doc pages surface first, then divided into the
+   native pages someone must author and the imported ones whose upstream docs
+   need importing or linking (19 vs 26 for modules). The two halves are
+   different kinds of work and are not interleaved.
 4. **Deletion candidates** — tiered, each row carrying an evidence column and a
    `needs-manual-review` flag where applicable.
 5. **Doc plumbing** — the findings above, grouped by problem type, with the
    redirect inventory linking out to `_redirects.tsv` rather than dumping 105 rows.
-6. **Provenance** — upstream-derived vs wiki-native, by source wiki, with the
-   actionable consequence: an unmodified upstream page needs its upstream doc
-   *imported*, not written from scratch, converting part of the 151-page backlog
-   into a copy job.
+6. **Provenance summary** — a compact breakdown by source wiki, plus the pages
+   whose origin could not be determined. Deliberately small: provenance does its
+   real work as a column and a split inside section 3, not as an inventory of
+   its own. Its one standalone job here is showing how much of the backlog is
+   sourcing rather than authoring.
 
 ### Visual direction
 
