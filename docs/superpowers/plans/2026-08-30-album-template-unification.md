@@ -2358,7 +2358,7 @@ git commit -m "fix(album): resolve render-parity differences found on live pages
 Replace the contents of `wiki/templates/Track.wikitext` with:
 
 ```
-<includeonly>{{#if:{{{title|}}}|&#30;{{{1|}}}&#31;{{{title|}}}&#31;{{{additionalshortinfo|}}}&#31;{{{utaite|{{{singers|}}}}}}&#31;{{{lyricist|}}}&#31;{{{composer|}}}&#31;{{{arranger|}}}&#31;{{{group|}}}}}</includeonly><noinclude>
+<includeonly>{{#if:{{{title|}}}|␞{{{1|}}}␟{{{title|}}}␟{{{additionalshortinfo|}}}␟{{{utaite|{{{singers|}}}}}}␟{{{lyricist|}}}␟{{{composer|}}}␟{{{arranger|}}}␟{{{group|}}}}}</includeonly><noinclude>
 {{doc}}</noinclude>
 ```
 

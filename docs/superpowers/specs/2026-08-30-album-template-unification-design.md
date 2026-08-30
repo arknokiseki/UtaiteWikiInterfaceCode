@@ -139,15 +139,19 @@ ns-0 pages using Track:     167
   loose:                            7
 ```
 
-New output — record separator `U+001E`, field separator `U+001F`:
+New output — record separator `U+241E` (␞), field separator `U+241F` (␟):
 
 ```
 <includeonly>{{#if:{{{title|}}}|␞{{{1|}}}␟{{{title|}}}␟{{{additionalshortinfo|}}}␟{{{utaite|{{{singers|}}}}}}␟{{{lyricist|}}}␟{{{composer|}}}␟{{{arranger|}}}␟{{{group|}}}}}</includeonly>
 ```
 
-Control characters are used because track values contain arbitrary wikitext and nested templates (`{{VW}}` ×2,396, `{{Orikyoku}}` ×1,020, `{{yt}}` ×928, `{{Ruby/rt}}` ×573) that can emit pipes, brackets, tables and strip markers. Field values are never split further, so extension strip markers pass through opaquely.
+**These separators were chosen by probing the live wiki, not by preference.** `action=expandtemplates` shows that real C0 controls do not survive: MediaWiki replaces U+001E/U+001F with U+FFFD during parsing, and the numeric entities `&#30;`/`&#31;` survive only as literal five-character text. Either would have meant `{{Track}}` records never parsed after cutover. U+241E and U+241F pass through expansion unchanged, including inside a template parameter, and are conspicuous if a record ever escapes unparsed.
 
-**Transitional tolerance.** Template edits purge dependent pages lazily, so a cached page may deliver old `<tr>` output to a new module. If `Module:Album` sees `<tr` in `|track=` and no `U+001E`, it passes the content through into a fixed-column table exactly as today, and emits a tracking category. This removes any ordering requirement between the two template edits.
+A printable separator is still safe against content collision, and a distinctive one is needed because track values carry arbitrary wikitext and nested templates (`{{VW}}` ×2,396, `{{Orikyoku}}` ×1,020, `{{yt}}` ×928, `{{Ruby/rt}}` ×573) that can emit pipes, brackets, tables and strip markers. Field values are never split further, so extension strip markers pass through opaquely.
+
+Because U+241E/U+241F are three UTF-8 bytes each, the module cannot express a negated character class for them and splits on plain substring finds instead.
+
+**Transitional tolerance.** Template edits purge dependent pages lazily, so a cached page may deliver old `<tr>` output to a new module. If `Module:Album` sees `<tr` in `|track=` and no `U+241E`, it passes the content through into a fixed-column table exactly as today, and emits a tracking category. This removes any ordering requirement between the two template edits.
 
 ### 4.4 Normalisation rules
 
