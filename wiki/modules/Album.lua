@@ -154,4 +154,54 @@ function p._collectTracks(args)
   return tracks
 end
 
+-- Always rendered. Utaite is pinned because {{Track}} falls back to the page's
+-- own singer when the field is blank, so the column is never actually empty.
+local SPINE = { '#', 'Title', 'Utaite', 'Lyricist', 'Composer' }
+
+--- Returns the column names this album has earned.
+function p._columns(tracks)
+  local cols = {}
+  for _, name in ipairs(SPINE) do cols[#cols + 1] = name end
+
+  local hasArranger, hasGroup = false, false
+  for _, t in ipairs(tracks or {}) do
+    if p._clean(t.arranger) ~= '' then hasArranger = true end
+    if p._clean(t.group) ~= '' then hasGroup = true end
+  end
+
+  if hasArranger then cols[#cols + 1] = 'Arranger' end
+  if hasGroup then cols[#cols + 1] = 'Group' end
+  return cols
+end
+
+local ROLES = {
+  { label = 'lyrics',  field = 'lyricist' },
+  { label = 'music',   field = 'composer' },
+  { label = 'arrange', field = 'arranger' },
+}
+
+--- Builds a credit line, merging roles performed by the same person.
+-- Restores behaviour Template:Album has and AlbumType2 lost: when the
+-- lyricist and composer are the same person, name them once.
+function p._credit(track)
+  local order, byName = {}, {}
+  for _, role in ipairs(ROLES) do
+    local who = p._clean(track[role.field])
+    if who ~= '' then
+      if not byName[who] then
+        byName[who] = {}
+        order[#order + 1] = who
+      end
+      local roles = byName[who]
+      roles[#roles + 1] = role.label
+    end
+  end
+
+  local parts = {}
+  for _, who in ipairs(order) do
+    parts[#parts + 1] = table.concat(byName[who], ', ') .. ': ' .. who
+  end
+  return table.concat(parts, ' \194\183 ')
+end
+
 return p
