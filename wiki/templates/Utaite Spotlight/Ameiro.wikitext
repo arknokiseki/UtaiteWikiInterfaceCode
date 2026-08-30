@@ -1,0 +1,32 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = ameiro twitter.png
+|caption = her Blog and Twitter
+|officialjapname = 雨色
+|officialromajiname = Ameiro
+|NNDuserpage = 
+|mylist1 = 7943039
+|mylist1info = main
+|mylist2 = 27885640
+|mylist2info = 2
+|mylist3 = 23839665
+|mylist3info = touhou
+|mylist4 = 22976708
+|mylist4info = misc.
+|nicommu1 = 
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Hitobashira Alice]]
+|examplennd = sm5367386
+|exampleyt = 
+|description = '''Ameiro''' ('''雨色''') is an {{NNDict|Utaite}} with an androgyne voice who can hit both, high and low notes with ease.
+
+She also participates in a Touhou circle, Team Like a Rabbit, as a support member, to provide vocals, for event assistance and lives.
+
+She respects [[Hitori]] and [[Valshe]].
+}}
+{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

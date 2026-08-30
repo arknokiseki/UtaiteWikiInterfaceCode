@@ -1,0 +1,51 @@
+{{Documentation/Header}}
+{{High Risk}}
+{{Lua|Exists}}
+This template checks for a page's existence without causing the page to show up on whatlinkshere and wantedpages, unlike #ifexist.
+
+==Syntax==
+{{T|Exists|v1=page to check|v2=content if exists|v3=content if does not exist}}
+
+==Examples==
+{{T|Exists|This page does not exist|true|false|_Y_=1}}<br>
+{{T|Exists|Venti|true|false|_Y_=1}}<br>
+{{T|Exists|v1=blank|p2=true|p3=false|_Y_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"aliases": [
+				"page"
+			],
+			"label": "Page Name",
+			"type": "wiki-page-name",
+			"required": true,
+			"description": "Name of page including namespace to check for existence."
+		},
+		"2": {
+			"aliases": [
+				"then"
+			],
+			"label": "True Result",
+			"example": "I exist",
+			"type": "unbalanced-wikitext",
+			"suggested": true,
+			"description": "Result if page exists"
+		},
+		"3": {
+			"aliases": [
+				"else"
+			],
+			"label": "False Result",
+			"example": "I do not exist",
+			"type": "unbalanced-wikitext",
+			"suggested": true,
+			"description": "Result if page does not exist"
+		}
+	},
+	"description": "Check if page exists",
+	"format": "inline"
+}
+</templatedata>

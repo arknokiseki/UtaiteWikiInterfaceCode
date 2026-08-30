@@ -1,0 +1,10 @@
+<includeonly><span style="font-size:normal; font-weight: bold; background-color:#ffffff;color:#000000;">DISBANDED</span>[[Category:Disbanded Groups]]</includeonly><noinclude>
+==Usage==
+<pre>
+This utaite group is {{UtaiteGroup/Disbanded}}.
+</pre>
+==Displays:== 
+This utaite group is {{UtaiteGroup/Disbanded}}.
+
+[[Category:Text Template]]
+</noinclude>

@@ -1,0 +1,7 @@
+<includeonly>{{#ifeq: {{#expr: {{#time: U}} < {{#time: U| {{{year}}}-{{{month}}}-{{{day}}} {{{hour}}}:{{{minute}}}:00 }} }} | 1 |{{{content|}}}|{{{expiredContent|This content's display time is expired.}}}}}</includeonly><noinclude>
+<pre>{{TimedDisplay|year=2024|month=09|day=24|hour=20|minute=00|content=still on track|expiredContent=exceeded time llimit}}</pre>
+{{TimedDisplay|year=2024|month=09|day=24|hour=20|minute=00|content=still on track|expiredContent=exceeded time llimit}}
+
+<pre>{{TimedDisplay|year=2124|month=09|day=24|hour=20|minute=00|content=still on track|expiredContent=exceeded time llimit}}</pre>
+{{TimedDisplay|year=2124|month=09|day=24|hour=20|minute=00|content=still on track|expiredContent=exceeded time llimit}}
+</noinclude>

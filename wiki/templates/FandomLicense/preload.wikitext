@@ -1,0 +1,4 @@
+{{FandomLicense|FandomName|PageName (OPTIONAL)}}
+<!--FandomName: e.g., this wiki's name is Utaite, taken from utaite.fandom.com.
+PageName (OPTIONAL): The page within the mentioned wiki that you'd like to address: e.g., if you want to address https://utaite.fandom.com/wiki/Module:Singers, you only have to write "Module:Singers".
+-->

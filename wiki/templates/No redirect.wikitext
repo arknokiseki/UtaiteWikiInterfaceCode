@@ -1,0 +1,8 @@
+<onlyinclude>{{{{{|safesubst:}}}#ifexist:{{{1}}}
+|{{{{{|safesubst:}}}Plain link|{{{{{|safesubst:}}}fullurl:{{{1}}}|redirect=no}}|{{{{{|safesubst:}}}#if:{{{2|}}}|{{{2}}}|{{{1}}}}}}}
+|{{{{{|safesubst:}}}#if:{{{2|}}}
+|[[:{{{{{|safesubst:}}}FULLPAGENAME:{{{1}}}}}|{{{2}}}]]
+|[[:{{{{{|safesubst:}}}FULLPAGENAME:{{{1}}}}}]]
+}}
+}}</onlyinclude>
+{{Documentation}}

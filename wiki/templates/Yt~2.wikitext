@@ -1,0 +1,19 @@
+<includeonly>{{#ifeq:{{{IconOnly|}}}|true|<!--
+--><i class="fa-brands fa-youtube yt-link" {{#if:{{{styling|}}}|style="color: #d20438; text-shadow:2px 2px 5px #fd0031,-2px -2px 5px #EE1D52;"|style="color: #d20438 !important;"}}"></i>|<!--
+-->{{#ifeq:{{{forcedisabled|}}}|true|<!--
+-->{{#ifeq:{{{3|}}}|link|<!--
+--><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}|&nbsp;{{{1}}}}}"><!--
+--><span class="pointer-events-none {{#ifeq:{{{ytdeleted|}}}|true|dead-icon-link|}}"><!--
+-->[https://youtu.be/{{{1}}} {{{2}}}]<!--
+--></span><!--
+--></abbr>|<!--
+--><span class="video-link yt-link" data-yt-id="{{{1}}}" style="color: #d20438 !important; {{#if:{{{size|}}}|font-size: {{{size|15px}}};|}}"><!--
+--><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}|&nbsp;{{{1}}}}}"><!--
+--><i class="fa-brands fa-youtube {{#ifeq:{{{ytdeleted|}}}|true|dead-icon-link|}}" style="color: #d0d0d0 !important; opacity: 0.7; vertical-align: middle; display: inline-block; position: relative; {{#if:{{{size|}}}|font-size: {{{size|15px}}};|}}"><!--
+--><span style="color:transparent; pointer-events: none; position: absolute;"><!--
+--></span><!--
+--></i><!--
+--></abbr><!--
+--></span>}}<!--
+
+-->|{{#ifeq:{{{3|}}}|link|[https://youtu.be/{{{1}}} {{{2}}}]|<span class="video-link yt-link" data-yt-id="{{{1}}}" style="color: #d20438 !important; {{#if:{{{size|}}}|font-size: {{{size|15px}}};|}}"><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}">[https://youtu.be/{{{1}}} <i class="fa-brands fa-youtube {{#ifeq:{{{ytdeleted|}}}|true|dead-icon-link|}}" style="color: #d20438 !important; vertical-align: middle; display: inline-block; position: relative; {{#if:{{{size|}}}|font-size: {{{size|15px}}};|}}"><span style="color:transparent; pointer-events: none; position: absolute;"></span></i>]</abbr></span>}}}}}}</includeonly><noinclude>{{documentation}}</noinclude>

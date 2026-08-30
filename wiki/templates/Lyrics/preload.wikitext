@@ -1,0 +1,23 @@
+{{Lyrics
+|Singer =
+|Japnote=<!--{{*}}:-->
+|Jap =<poem><h2>Official Kanji Title</h2>
+<!--Japanese Lyrics here-->
+</poem><br /><br />
+|Romnote= <!--{{*}}:-->|Rom = <poem><h2>Official Romaji Title</h2>
+<!--Romanized Lyrics here-->
+</poem>
+{{Translation Credit
+|type=community
+|translator=<!--?any MediaWiki link syntax here-->
+|date=YYYY.MM.DD
+|revision_info=Created by <!--?any MediaWiki link syntax here--> (YYYY.MM.DD)<!--Updated by [[User:...]] (YYYY.MM.DD)-->
+}}<br /><br />
+|Engnote=<!--{{*}}:-->|Eng = <poem><h2>Official English Title</h2>
+<!--English Lyrics here-->
+</poem>
+{{Translation Credit
+|type=community
+|translator=<!--?any MediaWiki link syntax here-->
+|date=Unknown Date}}
+}}<br /><br />

@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images that are official icons or logos.
+;Syntax
+:Type <code>{{t|Icons and Logos}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

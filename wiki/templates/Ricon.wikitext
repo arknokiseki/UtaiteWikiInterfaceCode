@@ -1,0 +1,14 @@
+<includeonly><!--
+
+ Desktop view
+--><div class="mobile-hidden">
+<span style="cursor: help; float: right; margin: 0 0 .5em .5em;" title="{{{2|}}}">{{#switch:{{{1|}}}
+|bureaucrat=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #8e44ad, #9b59b6); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 6px rgba(0,0,0,0.3); margin-right: 4px; border: 2px solid #f1c40f;"><i class="fas fa-chess-king" style="color: #f1c40f; font-size: 18px;"></i></span>
+|interface-admin=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #00b894, #00cec9); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"><i class="fas fa-code" style="color: white; font-size: 18px;"></i></span>
+|administrator=<span style=" display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #e74c3c, #c0392b); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"> <i class="fas fa-chess-knight" style="color: white; font-size: 18px;"></i> </span>
+|content-moderator=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #4834d4, #6c5ce7); border-radius: 8px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"><i class="fas fa-shield-alt" style="color: white; font-size: 18px;"></i></span>
+|staff=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #3742fa, #5352ed); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"><i class="fas fa-cog" style="color: white; font-size: 18px;"></i></span>
+|wiki-specialist=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #2ed573, #7bed9f); border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"><i class="fas fa-wrench" style="color: white; font-size: 18px;"></i></span>
+|thread-moderator=<span style="display: inline-block; width: 36px; height: 36px; background: linear-gradient(135deg, #ffa502, #ff6348); border-radius: 12px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.2); margin-right: 4px;"><i class="fas fa-comments" style="color: white; font-size: 18px;"></i></span>
+}}</span>
+</div></includeonly><noinclude>{{Documentation}}</noinclude>

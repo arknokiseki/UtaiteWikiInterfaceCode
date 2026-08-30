@@ -1,0 +1,16 @@
+{{Documentation subpage}}
+{{Lua|Module:Version}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+<templatedata>
+{
+	"description": {
+		"en": "This template returns the current legacy MediaWiki version."
+	},
+	"format": "inline",
+	"params": {}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:MediaWiki version information templates]]
+}}</includeonly>

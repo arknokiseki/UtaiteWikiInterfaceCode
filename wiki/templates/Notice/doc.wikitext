@@ -1,0 +1,77 @@
+;Description
+:A simple notice box.
+;Syntax
+{{t|Notice|v1=tone=color (hex)|v2=icon=|v3=header=|v4=info=|v5=image=|v6=width=|block=1}}
+;Parameters
+{| class="wikitable"
+! Parameter !! Description !! Default/Example
+|-
+| '''header''' (''Optional'')
+| Sets the header text of the notice box.
+| Default: ''Header text''
+|-
+| '''info''' (''Optional'')
+| Adds additional information or content within the notice box.
+| Default: ''Explanation''
+|-
+| '''image''' (''Optional'')
+| Adds an image to the notice box, displayed on the left.
+| Example: `image=Example.png`
+|-
+| '''tone''' (''Optional'')
+| Specifies the color of the left border and background shade.
+| Example: `tone=#8e44ad`
+| Default: ''Green (#228b22)''
+|-
+| '''style''' (''Optional'')
+| Additional inline CSS for custom styling.
+| Example: `style=font-weight: bold;`
+|}
+<!--;Sample output
+:<code><nowiki>{{Notice|header=Notice box|info=Does not use the {{Ambox}} template and could be considered a simpler alternative, since it doesn't have a CSS dependency.}}</nowiki></code>
+::gives...
+:{{Notice|header=Notice box|info=Does not use the <nowiki>{{Ambox}}</nowiki> template and could be considered a simpler alternative, since it doesn't have a CSS dependency.}}
+-->
+===with icon===
+;''Sample Usage''
+<pre>
+{{Notice
+| tone   = #8e44ad
+| icon   = <i class="fas fa-cog fa-spin"></i>
+| header = Notice Box Example
+| info   = This is a simple and lightweight notice box without dependencies like {{T|Ambox}}.
+| width  = 100%
+}}
+</pre>
+;''Sample Output''
+:{{Notice
+| tone   = #8e44ad
+| icon   = <i class="fas fa-cog fa-spin"></i>
+| header = Notice Box Example
+| info   = This is a simple and lightweight notice box without dependencies like {{T|Ambox}}.
+| width  = 100%
+}}
+
+<br clear="all" />
+
+===with image===
+;''Sample Usage''
+<pre>
+{{Notice
+| tone   = #1ef4ad
+| image = Template doc.png
+| header = Notice Box Example
+| info   = This is a simple and lightweight notice box without dependencies like {{T|Ambox}}.
+| width  = 100%
+}}
+</pre>
+;''Sample Output''
+:{{Notice
+| tone   = #1ef4ad
+| image = Template doc.png
+| header = Notice Box Example
+| info   = This is a simple and lightweight notice box without dependencies like {{T|Ambox}}.
+| width  = 100%
+}}
+
+<includeonly>[[Category:Article management templates]][[Category:General wiki templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

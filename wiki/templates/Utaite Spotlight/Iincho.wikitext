@@ -1,0 +1,32 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Iinchosenbonzakura.png
+|caption = his cover of Senbonzakura
+|officialjapname = いいんちょ
+|officialromajiname = Iincho
+|YTusername = 
+|NNDuserpage = 43709
+|mylist1 = 14913917
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co245401
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Kusare Gedou to Chocolate]]
+|examplennd = sm15672012
+|exampleyt = 
+|description = '''Iincho''' ('''いいんちょ''') is an {{NNDict|Utaite}} known for having an {{NNDict|Ikemen}} type voice.
+
+His voice is deep and solid, giving him a slight velvety sound in ballads or jazz songs.
+
+His vocal range lies in the lower middle range; despite this, he sings songs from many different genres.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

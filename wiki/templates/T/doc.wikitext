@@ -1,0 +1,130 @@
+{{Documentation/Header}}
+{{Lua|Formatting}}
+{{Main|Template:F}}
+This template creates a fake template call in the form of how it would look in wikitext in source editor.
+
+==Syntax==
+See [[#Template Data|Template Data]] for extra functions.<br>
+{{T|T|v1=Template Name|v2=v((#))=Variable Input|v3=p((#))=Fixed Input|v4=P((#))=Fixed Input with "let_parse" functionality|v5=Fixed Input|p6=_Y_=1}}
+* Direct usage of named parameters is allowed but they will be displayed at a random order and always after any and all parameters with specified order, to specify an order please use {{F|p((#))}}, {{F|P((#))}} or {{F|v((#))}}
+* Add <code>(())</code> around any string to give it variable formatting
+* {{F|block}} &mdash; display the template code in block formatting
+* {{F|NC}} &mdash; display the template code outside <<nowiki/>code> formatting
+* {{F|let_parse}} &mdash; allow parsing of input as to allow for custom placed {{F|<nowiki><nowiki></nowiki>}} tags
+* {{F|_Y_}} &mdash; include to automatically display the expected input with the parameters given
+** {{F|no_joint}} &mdash; remove the '''yield:''' text from the string that joins the fake template call and the yield (removed by default on [[:Category:Infobox Templates|Infobox Templates]])
+** {{F|_Ybr_}} &mdash; same functionality but adds a forced line break after the ''yields:'' for those templates that require to be on a line of their own.
+** {{F|_Yn_}} &mdash; same functionality but adds a line break after the ''yields:'' for those templates that require to be on a line of their own but do not allow for artificial line break.
+** {{F|_infobox}} &mdash; places template text after ''yields:'' instead of before. Also applies if template name includes the {{F|Infobox}} text.
+
+==Examples==
+;Without Parameters
+{{T|T|sl}} yields: {{T|sl}}<br>
+{{T|T|Notice/maintenance}} yields: {{T|Notice/maintenance}}
+
+;With Parameter
+{{T|T|sl|amazon}} yields: {{T|sl|amazon}}<br>
+{{T|T|yt|abc1234}} yields: {{T|yt|abc1234}}
+
+;With Multiple Parameters
+{{T|T|p1=sl|p2=p1=amazon|p3=p2=12345}} yields: {{T|sl|p1=amazon|p2=12345}}<br>
+{{T|T|p1=Nnd|p2=p1=sm37812606|p3=p2=IconWidth=19px}} yields: {{T|Nnd|p1=sm37812606|p2=IconWidth=19px}}
+
+;Direct Usage Of Named Parameters
+{{T|T|p1=SingerBox|p2=name=Relu|p3=image=Starpola relu.png}} yields: {{T|SingerBox|name=Relu|image=Starpola relu.png}}
+
+;Custom Variable Formatting
+{{T|T|Card|p2=p1=Xiao|P3=v2=(<nowiki>(equipped/e)</nowiki>)=weapon name}} yields: {{T|Card|p1=Xiao|v2=((equipped/e))=weapon name}}<br>
+{{T|T|SingerBox|P2=P1=Akkiy|P3=image=(<nowiki>(imagefilename.png)</nowiki>)}} yields: {{T|SingerBox|P1=Akkiy|image=((imagefilename.png))}}
+
+;Block Format
+{{T|T|p1=Nnd|p2=p1=sm37812606|p3=p2=IconWidth=19px|p4=block=1}} yields:<br>{{T|Nnd|p1=sm37812606|IconWidth=19px|block=1}}<br>
+{{T|T|p1=SingerBox|p2=p1=name=Amatsuki|p3=p2=image=Amatsuki-bokunoiro.onemanlive.png|p4=block=1|p5=_Y_=1}} yields:<br>{{T|SingerBox|p1=name=Amatsuki|p2=image=Amatsuki-bokunoiro.onemanlive.png|block=1|_Y_=1}}{{clr}}
+
+;Infobox
+{{T|T|p1=Terminology Infobox|p2=type=Documentations|p3=block=1|p4=_Y_=1}} yields:<br>{{T|Terminology Infobox|p1=type=Documentations|block=1|_Y_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"text": {
+			"aliases": [
+				"1"
+			],
+			"label": "Template",
+			"description": "Name of the template to make a fake call to",
+			"type": "string",
+			"required": true
+		},
+		"v#": {
+			"label": "Variable Input",
+			"description": "To be used to indicate that the true template call is expected to replace the given value by appropriate text, replace \"#\" by the number of the parameter to be represented",
+			"type": "string",
+			"suggested": true
+		},
+		"p#": {
+			"label": "Fixed Input",
+			"description": "To be used to indicate that the true template call should use the value indicated as-is, replace \"#\" by the number of the parameter to be represented",
+			"type": "string",
+			"suggested": true
+		},
+		"p#": {
+			"label": "Fixed Input with let_parse",
+			"description": "To be used to indicate that the true template call should use the value indicated as-is, while allowing the input text to be parsed as wikitext before being passed into the module, replace \"#\" by the number of the parameter to be represented",
+			"type": "string",
+			"suggested": true
+		},
+		"bold": {
+			"aliases": [
+				"b"
+			],
+			"label": "Bold",
+			"description": "Option for bold formatting.",
+			"type": "boolean"
+		},
+		"italic": {
+			"aliases": [
+				"i"
+			],
+			"label": "Italic",
+			"description": "Option for italic formatting.",
+			"type": "boolean"
+		},
+		"underline": {
+			"aliases": [
+				"u"
+			],
+			"label": "Underline",
+			"description": "Option for underline formatting.",
+			"type": "boolean"
+		},
+		"ref": {
+			"aliases": [
+				"r"
+			],
+			"label": "Ref Tag",
+			"description": "Option for adding <ref></ref> tags.",
+			"type": "boolean"
+		},
+		"P#": {
+			"label": "Fixed Input (Parsed)",
+			"description": "To be used to indicate that the true template call should use the value indicated as-is while parsing the input to allow for the usage of html tags inside it, like <nowiki>, replace \"#\" by the number of the parameter to be represented",
+			"type": "string",
+			"suggested": true
+		}
+	},
+	"description": "Template for displaying fake template calls as they would show in source editor mode.",
+	"paramOrder": [
+		"text",
+		"v#",
+		"p#",
+		"P#",
+		"bold",
+		"italic",
+		"underline",
+		"ref"
+	]
+}
+</templatedata><noinclude>
+</noinclude>

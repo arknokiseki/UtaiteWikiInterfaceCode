@@ -1,0 +1,6 @@
+<noinclude></noinclude><!--
+--><span style="white-space:nowrap">{{tick|{{{size|15}}} }} '''{{ {{{|safesubst:}}}#if:{{{1|}}}|{{ucfirst:{{{1}}}}}|<!--T:1--> Done}}'''</span><!--Template:Done--><!--
+--><noinclude>
+{{documentation}}
+[[Category:Utility templates|{{PAGENAME}}]]
+</noinclude>

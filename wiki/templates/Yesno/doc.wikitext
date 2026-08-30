@@ -1,0 +1,144 @@
+<includeonly>
+{{Languages|Template:Yesno/doc}}
+</includeonly>{{Documentation subpage}}
+<!-- PLEASE ADD CATEGORIES AND INTERWIKIS AT THE BOTTOM OF THIS PAGE -->
+
+This template normalises an input to be a yes/no output.
+
+== Usage ==
+The template has five possible outputs depending on the default parameter (input if you will).
+
+In its simplest usage, these will all be either "yes" or "" (blank = nothing no characters). 
+
+* {{Tlx|Yesno|yes}} → "yes" (also applies to "Yes", "YeS", etc, "Y", "y" and "1")   
+* {{Tlx|Yesno|no}} → "" (also applies to "No", "NO", "nO", "N", "n" and "0") 
+* {{Tlx|Yesno}} → "" 
+* {{Tlx|Yesno|¬}} → ""
+* {{Tlx|Yesno|purplemonkeydishwasher}} → "yes" (also applies to any other value not given above)
+
+Each of these can be over-ridden.
+
+* {{Tlx|Yesno|yes|yes{{=}}bacon}} → "{{Yesno|yes|yes=bacon}}" (also applies to "Yes", "YeS", etc, "Y", "y" and "1")   
+* {{Tlx|Yesno|no|no{{=}}ham}} → "{{Yesno|no|no=ham}}" (also applies to "No", "NO", "nO", "N", "n" and "0") 
+* {{Tlx|Yesno||blank{{=}}eggs}} → "{{Yesno||blank=eggs}}"
+** but {{Tlx|Yesno||no{{=}}ham}} → "{{Yesno||no=ham}}" 
+** and {{Tlx|Yesno||blank{{=}}eggs|no{{=}}ham}} → "{{Yesno||blank=eggs|no=ham}}" 
+* {{Tlx|Yesno|¬|¬{{=}}sausage|blank{{=}}eggs|no{{=}}ham}} → "{{Yesno|¬|¬=sausage|blank=eggs|no=ham}}"
+** and {{Tlx|Yesno|¬{{=}}sausage|blank{{=}}eggs|no{{=}}ham}} → "{{Yesno|¬=sausage|blank=eggs|no=ham}}"
+* {{Tlx|Yesno|purplemonkeydishwasher|def{{=}}cup-of-tea}} → "{{Tlx|Yesno|purplemonkeydishwasher|def{{=}}cup-of-tea}}" (also applies to any other value not given above)
+** but {{Tlx|Yesno|purplemonkeydishwasher|yes{{=}}bacon}} → "{{Yesno|purplemonkeydishwasher|yes=bacon}}" 
+** and {{Tlx|Yesno|purplemonkeydishwasher|def{{=}}cup-of-tea|yes{{=}}bacon}} → "{{Yesno|purplemonkeydishwasher|def=cup-of-tea|yes=bacon}}" 
+
+This may be used (apparently perversely) thus:
+
+* {{Tlx|Yesno|yes|yes{{=}}no|no{{=}}yes}} → "{{Yesno|yes|yes=no|no=yes}}"
+* {{Tlx|Yesno|no|yes{{=}}no|no{{=}}yes}} → "{{Yesno|no|yes=no|no=yes}}"
+
+This creates a logical inversion.
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "This template normalises an input to be a yes or nil output.",
+		"cs": "Tato šablona normalizuje vstup tak, aby bylo výstupem ano nebo nula.",
+		"tr": "Bu şablon, bir girişi evet veya sıfır çıkışı olacak şekilde normalleştirir."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Input value",
+				"cs": "Vstupní hodnota",
+				"tr": "Giriş değeri"
+			},
+			"description": {
+				"en": "The value to be evaluated.",
+				"cs": "Hodnota, která má být vyhodnocena.",
+				"tr": "Değerlendirilecek değer."
+			},
+			"type": "string",
+			"required": true
+		},
+		"yes": {
+			"label": {
+				"en": "Output on yes",
+				"cs": "Výstup na ano",
+				"tr": "Yes üzerinde çıkış"
+			},
+			"description": {
+				"en": "Specifies the output of the template when the input value is a case-insensitive forms of 'Yes', 'Y', 'True' or '1'.",
+				"cs": "Určuje výstup šablony, když je vstupní hodnota ve tvaru Yes', 'Y', 'True' nebo '1' bez ohledu na velikost písmen.",
+				"tr": "Giriş değeri büyük/küçük harfe duyarsız bir 'Yes', 'Y', 'True' veya '1' olduğunda şablonun çıkışı belirtir."
+			},
+			"type": "string",
+			"required": false
+		},
+		"no": {
+			"label": {
+				"en": "Output on no",
+				"cs": "Výstup na ne",
+				"tr": "No üzerinde çıkış"
+			},
+			"description": {
+				"en": "Specifies the output of the template when the input value is a case-insensitive forms of 'No', 'N', 'False', or '0'.",
+				"cs": "Určuje výstup šablony, když je vstupní hodnota ve tvaru 'No', 'N', 'False' nebo '0' bez ohledu na velikost písmen.",
+				"tr": "Giriş değeri büyük/küçük harfe duyarlı olmayan 'No', 'N', 'False' veya '0' biçimleri olduğunda şablonun çıktısını belirtir."
+			},
+			"type": "string",
+			"required": false
+		},
+		"blank": {
+			"label": {
+				"en": "Output on blank input",
+				"cs": "Výstup na prázdném vstupu",
+				"tr": "Boş girişte çıkış"
+			},
+			"description": {
+				"en": "Specifies the output of the template when the input value is defined but is either empty or contains nothing but whitespace character(s).",
+				"cs": "Určuje výstup šablony, když je vstupní hodnota definována, ale je buď prázdná nebo neobsahuje nic než prázdné znaky.",
+				"tr": "Giriş değeri tanımlandığında, ancak boş olduğunda veya boşluk karakter(ler)inden başka bir şey içermediğinde şablonun çıkışını belirtir."
+			},
+			"type": "string",
+			"required": false
+		},
+		"¬": {
+			"label": {
+				"en": "Output on ¬",
+				"cs": "Výstup na ¬",
+				"tr": "¬ üzerinde çıkış"
+			},
+			"description": {
+				"en": "Specifies the output of the template when the input value is either '¬' or entirely missing (undefined).",
+				"cs": "Určuje výstup šablony, když je vstupní hodnota buď '¬' nebo zcela chybí (nedefinována).",
+				"tr": "Giriş değeri '¬' veya tamamen eksik (tanımsız) olduğunda şablonun çıkışını belirtir."
+			},
+			"type": "string",
+			"required": false
+		},
+		"def": {
+			"label": {
+				"en": "Definite output",
+				"cs": "Určený výstup",
+				"tr": "Kesin çıkışı"
+			},
+			"description": {
+				"en": "Specifies the output of the template when the input value is defined but not a form of 'yes', 'no', '1', '0', '¬' or blank.",
+				"cs": "Určuje výstup šablony, když je definována vstupní hodnota, ale ne ve tvaru 'ano', 'ne', '1', '0', '¬' nebo prázdná.",
+				"tr": "Giriş değeri tanımlandığında ancak bir 'yes', 'no', '1', '0', '¬' veya boş şeklinde tanımlanmadığında şablonun çıkışını belirtir."
+			},
+			"type": "string",
+			"required": false
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+* [[Module:Yesno]]
+
+<includeonly>{{Sandbox other||
+<!-- CATEGORIES AND INTERWIKIS HERE, THANKS -->
+[[Category:Utility templates{{#translation:}}]]
+}}</includeonly>

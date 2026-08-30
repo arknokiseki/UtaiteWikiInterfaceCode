@@ -1,0 +1,61 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Module rating/doc}}
+<templatedata>
+{
+	"description": {
+		"en": "This template is used to rate Lua modules by quality. It is placed at the top of the module's /doc subpage. It produces a message informing users about the rating system, and it also places the module into a tracking category.",
+		"cs": "Tato šablona se používá k hodnocení modulů Lua podle kvality. Je umístěna v horní části podstránky /doc modulu. Vytváří zprávu informující uživatele o systému hodnocení a také zařazuje modul do kategorie sledování."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Rating",
+				"cs": "Hodnocení"
+			},
+			"description": {
+				"en": "One of pre-alpha, alpha, beta or release for quality, or protected, or an approved (see full docs) abbreviation for one of these.",
+				"cs": "Jedna z pre-alfa, alfa, beta nebo verze pro kvalitu, nebo chráněná, nebo schválená (viz úplné dokumenty) zkratka pro jednu z těchto."
+			},
+			"suggestedvalues": [
+				"pre-alpha",
+				"alpha",
+				"beta",
+				"release",
+				"protected"
+			],
+			"required": true,
+			"type": "string"
+		},
+		"nocat": {
+			"label": {
+				"en": "Do not categorize",
+				"cs": "Nezařazovat do kategorií"
+			},
+			"description": {
+				"en": "Set to true to disable categorization by rating. Normally leave blank.",
+				"cs": "Pokud chcete zakázat kategorizaci podle hodnocení, nastavte na hodnotu true. Normálně ponechejte prázdné."
+			},
+			"autovalue": "true",
+			"type": "boolean"
+		},
+		"demospace": {
+			"label": {
+				"en": "Fake namespace",
+				"cs": "Falešný jmenný prostor"
+			},
+			"description": {
+				"en": "Set to module to force template to display outside that namespace. Demonstration purposes only.",
+				"cs": "Nastavte na modul, abyste vynutili zobrazení šablony mimo tento jmenný prostor. Pouze pro účely demonstrace."
+			},
+			"example": "Module",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Module rating]]
+}}</includeonly>

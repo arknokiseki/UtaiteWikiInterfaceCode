@@ -1,0 +1,2 @@
+<includeonly>[[User:{{{1|Example}}}|{{{1|Example}}}]] <em class="plainlinks" style="margin-left: 0.5em; font-size: 90%;">([[User talk:{{{1|Example}}}|talk]] • [[Special:Contributions/{{{1|Example}}}|contribs]] • [{{fullurl:Special:Log|user={{urlencode:{{{1|Example}}}}}}} logs{{ #if: {{{blocklog|}}} ||] • [{{fullurl:Special:Log/block|page=User:{{urlencode:{{{1|Example}}}}}}} block log }}])</em></includeonly><noinclude>{{doc}}
+[[Category:Templates|{{PAGENAME}}]]</noinclude>

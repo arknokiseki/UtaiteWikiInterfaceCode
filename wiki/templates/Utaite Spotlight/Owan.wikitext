@@ -1,0 +1,29 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = owan twitter.png
+|caption = Twitter
+|officialjapname = おわん
+|officialromajiname = Owan
+|NNDuserpage = 10751013
+|mylist1 = 12410697
+|mylist1info = utattemita
+|mylist2 = 35141353
+|mylist2info = used in
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = 
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Lost One no Goukoku]]
+|examplennd = sm20312026
+|exampleyt = 
+|description = '''Owan''' ('''おわん''') or '''0-1''' is an {{NNDict|Utaite}} with a strong voice, who can hit high notes well.
+
+
+Her higher voice is clear, almost flat, while in mid-range her voice gets a cute and {{NNDict|Shota}}-like touch, as to be seen in her cover of "[[Yī Èr Fanclub]]"{{nnd|sm18799350}}.}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

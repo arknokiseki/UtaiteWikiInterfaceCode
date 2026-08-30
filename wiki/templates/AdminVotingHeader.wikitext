@@ -1,0 +1,15 @@
+{{MessageBox
+| type = notice
+| header = Current Nominations
+| text = 
+There {{#switch: {{#if:{{{User1|}}}|1|0}}{{#if:{{{User2|}}}|1|0}}{{#if:{{{User3|}}}|1|0}} | 100=is | 010=is | 001=is | 1=is | are }} currently '''{{#switch: {{#if:{{{User1|}}}|1|0}}{{#if:{{{User2|}}}|1|0}}{{#if:{{{User3|}}}|1|0}} | 111=3 | 110=2 | 101=2 | 011=2 | 100=1 | 010=1 | 001=1 | 0=no}}''' active nomination(s). All logged-in members of the community are welcome to nominate themselves or someone else*.
+
+{{#if:{{{User1|}}}|* '''[[{{FULLPAGENAME}}#{{urlencode:{{{User1|}}}}}|{{{User1|}}}]]''' for <u>{{{Role1|}}}</u>: <span data-options="no-leading-zeros short-format" data-end="toggle" data-toggle=".post-countdown" class="countdown" style="display:none;">Ends in '''<span class="countdowndate">{{{Date1|}}} +0000</span>'''</span><span class="nocountdown">Ends on '''{{{Date1|}}} (UTC)'''</span><span class="post-countdown" style="display:none;">Voting has '''ended'''.</span>}}
+{{#if:{{{User2|}}}|* '''[[{{FULLPAGENAME}}#{{urlencode:{{{User2|}}}}}|{{{User2|}}}]]''' for <u>{{{Role2|}}}</u>: <span data-options="no-leading-zeros short-format" data-end="toggle" data-toggle=".post-countdown" class="countdown" style="display:none;">Ends in '''<span class="countdowndate">{{{Date2|}}} +0000</span>'''</span><span class="nocountdown">Ends on '''{{{Date2|}}} (UTC)'''</span><span class="post-countdown" style="display:none;">Voting has '''ended'''.</span>}}
+{{#if:{{{User3|}}}|* '''[[{{FULLPAGENAME}}#{{urlencode:{{{User3|}}}}}|{{{User3|}}}]]''' for <u>{{{Role3|}}}</u>: <span data-options="no-leading-zeros short-format" data-end="toggle" data-toggle=".post-countdown" class="countdown" style="display:none;">Ends in '''<span class="countdowndate">{{{Date3|}}} +0000</span>'''</span><span class="nocountdown">Ends on '''{{{Date3|}}} (UTC)'''</span><span class="post-countdown" style="display:none;">Voting has '''ended'''.</span>}}
+}}<noinclude>
+{{Documentation}}
+[[Category:Notice templates]]
+[[Category:Templates]]
+[[Category:Administrative templates]]
+</noinclude>

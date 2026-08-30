@@ -1,0 +1,67 @@
+{{Documentation/Header}}
+
+The <code><nowiki>{{#ifeq:}}</nowiki></code> function can be used to test whether a given page [[mw:Manual:Checking for page existence|exists]]. It can be useful in view of the maximum number of [[mw:Help:Extension:ParserFunctions#.23ifexist:|#ifexist]] calls that can be used on a page. 
+
+If a page does not exist the code for page transclusion produces a (red) link. Even if this result is used for comparison only, and not for final output, the page counts as being transcluded. Therefore the page appears as red link in the list of transcluded pages.
+
+If the page to be transcluded does not exist, then link brackets are put around the full pagename, with the following conversions (visible with [[mw:Special:ExpandTemplates|Special:ExpandTemplates]]):
+*a colon is put in front if it is not there yet
+*the namespace name (if applicable) and the pagename are capitalized (on most wikis)
+*underscores are replaced by spaces
+
+Thus <code><nowiki>{{help:qq w_x}}</nowiki></code> and <code><nowiki>{{:help:qq w_x}}</nowiki></code> both give <code><nowiki>[[:Help:Qq w x]]</nowiki></code>.
+
+For the link there is not such an automatic conversion. Therefore the template prefixes a colon to the parameter for the full pagename (it should not already start with a colon) and applies lc and anchorencode (to convert spaces to underscores) on both sides before comparison:
+
+*<code><nowiki>{{anchorencode:{{lc:[[:help:qq w_x]]}}}}</nowiki></code> gives {{anchorencode:{{lc:[[:help:qq w_x]]}}}}
+*<code><nowiki>{{anchorencode:{{lc:{{help:qq w_x}}}}}}</nowiki></code> gives {{anchorencode:{{lc:{{help:qq w_x}}}}}}
+
+Thus a false-positive for a non-existing page is avoided. A false-negative for an existing page is possible, but typically only for specially constructed examples.
+
+== Efficiency ==
+When checking existence of a page through transclusion, any parameters can be used in the call, as long as the result does not happen to be equal to the link to the page. However, for the [[mw:Manual:Template limits|template limits]] the choice of parameters can make a difference in the case that the page exists. You should pass a parameter than minimizes the relative template limits.
+
+For example, if a template does nothing but call another template whose name is given as a parameter, like [[w:Template:Country data China|Template:Country data China]], passing  <code>1=void</code> makes the post-expand include size smaller but the preprocessor node count larger, while using the name of a non-existing template makes the post-expand include size is larger, but the preprocessor node count smaller, and generates an entry in [[Special:WantedTemplates]]. Both of these are much more efficient than not defining parameter 1, resulting in it defaulting to a template that performs useful calculations like [[w:Template:Country showdata|Template:Country showdata]].
+==Syntax==
+{{T|Ifpageexist|v1=|v2=then|v3=else}}
+
+==Examples==
+{{T|Ifpageexist|p1=Template:MP-Welcome|_Y_=1}}<br/>
+{{T|Ifpageexist|p1=Template:MP-Welcome|p2=then=[[Template:Welcome]] exists|p3=else=[[Template:Welcome]] does not exist|_Y_=1}}<br/>
+{{T|Ifpageexist|p1=NonexistentPage|p2=then=Page found|p3=else=Page not found|_Y_=1}}<br/>
+{{T|Ifpageexist|p1=Sandbox|p2=then={{Color|#00FF00|✓ Available}}|p3=else={{Color|#FF0000|✗ Missing}}|_Y_=1}}<br/>
+
+===Explanation===
+{{T|ifpageexist|Template:MP-Welcome}} → Returns 1 if Template:MP-Welcome exists, 0 if it doesn't<br/>
+{{T|Ifpageexist|Template:MP-Welcome|then=[[Template:MP-Welcome]] exists|else=[[Template:MP-Welcome]] does not exist}} → Template:MP-Welcome exists (if the template exists)<br/>
+{{T|Ifpageexist|NonexistentPage|then=Page found|else=Page not found}} → Page not found<br/>
+{{T|Ifpageexist|Sandbox|then={{Color|#00FF00|✓ Available}}|p3=else={{Color|#FF0000|✗ Missing}}}} → ✓ Available (if Sandbox page exists)<br/>
+
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+"params": {
+"1": {
+"label": "Page name",
+"description": "The name of the page to check for existence",
+"type": "wiki-page-name",
+"required": true
+},
+"then": {
+"label": "Text if exists",
+"description": "Text or wikicode to display if the page exists",
+"type": "content"
+},
+"else": {
+"label": "Text if not exists",
+"description": "Text or wikicode to display if the page does not exist",
+"type": "content"
+}
+},
+"description": "Checks if a page exists using the #ifeq method as an alternative to #ifexist",
+"paramOrder": ["1", "then", "else"]
+}
+</templatedata>

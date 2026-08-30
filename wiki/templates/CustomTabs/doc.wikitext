@@ -1,0 +1,143 @@
+{{Documentation/Header}}
+{{High Risk|pagetype=Main}}
+{{CSS|Gadget-Tabs}}
+Template for creating tabs for navigation.
+
+==Syntax==
+{{T|CustomTabs
+|p1 =rootpage  = 
+|p2 =namespace = 
+|p3 =subpages  = 
+|p4 =tab1      = 
+|p5 =tab2      = 
+|p6 =tab3      = 
+|p7 =tab4      = 
+|p8 =tab5      = 
+|p9 =tab6      = 
+|p10=tab7      = 
+|p11=tab8      = 
+|p12=tab9      = 
+|block=1}}
+*{{F|rootpage}} &mdash; title of root page if not using current page's root.
+*{{F|namespace}} &mdash; name of namespace if not using current page's namespace. Use empty parameter for main namespace.
+*{{F|subpages}} &mdash; tabs are subpages of the first if set to 1, otherwise are notm. Default {{F|1}}.
+*{{F|tab1}} &mdash; title of first tab.
+*{{F|tab2}}, {{F|tab3}}, {{F|tab4}}, {{F|tab5}}, {{F|tab6}}, {{F|tab7}}, {{F|tab8}}, {{F|tab9}} &mdash; title of subpage tabs.
+
+==Examples==
+{{T|CustomTabs|block=1|_Yn_=1
+|p1=tab1 = Overview
+|p2=tab2 = Story
+|p3=tab3 = Voicelines
+|p4=tab4 = Media
+}}
+{{T|CustomTabs|block=1|_Yn_=1
+|p1=rootpage  = Unreconciled Stars
+|p2=namespace = 
+|p3=class     = custom-tabs-secondary
+|p4=tab1      = Overview
+|p5=tab2      = Story
+|p6=tab3      = Unknown Star
+|p7=tab4      = Star of Deceitful Dreams
+|p8=tab5      = Star of Destiny
+|p9=tab6      = Gallery
+}}
+{{T|CustomTabs|block=1|_Yn_=1
+|p1=namespace = 
+|p2=subpages  = 0
+|p3=class     = custom-tabs-tertiary
+|p4=tab1      = Traveler
+|p5=tab1name  = First Tab
+|p6=tab2      = Amber
+|p7=tab2name  = Second Tab
+|p8=tab3      = Kaeya
+|p9=tab3name  = Third Tab
+|p10=tab4      = Lisa
+|p11=tab4name  = Forth Tab
+}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"tab1": {},
+		"rootpage": {
+			"description": "Title of the root page to base the tab's subpages on, if not using the actual root page name (content before only the first /)",
+			"example": "Furnishing/List",
+			"type": "wiki-page-name"
+		},
+		"namespace": {},
+		"subpages": {
+			"description": "Set to 0 if tabs are not subpages of the first page.",
+			"type": "boolean",
+			"default": "1"
+		},
+		"tab1name": {},
+		"tab2": {},
+		"tab2name": {},
+		"tab3": {},
+		"tab3name": {},
+		"tab4": {},
+		"tab4name": {},
+		"tab5": {},
+		"tab5name": {},
+		"tab6": {},
+		"tab6name": {},
+		"tab7": {},
+		"tab7name": {},
+		"tab8": {},
+		"tab8name": {},
+		"tab9": {},
+		"tab9name": {},
+		"tab10": {},
+		"tab10name": {},
+		"tab11": {},
+		"tab11name": {},
+		"tab12": {},
+		"tab12name": {},
+		"tab13": {},
+		"tab13name": {},
+		"class": {
+			"description": "Assign a different class to differentiate between multiple sets of tabs on the same page.",
+			"example": "custom-tabs-secondary",
+			"type": "string",
+			"default": "custom-tabs-default"
+		}
+	},
+	"format": "{{_\n|_ = _\n}}\n",
+	"paramOrder": [
+		"rootpage",
+		"namespace",
+		"subpages",
+		"class",
+		"tab1",
+		"tab1name",
+		"tab2",
+		"tab2name",
+		"tab3",
+		"tab3name",
+		"tab4",
+		"tab4name",
+		"tab5",
+		"tab5name",
+		"tab6",
+		"tab6name",
+		"tab7",
+		"tab7name",
+		"tab8",
+		"tab8name",
+		"tab9",
+		"tab9name",
+		"tab10",
+		"tab10name",
+		"tab11",
+		"tab11name",
+		"tab12",
+		"tab12name",
+		"tab13",
+		"tab13name"
+	],
+	"description": "Template for creating tabs for navigation."
+}
+</templatedata><noinclude>
+</noinclude>

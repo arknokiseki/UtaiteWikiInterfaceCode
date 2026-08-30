@@ -1,0 +1,1 @@
+<includeonly>[https://{{{1}}}.tumblr.com {{{2|{{{1}}}}}}][[File:Tumblr.png|link=https://{{{1}}}.tumblr.com|20px|{{{2|{{{1}}}}}}]] </includeonly><noinclude>{{documentation}}</noinclude>

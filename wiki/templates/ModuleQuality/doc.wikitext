@@ -1,0 +1,10 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TNT|ModuleQuality}}
+== TemplateData ==
+{{TemplateData header}}
+{{#invoke:TNT|doc|ModuleQuality}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Table templates]]
+}}</includeonly>

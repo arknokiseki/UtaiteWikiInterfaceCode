@@ -1,0 +1,19 @@
+{{Documentation subpage}}
+{{lua|Module:Effective protection level}}
+{{warning|1=Do not delete this template. This template is used by [[Module:Documentation]]. (See [[Module:Documentation/config#L-25]].)}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+<templatedata>
+{
+	"description": {
+		"en": "This template displays a padlock icon next to the page title on protected pages. It should be used only on pages already protected by administrators, placing the template doesn’t protect the page!",
+		"cs": "Tato šablona zobrazuje vedle názvu stránky na chráněných stránkách ikonu visacího zámku. Měla by být použita pouze na stránkách již chráněných administrátory, umístění šablony stránku nechrání!"
+	},
+	"params": {}
+}
+</templatedata>
+== Usage ==
+<code><nowiki>{{Pp-template}}</nowiki></code>
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go here and interwikis go in Wikidata. -->
+
+}}</includeonly>

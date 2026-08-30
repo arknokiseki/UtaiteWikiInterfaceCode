@@ -1,0 +1,132 @@
+/**
+ * {{ombox}} (other pages message box) styles
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+table.ombox {
+	margin: 4px 10%;
+	border-collapse: collapse;
+	/* Default "notice" gray */
+	border: 1px solid #a2a9b1;
+	background-color: #f8f9fa;
+	color: #333;
+	box-sizing: border-box;
+}
+
+/* An empty narrow cell */
+.ombox td.mbox-empty-cell {
+	border: none;
+	padding: 0;
+	width: 1px;
+}
+
+/* The message body cell(s) */
+.ombox th.mbox-text,
+.ombox td.mbox-text {
+	border: none;
+	/* 0.9em left/right */
+	padding: 0.25em 0.9em;
+	/* Make all mboxes the same width regardless of text length */
+	width: 100%;
+}
+
+/* The left image cell */
+.ombox td.mbox-image {
+	border: none;
+	text-align: center;
+	/* 0.9em left, 0px right */
+	/* @noflip */
+	padding: 2px 0 2px 0.9em;
+}
+
+/* The right image cell */
+.ombox td.mbox-imageright {
+	border: none;
+	text-align: center;
+	/* 0px left, 0.9em right */
+	/* @noflip */
+	padding: 2px 0.9em 2px 0;
+}
+
+table.ombox-notice {
+	/* Gray */
+	border-color: #a2a9b1;
+}
+
+table.ombox-speedy {
+	/* Pink */
+	background-color: #fee7e6;
+	color: #333;
+}
+
+table.ombox-speedy,
+table.ombox-delete {
+	/* Red */
+	border-color: #b32424;
+	border-width: 2px;
+}
+
+table.ombox-content {
+	/* Orange */
+	border-color: #f28500;
+}
+
+table.ombox-style {
+	/* Yellow */
+	border-color: #fc3;
+}
+
+table.ombox-move {
+	/* Purple */
+	border-color: #9932cc;
+}
+
+table.ombox-protection {
+	/* Gray-gold */
+	border-color: #a2a9b1;
+	border-width: 2px;
+}
+
+/**
+ * {{ombox|small=1}} styles
+ *
+ * These ".mbox-small" classes must be placed after all other
+ * ".ombox" classes. "html body.mediawiki .ombox"
+ * is so they apply only to other page message boxes.
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+
+/* For the "small=yes" option. */
+html body.mediawiki .ombox.mbox-small {
+	clear: right;
+	float: right;
+	margin: 4px 0 4px 1em;
+	box-sizing: border-box;
+	width: 238px;
+	font-size: 88%;
+	line-height: 1.25em;
+}
+
+@media screen {
+	html.skin-theme-clientpref-night table.ombox {
+	    background-color: transparent;
+	    color: inherit;
+	}
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    /* automatic mode */
+    html.skin-theme-clientpref-os table.ombox {
+    	background-color: transparent;
+    	color: inherit;
+    }
+}
+
+@media screen and (max-width: 720px) {
+  table.ombox {
+	margin: 4px auto;
+  }
+}

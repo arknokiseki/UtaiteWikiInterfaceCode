@@ -1,0 +1,177 @@
+<includeonly>__NOTOC__<!--
+--><div class="team-header"><div class="team-title" style="text-align: center !important; border-radius: 8px !important; overflow: hidden !important;">Utaite Spotlight</div></div>
+{| class="utaite-spotlight citizen-table-nowrap" cellspacing="5" cellpadding="4" border="0" align="center" width="100%"
+|-<!--
+! colspan="2" class="utaite-spotlight-header" style="width:100%" | Utaite Spotlight-->
+|-
+| style="width:50%;text-align:center;" |
+<div class="utaite-media-container"><!--
+--><br/><!--
+-->{{#if: {{{exampleyt|}}}
+|{{#if: {{{examplennd|}}}
+|{{#ev:youtube|{{{exampleyt}}}|175|inline|{{{exampletitle|}}}}}&nbsp;&nbsp;&nbsp;{{#ev:niconico|{{{examplennd}}}|175|inline|{{{exampletitle|}}}<!--
+-->}}
+|{{#ev:youtube|{{{exampleyt}}}|300|center|{{{exampletitle|}}}}}<!--
+-->}}<!--
+-->|{{#if: {{{examplennd|}}}|{{#ev:niconico|{{{examplennd}}}|300|center|{{{exampletitle|}}}}}<!--
+-->|{{#if: {{{image|}}}|[[File:{{{image}}}|frameless|upright=1.2|alt={{{caption}}}|{{{caption|}}}]]}}<!--
+-->}}<!--
+-->}}<!--
+--></div>
+| style="width:50%" |
+<div class="utaite-description">{{{description}}}<!--
+--><br/><!--
+-->'''Sample''': {{{exampletitle|}}}<!--
+-->{{#if:{{{exampletitle|}}}
+|<div class="utaite-sample-links"><!--
+-->{{#if:{{{exampleyt}}}|{{Yt|{{{exampleyt|}}}|{{{exampletitle}}}}}
+|<abbr title="Sample is not available on YouTube"><span class="pointer-events-none tw-pointer-events-none"><span class="yt-no-link">{{#fab:youtube}}</span></span></abbr>}}<!--
+-->{{#if:{{{examplennd}}}|{{Nnd|{{{examplennd|}}}|{{{exampletitle}}}}}<!--
+-->|[[File:NoNv.png|link=|17px|Sample is not available on Nicovideo]]}}</div>|<!--
+-->}}
+|-
+| class="utaite-name-container" style="width:50%" |
+<div><!--
+-->{{#if:{{{officialjapname|}}}|'''{{{officialjapname}}}'''<!--
+--><span class="utaite-name-romaji">{{#if:{{{officialromajiname|}}}|({{{officialromajiname}}})|}}</span>
+|{{#if:{{{officialromajiname|}}}|{{{officialromajiname}}}
+|{{{officialenglishname|<span class="utaite-warning">⚠️The name cannot be left blank.</span>}}}<!--
+-->}}<!--
+-->}}</div>
+| class="utaite-links-container" style="width:50%" |
+<div class="utaite-links"><!--
+--><span style="color: #000 !important; font-weight: 700"><!--
+-->'''Links:'''<!--
+--></span><!--
+-->{{#if:{{{NNDuserpage|}}}
+|<span class="svg-icon-black"><!--
+-->{{Nicovideo|{{{NNDuserpage}}}|{{#if:{{{NNDuserdesc|}}}|&nbsp;{{{NNDuserdesc}}}}}|user}}</span>}}<!--
+--> {{#if:{{{YTusername|}}}|{{YtC|{{{YTusername}}}|{{{YTuserdesc|}}}|username}}}}<!--
+-->	{{#if:{{{YThandle|}}}|{{YtC|{{{YThandle}}}|{{{YThandledesc|}}}}}}}<!--
+--> {{#if:{{{Twitter|}}}|{{#if:{{{Twitterdeleted|}}}|<span><abbr title="Deleted: {{{Twitter}}}{{#if:{{{Twitterdesc|}}}|,&nbsp;{{{Twitterdesc}}}}}"><span class="tw-text-black">{{#fab:square-twitter}}</span></abbr></span>|<span>{{#if:{{{2|}}}|<abbr title="{{{Twitterdesc|}}}">[https://x.com/{{{Twitter}}} <span class="icon-link">{{#fab:square-twitter}}</span>]</abbr></span>|<span>[https://x.com/{{{Twitter}}} <span class="tw-text-black">{{#fab:square-twitter}}</span>]</span>}}}}}}<!--
+
+
+<span><abbr title="Deleted: {{{Twitter}}}{{#if:{{{Twitterdesc|}}}|,&nbsp;{{{Twitterdesc}}}}}"><i class="fa-brands fa-square-twitter tw-text-black"></i></abbr></span>|<span>{{#if:{{{2|}}}|<abbr title="{{{Twitterdesc|}}}">[https://x.com/{{{Twitter}}} <span class="icon-link">{{#fab:twitter}}</span>]</abbr></span>|<span>[https://x.com/{{{Twitter}}} <span style="" class="tw-text-black">{{#fab:square-twitter}}</span>]</span>}}
+}}
+}}-->
+|}
+{| cellspacing="1" cellpadding="2" border="0" align="center" width="100%"
+! colspan="2" class="utaite-spotlight-header" style="padding:2px;" |
+|}</div></div></includeonly><noinclude>
+<h2>使い方の正しい例</h2>
+<pre>
+{{Utaite Spotlight/Design
+| image = Template doc.png
+| caption = twitter
+| officialjapname = example
+| description = example is a popular utaite known for his voice. He is often praised for his collaborations with other utaites and his cover of Vocaloid songs.
+| NNDuserpage = 123456
+| NNDuserdesc = a description of NND user page
+| YThandle = @ucabc123
+| YThandledesc = a description of YT channel handle
+| YTusername = UC_ABC123
+| YTuserdesc = a description of YT user page
+| Twitter = abcde
+|Twitterdesc = a description of Twitter account
+|exampletitle= example cover title
+|exampleyt=ab1cd2ef3gh
+|examplennd=sm12345678
+}}
+</pre>{{Utaite Spotlight/Design
+| image = Template doc.png
+| caption = twitter
+| officialjapname = example
+| description = example is a popular utaite known for his voice. He is often praised for his collaborations with other utaites and his cover of Vocaloid songs.
+| NNDuserpage = 123456
+| NNDuserdesc = a description of NND user page
+| YThandle = @ucabc123
+| YThandledesc = a description of YT channel handle
+| YTusername = UC_ABC123
+| YTuserdesc = a description of YT user page
+| Twitter = abcde
+|Twitterdesc = a description of Twitter account
+|exampletitle= example cover title
+|exampleyt=ab1cd2ef3gh
+|examplennd=sm12345678
+}}
+
+<h2>名前(officialjapname, officialromajiname, officialenglishname)がなかった場合</h2>
+<pre>
+{{Utaite Spotlight/Design
+| image = Template doc.png
+| caption = twitter
+| officialjapname = example
+| description = example is a popular utaite known for his voice. He is often praised for his collaborations with other utaites and his cover of Vocaloid songs.
+| NNDuserpage = 123456
+| NNDuserdesc = a description of NND user page
+| YThandle = @ucabc123
+| YThandledesc = a description of YT channel handle
+| YTusername = UC_ABC123
+| YTuserdesc = a description of YT user page
+| Twitter = abcde
+|Twitterdesc = a description of Twitter account
+|exampletitle= example cover title
+|exampleyt=ab1cd2ef3gh
+|examplennd=sm12345678
+}}
+</pre>
+{{Utaite Spotlight/Design
+| image = Template doc.png
+| caption = twitter
+| description = example is a popular utaite known for his voice. He is often praised for his collaborations with other utaites and his cover of Vocaloid songs.
+| NNDuserpage = 123456
+| NNDuserdesc = a description of NND user page
+| YThandle = @ucabc123
+| YThandledesc = a description of YT channel handle
+| YTusername = UC_ABC123
+| YTuserdesc = a description of YT user page
+| Twitter = abcde
+|Twitterdesc = a description of Twitter account
+|exampletitle= example cover title
+|exampleyt=ab1cd2ef3gh
+|examplennd=sm12345678
+}}
+</noinclude><!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--><!--Here rests the ancient code, preserved in honor and gratitude to the one who came before us-->
+<!--<div class="custom-scroll" style="height:80vh; overflow-y:auto"><infobox type="spotlight"><group row-items="1">	<header><center>{{#switch:{{{site}}}|nnd=Utaite|yt=Youtaite}} spotlight: {{{officialromajiname}}}{{#if:{{{officialjapname|}}}|&nbsp;({{{officialjapname}}})}}</center></header><image source="image" /><data source="caption"><format><center>{{{officialromajiname}}} as seen in {{{caption}}}</center></format></data></group>
+	<data source="description"><format>{{{description}}}</format></data>
+	<data source="exampletitle"><label>Example cover</label><format><b>"{{{exampletitle}}}"<br></b>{{#if: {{{exampleyt|}}} | [[File:yt.png{{!}}link{{=}}http://www.youtube.com/watch?v{{=}}{{{exampleyt}}}]]|[[File:NoYt.png|link=]]}}{{#if: {{{examplennd|}}} | {{nnd|{{{examplennd}}}}}|[[File:NoNv.png|link=]]}}</format></data>
+
+	<group row-items="2" collapse="open">
+		<header>External links</header>
+		<data source="YTCHonly"><format><center>[http://www.youtube.com/channel/{{{YTchannel}}}]{{#if:{{{YTchannelinfo|}}}|&nbsp;({{{YTchannelinfo}}})}}</center></format></data>
+		<data source="YTchannel2"><format><center>[http://www.youtube.com/channel/{{{YTchannel2}}}]{{#if:{{{YTchannel2info|}}}|&nbsp;({{{YTchannel2info}}})}}</center></format></data>
+		<data source="YTusername"><format><center>[http://www.youtube.com/user/{{{YTusername}}} {{{YTusername}}}]{{#if:{{{YTinfo|}}}|&nbsp;({{{YTinfo}}})}}</center></format></data>
+		<data source="YTusername2"><format><center>[http://www.youtube.com/user/{{{YTusername2}}} {{{YTusername2}}}]{{#if:{{{YTinfo2|}}}|&nbsp;({{{YT2info}}})}}</center></format></data>
+		<data source="NNDuserpage"><format><center>[http://www.nicovideo.jp/user/{{{NNDuserpage}}} user/{{{NNDuserpage}}}]{{#if:{{{NNDuserpageinfo|}}}|&nbsp;({{{NNDuserpageinfo}}})}}</center></format></data>
+		<data source="NNDuserpage2"><format><center>[http://www.nicovideo.jp/user/{{{NNDuserpage2}}} user/{{{NNDuserpage2}}}]{{#if:{{{NNDuserpage2info|}}}|&nbsp;({{{NNDuserpage2info}}})}}</center></format></data>
+		<data source="mylist1"><format><center>[http://www.nicovideo.jp/mylist/{{{mylist1}}} mylist/{{{mylist1}}}]{{#if:{{{mylist1info|}}}|&nbsp;({{{mylist1info}}})}}</center></format></data>
+		<data source="mylist2"><format><center>[http://www.nicovideo.jp/mylist/{{{mylist2}}} mylist/{{{mylist2}}}]{{#if:{{{mylist2info|}}}|&nbsp;({{{mylist2info}}})}}</center></format></data>
+		<data source="mylist3"><format><center>[http://www.nicovideo.jp/mylist/{{{mylist3}}} mylist/{{{mylist3}}}]{{#if:{{{mylist3info|}}}|&nbsp;({{{mylist3info}}})}}</center></format></data>
+		<data source="mylist4"><format><center>[http://www.nicovideo.jp/mylist/{{{mylist4}}} mylist/{{{mylist4}}}]{{#if:{{{mylist4info|}}}|&nbsp;({{{mylist4info}}})}}</center></format></data>
+		<data source="nicommu1"><format><center>[http://com.nicovideo.jp/community/{{{nicommu1}}} {{{nicommu1}}}]{{#if:{{{nicommu1info|}}}|&nbsp;({{{nicommu1info}}})}}</center></format></data>
+		<data source="nicommu2"><format><center>[http://com.nicovideo.jp/community/{{{nicommu2}}} {{{nicommu2}}}]{{#if:{{{nicommu2info|}}}|&nbsp;({{{nicommu2info}}})}}</center></format></data>
+		<data source="nicommu3"><format><center>[http://com.nicovideo.jp/community/{{{nicommu3}}} {{{nicommu3}}}]{{#if:{{{nicommu3info|}}}|&nbsp;({{{nicommu3info}}})}}</center></format></data>
+	</group>
+<navigation>{{#if:{{#ifeq:|{{BASEPAGENAME}}|
+Utaite Spotlight}}||'''To see all spotlights go [[Template:Utaite Spotlight|here]]'''}}</navigation>
+<navigation><div class="spotlight-note">Add your favorite hidden gems [[Utaite_Wiki:Singer_Spotlight_Request|here]]</div></navigation>
+</infobox>
+</div>
+<noinclude>[[Category:Templates]]{{documentation}}</noinclude>-->

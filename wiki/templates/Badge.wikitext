@@ -1,0 +1,4 @@
+<!-- The outer <div class="mw-parser-output"> is necessary because the <indicator> tag
+  -- doesn't currently include class="mw-parser-output" (see T188443) -->
+<onlyinclude><div class="mw-parser-output"><templatestyles src="Template:Badge/styles.css"/><div class="tpl-badge {{{class|}}}" {{#if:{{{style|}}}|style="{{{style}}}"}}>{{{content}}}</div></div></onlyinclude>
+{{Documentation}}

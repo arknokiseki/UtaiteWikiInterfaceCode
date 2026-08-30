@@ -1,0 +1,70 @@
+{| class="simple-template" align="center" border="0" cellpadding="3" cellspacing="3" style="margin:0.5em auto;"
+|- 
+| style="font-size: 90%" | This page uses [[homepage:Licensing|Creative Commons Licensed]] content from [https://www.dragon-mania-legends.wiki Dragon Mania Legends Wiki]. 
+| [[file:Cc.logo.circle.svg|40px|link=]]
+|}
+
+==Example(s)==
+* <code><nowiki>{{DPL scroll|total={{PAGESINCATEGORY:Fire (Element)|R}}|offset={%DPL_offset:0%}|count={%DPL_count:{{{count|5}}}%}|page={{FULLPAGENAME}} }}</nowiki></code>
+OR
+* <code><nowiki>{{DPL scroll|total={{PAGESINCATEGORY:Fire (Element)|R}}|offset=0|count=5|page=Category:Fire (Element)}}</nowiki></code> gives results like (this is '''not a live query/working example'''):
+
+<table class="dpl-nav"><tr><td><span class="dpl-nav-active" style="font-weight: bold">1 - 5</span><span class="plainlinks" style="font-weight: bold">6 - 10</span>&nbsp;(284 total)</td></tr></table>
+
+
+==Usage==
+The <code>count</code> and <code>offset</code> parameter are required to use this template in a DPL3 invocation:
+
+<pre>
+|count = {%DPL_count:10%}
+|offset = {%DPL_offset:0%}
+|resultsheader = ²{DPL scroll¦total={{PAGESINCATEGORY:Category name|R}}¦offset={%DPL_offset:0%}¦count={%DPL_count:200%}¦page={{FULLPAGENAME}}}²\n
+|resultsfooter = ²{DPL scroll¦total={{PAGESINCATEGORY:Category name|R}}¦offset={%DPL_offset:0%}¦count={%DPL_count:200%}¦page={{FULLPAGENAME}}}²\n
+</pre>
+
+'''Note:''' <code>%TOTALPAGES%</code> when used in <code>resultsheader</code> or <code>resultsfooter</code>, may cause both to intermittently appear/disappear. Currently, this template is only usable when there's a set number of expected results, such as pages in a category. <code><nowiki>{{PAGESINCATEGORY:Category name|R}}</nowiki></code> is used to adjust for this.
+
+<!-- The old working example, before (much needed) cache changes to drastically improve the performance of DPL3:
+²{DPL scroll¦total=%TOTALPAGES%¦offset={%DPL_offset:0%}¦count={%DPL_count:200%}¦page={{FULLPAGENAME}}}²\n -->
+
+The output of the URL link generated, is '''equivalent to''' putting the following in a browser (for the page name that has the above required parameters):
+<pre>https://www.dragon-mania-legends.wiki/w/index.php?title=Mypage&DPL_count=3&DPL_offset=3
+</pre>
+<templatedata>
+{
+	"params": {
+		"total": {
+			"label": "(DPL3 %TOTALPAGES% or {{PAGESINCATEGORY:}}) total",
+			"description": "Used by DPL3 to create scrolling navigation",
+			"type": "string",
+			"required": true
+		},
+		"count": {
+			"label": "(DPL3) count",
+			"description": "Used by DPL3 to determine how many pages to paginate by",
+			"example": "200",
+			"type": "number",
+			"default": "100",
+			"required": true
+		},
+		"offset": {
+			"label": "(DPL3) offset",
+			"description": "Used by DPL3 to determine page offset for pagination, number must match \"count\"",
+			"example": "200",
+			"type": "number",
+			"default": "100",
+			"required": true
+		},
+		"page": {
+			"label": "(DPL3 %PAGE% or {{PAGENAME}}) page",
+			"description": "Used by DPL3 to specify previous/next page star/end",
+			"type": "string"
+		}
+	},
+	"description": "This template can be used in a DPL3 statement's \"resultsheader\" and/or \"resultsfooter\" to create number range buttons to scroll through DPL result pages. The parameters set in this template, must have their URL parameter values set in the corresponding DPL3 statement, per the usage example below."
+}
+</templatedata>
+<includeonly>
+<!-- Categories below this line -->
+[[Category:DPL3 templates]]
+</includeonly>

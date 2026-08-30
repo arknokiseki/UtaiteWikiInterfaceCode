@@ -1,0 +1,528 @@
+{{Documentation/Header}}
+__notoc__
+The '''UtaiteUnit''' template is used to display standardized information boxes for various types of utaite units, including groups, collaboration units, and duet units. It provides a consistent format for presenting basic information, social media links, and status of utaite-related groups.
+
+== Utaite Groups ==
+===Examples===
+====Without Agency Parameter====
+{{T|UtaiteUnit|Type=group
+|Kanji= クレノア
+|Romaji= Kurenoa
+|English= CleeNoah
+|Image= CleeNoah.png
+|Years= 2021
+|Status= {{Active|groups=true}}
+|Sns=true
+|Twitter=clee_noah
+|YouTube=Clee_Noah
+|YouTubedesc=Clee Noah Official YouTube Channel
+|_Y_=1
+|block=1
+}}
+
+====With Agency Parameter====
+{{T|UtaiteUnit|Type=group
+|Name=IRREGULAR DICE
+|Image= MEMORIZE.png
+|Years= 2020
+|Status= {{Active|groups=true}}
+|Agency= VOISING
+|Fanname=いれりす
+|Fanmark=🎲
+|Sns=true
+|Twitter=ireisu_info
+|YouTube=ireisu
+|YouTubedesc=IRREGULAR DICE Official YouTube Channel
+|Line=oP9vSOb
+|Tiktok=ireisu_info
+|_Y_=1
+|block=1
+}}
+
+
+====Disbanded Group====
+{{T|UtaiteUnit|Type=group
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Agency= Agency1
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+|_Y_=1
+|block=1
+}}
+
+== Utaite Collab Units ==
+===Examples===
+{{T|UtaiteUnit|Type=collab
+|Name= Circle of Friends (COF)
+|Image= Circle of friends 2.png
+|Years= 2012
+|Status= {{Inactive|groups=true}}
+|Sns=true
+|Twitter=c_o_friends
+|_Y_=1
+|block=1
+}}
+
+====Disbanded Group====
+{{T|UtaiteUnit|Type=collab
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+|_Y_=1
+|block=1
+}}
+
+==Duet Units==
+{{T|UtaiteUnit|Type=duet
+|Name= After the Rain (ATR)
+|Image= AftertheRain majordebut.png
+|Years= 2014
+|Status= {{Active|groups=true}}
+|Sns=true
+|Twitter=atr_info
+|YouTube=aftertherainofficialchanne5340
+|Custom=[[File:AftertheRain new.png|20px|link=https://aftertherain.jp/|After the Rain Official Website]]&nbsp;[[File:AftertheRain new.png|20px|link=https://lnk.to/After_the_Rain|After the Rain Linkfire]]
+|_Y_=1
+|block=1
+}}
+
+
+====Disbanded Group====
+{{T|UtaiteUnit|Type=duet
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+|_Y_=1
+|block=1
+}}
+
+
+==Wrong Syntax==
+{{T|UtaiteUnit
+|Name=Disbanded Group 1
+|Image= Template doc.png
+|ImgWidth=300px
+|Years= 2021-2024
+|Status= {{UtaiteGroup/Disbanded}}
+|Fanname=fanname1
+|Fanmark=fanmark1
+|Sns=true
+|Twitter=disbanded
+|Twitterdesc=Disbanded's Official X Account
+|Twitterdeleted=yes
+|YouTube=disbanded_official
+|YouTubedesc=disbanded Official YouTube Account
+|YouTubedeleted=true
+|_Y_=1
+|block=1
+}}
+
+==Template Data==
+<templatedata>
+{
+	"description": "Creates an infobox for utaite units, groups, collaborations, and duets with basic information, social media links, and visual elements.",
+	"format": "block",
+	"params": {
+		"Type": {
+			"label": "Unit Type",
+			"description": "The type of utaite unit",
+			"type": "string",
+			"required": true,
+			"suggestedvalues": ["group", "collab", "duet"]
+		},
+		"Name": {
+			"label": "Name",
+			"description": "Primary name of the utaite unit (usually in English or romanized)",
+			"type": "string",
+			"suggested": true
+		},
+		"Kanji": {
+			"label": "Japanese Name",
+			"description": "Japanese/kanji name of the unit",
+			"type": "string"
+		},
+		"Ruby": {
+			"label": "Furigana",
+			"description": "Ruby text/furigana for the kanji name pronunciation",
+			"type": "string"
+		},
+		"Romaji": {
+			"label": "Romanized Name",
+			"description": "Romanized version of the Japanese name",
+			"type": "string"
+		},
+		"English": {
+			"label": "English Name",
+			"description": "Official English name or translation",
+			"type": "string"
+		},
+		"Fanname": {
+			"label": "Fan Name",
+			"description": "Name used to refer to fans of this unit",
+			"type": "string"
+		},
+		"Fanmark": {
+			"label": "Fan Mark",
+			"description": "Emoji or symbol representing fans of this unit",
+			"type": "string"
+		},
+		"Image": {
+			"label": "Main Image",
+			"description": "Main image file for the unit (filename only, without File: prefix)",
+			"type": "wiki-file-name"
+		},
+		"ImgWidth": {
+			"label": "Image Width",
+			"description": "Width of the main image",
+			"type": "string",
+			"default": "700px"
+		},
+		"Gallery": {
+			"label": "Image Gallery",
+			"description": "Gallery code to display multiple images instead of single image",
+			"type": "content"
+		},
+		"style": {
+			"label": "Image Style",
+			"description": "CSS styling for the image section",
+			"type": "string"
+		},
+		"Years": {
+			"label": "Years Active",
+			"description": "Period when the unit was/is active (e.g., '2018-present', '2019-2021')",
+			"type": "string",
+			"suggested": true
+		},
+		"Status": {
+			"label": "Status",
+			"description": "Current status of the unit",
+			"type": "string",
+			"suggested": true,
+			"suggestedvalues": ["{{Active|groups=true}}", "{{Inactive|groups=true}}", "{{UtaiteGroup/Disbanded}}", "Hiatus"]
+		},
+		"Agency": {
+			"label": "Agency",
+			"description": "Management agency or company (will be linked automatically)",
+			"type": "wiki-page-name"
+		},
+		"Sns": {
+			"label": "Show SNS Section",
+			"description": "Set to 'true' to display social media links section",
+			"type": "boolean"
+		},
+		"YouTube": {
+			"label": "YouTube Handle",
+			"description": "YouTube channel handle (without @ symbol)",
+			"type": "string"
+		},
+		"YouTubedesc": {
+			"label": "YouTube Description",
+			"description": "Description text for the YouTube link",
+			"type": "string"
+		},
+		"YouTubedeleted": {
+			"label": "YouTube Deleted",
+			"description": "Set if the YouTube channel is deleted",
+			"type": "boolean"
+		},
+		"YouTube2": {
+			"label": "Second YouTube Handle",
+			"description": "Second YouTube channel handle (without @ symbol)",
+			"type": "string"
+		},
+		"YouTube2desc": {
+			"label": "Second YouTube Description",
+			"description": "Description text for the second YouTube link",
+			"type": "string"
+		},
+		"YouTube2deleted": {
+			"label": "Second YouTube Deleted",
+			"description": "Set if the second YouTube channel is deleted",
+			"type": "boolean"
+		},
+		"Twitter": {
+			"label": "Twitter Handle",
+			"description": "Twitter/X username (without @ symbol)",
+			"type": "string"
+		},
+		"Twitterinfo": {
+			"label": "Twitter Info",
+			"description": "Additional information for Twitter link",
+			"type": "string"
+		},
+		"Twitterdeleted": {
+			"label": "Twitter Deleted",
+			"description": "Set if the Twitter account is deleted",
+			"type": "boolean"
+		},
+		"Twitter2": {
+			"label": "Second Twitter Handle",
+			"description": "Second Twitter/X username (without @ symbol)",
+			"type": "string"
+		},
+		"Twitter2info": {
+			"label": "Second Twitter Info",
+			"description": "Additional information for second Twitter link",
+			"type": "string"
+		},
+		"Twitter2deleted": {
+			"label": "Second Twitter Deleted",
+			"description": "Set if the second Twitter account is deleted",
+			"type": "boolean"
+		},
+		"Instagram": {
+			"label": "Instagram Handle",
+			"description": "Instagram username (without @ symbol)",
+			"type": "string"
+		},
+		"Instagraminfo": {
+			"label": "Instagram Info",
+			"description": "Additional information for Instagram link",
+			"type": "string"
+		},
+		"IGWidth": {
+			"label": "Instagram Icon Width",
+			"description": "Width of Instagram icon",
+			"type": "string"
+		},
+		"Tiktok": {
+			"label": "TikTok Handle",
+			"description": "TikTok username (without @ symbol)",
+			"type": "string"
+		},
+		"Tiktokinfo": {
+			"label": "TikTok Info",
+			"description": "Additional information for TikTok link",
+			"type": "string"
+		},
+		"Nnd": {
+			"label": "Niconico User ID",
+			"description": "Niconico Douga user ID or username",
+			"type": "string"
+		},
+		"Nndinfo": {
+			"label": "Niconico Info",
+			"description": "Additional information for Niconico link",
+			"type": "string"
+		},
+		"NNDIconWidth": {
+			"label": "Niconico Icon Width",
+			"description": "Width of Niconico icon",
+			"type": "string"
+		},
+		"Line": {
+			"label": "LINE ID",
+			"description": "LINE messenger ID",
+			"type": "string"
+		},
+		"Lineinfo": {
+			"label": "LINE Info",
+			"description": "Additional information for LINE link",
+			"type": "string"
+		},
+		"LinePage": {
+			"label": "LINE Page",
+			"description": "LINE official page ID",
+			"type": "string"
+		},
+		"LinePageinfo": {
+			"label": "LINE Page Info",
+			"description": "Additional information for LINE page",
+			"type": "string"
+		},
+		"Lineqrpage": {
+			"label": "LINE QR Page",
+			"description": "LINE QR code page ID",
+			"type": "string"
+		},
+		"Lineqrpageinfo": {
+			"label": "LINE QR Page Info",
+			"description": "Additional information for LINE QR page",
+			"type": "string"
+		},
+		"Twitcast": {
+			"label": "TwitCasting ID",
+			"description": "TwitCasting user ID",
+			"type": "string"
+		},
+		"Twitcastinfo": {
+			"label": "TwitCasting Info",
+			"description": "Additional information for TwitCasting link",
+			"type": "string"
+		},
+		"Booth": {
+			"label": "BOOTH Shop ID",
+			"description": "BOOTH shop ID or username",
+			"type": "string"
+		},
+		"Boothinfo": {
+			"label": "BOOTH Info",
+			"description": "Additional information for BOOTH link",
+			"type": "string"
+		},
+		"Custom": {
+			"label": "Custom SNS Links",
+			"description": "Custom HTML/wikitext for additional social media or website links",
+			"type": "content"
+		},
+		"Logo": {
+			"label": "Logo Image",
+			"description": "Logo image file for the unit (filename only, without File: prefix)",
+			"type": "wiki-file-name"
+		}
+	},
+	"paramOrder": [
+		"Type",
+		"Name",
+		"Kanji",
+		"Ruby",
+		"Romaji",
+		"English",
+		"Image",
+		"ImgWidth",
+		"Gallery",
+		"style",
+		"Years",
+		"Status",
+		"Agency",
+		"Fanname",
+		"Fanmark",
+		"Sns",
+		"YouTube",
+		"YouTubedesc",
+		"YouTubedeleted",
+		"YouTube2",
+		"YouTube2desc",
+		"YouTube2deleted",
+		"Twitter",
+		"Twitterinfo",
+		"Twitterdeleted",
+		"Twitter2",
+		"Twitter2info",
+		"Twitter2deleted",
+		"Instagram",
+		"Instagraminfo",
+		"IGWidth",
+		"Tiktok",
+		"Tiktokinfo",
+		"Nnd",
+		"Nndinfo",
+		"NNDIconWidth",
+		"Line",
+		"Lineinfo",
+		"LinePage",
+		"LinePageinfo",
+		"Lineqrpage",
+		"Lineqrpageinfo",
+		"Twitcast",
+		"Twitcastinfo",
+		"Booth",
+		"Boothinfo",
+		"Custom",
+		"Logo"
+	],
+	"sets": [
+		{
+			"label": "Basic Information",
+			"params": [
+				"Type",
+				"Name",
+				"Kanji",
+				"Ruby",
+				"Romaji",
+				"English",
+				"Years",
+				"Status",
+				"Agency"
+			]
+		},
+		{
+			"label": "Visual Elements",
+			"params": [
+				"Image",
+				"ImgWidth",
+				"Gallery",
+				"style",
+				"Logo"
+			]
+		},
+		{
+			"label": "Fan Information",
+			"params": [
+				"Fanname",
+				"Fanmark"
+			]
+		},
+		{
+			"label": "Social Media",
+			"params": [
+				"Sns",
+				"YouTube",
+				"YouTubedesc",
+				"YouTubedeleted",
+				"YouTube2",
+				"YouTube2desc",
+				"YouTube2deleted",
+				"Twitter",
+				"Twitterinfo",
+				"Twitterdeleted",
+				"Twitter2",
+				"Twitter2info",
+				"Twitter2deleted",
+				"Instagram",
+				"Instagraminfo",
+				"IGWidth",
+				"Tiktok",
+				"Tiktokinfo",
+				"Nnd",
+				"Nndinfo",
+				"NNDIconWidth",
+				"Line",
+				"Lineinfo",
+				"LinePage",
+				"LinePageinfo",
+				"Lineqrpage",
+				"Lineqrpageinfo",
+				"Twitcast",
+				"Twitcastinfo",
+				"Booth",
+				"Boothinfo",
+				"Custom"
+			]
+		}
+	]
+}
+</templatedata>

@@ -1,0 +1,4 @@
+<includeonly>{{#invoke:xpd|p}}</includeonly><noinclude>
+{{documentation}}
+[[Category:Handbook templates{{#translation:}}|{{PAGENAME}}]]
+</noinclude>

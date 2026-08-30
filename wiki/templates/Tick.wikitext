@@ -1,0 +1,18 @@
+[[File:OOjs UI icon check-constructive.svg|{{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|20}}px|alt=Yes|link=]]<noinclude>
+{{documentation|content=
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Size in pixels",
+			"type": "number",
+			"description": "Size of the tick",
+			"example": "20",
+			"autovalue": "20",
+			"required": true
+		}
+	}
+}
+</templatedata>
+}}
+</noinclude>

@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images as official youtaite avatar illustrations.
+;Syntax
+:Type <code>{{t|Youtaite Official Avatars}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,65 @@
+/* ------------ default spoiler behavior --------------- */
+.spoiler {
+    background:#555;    
+    transition:all 0.2s;
+}
+div.spoiler {
+    display:table;
+}
+.spoiler span {
+    user-select:none;
+    opacity:0;
+    transition:all 0.2s;
+}
+.spoiler.off, 
+.spoiler.showall,
+.spoiler.hover:hover {
+    background:unset !important;
+    filter:none !important;
+}
+.spoiler.off span, 
+.spoiler.showall span,
+.spoiler.hover:hover span {
+    user-select:unset;
+    opacity:1;
+}
+
+/* ------------ blur mode --------------- */
+.spoiler.blur {
+    background:unset;
+    filter:blur(4px);
+}
+
+.spoiler.blur span {
+    opacity: unset;
+
+}
+
+/* ----------------- tvtropes mode ----------------- */
+.spoiler.tvtropes {
+    background: rgba(200,200,200,0.4);
+    border-bottom: 1px dotted grey;
+}
+
+
+/* ------------ "show all/hide all spoilers" button --------------- */
+#spoilerbtn {
+    padding: 6px 10px;
+    background: #16ac16; /* green */
+    color:white;
+    border:1px solid grey;
+    display:inline-block;
+    user-select:none;
+    cursor:pointer;
+    transition: background 0.2s;
+    line-height: 1em;
+    font-weight:bold;
+}
+#spoilerbtn.hide {
+    background:#db521c; /* red */
+}
+
+#spoilerbtn:hover {
+    filter:brightness(115%);
+}
+/* [[Category:Template stylesheets]] */

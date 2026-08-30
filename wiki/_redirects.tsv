@@ -1,0 +1,105 @@
+Module:AffiliationParser	Module:TextCleaner
+Module:TabberType2	Module:Tabber
+Template:$1/doc	Module:$var/templatedoc
+Template:-	Template:Clear
+Template:-/doc	Template:Clear/doc
+Template:-r	Template:No redirect
+Template:CC-BY-SA	Template:Cc-by-sa-3.0
+Template:CURRENTJSTMONTHF	Template:CURRENTJSTSTRMONTH
+Template:CW	Template:Cevio
+Template:Checking for page existence/ifeq method	Template:Ifpageexist
+Template:Clear	Template:Clr
+Template:Complete	Template:Completion request
+Template:Complete/preload	Template:Completion request/preload
+Template:Completion request/preload	Template:Completion Request/preload
+Template:DVW	Template:Deepvocal
+Template:Doc	Template:Documentation
+Template:Event Thumbnail	Template:Event Thumbnails
+Template:FA	Template:FontAwesome
+Template:FUCE	Template:Festival/Utattemita Collection/entry
+Template:FandomLicense	Template:WikiaLicense
+Template:Feat	Template:Featuring
+Template:Forumpagination	Template:Forum/pagination
+Template:Forumtable	Template:Forum/table
+Template:Forumtable/doc	Template:Forum/table/doc
+Template:Fresh	Template:Freshness
+Template:GalleryCustomFormat	Template:Gallery/CustomFormat
+Template:GalleryCustomFormat/doc	Template:Gallery/CustomFormat/doc
+Template:GraduatedUtaiteGroupMember	Template:UtaiteGroupMember/Graduated
+Template:HeadingB	Template:Archive/HeadingB
+Template:HeadingB/doc	Template:Archive/HeadingB/doc
+Template:High-risk	Template:High Risk
+Template:High-use	Template:High Risk
+Template:IW	Template:Interwiki
+Template:Interwiki Doc	Template:Interwiki doc
+Template:Intricate	Template:Intricate template
+Template:Lot	Template:Lowercase title
+Template:Main page content	Template:Archive/Main page content
+Template:Mbox	Template:MessageBox
+Template:MiniTabs	Template:Archive/MiniTabs
+Template:MiniTabs/doc	Template:Archive/MiniTabs/doc
+Template:Music Video Thumbnail	Template:Music Video Thumbnails
+Template:Music Video Thumbnail/doc	Template:Music Video Thumbnails/doc
+Template:NND Link Icon/preload	Template:Nnd/preload
+Template:NOUT	Template:NotableUtattemita/Table
+Template:NUTE	Template:NotableUtattemita/Table/Entry
+Template:Nobots	Template:Bots
+Template:Notice/outdated	Template:Notice/Outdated/2
+Template:OW	Template:Odorite
+Template:OdoW	Template:Odorite
+Template:PSW	Template:SEKAI
+Template:Phab	Template:Phabricator
+Template:Pixiv/reload	Template:Pixiv/preload
+Template:PlaylistTable	Template:SonglistTable
+Template:PlaylistTable/doc	Template:SonglistTable/doc
+Template:Pre2	Template:Pre
+Template:ProSekaWiki	Template:SEKAI
+Template:RailModule	Template:Archive/RailModule
+Template:Rellink	Template:Hatnote
+Template:Ruby	Template:Ruby/rt
+Template:SVW	Template:Synthv
+Template:Singer	Template:Youtaite
+Template:Singer/preload	Template:Youtaite/preload
+Template:Song box/preload	Template:SongBox/preload
+Template:Sp	Template:Nbsp
+Template:Sp-tr	Template:Spotify/track
+Template:Speedydelete	Template:Delete
+Template:Status Templates Nav	Template:Status Templates
+Template:TOCRight	Template:TOCright
+Template:Tabber2	Template:TabberType2
+Template:TabberType2	Template:Tabber
+Template:Tabs	Template:CustomTabs
+Template:Task	Template:Phabricator
+Template:Tca	Template:Twitcast/archive
+Template:Template	Template:Tlx
+Template:TemplateDataHeader	Template:TemplateData header
+Template:Til	Template:Timw
+Template:Tl	Template:T
+Template:Tlg	Template:Template link general
+Template:Tlg/doc	Template:Template link general/doc
+Template:Tocright	Template:TOCright
+Template:Touhou Wiki Link/preload	Template:TH/preload
+Template:Tsh	Template:Template shortcut
+Template:UW	Template:UtaiteWiki
+Template:UWI	Template:UWIcon
+Template:Up to date/preload	Template:Uptodate/preload
+Template:UtaColle Row	Template:UtaColle/Row
+Template:UtaColle Table	Template:UtaColle/Table
+Template:UtaiteGroup	Template:UtaiteUnit
+Template:UtaiteGroup/Disbanded	Template:UtaiteUnit/Disbanded
+Template:UtaiteGroup/preload	Template:UtaiteUnit/preload
+Template:UtaiteGroupMember	Template:UtaiteUnitMember
+Template:UtaiteGroupMember/text	Template:UtaiteUnitMember/text
+Template:UtaiteUnitMember/card/doc	Template:UtaiteUnitMember/doc
+Template:VOCALOID Wiki Link/preload	Template:VW/preload
+Template:VTW	Template:Virtualyoutuber
+Template:VTuberW	Template:Virtualyoutuber
+Template:VW	Template:Vocaloid
+Template:VYW	Template:Virtualyoutuber
+Template:Vocaloidlyrics	Template:VLW
+Template:WikiaLicense/doc	Template:Interwiki/doc
+Template:Wp:ja	Template:Wp ja
+Template:Wp:ja/doc	Template:Wp ja/doc
+Template:Wp:zh	Template:Wp zh
+Template:YT	Template:Yt
+Template:Ytc	Template:YtC

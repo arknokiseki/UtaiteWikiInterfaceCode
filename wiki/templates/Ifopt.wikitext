@@ -1,0 +1,9 @@
+{{#ifeq:{{#pos:{{{1}}}|{{{2}}}}}|-1|{{{4}}}|{{{3}}}}}
+<noinclude>
+== Usage ==
+<pre>
+<nowiki>{{ifopt|option1,option2,option3|option2|option 2 is enabled|option 2 is not enabled}}</nowiki>
+</pre>
+Output:
+:{{ifopt|option1,option2,option3|option2|option 2 is enabled|option 2 is not enabled}}
+</noinclude>

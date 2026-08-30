@@ -1,0 +1,2 @@
+{{documentation subpage}}
+'''Module:ACandy''' is a helper module for creating html elements. It is designed to be easier to use than MediaWiki's built-in <code>mw.html</code> library. See [https://github.com/AmeroHan/ACandy/tree/scribunto ACandy's GitHub page] for more information on how to use it.

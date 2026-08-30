@@ -1,0 +1,210 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+This template displays a forum-style list of pages using the DPLForum extension. It provides a flexible interface for showing forum topics with various display options and filtering capabilities.
+
+==Syntax==
+{{T|Forum/table|target=|count=|mode=|ordermethod=}}
+
+==Parameters==
+===Content Parameters===
+* '''target''' or '''category''' - The category to display forum topics from (defaults to current page name)
+* '''category1''', '''category2''', '''category3'''... - Additional categories (pages must be in ALL specified categories)
+* '''notcategory''' - Exclude pages in this category
+* '''notcategory1''', '''notcategory2'''... - Additional categories to exclude
+* '''namespace''' - Namespace to search in (default: Forum)
+* '''prefix''' - Only show pages with titles starting with this prefix
+* '''start''' - Number of results to skip (for pagination)
+* '''count''' - Maximum number of results to show (default: 5, max: 50)
+* '''title''' - If specified, creates a forum-style link to the given page
+
+===Display Parameters===
+* '''mode''' - Output format:
+** '''table''' (default) - Display as table rows
+** '''list''' - Display as list items
+** '''none''' - Simple line breaks
+** '''count''' - Return only the number of matching entries
+* '''compact''' - Combine table columns:
+** '''author''' - Combine Title and Author columns
+** '''editor''' - Combine Edit and Editor columns
+** '''all''' - Combine both
+* '''addcreationdate''' - Show creation date (true/false)
+* '''addauthor''' - Show original author (true/false)
+* '''addlasteditor''' - Show last editor (true/false, default: true)
+* '''addlastedit''' - Show last edit time (true/false, default: true)
+* '''shownamespace''' - Show namespace in titles (true/false, default: false)
+
+===Sorting Parameters===
+* '''ordermethod''' - Sort order:
+** '''lastedit''' (default) - Sort by last edit time
+** '''created''' - Sort by creation time
+** '''pageid''' - Sort by page ID
+* '''order''' - Set to "ascending" to reverse sort order
+* '''historylink''' - Add history links:
+** '''true''' (default) - Show history link
+** '''embed''' - Replace Edit field with history link
+** '''append''' - Add history link after Edit field
+* '''omit''' - Text to remove from beginning of titles
+* '''newdays''' - Mark entries edited within this many days as new (default: 7)
+* '''timestamp''' - Include timestamps in links (true/false, default: true)
+* '''cache''' - Cache results (true/false, default: false)
+
+===UI Parameters===
+* '''noresult''' - Message when no posts exist (default: "post something here")
+* '''buttonlabel''' - Label for add button reference (default: "Add New Topic")
+
+==Examples==
+===Basic forum list===
+{{T|Forumtable}}
+
+===Specific category with 10 items===
+{{T|Forumtable|target=General Discussion|count=10}}
+
+===Multiple categories, exclude archives===
+{{T|Forumtable|category1=Questions|category2=Unanswered|notcategory=Archive}}
+
+===Compact display with author info===
+{{T|Forumtable|compact=all|addauthor=true|addcreationdate=true}}
+
+===List mode for custom styling===
+<pre>
+<ul class="custom-forum-list">
+{{ForumList|mode=list|count=20}}
+</ul>
+</pre>
+
+===Count topics in category===
+<pre>
+There are {{ForumList|mode=count|target=Help Requests}} help requests.
+</pre>
+
+===Filter by prefix, sorted by creation===
+{{T|Forumtable|prefix=FAQ:|ordermethod=created|order=ascending|omit=FAQ:}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"target": {
+			"aliases": ["1", "category"],
+			"label": "Target category",
+			"description": "The category to display forum topics from",
+			"type": "string",
+			"default": "Current page name",
+			"suggested": true
+		},
+		"category1": {
+			"label": "Additional category 1",
+			"description": "Additional category filter (pages must be in ALL categories)",
+			"type": "string"
+		},
+		"category2": {
+			"label": "Additional category 2",
+			"description": "Additional category filter",
+			"type": "string"
+		},
+		"notcategory": {
+			"label": "Exclude category",
+			"description": "Exclude pages in this category",
+			"type": "string"
+		},
+		"namespace": {
+			"label": "Namespace",
+			"description": "Namespace to search in",
+			"type": "string",
+			"default": "Forum"
+		},
+		"prefix": {
+			"label": "Title prefix",
+			"description": "Only show pages with titles starting with this prefix",
+			"type": "string"
+		},
+		"count": {
+			"label": "Result count",
+			"description": "Maximum number of results to show",
+			"type": "number",
+			"default": "5"
+		},
+		"mode": {
+			"label": "Display mode",
+			"description": "Output format for the forum list",
+			"type": "string",
+			"default": "table",
+			"suggestedvalues": ["table", "list", "none", "count"]
+		},
+		"ordermethod": {
+			"label": "Sort method",
+			"description": "How to sort the results",
+			"type": "string",
+			"default": "lastedit",
+			"suggestedvalues": ["lastedit", "created", "pageid"]
+		},
+		"order": {
+			"label": "Sort order",
+			"description": "Set to 'ascending' to reverse sort order",
+			"type": "string",
+			"suggestedvalues": ["ascending"]
+		},
+		"compact": {
+			"label": "Compact display",
+			"description": "Combine table columns for compact display",
+			"type": "string",
+			"suggestedvalues": ["author", "editor", "all"]
+		},
+		"addauthor": {
+			"label": "Show author",
+			"description": "Display the original author",
+			"type": "boolean"
+		},
+		"addcreationdate": {
+			"label": "Show creation date",
+			"description": "Display creation date",
+			"type": "boolean"
+		},
+		"addlasteditor": {
+			"label": "Show last editor",
+			"description": "Display who last edited each entry",
+			"type": "boolean",
+			"default": "true"
+		},
+		"addlastedit": {
+			"label": "Show last edit time",
+			"description": "Display when each entry was last edited",
+			"type": "boolean",
+			"default": "true"
+		},
+		"shownamespace": {
+			"label": "Show namespace",
+			"description": "Include namespace in page titles",
+			"type": "boolean",
+			"default": "false"
+		},
+		"historylink": {
+			"label": "History link",
+			"description": "How to display history links",
+			"type": "string",
+			"default": "true",
+			"suggestedvalues": ["true", "false", "embed", "append"]
+		},
+		"cache": {
+			"label": "Cache results",
+			"description": "Cache the forum results",
+			"type": "boolean",
+			"default": "false"
+		},
+		"noresult": {
+			"label": "No results message",
+			"description": "Message shown when no posts exist",
+			"type": "string",
+			"default": "post something here"
+		},
+		"buttonlabel": {
+			"label": "Button label",
+			"description": "Label referenced in no results message",
+			"type": "string",
+			"default": "Add New Topic"
+		}
+	},
+	"description": "Displays a forum-style list of pages with customizable filtering, sorting, and display options",
+	"format": "block"
+}
+</templatedata>

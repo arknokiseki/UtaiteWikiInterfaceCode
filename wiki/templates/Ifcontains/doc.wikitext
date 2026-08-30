@@ -1,0 +1,14 @@
+==Sample==
+If <code>1=</code> contains <code>2=</code>, then do <code>3=</code>; otherwise, do <code>4=</code>.
+
+==Parameters==
+; <code>1=</code>
+: Text that will be analyzed.
+; <code>2=</code>
+: Text that will be looked for.
+; <code>3=</code>, <code>then=</code>
+: What to do if <code>1=</code> contains <code>2=</code>.
+; <code>4=</code>, <code>else=</code>
+: What to do if <code>1=</code> doesn't contain <code>2=</code>.
+
+<includeonly>[[Category:Templates]] [[Category:Component templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

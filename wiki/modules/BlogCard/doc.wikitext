@@ -1,0 +1,22 @@
+This module renders the blog post cards shown in the Recent Blogs box on the main page.
+
+== Functions ==
+=== card ===
+<code><nowiki>{{#invoke:BlogCard|card}}</nowiki></code> — used by {{t|LatestUserBlogItem}}. Reads its parameters from the parent template call:
+* '''page''' — full page name (e.g. <code>User blog:Username/Post Title</code>)
+* '''title''' — title without namespace (<code>Username/Post Title</code>); split on <code>/</code> into username and post title
+* '''pinned''' — any value except <code>no</code> marks the card as pinned: adds a thumbtack icon before the title and the <code>blog-card-pinned</code> CSS class
+The creation date and user avatar are fetched via {{t|GetPageCreationDate}} and {{t|GetUserAvatar}}. Comment counts and the excerpt are filled in client-side (<code>js-comment-count</code>, <code>js-text-extract</code>).
+
+=== pinned ===
+<code><nowiki>{{#invoke:BlogCard|pinned}}</nowiki></code> — used by {{t|LatestUserBlogs}}. Loads [[Template:MP-Blog/pin.json]] (a JSON array of full page names) and renders one pinned card per entry, in array order (first entry = topmost pin), wrapped in the same containers DPL uses. Nonexistent pages are skipped silently.
+
+=== pinnedExclude ===
+<code><nowiki>{{#invoke:BlogCard|pinnedExclude}}</nowiki></code> — returns the pinned titles (namespace stripped) as a pipe-separated list for the DPL <code>nottitlematch</code> parameter in {{t|LatestUserBlogs}}, so pinned posts do not appear a second time in the latest list. Returns a harmless placeholder when no posts are pinned, since DPL requires a non-empty value.
+
+== Used by ==
+* [[Template:LatestUserBlogItem]]
+* [[Template:LatestUserBlogs]]
+
+== See also ==
+* [[Template:MP-Blog/pin.json]] — pinned posts configuration

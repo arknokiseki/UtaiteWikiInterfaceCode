@@ -1,0 +1,17 @@
+.mp-announcement .header {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--border-color-base, #e5e7eb);
+  color: var(--color-link, #006cb0);
+  padding: 0.4rem 0;
+  font-size: 1.1rem;
+}
+
+.mp-announcement .mbox.site-notice {
+  background-color: transparent !important;
+  border: 1px solid var(--border-color-base, #e5e7eb) !important;
+}
+
+.mp-announcement .mbox__close {
+    display: none !important;
+}

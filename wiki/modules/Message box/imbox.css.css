@@ -1,0 +1,123 @@
+/**
+ * {{imbox}} (image message box) styles
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+table.imbox {
+	margin: 4px 10%;
+	border-collapse: collapse;
+	/* Default "notice" blue */
+	border: 3px solid var(--border-color-progressive, #36c);
+	background-color: var(--background-color-neutral-subtle, #f8f9fa);
+	box-sizing: border-box;
+}
+
+/* For imboxes inside imbox-text cells. */
+.imbox .mbox-text .imbox {
+	/* 0.9 - 0.5 = 0.4em left/right.        */
+	margin: 0 -0.5em;
+	/* Fix for webkit to force 100% width.  */
+	display: block;
+}
+
+/* For imboxes inside other templates.  */
+.mbox-inside .imbox {
+	margin: 4px;
+}
+
+/* An empty narrow cell */
+.imbox td.mbox-empty-cell {
+	border: none;
+	padding: 0;
+	width: 1px;
+}
+
+/* The message body cell(s) */
+.imbox th.mbox-text,
+.imbox td.mbox-text {
+	border: none;
+	/* 0.9em left/right */
+	padding: 0.25em 0.9em;
+	/* Make all mboxes the same width regardless of text length */
+	width: 100%;
+}
+
+/* The left image cell */
+.imbox td.mbox-image {
+	/* 0.9em left, 0px right */
+	/* @noflip */
+	padding: 2px 0 2px 0.9em;
+}
+
+/* The right image cell */
+.imbox td.mbox-imageright {
+	/* 0px left, 0.9em right */
+	/* @noflip */
+	padding: 2px 0.9em 2px 0;
+}
+
+table.imbox-notice {
+	/* Blue */
+	border-color: #36c;
+}
+
+table.imbox-speedy {
+	/* Pink */
+	background-color: #fee7e6;
+	/* temp fix for dark mode */
+	color: #222;
+}
+
+table.imbox-delete,
+table.imbox-speedy {
+	/* Red */
+	border-left-color: var(--border-color-destructive, #bf3c2c);
+	border-bottom-color: var(--border-color-destructive, #bf3c2c);
+	border-right-color: var(--border-color-destructive, #bf3c2c);
+	border-top-color: var(--border-color-destructive, #bf3c2c);
+}
+
+table.imbox-content {
+	/* Orange */
+	border-color: #f28500;
+}
+
+table.imbox-style {
+	/* Yellow */
+	border-color: #fc3;
+}
+
+table.imbox-move {
+	/* Purple */
+	border-color: #9932cc;
+}
+
+table.imbox-protection {
+	/* Gray-gold */
+	border-left-color: var(--border-color-base, #a2a9b1);
+	border-bottom-color: var(--border-color-base, #a2a9b1);
+	border-right-color: var(--border-color-base, #a2a9b1);
+	border-top-color: var(--border-color-base, #a2a9b1);
+}
+
+table.imbox-license {
+	/* Dark gray */
+	border-left-color: var(--border-color-notice, #72777d);
+	border-bottom-color: var(--border-color-notice, #72777d);
+	border-right-color: var(--border-color-notice, #72777d);
+	border-top-color: var(--border-color-notice, #72777d);
+	/* Light gray */
+	background-color: var(--background-color-neutral-subtle, #f8f9fa);
+}
+
+table.imbox-featured {
+	/* Brown-gold */
+	border-color: #cba135;
+}
+
+@media screen and (max-width: 720px) {
+  table.imbox {
+	margin: 4px auto;
+  }
+}

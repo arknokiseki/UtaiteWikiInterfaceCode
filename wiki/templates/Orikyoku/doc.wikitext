@@ -1,0 +1,39 @@
+{{Documentation/Header}}
+{{High Risk|Template:Orikyoku|nocat=1|pagetype=Main}}
+Adds a compact "✨Original" badge to mark original songs (オリジナル曲) in song lists. Optionally shows a second badge naming the producer or collaborator the song was made with.
+
+==Syntax==
+{{T|Orikyoku|block=1
+|v1=with =
+|v2=rainbow =
+}}
+
+==Examples==
+* {{T|Orikyoku|_Y_=1}}
+* {{T|Orikyoku|_Y_=1|p1=with={{VLW|Kairiki Bear}}}}
+* {{T|Orikyoku|_Y_=1|p1=with={{VLW|neru (producer)}}|p2=rainbow = true}}
+
+Used in a full song list line:
+<pre>* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Orikyoku|with={{VW|Kairiki Bear}}}}</pre>
+* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Orikyoku|with={{VW|Kairiki Bear}}}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>with</code> || – || With || A producer or collaborator to credit in a second badge beside "Original". Often wrapped in {{T|VW}}. || string || – ||
+|-
+| <code>rainbow</code> || – || Rainbow style || Set to <code>true</code> to give the <code>with</code> badge the rainbow variant styling. Has no effect unless <code>with</code> is set. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A compact 'Original' badge marking original songs in song lists.",
+"params": {
+"with": { "label": "With", "description": "Producer or collaborator credited in a second badge.", "type": "string" },
+"rainbow": { "label": "Rainbow style", "description": "Set to 'true' for the rainbow variant of the 'with' badge. Requires 'with'.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

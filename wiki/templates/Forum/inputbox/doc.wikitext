@@ -1,0 +1,17 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Forum/inputbox|v1=type|v2=break|v3=prefix|v4=preload|v5=buttonlabel}}
+
+==Examples==
+{{T|Forum/inputbox|p1=type=create|p2=break=no|p3=prefix=Forum:|p4=preload=Template:Forumheader/{{PAGENAME}}|p5=buttonlabel={{{buttonlabel|Add new topic}}}|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

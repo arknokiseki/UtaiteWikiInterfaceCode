@@ -1,0 +1,1 @@
+<span class="uw-twitcasting-bg" style="display: inline-flex; background: linear-gradient(135deg, rgb(0,145,251), rgb(0,223,172)); border-radius: 20%; padding: 0.15em;">{{UWI|icon=twitcasting|size={{{size|}}}|color={{{color|#fff}}}}}</span>

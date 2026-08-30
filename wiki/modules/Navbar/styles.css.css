@@ -1,0 +1,35 @@
+/** {{Shared Template Warning}}
+ * This TemplateStyles page is separately used for [[Template:Navbar]]
+ * because of course there are two versions of the same template.
+ * Be careful when adjusting styles accordingly.
+ */
+.navbar {
+	display: inline;
+	font-size: 88%;
+	font-weight: normal;
+}
+
+.navbar ul {
+	display: inline;
+	white-space: nowrap;
+}
+
+.navbar li {
+	word-spacing: -0.125em;
+}
+
+/* Navbar styling when nested in navbox */
+.navbox .navbar {
+	display: block;
+	font-size: 100%;
+}
+
+.navbox-title .navbar {
+	/* @noflip */
+	float: left;
+	/* @noflip */
+	text-align: left;
+	/* @noflip */
+	margin-right: 0.5em;
+	width: 6em;
+}

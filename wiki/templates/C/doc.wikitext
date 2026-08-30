@@ -1,0 +1,71 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|Category link}}
+<templatedata>
+{
+	"description": {
+		"en": "Creates a link to a category in the user’s language.",
+		"cs": "Vytvoří odkaz na kategorii v jazyce uživatele."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Category",
+				"cs": "Kategorie"
+			},
+			"description": {
+				"en": "The name of the category (The “Category:” prefix may be omitted)",
+				"cs": "Název kategorie (předpona “Kategorie:” může být vynechána)"
+			},
+			"required": true,
+			"type": "string",
+			"autovalue": ""
+		},
+		"2": {
+			"label": {
+				"en": "Displayed Text",
+				"cs": "Zobrazený text"
+			},
+			"description": {
+				"en": "The displayed text",
+				"cs": "Zobrazený text"
+			},
+			"type": "line"
+		},
+		"nsp": {
+			"label": {
+				"en": "Namespace?",
+				"cs": "Jmenný prostor?"
+			},
+			"description": {
+				"en": "Whether to display the “Category:” namespace prefix, defaults to whether parameter 1 includes the “Category:” prefix.",
+				"cs": "Zda se má zobrazit předpona jmenného prostoru “Kategorie:”, výchozí nastavení je, zda parametr 1 obsahuje předponu “Kategorie:”."
+			},
+			"suggestedvalues": [
+				"0",
+				"1",
+				"¬"
+			],
+			"default": "{{#ifeq:{{NAMESPACENUMBER:{{{1}}}|14|1|0}}}}",
+			"autovalue": "0",
+			"type": "boolean"
+		}
+	}
+}
+</templatedata>
+
+== Examples ==
+; No {{para|nsp}} parameter
+:* {{T|C|Foo}} &rarr; {{C|Foo}}
+:* {{tlx|C|Category:Foo}} &rarr; {{C|Category:Foo}}
+; {{para|nsp|0}}
+:* {{tlx|C|Foo|nsp{{=}}0}} &rarr; {{C|Foo|nsp=0}}
+:* {{tlx|C|Category:Foo|nsp{{=}}0}} &rarr; {{C|Category:Foo|nsp=0}}
+; {{para|nsp|1}}
+:* {{tlx|C|Foo|nsp{{=}}1}} &rarr; {{C|Foo|nsp=1}}
+:* {{tlx|C|Category:Foo|nsp{{=}}1}} &rarr; {{C|Category:Foo|nsp=1}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal link templates]]
+}}</includeonly>

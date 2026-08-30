@@ -1,0 +1,5 @@
+<pre>
+{{Line|FVQA2rk|Line description}}{{Line|YX75HoU|Line description|Line}}{{Line|723nnqjt|LinePage description|LinePage}}{{Line|@amatsuki|LineQR description|LineQR}}
+</pre>
+Output:
+{{Line|FVQA2rk|Line description}}&nbsp;{{Line|YX75HoU|Line description|Line}}&nbsp;{{Line|723nnqjt|LinePage description|LinePage}}&nbsp;{{Line|@amatsuki|LineQR description|LineQR}}<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly>

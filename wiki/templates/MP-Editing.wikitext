@@ -1,0 +1,13 @@
+<!--{{Notice|icon=|tone=#a2ffa2|width=100%|header=Migration Notice|info=All images have now been uploaded to the wiki! We’re still tidying things up (like sorting and categorizing), so you might run into a few pages where images don’t show up correctly. If that happens, try a quick fix: replace the file extensions (<code>.jpg</code>, <code>.jpeg</code>, <code>.webp</code>, or <code>.PNG</code>) with <code>.png</code>. <br/>Tip: you can use '''<kbd>Ctrl</kbd> + <kbd>F</kbd>''' in the source editor to open the find-and-replace box. <br/>If the image still refuses to appear, please report it [[Utaite Wiki:Image Issues|here]] so we can take care of it~<br/><i class="fa-solid fa-spinner fa-spin"></i>&nbsp;'''Current Task:''' Image categorization.<br/>For updates, please join our [https://discord.com/invite/jAw6ytcVKA Discord server].}}--><!--
+-->{{clr}}<div class="mp-section">
+<div class="mp-section-head"><i class="fa-solid fa-feather-pointed"></i><h2 class="mp-section-title">Before You Edit!</h2></div>
+<loggedout><div class="mp-edit-callout" style="text-align:center;"><strong>Please [[Special:Userlogin|log in/create account]] before you start editing.</strong></div></loggedout>
+<div class="mp-edit-callout" style="text-align:center;"><span class="mp-edit-warn">IMPORTANT:</span> <strong>READ the [[Tutorial|Tutorial/Guidelines]]</strong> <u><strong>ALL THE WAY TO THE END</strong></u> <strong>before you start editing!</strong></div>
+'''Anyone''' is welcome to contribute and improve the articles here to make them more informative for everyone.
+*Make sure to check out the [[Utaite Wiki:FAQ|FAQ]] and [[tutorial]] first if you have any questions regarding editing.
+*If you would like to create some singer articles, please attempt to make them as complete as possible.
+*The '''requirements''' for adding a singer article can be [[Utaite Wiki:Requirements|found here]]. Please make sure to read them carefully before creating an article.
+
+<div style="text-align:center; font-size:1.05em; margin-top:0.75em; padding-top:0.5em; border-top:1px dashed var(--border-color-base, #e5e7eb);">[[:Category:Incomplete Articles|Lend a Hand?]] {{!}} Need help? Ask at the [[Forum:Index|Forum]]!</div>
+</div>
+<noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

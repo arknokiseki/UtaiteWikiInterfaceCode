@@ -1,0 +1,21 @@
+{{#if:{{{hmiku|}}}|* [https://w.atwiki.jp/hmiku/pages/{{{at}}}.html 初音ミク Wiki]}}<!--
+
+-->{{#if:{{{nico|}}}|* [https://dic.nicovideo.jp/v/{{{nico}}} ニコニコ大百科: nicopedia]}}<!--
+
+-->{{#if:{{{nico2|}}}|* [https://dic.nicovideo.jp/{{{nico2}}} ニコニコ大百科: nicopedia(2)]}}<!--
+
+-->{{#invoke:unofficial/vocadb|vocadb}}<!--
+
+-->{{#if:{{{utadb|}}} |* [https://utaitedb.net/{{#if:{{{p|}}}|Ar|S}}/{{{utadb}}} UTAITE Database] }}<!--
+
+-->{{#if:{{{mgp|}}}|* [https://zh.moegirl.org.cn/{{urlencode:{{{mgp}}}}} 萌娘百科: Moegirlpedia]}}<!--
+
+-->{{#if:{{{pixiv|}}}|* [https://dic.pixiv.net/a/{{{pixiv}}} ピクシブ百科事典: Pixpedia]}}<!--
+
+-->{{#if:{{{tag|}}}|* [https://www.nicovideo.jp/tag/{{urlencode:{{{tag}}}}} ニコニコ動画: niconico video{{#if:{{{tag2|}}}|&#32;({{{tag}}})}}]}}<!--
+-->{{#if:{{{tag2|}}}|* [https://www.nicovideo.jp/tag/{{urlencode:{{{tag2}}}}} ニコニコ動画: niconico video ({{{tag2}}})]}}<!--
+-->{{#if:{{{tag3|}}}|* [https://www.nicovideo.jp/tag/{{urlencode:{{{tag3}}}}} ニコニコ動画: niconico video ({{{tag3}}})]}}<!--
+
+-->{{#if:{{{vlw|}}}|* [[w:c:vocaloidlyrics:{{{vlw}}}|VOCALOID Lyrics Wiki]]}}<!--
+
+-->{{#if:{{{url|}}}|* {{{url}}}}}{{PreloadPage}}<noinclude>{{Documentation|Template:Un+Official links templates/doc}}</noinclude>

@@ -1,0 +1,162 @@
+{{Anikora
+|season = 
+|year   = 
+|date   = 
+|nnd    = 
+|tracks={{Anikora/Track
+|number   = 1
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 2
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 3
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 4
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 5
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 6
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 7
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 8
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 9
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 10
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 11
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 12
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 13
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 14
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 15
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 16
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 17
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 18
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 19
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 20
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 21
+|title    = 
+|original = 
+|utaite   = 
+}}
+{{Anikora/Track
+|number   = 22
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 23
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 24
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 25
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 26
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 27
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 28
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 29
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = 30
+|title    = 
+|original = 
+|utaite   = 
+}}{{Anikora/Track
+|number   = n
+|title    = 
+|original = 
+|utaite   = 
+}}}}

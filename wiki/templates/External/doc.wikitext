@@ -1,0 +1,100 @@
+==Description==
+This is the core template (with [[Help:Extensions|variables]]) for linking song uploads.
+
+==Parameters==
+
+Example:
+
+*{{t|LL|abbr|URL|Comment}}
+*{{LL|yt|ARj92WMUoow|Official}}
+
+If certain links disrupt the template then use:
+
+*Question mark HTML <code>&#</code>63;
+*Equal sign HTML <code>&#</code>61;
+
+==Notes==
+{| class="wikitable"
+|-
+! Website
+! Abbr
+! Icon
+! ID
+! Result
+! Thumbnail
+|-
+! rowspan="2" | {{external|nn}}
+| <code>nn</code>
+| {{external|nn-ico|sm15350853|comment}}
+| <code>sm15350853</code>
+| {{external|nn-url|sm15350853}}
+| {{external|nn-img|sm15350853}} {{external|nn-img|0}}
+|-
+| <span class="explain" title="Experimental; ignore">?</span>
+| 
+| 
+| {{external|nn-url1|sm15350853}}
+|-
+! {{external|yt}}
+| <code>yt</code>
+| {{external|yt-ico|WTSirFu0ZMo|comment}}
+| <code>WTSirFu0ZMo</code>
+| {{external|yt-url|WTSirFu0ZMo}}
+| {{external|yt-img|WTSirFu0ZMo}} {{external|yt-img|0}} 
+|-
+! {{external|bb}}
+| <code>bb</code>
+| {{external|bb-ico|BV1Mb421J7k8|comment}}
+| <code>BV1Mb421J7k8</code>
+| {{external|bb-url|BV1Mb421J7k8}}
+| {{external|bb-img}}
+|-
+! {{external|pp}}
+| <code>pp</code>
+| {{external|pp-ico|U_LD|comment}}
+| <code>U_LD</code>
+| {{external|pp-url|U_LD}}
+| {{external|pp-img|U_LD}}
+|-
+! {{external|tm}}
+| <code>tm</code>
+| {{external|tm-ico|696643|comment}}
+| <code>696643</code>
+| {{external|tm-url|696643}}
+| {{external|tm-img|696643}}
+|-
+! rowspan="3" | {{external|sc}}
+| <code>sc</code>
+| {{external|sc-ico|umaainc/11-patchwork-eden-feat-gumi|comment}}
+| <code>umaainc/11-patchwork-eden-feat-gumi</code>
+| {{external|sc-url|umaainc/11-patchwork-eden-feat-gumi}}
+| {{external|sc-img}}
+|-
+| <span class="explain" title="Experimental; ignore">?</span>
+| {{external|sc-ico1|104507996|comment}}
+| <code>104507996</code>
+| {{external|sc-url1|104507996}}
+| 
+|-
+| <span class="explain" title="Experimental; ignore">?</span>
+| {{external|sc-ico2|umaainc/11-patchwork-eden-feat-gumi|comment}} {{external|sc-ico2|104507996|comment}}
+|
+| {{external|sc-url2|umaainc/11-patchwork-eden-feat-gumi}} {{external|sc-url2|104507996}}
+| 
+|-
+! {{external|sp}}
+| <code>sp</code>
+| {{external|sp-ico|39VrvLWMoNvayCRpyT4RlE|comment}}
+| <code>39VrvLWMoNvayCRpyT4RlE</code>
+| {{external|sp-url|39VrvLWMoNvayCRpyT4RlE}}
+| {{external|sp-img|39VrvLWMoNvayCRpyT4RlE}}
+|-
+! {{external|00}}
+| <code>00</code>
+| {{external|00-ico|http://music.a8.com/view/50524352|comment}}
+| <code>h<nowiki/>ttp://music.a8.com/view/50524352</code>
+| {{external|00-url|http://music.a8.com/view/50524352|title-comment}}
+| {{external|00-img}} {{external|00-img|Catdoinggreat.png}}
+|}
+
+<includeonly>[[Category:Templates]] [[Category:Component templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

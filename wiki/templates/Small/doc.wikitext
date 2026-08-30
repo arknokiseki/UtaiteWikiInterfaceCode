@@ -1,0 +1,83 @@
+{{Languages|Template:Small/doc}}
+{{Documentation subpage}}
+
+== Usage ==
+This template is a replacement for {{tag|small}}.
+
+The only parameter is the content and may contain templates, images, etc. if a block needs to be wrapped in this template and contains such elements.  Note that if the <code>=</code> character appears in the content, the parameter must be explicitly specified as {{para|1}}.
+
+Do not use this template to wrap multiple lines; doing so will cause [[Special:LintErrors|Linter]] errors.  If you need to wrap multiple list items or multiple paragraphs, use {{tl|smalldiv}} around the entire block, or wrap each list item or paragraph separately.
+
+:Thus {{done|Good practice}}
+{| class="wikitable"
+|-
+!input
+!shows
+|-
+| <code><nowiki>What a wonderful world</nowiki></code>
+| What a wonderful world
+|-
+| <code><nowiki>{{small|What a wonderful world}}</nowiki></code>
+| {{small|What a wonderful world}}
+|-
+| <code><nowiki>{{small|1=3 + 2 = 5}}</nowiki></code>
+| {{small|1=3 + 2 = 5}}
+|-
+|<pre>{{small|1=103}}
+{{small|1=+ 2}}
+——
+{{small|1=105}}</pre>
+|{{small|1=103}}
+
+{{small|1=+ 2}}
+
+——
+
+{{small|1=105}}
+|}
+
+
+{{not done|Don't do this}}:
+<pre><nowiki>{{small|
+*One
+*Two
+*Three}}</nowiki></pre>
+
+{{done|Do this instead}}:
+<pre><nowiki>{{smalldiv|
+*One
+*Two
+*Three}}</nowiki></pre>
+
+== Template data ==
+{{TemplateDataHeader}}
+<templatedata>
+{
+	"description": {
+		"en": "A template shortcut for the “small” HTML tag that makes the font smaller.",
+		"cs": "Zkratka šablony pro “malou” značku HTML, která zmenšuje písmo.",
+		"tr": "Yazı tipini küçülten “small” HTML etiketi için bir şablon kısayolu."
+	},
+	"params": {
+		"1": {
+			"label": {
+				"en": "Text",
+				"cs": "Text",
+				"tr": "Metin"
+			},
+			"description": {
+				"en": "The text that you'd like to be made smaller.",
+				"cs": "Text, který chcete zmenšit.",
+				"tr": "Küçültülmesini istediğiniz metin."
+			},
+			"type": "string",
+			"required": true
+		}
+	}
+}
+</templatedata>
+
+<includeonly>{{sandbox other||
+<!-- TEMPLATE CATEGORIES HERE, THANKS -->
+[[Category:Formatting templates]]
+}}</includeonly>

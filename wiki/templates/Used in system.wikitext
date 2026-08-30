@@ -1,0 +1,32 @@
+<noinclude></noinclude>{{#switch:
+| =
+{{ombox
+| type = content
+| text = 
+{{#switch:{{lcfirst:{{NAMESPACE}}}}
+|module='''<!--T:1--> This module is used {{#if:{{{1|}}}|{{{1}}}|in system messages}}.'''
+|template='''<!--T:6--> This template is used {{#if:{{{1|}}}|{{{1}}}|in system messages}}.'''
+}}<br/>
+<!--T:2--> Changes to it can cause immediate changes to the MediaWiki user interface. <!--
+-->{{tmpl|0=<!--T:3--> To avoid large-scale disruption, any changes should first be tested in this {{lcfirst:{{NAMESPACE}}}}'s [[$1/sandbox|/sandbox]] or [[$1/testcases|/testcases]] subpage, or in your own [[mw:Special:MyLanguage/Help:Subpages|user space]].
+|1={{#switch: {{SUBPAGENAME}}
+    | doc | sandbox = {{SUBJECTSPACE}}:{{BASEPAGENAME}}
+    | #default =      {{SUBJECTPAGENAME}}
+   }}<!--#switch-->
+}}<!--tmpl--><!--
+-->{{#switch:{{lcfirst:{{NAMESPACE}}}}
+|module=<!--T:4--> The tested changes can then be added in one single edit to this module.
+|template=<!--T:7--> The tested changes can then be added in one single edit to this template.
+}} <!--
+-->{{tmpl|0=<!--T:5--> Please discuss any changes {{#if:{{{2|}}}|at [[{{{2}}}]]|on the [[$1|talk page]]}} before implementing them.
+|1={{#switch: {{SUBPAGENAME}}
+    | doc | sandbox = {{TALKSPACE}}:{{BASEPAGENAME}}
+    | #default =      {{TALKPAGENAME}}
+   }}<!--#switch-->
+}}<!--tmpl-->
+}}
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Template:Used in system|noshift=1|uselang={{int:lang}}}}
+}}<noinclude>
+{{documentation}}
+</noinclude>

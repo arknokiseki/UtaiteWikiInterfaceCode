@@ -1,0 +1,11 @@
+<includeonly><nowiki/>
+<p style="font-weight: bold">Wikitext</p>
+{{#tag:syntaxhighlight
+|{{#invoke:example|unescape|{{{1|}}}}}
+|copy=
+|lang=wikitext
+}}
+{{#if:{{{noresult|}}}||;Result
+{{#invoke:example|preprocess|{{{1|}}}}}}}</includeonly><noinclude>
+{{Documentation}}
+</noinclude>

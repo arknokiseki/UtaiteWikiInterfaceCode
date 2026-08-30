@@ -1,0 +1,19 @@
+<includeonly><div style="
+    border-collapse: collapse;
+    border: 1px solid #d6d6d6;
+    border-left-width: 8px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 5px auto;
+    min-height: 32px;
+    padding: 0.25em 0.5em;
+    {{{style|}}}"
+    class="article-table plainlinks {{{class|}}}"
+>{{#if:{{{image|}}}|<span style="display: inline-block; padding-right: 0.5em;">[[File:{{{image}}}|48px|link=|alt=]]</span>}}<span>{{{text|''Your license text is not specified''}}}</span></div></includeonly>
+<noinclude>
+Example:
+<pre>{{LicenseBox|image=WIP descr.png|text=yes}}</pre>
+{{LicenseBox|image=WIP descr.png|text=yes}}
+{{documentation}}
+</noinclude>

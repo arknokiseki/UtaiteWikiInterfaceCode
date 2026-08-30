@@ -1,0 +1,17 @@
+<includeonly>|{{uc:{{#sub:{{{name|}}}|0|1}}}}
+|{{{name|}}}
+|{{{namejp|}}}
+|{{#if: {{{image|}}}|[[File:{{{image}}}|150px|center]]|[[File:No_image.png|150px|center]]
+}}
+|<div class="{{#if:{{{sites|}}}|mw-collapsible|}}">{{{sites|}}}</div>
+|<div class="{{#if:{{{utaite|}}}|mw-collapsible|}}">{{{utaite|}}}</div>
+|-
+</includeonly><noinclude>
+== Documentation ==
+Add an illustrator entry using these parameters:
+* name - Illustrator name
+* namejp - Japanese name (optional)
+* image - Sample work image
+* sites - Website links
+* utaite - Associated singers
+</noinclude>

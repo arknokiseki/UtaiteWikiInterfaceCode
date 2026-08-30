@@ -1,0 +1,1 @@
+<div class="mp-welcome pointer-events-none no-context-menu" style="color: #CD201F !important;">Welcome to the Youtaite Wiki ♪</div><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

@@ -1,0 +1,16 @@
+<includeonly><div class="forbidreprintnotice">{{Notice
+|tone=yellow
+|mt=5px
+|mb=5px
+|width={{{width|100%}}}
+|headermt=20px
+|image={{{image|Sou Sotto Blue.png}}}|link=|
+|imgwidth=100px
+|header=<i class="fas fa-ban fa-fade" style="color: rgb(255, 60, 119);"></i> DO NOT REPRINT
+|info='''{{#ifeq:{{NAMESPACENUMBER}}|10|UtaiteName|{{ROOTPAGENAME}}}}''' has explicitly stated that reposting their content is '''NOT ALLOWED'''{{{ref|}}}. Please respect the artist's wishes by: <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Only watching their content on official channels<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Not reuploading their covers/original songs<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Not creating unauthorized reprints/compilations.<br />
+'''Official Channels:''' {{#if:{{{YtC|}}}|{{YtC|{{{YtC}}}}}|}}{{#if:{{{Nnd|}}}|{{Nicovideo|{{{Nnd}}}|{{ROOTPAGENAME}}'s Nicovideo User Page|user|IconWidth=15px}}||}}{{#if:{{{YtC|}}}||{{#if:{{{Nnd|}}}||No Channel Exist.}}}}}}</div></includeonly><noinclude> 
+==Usage== 
+<pre>{{Notice/forbidreprints|ref=<ref>[https://x.com/uni_mafumafu/status/643759397324222465 Tweet about his YT channel and the reprints]</ref>|YtC=@uni_mafumafu|Nnd=18874531|image=Mafumart-Favicon.png}}</pre> 
+{{Notice/forbidreprints|ref=<ref>[https://x.com/uni_mafumafu/status/643759397324222465 Tweet about his YT channel and the reprints]</ref>|YtC=@uni_mafumafu|Nnd=18874531|image=Mafumart-Favicon.png}}
+<br />
+This template creates a warning notice for utaite pages where the artist explicitly forbids reposting of their content. </noinclude>

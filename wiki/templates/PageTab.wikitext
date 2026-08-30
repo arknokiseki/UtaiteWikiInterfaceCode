@@ -1,0 +1,104 @@
+<includeonly>
+{| align="center" style="font-size:90%;"
+|<div style="text-align: center; margin-bottom: 15px">
+{{#ifeq:{{SUBPAGENAME}}|{{PAGENAME}}| <!-- main page -->
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab1}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}{{!}}{{color|#999|{{{tab1}}}}}]]</td>
+</tr></table></div>
+}}{{#if:{{{tab2| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab2}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab2}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab2}}}{{!}}{{color|#999|{{{tab2}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab3| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab3}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab3}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab3}}}{{!}}{{color|#999|{{{tab3}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab4| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab4}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab4}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab4}}}{{!}}{{color|#999|{{{tab4}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab5| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab5}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab5}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab5}}}{{!}}{{color|#999|{{{tab5}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab6| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab6}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab6}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab6}}}{{!}}{{color|#999|{{{tab6}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab7| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab7}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab7}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab7}}}{{!}}{{color|#999|{{{tab7}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}{{#if:{{{tab8| }}}|
+{{#ifeq:{{SUBPAGENAME}}|{{{tab8}}}|
+<div style="min-width: 5em; float: left; border-bottom: 2px solid #c3e6f9; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; font-weight: bold">
+<table style="height: 100%; width: 100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">{{{tab8}}}</td></tr></table></div>
+|
+<div style="min-width: 5.0em; float: left; padding: 0.5em; height: 20px; margin: 0px 10px 0px 2px; color: #999;">
+<table style="height:100%;width:100%;"><tr>
+<td style="vertical-align: center; text-transform: uppercase;">[[{{NAMESPACE}}:{{BASEPAGENAME}}/{{{tab8}}}{{!}}{{color|#999|{{{tab8}}}}}]]
+</td>
+</tr></table></div>
+}}
+}}
+<div style="clear:both;"></div>
+</div>
+|}[[Category:Pages with PageTab Template]]</includeonly>
+<noinclude>
+{{Documentation}}
+{{#ifeq:{{NAMESPACE}}|Template|[[Category:Templates]]|}}
+</noinclude>

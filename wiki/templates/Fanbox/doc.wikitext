@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to a PixivFANBOX profile page.
+;Syntax
+:Place <code><nowiki>{{Fanbox|<fanboxsubdomain>}}</nowiki></code> and substitute <fanboxsubdomain> with the subdomain (first part) of the pixivfanbox url (e.g., if the url is https://nyanyannya.fanbox.cc/, the fanboxsubdomain will be "nyanyannya"). If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Fanbox|nyanyannya|nyanyannya fanbox description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Fanbox|nyanyannya|nyanyannya fanbox description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

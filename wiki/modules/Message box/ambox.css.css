@@ -1,0 +1,127 @@
+/**
+ * {{ambox}} (article message box) styles
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+table.ambox {
+	/* 10% = Will not overlap with other elements */
+	margin: 0 10%;
+	/* Prevent overflow in narrow screens (<=850px) in the Timeless skin.
+	   See [[Skin:Timeless#Less than 851 pixels]]
+	   and https://phabricator.wikimedia.org/source/Timeless/browse/REL1_39/resources/screen-mobile.less$268 */
+	width: unset;
+	border: 1px solid var(--border-color-base, #a2a9b1);
+	/* Default "notice" blue */
+	border-left: 10px solid var(--border-color-progressive, #36c);
+	background-color: var(--background-color-neutral-subtle, #f8f9fa);
+	box-sizing: border-box;
+}
+
+/* Single border between stacked boxes. */
+table.ambox + table.ambox,
+table.ambox + link + table.ambox,
+table.ambox + style + table.ambox {
+	margin-top: -1px;
+}
+
+/* An empty narrow cell */
+.ambox td.mbox-empty-cell {
+	border: none;
+	padding: 0;
+	width: 1px;
+}
+
+/* The message body cell(s) */
+.ambox th.mbox-text,
+.ambox td.mbox-text {
+	border: none;
+	/* 0.5em left/right */
+	padding: 0.25em 0.5em;
+	/* Make all mboxes the same width regardless of text length */
+	width: 100%;
+}
+
+/* The left image cell */
+.ambox td.mbox-image {
+	/* 0.5em left, 0px right */
+	/* @noflip */
+	padding: 2px 0 2px 0.5em;
+}
+
+/* The right image cell */
+.ambox td.mbox-imageright {
+	/* 0px left, 0.5em right */
+	/* @noflip */
+	padding: 2px 0.5em 2px 0;
+}
+
+table.ambox-notice {
+	/* Blue */
+	border-left-color: var(--border-color-progressive, #36c);
+}
+
+table.ambox-speedy {
+	/* Pink */
+	background-color: var(--background-color-error-subtle, #fee7e6); 
+}
+
+table.ambox-delete,
+table.ambox-speedy {
+	/* Red */
+	border-left-color: var(--background-color-error--active, #b32424);
+}
+
+table.ambox-content {
+	/* Orange */
+	border-left-color: #f28500;
+}
+
+table.ambox-style {
+	/* Yellow */
+	border-left-color: #fc3;
+}
+
+table.ambox-move {
+	/* Purple */
+	border-left-color: #9932cc;
+}
+
+table.ambox-protection {
+	/* Gray-gold */
+	border-left-color: var(--border-color-base, #a2a9b1);
+}
+
+/**
+ * {{ambox|small=1}} styles
+ *
+ * These ".mbox-small" classes must be placed after all other
+ * ".ambox" classes. "html body.mediawiki .ambox"
+ * is so they override both "table.ambox + table.ambox"
+ * and "table.ambox + link + table.ambox" above.
+ *
+ * @source https://www.mediawiki.org/wiki/MediaWiki:Gadget-enwp-boxes.css
+ * @revision 2021-07-15
+ */
+
+/* For the "small=yes" option. */
+html body.mediawiki .ambox.mbox-small {
+	clear: right;
+	float: right;
+	margin: 4px 0 4px 1em;
+	box-sizing: border-box;
+	width: 238px;
+	font-size: 88%;
+	line-height: 1.25em;
+}
+
+/* For the "small=left" option. */
+html body.mediawiki .ambox.mbox-small-left {
+	margin: 4px 1em 4px 0;
+	box-sizing: border-box;
+	overflow: hidden;
+	width: 238px;
+	border-collapse: collapse;
+	font-size: 88%;
+	line-height: 1.25em;
+}

@@ -1,0 +1,14 @@
+{{Documentation/Header}}
+{{High Risk|Template:Ref|nocat=1|pagetype=Main}}
+Outputs the '''References''' section: a level-2 <code>== References ==</code> heading followed by a scrollable list (max height 300&nbsp;px) containing every <code><nowiki><ref>…</ref></nowiki></code> footnote on the page. It is a shorthand for a styled <code><nowiki><references /></nowiki></code>. Takes no parameters.
+
+==Syntax==
+{{T|Ref}}
+
+==Usage==
+Place it '''once''', near the bottom of an article, after all <code><nowiki><ref></nowiki></code> tags. Do not add a separate <code>== References ==</code> heading — this template supplies its own.
+<pre>
+Some claim.<ref>Source here.</ref>
+
+{{Ref}}
+</pre>

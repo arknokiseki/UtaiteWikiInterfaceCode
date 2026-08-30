@@ -1,0 +1,27 @@
+<includeonly>{{#switch: {{{1|}}}
+|instagram|ig=<span class="ig-gradient"><i class="fa-brands fa-instagram" style="color:rgb(255, 0, 105);"></i></span>
+|twitter=<span class="icon-link"><i class="fa-brands fa-twitter"></i></span>
+|x=<span class="icon-link"><i class="fa-brands fa-x-twitter"></i></span>
+|threads=<i class="fa-brands fa-threads"></i>
+|twitch=<span style="color:#9146FF !important;"><i class="fa-brands fa-twitch"></i></span>
+|youtube|yt=<i class="fa-brands fa-youtube yt-link" {{#if:{{{styling|}}}|style="color: #d20438; text-shadow:2px 2px 5px #fd0031,-2px -2px 5px #EE1D52;"|style="color: #d20438 !important;"}}></i>
+|TikTok|tiktok|Tiktok|tt=<span style="{{#if:{{{size|}}}|font-size: {{{size}}}; |}} color:#fff !important; text-shadow:2px 2px 5px #69C9D0,-1.5px -1.5px 3px #EE1D52 !important;"><i class="fa-brands fa-tiktok"></i></span>
+|facebook|fb=<i class="fa-brands fa-facebook"></i>
+|discord=<i class="fa-brands fa-discord"></i>
+|spotify=<span style="color: #46e26d !important;"><i class="fa-brands fa-spotify"></i></span>
+|soundcloud|sc=<span style="color: #ff7700 !important;"><i class="fa-brands fa-soundcloud"></i></span>
+|niconico|nicovideo|nicodou|ニコ動|ニコニコ|ニコニコ動画|ニコ|nico|nnd|nv=<span class="niconico-icon nnd-link" style="width: {{{IconWidth|19px}}}; height: {{{IconWidth|19px}}};"></span>
+|bilibili|bili|bb=<i class="fa-brands fa-bilibili" style="color: #74C0FC;"></i>
+|bandcamp|bc=<i class="fa-brands fa-bandcamp" style="color: #629AA0;"></i>
+|twitcast=[[File:Twitcast.png|{{{size|16x16px}}}|link=|{{#if:{{{2|}}}|{{{2}}}}}]]
+|bento=[[File:Bento.png|{{{size|16x16px}}}|link=|{{#if:{{{2|}}}|{{{2}}}}}]]
+|bluesky=<span style="color:#0886fe !important;"><i class="fa-brands fa-bluesky"></i></span>
+|booth=[[File:Booth.png|link=|16px]]
+|deviantart|da=<span style="color: #4dc47d;"><i class="fa-brands fa-deviantart"></i></span>
+|fanbox=[[File:Fanbox.png|{{{size|16x16px}}}|link=|{{#if:{{{2|}}}|{{{2}}}}}]]
+|koebu=[[File:Koebu.png|19px|link=|class=koebu mobile-img-grayscale-100]]
+|line=<span style="color: #5de25a !important;"><i class="fa-brands fa-line"></i></span>
+|marshmallow=[[File:Marshmallow.png|22x22px|link=]]
+|pixiv=<span class="pixiv-icon" style="color: #0096FA;"><i class="fa-brands fa-pixiv"></i></span>
+|#default = <span style="color: #ff0000; font-weight: 800;"><i class="fa-solid fa-question"></i> Please provide an SNS name as the first parameter. More information: [[Template:SocialIcon|click here]]</span>
+}}</includeonly><noinclude>{{Documentation}}</noinclude>

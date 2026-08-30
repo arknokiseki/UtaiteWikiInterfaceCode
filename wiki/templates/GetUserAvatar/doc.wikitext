@@ -1,0 +1,27 @@
+{{Documentation/Header}}
+This template displays a user's avatar from UserProfileV2.
+
+==Syntax==
+=== Basic Usage ===
+{{T|GetUserAvatar|Username}}
+
+=== With Custom Size ===
+{{T|GetUserAvatar|Username|size=100}}
+
+=== With Custom Border Radius ===
+{{T|GetUserAvatar|Username|size=150|radius=10px}}
+
+==Examples==
+* {{T|GetUserAvatar|Makudoumee|_Y_=1}}
+* {{T|GetUserAvatar|Makudoumee|size=50|_Y_=1}}
+* {{T|GetUserAvatar|Arknomahounorobotto|size=200|radius=0|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

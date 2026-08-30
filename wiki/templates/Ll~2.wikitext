@@ -1,0 +1,16 @@
+<includeonly>{{#ifeq:{{FULLPAGENAME:{{{1}}}}}|{{FULLPAGENAME}}
+  |<b>
+}}[[mw:{{{1}}}|{{#if:{{{2|}}}
+  |{{{2}}}
+  |{{#if:{{{nsp|}}}
+    |{{PAGENAME:{{{1}}}}}
+    |{{{1}}}
+  }}
+}}]]{{#ifeq:{{FULLPAGENAME:{{{1}}}}}|{{FULLPAGENAME}}
+  |</b>
+}}<span style="display:none">[[:{{{1}}}| ]]</span></includeonly><noinclude>Localized link but without localization :DDDD
+
+a.k.a just a way to make the docs from the MediaWiki website work~
+__NOINDEX__
+{{doc}}
+</noinclude>

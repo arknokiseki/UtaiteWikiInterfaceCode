@@ -1,0 +1,14 @@
+<onlyinclude><!--
+-->{{{{{|safesubst:}}}#if:{{{plain|}}}|<templatestyles src="Template:Mono/styles.css"/>}}<!--
+-->{{{{{|safesubst:}}}#if:{{yesno|{{{nowrap|1}}}}}|<templatestyles src="Template:Nowrap/styles.css"/>}}<!--
+--><{{{{{|safesubst:}}}#if:{{{plain|}}}<!--
+	-->|span class="monospaced {{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|1}}}}}|nowrap}}"<!--
+	-->|code {{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|1}}}}}|class="nowrap"}}<!--
+-->}}>&#124;<!--
+-->{{{{{|safesubst:}}}#if:{{{1|<noinclude>1</noinclude>}}}<!--
+	-->|{{{1}}}&#61;<!--
+-->}}{{{2|}}}<!--
+--></{{{{{|safesubst:}}}#if:{{{plain|}}}|span|code}}><!--
+--></onlyinclude>
+{{Documentation}}
+<!--Categories and interwikis go near the bottom of the /doc subpage.-->

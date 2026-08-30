@@ -1,0 +1,30 @@
+{{Documentation/Header}}
+A red warning notice marking a page whose subject contains mature content, and files it under [[:Category:Mature content]].
+
+==Syntax==
+{{T|Explicit|v1=content description}}
+
+==Examples==
+<pre>{{Explicit}}</pre>
+<pre>{{Explicit|graphic violence and strong language}}</pre>
+The optional parameter is appended as ", such as: ''…''" before the "View at your own risk" line.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Content description || What kind of mature content the subject contains. Omitted gives a generic warning. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A warning notice for subjects containing mature content.",
+"params": {
+"1": { "label": "Content description", "description": "What kind of mature content the subject contains.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+
+{{FandomLicense|Vocaloid|Template:Explicit}}

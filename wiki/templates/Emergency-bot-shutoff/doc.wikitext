@@ -1,0 +1,48 @@
+{{Documentation/Header}}
+A large shutdown button for a bot's user page. The button links to [[Special:Block]] with the block form pre-filled to indefinitely hard-block '''the bot whose page it sits on''' — the target is taken from the page name automatically, so the template needs no target parameter.
+
+Administrators can press it directly; non-administrators are pointed at an admin or Miraheze stewards.
+
+==Syntax==
+{{T|Emergency-bot-shutoff|block=1
+|v1=name =
+|v2=titlename =
+|v3=icon =
+|v4=buttonsize =
+}}
+
+==Example==
+<pre>{{Emergency-bot-shutoff|name=UWBot}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>name</code> || – || Bot name || Name used in the instruction sentence. || string || the bot ||
+|-
+| <code>titlename</code> || – || Title noun || Noun used in the heading, as in "Emergency ''bot'' shutoff button". || string || bot ||
+|-
+| <code>icon</code> || – || Icon || File to use as the button image. || wiki-file-name || File:Shutdown button.svg ||
+|-
+| <code>buttonsize</code> || – || Button size || Button width in pixels, without the unit. || number || 128 ||
+|}
+
+{{Notice
+| header = Place it on the bot's own page
+| info = The block target comes from the page name, so putting this template anywhere other than the bot's user page will pre-fill a block against the wrong account.
+| border = orange
+}}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "An emergency shutdown button for a bot's user page, linking to a pre-filled block form.",
+"params": {
+"name": { "label": "Bot name", "description": "Name used in the instruction sentence.", "type": "string", "default": "the bot" },
+"titlename": { "label": "Title noun", "description": "Noun used in the heading.", "type": "string", "default": "bot" },
+"icon": { "label": "Icon", "description": "File used as the button image.", "type": "wiki-file-name", "default": "File:Shutdown button.svg" },
+"buttonsize": { "label": "Button size", "description": "Button width in pixels.", "type": "number", "default": "128" }
+},
+"format": "block"
+}
+</templatedata>
+</div>

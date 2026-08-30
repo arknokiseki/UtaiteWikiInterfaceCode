@@ -1,0 +1,69 @@
+{{documentation subpage}}
+{{Uses TemplateStyles|Template:TOC/limit-styles.css}}
+
+'''Tables of contents''' contain links to sections within an article, providing easy and automatic on-page navigation.
+
+<templatedata>
+{
+	"params": {
+		"limit": {
+			"label": {
+				"en": "Heading level limit",
+				"cs": "Limit úrovně nadpisu"
+			},
+			"description": {
+				"en": "How many heading levels to show in the table of contents. The lower, the fewer headings are shown. Note that in articles, the main level for headings starts at 2 (the article title is H1, so limit=1 would generally show no headings at all).",
+				"cs": "Kolik úrovní nadpisů se má zobrazit v obsahu. Čím níže, tím méně nadpisů je zobrazeno. Všimněte si, že v článcích začíná hlavní úroveň nadpisů na 2 (název článku je H1, takže limit=1 by obecně nezobrazoval žádné nadpisy)."
+			},
+			"example": "2",
+			"type": "number"
+		},
+		"align": {
+			"label": {
+				"en": "Alignment",
+				"cs": "Zarovnání"
+			},
+			"description": {
+				"en": "Whether to align the table of contents to the \"right\" or \"left\". The default is left.",
+				"cs": "Zda zarovnat obsah \"vpravo\" nebo \"vlevo\". Výchozí nastavení je vlevo."
+			},
+			"example": "right",
+			"type": "string"
+		}
+	},
+	"description": {
+		"en": "Template for changing the way the table of contents is rendered.\n",
+		"cs": "Šablona pro změnu způsobu vykreslování obsahu.\n"
+	}
+}
+</templatedata>
+
+==Standard Tables of Contents==
+Articles will include a default table of contents when more than three section headings appear.  The default table of contents will include all section headings and will appear just before the first section heading.  By default, the table of contents will be left aligned.
+
+You may hide an individual table of contents when viewing an article by clicking the "hide" link in the table.  Alternately, if you do not wish to see ''any'' tables of contents, you may deactivate their display entirely within the Misc tab of your [[Special:Preferences|user preferences]].  Simply uncheck the box next to "Show table of contents (for pages with more than 3 headings)" and no tables of contents will be displayed.
+
+==Modifying the Table of Contents==
+Several [[Help:Magic_words|magic words]] and templates exist which modify the standard tables of contents.
+===Removing the Table of Contents from an article===
+To remove the table of contents from any article, simply add the magic word <code><nowiki>__NOTOC__</nowiki></code> anywhere within the article.  It's usually not advisable to do so, unless you are manually providing an alternative table of contents, but in some cases it may make the page more usable (e.g. on your main page, or on a page that just contains a list of links and is therefore already a TOC, of sorts).
+
+===Forcing and Moving the Table of Contents===
+To force the table of contents to appear regardless of how many headings an article has, simply add the magic word <code><nowiki>__TOC__</nowiki></code> anywhere within the article.  The table of contents will appear wherever you place the template, allowing you to move it up or down the page from its normal position.
+
+===Changing the alignment of the table of contents===
+To force the table of contents to appear on the right of a page, use the {{tlx|tocright}} template.  The table of contents will appear wherever you place the template.
+
+To force the table of contents to float on the left of a page, use the <code><nowiki>{{tocleft}}</nowiki></code> template.  The table of contents will appear wherever you place the template.  Note that the text of the page will wrap around a floated table of contents, whereas the standard table does not allow text to appear to the right of the table and instead creates whitespace.
+
+===Limiting the headings listed in a table of contents===
+Section headings create a hierarchy.  In this page's table of contents, note how Section 2, "Modifying the Table of Contents", contains several subsections.  These subsections could also contain subsections of their own.  
+
+It's possible to limit the depth of headings which are included in the table using the {{tlx|toclimit}} template.  By setting a number value for <code>|limit=</code>, only headings of the specified level or greater will display.  For example, {{tlx|toclimit|2=limit=2}} will include only level two headings (<nowiki>==Heading==</nowiki>), while {{tlx|toclimit|2=limit=3}} will include level three headings (<nowiki>===Heading===</nowiki>) as well as level two headings, and so on.
+
+Like the other TOC templates, {{tlx|toclimit}} will cause the table to appear wherever the template is placed on the page.  Additionally, both <code><nowiki>{{tocleft}}</nowiki></code> and {{tlx|tocright}} support the use of the <code>|limit</code> variable.
+
+== See also ==
+* [[Template:TOCright]]
+
+[[Category:Help{{#translation:}}]]

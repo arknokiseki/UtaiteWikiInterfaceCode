@@ -1,0 +1,17 @@
+; Description
+: This is one of a set of templates used to mark the use of an image under the Creative Commons license.
+* {{t|Cc-by-4.0}} - Attribution
+* {{t|Cc-by-sa-4.0}} - Attribution-ShareAlike
+* {{t|Cc-by-nc-4.0}} - Attribution-NonCommercial
+* {{t|Cc-by-nc-sa-4.0}} - Attribution-NonCommercial-ShareAlike
+
+; Syntax
+: Type <code><nowiki>{{Cc-by-4.0}}</nowiki></code> (or other equivalent template) on the image information page.
+
+: You may add a parameter to specify the source of attribution.
+
+<includeonly>
+[[Category:Templates]]
+[[Category:Image wiki templates]]
+[[Category:Licensing templates]]
+</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

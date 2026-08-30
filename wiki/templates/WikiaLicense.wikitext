@@ -1,0 +1,8 @@
+<!--Retrieved from https://vocaloid.fandom.com/wiki/Template:WikiaLicense-->
+<includeonly>
+{| class="simple-template" align="center" border="0" cellpadding="3" cellspacing="3" style="margin:0.5em auto;"
+|- 
+| style="font-size: 90%" | This page uses [[wikia:c:homepage:Licensing|Creative Commons Licensed]] content from [[wikia:{{{1}}}|{{{1}}} Wiki]] ([https://{{{1}}}.fandom.com/index.php?title={{urlencode:{{{2|{{FULLPAGENAME}}}}}}}&action=history view authors]). 
+| [[file:cc.png|40px|link=]]
+|}</includeonly><noinclude>
+{{Documentation|Template:WikiaLicense/doc}}</noinclude>

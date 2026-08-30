@@ -1,0 +1,49 @@
+/**
+ * Styles for [[Template:Tracked]].
+ */
+.tpl-tracked {
+	background-color: var( --background-color-interactive, #EAECF0 );
+    color: var( --color-base, #202122 );
+	border: 1px solid #72777D;
+	border-radius: 2px;
+	font-size: 85%;
+	margin-bottom: 1em;
+	padding: 0.5em;
+	text-align: center;
+	width: 12em;
+}
+
+.tpl-tracked.float-left {
+	/* @noflip */
+	float: left;
+	/* @noflip */
+	clear: left;
+	/* @noflip */
+	margin-right: 1em;
+}
+
+.tpl-tracked.float-right {
+	/* @noflip */
+	float: right;
+	/* @noflip */
+	clear: right;
+	/* @noflip */
+	margin-left: 1em;
+}
+
+/* Status line */
+.tpl-tracked .status {
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.tpl-tracked .status.resolved {
+	color: green;
+}
+
+@media screen {
+	html.skin-theme-clientpref-night .tpl-tracked .status:not(.resolved) {
+		color: white;
+	}
+}

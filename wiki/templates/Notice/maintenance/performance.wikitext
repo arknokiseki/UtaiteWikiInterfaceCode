@@ -1,0 +1,11 @@
+{{Notice
+|image=STOP2 モノクロ.png
+|tone=rgb(255, 212, 59);
+|icon=<i class="fas fa-person-digging fa-fade" style="color: rgb(255, 212, 59);"></i>
+|header=Page Under Maintenance
+|contentfontsize=1.01em
+|info=This page is temporarily unavailable due to maintenance work required to address performance issues caused by a high volume of content. <br/>We apologize for any inconvenience and appreciate your patience during this time.
+|width=100%
+|border=yellow
+|style=
+}}<includeonly>{{Main other|[[Category:Maintenance due to Performance Pages]]}}</includeonly>

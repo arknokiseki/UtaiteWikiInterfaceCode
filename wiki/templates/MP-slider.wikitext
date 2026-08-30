@@ -1,0 +1,17 @@
+<includeonly>
+<div id="SliderView"><div id="SliderData" class="4|2200|auto" style="display:none"></div>
+<ul id="SliderWrapper">
+<li class="Sld SlideIMG" data-slider-link="">[[File:Worlddomination.png|link=]]</li>
+<li class="Sld SlideIMG" data-slider-link="Agency:VOISING">[[File:VOISING-Voice&sing.png|link=Agency:VOISING]]</li>
+<li class="Sld SlideIMG" data-slider-link="Agency:STPR Inc.">[[File:STPR-PEACE.png|link=Agency:STPR Inc.]]</li>
+</ul>
+<center>
+<ul id="NavBtns" class="nmBottom nmP2" style="color:#FFFFFF;">
+<li class="NavBtn nbActiveBottom">World Domination</li>
+<li class="NavBtn">VOICE&SING</li>
+<li class="NavBtn">PEACE</li>
+</ul>
+</center>
+</div>__NOEDITSECTION__</includeonly><noinclude>
+[[Category:WikiTemplates]]{{Documentation}}
+</noinclude>

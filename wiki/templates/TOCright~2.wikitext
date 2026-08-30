@@ -1,0 +1,8 @@
+{{TOC
+|clear={{{clear|{{dir|{{PAGELANGUAGE}}|left|right}}}}}
+|width={{{width|{{{1|auto}}}}}}
+|align={{dir|{{PAGELANGUAGE}}|left|right}}
+|limit={{{limit|}}}
+}}<noinclude>
+{{Documentation}}
+</noinclude>

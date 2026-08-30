@@ -1,0 +1,6 @@
+<div class="boilerplate" id="c-publicdomain" style="width:90%; margin:0 auto; padding:10px; border:1px solid #A8ACA8; background:#f4f8fb; color:#000;">
+This file has been released into the '''[[wikipedia:public domain|public domain]]''' by its [[wikipedia:copyright|copyright]] holder, its copyright has expired, or it is ineligible for copyright.
+
+This applies worldwide.
+</div><includeonly>[[Category:Images]][[Category:Public Domain Images]][[Category:Media]]</includeonly>
+<noinclude>{{documentation}}</noinclude>

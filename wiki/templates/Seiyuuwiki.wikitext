@@ -1,0 +1,3 @@
+<includeonly>{{Interwiki|seiyuu|{{{1|}}}|{{#if:{{{2|}}}|{{{2}}}|{{{1}}}}}|server=fandom}}</includeonly><noinclude>{{Documentation}}<br/>
+{{Interwiki doc}}</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

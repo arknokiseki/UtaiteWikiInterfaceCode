@@ -1,0 +1,3 @@
+<includeonly><span class="privated-media-badge select-none">{{#if:{{#pos:,{{#replace:{{{site|}}}| |}},|,yt,}}|<i class="fa-brands fa-youtube"></i>}}{{#if:{{#pos:,{{#replace:{{{site|}}}| |}},|,nnd,}}|<span class="niconico-icon nnd-link" style="width: 19px; height: 17px;"></span>}}{{#if:{{#pos:,{{#replace:{{{site|}}}| |}},|,bb,}}|<i class="fa-brands fa-bilibili" style="color: #74C0FC;"></i>}}&nbsp;Privated</span></includeonly><noinclude>
+{{doc}}
+</noinclude>

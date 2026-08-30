@@ -1,0 +1,10 @@
+<div class="plainlinks plainlinks2" style="text-align:center;">
+<strong style="font-size: 2em;">Emergency {{{titlename|bot}}} shutoff button</strong>
+
+[[{{{icon|File:Shutdown button.svg}}}|{{{buttonsize|128}}}px|Emergency block button|link={{fullurl:Special:Block|wpTarget={{BASEPAGENAMEE}}&wpExpiry=indefinite&wpHardBlock=1&wpAutoBlock=0&wpCreateAccount=0&wpReason=other&wpReason-other=Bot%20malfunctioning:%20}}]]
+
+<strong>[[Project:Administrators|Administrators]]:</strong> Use this button if {{{name|the bot}}} is malfunctioning. (<strong>[{{fullurl:Special:Block|wpTarget={{BASEPAGENAMEE}}&wpExpiry=indefinite&wpHardBlock=1&wpAutoBlock=0&wpCreateAccount=0&wpReason=other&wpReason-other=Bot%20malfunctioning:%20}} direct link]</strong>)
+<br/>
+<small>Non-administrators can report a malfunctioning bot to an administrator or [https://meta.miraheze.org/wiki/Contact_us contact] the [https://meta.miraheze.org/wiki/Steward_requests Miraheze staff]. </small>
+</div><noinclude>{{doc}}
+[[Category:General wiki templates]]</noinclude>

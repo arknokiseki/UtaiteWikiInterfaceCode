@@ -1,0 +1,4 @@
+<pre>{{TMsample|"Songname", composed by Producername|linkname.com}}</pre>
+...results in:
+{{TMsample|"Songname", composed by Producername|linkname.com}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

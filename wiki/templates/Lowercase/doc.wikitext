@@ -1,0 +1,18 @@
+{{Documentation/Header}}
+{{High Risk|Template:Lowercase|nocat=1|pagetype=Main}}
+Forces the '''first letter''' of the displayed page title to lowercase, using <code><nowiki>{{DISPLAYTITLE:}}</nowiki></code>. MediaWiki capitalizes the first character of every page name, so this is the fix for stylized names that are properly lowercase — for example <code>kradness</code> or <code>nqrse</code>. The namespace prefix is preserved. Takes no parameters.
+
+Place it anywhere on the page; the top is conventional.
+
+==Syntax==
+{{T|Lowercase}}
+
+==Usage==
+This template is shown as code only — a live call would change the title of this documentation page.
+<pre>
+{{Lowercase}}
+</pre>
+On a page named <code>Nqrse</code>, the title displays as <code>nqrse</code>.
+
+==See also==
+* {{T|Pagetype}} — returns a noun for the current page's type

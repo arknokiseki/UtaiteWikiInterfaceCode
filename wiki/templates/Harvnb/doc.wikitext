@@ -1,0 +1,4 @@
+{{Documentation/Header}}
+Renders a shortened Harvard-style footnote citation, via <code><nowiki>{{#invoke:Citation|harv}}</nowiki></code>. Imported from Wikipedia — see [[wikipedia:Template:Harvnb]] for full usage.
+
+Pairs with the anchors produced by {{T|SfnRef}} on {{T|Cite book}} and {{T|Cite journal}} entries.

@@ -1,0 +1,6 @@
+<pre>{{YTvideo|song=Songname|group=Groupname|ytid}}
+{{YTvideo|song=Songname|group=Groupname|ytid|winner}}</pre>
+...results in:
+{{YTvideo|song=Songname|group=Groupname|ytid}}
+{{YTvideo|song=Songname|group=Groupname|ytid|winner}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

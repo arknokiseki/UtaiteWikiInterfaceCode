@@ -1,0 +1,3 @@
+<includeonly>{{Notice|tone=rgb(255, 212, 59);|icon=<i class="fas fa-person-digging fa-fade" style="color: rgb(255, 212, 59);"></i>|header=Under Maintenance|info=This {{#ifeq: {{FULLPAGENAME}}|Utaite Wiki|wiki|page}} is currently under maintenance. Some design elements may be temporarily broken. We apologize for any inconvenience.|width=100%|image=|border=yellow|style=}}</includeonly><noinclude>
+{{Notice/maintenance}}
+</noinclude>

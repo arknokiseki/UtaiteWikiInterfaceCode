@@ -1,0 +1,59 @@
+<includeonly>{{#if:{{{1|}}}|{{#if:{{{2|}}}|{{#if:{{#invoke:Utaite|getParameter|{{{1}}}|{{{2}}}}}|{{#invoke:Utaite|getParameter|{{{1}}}|{{{2}}}}}|Unknown}}|Parameter/Field "'''{{{2|empty}}}'''" for Utaite Page "'''{{{1|empty}}}'''" is not found inside the Utaite infobox. Please ensure the parameter/field name is correct.}}|Utaite Page for Utaite name '''{{{1|empty}}}''' not found. Please ensure the name is correct.}}</includeonly>__notoc__<!--
+--><noinclude>
+
+== Disambiguation ==
+For birthday template, see [[:Template:ProcessSingerPage/Birthday]].
+
+== ProcessSingerPage Template Documentation ==
+
+=== Purpose ===
+This template dynamically retrieves specific information from the '''Singer Infobox''' on a queried singer's page using two parameters: the singer's name and the specific field to query.
+
+=== Usage ===
+==== Syntax ====
+<pre>
+{{ProcessSingerPage|<singer_name>|<field>}}
+</pre>
+
+==== Parameters ====
+* '''singer_name''' (required) – The case-sensitive name of the singer to query from the '''Singer Infobox'''.
+* '''field''' (required) – The case-sensitive field name to retrieve from the '''Singer Infobox''' (<nowiki>{{Singer|}}</nowiki>) (e.g., "image", "birthdate", "twitter", etc.).
+
+==== Example ====
+<pre>{{ProcessSingerPage|Mafumafu|aka}}</pre>
+Output: {{ProcessSingerPage|Mafumafu|aka}}
+This will display the specified field (e.g., "aka" for alternative names) from the '''Singer Infobox''' on Mafumafu's page.
+
+===Another Example===
+<pre>{{ProcessSingerPage|Amatsuki|officialjapname}}</pre>
+Output: {{ProcessSingerPage|Amatsuki|officialjapname}}
+
+=== How It Works ===
+The template takes two parameters:
+* The first parameter is the singer's name.
+* The second parameter is the specific field from the '''Singer Infobox''' you want to query (e.g., image, birthdate, social media links).
+* If the field is not found, it will display an error message. If the field exists but has no data, it will display "Unknown".
+
+=== Template Default Return Value ===
+If the singer name or the field does not exist, an appropriate error message will be shown.
+
+=== Key Points ===
+* The template will retrieve any specified field from the *Singer Infobox Template* <nowiki>{{Singer}}</nowiki> available on the singer's page.
+* If the specified field is not found in the '''Singer Infobox''', the template will display an error message.
+* You need to provide both the singer's name and the field name for the template to work.
+
+=== Dependencies ===
+- This template uses the [[:Module:Singer|Singer Module]] to query the '''Singer Infobox''' and retrieve the specified field for the singer.
+</noinclude><noinclude>
+<div class="NavFrame collapsed"><div class="NavHead"><h2>Case example:</h2>1. You want to query Amatsuki's Spotify artist ID. How should you use the Singer Module?&nbsp;<span style="color:red;">Show answer: </span></div><br /><div class="NavContent">
+<pre style="color:white !important;">spotify = {{#if:{{#invoke:Singer|getParameter|Amatsuki|spotify}}|{{#invoke:Singer|getParameter|Amatsuki|spotify}}|Unknown}}</pre>
+Result:
+spotify = {{#if:{{#invoke:Singer|getParameter|Amatsuki|Spotify}}|{{#invoke:Singer|getParameter|Amatsuki|Spotify}}|Unknown}}
+</div>
+<div class="NavFrame collapsed"><div class="NavHead">2. You want to query Amatsuki's Spotify artist ID. How should you use the ProcessSingerPage Template?&nbsp;<span style="color:red;">Show answer: </span></div><br /><div class="NavContent">
+<pre style="color:white !important;">Amatsuki's spotify artist id: {{ProcessSingerPage|Amatsuki|Spotify}}</pre>
+Result:
+Amatsuki's spotify artist id: {{ProcessSingerPage|Amatsuki|Spotify}}
+</div><!--
+-->
+</noinclude>

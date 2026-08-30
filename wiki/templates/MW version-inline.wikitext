@@ -1,0 +1,1 @@
+<span style="display: inline-block; border: 1px solid var( --border-color-notice, #54595d ); background-color: var( --background-color-interactive, #eaecf0 ); color: var( --color-base, #202122 ); padding: 1px 4px; margin: 0 4px; white-space:nowrap;">{{{1}}}</span><noinclude>{{Documentation}}</noinclude>

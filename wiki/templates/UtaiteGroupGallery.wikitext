@@ -1,0 +1,2 @@
+__notoc__
+<noinclude><h2>Debug</h2>{{#dpl:category=Utaite Groups|mode=userformat|format=,%TITLE%{{!}}&nbsp;,|allowcachedresults=true|nottitlematch=Agency:%|notnamespace=Template}}</noinclude><div class="utaite-groups-gallery">{{#dpl:category=Utaite Groups|mode=userformat|format=,²{UtaiteGroupCard¦%TITLE%,}²|allowcachedresults=true|nottitlematch=Agency:%|notnamespace=Template}}</div>

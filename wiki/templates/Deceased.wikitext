@@ -1,0 +1,5 @@
+<includeonly>{{Notify
+  | 1 = #ADD8E6
+  | 2 = <span style="font-family:Unicode; font-weight:500;">🕯️</span>
+  | 3 = '''This {{{種類|utaite}}} has passed away,'''&nbsp;as confirmed by reported sources{{#if:{{{ref|}}}|{{{ref}}}|}}. Do be respectful in the comments.<br /><small>Any changes should be notified to ensure that edits meet this wiki's [[Project:Policy|policies and guidelines]]. &nbsp;Discussions for the departed are [[Forum:Departure|here]] and see more subjects categorized [[:Category:Deceased Utaite|here]].</small>
+}}</includeonly><includeonly>{{main other|[[Category:Deceased Utaite]]|}}</includeonly><noinclude>{{Documentation}}</noinclude>

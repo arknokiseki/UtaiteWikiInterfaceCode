@@ -1,0 +1,3 @@
+<!-- The {{#if:1|...}} trims any leading and trailing whitespace without breaking <nowiki> like {{#sub:...}} does: -->
+<onlyinclude><span class="plainlinks">[{{<includeonly>safesubst:</includeonly>#if:1|{{{1|{{{URL|{{{url}}}}}}}}} {{{2|{{{NAME|{{{name|}}}}}}}}}}}]</span></onlyinclude>
+{{Documentation}}

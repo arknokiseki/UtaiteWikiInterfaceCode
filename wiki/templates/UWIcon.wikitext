@@ -1,0 +1,2 @@
+<includeonly><i class="uw-icon uw-{{{icon|nicovideo}}} {{{class|}}}" 
+  style="color: {{{color|var(--primary-text-color)}}}; {{#if:{{{size|}}}|font-size: {{{size}}};}} {{#if:{{{animation-duration|}}}|--uw-anim-duration: {{{animation-duration}}};}} {{#if:{{{animation-iteration-count|}}}|--uw-anim-iteration: {{{animation-iteration-count}}};}} {{#if:{{{rotate-angle|}}}|--uw-rotate-angle: {{{rotate-angle}}};}} {{{style|}}}"></i></includeonly><noinclude>{{doc}}{{Shortcut|Template:UWI}}</noinclude>

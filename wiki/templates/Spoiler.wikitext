@@ -1,0 +1,1 @@
+<includeonly><templatestyles src="Template:Spoiler/styles.css" /><{{#ifeq:{{{2|}}}|inline|span|div}} class="spoiler {{{3|}}}"><span>{{{1|}}}</span></{{#ifeq:{{{2|}}}|inline|span|div}}></includeonly><noinclude>{{documentation}}</noinclude>

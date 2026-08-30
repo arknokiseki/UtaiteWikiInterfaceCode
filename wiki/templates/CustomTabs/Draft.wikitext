@@ -1,0 +1,56 @@
+<includeonly><div class="{{{class|custom-tabs-default}}} custom-tabs"><!--
+-->{{#if:{{{tab1|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab1}}}|active-tab|{{#ifeq:{{PAGENAME}}|{{{rootpage|{{ROOTPAGENAME}}}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}{{!}}{{{tab1}}}|{{{tab1}}}{{!}}{{{tab1name|{{{tab1}}}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab2|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab2}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab2}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab2}}}|{{{tab2name|{{{tab2}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab3|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab3}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab3}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab3}}}|{{{tab3name|{{{tab3}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab4|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab4}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab4}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab4}}}|{{{tab4name|{{{tab4}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab5|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab5}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab5}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab5}}}|{{{tab5name|{{{tab5}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab6|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab6}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab6}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab6}}}|{{{tab6name|{{{tab6}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab7|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab7}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab7}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab7}}}|{{{tab7name|{{{tab7}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab8|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab8}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab8}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab8}}}|{{{tab8name|{{{tab8}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab9|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab9}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab9}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab9}}}|{{{tab9name|{{{tab9}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab10|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab10}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab10}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab10}}}|{{{tab10name|{{{tab10}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab11|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab11}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab11}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab11}}}|{{{tab11name|{{{tab11}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab12|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab12}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab12}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab12}}}|{{{tab12name|{{{tab12}}}}}}]]</span>}}<!--
+-->{{#if:{{{tab13|}}}|<span class="{{#ifeq:{{SUBPAGENAME}}|{{{tab13}}}|active-tab|{{#ifeq:{{#titleparts:{{PAGENAME}}|1|2}}|{{{tab13}}}|active-tab|inactive-tab}}}}">[[{{{namespace|{{NAMESPACE}}}}}:{{#ifeq:{{{subpages|1}}}|1|{{{rootpage|{{ROOTPAGENAME}}}}}/|}}{{{tab13}}}|{{{tab13name|{{{tab13}}}}}}]]</span>}}<!--
+--></div></includeonly><noinclude>{{Documentation|content=
+{{T|CustomTabs/Draft
+|p1=tab1 = Overview
+|p2=tab2 = Story
+|p3=tab3 = Voicelines
+|p4=tab4 = Media
+|block=1
+|_Yn_=1
+}}
+
+----
+
+{{T|CustomTabs/Draft
+|p1=rootpage = Unreconciled Stars
+|p2=namespace = 
+|p3=tab1 = Overview
+|p4=tab2 = Story
+|p5=tab3 = Unknown Star
+|p6=tab4 = Star of Deceitful Dreams
+|p7=tab5 = Star of Destiny
+|p8=tab6 = Gallery
+|class = custom-tabs-secondary
+|block=1
+|_Yn_=1
+}}
+
+----
+
+{{T|CustomTabs/Draft
+|p1=rootpage = Unreconciled Stars
+|p2=namespace = 
+|p3=tab1 = Overview
+|p4=tab2 = Story
+|p5=tab3 = Unknown Star
+|p6=tab4 = Star of Deceitful Dreams
+|p7=tab5 = Star of Destiny
+|p8=tab6 = Gallery
+|class = custom-tabs-tertiary
+|block=1
+|_Yn_=1
+}}
+}}</noinclude>

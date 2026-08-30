@@ -1,0 +1,4 @@
+<div class="forumheader">'''Forums:''' [[Forum:Index|Index]] > [[Forum:{{{1}}}|{{{1}}}]] > {{PAGENAME}}</div><br />
+<includeonly>[[Category:{{{1}}}]][[Category:Forum Posts]]</includeonly><noinclude>
+[[Category:Forums]]
+{{documentation}}</noinclude>

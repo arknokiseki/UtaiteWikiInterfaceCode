@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+Notice template for linking to CSS pages.
+
+==Syntax==
+{{T|CSS|v1=first page|v2=second page (optional)}}
+
+==Examples==
+{{T|CSS|p1=Gadget-citizen-base|p2=Gadget-citizen-vars|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"description": "Name of the page (without namespace or css suffix)",
+			"type": "wiki-page-name",
+			"default": "Page name",
+			"suggested": true
+		},
+		"2": {
+			"description": "Second page name (if applicable)",
+			"type": "wiki-page-name",
+			"suggested": true
+		}
+	},
+	"description": "Link to CSS used for a template",
+	"format": "inline"
+}
+</templatedata>

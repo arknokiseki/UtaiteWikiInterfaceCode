@@ -1,0 +1,4 @@
+<includeonly>{{#ifeq:{{{nocat|}}}|true|<span class="status-templates graduated-template">GRADUATED</span>|<span class="status-templates graduated-template">GRADUATED</span>{{#ifeq:{{{groups|}}}|true|{{main other|[[Category:Graduated Units]]|}}|{{main other|[[Category:Graduated Utaite]]|}}}}}}</includeonly><noinclude>
+{{doc}}
+[[Category:Status Templates]]
+</noinclude>

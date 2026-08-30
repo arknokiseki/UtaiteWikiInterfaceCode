@@ -1,0 +1,45 @@
+<noinclude>
+<onlyinclude>
+<div class="templatedata-header">
+{{#if:{{yesno|{{{editlinks|}}}}}
+	|{{#ifexpr:
+		{{#if:{{{docpage|}}}
+			|{{#ifeq:{{FULLPAGENAME}}|{{transclude|{{{docpage}}}}}|0|1}}
+			|not{{IsDocSubpage|false=0}}
+		}}
+		|{{Navbar|{{{docpage|{{BASEPAGENAME}}/doc}}}|plain=1|brackets=1|style=float:{{dir|{{PAGELANGUAGE}}|left|right}};}}
+	}}
+}}
+{{#if:{{{noheader|}}}||This is the [[mw:Special:MyLanguage/Help:TemplateData|TemplateData]] documentation for this template used by [[mw:Special:MyLanguage/VisualEditor|VisualEditor]] and other tools.}}
+
+'''{{{1|{{BASEPAGENAME}}}}}'''
+</div><includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox|
+	|{{#if:{{IsDocSubpage|false=}}
+		|[[Category:TemplateData documentation]]
+		|[[Category:Templates using TemplateData]]
+	}}
+}}</includeonly>
+</onlyinclude>
+{{Documentation|content=
+
+Inserts a brief header for the template data section.
+Adds the /doc subpage to [[Category:TemplateData documentation]] and the template page to [[Category:Templates using TemplateData]].
+
+== Usage ==
+{{#tag:syntaxhighlight|
+==TemplateData== or ==Parameters== or ==Usage==
+{{((}}TemplateData header{{))}}
+{{^(}}templatedata{{)^}}{
+...
+}{{^(}}/templatedata{{)^}}
+|lang=html
+}}
+
+{{TemplateData header|Template name}}
+Use <code><nowiki>{{TemplateData header|noheader=1}}</nowiki></code> to omit the first sentence of the header text.
+
+==Parameters==
+{{TemplateData header/doc}}
+
+}}
+</noinclude>

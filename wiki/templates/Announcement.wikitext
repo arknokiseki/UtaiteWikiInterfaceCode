@@ -1,0 +1,20 @@
+<div class="mp-section">
+<div class="mp-section-head"><i class="fa-solid fa-newspaper"></i><h2 class="mp-section-title">Wiki News</h2></div>
+<div class="mp-scroll-box" style="height:230px; text-align:center; font-size:140%;"><poem>
+
+More coming soon
+----
+[[User blog:Makudoumee/Regarding SocialProfile Extension|Regarding SocialProfile Extension]]
+
+----
+[[User blog:Makudoumee/Discussion:_Updates_to_Utaite_%26_Unit_Page_Requirements|Discussion: Updates to Utaite & Unit Page Requirements]]
+
+----
+[[User blog:Meta-Kakera/Artists that don't allow their works to be reprinted|On Artists that Forbid the Reposting of their Works]]
+
+----
+[[User blog:Starikun/Concern about pictures...|Concern about Utaite pictures, Illustrations and Such]]
+
+<small><small>[[Utaite Wiki:News Archive|Old News Archive can be viewed here]]
+</small></small></poem></div></div>
+<noinclude>[[Category:Main page templates|{{PAGENAME}}]][[Category:Templates/Main_page]]</noinclude><noinclude>{{Documentation|Template:Main page/doc}}</noinclude>

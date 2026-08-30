@@ -1,0 +1,35 @@
+{{Documentation subpage}}
+{{notice|1=
+* This page gives technical details for the {{tl|Reflist}} template. For a full overview of this template in use, see [[wikipedia:Help:Footnotes|Help:Footnotes]] on Wikipedia.
+* For detailed usage, visit [[wikipedia:Template:Reflist/doc]]
+}}
+{{Uses TemplateStyles|Template:Reflist/styles.css}}
+<!-- {{Transwiki guide |small=yes |text=See [[wikipedia:Template:Reflist/Transwiki guide|'''this information''']] on copying this template and modifying it for use on another wiki.}} -->
+
+== Usage ==
+<pre>Lorem ipsum.<ref>Source name, access date, etc.</ref>
+
+<ref group="note">Reference 1</ref>
+
+Lorem ipsum dolor sit amet.<ref>Source name, access date, etc.</ref>
+
+<ref group="note">Reference 2</ref>
+
+==References==
+{{Reflist}}
+{{Reflist|group=note|liststyle=lower-alpha}}
+</pre>
+;This creates:
+Lorem ipsum.<ref>Source name, access date, etc.</ref>
+
+<ref group="note">Reference 1</ref>
+
+Lorem ipsum dolor sit amet.<ref>Source name, access date, etc.</ref>
+
+<ref group="note">Reference 2</ref>
+
+==References==
+{{Reflist}}
+{{Reflist|group=note|liststyle=lower-alpha}}
+
+<includeonly>[[Category:Citation templates]]</includeonly>

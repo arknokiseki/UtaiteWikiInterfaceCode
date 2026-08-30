@@ -1,0 +1,58 @@
+<includeonly>
+<table style="padding: 0.25em 0.5em; font-size: 90%; width: 100%; margin:0 auto 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease; border-collapse: collapse; line-height:1.5em; border-left: 8px solid #b22222; background-color: rgba(178, 34, 34, 0.1)"><!--
+--><tr><!--
+--><td colspan="2" style="padding: 0.25em 0.5em;"><!--
+-->  <span style="font-size:1.5em; margin-top: 0.5em; display: block;">'''Missing Content Notice'''</span><!--
+--></td><!--
+--></tr><!--
+--><tr><!--
+--><td style="width: 60px; padding: 2px 0px 2px 0.5em; text-align: center;"><!--
+-->  [[File:STOP2 モノクロ.png|link=|60px]]<!--
+--></td><!--
+--><td style="padding: 0.25em 0.5em;"><!--
+-->  <div style="font-size: 85%; margin-top:0.5em; margin-left:0.8em;"><!--
+-->    This content is currently unavailable as the original source is no longer accessible.<br/><!--
+-->    We apologize for any inconvenience and thank you for your understanding.<!--
+-->  </div><!--
+--></td><!--
+--></tr><!--
+--></table>
+</includeonly><noinclude><pre>
+#: <table style="padding: 0.25em 0.5em; font-size: 90%; width: 100%; margin:0 auto 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease; border-collapse: collapse; line-height:1.5em; border-left: 8px solid #b22222; background-color: rgba(178, 34, 34, 0.1)"><!--
+--><tr><!--
+--><td colspan="2" style="padding: 0.25em 0.5em;"><!--
+-->  <span style="font-size:1.5em; margin-top: 0.5em; display: block;">'''Missing Content Notice'''</span><!--
+--></td><!--
+--></tr><!--
+--><tr><!--
+--><td style="width: 60px; padding: 2px 0px 2px 0.5em; text-align: center;"><!--
+-->  [[File:STOP2 モノクロ.png|link=|60px]]<!--
+--></td><!--
+--><td style="padding: 0.25em 0.5em;"><!--
+-->  <div style="font-size: 85%; margin-top:0.5em; margin-left:0.8em;"><!--
+-->    This content is currently unavailable as the original source is no longer accessible.<br/><!--
+-->    We apologize for any inconvenience and thank you for your understanding.<!--
+-->  </div><!--
+--></td><!--
+--></tr><!--
+--></table>
+</pre>
+#: <table style="padding: 0.25em 0.5em; font-size: 90%; width: 100%; margin:0 auto 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: box-shadow 0.3s ease; border-collapse: collapse; line-height:1.5em; border-left: 8px solid #b22222; background-color: rgba(178, 34, 34, 0.1)"><!--
+--><tr><!--
+--><td colspan="2" style="padding: 0.25em 0.5em;"><!--
+-->  <span style="font-size:1.5em; margin-top: 0.5em; display: block;">'''Missing Content Notice'''</span><!--
+--></td><!--
+--></tr><!--
+--><tr><!--
+--><td style="width: 60px; padding: 2px 0px 2px 0.5em; text-align: center;"><!--
+-->  [[File:STOP2 モノクロ.png|link=|60px]]<!--
+--></td><!--
+--><td style="padding: 0.25em 0.5em;"><!--
+-->  <div style="font-size: 85%; margin-top:0.5em; margin-left:0.8em;"><!--
+-->    This content is currently unavailable as the original source is no longer accessible.<br/><!--
+-->    We apologize for any inconvenience and thank you for your understanding.<!--
+-->  </div><!--
+--></td><!--
+--></tr><!--
+--></table>
+</noinclude>

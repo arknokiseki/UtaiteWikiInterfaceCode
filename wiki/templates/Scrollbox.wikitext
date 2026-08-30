@@ -1,0 +1,2 @@
+<includeonly><!--<div class="scrollbar-container">--><!--
+--><div {{#if:{{{class|}}}|class="{{{class}}}"|}} style="font-size:{{{font-size|inherit}}}; width:auto; max-height:{{{height|300}}}{{{height-unit|px}}}; min-width:{{{min-width|auto}}}; text-align:{{{text-align|inherit}}}; overflow:auto; margin-bottom:3px; border:1px">{{#switch:|{{{1|{{{content}}}}}}}}</div></includeonly><noinclude>{{doc}}[[Category:Assistant templates]]</noinclude>

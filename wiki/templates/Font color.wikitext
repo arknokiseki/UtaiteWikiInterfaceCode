@@ -1,0 +1,1 @@
+{{{{{|safesubst:}}}#if:{{{3|}}}|<span style="background-color:{{{2|inherit}}};color:{{{1|inherit}}};">{{{3|}}}</span>|<span style="color:{{{1|inherit}}};">{{{2|}}}</span>}}<noinclude>{{doc}}[[Category:General wiki templates]]</noinclude>

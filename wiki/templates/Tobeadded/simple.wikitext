@@ -1,0 +1,38 @@
+<includeonly>{{#if:{{{wikilink|}}}|<div class="link-neutral link-nounderline">{{#if:{{{action|}}}| [{{fullurl:{{{wikilink}}}|action={{{action}}}}}<i class="fa-solid fa-circle-plus"></i>&nbsp;To be added]| [[{{{wikilink}}}|<i class="fa-solid fa-circle-plus"></i>&nbsp;To be added]] }}</div>| {{#if:{{{interwikilink|}}}|<div class="link-neutral link-nounderline">[{{{interwikilink|}}}<i class="fa-solid fa-circle-plus"></i>&nbsp;To be added]</div>|<i class="fa-solid fa-circle-plus"></i>&nbsp;To be added }} }}</includeonly>
+<noinclude>
+==Template:Tobeadded==
+This template creates a "To be added" placeholder with a plus icon, optionally linking to another page.
+
+===Syntax===
+Basic usage:
+<pre>{{Tobeadded/simple}}</pre>
+{{Tobeadded/simple}}
+
+With internal wiki link:
+<pre>{{Tobeadded/simple|wikilink=Matryoshka}}</pre>
+{{Tobeadded/simple|wikilink=Matryoshka}}
+
+With internal wiki link and action:
+<pre>{{Tobeadded/simple|wikilink=Matryoshka|action=edit}}</pre>
+{{Tobeadded/simple|wikilink=Matryoshka|action=edit}}
+
+With external (interwiki) link:
+<pre>{{Tobeadded|interwikilink=https://example.com}}</pre>
+{{Tobeadded/simple|interwikilink=https://example.com}}
+
+===Parameters===
+* `wikilink` (optional) - Creates an internal wiki link to the specified page
+* `action` (optional) - Adds a MediaWiki action parameter to the wikilink (e.g., edit, history, delete, raw)
+* `interwikilink` (optional) - Creates an external link to the specified URL
+
+===Common action values===
+* edit - Opens the page in edit mode
+* history - Shows the page history
+* delete - Shows the deletion interface
+* raw - Shows the raw wikitext
+* protect - Shows the protection interface
+* watch - Adds the page to your watchlist
+
+===Notes===
+When using the action parameter, the link will be rendered as an external link using the MediaWiki URL syntax. This is necessary to support action parameters properly.
+</noinclude>

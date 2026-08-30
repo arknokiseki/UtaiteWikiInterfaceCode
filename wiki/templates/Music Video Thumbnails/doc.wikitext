@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images as MV thumbnails.
+;Syntax
+:Type <code>{{t|Music Video Thumbnail}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,95 @@
+<includeonly>{{#switch: {{{type|all}}}
+  | plain = <span class="username-plain">anonymous user</span><!--
+  -->| profile = <span class="username-wikilink">anonymous user</span><!--
+  -->| blog = <span class="username-blog">Blog</span><!--
+  -->| blog-full = <span class="username-blog-full">Blog</span><!--
+  -->| contribs = <span class="username-contribs">contributions</span><!--
+  -->| contribs-full = <span class="username-contribs-full">contributions</span><!--
+  -->| full = <span class="username-profile-links-parsed">Profile • Blog • Contributions</span><!--
+  -->| #default = <span class="username-profile-links">Profile • Blog • Contributions</span><!--
+-->}}</includeonly><noinclude>
+== UserLinks Template Documentation ==
+This template displays various user-related links that automatically show the current user's name through JavaScript functionality.
+<div style="background-color: rgba(255, 0, 0, 0.1); padding: 8px 12px; border-left: 4px solid #ff0000; margin: 8px 0;"><strong>Current issue:</strong> Blog link failed to render💀</div>
+<div style="background-color: rgba(255, 255, 0, 0.1); padding: 8px 12px; border-left: 4px solid #ffff00; margin: 8px 0;"><strong>Limitation:</strong> You need to enable test mode first on [[MediaWiki:Common.js]]</div>
+<div style="background-color: rgba(255, 0, 255, 0.1); padding: 8px 12px; border-left: 4px solid #ff00ff; margin: 8px 0;"><strong>For Anonymous User:</strong> NT</div>
+=== Basic Usage ===
+{| class="wikitable"
+! Code
+! Description
+! Example
+! Output
+|-
+| <code><nowiki>{{UserLinks}}</nowiki></code>
+| Shows all links
+| Profile • Blog • Contributions
+| {{UserLinks}}
+|-
+| <code><nowiki>{{UserLinks|type=blog}}</nowiki></code>
+| Shows just Blog link
+| Blog
+| {{UserLinks|type=blog}}
+|-
+| <code><nowiki>{{UserLinks|type=plain}}</nowiki></code>
+| Shows just username
+| (username)
+| {{UserLinks|type=plain}}
+|-
+| <code><nowiki>{{UserLinks|type=profile}}</nowiki></code>
+| Shows just profile link
+| (linked username)
+| {{UserLinks|type=profile}}
+|-
+| <code><nowiki>{{UserLinks|type=contribs}}</nowiki></code>
+| Shows just contributions link
+| contributions
+| {{UserLinks|type=contribs}}
+|}
+=== Parameters ===
+; type
+: Controls which links to display (optional)
+: Default: <code>all</code>
+{| class="wikitable"
+! Value
+! Description
+|-
+| <code>all</code>
+| All links in a navigation bar
+|-
+| <code>plain</code>
+| Just username
+|-
+| <code>profile</code>
+| Profile link
+|-
+| <code>blog</code>
+| Blog link
+|-
+| <code>blog-full</code>
+| Blog link with username
+|-
+| <code>contribs</code>
+| Contributions link
+|-
+| <code>contribs-full</code>
+| Contributions link with username
+|-
+| <code>full</code>
+| All links with parsed wikitext
+|}
+=== Technical Details ===
+* Works in conjunction with [[MediaWiki:Common.js]] to automatically:
+** Display the current user's name
+** Check if user pages exist
+** Hide links to non-existent pages (e.g., if user has no blog)
+** Parse and insert proper wikilinks
+* Uses specific CSS classes that are targeted by JavaScript:
+** <code>username-plain</code>
+** <code>username-wikilink</code>
+** <code>username-blog</code>
+** <code>username-blog-full</code>
+** <code>username-contribs</code>
+** <code>username-contribs-full</code>
+** <code>username-profile-links</code>
+** <code>username-profile-links-parsed</code>
+</noinclude>

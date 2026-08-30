@@ -1,0 +1,5 @@
+<includeonly><div class="utaite-countdown countdown-style-{{{style|card}}} countdown-align-{{{align|left}}}" data-end-time="{{{endTime|}}}" data-timezone="{{{timezone|UTC+9}}}">
+{{#if:{{{title|}}}|<div class="cd-title">{{{title}}}</div>}}
+</div></includeonly><noinclude>
+{{doc}}
+</noinclude>

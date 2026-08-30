@@ -1,0 +1,4 @@
+<pre>{{DS|Template doc.png|[[+♂|+♂ (Plus Danshi)]]|[[GigaP]]|[[Reol]]|[[Avatar Illustrators#Others|△○□×]]|{{VW|Kagamine Len}}|VOCALOID}}</pre>
+...results in:
+{{DS|Template doc.png|[[+♂|+♂ (Plus Danshi)]]|[[GigaP]]|[[Reol]]|[[Avatar Illustrators#Others|△○□×]]|{{VW|Kagamine Len}}|VOCALOID}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

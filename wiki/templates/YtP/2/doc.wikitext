@@ -1,0 +1,93 @@
+__NOTOC__
+== YouTube Playlist Template ==
+This template embeds YouTube playlists into wiki pages.
+
+<div style="background-color: rgba(255, 255, 0, 0.1); padding: 8px 12px; border-left: 4px solid #ffff00; margin: 8px 0;"><strong>Limitation:</strong>Maximum playlists limited by 200</div>
+
+== Syntax ==
+<pre>
+{{YtP/2
+|plid=PLAYLIST_ID
+|dimensions=
+|alignment=
+|pldesc=
+|container=
+|urlargs=
+|autoresize=
+|valignment=
+}}
+</pre>
+
+== Parameters ==
+{| class="wikitable"
+|-
+! Parameter !! Description !! Default !! Example
+|-
+| plid || YouTube playlist ID (required) || ''none'' || PLxx1234ABCD
+|-
+| dimensions || Width and height of the player || ''default player size'' || 400x300
+|-
+| alignment || Horizontal alignment of the player || inline || left, right, center, inline
+|-
+| pldesc || Description text for the playlist || ''empty'' || My favorite songs
+|-
+| container || Container class for styling || ''none'' || my-playlist-container
+|-
+| urlargs || Additional YouTube player URL arguments || ''none'' || autoplay=1&loop=1
+|-
+| autoresize || Enable/disable automatic resizing || ''none'' || true, false
+|-
+| valignment || Vertical alignment of the player || ''default'' || top, middle, bottom
+|}
+
+== Examples ==
+=== Basic Usage ===
+<pre>
+{{YouTubePlaylist|plid=PLxx1234ABCD}}
+</pre>
+
+=== Advanced Usage ===
+<pre>
+{{YtP/2
+|plid=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf
+|dimensions=640x480
+|alignment=center
+|pldesc=[[Aoi Yuuki]]'s Covered Songs Playlist
+|container=
+|urlargs=autoplay=0&loop=1
+|autoresize=true
+|valignment=top
+}}
+</pre><br/>
+Output:<br/>
+{{YtP/2
+|plid=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf
+|dimensions=640x480
+|alignment=center
+|pldesc=[[Aoi Yuuki]]'s Covered Songs Playlist
+|container=
+|urlargs=autoplay=0&loop=1
+|autoresize=true
+|valignment=top
+}}
+
+== Technical Limitations ==
+* Maximum playlists limited by 200
+* Some regions may have restricted access to YouTube content
+* Some videos may not play due to YouTube's limitations on embedding sensitive content (self-harm, gruesome content, etc.)
+
+== Notes ==
+* The playlist ID can be found in the YouTube URL after "?list="
+* Dimensions should be specified in pixels
+* URL arguments should follow YouTube player parameters format
+* Container classes must be defined in the wiki's CSS
+
+== See Also ==
+* [https://developers.google.com/youtube/player_parameters YouTube Embedded Players and Player Parameters]
+* [https://www.mediawiki.org/wiki/Extension:EmbedVideo/ja EmbedVideo Documentation on MediaWiki Website]
+* [[Template:Yt]] - For embedding single videos
+
+== Implementation ==
+<pre>
+<includeonly>{{#ev:youtubeplaylist|{{{plid}}}|{{{dimensions|}}}|{{{alignment|inline}}}|{{{pldesc|}}}|{{{container|}}}|{{{urlargs|}}}|{{{autoresize|}}}|{{{valignment|}}}}}</includeonly>
+</pre>

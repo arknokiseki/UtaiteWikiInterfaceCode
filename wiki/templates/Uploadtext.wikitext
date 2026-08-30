@@ -1,0 +1,12 @@
+{| class="wikitable upload-text-container" style="position:relative;"
+!'''Please read the [[Utaite_Wiki:Wiki_Rules#Image Rules|wiki's image rules]] before uploading.''' To view or search previously uploaded files go to the [[Special:FileList|list of uploaded files]], (re)uploads are also logged in the [[Special:Log/upload|upload log]], deletions in the [[Special:Log/delete|deletion log]].
+|-
+|<div style="max-height:220px;overflow-x:hidden;overflow-y:visible;">{{#lsth:Utaite_Wiki:Rules_and_Guidelines|Images and media}}</div>
+|-
+|<span style="color:#FF496C">Please ensure that your images are uploaded in PNG or WEBP format, appropriately named, and correctly categorized and licensed.</span> For more details, refer [[meta:Help:How to upload files and choosing the right license|here]].
+|-
+|To include a file in a page, use a link in one of the following forms:
+* <strong><code><nowiki>[[</nowiki>File<nowiki>:File.png]]</nowiki></code></strong> or <strong><code><nowiki>[[</nowiki>File<nowiki>:File.webp]]</nowiki></code></strong> to use the full version of the file
+* <strong><code><nowiki>[[</nowiki>File<nowiki>:File.png|200px|thumb|left|alt text]]</nowiki></code></strong> or <strong><code><nowiki>[[</nowiki>File<nowiki>:File.webp|200px|thumb|left|alt text]]</nowiki></code></strong> to use a 200 pixel wide rendition in a box in the left margin with "alt text" as description
+* <strong><code><nowiki>[[</nowiki>Media<nowiki>:File.png]]</nowiki></code></strong> or <strong><code><nowiki>[[</nowiki>Media<nowiki>:File.webp]]</nowiki></code></strong> for directly linking to the file without displaying the file
+|}

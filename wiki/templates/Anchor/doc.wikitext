@@ -1,0 +1,70 @@
+{{Documentation/Header}}
+Template for creating a hidden HTML anchor (ID) on a page. Useful when you want to target a specific point on the page with a link (e.g. [[Mafumafu/Discography#Kagurairo Artifact|Kagurairo Artifact]]) but you don’t have or don’t want a visible heading at that exact spot.
+
+==Purpose==
+This template outputs a small, hidden HTML element with an id attribute suitable for linking to from within or between pages. It HTML-encodes the provided anchor name so the resulting id is safe for use in an element id.
+
+==Syntax==
+<pre>{{anchor
+|name = AnchorName
+|class = hide
+}}</pre>
+
+* <code>name</code> (required) — the anchor name (text used to build the element id).
+* <code>class</code> (optional) — CSS class to apply to the generated &lt;div&gt;. Defaults to <code>hide</code>.
+
+When invoked without a parameter, this template renders an empty anchor element with an empty id.
+
+==Examples==
+Basic usage (create an anchor called "Anchorname"):
+<pre>{{anchor|Anchorname}}</pre>
+…results in:
+<pre>&lt;div id="Anchorname" class="hide"&gt;&lt;/div&gt;</pre>
+
+Usage with a name containing spaces (encoding illustrated):
+<pre>{{anchor|Section 2 — Details}}</pre>
+…results in a safe id such as:
+<pre>&lt;div id="Section_2_%E2%80%94_Details" class="hide"&gt;&lt;/div&gt;</pre>
+
+Make the element visible (for debugging) by passing an empty <code>class</code>:
+<pre>{{anchor|Anchorname|class=}}</pre>
+…results in:
+<pre>&lt;div id="Anchorname"&gt;&lt;/div&gt;</pre>
+
+==When to use==
+* Use this template when you need a stable link target but don't want a visible heading.
+* Use instead of manual &lt;div id="..."&gt; when you want automatic encoding and consistency.
+
+==When NOT to use==
+* Do not use this to create visible navigation elements — headings (==Heading==) or named spans inside content are better.
+* Avoid having multiple anchors with the same resulting id on the same rendered page — duplicate ids can produce unpredictable scroll/target behavior.
+
+==Troubleshooting / Notes==
+* Duplicate IDs: if multiple transclusions or templates create the same anchor id on a single page, the browser may jump to the first occurrence only. Make anchor names unique.
+* Encoding: certain characters (quotes, angle brackets, em-dashes, non-ASCII) are encoded by <nowiki>{{anchorencode}}</nowiki>. If you need predictable ASCII-only ids, pass an ASCII-safe name.
+* Transclusion: If you transclude a page that contains anchors into multiple places, the id will appear multiple times on the final page—avoid this or use unique prefixes.
+* Accessibility: anchors without visible text don't hurt accessibility for screen readers (they ignore empty elements), but ensure your target makes sense in context.
+
+==TemplateData==
+<templatedata>
+{
+  "description": "Create a hidden HTML anchor element (id) for page linking.",
+  "params": {
+    "name": {
+      "label": "Anchor name",
+      "description": "The string used to create the element id. It will be encoded via {{anchorencode:}}.",
+      "type": "string",
+      "required": true
+    },
+    "class": {
+      "label": "CSS class",
+      "description": "CSS class applied to the &lt;div&gt;. Defaults to 'hide' to keep the anchor invisible. Pass an empty value to output no class.",
+      "type": "string",
+      "default": "hide"
+    }
+  },
+  "paramOrder": ["name", "class"]
+}
+</templatedata>
+
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

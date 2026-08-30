@@ -1,0 +1,45 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|SEKAI|v1=PAGENAME|v2=Link Text|v3=server=miraheze}}
+
+==Examples==
+{{T|SEKAI|p1=Project SEKAI Wondershow Channel|p2=Wondershow Channel|_Y_=1}}
+
+{{T|SEKAI|p1=Project SEKAI Wondershow Channel|p2=Wondershow Channel|server=wikia|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "Project SEKAI Wondershow Channel",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "Wondershow Channel",
+			"type": "string",
+			"suggested": true
+		},
+		"server": {
+			"label": "server",
+			"description": "miraheze/wikia",
+			"example": "miraheze",
+			"type": "string",
+			"suggestedvalues": [
+				"miraheze",
+				"fandom",
+				"wikia"
+			],
+			"default": "miraheze"
+		}
+	}
+}
+</templatedata>

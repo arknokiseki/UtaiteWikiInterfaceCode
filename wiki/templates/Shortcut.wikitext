@@ -1,0 +1,44 @@
+<noinclude></noinclude><indicator name="tpl-shortcut">{{Badge|content=<!--T:5--> {{PLURAL:{{#if:{{{5|}}}|5|{{#if:{{{4|}}}|4|{{#if:{{{3|}}}|3|{{#if:{{{2|<noinclude>demo</noinclude>}}}|2|1}}}}}}}}|shortcut|shortcuts}}: <!--
+-->[[{{{1|#}}}|'''{{{1}}}''']]<!--
+-->{{#if: {{{2|<noinclude>demo</noinclude>}}}<!--
+	-->| &nbsp; [[{{{2|#}}}|'''{{{2}}}''']]<!--
+-->}}<!--
+-->{{#if: {{{3|}}}<!--
+	-->| &nbsp; [[{{{3}}}|'''{{{3}}}''']]<!--
+-->}}<!--
+-->{{#if: {{{4|}}}<!--
+	-->| &nbsp; [[{{{4}}}|'''{{{4}}}''']]<!--
+-->}}<!--
+-->{{#if: {{{5|}}}<!--
+	-->| &nbsp; [[{{{5}}}|'''{{{5}}}''']]<!--
+-->}}<!--
+-->}}</indicator><noinclude>
+{{clear}}
+{{Documentation|content=
+
+
+== Usage == <!--T:1-->
+
+
+<pre>{{Shortcut|RL2}}</pre>
+
+<pre>{{Shortcut|RL2|RL/V2SPEC}}</pre>
+
+<pre>{{Shortcut|A|B|C|D|E}}</pre>
+
+
+<!--T:2-->
+Supports up to 5 shortcuts.
+
+
+== TemplateData ==
+{{Shortcut/doc}}
+
+
+== See also == <!--T:6-->
+
+* {{tlx|Template shortcut}}
+
+}}
+[[Category:Shortcut templates|{{PAGENAME}}]]
+</noinclude>

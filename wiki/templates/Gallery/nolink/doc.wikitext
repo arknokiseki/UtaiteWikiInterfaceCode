@@ -1,0 +1,4 @@
+<pre>{{Gallery/nolink|template doc.png|Template doc.<br>Illust. by Ark}}</pre>
+...results in:
+{{Gallery/nolink|template doc.png|Template doc.<br>Illust. by Ark}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

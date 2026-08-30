@@ -1,0 +1,1 @@
+Provides functions to url-encode strings. Used by [[Module:Gerrit]] and [[Module:Bugzilla]]

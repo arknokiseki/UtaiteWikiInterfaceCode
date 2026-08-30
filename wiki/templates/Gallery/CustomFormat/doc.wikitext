@@ -1,0 +1,4 @@
+<pre>{{GalleryCustomFormat|[[File:Stungun_and_Maruguri_by_Uni.png|thumb|256px|<span style="color:#6ABBCC;">Stungun and Maruguri by Uni.</span>]]<br>Illust. by insert illustrator here}}</pre>
+...results in:
+{{GalleryCustomFormat|[[File:Stungun_and_Maruguri_by_Uni.png|thumb|256px|<span style="color:#6ABBCC;">Stungun and Maruguri by Uni.</span>]]<br>Illust. by insert illustrator here}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

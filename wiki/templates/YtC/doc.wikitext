@@ -1,0 +1,23 @@
+<pre>{{YtC|@Tigusakun|Chigusa YT link with youtube handle}}{{YtC|@_Liura_of}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|@Tigusakun|Chigusa YT link with youtube handle}}{{YtC|@_Liura_of}}</div></div>
+
+
+<pre>{{YtC|UCrALFGPubY9rNwVOOJUYu4g}}{{YtC|UCln9P4Qm3-EAY4aiEPmRwEA|Ado channel}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|UCrALFGPubY9rNwVOOJUYu4g}}</div><div>{{YtC|UCln9P4Qm3-EAY4aiEPmRwEA|Ado channel}}</div></div>
+
+
+<pre>{{YtC|amatsuki2525official|amatsuki channel|username}}{{YtC|ooo0eve0ooo|username|Eve Channel with username}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|amatsuki2525official|amatsuki channel|username}}{{YtC|ooo0eve0ooo|Eve Channel with username|username}}</div></div>
+
+
+<pre>{{YtC|UCr8DL8DMFL5RQH9w6J6urfA|ゆきむら。総本部||true}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|UCr8DL8DMFL5RQH9w6J6urfA|ゆきむら。総本部||true}}</div></div>
+
+
+<pre>{{YtC|@test123|test delete reason||true}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|@test123|test delete reason||true}}</div></div>
+
+
+<pre>{{YtC|thisisusernametest|test delete reason|username|true}}</pre>
+...resulted in: <div style="display: flex; align-items: center;"><div style="margin-right: 5px;">{{YtC|thisisusernametest|test delete reason|username|true}}</div></div>
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly>

@@ -1,0 +1,11 @@
+;Description
+:This template is used to link to a YouTube video.
+;Syntax
+:Place <code><nowiki>{{yt|<ytvideoid>}}</nowiki></code> nearby the title, and substitute <ytvideoid> with the latter part of the YouTube link (e.g. if the link is https://youtube.com/watch?v=m-ratVcEcGc, the ytvideoid will be "m-ratVcEcGc"). If third argument's value is 'link', it will take link form like the example below. If necessary, use the article's talk page to discuss further details.
+===Example===
+#default<br/><pre>{{yt|ytvideoid}}</pre><br/>Output: {{yt|m-ratVcEcGc}}<br /><br /><br />
+#link<br /><pre>{{yt|ytvideoid|caption|link}}</pre><br /><pre>{{yt|m-ratVcEcGc|RondeauX of RagnaroQ|link}}</pre><br />Output: {{yt|m-ratVcEcGc|RondeauX of RagnaroQ|link}}<br /><br /><br />
+#default, forcedisabled<br/><pre>{{yt|ytvideoid|forcedisabled=true}}</pre><br/>Output: {{yt|m-ratVcEcGc|forcedisabled=true}}<br /><br /><br />
+#link, forcedisabled<br /><pre>{{yt|ytvideoid|caption|link|forcedisabled=true}}</pre><br /><pre>{{yt|m-ratVcEcGc|RondeauX of RagnaroQ|link|forcedisabled=true}}</pre><br />Output: {{yt|m-ratVcEcGc|RondeauX of RagnaroQ|link|forcedisabled=true}}
+
+<includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

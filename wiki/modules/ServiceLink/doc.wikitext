@@ -1,0 +1,136 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+This module implements {{T|LType2}}. It generates a logo link for various music and merchandise platforms, automatically handling URL structures and logo selection.
+
+== Usage ==
+This module is intended to be used by {{T|LType2}}
+
+<pre>
+{{#invoke:ServiceLink|link|SERVICE_ID|ITEM_ID|DESCRIPTION|BOOTH_DESC}}
+</pre>
+
+== Parameters ==
+{| class="wikitable"
+! Parameter !! Description !! Example
+|-
+| 1 || '''Platform Name (Service ID)'''<br>The identifier for the service (e.g., amazon, spotify, booth). See the table below for supported IDs. || spotify
+|-
+| 2 || '''Item ID'''<br>The unique ID used in the platform's URL. || 4jKI...
+|-
+| 3 || '''Store Name / Description'''<br>For '''Booth''': The subdomain (store name).<br>For '''others''': An optional description appended to the link tooltip. || my-store (Booth)<br>(Deluxe Edition) (Others)
+|-
+| 4 || '''Booth Description'''<br>For '''Booth only''': An optional description appended to the link tooltip. || (Digital Ver.)
+|}
+
+== Supported Services ==
+This table lists the supported service IDs and their corresponding URL formats.
+
+{| class="wikitable sortable"
+! Service ID !! Platform Name !! URL Format
+|-
+| amazon || Amazon || http://www.amazon.co.jp/dp/{ID}
+|-
+| amazonmusic || Amazon Music || https://music.amazon.com/albums/{ID}
+|-
+| amazonmusicjp || Amazon Music JP || https://music.amazon.co.jp/albums/{ID}
+|-
+| amiami || amiami || https://www.amiami.jp/top/detail/detail?gcode={ID}
+|-
+| awa || AWA || https://s.awa.fm/album/{ID}
+|-
+| awa-track || AWA (Track) || https://s.awa.fm/track/{ID}
+|-
+| yt || YouTube || https://www.youtube.com/watch?v={ID}
+|-
+| youtubemusic || YouTube Music || https://music.youtube.com/playlist?list={ID}
+|-
+| linemusic || Line Music || https://music.line.me/webapp/album/{ID}
+|-
+| rakutenmusic || Rakuten Music || https://music.rakuten.co.jp/link/album/{ID}
+|-
+| itunes || iTunes || https://itunes.apple.com/jp/album/{ID}
+|-
+| itunesjp || iTunes JP || https://music.apple.com/jp/album/{ID}
+|-
+| sony || Sony Music Shop || https://www.sonymusicshop.jp/m/item/itemShw.php?cd={ID}
+|-
+| amatsuki || Amatsuki Official || https://amatsuki-officialgoods.com/products/{ID}
+|-
+| cielkocka || Cielkocka Webshop || https://www.cielkocka-webshop.jp/products/{ID}
+|-
+| stapola || Starlight PolaRis || https://shop.starpola.com/products/{ID}
+|-
+| sixfonia || Sixfonia || https://shop.sixfonia.com/product?id={ID}
+|-
+| ireisu || Irregular Dice || https://shop.ireisu.com/products/{ID}
+|-
+| chrono store || Chrono Store || https://shop.chronoreverse.com/products/{ID}
+|-
+| booth || Booth || https://{Store}.booth.pm/items/{ID}
+|-
+| sofmap || Sofmap || https://www.sofmap.com/product_detail.aspx?sku={ID}
+|-
+| spotify || Spotify || https://open.spotify.com/album/{ID}
+|-
+| spotify-track || Spotify (Track) || https://open.spotify.com/track/{ID}
+|-
+| animate || Animate || http://www.animate-onlineshop.jp/pd/{ID}/
+|-
+| mora || mora || https://mora.jp/package/{ID}
+|-
+| animate-intl || Animate Intl || https://www.animate.shop/products/{ID}
+|-
+| ototoy || Ototoy || https://ototoy.jp/_/default/p/{ID}
+|-
+| cdjapan || CDJapan || http://www.cdjapan.co.jp/product/{ID}
+|-
+| nicochokuhan || Nicochokuhan || http://chokuhan.nicovideo.jp/products/detail/{ID}
+|-
+| d-stage || D-stage || http://d-stage.com/shop/detail.php?seq={ID}
+|-
+| fasic || Fasic || http://shop.fasic.jp/?pid={ID}
+|-
+| hmv || HMV || http://www.hmv.co.jp/product/detail/{ID}
+|-
+| melonbooks || Melonbooks || http://www.melonbooks.co.jp/detail/detail.php?product_id={ID}
+|-
+| victor || Victor Store || https://victor-store.jp/item/{ID}
+|-
+| three || THREE! || http://www.lagoa.jp/shopdetail/{ID}
+|-
+| toranoana || Toranoana || https://ec.toranoana.jp/tora_r/ec/item/{ID}
+|-
+| toranoana2 || Toranoana (Old) || http://www.toranoana.jp/mailorder/article/{ID}.html
+|-
+| universal || Universal Music || https://store.universal-music.co.jp/product/{ID}
+|-
+| tower || Tower Records || http://tower.jp/item/{ID}
+|-
+| tsutaya || Tsutaya (end of service) || http://shop.tsutaya.co.jp/cd/product.html?janCd={ID}
+|-
+| gamers || Gamers || https://www.gamers.co.jp/pd/{ID}
+|-
+| gamers2 || Gamers (Old) || http://www.gamers-onlineshop.jp/pd/{ID}
+|-
+| rakuten || Rakuten Books || http://books.rakuten.co.jp/rb/{ID}
+|-
+| actfamily || act family || http://actfamily.shop-pro.jp/?pid={ID}
+|-
+| joysound || JOYSOUND || http://mstore.utasuki.jp/utasuki/{ID}/goods/goods_detail.html
+|-
+| 7net || 7net || https://7net.omni7.jp/detail/{ID}
+|-
+| 7net2 || 7net (Old) || http://www.7netshopping.jp/cd/detail/-/accd/{ID}
+|-
+| recochoku || RecoChoku || http://recochoku.jp/album/{ID}
+|-
+| akibaoo || Akibaoo || http://www.akibaoo.com/c/item/{ID}
+|-
+| due || d-ue || http://d-ue.jp/item/{ID}
+|-
+| vvstore || Village Vanguard || https://vvstore.jp/products/detail/{ID}
+|-
+| bunkyodo || Bunkyodo || http://www.bunkyodojoy.com/shop/g/{ID}
+|-
+| dwango || Dwango || https://pc.dwango.jp/portals/album/{ID}
+|}

@@ -1,0 +1,6 @@
+<noinclude>{{FandomLicense|vocaloid|Template:Notify}}</noinclude>
+{| class="whitenavy-template" style="border:1px solid {{{color|{{{1|red}}}}}}; border-width:1px 10px; box-sizing:border-box; margin:1px auto; max-width:75%; border-width:1px 10px; border-radius:10px;"
+| class="select-none" style="color:{{{color|{{{1|red}}}}}}; font-family:Book Antiqua,serif; font-size:250%; padding:0.5em;" | <span>{{{symb|{{{2|!}}}}}}</span> <!--dummy span to prevent a space from appearing in front of the exclamation mark (!?)-->
+| style="width:100%; vertical-align:center;" | {{{text|{{{3|}}}}}}
+| class="select-none" style="color:{{{color|{{{1|red}}}}}}; font-family:Book Antiqua,serif; font-size:250%; padding:0.5em;" | <span>{{{symb|{{{2|!}}}}}}</span>
+|}<noinclude>{{Documentation}}</noinclude>

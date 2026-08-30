@@ -1,0 +1,6 @@
+<includeonly>{{Interwiki|utaite|{{{1|}}}|{{{2|{{{1|}}}}}}|server={{{server|miraheze}}}}}</includeonly><noinclude>
+{{Documentation}}
+
+{{interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

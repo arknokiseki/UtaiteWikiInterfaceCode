@@ -1,0 +1,30 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = mimy twitter.png
+|caption = Twitter
+|officialjapname = みみぃ
+|officialromajiname = Mimy
+|NNDuserpage = 14926203
+|mylist1 = 18524746
+|mylist1info = utattemita
+|mylist2 = 19006740
+|mylist2info = misc.
+|mylist3 = 20285884
+|mylist3info = used for
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co354430
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Yankee Boy・Yankee Girl]]
+|examplennd = sm20271985
+|exampleyt = 
+|description = '''Mimy''' ('''みみぃ''') is an {{NNDict|Utaite}} with a deep and full sounding voice which is rather emotive and expressive.
+
+
+However, at times he might put more power into his voice, making it sound rougher.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

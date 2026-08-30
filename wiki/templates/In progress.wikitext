@@ -1,0 +1,7 @@
+<noinclude></noinclude><!--
+-->[[Image:{{ {{{|safesubst:}}}#if:{{{icon|}}}|{{{icon}}}|OOjs UI icon reload-progressive.svg}}|{{ {{{|safesubst:}}}#if:{{{size|}}}|{{{size}}}|18}}px|alt=<!--T:1--> In progress|link=]]''' {{ {{{|safesubst:}}}#if:{{{1|}}}|{{{1}}}|<!--T:2--> In progress}}'''<!--template:in progress--><!--
+--><noinclude>
+{{documentation}}
+
+[[Category:Utility templates|{{PAGENAME}}]]
+</noinclude>

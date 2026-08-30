@@ -1,0 +1,115 @@
+{{Documentation/Header}}
+{{High Risk}}
+{{Lua|Array}}
+Divides a string into a formatted list of substrings.
+
+==Syntax==
+* {{F|1}} &mdash; arrayString - the input string, each item separated by {{F|2}}.
+* {{F|2}} &mdash; separator - the character or substring to split on.
+* {{F|3}} &mdash; format - the resulting format of each substring.
+* {{F|4}} &mdash; join (optional) - separator between each element to join. Default no separator.
+** {{F|{item} }} is replaced with the item.
+** {{F|{newline} }} is replaced with a newline.
+** {{F|{index} }} is replaced with the index.
+* {{F|sort}} &mdash; (optional) set to 1 to sort the items in the array in ascending order, -1 for descending.
+* {{F|dedupe}} &mdash; (optional) set to 1 to remove duplicate items from array.
+* {{F|noTrim}} &mdash; (optional) set to 1 to not remove whitespace from items in the array.
+* {{F|removeEmpty}} &mdash; (optional) set to 1 to remove empty items from array.
+* {{F|sentence}} &mdash; (optional) set to 1 to display as sentence.
+** {{F|sentence_join}} &mdash; (optional) join character. Default {{F|,}}
+** {{F|sentence_last}} &mdash; (optional) last item join word. Default {{F| and }}
+* {{F|prefix}} &mdash; (optional) text added to start of result.
+* {{F|suffix}} &mdash; (optional) text added to end of result.
+* {{F|template}} &mdash; (optional) set to 1 to allow escaped template syntax for complex returns
+** escape {{F|<nowiki>{{</nowiki>}} as: {{F|²{}} or {{F|^2{}}.
+** escape {{F|<nowiki>}}</nowiki>}} as: {{F|}²}} or {{F|}^2}}.
+** escape {{F|<nowiki>|</nowiki>}} as: {{F|¦}} or {{F|¹}}.
+
+==Examples==
+{{T|Array|1,2,3,4,5|,|P3=*'&#39;{item}'&#39;{newline}&nbsp;}} yields: {{Array|1,2,3,4,5|,|*''{item}''{newline} }}<br>
+{{T|Array|1,2,2,2,3,4,5|,|*''{item}''{newline}|dedupe=1|_Y_=1}}<br>
+{{T|Array|Mafumafu;Amatsuki;96Neko;Mizushino Yuu;Melt da Tenshi;Coe.|;|*{item}{newline}|sort=1|_Y_=1}}<br>
+{{T|Array|Archon;Story;Event|;|[[{item} Quests]]|XXX|_Y_=1}}<br>
+{{T|Array|p1=Archon Quest;Story Quest;World Quest|p2=;|p3=[[{item}]]s|p4=sentence=1|p5=prefix=There are&#32;|p6=suffix=&#32;to complete.|_Y_=1|block=1}}<br>
+{{T|Array|a&&b&&c&&d&&e|&&|{index}: {item}|,&nbsp;|_Y_=1}}<br>
+{{T|Array|Mafumafu;Amatsuki;96Neko;Mizushino Yuu;Melt da Tenshi;Coe.|;|P3=3={{T|Character|{item}|50|NC=1}}|_Ybr_=1}}<br>
+{{T|Array|Placed,Potato,Equipment|,|p3=3=²{#switch:{item}¦Equipment¦Quick Use¦Placed¦Inventory=[[:Category:{item} Gadgets]]¦#default=invalid}²|p4=$$|p5=template=1|block=1|_Y_=1}}<br>
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "arrayString",
+			"description": "The input string, each item separated by \"separator\"",
+			"type": "string",
+			"required": true
+		},
+		"2": {
+			"label": "separator",
+			"description": "The character or substring to split on.",
+			"type": "string",
+			"required": true
+		},
+		"3": {
+			"label": "format",
+			"description": "The resulting format of each substring. Must include {item}. Include \"{newline}\" for newline character or \"{index}\" for index of item.",
+			"example": "<li>{index}: {item}</li>",
+			"type": "string",
+			"required": true
+		},
+		"4": {
+			"label": "join",
+			"description": "Separator between each element to join.",
+			"type": "string",
+			"default": "Empty string."
+		},
+		"sort": {
+			"description": "Set to 1 to sort the items in the array in ascending order, -1 for descending.",
+			"type": "number"
+		},
+		"dedupe": {
+			"description": "Set to 1 to remove duplicate items from array.",
+			"type": "boolean"
+		},
+		"noTrim": {
+			"description": "Set to 1 to not remove whitespace from items in the array.",
+			"type": "boolean"
+		},
+		"removeEmpty": {
+			"description": "Set to 1 to remove empty items from array.",
+			"type": "boolean"
+		},
+		"sentence": {
+			"description": "Set to 1 to display as sentence.",
+			"type": "boolean"
+		},
+		"sentence_join": {
+			"description": "Join text for sentence.",
+			"type": "string",
+			"default": ","
+		},
+		"sentence_last": {
+			"description": "Last item join text for sentence.",
+			"type": "string",
+			"default": " and "
+		},
+		"prefix": {
+			"description": "Text added to start of result.",
+			"type": "string"
+		},
+		"suffix": {
+			"description": "Text added to end of result.",
+			"type": "wiki-template-name"
+		},
+		"template": {
+			"description": "Set to 1 to allow escaped template syntax for complex returns. \"²{\" or \"^2{\" for \"{{\", \"}²\" or \"}^2\" for \"}}\", \"¦\" or \"¹\" for \"|\"",
+			"type": "string"
+		}
+	},
+	"description": "Divides a string into a formatted list of substrings.",
+	"format": "inline"
+}
+</templatedata>
+
+<noinclude></noinclude>

@@ -1,0 +1,39 @@
+{{Documentation/Header}}
+This template displays a list of the most recent user blog posts from across all user blogs on the wiki.
+
+==Syntax==
+{{T|LatestUserBlogs|v1=|v2=|v3=}}
+
+==Examples==
+{{T|LatestUserBlogs|count=10|_Y_=1}}
+
+== Pinned posts ==
+Posts listed in [[Template:MP-Blog/pin.json]] are always shown at the top, in the order they appear in the JSON array (first entry = topmost pin). Pinned posts get a thumbtack icon and are excluded from the latest-posts list below them so they never appear twice.
+
+== Filtering ==
+Only wikitext blog posts are listed: pages whose titles end in <code>.json</code>, <code>.css</code> or <code>.js</code> (JSON/CSS/JavaScript content models) are excluded.
+
+=== Dependencies ===
+* DPL3 extension
+* [[Template:LatestUserBlogItem]] (helper template)
+* [[Module:BlogCard]] (card rendering + pinned-post handling)
+* [[Template:MP-Blog/pin.json]] (pinned posts, ordered)
+
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+  "description": "Displays a list of blog posts.",
+  "params": {
+    "count": {
+      "label": "Count",
+      "description": "Number of blog posts to display",
+      "type": "number",
+      "default": "5",
+      "example": "10"
+    }
+  }
+}
+</templatedata>

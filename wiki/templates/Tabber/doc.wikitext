@@ -1,0 +1,88 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+This template creates a tabbed interface.
+It supports deep-linking to specific tabs if a unique ID is provided.
+
+==Hiding a tab==
+<code>hide''N''</code> removes a tab completely — useful for parking a section that isn't ready without deleting its content.
+
+<pre>{{Tabber|tab1=Shown|content1=Visible|tab2=Parked|content2=Not ready|hide2=true}}</pre>
+
+The value must be exactly <code>true</code> (case-insensitive). <code>yes</code> or <code>1</code> will '''not''' hide the tab.
+
+Tabs must also be numbered '''consecutively''' — the first missing <code>tab''N''</code> stops the sequence, so hiding a middle tab with <code>hide2=true</code> is correct, but deleting <code>tab2</code> outright would discard tab 3 onward.
+
+==Syntax==
+{{T|Tabber
+|v1=id=tabber id
+|v2=tabN=Nth Tab Name
+|v3=contentN=Content for Nth tab
+|v4=hideN=true
+|block=1
+}}
+
+Replace '''N''' with consecutive numbers starting at <code>1</code> — <code>tab1</code>/<code>content1</code>, <code>tab2</code>/<code>content2</code>, and so on. The template stops at the first missing <code>tab''N''</code>, so gaps in the numbering discard every tab after the gap.
+
+==Examples==
+=== Basic Usage ===
+{{T|Tabber
+|p1=tab1=First Tab
+|p2=content1=Content for first tab
+|p3=tab2=Second Tab
+|p4=content2=Content for second tab
+|block=1
+|_Y_=1
+}}
+
+=== Usage with a Unique ID (for deep-linking) ===
+To allow linking directly to a specific tab, and to prevent conflicts when using multiple tabbers on the same page, provide a unique '''id''' for the tabber group.
+
+{{T|Tabber
+|p1=id=unique-page-id-for-this-tabber
+|p2=tab1=Overview
+|p3=content1=This section contains text with {{!}} pipes {{!}} and [[links]]
+|p4=tab2=Details
+|p5=content2={{Template:TrackTable|param1|param2}} 
+|block=1
+|_Y_=1
+}}
+This will generate URL hashes like '''#unique-page-id-for-this-tabber-Overview''' when a tab is clicked.
+
+
+<hr>
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"description": "Creates a tabbed interface. Replace N in the parameter names with consecutive numbers starting at 1 (tab1, tab2, …); the first missing number stops the sequence. Supports optional deep-linking via a unique id.",
+	"params": {
+		"id": {
+			"label": "Tabber ID",
+			"description": "Base identifier that enables deep-linkable anchors. An instance number is appended automatically, giving anchors like #my-id-0-TabName. Requires the CustomTabber gadget.",
+			"type": "string",
+			"suggested": true
+		},
+		"tabN": {
+			"label": "Tab N label",
+			"description": "Label shown on tab N. Replace N with a consecutive number starting at 1 — tab1, tab2, tab3…",
+			"type": "string",
+			"required": true
+		},
+		"contentN": {
+			"label": "Tab N content",
+			"description": "Content of tab N. Replace N with the same number used for its tab — content1, content2, content3…",
+			"type": "content",
+			"required": true
+		},
+		"hideN": {
+			"label": "Hide tab N",
+			"description": "Set to 'true' to omit tab N entirely. Any other value leaves it visible. Replace N with the tab's number — hide1, hide2, hide3…",
+			"type": "string"
+		}
+	},
+	"paramOrder": ["id", "tabN", "contentN", "hideN"],
+	"format": "block"
+}
+</templatedata>

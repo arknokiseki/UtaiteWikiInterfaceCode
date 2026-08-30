@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to an Threads account.
+;Syntax
+:Place <code><nowiki>{{Threads|<username>}}</nowiki></code> and substitute <username> with the latter part of the Utaite's Threads Profile link without handle (without '@'). If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Threads|biribiristockin0816|stungun threads description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Threads|biribiristockin0816|stungun threads description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

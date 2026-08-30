@@ -1,0 +1,17 @@
+<onlyinclude><!--
+-->{{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|1}}}}}|<!--
+	--><templatestyles src="Template:Nowrap/styles.css"/><!--
+	--><span class="nowrap"><!--
+-->}}{{((}}<includeonly>{{{1}}}</includeonly><noinclude>tlf{{!}}...</noinclude><!--
+-->{{{{{|safesubst:}}}#ifeq:{{{2|}}}|{{{2}}}|{{!}}{{{2}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{3|}}}|{{{3}}}|{{!}}{{{3}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{4|}}}|{{{4}}}|{{!}}{{{4}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{5|}}}|{{{5}}}|{{!}}{{{5}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{6|}}}|{{{6}}}|{{!}}{{{6}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{7|}}}|{{{7}}}|{{!}}{{{7}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{8|}}}|{{{8}}}|{{!}}{{{8}}}}}<!--
+-->{{{{{|safesubst:}}}#ifeq:{{{9|}}}|{{{9}}}|{{!}}{{{9}}}}}<!--
+-->{{))}}<!--
+-->{{{{{|safesubst:}}}#if:{{{{{|safesubst:}}}yesno|{{{nowrap|1}}}}}|</span>}}<!--
+--></onlyinclude>
+{{Documentation}}

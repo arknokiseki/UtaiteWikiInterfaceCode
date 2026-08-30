@@ -1,0 +1,61 @@
+<noinclude></noinclude>{{ambox
+  | name  = Update
+  | subst = <includeonly>{{subst:substcheck}}</includeonly>
+  | type  = content
+  | class = ambox-Update
+  | image = [[File:Gnome-appointment-soon.svg|45px|link=]]
+  | text  = {{#if:{{{part|{{{1|}}}}}}
+   |{{#if:{{{inaccurate|}}}
+    |<!--T:9--> The '''factual accuracy''' of parts of this page (those related to {{{part|{{{1|}}}}}}) '''may be compromised due to out-of-date information'''.
+    |<!--T:10--> Parts of this page (those related to {{{part|{{{1|}}}}}}) are '''outdated'''.}}
+   |{{#if:{{{inaccurate|}}}
+    |<!--T:11--> The '''factual accuracy''' of this page '''may be compromised due to out-of-date information'''.
+    |<!--T:12--> This page is '''outdated'''.}}
+  }} <div class="hide-when-compact" style="display:inline;">{{#if:{{{reason|}}}|{{{reason}}}|<!--T:13--> It was written for an older version of MediaWiki and may not apply to the most recent version.}} <!--T:20--> If you have checked or updated this page and found the content to be suitable, please remove this notice. {{#ifexist: {{TALKPAGENAME}}
+   |&#32;<!--T:14--> See the [[{{TALKPAGENAME}}|talk page]] for a possible discussion on this.
+  }} {{#if:{{{date|}}}|<small>''({{{date}}})''</small>}} {{#if:{{{2|}}}
+   |<br /><small><!--T:15--> Last update: {{{2}}}</small>
+  }}</div>
+}}<includeonly>{{#if: {{{nocat|}}}||[[Category:Outdated pages]]}}</includeonly><noinclude>
+
+{{Documentation|content=
+
+<!--T:18-->
+Aliases of this template:
+
+* {{tlx|outdated}}
+
+
+== Examples == <!--T:21-->
+
+<pre>
+{{Update
+|part={{{part}}}
+|inaccurate={{{inaccurate}}}
+|reason={{{reason}}}
+|date={{{date}}}
+|2={{{2}}}
+}}
+</pre>
+{{Update
+|part={{{part}}}
+|inaccurate={{{inaccurate}}}
+|reason={{{reason}}}
+|date={{{date}}}
+|2={{{2}}}
+|nocat=yes
+}}
+
+
+== See also == <!--T:19-->
+
+* {{tl|historical}}
+
+
+== TemplateData == <!--T:22-->
+
+{{Update/doc}}
+}}
+[[Category:Alert templates|{{PAGENAME}}]]
+[[Category:Header templates|{{PAGENAME}}]]
+</noinclude>

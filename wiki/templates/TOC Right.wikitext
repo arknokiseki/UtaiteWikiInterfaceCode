@@ -1,0 +1,1 @@
+<includeonly><div class="toc-right">__TOC__</div></includeonly><noinclude>{{Documentation|content=This template adds a TOC to the righthand side of the page. Useful for disambiguation and project pages with short intros.|type=Data}}</noinclude>

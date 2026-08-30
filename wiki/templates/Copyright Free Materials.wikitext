@@ -1,0 +1,2 @@
+{{LicenseBox|image=WIP descr.png|text=''This file is a copyright free material.''}}<includeonly>[[Category:Copyright Free Materials]][[Category:Media]] [[Category:Image wiki templates]] [[Category:Licensing templates]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]]</noinclude>

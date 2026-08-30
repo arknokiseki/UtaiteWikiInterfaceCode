@@ -1,0 +1,38 @@
+<pre>
+{{Song covers
+|yt1     = ytid
+|nnd1    = nndid
+|singer1 = [[Singer1]]
+|yt2     = 
+|nnd2    = 
+|singer2 = 
+|yt3     = 
+|nnd3    = 
+|singer3 = 
+|yt4     = 
+|nnd4    = 
+|singer4 = 
+|yt5     = 
+|nnd5    = 
+|singer5 = 
+}}</pre>
+...results in:
+
+{{Song covers
+|yt1     = ytid
+|nnd1    = nndid
+|singer1 = [[Singer1]]
+|yt2     = 
+|nnd2    = 
+|singer2 = 
+|yt3     = 
+|nnd3    = 
+|singer3 = 
+|yt4     = 
+|nnd4    = 
+|singer4 = 
+|yt5     = 
+|nnd5    = 
+|singer5 = 
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

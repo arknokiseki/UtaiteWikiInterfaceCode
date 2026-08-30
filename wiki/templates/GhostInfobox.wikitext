@@ -1,0 +1,3 @@
+<includeonly><div style="display:none !important;"><infobox><data source="row1"/></infobox></div></includeonly><noinclude>{{documentation}}</noinclude><noinclude>[[Category:Infobox Templates]]
+</noinclude><noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

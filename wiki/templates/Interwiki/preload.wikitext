@@ -1,0 +1,8 @@
+<include<includeonly></includeonly>only>{{Interwiki|insertthewikinamehere|{{{1|}}}|{{{2|<!---->{{{1}}}<!---->}}}}}</include<includeonly></includeonly>only><noinclude><h2>Explanation</h2>This preload can be used to simplify creating interwiki link templates. Simply replace 'insertthewikinamehere' with the desired wiki name, such as mafumafu, amatsuki2525, eve-utaite, vocaloid, vocaloidlyrics, etc. Make sure to add documentation inside <nowiki><noinclude></nowiki> tag after creating the new interwiki link template.</noinclude><!--
+--><!--Explanation: this preload can be used to simplify creating interwiki link templates. Simply replace 'insertthewikinamehere' with the desired wiki name, such as mafumafu, amatsuki2525, eve-utaite, vocaloid, vocaloidlyrics, etc. Make sure to add documentation inside <noinclude> tag after creating the new interwiki link template. --><!--
+--><!--DO NOT EDIT THE CODE BELOW THIS COMMENT--><!--
+--><no<includeonly></includeonly>include>
+{{Documentation}}
+
+{{Interwiki doc}}
+</no<includeonly></includeonly>include>

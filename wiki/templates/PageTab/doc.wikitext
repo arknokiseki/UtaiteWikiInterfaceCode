@@ -1,0 +1,91 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+The '''PageTab''' template creates a horizontal tab navigation system for pages with multiple subpages. It automatically detects the current page and highlights the active tab with a blue underline, while inactive tabs appear as clickable links in gray text.
+
+==Syntax==
+{{T|PageTab|v1=minwidth=|v2=maxwidth=|v3=borderradius=|v4=height=|v5=tab1=|v6=tab2=|v7=tab3=|v8=tab4=|v9=tab5=|v10=tab6=|v11=tab7=|v12=tab8=}}
+
+==Examples==
+{{T|PageTab
+|p1=tab1         = Template:PageTab
+|p2=tab2         = doc
+|p3=minwidth     = 
+|p4=maxwidth     = 
+|p5=borderradius = 
+|p6=height       = 
+|block=1
+|_Y_ = 1
+}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"minwidth": {
+			"label": "Minimum width",
+			"description": "Minimum width for each tab",
+			"type": "string"
+		},
+		"maxwidth": {
+			"label": "Maximum width",
+			"description": "Maximum width for each tab",
+			"type": "string"
+		},
+		"borderradius": {
+			"label": "Border radius",
+			"description": "Border radius for tab styling",
+			"type": "string"
+		},
+		"height": {
+			"label": "Height",
+			"description": "Height of the tab container",
+			"type": "string"
+		},
+		"tab1": {
+			"label": "Tab 1",
+			"description": "Label for the first tab (main page)",
+			"type": "string",
+			"required": true
+		},
+		"tab2": {
+			"label": "Tab 2",
+			"description": "Label for the second tab (subpage)",
+			"type": "string"
+		},
+		"tab3": {
+			"label": "Tab 3",
+			"description": "Label for the third tab (subpage)",
+			"type": "string"
+		},
+		"tab4": {
+			"label": "Tab 4",
+			"description": "Label for the fourth tab (subpage)",
+			"type": "string"
+		},
+		"tab5": {
+			"label": "Tab 5",
+			"description": "Label for the fifth tab (subpage)",
+			"type": "string"
+		},
+		"tab6": {
+			"label": "Tab 6",
+			"description": "Label for the sixth tab (subpage)",
+			"type": "string"
+		},
+		"tab7": {
+			"label": "Tab 7",
+			"description": "Label for the seventh tab (subpage)",
+			"type": "string"
+		},
+		"tab8": {
+			"label": "Tab 8",
+			"description": "Label for the eighth tab (subpage)",
+			"type": "string"
+		}
+	},
+	"description": "Creates a horizontal tab navigation system for pages with multiple subpages. Automatically highlights the active tab and provides links to related pages.",
+	"format": "block"
+}
+</templatedata>

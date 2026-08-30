@@ -1,0 +1,1 @@
+Hi, Welcome to Utaite Wiki! Before editing, check out the [[Utaite_Wiki:Tutorial|tutorial]], and review the [[Utaite Wiki:Requirements|requirements]] before creating new articles. Thanks for your contributions!<noinclude>{{doc}}</noinclude>

@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images as user profile pictures.
+;Syntax
+:Type <code>{{t|User profile}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,9 @@
+<!-- Visual verification page. Open in both light and dark themes and check each
+     case's label, color, meter, icon, and category against the comments. -->
+{{Freshness|{{#time:F j, Y|now}}}}       <!-- 0 mo: Up to date -->
+{{Freshness|{{#time:F j, Y|-9 months}}}} <!-- ~9 mo: Slightly outdated -->
+{{Freshness|{{#time:F j, Y|-24 months}}}} <!-- 24 mo: Outdated, near-grey -->
+{{Freshness|{{#time:F j, Y|-40 months}}}} <!-- capped grey -->
+{{Freshness|force-outdated=yes|1=May 6, 2025}} <!-- forced despite recent date -->
+{{Freshness|reason=A few covers are missing}} <!-- reason, no date -->
+{{Freshness|1=January 1, 2024|base=#977450}} <!-- custom base fades from brown -->

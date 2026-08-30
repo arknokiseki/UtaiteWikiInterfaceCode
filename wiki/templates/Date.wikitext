@@ -1,0 +1,1 @@
+{{#if:{{{2|}}}|{{{2}}}&nbsp;}}{{#if:{{{3|}}}|{{{3}}},&nbsp;}}{{{1}}}<includeonly>[[Category:Songs published in {{{1}}}]]</includeonly><noinclude>{{Documentation}}</noinclude><noinclude>{{FandomLicense|vocaloidlyrics|Template:Date}}[[Category:Templates]][[Category:Templates/Song]]</noinclude>

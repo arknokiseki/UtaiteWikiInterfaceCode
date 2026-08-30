@@ -1,0 +1,6 @@
+<includeonly>{{#expr:0{{#dpl:debug=0
+	| mode           = userformat
+	| namespace      = Category
+	| listseparators = ,1,+,0
+	| category       = {{{1|}}}
+}}}}</includeonly><noinclude>[[Category:Templates|{{PAGENAME}}]]<br />{{CATEGORIESINCAT|Male Utaite}}</noinclude>

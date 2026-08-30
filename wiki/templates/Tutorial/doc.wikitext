@@ -1,0 +1,8 @@
+{{Documentation/Header}}
+A prominent "⚠ IMPORTANT" notice asking editors to read [[Utaite Wiki:Tutorial]] before editing, with fallback links to the Discord server and the [[Utaite Wiki:FAQ#Who are the administrators?|admin list]]. Styled from the wiki's theme variables, so it follows the active skin.
+
+Takes no parameters. Place it at the top of pages where new editors are likely to land.
+
+==Syntax==
+{{T|Tutorial}}
+<includeonly>[[Category:Article management templates]]</includeonly>

@@ -1,0 +1,23 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Kuma Kuma.png
+|caption = Nico Nico Douga
+|officialjapname = くまくまっ
+|officialromajiname = Kumakuma
+|NNDuserpage = 10402467
+|mylist1 = 20407012
+|mylist1info = utattemita
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|exampletitle = [[Senbonzakura]]
+|examplennd = sm15831639
+|exampleyt = 
+|description = '''Kumakuma''' ('''くまくまっ''') is a male {{NNDict|Utaite}} who started in mid-2010.
+
+He sings with much passion and strength and likes to add random chants and yells in between breaks of the songs, noticeably in his cover of "[[Senbonzakura]]"{{nnd|sm15831639}}.
+
+He, however, can also sing in a more serious and calmer tone, like in his "[[Mozaik Role]]"{{nnd|sm12916530}}, where his voice is smooth and quiet, yet still showing emotion.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

@@ -1,0 +1,10 @@
+|-style="height:80px" valign="center"
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|[[File:{{{1}}}|80px]]
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|{{{2}}}
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|{{{3}}}
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|{{{4}}}
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|{{{5}}}
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|{{{6}}}
+|style="border: 1px solid #ccc; border-top:none"|{{{7}}}
+|-
+<noinclude>{{documentation}}</noinclude>

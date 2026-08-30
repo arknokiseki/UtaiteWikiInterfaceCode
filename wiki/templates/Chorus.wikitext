@@ -1,0 +1,8 @@
+<includeonly><infobox theme="song">
+<navigation><center>{{#ifexist:{{BASEPAGENAMEE}}|[[{{BASEPAGENAMEE}}|Song covers]]|[[{{{root|null}}}|Song covers]]}} > [[{{BASEPAGENAMEE}}/chorus|Song choruses]]</center></navigation>
+<group row-items="1">
+<data source=""><default><center><small>For the definition of chorus, click [[:Category:Famous_Utattemita_Songs/chorus|here]]</small></center></default></data>
+</group>
+</infobox>
+<br>
+{{clr}}</includeonly><includeonly>[[Category:Famous Utattemita Songs/chorus]]</includeonly><noinclude>{{doc}}[[Category:Templates]]</noinclude>

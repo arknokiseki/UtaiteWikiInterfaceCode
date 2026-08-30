@@ -1,0 +1,9 @@
+<includeonly>{{#switch:
+{{{server}}}
+|fandom=[[wikia:{{{1}}}:{{{2|}}}|<span title="{{#if:{{{4|}}}|{{{4}}}|{{#if:{{{3|}}}|{{{3}}} on Fandom's {{{1}}} Wiki|{{#if:{{{2|}}}|{{{2}}} on Fandom's {{{1}}} Wiki|Visit Fandom's {{{1}}} Wiki}}}}}}">{{{3|<!--Start not exist fallback-->{{{2|}}}<!--End not exist fallback-->}}}</span>]]
+|wikia=[[wikia:{{{1}}}:{{{2|}}}|<span title="{{#if:{{{4|}}}|{{{4}}}|{{#if:{{{3|}}}|{{{3}}} on Fandom's {{{1}}} Wiki|{{#if:{{{2|}}}|{{{2}}} on Fandom's {{{1}}} Wiki|Visit Fandom's {{{1}}} Wiki}}}}}}">{{{3|<!--Start not exist fallback-->{{{2|}}}<!--End not exist fallback-->}}}</span>]]
+|miraheze=[[mh:{{{1}}}:{{{2|}}}|<span title="{{#if:{{{4|}}}|{{{4}}}|{{#if:{{{3|}}}|{{{3}}} on Miraheze's {{{1}}} Wiki|{{#if:{{{2|}}}|{{{2}}} on Miraheze's {{{1}}} Wiki|Visit Miraheze's {{{1}}} Wiki}}}}}}">{{{3|<!--Start not exist fallback-->{{{2|}}}<!--End not exist fallback-->}}}</span>]]
+|mh=[[mh:{{{1}}}:{{{2|}}}|<span title="{{#if:{{{4|}}}|{{{4}}}|{{#if:{{{3|}}}|{{{3}}} on Miraheze's {{{1}}} Wiki|{{#if:{{{2|}}}|{{{2}}} on Miraheze's {{{1}}} Wiki|Visit Miraheze's {{{1}}} Wiki}}}}}}">{{{3|<!--Start not exist fallback-->{{{2|}}}<!--End not exist fallback-->}}}</span>]]
+|#default = [[mh:{{{1}}}:{{{2|}}}|<span title="{{#if:{{{4|}}}|{{{4}}}|{{#if:{{{3|}}}|{{{3}}} on Miraheze's {{{1}}} Wiki|{{#if:{{{2|}}}|{{{2}}} on Miraheze's {{{1}}} Wiki|Visit Miraheze's {{{1}}} Wiki}}}}}}">{{{3|<!--Start not exist fallback-->{{{2|}}}<!--End not exist fallback-->}}}</span>]]
+}}</includeonly><!--
+--><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,19 @@
+<includeonly><div class="grid-item">
+{{NotableUtattemita
+|image= Template doc.png
+|title= [[singername]]
+|producer=<br />producername (vocal, mix)<br />producername2 (encode)<br />.....
+|NND=nndvideoid
+|YT=ytvideoid
+|description=
+}}</div></includeonly><noinclude><pre>
+<div class="grid-item">
+{{NotableUtattemita
+|image= Template doc.png
+|title= [[singername]]
+|producer=<br />producername (vocal, mix)<br />producername2 (encode)<br />.....
+|NND=nndvideoid
+|YT=ytvideoid
+|description=
+}}</div>
+</pre></noinclude>

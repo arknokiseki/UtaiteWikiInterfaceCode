@@ -1,0 +1,4 @@
+<pre>{{TH|T★GIRLS.02}}</pre>
+...results in:
+{{TH|T★GIRLS.02}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

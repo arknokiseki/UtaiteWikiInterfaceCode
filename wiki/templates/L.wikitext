@@ -1,0 +1,93 @@
+[[File:{{#switch:{{{1|}}}
+|amazonmusic |itunesjp  |victor |mora |animate-intl |amazonmusicjp |awa |amazon |stapola |sixfonia |ireisu |universal |spotify |spotify-track |youtubemusic |yt |animate |cdjapan |booth |nicochokuhan |ototoy |d-stage |fasic |hmv |itunes |melonbooks |three |toranoana |toranoana2 |tower |tsutaya |gamers |rakuten |actfamily |joysound |7net |7net2 |recochoku |akibaoo |due |vvstore |bunkyodo = {{{1}}}
+|{{{1|}}} = world
+}}.png|12px|link={{#switch:{{{1|}}}
+|amazon = http://www.amazon.co.jp/dp/{{{2}}}
+|amazonmusic = https://music.amazon.com/albums/{{{2}}}
+|amazonmusicjp = https://music.amazon.co.jp/albums/{{{2}}}
+|awa = https://s.awa.fm/album/{{{2}}}
+|yt = https://www.youtube.com/watch?v={{{2}}}
+|youtubemusic = https://music.youtube.com/playlist?list={{{2}}}
+|itunes = https://itunes.apple.com/jp/album/{{{2}}}
+|itunesjp = https://music.apple.com/jp/album/{{{2}}}
+|stapola = https://shop.starpola.com/products/{{{2}}}
+|sixfonia = https://shop.sixfonia.com/product?id={{{2}}}
+|ireisu = https://shop.ireisu.com/products/{{{2}}}
+|booth = https://{{{3}}}.booth.pm/items/{{{2}}}
+|spotify = https://open.spotify.com/album/{{{2}}}
+|spotify-track = https://open.spotify.com/track/{{{2}}}
+|animate = http://www.animate-onlineshop.jp/pd/{{{2}}}/
+|mora = https://mora.jp/package/{{{2}}}
+|animate-intl = https://www.animate.shop/products/{{{2}}}
+|ototoy = https://ototoy.jp/_/default/p/{{{2}}}
+|cdjapan = http://www.cdjapan.co.jp/product/{{{2}}}
+|nicochokuhan = http://chokuhan.nicovideo.jp/products/detail/{{{2}}}
+|d-stage = http://d-stage.com/shop/detail.php?seq={{{2}}}
+|fasic = http://shop.fasic.jp/?pid={{{2}}}
+|hmv = http://www.hmv.co.jp/product/detail/{{{2}}}
+|melonbooks = http://www.melonbooks.co.jp/detail/detail.php?product_id={{{2}}}
+|victor = https://victor-store.jp/item/{{{2}}}
+|three = <!--http://www.lagoa.jp/shopdetail/{{{2}}}-->
+|toranoana2 = http://www.toranoana.jp/mailorder/article/{{{2}}}.html
+|toranoana = https://ec.toranoana.jp/tora_r/ec/item/{{{2}}}
+|universal=https://store.universal-music.co.jp/product/{{{2}}}
+|tower = http://tower.jp/item/{{{2}}}
+|tsutaya = http://shop.tsutaya.co.jp/cd/product.html?janCd={{{2}}}
+|gamers = https://www.gamers.co.jp/pd/{{{2}}}
+|gamers2=http://www.gamers-onlineshop.jp/pd/{{{2}}}
+|rakuten = http://books.rakuten.co.jp/rb/{{{2}}}
+|actfamily = http://actfamily.shop-pro.jp/?pid={{{2}}}
+|joysound = http://mstore.utasuki.jp/utasuki/{{{2}}}/goods/goods_detail.html
+|7net2 = http://www.7netshopping.jp/cd/detail/-/accd/{{{2}}}
+|7net = https://7net.omni7.jp/detail/{{{2}}}
+|recochoku = http://recochoku.jp/album/{{{2}}}
+|akibaoo = http://www.akibaoo.com/c/item/{{{2}}}
+|due = http://d-ue.jp/item/{{{2}}}
+|vvstore = https://vvstore.jp/products/detail/{{{2}}}
+|bunkyodo = http://www.bunkyodojoy.com/shop/g/{{{2}}}
+|{{{1|}}} = {{{2}}}
+}}|{{#switch:{{{1|}}}
+|amazon = Amazon
+|animate = Animate
+|amazonmusic = Amazon Music
+|amazonmusicjp = Amazon Music JP
+|animate-intl = Animate International
+|awa = AWA
+|spotify = Spotify
+|spotify = spotify-track
+|cdjapan = CDJapan
+|booth = {{{3}}}'s Booth
+|nicochokuhan = Nicochokuhan
+|d-stage = D-stage
+|fasic = Fasic
+|yt = YouTube
+|mora = mora
+|victor = Victor Online Store
+|hmv = HMV
+|ototoy = Ototoy
+|itunes = iTunes
+|itunesjp = iTunes
+|stapola = Starlight PolaRis Official Store
+|sixfonia = Sixfonia Official Store
+|ireisu = Irregular Dice Official Store
+|melonbooks = Melonbooks
+|three = THREE!
+|toranoana = Toranoana
+|toranoana2 = Toranoana
+|universal = Universal
+|tower = TOWER RECORDS
+|tsutaya = Tsutaya
+|gamers = Gamers
+|rakuten = Rakuten
+|actfamily = act family
+|joysound = JOYSOUND SHOPPING MALL
+|7net2 = 7 net shopping
+|7net = 7 net shopping
+|recochoku = Recochoku
+|akibaoo = Akibaoo
+|due = d-ue
+|vvstore = Village Vanguard Online Store
+|bunkyodo = Bunkyoudou Hobby & Animega
+|youtubemusic = YouTube Music
+|{{{1|}}} = {{{1|}}}
+}}{{#if:{{{3|}}}|&nbsp;({{{3}}})}}]]&nbsp;<noinclude>{{documentation}}</noinclude>

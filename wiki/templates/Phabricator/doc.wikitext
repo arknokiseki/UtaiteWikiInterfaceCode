@@ -1,0 +1,40 @@
+<templatedata>
+{
+	"description": {
+		"en": "Link to a Phabricator task (e.g. T1234)",
+		"cs": "Odkaz na úlohu Phabricator (např. T1234)",
+		"de": "Verlinkung auf eine Task im Wikimedia-Phabricator (wie T1234)",
+		"pl": "Link do zadania w Phabricator (np. do T1234)",
+        "sv": "Länk till ett ärende på Wikimedias Phabricator (t.ex. T1234)"
+	},
+	"params": {
+		"1": {
+			"label": {
+				"en": "Task ID",
+				"cs": "ID úlohy",
+				"de": "Task-ID",
+				"he": "מזהה משימה",
+				"pl": "ID zadania",
+                "sv": "Ärende-ID"
+			},
+			"type": "line",
+			"required": true,
+			"description": {
+				"en": "Task ID (TNNNNNN) in Wikimedia's Phabricator",
+				"cs": "ID úlohy (TNNNNNN) ve Wikimedia Foundation",
+				"de": "Task-ID (Tnnnnnn) im Wikimedia-Phabricator",
+				"pl": "ID zadania (w formacie TNNNNNN) w Phabricator Wikimedii",
+                "sv": "Ärende-ID (Tnnnnnn) på Wikimedias Phabricator"
+			},
+			"example": {
+				"en": "T1234",
+				"cs": "T1234",
+				"de": "T1234",
+				"pl": "T1234",
+                "sv": "T1234"
+			}
+		}
+	},
+	"format": "inline"
+}
+</templatedata>

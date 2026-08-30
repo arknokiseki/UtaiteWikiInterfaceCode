@@ -1,0 +1,97 @@
+<noinclude>
+<languages />
+</noinclude><includeonly><!--
+-->{{#if:{{{2|{{{description|}}}}}}
+|<!--T:38--> <code {{#if:{{{required|}}}|style="font-weight:bold"}} {{#if:{{{id|{{{1|{{{name|}}}}}}}}}|id="{{{id|{{{1|{{{name}}}}}}}}}"}}>{{{1|{{{name|}}}}}}</code>: {{{2|{{{description|}}}}}}
+|<code {{#if:{{{required|}}}|style="font-weight:bold"}} {{#if:{{{id|{{{1|{{{name|}}}}}}}}}|id="{{{id|{{{1|{{{name}}}}}}}}}"}}>{{{1|{{{name|}}}}}}</code>
+}}<!--
+-->{{#if:{{{maxallowed|}}}
+|&#32;<!--T:2--> No more than {{{maxallowed}}} ({{#if:{{{maxallowedbot|}}}|{{{maxallowedbot}}}|{{#switch:{{{maxallowed}}}|50=500|500=5000}}}} for bots) allowed.}}<!--
+-->{{#if:{{{type|}}}|&#32;'''<!--T:3--> Type:''' {{{type}}}}}<!--
+-->{{#if:{{{values|}}}|&#32;<!--T:1--> Possible values: {{{values}}}}}<!--
+-->{{#if:{{{default|}}}|&#32;(<!--T:4--> Default: {{{default}}})}}<!--
+-->{{#if:{{{version|}}}|&#32;{{MW version-inline|{{#switch:{{#if:{{{removed|}}}|R}}<!--
+  -->|={{{version}}}+<!--
+  -->|R={{{version}}}-{{{removed}}}<!--
+  -->}}<!--/#if--><!--
+-->}}<!--/#switch-->
+}}<!--/MW version-inline--><!--
+-->{{#if:{{{deprecated|}}}|&#32;{{deprecated-inline|1={{{deprecated}}}}}}}<!--
+-->{{#if:{{{removed|}}}|&#32;{{removed-inline|{{{removed}}}}}}}<!--
+--></includeonly><noinclude>
+{{Documentation|content=
+
+:''<!--T:16--> Consider replacing invocations of this template with [[Special:ApiHelp]] transclusion ({{task|T89318}}), since filling in this template redundantly repeats API parameter documentation in source code.''
+
+
+== Usage == <!--T:7-->
+
+<!--T:8-->
+This template can be used to document API parameters.
+<!--T:9--> Its intent is to harmonize the appearance of template parameters across all of the API pages.
+
+{{Pre2|style=display:inline-block
+|1=<nowiki>{{ApiParam
+|</nowiki>''name=''<nowiki>
+|</nowiki>''description=''<nowiki>
+|required=
+|maxallowed=
+|maxallowedbot=
+|type=
+|values=
+|default=
+|version=
+|deprecated=
+|removed=
+}}</nowiki>}}
+
+{{(}}{{!}} class="wikitable sortable"
+! colspan=2 {{!}} <!--T:17--> ApiParam parameters
+{{!}}-
+! <!--T:18--> Parameter Name !! <!--T:19--> Description
+{{!}}-
+{{!}} <code>'''name'''</code> ''<!--T:20--> (or first unnamed)'' {{!}}{{!}} <!--T:21--> The parameter name (required).
+{{!}}-
+{{!}} <code>description</code> ''<!--T:22--> (or second unnamed)'' {{!}}{{!}} <!--T:23--> A description of the parameter.
+{{!}}-
+{{!}} <code>required</code> {{!}}{{!}} <!--T:24--> Specify a value if the parameter is required. <!--T:25--> The name of the required parameter will be bolded.
+{{!}}-
+{{!}} <code>maxallowed</code> {{!}}{{!}} <!--T:26--> For pipe-separated values or numeric quantities, the maximum allowed.
+{{!}}-
+{{!}} <code>maxallowedbot</code> {{!}}{{!}} <!--T:27--> As above, for bots. <!--T:28--> If 50 or 500 is used for <code>maxallowed</code>, this will default to 500 or 5000, respectively.
+{{!}}-
+{{!}} <code>type</code> {{!}}{{!}} <!--T:29--> The data type of the parameter.
+{{!}}-
+{{!}} <code>values</code> {{!}}{{!}} <!--T:30--> A list of possible values for the parameter.
+{{!}}-
+{{!}} <code>default</code> {{!}}{{!}} <!--T:31--> The default value for the parameter.
+{{!}}-
+{{!}} <code>version</code> {{!}}{{!}} <!--T:32--> The version the parameter was introduced in. <!--T:33--> Use the plain MediaWiki version number only.
+{{!}}-
+{{!}} <code>deprecated</code> {{!}}{{!}} <!--T:34--> The version the parameter was deprecated in. <!--T:35--> Use the plain MediaWiki version number only.
+{{!}}-
+{{!}} <code>removed</code> {{!}}{{!}} <!--T:36--> The version the parameter was removed in. <!--T:37--> Use the plain MediaWiki version number only.
+{{!}}{{)}}
+
+
+== Examples == <!--T:10-->
+
+<pre style="display:inline-block">*{{ApiParam|rcid|<!--T:39--> One or more recent changes IDs from which to add or remove the tag.|maxallowed=50}}</pre>
+*{{ApiParam|rcid|<!--T:40--> One or more recent changes IDs from which to add or remove the tag.|maxallowed=50}}
+
+<pre style="display:inline-block">*{{ApiParam|siprop|<!--T:41--> Which properties to get|default=general}}
+**{{ApiParam|general|<!--T:42--> General site information}}
+***{{ApiParam|articlepath|{{ll|Manual:$wgArticlePath|$wgArticlePath}}|version=1.15}}</pre>
+*{{ApiParam|siprop|2=<!--T:43--> Which properties to get|default=general}}
+**{{ApiParam|general|2=<!--T:44--> General site information}}
+***{{ApiParam|articlepath|[[mw:Manual:$wgArticlePath|$wgArticlePath]]|version=1.15}}
+
+
+== See also == <!--T:11-->
+
+* [[:mw:Template:Parameter|<nowiki>{{</nowiki>Parameter<nowiki>}}</nowiki>]] &ndash; <!--T:12--> older version of ApiParam
+
+}}
+[[Category:Typing-aid templates]]
+[[Category:Formatting templates]]
+</noinclude>

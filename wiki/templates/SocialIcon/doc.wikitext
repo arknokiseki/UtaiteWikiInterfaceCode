@@ -1,0 +1,41 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|SocialIcon|v1=sns name}}
+
+==Examples==
+{{T|SocialIcon|p1=nicovideo|_Y_=1}}<br />
+{{T|SocialIcon|p1=yt|_Y_=1}}<br />
+{{T|SocialIcon|p1=twitch|_Y_=1}}<br />
+{{T|SocialIcon|p1=twitcast|_Y_=1}}<br />
+{{T|SocialIcon|p1=facebook|_Y_=1}}<br />
+{{T|SocialIcon|p1=threads|_Y_=1}}<br />
+{{T|SocialIcon|p1=instagram|_Y_=1}}<br />
+{{T|SocialIcon|p1=x|_Y_=1}}<br />
+{{T|SocialIcon|p1=twitter|_Y_=1}}<br />
+{{T|SocialIcon|p1=TikTok|_Y_=1}}<br />
+{{T|SocialIcon|p1=discord|_Y_=1}}<br />
+{{T|SocialIcon|p1=spotify|_Y_=1}}<br />
+{{T|SocialIcon|p1=soundcloud|_Y_=1}}<br />
+{{T|SocialIcon|p1=bilibili|_Y_=1}}<br />
+{{T|SocialIcon|p1=bento|_Y_=1}}<br />
+{{T|SocialIcon|p1=bluesky|_Y_=1}}<br />
+{{T|SocialIcon|p1=booth|_Y_=1}}<br />
+{{T|SocialIcon|p1=deviantart|_Y_=1}}<br />
+{{T|SocialIcon|p1=fanbox|_Y_=1}}<br />
+{{T|SocialIcon|p1=koebu|_Y_=1}}<br />
+{{T|SocialIcon|p1=line|_Y_=1}}<br />
+{{T|SocialIcon|p1=marshmallow|_Y_=1}}<br />
+{{T|SocialIcon|p1=pixiv|_Y_=1}}<br />
+{{T|SocialIcon|_Y_=1}}<br />
+
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

@@ -1,0 +1,25 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = pagos nnd.png
+|caption = her NND user icon
+|officialjapname = ウミ
+|officialromajiname = uuu
+|NNDuserpage = 20409143
+|mylist1 = 25118422
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|nicommu1 = co1309861
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Sekai no Hajimari
+|examplennd = sm20059634
+|exampleyt = 
+|description = '''uuu''', pronounced '''Umi''' ('''ウミ'''), is an {{NNDict|Utaite}} known for her "cute", soft, and girlish voice, and her distinctive but charming habit of "curling" certain notes. Her voice and singing style are usually described as being warm and somewhat "dreamy", however, she has a sizable vocal range, and is capable of lowering her voice's usual pitch and sounding "darker", husky, and "cool", most notably in covers like "[http://www.youtube.com/watch?v=_5Xsh17CjUA Mugen Nostalgie]"{{nnd|sm18668487}}.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

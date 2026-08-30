@@ -1,0 +1,61 @@
+== Purpose ==
+The LastRevision template displays the last revision date of a specified MediaWiki page in a human-readable format (Month DD, YYYY).
+
+== Syntax ==
+ <code><nowiki>{{LastRevision|page_name}}</nowiki></code>
+
+== Parameters ==
+{| class="fandom-table"
+!Parameter
+!Description
+!Required
+!Default
+|-
+|<code>1</code> (unnamed)
+|The name of the page to check
+|No
+|Current page name
+|}
+
+== Examples ==
+
+=== Basic Usage ===
+ <code><nowiki>{{LastRevision|Mafumafu}}</nowiki></code>
+Output: {{LastRevision|Mafumafu}}
+
+=== Current Page ===
+ <code><nowiki>{{LastRevision}}</nowiki></code>
+Output: {{LastRevision}}
+
+=== With Namespace ===
+ <code><nowiki>{{LastRevision|Utaite Wiki:Tutorial}}</nowiki></code>
+Output: {{LastRevision|Utaite Wiki:Tutorial}}
+
+== Output Format ==
+The template returns dates in the format: '''Month DD, YYYY'''
+
+Examples of output formatting:
+
+* <code>January 1, 2025</code>
+* <code>March 15, 2024</code>
+* <code>December 31, 2023</code>
+
+== Technical Details ==
+The template uses the following MediaWiki parser functions:
+
+* <code>REVISIONTIMESTAMP</code> - Retrieves the timestamp of the last revision
+* <code>#time</code> - Formats the timestamp into readable date format
+* Template parameters with default fallback to <code>PAGENAME</code>
+
+== Limitations ==
+
+* Only works for pages that exist in the wiki
+* Returns empty or error if the specified page doesn't exist
+* Requires the page to have at least one revision
+* Date reflects the last edit timestamp, not publication date
+* Expensive function
+
+== See Also ==
+
+* <code>[https://www.mediawiki.org/wiki/Help:Magic_words#REVISIONTIMESTAMP REVISIONTIMESTAMP]</code> magic word
+* <code>[https://www.mediawiki.org/wiki/Help:Extension:ParserFunctions#time #time]</code> parser function

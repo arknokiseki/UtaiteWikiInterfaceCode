@@ -1,0 +1,19 @@
+<includeonly>{{#if:{{{reset|}}}
+|<div class="filter-row">
+<div class="filter-button filter-reset">Reset all</div>
+</div>
+|{{#if:{{{search|}}}
+|<div class="filter-search {{{class|}}}">
+<div class="filter-label">{{{label|}}}</div>
+</div>
+|<div class="filter-row {{{class|}}}" data-col="{{{column|}}}" data-mode="{{{mode|exact}}}">
+<div class="filter-label">{{{label|}}}</div>
+{{#if:{{{all|}}}|<div class="filter-button is-all">All</div>}}
+{{#invoke:Loops
+ |fornumargs
+ |key=INDEX
+ |value=FACTION
+ |pattern=<nowiki><div class="filter-button" data-query="{{{queryINDEX|}}}">FACTION</div></nowiki>
+}}
+</div>
+}}}}</includeonly><noinclude>[[Category:Templates]]</noinclude>

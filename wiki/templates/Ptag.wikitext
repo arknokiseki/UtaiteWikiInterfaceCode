@@ -1,0 +1,39 @@
+<noinclude>
+<languages/>
+</noinclude><includeonly><!--
+--><indicator name="phabricator-project">{{Badge|content=<!--T:1--> [[Special:MyLanguage/Phabricator|Issue tracker]]: [[phab:tag/{{lc:{{{1}}}}}/|'''#{{{1}}}''']]
+}}</indicator><!--
+--></includeonly><noinclude>
+{{Documentation|content=
+
+
+<!--T:2-->
+This template adds a {{ll|Help:Page status indicators|page status indicator}} linking to the project's issue tracker (for example, a Phabricator workboard).
+
+<!--T:3-->
+Example "Foo" used on this page.
+
+:<nowiki>{{ptag|foo}}</nowiki>
+{{ptag|foo}}
+
+<templatedata>
+{
+	"params": {
+		"1": {}
+	},
+	"description": "Add page status indicator with a badge linking to a Phabricator project.",
+	"format": "inline"
+}
+</templatedata>
+
+
+== See also == <!--T:4-->
+
+* {{ll|Template:Tracked}} - <!--T:5--> right-floating box for specific tasks
+* {{ll|Template:Phabricator}} - <!--T:6--> similar to <code><nowiki>[[phab:T</nowiki>''nnn''<nowiki>]]</nowiki></code>
+* {{ll|Template:Ptag2}} - <!--T:8--> similar to Ptag but displays a badge instead of a page-level badge
+* {{ll|Template:Phabricator inline tag}} - <!--T:9--> similar to Ptag2 but displays the link inline
+
+}}
+[[Category:External link templates{{#translation:}}]]
+</noinclude>

@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to an Instagram account.
+;Syntax
+:Place <code><nowiki>{{Instagram|<username>}}</nowiki></code> and substitute <username> with the latter part of the Utaite's Instagram Profile link. If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Instagram|mafumafu_ig|mafumafu instagram description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Instagram|mafumafu_ig|mafumafu instagram description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

@@ -1,0 +1,3 @@
+{{Documentation/Header}}
+{{High Risk}}
+This module implements {{T|Array}}.

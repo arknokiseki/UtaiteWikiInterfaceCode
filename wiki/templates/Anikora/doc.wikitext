@@ -1,0 +1,24 @@
+<pre>{{Anikora
+|season = Spring
+|year   = 2010
+|date   = April 09, 2010
+|nnd    = sm10337285
+|tracks={{Anikora/Track|
+|number   = 1
+|title    = Part1title
+|original = Animename OP
+|utaite   = [[Part1utaite]]
+}}}}</pre>
+...results in:
+{{Anikora
+|season = Spring
+|year   = 2010
+|date   = April 09, 2010
+|nnd    = sm10337285
+|tracks={{Anikora/Track|
+|number   = 1
+|title    = Part1title
+|original = Animename OP
+|utaite   = [[Part1utaite]]
+}}}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

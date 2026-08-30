@@ -1,0 +1,4 @@
+<includeonly>{{#ifeq:{{{nocat|}}}|true|<span class="status-templates hiatus-template">HIATUS</span>|<span class="status-templates hiatus-template">HIATUS</span>{{#ifeq:{{{groups|}}}|true|{{main other|[[Category:Hiatus Groups]]|}}|{{main other|[[Category:Hiatus Utaite]]|}}}}}}</includeonly><noinclude>
+{{doc}}
+[[Category:Status Templates]]
+</noinclude>

@@ -1,0 +1,1 @@
+<noinclude>{{archived}}</noinclude><div class="headingB" style="font-size:40px; text-align:center; line-height:1em;letter-spacing:-4px">{ {{{1}}} }</div><noinclude>[[Category:Main page templates]]</noinclude>

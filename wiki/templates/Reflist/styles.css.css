@@ -1,0 +1,48 @@
+.reflist {
+  list-style-type: decimal;
+  margin-bottom: 0.5em;
+}
+
+@media screen {
+  .reflist {
+    font-size: 0.9em;          /* Make default font smaller only on screens. */
+  }
+}
+
+.reflist .references {
+  font-size: 1em;              /* Reset font size when nested in reflist. */
+  list-style-type: inherit;    /* Enable custom list-style types. */
+  margin-bottom: 0;            /* Avoid double margin when nested in reflist. */
+}
+
+.reflist-columns {
+  margin-top: 0.3em;           /* Reset top margin for column-embedded lists. */
+}
+
+.reflist-columns ol {
+  margin-top: 0;
+}
+
+.reflist-columns li {
+  break-inside: avoid-column;  /* Avoid elements breaking between columns. */
+}
+
+.reflist-upper-alpha {
+  list-style-type: upper-alpha;
+}
+
+.reflist-upper-roman {
+  list-style-type: upper-roman;
+}
+
+.reflist-lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+.reflist-lower-greek {
+  list-style-type: lower-greek;
+}
+
+.reflist-lower-roman {
+  list-style-type: lower-roman;
+}

@@ -1,0 +1,32 @@
+<pre>{{Utattemita tours
+|namejap        = Japanese
+|nameeng        = Translation
+|date           = Month XX, 20XX - Month XX, 20XX
+|openingyt      = ytid
+|openingnnd     = nndid
+|endingyt       = ytid
+|endingnnd      = nndid
+
+|track1title    = Title in Romaji
+|track1nnd      = nndid
+|track1about    = (Translation)
+|track1original = Animename OP
+|track1utaite   = [[Singer1]]
+}}</pre>
+...results in:
+{{Utattemita tours
+|namejap        = Japanese
+|nameeng        = Translation
+|date           = Month XX, 20XX - Month XX, 20XX
+|openingyt      = ytid
+|openingnnd     = nndid
+|endingyt       = ytid
+|endingnnd      = nndid
+
+|track1title    = Title in Romaji
+|track1nnd      = nndid
+|track1about    = (Translation)
+|track1original = Animename OP
+|track1utaite   = [[Singer1]]
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

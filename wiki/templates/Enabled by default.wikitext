@@ -1,0 +1,1 @@
+: ''This extension is '''enabled''' on this wiki.''<includeonly>[[Category:Extensions]][[Category:Extensions enabled by default]]</includeonly><noinclude>

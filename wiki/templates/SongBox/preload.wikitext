@@ -1,0 +1,19 @@
+<includeonly>{{SongBox
+  |color     = 
+  |image     = 
+  |title     = 
+  |date      = 
+  |views     = 
+  |singers   = 
+  |producers = 
+  |links     = 
+}}</includeonly><noinclude><pre>{{SongBox
+  |color     = 
+  |image     = 
+  |title     = 
+  |date      = 
+  |views     = 
+  |singers   = 
+  |producers = 
+  |links     = 
+}}</pre></noinclude>

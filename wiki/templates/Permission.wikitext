@@ -1,0 +1,4 @@
+<div class="boilerplate" id="c-fairuse" style="width:90%; margin:0 auto; padding:10px; border:1px solid #A8ACA8; background:#f4f8fb; color:#000;">
+'''''This file is copyrighted. The copyright holder has given permission for its use.'''''
+</div><includeonly>[[Category:Images]] [[Category:Images Uploaded with Permission]][[Category:Media]]</includeonly><noinclude>
+{{documentation}}</noinclude>

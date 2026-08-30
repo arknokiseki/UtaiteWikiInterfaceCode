@@ -1,0 +1,109 @@
+<noinclude></noinclude>{{Navbox
+|bodyclass = 
+|name      = Parser functions nav
+|title     = {{ll|Manual:Parser functions|2=<!--T:1--> Parser functions}}
+|above     = 
+
+|liststyle = text-align: {{#ifeq: {{dir|{{Pagelang}}}} | ltr | left | right }};
+|group1    = <!--T:2--> All
+|list1     = {{flatlist|1= <!-- This list was taken from [[Parser function hooks]] and transformed into this nav box-->
+* '''A'''&nbsp;<nowiki>{{</nowiki>{{ll|anchorencode|<nowiki>#</nowiki>anchorencode}}<nowiki>}}</nowiki>
+* '''B'''&nbsp;<nowiki>{{</nowiki>{{ll|babel|<nowiki>#</nowiki>babel}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|basepagename|<nowiki>#</nowiki>basepagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|basepagenamee|<nowiki>#</nowiki>basepagenamee}}<nowiki>}}</nowiki>
+* '''C'''&nbsp;<nowiki>{{</nowiki>{{ll|canonicalurl|<nowiki>#</nowiki>canonicalurl}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|canonicalurle|<nowiki>#</nowiki>canonicalurle}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|Extension:CategoryTree#The categorytree parser function|<nowiki>#</nowiki>categorytree}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|Extension:GeoData#Parser_function|<nowiki>#</nowiki>coordinates}}<nowiki>}}</nowiki>
+* '''D'''&nbsp;<nowiki>{{</nowiki>{{ll|defaultsort|<nowiki>#</nowiki>defaultsort}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|displaytitle|<nowiki>#</nowiki>displaytitle}}<nowiki>}}</nowiki>
+* '''E'''&nbsp;<nowiki>{{</nowiki>{{ll|expr|<nowiki>#</nowiki>expr}}<nowiki>}}</nowiki>
+* '''F'''&nbsp;<nowiki>{{</nowiki>{{ll|filepath|<nowiki>#</nowiki>filepath}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|formatdate|<nowiki>#</nowiki>formatdate}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|formatnum|<nowiki>#</nowiki>formatnum}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|fullpagename|<nowiki>#</nowiki>fullpagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|fullpagenamee|<nowiki>#</nowiki>fullpagenamee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|fullurl|<nowiki>#</nowiki>fullurl}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|fullurle|<nowiki>#</nowiki>fullurle}}<nowiki>}}</nowiki>
+* '''G'''&nbsp;<nowiki>{{</nowiki>{{ll|gender|<nowiki>#</nowiki>gender}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|grammar|<nowiki>#</nowiki>grammar}}<nowiki>}}</nowiki>
+* '''I'''&nbsp;<nowiki>{{</nowiki>{{ll|if|<nowiki>#</nowiki>if}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|ifeq|<nowiki>#</nowiki>ifeq}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|iferror|<nowiki>#</nowiki>iferror}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|ifexist|<nowiki>#</nowiki>ifexist}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|ifexpr|<nowiki>#</nowiki>ifexpr}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|int|<nowiki>#</nowiki>int}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>[[w:Wikipedia:Lua|#invoke]]<nowiki>}}</nowiki><!--at the moment the best link-->
+* '''L'''&nbsp;<nowiki>{{</nowiki>{{ll|Help:Magic words#Localization functions|<nowiki>#</nowiki>language}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|Help:Magic words#Formatting|<nowiki>#</nowiki>lc}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|lcfirst|<nowiki>#</nowiki>lcfirst}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|localurl|<nowiki>#</nowiki>localurl}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|localurle|<nowiki>#</nowiki>localurle}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|lqtpagelimit|<nowiki>#</nowiki>lqtpagelimit}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|lst|<nowiki>#</nowiki>lst}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|lstx|<nowiki>#</nowiki>lstx}}<nowiki>}}</nowiki>
+* '''N'''&nbsp;<nowiki>{{</nowiki>{{ll|namespace|<nowiki>#</nowiki>namespace}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|namespacee|<nowiki>#</nowiki>namespacee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|namespacenumber|<nowiki>#</nowiki>namespacenumber}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|ns|<nowiki>#</nowiki>ns}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|nse|<nowiki>#</nowiki>nse}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberingroup|<nowiki>#</nowiki>numberingroup}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofactiveusers|<nowiki>#</nowiki>numberofactiveusers}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofadmins|<nowiki>#</nowiki>numberofadmins}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofarticles|<nowiki>#</nowiki>numberofarticles}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofedits|<nowiki>#</nowiki>numberofedits}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberoffiles|<nowiki>#</nowiki>numberoffiles}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofpages|<nowiki>#</nowiki>numberofpages}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofusers|<nowiki>#</nowiki>numberofusers}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|numberofviews|<nowiki>#</nowiki>numberofviews}}<nowiki>}}</nowiki>
+* '''P'''&nbsp;<nowiki>{{</nowiki>{{ll|padleft|<nowiki>#</nowiki>padleft}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|padright|<nowiki>#</nowiki>padright}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|pagename|<nowiki>#</nowiki>pagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|pagenamee|<nowiki>#</nowiki>pagenamee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|pagesincategory|<nowiki>#</nowiki>pagesincategory}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|pagesize|<nowiki>#</nowiki>pagesize}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|plural|<nowiki>#</nowiki>plural}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>[[d:Wikidata:How to use data on Wikimedia projects|#property]]<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|protectionlevel|<nowiki>#</nowiki>protectionlevel}}<nowiki>}}</nowiki>
+* '''R'''&nbsp;<nowiki>{{</nowiki>{{ll|rel2abs|<nowiki>#</nowiki>rel2abs}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|rootpagename|<nowiki>#</nowiki>rootpagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|rootpagenamee|<nowiki>#</nowiki>rootpagenamee}}<nowiki>}}</nowiki>
+* '''S'''&nbsp;<nowiki>{{</nowiki>{{ll|special|<nowiki>#</nowiki>special}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|speciale|<nowiki>#</nowiki>speciale}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>[[d:Wikidata:How to use data on Wikimedia projects|#statements]]<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subjectpagename|<nowiki>#</nowiki>subjectpagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subjectpagenamee|<nowiki>#</nowiki>subjectpagenamee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subjectspace|<nowiki>#</nowiki>subjectspace}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subjectspacee|<nowiki>#</nowiki>subjectspacee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subpagename|<nowiki>#</nowiki>subpagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|subpagenamee|<nowiki>#</nowiki>subpagenamee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|switch|<nowiki>#</nowiki>switch}}<nowiki>}}</nowiki>
+* '''T'''&nbsp;<nowiki>{{</nowiki>{{ll|tag (parser function)|<nowiki>#</nowiki>tag}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|talkpagename|<nowiki>#</nowiki>talkpagename}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|talkpagenamee|<nowiki>#</nowiki>talkpagenamee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|talkspace|<nowiki>#</nowiki>talkspace}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|talkspacee|<nowiki>#</nowiki>talkspacee}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|time|<nowiki>#</nowiki>time}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|timel|<nowiki>#</nowiki>timel}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|timef|<nowiki>#</nowiki>timef}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|timefl|<nowiki>#</nowiki>timefl}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|titleparts|<nowiki>#</nowiki>titleparts}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|translation|<nowiki>#</nowiki>translation}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|translationdialog|<nowiki>#</nowiki>translationdialog}}<nowiki>}}</nowiki>
+* '''U'''&nbsp;<nowiki>{{</nowiki>{{ll|uc|<nowiki>#</nowiki>uc}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|ucfirst|<nowiki>#</nowiki>ucfirst}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|urlencode|<nowiki>#</nowiki>urlencode}}<nowiki>}}</nowiki>
+* <nowiki>{{</nowiki>{{ll|useliquidthreads|<nowiki>#</nowiki>useliquidthreads}}<nowiki>}}</nowiki>
+}}
+
+|group2    = <!--T:3--> See also
+|list2     = {{flatlist|1=
+* {{ll|Help:Extension:ParserFunctions}}
+* {{ll|Help:Parser functions in templates}}
+* {{ll|Parser extension tags}}
+* {{ll|Parser function extensions}}
+* {{ll|Parser function hooks}}
+}}
+
+|below     = '''{{Plain link|url={{fullurl:Special:Translate|group=page-Template%3ATranslatable+modules+nav&language={{Pagelang}}&action=page&filter=}}|name=<!--T:4--> Translate this navigation box}}'''
+}}

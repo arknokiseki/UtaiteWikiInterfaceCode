@@ -1,0 +1,49 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+Returns a noun describing the type of the current page — normally '''article''', but '''page''', '''file''', '''template''', '''category''' or '''book''' depending on the namespace. Intended for use ''inside'' other templates (hatnotes, maintenance notices) so their wording adapts automatically.
+
+By default it inspects the page it sits on. You can override the result or point it at another page:
+* <code><nowiki>{{Pagetype|book}}</nowiki></code> — force the "book" wording
+* <code><nowiki>{{Pagetype|page=Mafumafu}}</nowiki></code> — evaluate a named page
+* <code><nowiki>{{Pagetype|subjectspace=yes}}</nowiki></code> — use the subject page when called from a talk page
+
+==Syntax==
+{{T|Pagetype|v1=|v2=page=|v3=subjectspace=}}
+
+== Parameters ==
+{| class="wikitable"
+! Parameter !! Description !! Default
+|-
+| <code>1</code> || Override / hint word: <code>book</code>, <code>file</code>, <code>template</code>, <code>category</code>, <code>portal</code>, <code>disambig</code>, <code>redirect</code>, <code>na</code>… || derived from namespace
+|-
+| <code>page</code> || Evaluate this page title instead of the current page || current page
+|-
+| <code>subjectspace</code> || Set to <code>yes</code> to use the subject page when on a talk page || —
+|}
+
+==Examples==
+{| class="wikitable"
+! Code !! Result
+|-
+| <code><nowiki>{{Pagetype}}</nowiki></code> (on an article) || article
+|-
+| <code><nowiki>{{Pagetype|page=Mafumafu}}</nowiki></code> || {{Pagetype|page=Mafumafu}}
+|-
+| <code><nowiki>{{Pagetype|category}}</nowiki></code> || {{Pagetype|category}}
+|}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"description": "Returns a noun for the current page's type (article, page, file, template, category, book) based on its namespace.",
+	"params": {
+		"1": {"label": "Type override", "description": "Force or hint the page-type word.", "type": "string"},
+		"page": {"label": "Page", "description": "Evaluate this page instead of the current one.", "type": "wiki-page-name"},
+		"subjectspace": {"label": "Use subject space", "description": "On a talk page, use the associated subject page. Set to 'yes'.", "type": "string"}
+	},
+	"format": "inline"
+}
+</templatedata>
+<noinclude>[[Category:Template documentation]]</noinclude>

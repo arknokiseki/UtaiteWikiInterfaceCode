@@ -1,0 +1,71 @@
+{{Documentation/Header}}
+{{Lua|Documentation}}
+{{CSS|Gadget-documentation}}
+This template is used to insert documentation to template pages.
+
+==Syntax==
+* {{T|Documentation}} will produce the documentation template.
+* {{T|Documentation|foo}} will fill in the documentation from the "<code>foo</code>" template.
+* {{T|Documentation|p1=content=This template does something}} will fill in the documentation with the content "<code>This template does something</code>." (not recommended except for very, very short documentation)
+* {{T|Documentation|p1=heading=Important information}} will replace the default heading with "<code>Important information</code>".
+* {{T|Documentation|p1=type=category}} will add the "<code>category Templates</code>" category.
+
+==Template Data==
+<templatedata>
+{
+	"description": {
+		"en": "This template is used to insert descriptions on template pages."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Custom Documentation Page"
+			},
+			"description": {
+				"en": "Page containing the documentation"
+			},
+			"default": "{{FULLPAGENAME}}/doc",
+			"type": "wiki-page-name"
+		},
+		"heading": {
+			"label": {
+				"en": "Heading"
+			},
+			"description": {
+				"en": "Custom heading"
+			},
+			"default": {
+				"en": "[[File:Template-icon.svg|50px|link=|alt=Documentation icon]] Documentation"
+			},
+			"type": "line"
+		},
+		"preload": {
+			"label": {
+				"en": "Preload Page"
+			},
+			"description": {
+				"en": "The page to preload if the `/doc` subpage doesn't exist."
+			},
+			"default": "Template:Documentation/preload",
+			"type": "wiki-page-name"
+		},
+		"content": {
+			"label": {
+				"en": "Content"
+			},
+			"description": {
+				"en": "Custom documentation content, prevents transclusion of `/doc` subpage."
+			},
+			"type": "content"
+		},
+		"type": {
+			"label": "Type",
+			"description": "Category to categorize template in.",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>
+<noinclude></noinclude>

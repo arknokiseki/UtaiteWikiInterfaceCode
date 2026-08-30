@@ -1,0 +1,13 @@
+<includeonly><templatestyles src="Template:UserGroupIcon/styles.css" /><!--
+
+ Desktop view
+--><span class="mobile-hidden"><!--
+--><abbr class="role-badge-tooltip" title="{{{2|}}}">{{#switch:{{{1|}}}
+|bureaucrat=<span class="badge-icon badge-bureaucrat badge-{{{size|medium}}}"><i class="fas fa-chess-king"></i></span>
+|interface-admin=<span class="badge-icon badge-interface-admin badge-{{{size|medium}}}"><i class="fas fa-code"></i></span>
+|administrator=<span class="badge-icon badge-administrator badge-{{{size|medium}}}"><i class="fas fa-chess-knight"></i></span>
+|content-moderator=<span class="badge-icon badge-content-moderator badge-{{{size|medium}}}"><i class="fas fa-shield-alt"></i></span>
+|staff=<span class="badge-icon badge-staff badge-{{{size|medium}}}"><i class="fas fa-cog"></i></span>
+|wiki-specialist=<span class="badge-icon badge-wiki-specialist badge-{{{size|medium}}}"><i class="fas fa-wrench"></i></span>
+|thread-moderator=<span class="badge-icon badge-thread-moderator badge-{{{size|medium}}}"><i class="fas fa-comments"></i></span><!--
+-->}}</abbr></span></includeonly><noinclude>{{Documentation}}</noinclude>

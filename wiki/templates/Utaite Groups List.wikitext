@@ -1,0 +1,68 @@
+<noinclude>
+This template automatically creates paginated views for Utaite Groups. See the page here: [[Utaite Wiki:Utaite Groups List|Utaite Groups List]]
+
+Debug:
+{{#dpl:
+  |category=Utaite Groups
+  |includesubpages=false
+  |mode=userformat
+  |format=,%TITLE%・,
+  |secseparators=,
+  |ordermethod=titlewithoutnamespace
+  |titleregexp={{{titleregexp|}}}
+  |categoryregexp={{{categoryregexp|}}}
+  |nottitleregexp={{{nottitleregexp|}}}
+  |nottitlematch=Agency:%
+  |notnamespace=Template
+  |titlematch={{{beginwith|}}}%{{{endwith|}}}
+  |offset={{#var:offset}}
+  |noresultsheader=<br /><b>No unit(s) exist for this category</b>
+  |allowcachedresults=true
+}}
+</noinclude><!--
+--><includeonly>__notoc__<!--
+-->{{#vardefine:totalArticles|{{PAGESINCATEGORY:Utaite Groups}}}}<!--
+-->{{#vardefine:totalPages|{{#expr:ceil({{#var:totalArticles}}/10)}}}}<!--
+--><!-- Current page navigation --><!--
+-->{{#ifeq:{{PAGENAME}}|Utaite Groups List
+  |{{#vardefine:currentPage|1}}
+  |{{#vardefine:currentPage|{{#replace:{{PAGENAME}}|Utaite Groups List/|}}}}
+}}<!--
+--><!-- Generate next page if needed --><!--
+-->{{#ifeq:{{#var:currentPage}}|{{#var:totalPages}}
+  |{{#vardefine:nextPage|none}}
+  |{{#vardefine:nextPage|{{#expr:{{#var:currentPage}} + 1}}}}
+}}<!--
+--><!-- Calculate offset for DPL -->
+{{#vardefine:offset|{{#expr:({{#var:currentPage}} - 1) * 10}}}}<!--
+--><!-- Display DPL list with calculated offset --><!--
+-->{{#dpl:
+  |category=Utaite Groups
+  |includesubpages=false
+  |mode=userformat
+  |format=,²{Template:UtaiteGroupCard¦%TITLE%}²,
+  |secseparators=,
+  |ordermethod=titlewithoutnamespace
+  |titleregexp={{{titleregexp|}}}
+  |categoryregexp={{{categoryregexp|}}}
+  |nottitlematch=Agency:%
+  |notnamespace=Template
+  |titlematch={{{beginwith|}}}%{{{endwith|}}}
+  |count=10
+  |offset={{#var:offset}}
+  |notnamespace=Agency
+  |noresultsheader=<br /><b>No unit(s) exist for this category</b>
+  |allowcachedresults=true
+}}<!--
+--><!-- Navigation links --><!--
+--><div class="pagination"><!--
+-->{{#if:{{#var:currentPage}}|
+  {{#ifexpr:{{#var:currentPage}} > 1|
+    [[Utaite Wiki:Utaite Groups List/{{#expr:{{#var:currentPage}} - 1}}|← Previous Page]]
+  }}
+}}&nbsp;<!--
+-->{{#ifeq:{{#var:nextPage}}|none||
+  [[Utaite Wiki:Utaite Groups List/{{#var:nextPage}}|Next Page →]]
+}}<!--
+--></div><!--
+--></includeonly>

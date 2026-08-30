@@ -1,0 +1,9 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+This template converts various date formats to YYYY-MM-DD HH:mm:ss format in GMT.
+Parameters:
+* {{{1}}} for date (e.g., June 20th, 2024)
+* {{{2}}} for time in JST (optional, e.g., 20:30)
+Usage: 
+<pre>{{Time_ago/FormatDate|June 20th, 2024}} or {{Time_ago/FormatDate|Jun 20, 2024|20:30}}</pre>
+Return: {{Time_ago/FormatDate|June 20th, 2024}} or {{Time_ago/FormatDate|Jun 20, 2024|20:30}}

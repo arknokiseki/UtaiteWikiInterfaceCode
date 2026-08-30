@@ -1,0 +1,15 @@
+{{Documentation/Header}}
+{{High Risk|Template:CURRENTJSTDAY|nocat=1|pagetype=Main}}
+Outputs the current '''day of the month''' in Japan Standard Time (JST, UTC+9), via [[Module:JST]]. Use instead of <code><nowiki>{{CURRENTDAY}}</nowiki></code> when a date must follow Japan's local time rather than the wiki server clock. Takes no parameters.
+
+==Syntax==
+{{T|CURRENTJSTDAY}}
+
+==Examples==
+{{T|CURRENTJSTDAY|_Y_=1}}
+
+==See also==
+Part of the JST date family, all backed by [[Module:JST]]:
+* {{T|CURRENTJSTYEAR}} — current year (JST)
+* {{T|CURRENTJSTMONTH}} — current month (JST)
+* {{T|CURRENTJSTDAY}} — current day of the month (JST)

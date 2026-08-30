@@ -1,0 +1,45 @@
+<onlyinclude>{{#switch:
+| =
+{{(!}} class="wikitable" style="text-align: center;"
+<includeonly>
+{{!}}+ {{Navbar|Escape template list|text=<!--T:1--> This table:|style=float: {{dir|{{pagelang}}|left|right}};}}</includeonly>
+{{!}}-
+! scope="col" style="width:  9.5em;" {{!}} {{nowrap|1=<!--T:2--> Template call}}<br/><!--T:3--> (m for magic word)
+! scope="col" style="width:  9.0em;" {{!}} <!--T:4--> Output (delayed interpretation as wikitext)
+! scope="col" style="width: 10.0em;" {{!}} {{nowrap|1=<!--T:5--> HTML alternative}}<br/><!--T:6--> (never interpreted as wikitext)
+{{!}}- style="vertical-align: top;"
+{{!}} {{magic word|code=1|nowrap=1|!}} '''(m)'''
+{{!}} {{#tag:code|{{#tag:nowiki|{{!}}}}}}
+{{!}} {{Htmlir|{{&}}#124;}}
+{{!}}- style="vertical-align: top;"
+{{!}} {{tl2|nowrap=1|{{=}}}} '''(m)'''
+{{!}} {{#tag:code|{{#tag:nowiki|{{=}}}}}}
+{{!}} {{Htmlir|{{&}}#61;}}
+{{Escape template list/Table Cell|!!}}
+{{Escape template list/Table Cell|!(}}
+{{Escape template list/Table Cell|)!}}
+{{Escape template list/Table Cell|!((}}
+{{Escape template list/Table Cell|))!}}
+{{Escape template list/Table Cell|(}}
+{{Escape template list/Table Cell|)}}
+{{Escape template list/Table Cell|((}}
+{{Escape template list/Table Cell|))}}
+{{Escape template list/Table Cell|(((}}
+{{Escape template list/Table Cell|)))}}
+{{Escape template list/Table Cell|(!}}
+{{Escape template list/Table Cell|!)}}
+{{Escape template list/Table Cell|^(|t=<!--T:7--> or|o={{&}}lt;}}
+{{Escape template list/Table Cell|)^|t=<!--T:8--> or|o={{&}}gt;}}
+{{!)}}
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Template:Escape template list|noshift=1|uselang={{int:lang}}}}
+}}</onlyinclude>
+{{Documentation|content=
+
+{{Escape template list/doc}}
+
+== See also ==
+* {{tl|Bracket templates}}
+
+}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

@@ -1,0 +1,4 @@
+<pre>{{CD|Albunmane|Alternate Albumname}}</pre>
+...results in:
+{{CD|Albunmane|Alternate Albumname}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

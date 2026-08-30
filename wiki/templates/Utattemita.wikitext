@@ -1,0 +1,37 @@
+<includeonly><!--
+-->{{#seo:
+  |title_mode=append
+  |title={{#if:{{{English|}}}|{{{English}}}|{{{Title|}}}}} (Utattemita Cover) — Utaite Wiki
+  |description=Cover of {{#if:{{{English|}}}|{{{English}}}|{{{Title|}}}}}{{#if:{{{Kanji|}}}| ({{{Kanji}}})}} sung by {{{Vocal|}}}{{#if:{{{Producers|}}}|. Original by {{{Producers}}}}}{{#if:{{{Date|}}}|, published {{{Date}}}}}. Watch on Nicovideo and YouTube.
+  |image={{{Image|}}}
+  |type=music.song
+  |twitter_card=summary_large_image
+}}<!--
+-->{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+|-
+| colspan="2" class="utattemita-header"|{{#if:{{{English|}}}|<b><font size="5">{{{English}}}</font></b>{{#if:{{{Kanji|}}}|<br/><b><font size="3">{{{Kanji}}}</font></b>}}{{#if:{{{Romaji|}}}|<br/><b><font size="3">{{{Romaji}}}</font></b>}}|{{#if:{{{Kanji|}}}|<b><font size="5">{{{Kanji}}}</font></b>{{#if:{{{Romaji|}}}|<br/><b><font size="3">{{{Romaji}}}</font></b>}}|<b><font size="5">{{{Title|}}}</font></b>}}}}
+|-
+| class="utattemita-cell utattemita-image" |[[File:{{{Image}}}|frameless|upright=1.2]]
+| class="utattemita-cell utattemita-details" |
+  {| class="utattemita-details"
+  |-
+  ! Vocal
+  | {{{Vocal}}}
+  |-
+  ! Links
+  | {{#if:{{{YT|}}}|{{Yt|{{{YT}}}|{{{YTdesc|}}}}}|{{Yt/noyt}}}}{{#if:{{{NND|}}}|{{nnd|{{{NND}}}|{{{NNDdesc|}}}}}|{{Nnd/nonv}}}}{{#if:{{{BB|}}}|{{BBSpace|{{{BB}}}|{{{BBdesc|}}}|video}}|}}
+  |}
+|-
+| colspan="2" class="utattemita-producers" | <span style="color: #000 !important">Producer(s)</span>
+|-
+| colspan="2" class="utattemita-producers-content" | {{scrollbox|{{{Producers}}}|height={{{sbh|100}}}}}
+|-
+{{#if:{{{Date|}}}|
+{{!}} colspan="2" class="utattemita-producers" {{!}} <span style="color: #000 !important">Date Published</span>
+{{!}}-
+{{!}} colspan="2" class="utattemita-producers-content" {{!}} {{{Date|}}}
+{{!}}-
+|}}
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! colspan="2" style="background-color:#c3e6f9;padding:2px;"|
+|}__NOTOC__</includeonly><includeonly>{{main other|[[Category:Utattemita Songs]][[Category:Famous Utattemita Songs]]}}</includeonly><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,34 @@
+<includeonly>{{#switch:{{NAMESPACE:{{#if:{{{page|}}}
+  |{{{page}}}
+  |{{#ifeq:{{{subjectspace|}}}|yes
+   |{{TALKPAGENAME}}
+   |{{FULLPAGENAME}}
+  }}
+ }}
+}}
+ |{{ns:Talk}}          = {{#switch:{{lc:{{{1|}}}}}
+  |disambiguation|disambig|disamb|dab
+  |redirect|redir
+  |na                  = page
+  |#default            = article
+ }}
+ |{{ns:User talk}}
+ |{{ns:MediaWiki talk}}
+ |{{ns:Help talk}}
+ |{{ns:Project talk}}  = page
+ |{{ns:File talk}}     = file
+ |{{ns:Template talk}} = template
+ |{{ns:Category talk}} = category
+ |#default             = {{#switch:{{lc:{{{1|}}}}}
+  |portal
+  |project
+  |disambig|disamb|dab
+  |redirect|redir
+  |na                  = page
+  |book                = book
+  |image|file          = file
+  |template|temp|templ = template
+  |category|cat|categ  = category
+  |#default            = article
+ }}
+}}</includeonly><noinclude>{{doc}}[[Category:General wiki templates]]</noinclude>

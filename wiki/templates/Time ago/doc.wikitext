@@ -1,0 +1,39 @@
+{{Documentation/Header}}
+== Usage ==
+<pre>{{Time ago|TIMESTAMP}}</pre>
+This template displays how long ago a given timestamp occurred. It uses [[Module:TimeAgo]] to parse various date formats, including raw MediaWiki timestamps.
+
+== Examples ==
+<pre>
+* {{Time ago|2024-01-01}}
+* {{Time ago|{{#time:c|-2 hours}}}}
+* {{Time ago|{{#time:c|+2 hours}}}}
+* {{Time ago|{{#time:c|+2 years}}}}
+* {{Time ago|2024-11-29T10:30:04}}
+* {{Time ago|{{REVISIONTIMESTAMP}}}}
+* {{Time ago|20241125134745}}
+</pre>
+
+'''Output:'''
+* {{Time ago|2024-01-01}}
+* {{Time ago|{{#time:c|-2 hours}}}}
+* {{Time ago|{{#time:c|+2 hours}}}}
+* {{Time ago|{{#time:c|+2 years}}}}
+* {{Time ago|2024-11-29T10:30:04}}
+* {{Time ago|{{REVISIONTIMESTAMP}}}}
+* {{Time ago|20241125134745}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Timestamp",
+			"description": "The date/time to calculate the difference from. Accepts ISO 8601, relative formats (e.g. \"-2 days\"), or 14-digit MediaWiki timestamps.",
+			"type": "string",
+			"required": true
+		}
+	},
+	"description": "Displays the time elapsed since the given timestamp."
+}
+</templatedata>

@@ -1,0 +1,42 @@
+<includeonly>{{#switch:{{{1}}}  
+|alphabet=  
+{{#invoke:Bucket|get
+|youtaite
+|select = name, image
+|where = has_profile != "" AND category = "{{{cat|Male Youtaite}}}"
+|filter = {{#if:{{{2|}}}|name MATCH "^%s*[{{uc:{{{2}}}}}{{lc:{{{2}}}}}]"|name != ""}}
+|order by = name ASC
+|limit = {{{count|600}}}
+|format = template
+|template = SingerBox
+|default = {{#ifeq:{{{supresswarning|}}}|true||<b>No Singer(s) exist for this query</b>}}
+}}{{#if:{{{2|}}}||declare the first alphabet on second unnamed parameter}}  
+
+|number=  
+{{#invoke:Bucket|get
+|youtaite
+|select = name, image
+|where = has_profile != "" AND category = "{{{cat|Male Youtaite}}}"
+|filter = name MATCH "^%s*[0-9]"
+|order by = name ASC
+|limit = {{{count|600}}}
+|format = template
+|template = SingerBox
+|default = {{#ifeq:{{{supresswarning|}}}|true||<b>No Singer(s) exist for this query</b>}}
+}}  
+
+|other=  
+{{#invoke:Bucket|get
+|youtaite
+|select = name, image
+|where = has_profile != "" AND category = "{{{cat|Male Youtaite}}}"
+|filter = NOT (name MATCH "^%s*[a-zA-Z]") AND NOT (name MATCH "^%s*[0-9]")
+|order by = name ASC
+|limit = {{{count|600}}}
+|format = template
+|template = SingerBox
+|default = {{#ifeq:{{{supresswarning|}}}|true||<b>No Singer(s) exist for this query</b>}}
+}}  
+
+|#default=please fill the unnamed parameters :)  
+}}</includeonly><noinclude><div class="notice">This template is a fork of {{T|UtaiteListFiltered}}</div>{{documentation}}</noinclude>

@@ -1,0 +1,8 @@
+<includeonly>{{Interwiki|utaulyrics|{{{1|{{PAGENAME}}}}}|{{{2|{{{1|{{PAGENAME}}}}}}}}|server=fandom}}</includeonly><noinclude>'''Note: redirected to vocaloidlyrics wiki (now on miraheze)'''
+
+{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude>
+<noinclude>[[Category:Interwiki Templates]]
+</noinclude>

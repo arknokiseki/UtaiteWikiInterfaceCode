@@ -1,0 +1,95 @@
+__notoc__
+== Translation Credit ==
+Template for crediting translations and their translators. This should be placed at the bottom of translated content.
+== Usage ==
+<pre>
+{{Translation Credit
+|type=community
+|translator=username
+|date=YYYY.MM.DD
+|notes=Additional information
+|revision_info=Revision history
+}}
+</pre>
+== Parameters == 
+{| class="wikitable" 
+! Parameter 
+! Required 
+! Description 
+! Example(s) 
+|- 
+| type 
+| No 
+| Type of translation: "official", "community", "collaborative" <br>Defaults to "community" 
+| type=official 
+|- 
+| translator 
+| Yes 
+| Name(s) of translator(s) 
+| translator=JohnDoe <br>translator=User1, User2, and User3 
+|- 
+| date 
+| No 
+| Date of translation (YYYY.MM.DD) 
+| date=2024.01.15 
+|- 
+| notes 
+| No 
+| Additional information about the translation 
+| notes=From CD booklet 
+|- 
+| revision_info 
+| No 
+| Information about revisions or updates 
+| revision_info=Updated by User2 (2024.02.01) 
+|} 
+== Examples ==
+=== Official Translation === 
+<pre>
+{{Translation Credit
+|type=official
+|translator=Sony Music Japan
+|date=2024.01.15
+|notes=From official album booklet
+}}
+</pre>
+Output: {{Translation Credit
+|type=official
+|translator=Sony Music Japan
+|date=2024.01.15
+|notes=From official album booklet
+}}
+
+=== Community Translation ===
+<pre>
+{{Translation Credit
+|type=community
+|translator=username
+|date=2024.01.15
+|notes=Checked by native speaker
+}}
+</pre> 
+Output: {{Translation Credit
+|type=community
+|translator=username
+|date=2024.01.15
+|notes=Checked by native speaker
+}} 
+
+=== Collaborative Translation === 
+<pre>
+{{Translation Credit
+|type=collaborative
+|translator=user1, user2, and user3
+|date=2024.01.15
+|notes=Group translation project
+|revision_info=Reviewed by user4 (2024.02.01)
+}}
+</pre> 
+Output:{{Translation Credit
+|type=collaborative
+|translator=user1, user2, and user3
+|date=2024.01.15
+|notes=Group translation project
+|revision_info=Reviewed by user4 (2024.02.01)
+}}

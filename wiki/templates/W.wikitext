@@ -1,0 +1,6 @@
+<includeonly>[[wikipedia:{{{1|}}}|{{{2|{{{1|}}}}}}]]</includeonly><noinclude>{{documentation}}{{nobots}}
+
+{{Interwiki doc}}
+</noinclude>
+<noinclude>[[Category:Interwiki Templates]]
+</noinclude>

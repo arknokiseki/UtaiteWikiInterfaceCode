@@ -1,0 +1,1 @@
+This module creates an html message with class "error". It is a replacement for {{tl|error}} - please see the documentation page there for usage instructions.

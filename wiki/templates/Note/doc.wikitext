@@ -1,0 +1,111 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Note/doc}}
+<templatedata>
+{
+	"format": "block",
+	"description": {
+		"en": "Show a note in a box (e.g. a top-of-the-page warning).",
+		"es": "Muestra una nota en un recuadro (p. ej. un aviso en la parte superior de la página).",
+		"cs": "Zobrazí poznámku v poli (např. upozornění v horní části stránky)",
+		"tr": "Bir kutuda bir not gösterin (ör. sayfanın üstü uyarısı).",
+		"fr": "Affiche une note dans une boîte (exemple : un avertissement en haut de la page).",
+		"pt-br": "Exibe uma nota em uma caixa (como um aviso no topo de uma página)."
+	},
+	"params": {
+		"inline": {
+			"label": {
+				"en": "Inline formatting",
+				"es": "Formato en una sola línea",
+				"fr": "format une ligne",
+				"cs": "Inline formátování",
+				"tr": "Satır içi biçimlendirme",
+				"pt-br": "Formatação em linha"
+			},
+			"description": {
+				"en": "Show the template without line breaks before and after it.",
+				"es": "Muestra la plantilla sin saltos de línea antes y después de ésta.",
+				"fr": "affiche le modèle sans les sauts de ligne, ni avant, ni après.",
+				"cs": "Zobrazí šablonu bez zalomení řádků před a za ní.",
+				"tr": "Şablonu, öncesinde ve sonrasında satır kesmeleri olmadan gösterin.",
+				"pt-br": "Exibe a predefinição sem quebras de linha antes ou após."
+			},
+			"default": {
+				"en": "0",
+				"pt-br": "0"
+			},
+			"autovalue": "1",
+			"type": "boolean"
+		},
+		"type": {
+			"aliases": [
+				"2"
+			],
+			"label": {
+				"en": "Type",
+				"es": "Tipo",
+				"fr": "type de boîte",
+				"cs": "Typ",
+				"tr": "Tür",
+				"pt-br": "Tipo"
+			},
+			"description": {
+				"en": "One of “info”, “reminder”, “warn”, or “error”. This setting affects the color and icon.",
+				"es": "Uno de los siguientes: “info”, “reminder”, “warn”, o “error”. Este ajuste afecta al color y al icono.",
+				"fr": "une des valeurs suggérées. Modifie la couleur de la boîte et l'icône associée.",
+				"cs": "Jedna z možností “info”, “reminder”, “warn”, or “error” (informace, připomenutí, upozornění nebo chyba). Toto nastavení má vliv na barvu a ikonu.",
+				"tr": "“info”, “reminder”, “warn” veya “error” değerlerden biri. Bu ayar, rengi ve simgeyi etkiler.",
+				"pt-br": "Disponíveis: “info” (informação), “reminder” (lembrete), “warn” (aviso) e “error” (erro). Essa configuração afeta a cor e o ícone."
+			},
+			"suggestedvalues": [
+				"info",
+				"reminder",
+				"warn",
+				"error"
+			],
+			"default": {
+				"en": "info",
+				"pt-br": "info"
+			},
+			"type": "string"
+		},
+		"text": {
+			"aliases": [
+				"1",
+				"content"
+			],
+			"label": {
+				"en": "Text",
+				"es": "Texto",
+				"fr": "texte affiché",
+				"cs": "Text",
+				"tr": "Metin",
+				"pt-br": "Texto"
+			},
+			"description": {
+				"en": "Informative note.",
+				"es": "Nota informativa.",
+				"fr": "note d'information",
+				"cs": "Informativní poznámka.",
+				"tr": "Bilgilendirecek not.",
+				"pt-br": "Nota informativa."
+			},
+			"type": "content",
+			"required": true,
+			"example": {
+				"es": "Texto de la nota.",
+				"fr": "Texte de la note."
+			}
+		}
+	},
+	"paramOrder": [
+		"inline",
+		"type",
+		"text"
+	]
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Notice templates{{#translation:}}]]
+}}</includeonly>

@@ -1,0 +1,24 @@
+<pre>
+{{Nicollabo
+|image            = placeholder.png
+|songtitle        = Original ver.
+|yt               = ytid
+|nnd              = nndid
+|producer         = Producername
+|malesingers      = Malesinger1, Malesinger2
+|androgynesingers = Androgynesinger1, Androgynesinger2
+|femalesingers    = Femalesinger1, Femalesinger2
+}}</pre>
+...results in:
+
+{{Nicollabo
+|image            = placeholder.png
+|songtitle        = Original ver.
+|yt               = ytid
+|nnd              = nndid
+|producer         = Producername
+|malesingers      = Malesinger1, Malesinger2
+|androgynesingers = Androgynesinger1, Androgynesinger2
+|femalesingers    = Femalesinger1, Femalesinger2
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

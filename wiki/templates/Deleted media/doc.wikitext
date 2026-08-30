@@ -1,0 +1,33 @@
+{{Documentation/Header}}
+{{High Risk|Template:Deleted media|nocat=1|pagetype=Main}}
+Adds a compact "Deleted" badge to song list entries, marking a video that is no longer available. Optionally shows the platform icon for the site the video was deleted from. See {{T|Privated media}} for videos that still exist but are private.
+
+==Syntax==
+{{T|Deleted media|v1=site =}}
+
+==Examples==
+* {{T|Deleted media|_Y_=1}}
+* {{T|Deleted media|_Y_=1|p1=site = yt}}
+* {{T|Deleted media|_Y_=1|p1=site = nnd}}
+
+Used in a full song list line:
+<pre>* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Deleted media|site=yt}}</pre>
+* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Deleted media|site=yt}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>site</code> || – || Site || Platform icon to show beside the badge: <code>yt</code> for YouTube or <code>nnd</code> for Nico Nico Douga. Leave empty for a plain badge with no icon. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A compact 'Deleted' badge for unavailable videos in song lists.",
+"params": {
+"site": { "label": "Site", "description": "Platform icon: 'yt' for YouTube, 'nnd' for Nico Nico Douga. Empty for no icon.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

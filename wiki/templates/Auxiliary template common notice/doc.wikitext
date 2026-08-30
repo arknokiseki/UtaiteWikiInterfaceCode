@@ -1,0 +1,22 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=Auxiliary template common notice/doc}}
+<templatedata>
+{
+	"format": "block",
+	"params": {
+		"entity": {
+			"label": "HTML Entity",
+			"description":{
+				"en": "HTML character entity name",
+				"cs": "Název entity znaku HTML"
+			},
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Documentation shared content templates]]
+}}</includeonly>

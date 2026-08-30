@@ -1,0 +1,43 @@
+<includeonly>{{MessageBox
+|class      = upcoming
+|image      = Icon Emoji Teyvat Times Series Paimon 5.png
+|imagewidth = 65px
+|header     = This file needs to be re-uploaded.
+|text       = Can you take a better image? Upload a new version of this file.
+|comment    = This image needs to be re-uploaded<!--
+           -->{{#if:{{{jpg|}}}{{{jpeg|}}}{{{webp|}}}{{{quality|}}}{{{ratio|}}}{{{npc|}}}{{{ui|}}}{{{release|}}}<!--
+              -->|{{Colon}} {{#ifeq:{{{jpg|}}}{{{jpeg|}}}{{{webp|}}}|1<!--
+                    -->|as png{{#if:{{{quality|}}}{{{ratio|}}}{{{npc|}}}{{{ui|}}}{{{release|}}}<!--
+                    -->|,&nbsp;}}<!--
+                 -->}}<!--
+                 -->{{#ifeq:{{{quality|}}}|1<!--
+                    -->|with better quality<!--
+                       -->{{#if:{{{ratio|}}}{{{npc|}}}{{{ui|}}}{{{release|}}}<!--
+                       -->|,&nbsp;}}<!--
+                    -->}}<!--
+                 -->{{#ifeq:{{{ratio|}}}|1<!--
+                    -->|with the correct ratio (16:9) or in 1920x1080px<!--
+                       -->{{#if:{{{npc|}}}{{{ui|}}}{{{release|}}}<!--
+                       -->|, &nbsp;}}<!--
+                    -->}}<!--
+                 -->{{#ifeq:{{{npc|}}}|1<!--
+                    -->|with updated NPC standards (no UI, 500x900 or 1:1 ratio, and with background)<!--
+                       -->{{#if:{{{ui|}}}{{{release|}}}<!--
+                       -->|, &nbsp;}}<!--
+                    -->}}<!--
+                 -->{{#ifeq:{{{ui|}}}|1<!--
+                    -->|without UI or playable characters visible (example: using Hide UI or Photo Mode)<!--
+                       -->{{#if:{{{release|}}}<!--
+                       -->|,&nbsp;}}<!--
+                    -->}}<!--
+                 -->{{#ifeq:{{{release|}}}|1<!--
+                    -->|when it gets released in-game}}<!--
+                    -->|}}.{{#if:{{{reason|{{{1|}}}}}}|<hr>'''Additional Reasons:''' {{{reason|{{{1}}}}}}}}}}{{Namespace|file=<!--
+-->{{#ifeq:{{{jpg|}}}{{{jpeg|}}}{{{webp|}}}|1|[[Category:Reupload with PNG Format]]}}<!--
+-->{{#ifeq:{{{quality|}}}|1|[[Category:Better Quality Needed]]}}<!--
+-->{{#ifeq:{{{ratio|}}}|1|[[Category:Proper Ratio Needed]]}}<!--
+-->{{#ifeq:{{{npc|}}}|1|[[Category:High Priority NPC Update]]}}<!--
+-->{{#ifeq:{{{ui|}}}|1|[[Category:Missing UI Removal]]}}<!--
+-->{{#ifeq:{{{release|}}}|1|[[Category:Not Indicative of Final Product]]}}<!--
+-->{{#if:{{{jpg|}}}{{{jpeg|}}}{{{webp|}}}{{{quality|}}}{{{ratio|}}}{{{npc|}}}{{{ui|}}}{{{release|}}}||[[Category:Placeholder Images]]}}<!--
+-->}}</includeonly><noinclude>{{Documentation|type=File Management;Notice}}</noinclude>

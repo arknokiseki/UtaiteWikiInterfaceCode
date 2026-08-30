@@ -1,0 +1,106 @@
+{{Mbox templates}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:Message box}}
+{{Uses TemplateStyles|Module:Message box/tmbox.css}}
+
+This is the {{tl|tmbox}}, or '''talk page message box''', meta-template.
+
+__TOC__
+{{clear}}
+== Parameters ==
+=== <code>type</code> ===
+{{tmbox
+| nocat = true
+| type  = speedy
+| text  = type=<u>speedy</u>
+}}
+{{tmbox
+| nocat = true
+| type  = delete
+| text  = type=<u>delete</u>
+}}
+{{tmbox
+| nocat = true
+| type  = content
+| text  = type=<u>warning</u>
+}}
+{{tmbox
+| nocat = true
+| type  = style
+| text  = type=<u>style</u>
+}}
+{{tmbox
+| nocat = true
+| type  = notice
+| text  = type=<u>notice</u>
+}}
+{{tmbox
+| nocat = true
+| type  = move
+| text  = type=<u>move</u>
+}}
+{{tmbox
+| nocat = true
+| type  = protection
+| text  = type=<u>protection</u>
+}}
+
+=== <code>small=true</code> ===
+{{tmbox
+| nocat = true
+| type  = speedy
+| text  = type=<u>speedy</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = delete
+| text  = type=<u>delete</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = content
+| text  = type=<u>warning</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = style
+| text  = type=<u>style</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = notice
+| text  = type=<u>notice</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = move
+| text  = type=<u>move</u>
+| small = true
+}}
+{{tmbox
+| nocat = true
+| type  = protection
+| text  = type=<u>protection</u>
+| small = true
+}}
+
+{{clear}}
+== TemplateData ==
+{{Mbox/TemplateData}}
+
+== See also ==
+Other pages:
+* [[w:Template:Mbox]]
+* [[w:Wikipedia:Ambox CSS classes]] – Describes how to use the ambox CSS classes directly in [[Help:Table|wikitable]]s and [[w:HTML element#Tables|HTML tables]].
+* [[w:Wikipedia:Article message boxes]] – The style guideline for creating article message boxes.
+* [[w:Wikipedia talk:Article message boxes]] – For discussion about these matters.
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Mbox templates]]
+}}</includeonly>

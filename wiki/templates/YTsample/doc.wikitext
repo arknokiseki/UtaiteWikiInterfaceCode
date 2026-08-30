@@ -1,0 +1,9 @@
+<pre>{{YTsample|"Songname", composed by Producername|ytid}}</pre>
+...results in:
+{{YTsample|"Songname", composed by Producername|ytid}}
+<br/><br/><br/><br/><br/><br/><br/><br/>
+<pre>{{YTsample|id=EWwfOz6H-eo|singer=SIXFONIA|song=Unknown Mother Goose|producer={{VW|Wowaka}}|dim=400px}}</pre>
+...results in:
+{{YTsample|id=EWwfOz6H-eo|singer=SIXFONIA|song=Unknown Mother Goose|producer={{VW|Wowaka}}|dim=400px}}
+
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

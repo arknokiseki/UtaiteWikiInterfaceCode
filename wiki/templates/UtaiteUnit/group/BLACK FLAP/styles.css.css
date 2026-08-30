@@ -1,0 +1,92 @@
+.uu-g-bf-scar-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    background: linear-gradient(90deg, #121212 0%, #000000 100%);
+    
+    border-left: 6px solid var(--bf-member-color);
+    border-radius: 0 6px 6px 0;
+    
+    padding: 2rem;
+    margin-bottom: 2rem;
+    
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.uu-g-bf-scar-watermark {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    font-size: 6rem;
+    font-weight: 900;
+    font-family: 'Times New Roman', serif;
+    
+    color: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+    user-select: none;
+}
+
+.uu-g-bf-scar-content {
+    position: relative;
+    z-index: 1;
+}
+
+.uu-g-bf-scar-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.uu-g-bf-scar-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+
+    color: var(--bf-member-color);
+    
+    text-shadow: 0 0 15px var(--bf-member-color); 
+}
+
+.uu-g-bf-scar-kanji {
+    font-size: 0.4em;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.8;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    text-shadow: none;
+}
+
+.uu-g-bf-scar-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #e0e0e0;
+    line-height: 1.5;
+    
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+    .uu-g-bf-scar-title {
+        font-size: 2.2rem;
+    }
+    .uu-g-bf-scar-watermark {
+        font-size: 4rem;
+    }
+}

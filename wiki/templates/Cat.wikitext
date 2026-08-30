@@ -1,0 +1,5 @@
+<includeonly>{{#switch:{{NAMESPACE}}<!--
+-->|#default = [[Category:Tracking/Cat:{{{1}}}]]<!--
+-->|User |Template = <!--
+-->| |Category = [[Category:{{{1}}}{{#if:{{{2|}}}|{{!}}{{{2}}}}}]]<!--
+-->}}</includeonly><noinclude>{{documentation}}</noinclude>

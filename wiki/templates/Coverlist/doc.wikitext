@@ -1,0 +1,17 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Coverlist}}
+
+==Examples==
+{{T|Coverlist|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

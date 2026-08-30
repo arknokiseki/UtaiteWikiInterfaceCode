@@ -1,0 +1,16 @@
+<pre>{{Illustrators|
+|sampleimage1        = placeholder.png
+|illustratorname1    = Illustratorname
+|illustratornamejap1 = 名前
+|sites1              = [http://www.twitter.com Twitter]
+|utaite1             = [[Singername]]
+}}</pre>
+...results in:
+{{Illustrators|
+|sampleimage1        = placeholder.png
+|illustratorname1    = Illustratorname
+|illustratornamejap1 = 名前
+|sites1              = [http://www.twitter.com Twitter]
+|utaite1             = [[Singername]]
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

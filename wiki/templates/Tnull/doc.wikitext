@@ -1,0 +1,93 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+===Usage===
+'''Tnull''' is used to nullify templates in the monospaced font. It is similar to {{tlx|tlx}} in the way that it has support for many parameters, but it does not link the template name. It is similar to {{tl|tlc}}, but does not prevent text wrapping.
+
+===Example===
+Typing <code>{{((}}tnull|foo|bar|baz|boo{{))}}</code> in the edit window would yield <code>{{((}}foo|bar|baz|boo{{))}}</code> in the rendered page.
+
+===Special character handling===
+===="=" (equality sign)====
+If there is a "=" character (equality/equals sign) in ''any'' parameter, it must be replaced with <code>&amp;#61;</code> [or {{tl|{{=}}}}?]:
+:<code>{{((}}tnull|click|image&amp;#61;<var>image name</var>|width&amp;#61;<var>width</var>|height&amp;#61;<var>height</var>|link&amp;#61;<var>page name</var>{{))}}</code>
+
+Or you can use <code><var>parameter-number</var>=<var>value</var></code> as in:
+:<code>{{((}}tnull|click|2=image=<var>image name</var>|3=width=<var>width</var>|4=height=<var>height</var>|5=link=<var>page name</var>{{))}}</code>
+
+Either method would yield the following output:
+:{{tnull|click|2=image=<var>image name</var>|3=width=<var>width</var>|4=height=<var>height</var>|5=link=<var>page name</var>}}
+
+===="|" (vertical bar, pipe)====
+If a second consecutive pipe (|) is used to denote that a parameter has been skipped, you must replace it with <code>&amp;#124;</code> as in:
+:<code>{{((}}tnull|look from|Alan|&amp;#124;all the Alans{{))}}</code>
+
+That would yield the following displayed output:
+:{{tnull|look from|Alan|{{!}}all the Alans}}
+
+==TemplateData==
+{{collapse top|[[Wikipedia:TemplateData|TemplateData]] documentation used by [[Wikipedia:VisualEditor|VisualEditor]] and other tools}}
+{{TemplateData header|noheader=1}}
+<templatedata>
+{
+	"description": "Show example template usage without expanding the template itself. Unlike {{tlx}}, does not link the template.",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template name",
+			"description": "Name of the template to link",
+			"example": "Tlx",
+			"type": "wiki-template-name",
+			"required": true
+		},
+		"2": {
+			"label": "1st parameter",
+			"type": "string"
+		},
+		"3": {
+			"label": "2nd parameter",
+			"type": "string"
+		},
+		"4": {
+			"label": "3rd parameter",
+			"type": "string"
+		},
+		"5": {
+			"label": "4th parameter",
+			"type": "string"
+		},
+		"6": {
+			"label": "5th parameter",
+			"type": "string"
+		},
+		"7": {
+			"label": "6th parameter",
+			"type": "string"
+		},
+		"8": {
+			"label": "7th parameter",
+			"type": "string"
+		},
+		"9": {
+			"label": "8th parameter",
+			"type": "string"
+		},
+		"10": {
+			"label": "9th parameter",
+			"type": "string"
+		},
+		"11": {
+			"label": "10th parameter",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+{{collapse bottom}}
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+[[Category:Typing-aid templates{{#translation:}}]]
+}}</includeonly>

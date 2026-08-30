@@ -1,0 +1,7 @@
+{| class="stats-container"
+|<div class="stat-box"><em>{{NUMBEROFPAGES}}</em><br><span class="fixedwidth">pages</span></div>
+|<div class="stat-box"><em>{{NUMBEROFARTICLES}}</em><br><span class="fixedwidth">articles</span></div>
+|<div class="stat-box"><em>{{NUMBEROFFILES}}</em><br><span class="fixedwidth">files</span></div>
+|<div class="stat-box"><em>{{NUMBEROFEDITS}}</em><br><span class="fixedwidth">edits</span></div>
+|<div class="stat-box"><em>{{NUMBEROFACTIVEUSERS}}</em><br><span class="fixedwidth">editors</span></div>
+|}<noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

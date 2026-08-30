@@ -1,0 +1,7 @@
+<includeonly><span title="{{#if:{{{2|}}}|{{{2}}} on UtaiteDB|Visit UtaiteDB}}">[https://utaitedb.net/{{{1|}}} {{{2|{{{1|}}}}}}]</span></includeonly><noinclude>
+{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude>
+<noinclude>[[Category:Interwiki Templates]]
+</noinclude>

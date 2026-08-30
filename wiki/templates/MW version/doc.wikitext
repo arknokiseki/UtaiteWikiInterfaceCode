@@ -1,0 +1,138 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|docpage=MW version/doc|editlinks=1}}
+<templatedata>
+{
+	"params": {
+		"version2": {
+			"label": {
+				"en": "Version 2",
+				"cs": "Verze 2",
+				"es": "Versión 2",
+				"pl": "Wersja 2",
+				"tr": "Sürüm 2"
+			},
+			"description": {
+				"en": "To display a range of versions (e.g. 1.20 - 1.25), enter the first version in the “version” parameter and the second version in the “version2” parameter.",
+				"cs": "Chcete-li zobrazit řadu verzí (např. 1.20 - 1.25), zadejte první verzi do parametru “version“ a druhou verzi do parametru “version2“.",
+				"es": "Para mostrar un rango de versiones (por ejemplo, 1.20 - 1.25), introduce la primera versión en el parámetro «version» y la segunda en el parámetro «version2».",
+				"pl": "Aby wyświetlić zakres wersji (np. 1.20 - 1.25), wpisz pierwszą wersję do parametru „version“ i drugą wersję do parametru „version2”.",
+				"tr": "Bir dizi sürümü (örn. 1.20 - 1.25) görüntülemek için, ilk sürümü “version” parametresine ve ikinci sürümü “version2” parametresine girin."
+			},
+			"type": "string"
+		},
+		"version": {
+			"label": {
+				"en": "Version",
+				"cs": "Verze",
+				"es": "Versión",
+				"pl": "Wersja",
+				"ja": "バージョン",
+				"tr": "Sürüm"
+			},
+			"description": {
+				"en": "The version number of MediaWiki to display.",
+				"cs": "Číslo verze MediaWiki k zobrazení.",
+				"es": "El número de versión de MediaWiki para mostrar.",
+				"pl": "Wersja MediaWiki do wyświetlenia",
+				"ja": "表示する MediaWiki のバージョン番号。",
+				"tr": "Görüntülenecek MediaWiki sürüm numarası."
+			},
+			"type": "string",
+			"required": true
+		},
+		"comment": {
+			"label": {
+				"en": "Comment",
+				"cs": "Komentář",
+				"es": "Comentario",
+				"pl": "Komentarz",
+				"tr": "Yorum"
+			},
+			"description": {
+				"en": "If set to “and before” or “and after”, places a less-than-or-equal (<) or greater-than-or-equal (>) sign before the version number; otherwise adds the comment to the right of the version number box.",
+				"cs": "Pokud je nastaveno na “and before“ (“a před“) nebo “and after“ (“a za“), umístí před číslo verze znaménko menší než nebo rovno (<) nebo větší než nebo rovno (>). Jinak přidá komentář k vpravo od pole s číslem verze.",
+				"es": "Si se introduce «and before» («y anterior») o «and after» («y posterior»), pone un signo de menor o igual (<) o de mayor o igual (>) antes del número de versión; en otro caso, añade el comentario a la derecha del cuadro de número de versión.",
+				"pl": "Jeżeli ustawione na „and before“ lub „and after“, umieszcza znak mniejsze lub równe (<) lub większe lub równe (>) przed numerem wersji; w innym przypadku doda komentarz po prawej stronie.",
+				"tr": "“and before” veya “and after” ayarlanırsa, sürüm numarasının önüne küçüktür veya eşittir (<) veya büyüktür veya eşittir (>) işareti koyar; aksi takdirde yorumu sürüm numarası kutusunun sağına ekler."
+			},
+			"type": "string",
+			"suggested": true
+		},
+		"r": {
+			"label": {
+				"en": "SVN revision ID",
+				"cs": "ID revize SVN",
+				"es": "Identificador de revisión SVN",
+				"pl": "Numer wersji SVN",
+				"tr": "SVN revizyon kimliği"
+			},
+			"description": {
+				"en": "An SVN revision ID related to the section this template embedded in.",
+				"cs": "ID revize SVN související s částí, do které je tato šablona vložena.",
+				"es": "Un identificador de revisión de SVN relacionado con la sección en que se ha introducido esta plantilla.",
+				"pl": "Identyfikator wersji SVN powiązany z zawartością sekcji gdzie umieszczono szablon",
+				"tr": "Bu şablonun gömülü olduğu bölümle ilgili bir SVN revizyon kimliği."
+			},
+			"deprecated": "SVN was merged to Gerrit.",
+			"type": "string"
+		},
+		"gerrit change": {
+			"label": {
+				"en": "Gerrit change",
+				"cs": "Změna Gerrit",
+				"es": "Cambio en Gerrit",
+				"pl": "Zmiana w Gerrit",
+				"tr": "Gerrit değişikliği"
+			},
+			"description": {
+				"en": "A Gerrit change number implementing the feature.",
+				"cs": "Číslo změny Gerrit implementující funkci.",
+				"es": "Número de cambio en Gerrit que implementa la funcionalidad.",
+				"pl": "Numer zmiany Gerrit implementujący te funkcję",
+				"tr": "Özelliği uygulayan bir Gerrit değişiklik numarası."
+			},
+			"type": "string"
+		},
+		"compact": {
+			"label": {
+				"en": "Compact",
+				"cs": "Kompaktní",
+				"es": "Compacto",
+				"pl": "Kompaktowo",
+				"tr": "Kavram"
+			},
+			"description": {
+				"en": "If set, hides the “MediaWiki version:” string.",
+				"cs": "Pokud je nastaveno, skryje řetězec “ Verze MediaWiki:“.",
+				"es": "Si está activado, oculta la cadena «Versión de MediaWiki:».",
+				"pl": "Ukrywa napis „Wersja MediaWiki:”.",
+				"tr": "Ayarlanırsa, “MediaWiki sürümü:” dizesini gizler."
+			},
+			"type": "boolean"
+		}
+	},
+	"description": {
+		"en": "This template shows the valid MediaWiki version for the paragraph. It appears on the right side of the window in a bordered text field.",
+		"cs": "Tato šablona zobrazuje platnou verzi MediaWiki pro odstavec. Zobrazuje se na pravé straně okna v ohraničeném textovém poli.",
+		"es": "Esta plantilla muestra la versión de MediaWiki válida para el párrafo. Aparece en la parte derecha de la ventana en un campo de texto con borde.",
+		"pl": "Ten szablon pokazuje odpowiednią wersję MediaWiki dla akapitu. Wyświetla się on po prawej stronie okna w postaci pola tekstowego z ramką.",
+		"tr": "Bu şablon, paragraf için geçerli MediaWiki sürümünü gösterir. Pencerenin sağ tarafında, çerçeveli bir metin alanında görünür."
+	},
+	"paramOrder": [
+		"version",
+		"version2",
+		"comment",
+		"r",
+		"gerrit change",
+		"compact"
+	],
+	"format": "inline"
+}
+</templatedata>
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:MediaWiki version information templates{{#translation:}}]]
+[[Category:MediaWiki version templates&lrm;{{#translation:}}|*]]
+}}</includeonly>

@@ -1,0 +1,19 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|SingerBox|v1=name=|v2=image=}}
+
+==Examples==
+{{T|SingerBox|p1=name=Relu|p2=image=Starpola relu.png|_Y_=1}}{{clr}}
+{{T|SingerBox|p1=name=test|_Y_=1}}
+{{clr}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

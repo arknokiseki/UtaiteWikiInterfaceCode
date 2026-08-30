@@ -1,0 +1,8 @@
+<includeonly>
+| {{{number}}}
+| {{{title}}}
+| {{{original}}}
+| {{{utaite}}}
+|-</includeonly><noinclude>{{Documentation}}
+<!-- Add usage examples and documentation here -->
+</noinclude>

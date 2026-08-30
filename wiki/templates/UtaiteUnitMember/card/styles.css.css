@@ -1,0 +1,306 @@
+/* ===== Card Container ===== */
+.ugm-card {
+    position: relative;
+    border: 2px solid;
+    border-radius: 12px;
+    max-width: 650px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
+    margin: 0.5em 0;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ugm-card:hover {
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,0.12), 0 2px 6px -2px rgba(0,0,0,0.08);
+    transform: translateY(-1px);
+}
+
+/* ===== Gradient Overlay ===== */
+.ugm-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== Content Wrapper ===== */
+.ugm-content {
+    position: relative;
+    z-index: 1;
+    padding: 24px;
+}
+
+/* ===== Header ===== */
+.ugm-header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.ugm-image-wrap {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px -2px rgba(0,0,0,0.12),
+                0 2px 4px -2px rgba(0,0,0,0.08);
+}
+
+.ugm-image-wrap a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.ugm-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== Image Position ===== */
+.ugm-pos-top img           { object-position: top; }
+.ugm-pos-center img        { object-position: center; }
+.ugm-pos-bottom img        { object-position: bottom; }
+.ugm-pos-left img          { object-position: left; }
+.ugm-pos-right img         { object-position: right; }
+.ugm-pos-top-left img      { object-position: top left; }
+.ugm-pos-top-right img     { object-position: top right; }
+.ugm-pos-bottom-left img   { object-position: bottom left; }
+.ugm-pos-bottom-right img  { object-position: bottom right; }
+
+/* ===== Image Zoom ===== */
+.ugm-zoom-1 img { transform: scale(1); }
+.ugm-zoom-2 img { transform: scale(1.25); }
+.ugm-zoom-3 img { transform: scale(1.5); }
+.ugm-zoom-4 img { transform: scale(1.75); }
+.ugm-zoom-5 img { transform: scale(2); }
+
+.ugm-header-text {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.ugm-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.3;
+    margin: 0;
+    padding: 0;
+}
+
+.ugm-name a {
+    color: #111827;
+    text-decoration: none;
+}
+
+.ugm-name a:hover {
+    color: var(--ugm-color, #06b6d4);
+    text-decoration: underline;
+}
+
+.ugm-desc {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ===== Tabber Overrides (pill tabs) ===== */
+.ugm-card .tabber {
+    margin-top: 16px;
+}
+
+.ugm-card .tabber__header {
+    border-bottom: none !important;
+    margin-bottom: 0;
+    padding: 0;
+    background: transparent !important;
+}
+
+.ugm-card .tabber__tabs {
+    gap: 8px;
+    border-bottom: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+.ugm-card .tabber__tab {
+    border: 1px solid #e5e7eb !important;
+    color: #374151 !important;
+    padding: 6px 16px !important;
+    border-radius: 999px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    background: #ffffff !important;
+    text-decoration: none !important;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ugm-card .tabber__tab:hover {
+    background: #f9fafb !important;
+    border-color: #d1d5db !important;
+}
+
+.ugm-card .tabber__tab[aria-selected="true"] {
+    background-color: var(--ugm-color, #06b6d4) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    font-weight: 700 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.ugm-card .tabber__header__prev,
+.ugm-card .tabber__header__next {
+    display: none !important;
+}
+
+.ugm-card .tabber__section {
+    margin-top: 12px;
+}
+
+.ugm-card .tabber__panel {
+    padding: 0;
+}
+
+/* ===== Info Table (Overview tab) ===== */
+.ugm-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 2;
+    background: transparent;
+}
+
+.ugm-info-table td {
+    border: none;
+    padding: 2px 0;
+    vertical-align: middle;
+    background: transparent !important;
+}
+
+.ugm-label {
+    color: #9ca3af;
+    width: 35%;
+    padding-right: 12px;
+    font-weight: 400;
+}
+
+.ugm-value {
+    color: #111827;
+    font-weight: 500;
+}
+
+.ugm-oshimark {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+/* ===== Status Badges ===== */
+.ugm-status {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #6b7280;
+    background-color: #f3f4f6;
+}
+
+.ugm-status--active {
+    color: #059669;
+    background-color: #d1fae5;
+}
+
+.ugm-status--hiatus {
+    color: #d97706;
+    background-color: #fef3c7;
+}
+
+.ugm-status--inactive {
+    color: #6b7280;
+    background-color: #f3f4f6;
+}
+
+.ugm-status--graduated {
+    color: #7c3aed;
+    background-color: #ede9fe;
+}
+
+.ugm-status--terminated {
+    color: #dc2626;
+    background-color: #fee2e2;
+}
+
+/* ===== Unknown Placeholder ===== */
+.ugm-unknown {
+    color: #9ca3af;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* ===== Songs Table ===== */
+.ugm-songs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+}
+
+.ugm-songs-table td {
+    border: none;
+    padding: 8px 0;
+    vertical-align: top;
+    background: transparent !important;
+}
+
+.ugm-songs-table iframe {
+    max-width: 100% !important;
+}
+
+.ugm-songs-table figure {
+    margin: 4px 0;
+    max-width: 100%;
+}
+
+/* ===== Grid Layout ===== */
+.ugm-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.ugm-grid .ugm-card {
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .ugm-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ugm-content {
+        padding: 16px;
+    }
+
+    .ugm-label {
+        width: auto;
+        padding-right: 8px;
+    }
+}

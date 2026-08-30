@@ -1,0 +1,28 @@
+{{Utaite Spotlight/Design|site = nnd
+|image = Koto.png|thumb
+|caption = his NND avatar
+|officialjapname = こと
+|officialromajiname = Koto
+|YTchannel = UCbX7UBM25Tgdg_BkqdTPjoQ niconico ~Sing by こと~
+|NNDuserpage = 42627719
+|mylist1 = 47504716
+|mylist1info =
+|mylist2 =
+|mylist2info =
+|mylist3 =
+|mylist3info =
+|mylist4 =
+|mylist4info =
+|nicommu1 =
+|nicommu1info =
+|nicommu2 =
+|nicommu2info =
+|nicommu3 =
+|nicommu3info =
+|exampletitle = Meryuu
+|examplennd =
+|exampleyt = WcZSzFrqizY
+|description = '''Koto''' ('''こと''') is an {{NNDict|Utaite}} with a {{NNDict|shota}}-ish voice, who tends to use his voice high-pitched.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

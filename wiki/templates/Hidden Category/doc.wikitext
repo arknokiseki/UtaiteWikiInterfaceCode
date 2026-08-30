@@ -1,0 +1,14 @@
+{{Documentation/Header}}
+Marks a category as hidden. It applies the <code>__HIDDENCAT__</code> behaviour switch and displays an explanatory notice, so the category no longer appears at the foot of its member pages unless a reader has enabled hidden categories in their preferences.
+
+Place it on the category page itself. Takes no parameters.
+
+==Syntax==
+{{T|Hidden Category}}
+
+==Usage==
+<pre>{{Hidden Category}}</pre>
+Typical for maintenance and tracking categories that are useful to editors but noise for readers.
+
+''Taken from [[wikipedia:Template:Hidden category]] with the dependencies substituted.''
+<includeonly>[[Category:Article management templates]]</includeonly>

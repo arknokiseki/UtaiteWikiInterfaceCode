@@ -1,0 +1,117 @@
+{{Documentation subpage}}
+{{Dependencies|Module:Arguments|Module:Repeat}}
+== Examples ==
+
+=== Simple example ===
+Suppose we want to show several simple templates in a list. We want to both display what they look like and link to the corresponding template page. A brute-force way to do so is as follows:
+<syntaxhighlight lang="wikitext">
+*{{Done}} (see {{tl|Done}})
+*{{Not done}} (see {{tl|Not done}})
+...
+</syntaxhighlight>
+This is repetitive and hard to maintain, especially if the pattern is more complicated. Alternatively, we can create a template, but a template for one-time use is perhaps too wasteful.
+
+Instead, we can specify a pattern we want to repeat and let this template repeat the pattern while substituting arguments for each repetition.
+
+{{Example|1=
+<nowiki>{{Repeat
+
+| pattern = <nowiki>
+*{{TNAME}} (see {{tl|TNAME}})
+<//nowiki>
+
+| arg1 = TNAME
+
+| Done
+| Not done
+| Comment
+| On hold
+| Agree
+| Pending
+| Idea
+| Reviewing
+
+}}
+</nowiki>
+}}
+
+In the example above, <code>pattern</code> specifies the wikitext pattern to be repeated, <code>arg1</code> specifies that <code>TNAME</code> is a placeholder that needs to be replaced in each repetition. Each remaining unnamed argument repeats the wikitext pattern one more time with its value substitued.
+
+=== Multiple arguments ===
+
+Now suppose we have a flex layout and want to repeat some flex elements with lots of CSS. Templates and templatestyles are valid solutions, but if we want something quick and dirty that does not introduce additional pages, we can use the repeat template.
+
+In this example, we have 3 arguments specifying the file name, the country in which the photo was taken, and the image's license. Note that we use the parser function <code>#if</code> to make the license default to "CC BY-SA 4.0".
+
+{{Example|1=
+<nowiki>
+<div style="display: flex; flex-wrap: wrap; gap: 4px">
+{{Repeat
+
+| pattern = <nowiki>
+<div style="
+ flex: 1 200px;
+ border: 1px solid var(--border-color-subtle, #777);
+ text-align: center;
+ padding: 4px;
+ display: flex;
+ flex-direction: column;
+ ">
+ 
+<div style="align-content: center; flex-grow: 1">[[File:FILENAME|200px]]</div>
+
+<div>A photo taken in '''COUNTRYNAME'''<br/>Source: [[:File:FILENAME|Wikimedia Commons]]<br/>License: {{#if:LICENSE|LICENSE|CC BY-SA 4.0}}</div>
+
+</div>
+<//nowiki>
+
+| arg1 = FILENAME
+| arg2 = COUNTRYNAME
+| arg3 = LICENSE
+
+| CVN-69-SPIE-training.jpg
+| The United States
+| Public domain
+
+| Dülmen, Kirchspiel, ehem. Sondermunitionslager Visbeck, Bunker 26 -- 2024 -- 5531-5.jpg
+| Germany
+| 
+
+| Pez murciélago orbicular (Platax orbicularis), mar Rojo, Egipto, 2023-04-19, DD 01.jpg
+| Egypt
+| 
+
+| Rear NW Basilica Francesco Assisi Sep23 A7C 07913.jpg
+| Italy
+| 
+
+| Painted stork (Mycteria leucocephala) catching fish 3 of 3.jpg
+| Sri Lanka
+| 
+
+| Parque Nacional Marinho de Fernando de Noronha - João Paulo Marques DAndretta 1-edited.jpg
+| Brazil
+| CC BY 4.0
+
+| Reformierte Kirche Scuol. 11-10-2024. (actm.) 02.jpg
+| Switzerland
+| 
+
+}} <!-- end of repeat templates -->
+</div> <!-- end of flexbox -->
+</nowiki>
+}}
+
+=== Use of nowiki in pattern ===
+If the pattern contains the closing tag <code>&lt;/nowiki></code>, it can be escaped with <code>&lt;//nowiki></code>.
+
+== Caveats ==
+* Arguments (e.g. FILENAME in <code>arg1=FILENAME</code>) are interpreted as Lua patterns in <code>string.gsub</code>. Therefore, use of special characters such as <code>%</code> and <code>.</code> is discouraged unless you are familiar with quirks in Lua's string library.
+* This template is early in development and not widely used. You may experience strange edge cases. Please contact the author if you notice something wrong.
+
+== See also ==
+Below are some templates with functionalities similar to this one:
+* [https://moegirl.icu/Template:Template_Repeat Template:Template_Repeat on moegirlpedia]
+<includeonly>
+[[Category:Templates]]
+</includeonly>

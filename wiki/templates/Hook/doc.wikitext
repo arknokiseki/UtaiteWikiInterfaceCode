@@ -1,0 +1,43 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header}}
+<templatedata>
+{
+	"description":  {
+	    "en": "Creates an internal link to a hook's documentation page."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label":  {
+				"en": "Hook name"
+            },
+			"required": true,
+			"type": "string"
+		},
+		"2": {
+			"label": {
+				"en": "Link text"
+			},
+			"description": {
+				"en": "The text that is displayed as the link to the hook's documentation page."
+			},
+			"type": "string"
+		},
+		"extension": {
+			"label": {
+				"en": "Extension name"
+			},
+			"description": {
+				"en": "If the hook is provided by an extension, provide that extension's name here."
+			}
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Hook templates]]
+[[Category:Internal link templates]]
+[[Category:Shortcut templates]]
+}}</includeonly>

@@ -1,0 +1,33 @@
+{{Documentation/Header}}
+{{High Risk|Template:Featuring|nocat=1|pagetype=Main}}
+Adds a compact "featuring" badge to song list entries, marking who is featured on a track. Usually placed after {{T|Orikyoku}} in a song line. Repeat the template to credit more than one feature.
+{{Shortcut|Template:feat}}
+
+==Syntax==
+{{T|Featuring|v1=name}} or {{T|Feat|V1=name}}
+
+==Examples==
+* {{T|Featuring|_Y_=1|p1=XYZ}}
+* {{T|Featuring|_Y_=1|p1=[[USSS]]}}
+
+Used in a full song list line:
+<pre>* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Orikyoku|with={{VW|Kairiki Bear}}}} {{Featuring|XYZ}} {{Featuring|[[USSS]]}}</pre>
+* "Song Name" {{yt|ABC123}} {{nnd|DEF456}} (description) (2024.01.25) {{Orikyoku|with={{VW|Kairiki Bear}}}} {{Featuring|XYZ}} {{Featuring|[[USSS]]}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Featured name || The featured singer or group. Accepts plain text or a wiki link. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A compact 'featuring' badge for song list entries.",
+"params": {
+"1": { "label": "Featured name", "description": "The featured singer or group; plain text or a wiki link.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

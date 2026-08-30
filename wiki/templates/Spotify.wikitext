@@ -1,0 +1,1 @@
+<includeonly><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}">[https://open.spotify.com/{{#ifeq:{{{3|}}}|track|track|artist}}/{{{1}}} <span style="color: #46e26d !important;"><i class="fa-brands fa-spotify"></i></span>]</abbr></includeonly><noinclude>__notoc__{{documentation}}</noinclude>

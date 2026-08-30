@@ -1,0 +1,5 @@
+/* Styling for [[Template:Mono]] */
+.monospaced {
+	/* Keep it like this: "monospace, monospace". Those are the rules from [[w:WP:MONO]]. */
+	font-family: monospace, monospace;
+}

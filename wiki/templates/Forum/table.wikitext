@@ -1,0 +1,33 @@
+<includeonly>{{#invoke:Forum|withTable
+|target={{{target|{{{1|}}}}}}
+|category={{{category|}}}
+|category1={{{category1|}}}
+|category2={{{category2|}}}
+|category3={{{category3|}}}
+|notcategory={{{notcategory|}}}
+|notcategory1={{{notcategory1|}}}
+|notcategory2={{{notcategory2|}}}
+|namespace={{{namespace|Forum}}}
+|prefix={{{prefix|}}}
+|start={{{start|}}}
+|count={{{count|5}}}
+|title={{{title|}}}
+|mode={{{mode|table}}}
+|compact={{{compact|}}}
+|addcreationdate={{{addcreationdate|}}}
+|addauthor={{{addauthor|}}}
+|addlasteditor={{{addlasteditor|true}}}
+|addlastedit={{{addlastedit|}}}
+|ordermethod={{{ordermethod|}}}
+|historylink={{{historylink|true}}}
+|omit={{{omit|}}}
+|order={{{order|}}}
+|newdays={{{newdays|}}}
+|timestamp={{{timestamp|}}}
+|cache={{{cache|false}}}
+|shownamespace={{{shownamespace|false}}}
+|noresult={{{noresult|post something here}}}
+|buttonlabel={{{buttonlabel|Add New Topic}}}
+}}</includeonly><noinclude>
+{{documentation}}
+</noinclude>

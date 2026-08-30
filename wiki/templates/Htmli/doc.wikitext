@@ -1,0 +1,30 @@
+{{Documentation/Header}}
+Displays HTML code inline with syntax highlighting, via {{T|inline-code}}. The input is '''parsed''' — use {{T|Htmlir}} instead for markup that must be shown raw.
+
+==Syntax==
+{{T|Htmli|v1=html code}}
+
+==Example==
+<pre>{{Htmli|<div class="example">}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Content || The HTML code to display. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+==See also==
+* {{T|Htmlir}} — the raw variant, which escapes its input first
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Displays HTML code inline with syntax highlighting. Input is parsed.",
+"params": {
+"1": { "label": "Content", "description": "The HTML code to display.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Formatting templates]]</includeonly>

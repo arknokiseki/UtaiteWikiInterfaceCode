@@ -1,0 +1,6 @@
+;Description
+:Use this template to label MV thumbnails from well-known utattemita songs.
+;Syntax
+:Type <code>{{t|Famous Utattemita Song Pictures}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

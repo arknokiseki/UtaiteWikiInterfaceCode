@@ -1,0 +1,26 @@
+<includeonly><div class="n-notice {{#if:{{{image|}}}{{{icon|}}}||n-notice--no-media}}" style="color: {{#if:{{{color|}}}|{{{color}}}|{{#switch: {{lc:{{{tone|green}}}}}
+ | red | danger | error = #d32f2f
+ | orange | warning = #f57c00
+ | yellow = #fbc02d
+ | purple = #7b1fa2
+ | blue | info = #1976d2
+ | gray | grey | neutral | note = #757575
+ | green | success = #2e7d32
+ | #default = {{{tone|#2e7d32}}}
+}}}};"><!--
+-->{{#if: {{{image|}}}|<!--
+--><div class="n-notice__image-box" style="width:{{{imgwidth|60px}}}">[[File:{{{image}}}|{{{imgwidth|60px}}}|link={{{link|}}}]]</div><!--
+-->|<!--
+-->{{#if: {{{icon|}}} |<!--
+--><div class="n-notice__icon-box">{{{icon}}}</div><!--
+-->}}<!--
+-->}}<!--
+--><div class="n-notice__content"><!--
+-->{{#if: {{{header|}}} | <div class="n-notice__header">{{{header}}}</div>}}<!--
+--><div class="n-notice__body"><!--
+-->{{{info|{{{1|No details provided.}}}}}}<!--
+--></div><!--
+--></div><!--
+--></div></includeonly><noinclude>
+{{Documentation}}
+</noinclude>

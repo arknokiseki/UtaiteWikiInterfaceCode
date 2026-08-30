@@ -1,0 +1,34 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+<templatedata>
+{
+	"description": {
+		"en": "Displays a link to a template on the MediaWiki wiki.",
+		"cs": "Zobrazí odkaz na šablonu na wiki MediaWiki."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "template name",
+				"cs": "název šablony"
+			},
+			"description": {
+				"en": "Name of the template to link to",
+				"cs": "Název šablony, na kterou se má odkazovat"
+			},
+			"example": "foo",
+			"type": "wiki-template-name",
+			"default": "{{PAGENAME}}",
+			"suggested": true
+		}
+	}
+}
+</templatedata>
+
+Example:
+* {{xpds|timw|foo}}
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go here and interwikis go in Wikidata. -->
+[[Category:Internal link templates|{{PAGENAME}}]]
+}}</includeonly>

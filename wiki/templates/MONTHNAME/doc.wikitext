@@ -1,0 +1,4 @@
+<pre>{{MONTHNAME|12}}</pre>
+...results in:
+{{MONTHNAME|12}}
+<includeonly>[[Category:General wiki templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

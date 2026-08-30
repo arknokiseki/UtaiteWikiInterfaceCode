@@ -1,0 +1,123 @@
+<noinclude>{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+</noinclude>{{TemplateData header|editlinks=1|docpage=Mbox/TemplateData}}
+<templatedata>
+{
+	"description": {
+		"en": "This is the specialized version of the {{mbox}} or “multi namespace message box” meta-template.",
+		"cs": "Toto je specializovaná verze metašablony {{mbox}} nebo “multi namespace message box“."
+	},
+	"format": "block",
+	"params": {
+		"type": {
+			"label": {
+				"en": "Type",
+				"cs": "Typ"
+			},
+			"suggestedvalues": [
+				"speedy",
+				"delete",
+				"content",
+				"style",
+				"notice",
+				"move",
+				"protection"
+			],
+			"type": "string",
+			"default": "notice",
+			"suggested": true
+		},
+		"image": {
+			"label": {
+				"en": "Image (left)",
+				"cs": "Obrázek (vlevo)"
+			},
+			"suggestedvalues": [
+				"none"
+			],
+			"default": {
+				"en": "Depends on the “type” parameter.",
+				"cs": "Závisí na parametru “type“."
+			},
+			"suggested": true,
+			"type": "content"
+		},
+		"imageright": {
+			"label": {
+				"en": "Image (right)",
+				"cs": "Obrázek (vpravo)"
+			},
+			"type": "content"
+		},
+		"style": {
+			"label": {
+				"en": "CSS Style",
+				"cs": "Styl CSS"
+			},
+			"type": "string"
+		},
+		"textstyle": {
+			"label": {
+				"en": "Text CSS Style",
+				"cs": "Textový styl CSS"
+			},
+			"type": "string"
+		},
+		"text": {
+			"label": {
+				"en": "Text",
+				"cs": "Text"
+			},
+			"suggested": true,
+			"type": "content"
+		},
+		"small": {
+			"label": {
+				"en": "Small?",
+				"cs": "Malý?"
+			},
+			"suggestedvalues": [
+				"{{{small|}}}",
+				"left",
+				"yes",
+				"1"
+			],
+			"default": "0",
+			"type": "boolean"
+		},
+		"smallimage": {
+			"label": {
+				"en": "Small Image (left)",
+				"cs": "Malý obrázek (vlevo)"
+			},
+			"suggestedvalues": [
+				"none"
+			],
+			"default": "{{{image}}}",
+			"type": "content"
+		},
+		"smallimageright": {
+			"label": {
+				"en": "Small Image (right)",
+				"cs": "Malý obrázek (vpravo)"
+			},
+			"suggestedvalues": [
+				"none"
+			],
+			"default": "{{{imageright}}}",
+			"type": "content"
+		},
+		"smalltext": {
+			"label": {
+				"en": "Small Text",
+				"cs": "Malý text"
+			},
+			"default": "{{{text}}}",
+			"type": "content"
+		}
+	}
+}
+</templatedata><noinclude>
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:TemplateData documentation]]
+</noinclude>

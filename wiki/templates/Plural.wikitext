@@ -1,0 +1,1 @@
+{{{1}}} {{{{{|safesubst:}}}plural:{{{1}}}|{{{2}}}|{{{3|{{{2}}}s}}}|{{{4}}}}}<noinclude>[[Category:General wiki templates]]</noinclude>

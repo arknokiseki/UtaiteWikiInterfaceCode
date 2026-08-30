@@ -1,0 +1,198 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=See also/doc}}
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Page 1",
+				"sv": "Sidnamn"
+			},
+			"type": "wiki-page-name",
+			"required": true,
+			"suggested": true,
+			"description": {
+				"en": "Full name of related page",
+				"cs": "Celý název související stránky",
+				"fr": "Première page: nom complet de la page à laquelle vous voulez faire référence.",
+				"sv": "Relaterade sidans fulla namn"
+			},
+			"example": {
+				"fr": "1=Article_old  Article/doc  Special:MyLanguage/Articles",
+				"cs": "Article_old  Article/doc  Special:MyLanguage/Articles"
+			}
+		},
+		"2": {
+			"label": {
+				"en": "Page 2",
+				"cs": "Strana 2",
+				"fr": "Page 2"
+			},
+			"type": "wiki-page-name",
+			"description": {
+				"fr": "Seconde page: nom complet de la page à laquelle vous voulez faire référence.",
+				"cs": "Celý název druhé stránky, na kterou chcete odkazovat."
+			},
+			"default": {
+				"fr": "vide"
+			}
+		},
+		"3": {
+			"label": {
+				"en": "Page 3",
+				"cs": "Strana 3",
+				"fr": "Page 3"
+			},
+			"type": "wiki-page-name",
+			"description": {
+				"fr": "Troisième page: nom complet de la page à laquelle vous voulez faire référence.",
+				"cs": "Celý název třetí stránky, na kterou chcete odkazovat."
+			},
+			"default": {
+				"fr": "vide"
+			}
+		},
+		"label 1": {
+			"label": {
+				"en": "Link label",
+				"cs": "Text odkazu 1",
+				"fr": "Texte 1",
+				"sv": "Länktext"
+			},
+			"description": {
+				"en": "Custom link text, to serve as label instead of the page name.",
+				"cs": "Vlastní text pro odkaz místo názvu stránky.",
+				"fr": "Première page: texte alternatif affiché pour remplacer le lien de la page.",
+				"sv": "Anpassad etikett för länken, istället för sidans namn"
+			},
+			"type": "string",
+			"default": {
+				"en": "Page name",
+				"cs": "Název stránky",
+				"fr": "Copie de Nom de page",
+				"sv": "Sidnamn"
+			},
+			"example": {
+				"fr": "label 1=Archives Documentation Actualités",
+				"cs": "Archivní dokumentační zprávy"
+			},
+			"aliases": [
+				"l1"
+			]
+		},
+		"label 2": {
+			"aliases": [
+				"l2"
+			],
+			"label": {
+				"en": "Page 2 label",
+				"cs": "Text 2",
+				"fr": "Texte 2"
+			},
+			"type": "string",
+			"description": {
+				"fr": "Seconde page: texte alternatif affiché pour remplacer le lien de la page.",
+				"cs": "Zobrazený alternativní text, který nahradí odkaz na druhou stránku."
+			},
+			"default": {
+				"fr": "vide"
+			}
+		},
+		"label 3": {
+			"aliases": [
+				"l3"
+			],
+			"label": {
+				"en": "Page 3 label",
+				"cs": "Text 3",
+				"fr": "Texte 3"
+			},
+			"type": "string",
+			"description": {
+				"fr": "Troisième page: texte alternatif affiché pour remplacer le lien de la page.",
+				"cs": "Zobrazený alternativní text, který nahradí odkaz na třetí stránku."
+			},
+			"default": {
+				"fr": "vide"
+			}
+		},
+		"ll": {
+			"label": {
+				"en": "Use {{ll}}",
+				"cs": "Použít {{ll}}",
+				"fr": "ll"
+			},
+			"description": {
+				"en": "If this parameter has any non-blank value, links are generated using {{ll}}, which provides automatic linking to translation in user language, as well as using a translated default link text (overriding link texts still applies).",
+				"cs": "Pokud má tento parametr libovolnou neprázdnou hodnotu, odkazy se generují pomocí {{ll}}, které poskytuje automatické propojení s překladem v uživatelském jazyce a také pomocí přeloženého výchozího textu odkazu (stále platí přepisující texty odkazů).",
+				"fr": "Si ce paramètre a une valeur non vide, les liens sont traduits, générés en utilisant {{ll}}, qui permet d'accèder automatiquement aux pages traduites dans les autres langues, et d'utiliser pour le lien un texte par défaut déjà traduit (que l'on pourra toujours réécraser)."
+			},
+			"type": "line",
+			"example": {
+				"en": "ll=TRUE",
+				"fr": "ll=TRUE"
+			},
+			"default": {
+				"en": "empty",
+				"fr": "vide"
+			}
+		},
+		"altphrase": {
+			"description": {
+				"en": "Substitution text to replace the default string",
+				"fr": "Texte pour remplacer la valeur par défaut"
+			},
+			"example": {
+				"en": "altphrase=Other related articles ",
+				"fr": "altphrase=Autres articles sur le même sujet"
+			},
+			"type": "string",
+			"default": {
+				"bn": "আরও দেখুন",
+				"cs": "Viz též",
+				"de": "Siehe auch",
+				"en": "See also",
+				"es": "Véase también",
+				"fr": "Voir aussi",
+				"gu": "આ પણ જુઓ",
+				"hu": "Lásd még",
+				"id": "Lihat pula",
+				"ja": "関連項目",
+				"ko": "같이 보기",
+				"nl": "Zie ook",
+				"pl": "Zobacz też",
+				"ru": "См. также",
+				"sv": "Se även",
+				"tr": "Ayrıca bakınız",
+				"zh": "参见",
+				"ar": "انظر أيضًا",
+				"ckb": "ئه‌مانه‌ش ببینه‌"
+			}
+		}
+	},
+	"description": {
+		"en": "Display up to three page links of other related  (possibly translated) pages.",
+		"cs": "Zobrazí poznámku o související stránce.",
+		"fr": "Affiche jusqu'à trois liens de pages (éventuellemnt déjà traduites) relatives au sujet actuel.",
+		"sv": "Visa en not om en relaterad sida."
+	},
+	"format": "inline",
+	"paramOrder": [
+		"1",
+		"label 1",
+		"2",
+		"label 2",
+		"3",
+		"label 3",
+		"ll",
+		"altphrase"
+	]
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Hatnote templates]]
+}}</includeonly>

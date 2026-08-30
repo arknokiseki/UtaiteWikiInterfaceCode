@@ -1,0 +1,304 @@
+This documentation explains how to use the CustomSlider feature on this wiki. The required JavaScript is already loaded on this wiki through '''[[MediaWiki:ImportJS]]''', so you can immediately start using this feature without any additional installation steps.
+
+== Limitation ==
+Mobile view is currently not supported.
+
+== Dependencies ==
+This template depends on '''[[MediaWiki:CustomSlider.js]]''', which has already been installed on this wiki. No additional installation is required. <br/>Status: <i class="fa-solid fa-spinner fa-spin-pulse"></i> script under review.
+
+== Basic Usage ==
+
+To create a basic slider, add the following structure to your wiki page:
+
+<pre>
+<div id="SliderView">
+  <div id="SliderWrapper">
+    <div class="Sld">
+      [[File:image1.png]]
+    </div>
+    <div class="Sld">
+      [[File:image2.png]]
+    </div>
+    <div class="Sld">
+      [[File:image3.png]]
+    </div>
+  </div>
+  <div id="NavBtns">
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+  </div>
+  <div id="SliderData">3|5000|auto|right|100%|bottom</div>
+</div>
+</pre>
+
+=== Another example: [[Template:MP-slider]] ===
+(WIP, currently the script has been submitted to be reviewed)
+<pre>
+<div style="display: flex; justify-content: center; width: 100%;"><div id="SliderView"><div id="SliderData" class="4|3000|auto|normal|800px|overlay" style="display:none"></div><ul id="SliderWrapper">
+<li class="Sld SlideIMG" data-slider-link="" data-desc="''smirks ''Trust me—our world invasion paints over past lives!">[[File:Worlddomination.png|link=]]</li>
+<li class="Sld SlideIMG" data-slider-link="Agency:VOISING" data-desc="VOISING newest collaboration song: VOICE&SING!">[[File:VOISING-Voice&sing.png|link=Agency:VOISING]]</li>
+<li class="Sld SlideIMG" data-slider-link="Agency:STPR Inc." data-desc="STPR newest collaboration song: PEACE!">[[File:STPR-PEACE.png|link=Agency:STPR Inc.]]</li>
+<li class="Sld SlideIMG" data-slider-link="Amatsuki/Discography" data-desc="Amatsuki Latest Album: Last Fragrance!">[[File:LastFragrance Jacket nomal.png|link=Amatsuki/Discography]]</li>
+</ul><center><ul id="NavBtns" class="nmBottom nmP2" style="color:#FFFFFF;">
+<li class="NavBtn">[[File:Worlddomination.png|70px|link=]]</li>
+<li class="NavBtn">[[File:VOISING-Voice&sing.png|70px|link=]]</li>
+<li class="NavBtn">[[File:STPR-PEACE.png|70px|link=]]</li>
+<li class="NavBtn">[[File:LastFragrance Jacket nomal.png|70px|link=]]</li>
+</ul></center></div></div>
+</pre>
+==== Output: ====
+{{MP-slider}}
+
+== Configuration Options ==
+
+=== SliderData Format ===
+
+The '''SliderData''' element contains the slider configuration in a pipe-separated format. It can be specified either as text content or as a class attribute.
+
+'''Format:''' <code>SlideCount|Interval|Height|Orientation|Width|CaptionPosition</code>
+
+{| class="wikitable"
+! Parameter
+! Description
+! Values
+! Example
+|-
+| SlideCount
+| Number of slides in the slider
+| Integer
+| <code>3</code>
+|-
+| Interval
+| Time between automatic slide changes (in milliseconds)
+| Integer (≥1000)
+| <code>5000</code>
+|-
+| Height
+| Height of the slider
+| <code>auto</code>, pixel value
+| <code>auto</code>, <code>300</code>, <code>300px</code>
+|-
+| Orientation
+| Direction of slider movement
+| <code>right</code> (horizontal), <code>down</code> (vertical)
+| <code>right</code>
+|-
+| Width
+| Width of the slider
+| Percentage or pixel value
+| <code>100%</code>, <code>500px</code>
+|-
+| CaptionPosition
+| Position of captions (optional)
+| <code>top</code>, <code>bottom</code>, <code>overlay</code>
+| <code>bottom</code>
+|}
+
+You can specify fewer parameters if you don't need all of them:
+
+* '''3 parameters:''' <code>SlideCount|Interval|Height</code>
+* '''4 parameters:''' <code>SlideCount|Interval|Height|Orientation</code>
+* '''5 parameters:''' <code>SlideCount|Interval|Height|Orientation|Width</code>
+* '''6 parameters:''' <code>SlideCount|Interval|Height|Orientation|Width|CaptionPosition</code>
+
+== Slide Options ==
+
+=== Adding Captions ===
+
+To add a caption to a slide, use the <code>data-desc</code> attribute:
+
+<pre>
+<div class="Sld" data-desc="This is a caption for the first slide">
+  [[File:image1.png]]
+</div>
+</pre>
+
+=== Making Slides Clickable ===
+
+You can make slides clickable by adding one or more of the following data attributes:
+
+{| class="wikitable"
+! Attribute
+! Description
+! Example
+|-
+| <code>data-slider-link</code>
+| Page name to link to
+| <code>Article_Name</code>
+|-
+| <code>data-slider-link-fandom-wiki</code>
+| Fandom wiki to link to
+| <code>community</code>
+|-
+| <code>data-slider-link-external</code>
+| External URL
+| <code>example.com/page</code>
+|}
+
+'''Examples:'''
+
+For a link to a page on the current wiki:
+<pre>
+<div class="Sld" data-slider-link="Article_Name">
+  [[File:image1.png]]
+</div>
+</pre>
+
+For a link to a page on a specific Fandom wiki:
+<pre>
+<div class="Sld" data-slider-link="Article_Name" data-slider-link-fandom-wiki="community">
+  [[File:image1.png]]
+</div>
+</pre>
+
+For a link to an external website:
+<pre>
+<div class="Sld" data-slider-link-external="example.com/page">
+  [[File:image1.png]]
+</div>
+</pre>
+
+== Navigation Button Positioning ==
+
+You can position the navigation buttons using CSS classes on the <code>NavBtns</code> element:
+
+{| class="wikitable"
+! Class
+! Description
+! Example
+|-
+| <code>nmLeft</code>
+| Position buttons on the left side
+| <code>&lt;div id="NavBtns" class="nmLeft"&gt;</code>
+|-
+| <code>nmRight</code>
+| Position buttons on the right side
+| <code>&lt;div id="NavBtns" class="nmRight"&gt;</code>
+|-
+| <code>nmTop</code>
+| Position buttons on the top
+| <code>&lt;div id="NavBtns" class="nmTop"&gt;</code>
+|-
+| <code>nmBottom</code>
+| Position buttons on the bottom
+| <code>&lt;div id="NavBtns" class="nmBottom"&gt;</code>
+|}
+
+=== Navigation Button Alignment ===
+
+You can also align the navigation buttons within their container:
+
+{| class="wikitable"
+! Class
+! Description
+! Example
+|-
+| <code>nmP1</code>
+| Default alignment (start)
+| <code>&lt;div id="NavBtns" class="nmLeft nmP1"&gt;</code>
+|-
+| <code>nmP2</code>
+| Center alignment
+| <code>&lt;div id="NavBtns" class="nmLeft nmP2"&gt;</code>
+|-
+| <code>nmP3</code>
+| End alignment
+| <code>&lt;div id="NavBtns" class="nmLeft nmP3"&gt;</code>
+|}
+
+== Advanced Examples ==
+
+=== Basic Image Slider with Captions ===
+
+<pre>
+<div id="SliderView">
+  <div id="SliderWrapper">
+    <div class="Sld" data-desc="First slide caption">
+      [[File:image1.png]]
+    </div>
+    <div class="Sld" data-desc="Second slide caption">
+      [[File:image2.png]]
+    </div>
+    <div class="Sld" data-desc="Third slide caption">
+      [[File:image3.png]]
+    </div>
+  </div>
+  <div id="NavBtns" class="nmBottom nmP2">
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+  </div>
+  <div id="SliderData">3|3000|auto|right|100%|bottom</div>
+</div>
+</pre>
+
+=== Vertical Slider with Right-Side Navigation ===
+
+<pre>
+<div id="SliderView">
+  <div id="SliderWrapper">
+    <div class="Sld" data-desc="First slide caption">
+      [[File:image1.png]]
+    </div>
+    <div class="Sld" data-desc="Second slide caption">
+      [[File:image2.png]]
+    </div>
+    <div class="Sld" data-desc="Third slide caption">
+      [[File:image3.png]]
+    </div>
+  </div>
+  <div id="NavBtns" class="nmRight nmP2">
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+  </div>
+  <div id="SliderData">3|5000|400px|down|600px|overlay</div>
+</div>
+</pre>
+
+=== Clickable Slides with Different Link Types ===
+
+<pre>
+<div id="SliderView">
+  <div id="SliderWrapper">
+    <div class="Sld" data-desc="Link to local page" data-slider-link="Main_Page">
+      [[File:image1.png]]
+    </div>
+    <div class="Sld" data-desc="Link to Community Wiki" data-slider-link="Help:Contents" data-slider-link-fandom-wiki="community">
+      [[File:image2.png]]
+    </div>
+    <div class="Sld" data-desc="Link to external site" data-slider-link-external="example.com">
+      [[File:image3.png]]
+    </div>
+  </div>
+  <div id="NavBtns" class="nmBottom">
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+    <div class="NavBtn"></div>
+  </div>
+  <div id="SliderData">3|4000|300px|right|800px|top</div>
+</div>
+</pre>
+
+== Uploading Images ==
+
+For best results with the slider:
+
+# Upload your images to the wiki using [[Special:Upload]]
+# Use the File: prefix when referencing images in your slider, e.g., <code><nowiki>[[File:MyImage.jpg]]</nowiki></code>
+
+== Troubleshooting ==
+
+* '''Slider Not Working:''' Ensure you have included all required elements with the correct IDs and classes.
+* '''Images Not Displaying Correctly:''' Check that your image paths are correct and that the <code>Height</code> setting is appropriate for your images.
+* '''Navigation Buttons Not Showing:''' Verify that you have the correct number of <code>.NavBtn</code> elements matching your slide count.
+* '''Auto-rotation Not Working:''' Make sure the interval value is at least 1000 (1 second).
+
+== Tips for Best Results ==
+
+# Use images of the same dimensions for consistent slider appearance
+# If using a fixed height, set it appropriately for your image sizes
+# Use the <code>overlay</code> caption position for a modern look
+# For timed content, set appropriate intervals (3000-5000ms is typical)
+# Test your slider in different screen sizes to ensure responsiveness

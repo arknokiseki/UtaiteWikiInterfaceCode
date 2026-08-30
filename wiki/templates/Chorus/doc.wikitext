@@ -1,0 +1,36 @@
+{{Documentation/Header}}
+{{High Risk|Template:Chorus|nocat=1|pagetype=Main}}
+The infobox used at the top of '''<code>/chorus</code> subpages''' of famous utattemita songs. It renders a navigation bar linking back to the parent song's cover list and across to the chorus list, plus a note pointing readers to the definition of a chorus. Pages using it are filed under [[:Category:Famous Utattemita Songs/chorus]].
+
+==Syntax==
+{{T|Chorus|v1=root =}}
+
+==Usage==
+This template is shown as code only — a live call would add this documentation page to [[:Category:Famous Utattemita Songs/chorus]].
+<pre>
+{{Chorus}}
+</pre>
+Place it at the top of a page named <code>Song Name/chorus</code>. The navigation links are built from the base page name automatically, so no parameters are needed in the normal case.
+
+If the parent page does not exist under the expected name, point the "Song covers" link somewhere else with <code>root</code>:
+<pre>
+{{Chorus|root=Actual Song Page}}
+</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>root</code> || – || Root page || Fallback target for the "Song covers" link, used when a page matching the base page name does not exist. || wiki-page-name || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Infobox for /chorus subpages of famous utattemita songs.",
+"params": {
+"root": { "label": "Root page", "description": "Fallback target for the 'Song covers' link when the base page does not exist.", "type": "wiki-page-name" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

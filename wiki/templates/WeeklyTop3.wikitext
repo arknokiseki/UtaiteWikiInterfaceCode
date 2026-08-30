@@ -1,0 +1,19 @@
+<noinclude>Bot-maintained weekly top 3 widget for the main page. Updated automatically by [[User:Arknomahounorobotto]] — do not edit manually. Full ranking: [[User blog:Arknomahounorobotto/monthly/2026/August]].
+
+'''Preview:'''
+</noinclude><div class="mp-side-group">
+<div class="mp-side-head"><i class="fa-solid fa-ranking-star"></i>&nbsp;Weekly Top 3 <span style="font-weight:400; text-transform:none; letter-spacing:0; margin-left:auto;">2026.08.17 – 2026.08.23</span></div>
+'''YouTube'''
+<div style="margin:0.2em 0 0.6em;">
+<div style="font-size:0.85em; line-height:1.5; margin-bottom:0.25em;">🥇 "[[Mawaru Sora Usagi]]" {{yt|WXbFIiGZtkQ}}<br/><span style="color:var(--color-subtle,#6b7280); margin-left:1.6em;">[[Amatsuki]] · 469,001 views</span></div>
+<div style="font-size:0.85em; line-height:1.5; margin-bottom:0.25em;">🥈 "Silhouette" {{yt|eSzVQakEEro}}<br/><span style="color:var(--color-subtle,#6b7280); margin-left:1.6em;">Daidame ([[Colon]] & [[MAZETA]] & [[Shion]] & Daikiri & Osadei) · 364,110 views</span></div>
+<div style="font-size:0.85em; line-height:1.5; margin-bottom:0.25em;">🥉 "Shoujo Rei" {{yt|L_LcJ1Md3Rc}}<br/><span style="color:var(--color-subtle,#6b7280); margin-left:1.6em;">[[Vau]] · 225,918 views</span></div>
+</div>
+'''Niconico'''
+<div style="margin:0.2em 0 0.6em;">
+<div style="font-size:0.85em; line-height:1.5; margin-bottom:0.25em;">🥇 "YARARARA" {{nnd|sm46709248}}<br/><span style="color:var(--color-subtle,#6b7280); margin-left:1.6em;">[[Tsukasashi]] · 377 views</span></div>
+</div>
+<div style="font-size:0.8em; text-align:right;">[[User blog:Arknomahounorobotto/monthly/2026/August|Full ranking →]]</div>
+<div style="font-size:0.8em; color:var(--color-subtle,#6b7280); margin-top:0.4em;">''This week's top 3 is brought to you by [[User:Arknomahounorobotto|Arknomahounorobotto (bot)]] and curated by [[User:Ark|Ark]].''</div>
+</div>
+<noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

@@ -1,0 +1,17 @@
+{{Utaite Spotlight/Design
+| image = Akio_nnd.png
+| caption = nicovideo
+| officialjapname = あきお
+| description = 
+| NNDuserpage = 18759218
+| NNDuserdesc = 
+| YThandle = @akio14085_
+| YThandledesc =
+| Twitter = akio14085
+|Twitterdesc = 
+|exampletitle= Maji LOVE1000％
+|exampleyt=
+|examplennd=sm15116786
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

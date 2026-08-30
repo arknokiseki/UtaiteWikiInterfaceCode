@@ -1,0 +1,4 @@
+<includeonly>{{#ifeq:{{{3|}}}|link|<!--
+link--><abbr title={{#if:{{{2|}}}|&nbsp;{{{2}}}}}><span class="" data-nnd-id="{{{1}}}" style="">[http://www.nicovideo.jp/watch/{{{1}}} NND]</span></abbr>|<!--
+icon--><abbr title={{#if:{{{2|}}}|&nbsp;{{{2}}}}}><span class="nnd-link" data-nnd-id="{{{1}}}">[https://www.nicovideo.jp/watch/{{{1}}} {{UWI|icon=nicovideo|class=uw-lg}}]</span></abbr>}}</includeonly><!--
+--><noinclude>{{documentation}}</noinclude>

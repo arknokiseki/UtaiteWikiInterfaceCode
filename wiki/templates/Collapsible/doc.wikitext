@@ -1,0 +1,101 @@
+{{Documentation/Header}}
+Create a collapsible using [[mw:Manual:Collapsible elements|collapsible elements]].
+
+==Syntax==
+{{T|Collapsible|v1=collapsible content|v2=button text|v3=collapsed=set to 1 to collapsed}}
+
+==Examples==
+{{T|Collapsible|_Y_=1}}
+{{T|Collapsible|This content is visible by default|Default Expanded|_Y_=1}}
+{{T|Collapsible|This content is not visible by default|Press me to see content|collapsed=1|_Y_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Collapsible Content",
+			"description": "The content to display in collapsible.",
+			"type": "string",
+			"default": "Placeholder Content",
+			"suggested": true
+		},
+		"2": {
+			"label": "Button Text",
+			"description": "Text to display on collapsible toggle.",
+			"type": "string",
+			"default": "Placeholder Button",
+			"suggested": true
+		},
+		"collapsed": {
+			"label": "Set Collapsed",
+			"description": "Set to \"1\" to display content as collapsed.",
+			"type": "boolean"
+		},
+		"no_arrow": {
+			"label": "No Arrow Text",
+			"type": "boolean",
+			"description": "Set to \"1\" to hide sides of button text."
+		},
+		"no_left_arrow": {
+			"label": "No Left Arrow Text",
+			"type": "boolean",
+			"description": "Set to \"1\" to hide left side of button text."
+		},
+		"expand_arrow": {
+			"label": "Expand Arrow Text",
+			"type": "string",
+			"default": "▼",
+			"description": "Text on sides of button text to expand."
+		},
+		"expand_text": {
+			"label": "Expand Button Text",
+			"type": "string",
+			"default": "Placeholder Button",
+			"description": "Text prompt on button text expand."
+		},
+		"no_right_arrow": {
+			"label": "No Right Arrow Text",
+			"type": "boolean",
+			"description": "Set to \"1\" to hide right side of button text."
+		},
+		"collapse_arrow": {
+			"label": "Collapse Arrow Text",
+			"type": "string",
+			"default": "▲",
+			"description": "Text on sides of button text to collapse."
+		},
+		"collapse_text": {
+			"label": "Collapse Button Text",
+			"default": "Placeholder Button",
+			"description": "Text prompt on button to collapse.",
+			"type": "string"
+		},
+		"style": {
+			"label": "Collapsible's CSS",
+			"description": "Custom CSS to apply on the collapsible element, without enclosing quotation marks",
+			"example": "padding-top: 10px",
+			"type": "string",
+			"suggested": true
+		}
+	},
+	"description": "Create a collapsible using Collapsible elements.",
+	"paramOrder": [
+		"1",
+		"2",
+		"collapsed",
+		"expand_text",
+		"collapse_text",
+		"expand_arrow",
+		"collapse_arrow",
+		"no_arrow",
+		"no_left_arrow",
+		"no_right_arrow",
+		"style"
+	],
+	"format": "inline"
+}
+</templatedata><noinclude>
+[[ja:テンプレート:Collapsible/doc]]
+[[pt-br:Predefinição:Collapsible/doc]]
+</noinclude>

@@ -1,0 +1,47 @@
+{{Documentation subpage}}
+<div class="plainlinks" style="float:{{dir|{{int:lang}}|left|right}}">[<nowiki />[{{fullurl:Template:Rev/doc|action=edit}} {{int:translate}}]<nowiki />]</div>
+<templatedata>
+{
+	"description": {
+		"en": "This template can be used to link to a specific SVN revision.",
+		"cs": "Tuto šablonu lze použít k propojení s konkrétní revizí SVN.",
+		"de": "Diese Vorlage kann benutzt werden, um eine spezifische SVN-Revision zu verlinken."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "revision",
+				"cs": "Revize",
+				"de": "Revision"
+			},
+			"description": {
+				"en": "The SVN revision number, or “?” if unknown. “?” categorizes the page to “Pages with a wanted revision number”",
+				"cs": "Číslo revize SVN nebo “?” pokud neznáme. “?” kategorizuje stránku do “Pages with a wanted revision number” (stránky s požadovaným číslem revize)",
+				"de": "Die SVN-Revisionnummer, oder „?“, falls sie unbekannt ist. „?“ kategorisiert die Seite in „Pages with a wanted revision number“"
+			},
+			"example": "1234",
+			"type": "line",
+			"required": true
+		},
+		"2": {
+			"label": {
+				"en": "link text",
+				"cs": "Text odkazu",
+				"de": "Linktext"
+			},
+			"description": {
+				"en": "Text of the revision link. Not used if the revision number is “?”",
+				"cs": "Text odkazu na revizi. Nepoužívá se, pokud je číslo revize “?”",
+				"de": "Text des Revisionlinks. Nicht benutzt, wenn die Revisionnummer „?“ ist"
+			},
+			"type": "line",
+			"default": {
+				"en": "r<revision ID>, e.g. r1234",
+				"cs": "r<ID revise>, e.g. r1234",
+				"de": "r<Revisionnummer>, z. B. r1234"
+			}
+		}
+	}
+}
+</templatedata>

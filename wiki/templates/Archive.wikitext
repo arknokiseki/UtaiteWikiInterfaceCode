@@ -1,0 +1,12 @@
+<noinclude>
+</noinclude>{{#switch:
+| =
+{{tmbox|image=[[File:Replacement filing cabinet.svg|50px|<translate><!--T:1--> Archive</translate>|alt=|link=]]|text=This page is an archive. '''Do not edit the contents of this page.'''  Please direct any additional comments to the [[{{{1|{{TALKSPACE}}:{{BASEPAGENAME}}}}}|current talk page]].<!-- Template:Archive --> 
+}}<includeonly>__NOEDITSECTION__ __NONEWSECTIONLINK__ __ARCHIVEDTALK__</includeonly>
+| #default=
+  {{#invoke:Template translation|renderTranslatedTemplate|template=Template:Archive|noshift=1|uselang={{int:lang}}}}
+}}<noinclude>
+{{Documentation|Template:Archive/doc}}
+
+[[Category:Header templates]]
+</noinclude>

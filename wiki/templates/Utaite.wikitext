@@ -1,0 +1,230 @@
+<noinclude><span style="color: red; font-weight: bold"><span style="text-decoration: underline;"> Warning</span>: The <span style="color:#FF496C">age</span> field is deprecated on the latest update.</span></noinclude><div id="utaite-schema-data" style="display:none;"
+  data-name="{{PAGENAME}}"
+  data-type="{{#if:{{{affiliation|}}}{{{RecordLabel|}}}|MusicGroup|Person}}"
+  data-ythandle="{{{YThandle|}}}"
+  data-twitter="{{{Twitter|}}}"
+  data-instagram="{{{Instagram|}}}"
+  data-bluesky="{{{Bluesky|}}}"
+  data-tiktok="{{{Tiktok|}}}"
+  data-twitch="{{{Twitch|}}}"
+  data-soundcloud="{{{Soundcloud|}}}"></div><!--
+-->{{main other|{{#seo:
+  |title_mode=replace
+  |title={{#if:{{{officialjapname|}}}|{{#invoke:TextCleaner|cleanName|{{{officialjapname}}}}}|{{PAGENAME}}}} ({{PAGENAME}}) — Utaite Wiki
+  |description={{PAGENAME}} {{#if:{{{officialjapname|}}}|({{#invoke:TextCleaner|cleanName|{{{officialjapname}}}}})}} is {{#switch:{{{gender|}}}|Male=a male|Female=a female|Androgynous=an androgynous|an}} utaite{{#if:{{{country|}}}| from {{{country}}}}}{{#if:{{{years|}}}|, active {{{years}}}}}. {{#if:{{{affiliation|}}}| Affiliated with {{#invoke:AffiliationParser|getFirst|{{{affiliation}}}}}.&nbsp;}}See profile, covers and discography on Utaite Wiki.
+  |keywords=utaite, {{PAGENAME}}{{#if:{{{officialjapname|}}}|, {{#invoke:AffiliationParser|cleanName|{{{officialjapname}}}}}}}, utattemita, Japanese cover singer
+  |image={{{image|}}}
+  |image_alt={{PAGENAME}} profile image — Utaite Wiki
+  |type=ProfilePage
+  |site_name=Utaite Wiki
+  |locale=en_US
+  |twitter_card=summary_large_image
+}}|}}<!--
+--><div class="blacklist-pPreview"><span style="display:none;">[[HasUtaiteProfile::true]][[UtaiteName::{{{name|{{PAGENAME}}}}}]][[UtaiteImage::{{{image|}}}]]</span><!--
+--><infobox theme="utaite-infobox" accent-color-source="uaca" accent-color-text-source="utca">
+	<group row-items="1">
+	<header><center>{{#if:{{{pagename|}}}|{{{pagename|}}}|{{PAGENAME}}}}</center></header>
+	<image source="image" />
+		<data source="image"><format>{{{pagename|{{PAGENAME}}}}}{{#if:{{{imagedescr|}}}|{{Nbsp}}{{{imagedescr}}}|
+			 {{#if:{{{imagesong|}}}|
+				{{Nbsp}}as seen in {{#switch:{{{gender}}}|Male=his|Female=her|male=his|female=her|their}} {{{songfeat}}} cover of {{{imagesong}}}|
+				{{#if:{{{imagegroup|}}}|
+					{{Nbsp}}as seen in {{{imagegroup}}}|
+					{{#if:{{{otherillustrator|}}}|
+						{{Nbsp}}as depicted by {{{otherillustrator}}}
+					}}
+				}}
+			}}
+		}}{{#if:{{{officialillustrator|}}}|
+			, illust. by {{{officialillustrator|}}}|
+		}}</format></data>
+	</group>
+	
+	<data source="officialjapname"><label>Japanese</label><format>{{{officialjapname}}} {{#if:{{{officialromajiname|}}}|(''{{{officialromajiname}}}''){{nbsp}}{{#if:{{{officialnameinfo|}}}|({{{officialnameinfo}}})|}}|}}</format></data>
+	<data source="officialchinname"><label>Chinese</label><format>{{{officialchinname}}} (''{{{officialpinyinname}}}''{{#if:{{{officialnameinfo|}}}|{{{officialnameinfo}}}}})</format></data>
+	<data source="officialengname"><label>English</label><format>{{{officialengname}}} {{#if:{{{officialnameinfo|}}}|({{{officialnameinfo}}})}}</format></data>
+	<data source="aka"><label>Also known as</label><format><div style="height:5vh; overflow-y:scroll;" class="custom-scroll">{{{aka}}}</div></format></data>
+	<data source="fanmark"><label>Fan Mark</label></data>
+	<data source="fanname"><label>Fan Name</label></data>
+	<data source="gender"><label>Gender</label><default>Unknown</default></data>
+	<data source=""><label>Born</label><default>{{#if:{{{birthmonth|}}}|
+		{{#switch:{{{birthmonth}}}|
+			01=January|
+			02=February|
+			03=March|
+			04=April|
+			05=May|
+			06=June|
+			07=July|
+			08=August|
+			09=September|
+			10=October|
+			11=November|
+			12=December 
+		}}{{#if:{{{birthday|}}}|
+{{Nbsp}}{{{birthday}}}}}<!--
+-->{{#if:{{{birthyear|}}}|<!--
+-->, {{{birthyear}}}<!--
+-->{{#if:{{{birthday|}}}|<!--
+-->{{Nbsp}}<!--
+-->{{#ifeq:{{#expr:{{#count:{{lc:{{{status|}}}}}|deceased}}>0}}|1|<!-- deceased branch --> <!--
+-->{{#if:{{{deathyear|}}}|<!--
+-->(aged {{age|{{{birthyear}}}|{{{birthmonth}}}|{{{birthday}}}|{{{deathyear}}}}})|<!-- deathyear missing; fall back to living age --><!--
+-->(age {{age|{{{birthyear}}}|{{{birthmonth}}}|{{{birthday}}}}})}}|<!-- not deceased branch --><!--
+-->(age {{age|{{{birthyear}}}|{{{birthmonth}}}|{{{birthday}}}}})}}}}}}<!--
+-->{{#if:{{{birthref|}}}|<!--
+-->{{{birthref}}}|<!--
+-->{{main other|&#32;{{cite}}|}}}}<!--
+-->}}</default></data>
+	<data source="status"><label>Status</label><default>Active</default></data>
+	<data source="years"><label>Years active</label></data>
+	<data source="affiliation"><label>Affiliation</label></data>
+	<group collapse="open" row-items="7">
+		<header>SNS</header><!--
+			YouTube--><!--
+			--><data source="YTchannel"><format><center>{{YtC|{{#explode:{{{YTchannel}}}| |0}}|{{#if:{{{YTchannelinfo|}}}|{{{YTchannelinfo}}}|{{{YTchannel}}}}}||{{{YTchanneldeleted|}}}}}</center></format></data>
+			<data source="YTchannel2"><format><center>{{YtC|{{#explode:{{{YTchannel2}}}| |0}}|{{#if:{{{YTchannel2info|}}}|{{{YTchannel2info}}}}}||{{{YTchannel2deleted|}}}}}</center></format></data>
+			<data source="YTusername"><format><center>{{YtC|{{{YTusername}}}|{{#if:{{{YTinfo|}}}|{{{YTinfo}}}}}|username|{{{YTusernamedeleted|}}}}}</center></format></data>
+			<data source="YTusername2"><format><center>{{YtC|{{{YTusername2}}}|{{#if:{{{YT2info|}}}|{{{YT2info}}}}}|username|{{{YTusername2deleted|}}}}}</center></format></data>
+			<data source="YTusername3"><format><center>{{YtC|{{{YTusername3}}}|{{#if:{{{YT3info|}}}|{{{YT3info}}}}}|username|{{{YTusername3deleted|}}}}}</center></format></data>
+			<data source="YTusername4"><format><center>{{YtC|{{{YTusername4}}}|{{#if:{{{YT4info|}}}|{{{YT4info}}}}}|username|{{{YTusername4deleted|}}}}}</center></format></data>
+	        <data source="YThandle"><format><center>{{YtC|@{{{YThandle}}}|{{#if:{{{YTHinfo|}}}|{{{YTHinfo}}}|@{{{YThandle}}}}}||{{{YThandledeleted|}}}}}</center></format></data>
+	        <data source="YThandle2"><format><center>{{YtC|@{{{YThandle2}}}|{{#if:{{{YTH2info|}}}|{{{YTH2info}}}}}||{{{YThandle2deleted|}}}}}</center></format></data>
+	        <data source="YThandle3"><format><center>{{YtC|@{{{YThandle3}}}|{{#if:{{{YTH3info|}}}|{{{YTH3info}}}}}||{{{YThandle3deleted|}}}}}</center></format></data>
+	        <data source="YThandle4"><format><center>{{YtC|@{{{YThandle4}}}|{{#if:{{{YTH4info|}}}|{{{YTH4info}}}}}||{{{YThandle4deleted|}}}}}</center></format></data><!--
+	        Twitcasting--><!--
+	        --><data source="Twitcast"><format><center>{{Twitcast|{{{Twitcast}}}|{{#if:{{{Twitcastinfo|}}}|{{{Twitcastinfo}}}|}}}}</center></format></data>
+			<data source="Twitcast2"><format><center>{{Twitcast|{{{Twitcast2}}}|{{#if:{{{Twitcast2info|}}}|{{{Twitcast2info}}}|}}}}</center></format></data><!--
+			Instagram Accounts--><!--
+			--><data source="Instagram"><format><center>{{Instagram|{{{Instagram}}}|{{#if:{{{Instagraminfo|}}}|{{{Instagraminfo}}}|}}}}</center></format></data>
+			<data source="Instagram2"><format><center>{{Instagram|{{{Instagram2}}}|{{#if:{{{Instagram2info|}}}|{{{Instagram2info}}}|}}}}</center></format></data><!--
+			Threads Accounts--><!--
+			--><data source="Threads"><format><center>{{Threads|{{{Threads}}}|{{#if:{{{Threadsinfo|}}}|{{{Threadsinfo}}}|}}}}</center></format></data><!--
+			Soundcloud Accounts--><!--
+			--><data source="Soundcloud"><format><center>{{Soundcloud|{{{Soundcloud}}}|{{#if:{{{Soundcloudinfo|}}}|{{{Soundcloudinfo}}}|}}}}</center></format></data>
+			<data source="Soundcloud2"><format><center>{{Soundcloud|{{{Soundcloud2}}}|{{#if:{{{Soundcloud2info|}}}|{{{Soundcloud2info}}}|}}}}</center></format></data><!--
+			X--><!--
+			--><data source="Twitter"><format><center>{{Twitter|{{{Twitter}}}|{{#if:{{{Twitterinfo|}}}|{{{Twitterinfo}}}|}}}}</center></format></data>
+			<data source="Twitter2"><format><center>{{Twitter|{{{Twitter2}}}|{{#if:{{{Twitter2info|}}}|{{{Twitter2info}}}|}}}}</center></format></data>
+			<data source="Twitter3"><format><center>{{Twitter|{{{Twitter3}}}|{{#if:{{{Twitter3info|}}}|{{{Twitter3info}}}|}}}}</center></format></data>
+			<data source="Twitter4"><format><center>{{Twitter|{{{Twitter4}}}|{{#if:{{{Twitter4info|}}}|{{{Twitter4info}}}|}}}}</center></format></data><!--
+			Twitch--><!--
+			--><data source="Twitch"><format><center>{{Twitch|{{{Twitch}}}|{{#if:{{{Twitchinfo|}}}|{{{Twitchinfo}}}|}}}}</center></format></data><!--
+			Bluesky--><!--
+			--><data source="Bluesky"><format><center>{{Bluesky|{{{Bluesky}}}|{{#if:{{{Blueskyinfo|}}}|{{{Blueskyinfo}}}|}}}}</center></format></data><!--
+			Line@ --><!--
+			--><data source="Line"><format><center>{{Line|{{{Line}}}|{{#if:{{{Lineinfo|}}}|{{{Lineinfo}}}}}}}</center></format></data>
+			<data source="Line2"><format><center>{{Line|{{{Line2}}}|{{#if:{{{Line2info|}}}|{{{Line2info}}}}}}}</center></format></data>
+			<data source="LinePage"><format><center>{{Line|{{{LinePage}}}|{{#if:{{{LinePageinfo|}}}|{{{LinePageinfo}}}}}|LinePage}}</center></format></data>
+			<data source="Lineqrpage"><format><center>{{Line|{{{Lineqrpage}}}|{{#if:{{{Lineqrpageinfo|}}}|{{{Lineqrpageinfo}}}}}|LineQR}}</center></format></data><!--
+			Tiktok--><!--
+			--><data source="Tiktok"><format><center>{{Tiktok|{{{Tiktok}}}|{{#if:{{{Tiktokinfo|}}}|{{{Tiktokinfo}}}|}}|size=16px}}</center></format></data>
+			<data source="Tiktok2"><format><center>{{Tiktok|{{{Tiktok2}}}|{{#if:{{{Tiktok2info|}}}|{{{Tiktok2info}}}|}}|size=16px}}</center></format></data><!--
+	        Marshmallow
+	        --><data source="Marshmallow"><format><center>{{Marshmallow|{{{Marshmallow}}}|{{#if:{{{Marshmallowinfo|}}}|{{{Marshmallowinfo}}}|}}}}</center></format></data><!--
+	        Booth
+	        --><data source="Booth"><format><center>{{Booth|{{{Booth}}}|{{#if:{{{Boothinfo|}}}|{{{Boothinfo}}}|}}}}</center></format></data>
+	        <data source="Booth2"><format><center>{{Booth|{{{Booth2}}}|{{#if:{{{Booth2info|}}}|{{{Booth2info}}}|}}}}</center></format></data><!--
+	        Spotify--><!--
+	        --><data source="Spotify"><format><center>{{Spotify|{{{Spotify}}}|{{#if:{{{Spotifyinfo|}}}|{{{Spotifyinfo}}}|}}}}</center></format></data>
+	        <data source="Spotify2"><format><center>{{Spotify|{{{Spotify2}}}|{{#if:{{{Spotify2info|}}}|{{{Spotify2info}}}|}}}}</center></format></data>
+			<data source="Spotify3"><format><center>{{Spotify|{{{Spotify3}}}|{{#if:{{{Spotify3info|}}}|{{{Spotify3info}}}|}}}}</center></format></data><!--
+	        NND--><!--
+	        --><data source="NNDuserpage"><format><center>{{Nicovideo|{{{NNDuserpage}}}|{{#if:{{{NNDuserpageinfo|}}}|{{{NNDuserpageinfo}}}}}|user}}</center></format></data>
+			<data source="NNDuserpage2"><format><center>{{Nicovideo|{{{NNDuserpage2}}}|{{#if:{{{NNDuserpage2info|}}}|{{{NNDuserpage2info}}}}}|user}}</center></format></data>
+			<data source="NNDuserpage3"><format><center>{{Nicovideo|{{{NNDuserpage3}}}|{{#if:{{{NNDuserpage3info|}}}|{{{NNDuserpage3info}}}}}|user}}</center></format></data>
+			<data source="NNDuserpage4"><format><center>{{Nicovideo|{{{NNDuserpage4}}}|{{#if:{{{NNDuserpage4info|}}}|{{{NNDuserpage4info}}}}}|user}}</center></format></data>
+			<data source="NNDuserpage5"><format><center>{{Nicovideo|{{{NNDuserpage5}}}|{{#if:{{{NNDuserpage5info|}}}|{{{NNDuserpage5info}}}}}|user}}</center></format></data><!--
+			Bilibili--><!--
+			--><data source="BBuserspace"><format><center>{{BBSpace|{{{BBuserspace}}}|{{#if:{{{BBuserspaceinfo|}}}|{{{BBuserspaceinfo}}}}}}}</center></format></data>
+			<data source="BBuserspace2"><format><center>{{BBSpace|{{{BBuserspace2}}}|{{#if:{{{BBuserspace2info|}}}|{{{BBuserspace2info}}}}}}}</center></format></data><!--
+			Weibo--><!--
+			--><data source="Weibo"><format><center>{{Weibo|{{{Weibo}}}|{{#if:{{{Weiboinfo|}}}|{{{Weiboinfo}}}}}}}</center></format></data>
+			<data source="Weibo2"><format><center>{{Weibo|{{{Weibo2}}}|{{#if:{{{Weibo2info|}}}|{{{Weibo2info}}}}}}}</center></format></data><!--
+	        Other (website or blog site)
+	        --><data source="othersns"><format><center>{{{othersns}}}</center></format></data><!--
+	        --><data source="othersns2"><format><center>{{{othersns2}}}</center></format></data><!--
+	        --><data source="othersns3"><format><center>{{{othersns3}}}</center></format></data><!--
+	        --><data source="othersns4"><format><center>{{{othersns4}}}</center></format></data><!--
+	        --><data source="othersns5"><format><center>{{{othersns5}}}</center></format></data>
+	</group>
+	
+	<group collapse="open" row-items="7">
+		<header>NND Mylist</header>
+		<data source="mylist1"><format><center>{{Nicovideo|{{{mylist1}}}|{{#if:{{{mylist1info|}}}|{{{mylist1info}}}}}|mylist}}</center></format></data>
+		<data source="mylist2"><format><center>{{Nicovideo|{{{mylist2}}}|{{#if:{{{mylist2info|}}}|{{{mylist2info}}}}}|mylist}}</center></format></data>
+		<data source="mylist3"><format><center>{{Nicovideo|{{{mylist3}}}|{{#if:{{{mylist3info|}}}|{{{mylist3info}}}}}|mylist}}</center></format></data>
+		<data source="mylist4"><format><center>{{Nicovideo|{{{mylist4}}}|{{#if:{{{mylist4info|}}}|{{{mylist4info}}}}}|mylist}}</center></format></data>
+		<data source="mylist5"><format><center>{{Nicovideo|{{{mylist5}}}|{{#if:{{{mylist5info|}}}|{{{mylist5info}}}}}|mylist}}</center></format></data>
+		<data source="mylist6"><format><center>{{Nicovideo|{{{mylist6}}}|{{#if:{{{mylist6info|}}}|{{{mylist6info}}}}}|mylist}}</center></format></data>
+		<data source="mylist7"><format><center>{{Nicovideo|{{{mylist7}}}|{{#if:{{{mylist7info|}}}|{{{mylist7info}}}}}|mylist}}</center></format></data>
+		<data source="mylist8"><format><center>{{Nicovideo|{{{mylist8}}}|{{#if:{{{mylist8info|}}}|{{{mylist8info}}}}}|mylist}}</center></format></data>
+		<data source="mylist9"><format><center>{{Nicovideo|{{{mylist9}}}|{{#if:{{{mylist9info|}}}|{{{mylist9info}}}}}|mylist}}</center></format></data>
+		<data source="mylist10"><format><center>{{Nicovideo|{{{mylist10}}}|{{#if:{{{mylist10info|}}}|{{{mylist10info}}}}}|mylist}}</center></format></data>
+	</group>
+	<group collapse="closed" row-items="7">
+		<header>NND Community & Channel</header>
+		<data source="nicommu1"><format><center>{{Nicovideo|{{{nicommu1}}}|{{#if:{{{nicommu1info|}}}|{{{nicommu1info}}}}}|community}}</center></format></data>
+		<data source="nicommu2"><format><center>{{Nicovideo|{{{nicommu2}}}|{{#if:{{{nicommu2info|}}}|{{{nicommu2info}}}}}|community}}</center></format></data>
+		<data source="nicommu3"><format><center>{{Nicovideo|{{{nicommu3}}}|{{#if:{{{nicommu3info|}}}|{{{nicommu3info}}}}}|community}}</center></format></data>
+		<data source="nicommu4"><format><center>{{Nicovideo|{{{nicommu4}}}|{{#if:{{{nicommu4info|}}}|{{{nicommu4info}}}}}|community}}</center></format></data>
+		<data source="NNDchannel1"><format><center>{{Nicovideo|{{{NNDchannel1}}}|{{#if:{{{NNDchannel1info|}}}|{{{NNDchannel1info}}}}}|channel}}</center></format></data>
+		<data source="NNDchannel2"><format><center>{{Nicovideo|{{{NNDchannel2}}}|{{#if:{{{NNDchannel2info|}}}|{{{NNDchannel2info}}}}}|channel}}</center></format></data>
+	</group>
+	<data source="country"><label>Origin</label></data>
+	<data source="partner"><label>Collab partners</label></data>
+	<data source="otheractivity"><label>Other activities</label></data>
+    <group collapse="open" row-items="1">
+		<header>Sample</header><!--
+			YouTube--><!--
+			--><data source="ytsample"><format><center>{{#if:{{{ytsample|}}}|{{YTsample|id={{{ytsample}}}|song={{{ytsamplesong|A sample of a 
+song}}}|singer={{{ytsamplesinger|{{BASEPAGENAME}}}}}|producer={{{ytsampleproducer}}}}}|}}</center></format></data>
+    </group>
+    <group collapse="open" row-items="1">
+		<header>Sample</header><!--
+			Nicovideo--><!--
+			--><data source="nndsample"><format><center>{{#if:{{{nndsample|}}}|{{NNDsample|id={{{nndsample}}}|song={{{nndsamplesong|A sample of a 
+song}}}|singer={{{nndsamplesinger|{{BASEPAGENAME}}}}}|producer={{{nndsampleproducer}}}}}|}}</center></format></data>
+    </group>
+<group collapse="open" row-items="1">
+  <header>Signature</header>
+  <data source="signature"><format><center><div class="utaite-signature utaite-signature-img si-{{{sign-invert|off}}}" data-sign-invert="{{{sign-invert|off}}}">[[File:{{{signature|404simple.png}}}|{{{signsize|60px}}}]]</div></center></format></data>
+</group>
+</infobox><!--
+--></div><!--
+--><includeonly><!--
+-->{{main other|<!--
+	-->{{#ifeq:{{{gender|}}}|Male|[[Category:Male Utaite]]|}}<!--
+	-->{{#ifeq:{{{gender|}}}|Female|[[Category:Female Utaite]]|}}<!--
+	-->{{#ifeq:{{{gender|}}}|Androgynous|[[Category:Androgynous Utaite]]|}}<!--	   
+	-->	{{#if:{{{birthref|}}}|{{#if:{{{birthday|}}}|{{#if:{{{birthmonth|}}}|[[Category:Birthday/{{padleft:{{{birthmonth}}}|2|0}}/{{padleft:{{{birthday}}}|2|0}}]]}}}}|[[Category:Utaite with Missing Birth Reference]]}}<!--
+	-->	{{#switch:{{{status|}}}|
+			Inactive = [[Category:Inactive Singers]]
+		}}<!--
+	-->	{{#ifeq:{{{NNDuserpage|}}}|||[[Category:Has NND]]}}<!--
+	-->	{{#ifeq:{{{age|}}}|||[[Category:Has Age Parameter]]}}<!--
+	-->	{{#if:{{{imagedescr|}}}|{{main other|[[Category:Page with imagedescr parameter]]|}}|}}<!--
+	-->{{#if:{{{songfeat|}}}|{{main other|[[Category:Page with songfeat parameter]]|}}|}}<!--
+-->	}}<!--
+	-->	{{main other|<!--
+	-->		{{#ifeq:{{{birthmonth|}}}|{{CURRENTJSTMONTH}}|<!--if birthmonth == CURRENTMONTH (JST)
+	-->			{{#ifeq:{{{birthday|}}}|{{CURRENTJSTDAY}}|<!--if birthday == CURRENTDAY (JST)
+		-->			[[Category:Today's Birthdays]]<!--
+		-->			|<!-- if birthday != CURRENTDAY (JST)
+	-->			}}<!--if birthmonth != CURRENTMONTH (JST)
+	-->		|<!--
+	-->		}}<!--
+	-->		|<!--if other than main namespace, insert nothing
+	-->	}}<!--
+-->{{main other|[[Category:Page with Utaite Template]]|}}</includeonly><!--
+--><includeonly>{{main other|{{#invoke:Bucket|put
+|utaite
+|name = {{{pagename|{{PAGENAME}}}}}
+|image = {{{image|}}}
+|category = {{{gender|}}} Utaite
+|has_profile = true
+|has_profile-type = bool
+}}|}}</includeonly><!--
+--><noinclude>{{clr}}{{documentation}}</noinclude><!--
+--><noinclude>[[Category:Infobox Templates]]</noinclude><!--
+--><noinclude>[[Category:Templates Used in Main Content]]</noinclude>

@@ -1,0 +1,17 @@
+<noinclude>{{(!}} class="wikitable"
+{{!}}-
+{{!}} </noinclude>{{#switch:
+| =<!--
+-->style="background: #ececec; color: grey; vertical-align: middle; text-align: center; {{{style|}}}" <!--
+-->{{!}} <small>{{{1|<!--T:1--> N/A}}}</small>
+| #default=<!--
+-->{{#invoke:Template translation|renderTranslatedTemplate|template=Template:N/a|noshift=1|uselang={{int:lang}}}}
+}}<noinclude>
+{{!)}}
+{{Documentation|content=
+<!--T:2--> This template is for use in tables. <!--T:3--> There's an inline version of this template at {{tlx|N/A}}.
+
+== TemplateData ==
+{{n/a/doc}}
+}}
+</noinclude>

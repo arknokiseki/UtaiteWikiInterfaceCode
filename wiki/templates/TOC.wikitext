@@ -1,0 +1,4 @@
+{{#if:{{{limit|}}}|<templatestyles src="TOC/limit-styles.css"/>}}<div style="{{#if:{{{clear|}}}{{{align|}}}| clear: {{{clear|both}}}; }} margin-bottom: .5em; float: {{{align|none}}}; {{#ifeq: {{lc:{{{align|}}}}} | right | margin-left:2em; | {{#ifeq: {{lc:{{{align|}}}}} | left | margin-right:2em; | <!-- align=none --> }} }} width: {{{width|auto}}};" {{#if:{{{limit|}}}|class="toclimit-{{{limit}}}"}}>__TOC__</div><noinclude>
+{{documentation}}
+[[Category:Utility templates|{{PAGENAME}}]]
+</noinclude>

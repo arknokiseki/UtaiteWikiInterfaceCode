@@ -1,0 +1,10 @@
+<includeonly>{{#dpl:
+|title={{{1}}}
+|skipthispage=no
+|ordermethod=firstedit
+|addeditdate=true
+|count=1
+|userdateformat=Y-m-d
+|mode=userformat
+|format=,%DATE%,
+}}</includeonly><noinclude>{{doc}}</noinclude>

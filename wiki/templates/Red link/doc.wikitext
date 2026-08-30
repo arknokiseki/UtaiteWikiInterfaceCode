@@ -1,0 +1,17 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Red link/styles.css}}
+
+This template is used to create a red link, but prevent it from showing up on the list of [[Special:WantedPages|{{int|wantedpages}}]].
+
+== Usage ==
+ <nowiki>{{</nowiki>red link|''page name''|''displayed name (defaults to page name)''<nowiki>}}</nowiki>
+
+⇒ {{red link|page name|displayed name|nocat=1}}
+
+== TemplateData ==
+{{TemplateData header}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal link templates]]
+}}</includeonly>

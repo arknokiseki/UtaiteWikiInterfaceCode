@@ -1,0 +1,76 @@
+{{Documentation/Header}}
+Lists every utaite whose birthday falls on a given month and day, as a grid of {{T|BirthdayEntry}} cards. This is the "Birthdays!" block on [[Utaite Wiki]] and [[Youtaite Wiki]].
+
+== How the birthday system works ==
+Birthdays are not stored in a list — they are derived from infoboxes:
+
+# {{T|Utaite}} adds <code><nowiki>[[Category:Birthday/MM/DD]]</nowiki></code> to a page when <code>birthmonth</code>, <code>birthday</code> '''and <code>birthref</code>''' are all filled in. Without a birth reference the page is instead filed under [[:Category:Utaite with Missing Birth Reference]] and '''will not appear in any birthday listing'''.
+# This template runs a DPL query for that category.
+# Each matching page is passed to {{T|ProcessSingerPage/Birthday}}, which reads <code>image</code>, <code>birthyear</code>, <code>birthmonth</code> and <code>birthday</code> back off that page's infobox using <code><nowiki>{{#invoke:Utaite|getParameter}}</nowiki></code>.
+# Those values are rendered by {{T|BirthdayEntry}}.
+
+Pages in [[:Category:Deceased Utaite]] are always excluded.
+
+See {{T|Birthday Calendar}} for the whole-month view, which uses a separate query path.
+
+== Syntax ==
+{{T|ProcessBirthdayCategory|block=1
+|v1=month =
+|v2=day =
+|v3=cat =
+|v4=includeMMDD =
+}}
+
+== Examples ==
+Today's birthdays, as used on the main page:
+<pre>{{ProcessBirthdayCategory|includeMMDD=false|month={{CURRENTJSTMONTH}}|day={{CURRENTJSTDAY}}}}</pre>
+
+A fixed date, with the MM/DD heading shown:
+<pre>{{ProcessBirthdayCategory|includeMMDD=true|month=06|day=30}}</pre>
+
+Restricted to youtaite, as used on [[Youtaite Wiki]]:
+<pre>{{ProcessBirthdayCategory|cat=Youtaite|includeMMDD=false|month={{CURRENTJSTMONTH}}|day={{CURRENTJSTDAY}}}}</pre>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>month</code> || – || Month || Month to match, '''zero-padded to two digits'''. See the note below. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>day</code> || – || Day || Day to match, '''zero-padded to two digits'''. || number || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>cat</code> || – || Category filter || Restricts results to pages in a category ending with this text. Matched as an SQL suffix, so <code>Utaite</code> also matches "Male Utaite" and "Female Utaite". || string || Utaite ||
+|-
+| <code>includeMMDD</code> || – || Show date heading || Set to <code>true</code> to add an <code>MM/DD</code> heading above the timestamp. || string || – ||
+|}
+
+=== Zero-padding matters ===
+{{T|Utaite}} builds the category with <code>padleft</code>, so it is always <code>Birthday/06/30</code> — never <code>Birthday/6/30</code>. Passing <code>month=6</code> silently matches nothing. Always use <code>06</code>.
+
+Because <code><nowiki>{{CURRENTJSTMONTH}}</nowiki></code> and <code><nowiki>{{CURRENTJSTDAY}}</nowiki></code> are already zero-padded, the main-page calls are safe as written.
+
+== Output ==
+A timestamp line in JST (<code>YYYY年MM月DD日（曜）HH:MM</code>) built from {{T|CURRENTJSTYEAR}}, {{T|CURRENTJSTMONTH}}, {{T|CURRENTJSTDAY}}, {{T|CURRENTJSTDOWJAP}}, {{T|CURRENTJSTHOUR}} and {{T|CURRENTMINUTE}}, followed by a grid of birthday cards. When nobody matches, it shows ''"No stars☆彡 were born on this day"''.
+
+{{Notice
+| header = Special Thanks
+| info = Special thanks to [[wikia:community:User:HumansCanWinElves|HumansCanWinElves]] for their help and insights on how to make the best use of DPL3. [https://community.fandom.com/f/p/4400000000003724122 Learn more...]
+| border = green
+| style = text-align: center;
+}}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Lists utaite whose birthday falls on a given month and day, as a grid of birthday cards.",
+"params": {
+"month": { "label": "Month", "description": "Month to match, zero-padded to two digits (e.g. 06).", "type": "number", "required": true },
+"day": { "label": "Day", "description": "Day to match, zero-padded to two digits (e.g. 30).", "type": "number", "required": true },
+"cat": { "label": "Category filter", "description": "Restrict to pages in a category ending with this text.", "type": "string", "default": "Utaite" },
+"includeMMDD": { "label": "Show date heading", "description": "Set to 'true' to show an MM/DD heading.", "type": "string" }
+},
+"paramOrder": ["month","day","cat","includeMMDD"],
+"format": "block"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Features in Early Development]]</includeonly>

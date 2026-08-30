@@ -1,0 +1,192 @@
+{{Documentation subpage}}
+
+A general-purpose template, used to obscure any content that may be considered a spoiler. Text, images and links are hidden and are revealed when clicked, and optionally can be revealed when hovered over.
+
+This template's behavior is inspired by the spoilers on tvtropes, with reference to the css of Template:Spoil on [https://astroneer.fandom.com/wiki/Template:Spoil Astroneer Wiki] and [[mh:minecraftjapan:%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88:Spoil|Minecraft Japan Wiki]].
+
+This template also supports a "show/hide all spoilers" button, refer to [[#Show/Hide all spoilers button]].
+
+==Dependencies==
+Refer to [[:dev:Template:Spoiler/doc]]
+
+== Usage ==
+''Default behavior is for spoiler text to be revealed on click. However, because this page cannot load the required script, they are revealed on hover on this page.''
+<pre>
+{{spoiler|<contents>|<inline>|<extra customization>}}
+</pre>
+===Basic usage===
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+{{spoiler|This text is a spoiler!}}
+</pre>
+|{{spoiler|This text is a spoiler!||hover}}
+|-
+|<pre>
+{{spoiler|
+I support multiple lines,
+
+[[Main page|Links]], 
+
+[[File:De Alice's Abenteuer im Wunderland Carroll pic 15.jpg|thumb|200px|and images!]]
+}}
+</pre>
+|{{spoiler|
+I support multiple lines,
+
+[[Utaite Wiki|Links]], 
+
+[[File:Mafumart-Favicon.png|thumb|150px|and images!]]
+||hover
+}}
+|}
+===Inline spoilers===
+By default, the spoiler block that this template creates is a <code><nowiki><div></nowiki></code> element, which puts it in a separate line from the text before and after it. If an inline spoiler is desired, putting "inline" at position 2 will make it a <code><nowiki><span></nowiki></code> element.
+
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+I am {{spoiler|an inline spoiler|inline}}!
+</pre>
+|I am {{spoiler|an inline spoiler|inline|hover}}!
+|}
+===Additional customizations===
+For spoilers to be revealed on hover (in addition to on click), add "hover" at position 3. (Position 2 can be left empty if unnecessary.)
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+{{spoiler|Hover over me!||hover}}
+</pre>
+|{{spoiler|Hover over me!||hover}}
+|}
+By default, spoilers are covered with a grey block (this color can be changed in the css if desired). Spoilers can be obfuscated by a blur instead by adding "blur" at position 3.
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+{{spoiler|I am blurred!||blur}}
+</pre>
+|{{spoiler|I am blurred!||blur hover}}
+|}
+The spoiler can also look exactly like they do on tvtropes (light grey with dotted underline), by adding "tvtropes" at position 3. This works fine for white/light colored backgrounds, but may need to be tweaked on darker backgrounds.
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+{{spoiler|I look like tvtropes spoilers!||tvtropes}}
+</pre>
+|{{spoiler|I look like tvtropes spoilers!||tvtropes hover}}
+|}
+
+Any of the customizations at position 3 can be combined, in any order, with a space separating the words (although combining all 3 words looks weird). "hover" at position 3 has been used for every example on this page! 
+
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+{{spoiler|This has "tvtropes", "blur" and "hover"!||tvtropes blur hover}}
+</pre>
+|{{spoiler|This has "tvtropes", "blur" and "hover"!||tvtropes blur hover}}
+|}
+
+===Show/Hide all spoilers button===
+A "show/hide all spoilers" button can be placed anywhere on the page and does what it says. Showing and hiding spoilers with this button preserves the spoilers you have previously manually revealed. (i.e. If you click to reveal a spoiler, then click "show all spoilers", then "hide all spoilers", the spoilers you revealed at first will stay revealed.)
+
+Adding <code>id="spoilerbtn"</code> to any element will turn it into the "show/hide" button.
+{| class="wikitable" width=100%
+!width=50%|What you type
+!Result
+|-
+|<pre>
+<div id="spoilerbtn"></div>
+</pre>
+|<div id="spoilerbtn">Show all spoilers</div>
+|-
+|'''Note:''' This element being empty is intentional! The javascript handles putting the "show all spoilers"/"hide all spoilers" text. If any text is in this element, it will be overwritten when the javascript loads anyway. As such, it ''is'' possible to put error text there, that only shows when the javascript doesn't load, like this:
+<pre>
+<div id="spoilerbtn">If you're seeing this text, the javascript isn't loaded.</div>
+</pre>
+|This button does nothing on this page as the required javascript cannot be loaded. This is what the "hide all spoilers" button looks like, for reference:<br>
+
+<div id="spoilerbtn" class="hide">Hide all spoilers</div>
+|}
+All these colors can be changed with css.
+==Changing default behavior==
+This is the source code for this template:
+<syntaxhighlight lang="wikitext">
+<{{#ifeq:{{{2|}}}|inline|span|div}} class="spoiler {{{3|}}}"><span>{{{1|}}}</span></{{#ifeq:{{{2|}}}|inline|span|div}}>
+</syntaxhighlight>
+===Inline===
+To make this template inline by default, you can either:
+# Remove the <code>#ifeq</code> blocks at the start and end, and replace them with <code>span</code>
+# Or replace "inline" with "block", and swap the positions of "span" and "div" for both <code>#ifeq</code> blocks. This will make it so position 2 looks for "block" instead of "inline", and the template is inline by default.
+Note that the inline version of this template won't work properly for images or if there's
+<pre>
+multiple lines
+
+like this
+</pre>
+However, using <code><nowiki><br></nowiki></code> for line breaks still works.
+<pre>
+For example,<br>this will still work.
+</pre>
+{{spoiler|For example,<br>this will still work.|inline|hover}}
+===Customizations===
+To make this template blurred, hoverable or look like tvtropes spoilers by default, add "blur", "hover" and/or "tvtropes" to the class, with spaces between the words.
+
+For example, this will make it blurred and hoverable by default:
+<pre>
+class="spoiler blur hover {{{3|}}}"
+</pre>
+
+==TemplateData==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Content",
+			"description": "This is where the text to be spoilered goes",
+			"example": "I am a spoiler!",
+			"type": "string",
+			"required": true
+		},
+		"2": {
+			"label": "Inline",
+			"description": "Insert \"inline\" (lowercase) here to make it inline. (By default, this template will be on a separate line from the text before and after it.)",
+			"suggestedvalues": [
+				"inline"
+			],
+			"type": "string"
+		},
+		"3": {
+			"label": "Extras",
+			"description": "\"blur\" to make it blurred instead of the color block.\n\"tvtropes\" to make it look like tvtropes spoilers.\n\n\"hover\" to make it show on hover.\nThese can be combined, with space between. (i.e. \"blur hover\") (all lowercase)",
+			"suggestedvalues": [
+				"blur",
+				"tvtropes",
+				"hover"
+			],
+			"type": "string"
+		}
+	},
+	"paramOrder": [
+		"1",
+		"2",
+		"3"
+	],
+	"description": "This template is used to obscure text that may be a spoiler, which can be revealed on click (or optionally on hover)."
+}
+</templatedata>
+<includeonly>
+<!-- Categories below this line -->
+[[Category:Templates]]
+</includeonly>

@@ -1,0 +1,32 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|wish=1}}
+{{tsh|-r}}
+This template provides an easy way to link a redirect page without following the redirect.
+
+== TemplateData ==
+{{TemplateData header}}
+{| class="wikitable mw-templatedata-doc-params sortable"
+|+ Template parameters
+! colspan="2" | Parameter
+! Description
+! Type
+! Status
+|-
+! Page name
+| <code>1</code>
+| ''no description''
+| Page name
+| '''required'''
+|-
+! Display text
+| <code>2</code>
+| ''no description''<br>'''Default:''' {{{1}}}
+| Line
+| optional
+|}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal link templates]]
+[[Category:Redirect templates]]
+}}</includeonly>

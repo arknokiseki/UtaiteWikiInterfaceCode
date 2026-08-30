@@ -1,0 +1,1 @@
+<includeonly><span style="font-size:140%"><code>{{font color|#ce91ab||{{{1}}}}}</code></span></includeonly><noinclude>{{Documentation|Template:Markup templates/doc}}[[Category:Assistant templates]]</noinclude>

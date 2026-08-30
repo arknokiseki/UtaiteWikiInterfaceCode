@@ -1,0 +1,11 @@
+{{((}}<code>{{{subst|}}}{{{1}}}</code>{{((}}<code>{{{subst|}}}{{{2}}}</code>{{))}}<code>{{{3|}}}</code>{{))}} {{{{{subst|}}}#ifeq: {{{s|+}}}|{{{s|-}}}|{{{s}}}|{{{4|<span style="color:red">⇒</span>}}}}} {{{{{subst|}}}{{{1}}}{{{{{subst|}}}{{{2}}}}}{{{3|}}}}}<noinclude>
+----
+;Usage&#58;
+:{{Tlx|{{PAGENAME}}|outer-left|inner|outer-right<code>{{!}}s{{=}}</code>separator}}
+:The default separator is "'''⇒'''", use e.g. <code>s==</code> for "'''='''". The second parameter has to specified and can't be empty, compare {{tim|evaldemo}}. With optional [[Help:substitution|substitution]] <code>subst=subst:</code> the first parameter also can't be empty.
+;Example&#58;
+:{{Tlx|{{PAGENAME}}|#expr:|CURRENTTIMESTAMP| mod 100}} gives
+:"{{{{PAGENAME}}|#expr:|CURRENTTIMESTAMP| mod 100}}"
+
+[[Category:Handbook templates{{#translation:}}|{{PAGENAME}}]]
+</noinclude>

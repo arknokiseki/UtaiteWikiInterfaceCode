@@ -1,0 +1,14 @@
+<includeonly>{{subst:msgnw:{{subst:NAMESPACE}}:{{subst:BASEPAGENAME}}}}{{subst:void|1=
+Press the save button below to create your template draft. Do not change anything here.
+|
+|
+|
+|
+|
+|
+|
+|
+|
+V
+}}
+</includeonly><noinclude>{{Documentation|type=Preload|content=This is a template used for preloading template drafts/sandboxes with the current state of the current template.}}</noinclude>

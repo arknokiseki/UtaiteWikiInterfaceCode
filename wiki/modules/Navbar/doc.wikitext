@@ -1,0 +1,22 @@
+<!-- {{Shared Template Warning}} -->
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Module:Navbar/styles.css|Template:Flatlist/styles.css}}
+
+== Module Quality ==
+<!--
+{| class=wikitable
+| [[Module:{{ROOTPAGENAME}}]]
+| {{#invoke:{{ROOTPAGENAME}}/testcases|run|displayMode=short}}
+|-
+| [[Module:{{ROOTPAGENAME}}/sandbox]]
+| {{#invoke:{{ROOTPAGENAME}}/testcases|run||displayMode=short|module={{ROOTPAGENAME}}/sandbox}}
+|}
+-->
+* See [[Module:{{ROOTPAGENAME}}/testcases|test cases]]
+* <span class="plainlinks">[{{fullurl:Special:ComparePages|page1={{urlencode:{{urlencode:Module:{{ROOTPAGENAME}}|WIKI}}|QUERY}}}}&page2={{urlencode:{{urlencode:Module:{{ROOTPAGENAME}}/sandbox|WIKI}}|QUERY}} Diff] sandbox code</span>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Modules]]
+}}</includeonly><noinclude>
+[[Category:Module documentation pages]]
+</noinclude>

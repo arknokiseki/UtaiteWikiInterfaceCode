@@ -1,0 +1,221 @@
+{{Album
+|albumtitle      = 
+|image           = 
+|datereleased    = 
+|crossfadeyt     = 
+|crossfadennd    = 
+|albumartist     = 
+|shops           = 
+
+|track1title     = 
+|track1info      = 
+|track1utaite    = 
+|track1lyricist  = 
+|track1composer  = 
+|track1arranger  = 
+
+|track2title     = 
+|track2info      = 
+|track2utaite    = 
+|track2lyricist  = 
+|track2composer  = 
+|track2arranger  = 
+
+|track3title     = 
+|track3info      = 
+|track3utaite    = 
+|track3lyricist  = 
+|track3composer  = 
+|track3arranger  = 
+
+|track4title     = 
+|track4info      = 
+|track4utaite    = 
+|track4lyricist  = 
+|track4composer  = 
+|track4arranger  = 
+
+|track5title     = 
+|track5info      = 
+|track5utaite    = 
+|track5lyricist  = 
+|track5composer  = 
+|track5arranger  = 
+
+|track6title     = 
+|track6info      = 
+|track6utaite    = 
+|track6lyricist  = 
+|track6composer  = 
+|track6arranger  = 
+
+|track7title     = 
+|track7info      = 
+|track7utaite    = 
+|track7lyricist  = 
+|track7composer  = 
+|track7arranger  = 
+
+|track8title     = 
+|track8info      = 
+|track8utaite    = 
+|track8lyricist  = 
+|track8composer  = 
+|track8arranger  = 
+
+|track9title     = 
+|track9info      = 
+|track9utaite    = 
+|track9lyricist  = 
+|track9composer  = 
+|track9arranger  = 
+
+|track10title    = 
+|track10info     = 
+|track10utaite   = 
+|track10lyricist = 
+|track10composer = 
+|track10arranger = 
+
+|track11title    = 
+|track11info     = 
+|track11utaite   = 
+|track11lyricist = 
+|track11composer = 
+|track11arranger = 
+
+|track12title    = 
+|track12info     = 
+|track12utaite   = 
+|track12lyricist = 
+|track12composer = 
+|track12arranger = 
+
+|track13title    = 
+|track13info     = 
+|track13utaite   = 
+|track13lyricist = 
+|track13composer = 
+|track13arranger = 
+
+|track14title    = 
+|track14info     = 
+|track14utaite   = 
+|track14lyricist = 
+|track14composer = 
+|track14arranger = 
+
+|track15title    = 
+|track15info     = 
+|track15utaite   = 
+|track15lyricist = 
+|track15composer = 
+|track15arranger = 
+
+
+|track16title    = 
+|track16info     = 
+|track16utaite   = 
+|track16lyricist = 
+|track16composer = 
+|track16arranger = 
+
+|track17title    = 
+|track17info     = 
+|track17utaite   = 
+|track17lyricist = 
+|track17composer = 
+|track17arranger = 
+
+|track18title    = 
+|track18info     = 
+|track18utaite   = 
+|track18lyricist = 
+|track18composer = 
+|track18arranger = 
+
+|track19title    = 
+|track19info     = 
+|track19utaite   = 
+|track19lyricist = 
+|track19composer = 
+|track19arranger = 
+
+|track20title    = 
+|track20info     = 
+|track20utaite   = 
+|track20lyricist = 
+|track20composer = 
+|track20arranger = 
+
+|track21title    = 
+|track21info     = 
+|track21utaite   = 
+|track21lyricist = 
+|track21composer = 
+|track21arranger = 
+
+|track22title    = 
+|track22info     = 
+|track22utaite   = 
+|track22lyricist = 
+|track22composer = 
+|track22arranger = 
+
+|track23title    = 
+|track23info     = 
+|track23utaite   = 
+|track23lyricist = 
+|track23composer = 
+|track23arranger = 
+
+|track24title    = 
+|track24info     = 
+|track24utaite   = 
+|track24lyricist = 
+|track24composer = 
+|track24arranger = 
+
+|track25title    = 
+|track25info     = 
+|track25utaite   = 
+|track25lyricist = 
+|track25composer = 
+|track25arranger = 
+
+|track26title    = 
+|track26info     = 
+|track26utaite   = 
+|track26lyricist = 
+|track26composer = 
+|track26arranger = 
+
+|track27title    = 
+|track27info     = 
+|track27utaite   = 
+|track27lyricist = 
+|track27composer = 
+|track27arranger = 
+
+|track28title    = 
+|track28info     = 
+|track28utaite   = 
+|track28lyricist = 
+|track28composer = 
+|track28arranger = 
+
+|track29title    = 
+|track29info     = 
+|track29utaite   = 
+|track29lyricist = 
+|track29composer = 
+|track29arranger = 
+
+|track30title    = 
+|track30info     = 
+|track30utaite   = 
+|track30lyricist = 
+|track30composer = 
+|track30arranger =
+
+}}

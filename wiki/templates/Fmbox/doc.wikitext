@@ -1,0 +1,95 @@
+{{Mbox templates}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:Message box}}
+{{Uses TemplateStyles|Module:Message box/fmbox.css}}
+{{High Risk|TemplateːFmbox}}
+{{Used in system}}
+== Parameters ==
+{| class="wikitable"
+|-
+! Parameter
+! Options
+! Notes
+|-
+| type
+| <code>warning</code> / <code>editnotice</code> / <code>system</code>
+|-
+| class
+| 
+| Additional CSS styling for the message box (pulled from another stylesheet ({{Blue|Mediawiki:Common.css}})
+|-
+| style
+| 
+| Additional CSS styling for the message box (manually declared)
+|-
+| image
+| <code><nowiki>[[File:example.example|40px]]</nowiki></code>
+| If bank, Auto detected and chosen by <code>type</code>.
+Default images:
+* warning: [[:File:OOjs UI icon alert-destructive.svg]]
+* editnotice: [[:File:OOjs UI icon information-progressive.svg]]
+* (default)/system: [[:File:OOjs UI icon information-progressive.svg]]
+|-
+| textstyle
+|
+| CSS formatting for the displayed text
+|-
+| text
+| 
+| The message to be displayed
+|-
+| imageright
+| <code><nowiki>[[File:example.example|40px]]</nowiki></code>
+| File to be shown on the right side of the message
+|-
+| dir
+| <code>ltr</code> or <code>rtl</code>
+| Text direction; may be used with {{tl|dir}} and {{tl|uselang}} or {{tl|pagelang}}
+|}
+=== Example messages ===
+{| class="wikitable"
+|-
+! Message type
+! Code
+! Example output
+|-
+| (default)
+| <pre>{{Fmbox
+|type =
+|text = Example message text.
+}}</pre>
+| {{Fmbox |type= |text=Example message text.}}
+|-
+| warning
+|
+<pre>{{Fmbox
+|type = warning
+|text = Example message text.
+}}</pre>
+| {{Fmbox |type=warning |text=Example message text.}}
+|-
+| editnotice
+|
+<pre>{{Fmbox
+|type = editnotice
+|text = Example message text.
+}}</pre>
+| {{Fmbox |type=editnotice |text=Example message text.}}
+|-
+| system
+|
+<pre>{{Fmbox
+|type = system
+|text = Example message text.
+}}</pre>
+| {{Fmbox |type=system |text=Example message text.}}
+|}
+
+== TemplateData ==
+{{Mbox/TemplateData}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Mbox templates{{#translation:}}]]
+[[Category:Info templates{{#translation:}}]]
+}}</includeonly>

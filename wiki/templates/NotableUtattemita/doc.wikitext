@@ -1,0 +1,61 @@
+{{Documentation/Header}}
+A left-floating 200&nbsp;px card for a notable utattemita: thumbnail, title, producer credits, Niconico and YouTube links, and a collapsible description.
+
+Missing video links are shown as greyed-out placeholder icons rather than being hidden, so the card keeps a consistent shape.
+
+==Syntax==
+{{T|NotableUtattemita|block=1
+|v1=image =
+|v2=title =
+|v3=producer =
+|v4=NND =
+|v5=YT =
+|v6=description =
+}}
+
+==Example==
+{{T|NotableUtattemita|_Y_=1|block=1
+|p1=image = Template doc.png
+|p2=title = Song Title
+|p3=producer = Producer Name
+|p4=NND = sm12345
+|p5=YT = 12ab34cd
+|p6=description = A short description of the song, shown collapsed by default.
+}}
+{{clear}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>title</code> || – || Title || The song title, shown on a pale blue band. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>image</code> || – || Image || Thumbnail filename without the <code>File:</code> prefix, displayed at 200×112&nbsp;px. || wiki-file-name || – ||
+|-
+| <code>producer</code> || – || Producer(s) || Producer credits. Wrap long credit lists in {{T|Scrollbox}}. || string || – ||
+|-
+| <code>NND</code> || – || Niconico ID || Niconico video ID (e.g. <code>sm12345</code>). Omitted shows a greyed placeholder. || string || – ||
+|-
+| <code>YT</code> || – || YouTube ID || YouTube video ID. Omitted shows a greyed placeholder. || string || – ||
+|-
+| <code>description</code> || – || Description || Longer text, rendered in a collapsed box the reader can expand. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A card for a notable utattemita with thumbnail, credits, video links and a collapsible description.",
+"params": {
+"title": { "label": "Title", "description": "The song title.", "type": "string", "required": true },
+"image": { "label": "Image", "description": "Thumbnail filename without the 'File:' prefix.", "type": "wiki-file-name" },
+"producer": { "label": "Producer(s)", "description": "Producer credits.", "type": "string" },
+"NND": { "label": "Niconico ID", "description": "Niconico video ID, e.g. sm12345.", "type": "string" },
+"YT": { "label": "YouTube ID", "description": "YouTube video ID.", "type": "string" },
+"description": { "label": "Description", "description": "Longer text, shown collapsed.", "type": "string" }
+},
+"paramOrder": ["image","title","producer","NND","YT","description"],
+"format": "block"
+}
+</templatedata>
+</div>
+
+{{FandomLicense|vocaloid|Template:Derivative}}

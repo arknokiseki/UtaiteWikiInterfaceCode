@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to a Twitcasting channel.
+;Syntax
+:Place <code><nowiki>{{Twitcast|<twitcastingchannel>}}</nowiki></code> and substitute <twitcastingchannel> with the latter part of the Twitcasting link (e.g., if the link is https://twitcasting.tv/c:coe_oo, the twitcastingchannel will be "c:coe_oo"). If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Twitcast|c:coe_oo|coe twitcast description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Twitcast|c:coe_oo|coe twitcast description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

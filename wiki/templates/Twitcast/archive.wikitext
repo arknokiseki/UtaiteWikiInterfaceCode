@@ -1,0 +1,1 @@
+<includeonly>{{#if:{{{1|}}}|{{#if:{{{2|}}}|{{Twitcast|stream=true|channel={{{1}}}|v_id={{{2}}}}}|<span style="color:red">Error: parameter 2 (video id) is required</span>}}|<span style="color:red">Error: parameter 1 (channel) is required</span>}}</includeonly><noinclude>{{Shortcut|Template:tca}}{{doc}}</noinclude>

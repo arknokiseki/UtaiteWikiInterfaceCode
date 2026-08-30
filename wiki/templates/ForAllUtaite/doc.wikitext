@@ -1,0 +1,52 @@
+{{Documentation/Header}}
+{{Lua|Module:ForAllUtaite}}
+A metatemplate in the style of {{t|Main other}}: it outputs its first parameter on pages that transclude {{t|Utaite}}, and its second parameter on all other pages. Useful inside maintenance/marker templates to apply different categories (or text) to utaite pages versus everything else.
+== Syntax ==
+{{T|ForAllUtaite|v1=|v2=}}
+
+== Examples ==
+<pre>{{ForAllUtaite|[[Category:Utaite with outdated covered song list]]|[[Category:Youtaite with outdated covered song list]]}}</pre>
+On a page using {{t|Utaite}} this adds [[:Category:Utaite with outdated covered song list]]; on any other page it adds [[:Category:Youtaite with outdated covered song list]].
+
+=== Demo mode ===
+Use <code>demo=</code> to force a branch (for documentation and testing):
+* {{T|ForAllUtaite|v1=utaite text|v2=other text|demo=utaite}} → {{ForAllUtaite|utaite text|other text|demo=utaite}}
+* {{T|ForAllUtaite|v1=utaite text|v2=other text|demo=other}} → {{ForAllUtaite|utaite text|other text|demo=other}}
+
+== Notes ==
+* The check reads the current page's own wikitext, so it reacts immediately when {{t|Utaite}} is added or removed.
+* In the Template, Module and MediaWiki namespaces the template outputs nothing (unless <code>demo=</code> is set), so templates embedding it do not categorize their own pages.
+
+=== Dependencies ===
+* [[Module:ForAllUtaite]]
+
+== Template Data ==
+<templatedata>
+{
+	"description": "Outputs the first parameter on pages transcluding {{Utaite}}, the second parameter on all other pages.",
+	"params": {
+		"1": {
+			"label": "Utaite output",
+			"description": "Wikitext output on pages that transclude {{Utaite}}",
+			"type": "content",
+			"required": false
+		},
+		"2": {
+			"label": "Other output",
+			"description": "Wikitext output on pages that do not transclude {{Utaite}}",
+			"type": "content",
+			"required": false
+		},
+		"demo": {
+			"label": "Demo mode",
+			"description": "Force a branch for testing: 'utaite' or 'other'",
+			"type": "string",
+			"required": false,
+			"example": "utaite"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>
+
+[[Category:Metatemplates]]

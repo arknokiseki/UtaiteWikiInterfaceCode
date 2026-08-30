@@ -1,0 +1,30 @@
+{{Documentation/Header}}
+Renders a red "Open Playlist on YouTube" button linking to a YouTube playlist. Place it wherever a full playlist should be offered alongside individual song links.
+
+==Syntax==
+{{T|YtP|v1=playlist ID}}
+
+The playlist ID is the part of a YouTube URL after <code>list=</code> — it normally begins with <code>PL</code>.
+
+==Examples==
+{{T|YtP|_Y_=1|p1=PL73S0VEJz6VwGoivkooqW0GHeZZpPXPnf}}
+
+Nothing is rendered if no ID is given, so an empty call is harmless.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Playlist ID || The YouTube playlist ID, taken from the <code>list=</code> part of the URL. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A button linking to a YouTube playlist.",
+"params": {
+"1": { "label": "Playlist ID", "description": "YouTube playlist ID, from the 'list=' part of the URL.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

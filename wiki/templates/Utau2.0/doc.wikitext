@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Utau2.0|v1=PAGENAME|v2=Link Text}}
+
+==Examples==
+{{T|Utau2.0|p1=Teto_Kasane|p2=Kasane Teto|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "Teto_Kasane",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "Kasane Teto",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>

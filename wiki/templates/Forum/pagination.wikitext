@@ -1,0 +1,73 @@
+<includeonly><!--
+--><div class="forum-page-info" style="text-align: center; margin: 5px 0; font-size: 0.9em; color: #666;"><!--
+-->Page <span id="current-page-number">{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}</span> of <span id="total-page-number">{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}</span><!--
+--></div><!--
+
+-->{{{content|<div style="color: red; font-weight: 700; text-align: center;">please input the forum's content table inside the <code>content</code> parameter</div>}}}<!--
+
+-->{{#ifexpr: {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}} > 1|<!--
+--><div class="forum-pagination" style="margin: 10px 0; text-align: center; padding: 10px; border: 1px solid #a2a9b1;" data-total-pages="{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}"><!--
+
+--><!-- First button --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} > 1|<!--
+-->{{#forumlink:5|1|« First}}<!--
+-->|<!--
+--><span style="color: #999;">« First</span><!--
+-->}}<!--
+
+--><!-- Prev button --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} > 1|<!--
+-->{{#forumlink:5| {{#expr: floor({{#urlget:offset|0}} / 5) + 1 - 1}} |‹ Prev}}<!--
+-->|<!--
+--><span style="color: #999;">‹ Prev</span><!--
+-->}}<!--
+
+--><!-- Page 1 --><!--
+-->{{#ifeq:{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}|1|<span class="current-page">1</span>|{{#forumlink:5|1|1}}}}<!--
+
+--><!-- Ellipsis before current page --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} > 3|&hellip;}}<!--
+
+--><!-- Page before current (if current > 2) --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} > 2|<!--
+-->{{#ifeq:{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 - 1}}|<span class="current-page">{{#expr: floor({{#urlget:offset|0}} / 5) + 1 - 1}}</span>|{{#forumlink:5|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 - 1}}|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 - 1}}}}}}<!--
+-->}}<!--
+
+--><!-- Current page (if not first or last) --><!--
+-->{{#ifexpr: ({{#expr: floor({{#urlget:offset|0}} / 5) + 1}} > 1) and ({{#expr: floor({{#urlget:offset|0}} / 5) + 1}} < {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}})|<!--
+--><span class="current-page">{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}</span><!--
+-->}}<!--
+
+--><!-- Page after current (if current < last-1) --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} < {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5) - 1}}|<!--
+-->{{#ifeq:{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 + 1}}|<span class="current-page">{{#expr: floor({{#urlget:offset|0}} / 5) + 1 + 1}}</span>|{{#forumlink:5|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 + 1}}|{{#expr: floor({{#urlget:offset|0}} / 5) + 1 + 1}}}}}}<!--
+-->}}<!--
+
+--><!-- Ellipsis after current page --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} < {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5) - 2}}|&hellip;}}<!--
+
+--><!-- Last page --><!--
+-->{{#ifexpr: {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}} > 1|<!--
+-->{{#ifeq:{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}|{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}|<span class="current-page">{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}</span>|{{#forumlink:5|{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}|{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}}}}}<!--
+-->}}<!--
+
+--><!-- Next button --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} < {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}|<!--
+-->{{#forumlink:5| {{#expr: floor({{#urlget:offset|0}} / 5) + 1 + 1}} |Next ›}}<!--
+-->|<!--
+--><span style="color: #999;">Next ›</span><!--
+-->}}<!--
+
+--><!-- Last button --><!--
+-->{{#ifexpr: {{#expr: floor({{#urlget:offset|0}} / 5) + 1}} < {{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}|<!--
+-->{{#forumlink:5|{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}|Last »}}<!--
+-->|<!--
+--><span style="color: #999;">Last »</span><!--
+-->}}<!--
+--></div><!--
+-->}}<!--
+--><div class="forum-page-info" style="text-align: center; margin: 5px 0; font-size: 0.9em; color: #666;"><!--
+-->Page <span id="current-page-number">{{#expr: floor({{#urlget:offset|0}} / 5) + 1}}</span> of <span id="total-page-number">{{#expr: ceil ({{PAGESINCATEGORY:{{{target|{{PAGENAME}}}}}|R}} / 5)}}</span><!--
+--></div><!--
+
+--></includeonly><noinclude>{{documentation}}</noinclude>

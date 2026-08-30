@@ -1,0 +1,57 @@
+<includeonly>
+<!-- Media block: YouTube (left) - Nicovideo (right) -->
+<table class="wikitable media-entry-table" style="width:100%; border-spacing:0.5em;"><!--
+--><tr><!--
+--><td style="vertical-align:top; width:50%; padding:0.3em;"><!--
+--><!-- YouTube embed or fallback --><!--
+-->{{#if:{{{yt|}}}|<!-- youtube present --><div class="embed-wrap yt-wrap"><!--
+-->{{#ev:youtube|{{{yt}}}|315x206|inline|description={{{ytdesc|}}}}}<!--
+--></div> | <!-- youtube absent fallback -->}}<!--
+--></td><!--
+--><td style="vertical-align:top; width:50%; padding:0.3em;"><!--
+--><!-- Nicovideo embed or fallback --><!--
+-->{{#if:{{{nnd|}}} | <!-- nnd present --><div class="embed-wrap nnd-wrap"><!--
+-->{{#ev:niconico|{{{nnd}}}|315x206|inline|description={{{nnddesc|}}}}}<!--
+--></div> | <!-- nnd absent fallback -->}}<!--
+--></td><!--
+--></tr>
+
+<!-- Metadata row: neat key/value pairs -->
+<tr><!--
+--><td colspan="2" style="padding:0.3em;"><!--
+--><table style="width:100%; border-collapse:collapse;"><!--
+--><tr><!--
+--><td style="width:18%; vertical-align:top; padding:0.15em;"><b>Mix</b></td><!--
+--><td style="vertical-align:top; padding:0.15em;">{{{creator|—}}}</td><!--
+--></tr><!--
+-->{{#if:{{{original|}}} | <!-- original row if present --><tr><!--
+--><td style="vertical-align:top; padding:0.15em;"><b>Original</b></td><!--
+--><td style="vertical-align:top; padding:0.15em;">{{{original}}}</td><!--
+--></tr> }}<!--
+-->{{#if:{{{source|}}} | <!-- source row if present --><tr><!--
+--><td style="vertical-align:top; padding:0.15em;"><b>Notes</b></td><!--
+--><td style="vertical-align:top; padding:0.15em;">{{{source}}}</td><!--
+--></tr> }}<!--
+--></table><!--
+--></td><!--
+--></tr>
+
+<!-- Tracklist & description row: readable blocks -->
+<tr><!--
+--><td colspan="2" style="padding:0.3em;"><!--
+--><div class="media-lower" style="display:flex; gap:1em; flex-wrap:wrap;"><!--
+--><!-- Tracklist column --><div class="tracklist" style="flex:1 1 320px; min-width:220px;"><!--
+-->{{#if:{{{singers|}}} | <!-- singers present --> <div style="padding:0.5em; border-radius:6px; background:transparent;"><!--
+--><p style="margin:0;"><b>{{{number|}}} featured singer{{#ifexpr:{{{number|0}}}>1|s|}}:</b> {{{singers}}}</p><!--
+--></div> }}<!--
+--></div><!--
+--><!-- Description column --><div class="description" style="flex:2 1 420px; min-width:260px;"><!--
+-->{{#if:{{{description|}}} | <!-- description present --><div style="padding:0.5em; border-radius:6px; background:transparent;"><!--
+--><p style="margin:0;">{{{description}}}</p><!--
+--></div> }}<!--
+--></div><!--
+--></div><!--
+--></td><!--
+--></tr>
+</table>
+</includeonly><noinclude>{{documentation}}</noinclude>

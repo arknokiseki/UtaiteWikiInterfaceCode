@@ -1,0 +1,36 @@
+{{Documentation/Header}}
+{{documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{tsh|-|clr}}
+Shorthand for <syntaxhighlight inline lang="html"><div style="clear: both;"></div></syntaxhighlight>.
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "Clear floating block-level elements without line break.",
+		"pt-br": "“Limpar” elementos flutuantes em nível de bloco sem quebra de linha através do parâmetro “clear” do CSS."
+	},
+	"params": {
+		"1": {
+			"label": {
+				"en": "Clear",
+				"pt-br": "Atributo"
+			},
+			"description": {
+				"en": "CSS clear: left, right, both, none.",
+				"pt-br": "Atributos do parâmetro clear do CSS: left, right, both, none."
+			},
+			"default": "both",
+			"type": "string"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Formatting templates{{#translation:}}]]
+[[Category:Typing-aid templates{{#translation:}}]]
+[[Category:Utility templates{{#translation:}}]]
+}}</includeonly>

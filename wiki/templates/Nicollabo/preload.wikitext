@@ -1,0 +1,23 @@
+==Original==
+{{Nicollabo
+|image            = 
+|songtitle        = 
+|yt               = 
+|nnd              = 
+|producer         = 
+|malesingers      = 
+|androgynesingers = 
+|femalesingers    = 
+}}
+
+==Covers==
+{{Nicollabo
+|image            = 
+|songtitle        = 
+|yt               = 
+|nnd              = 
+|producer         = 
+|malesingers      = 
+|androgynesingers = 
+|femalesingers    = 
+}}

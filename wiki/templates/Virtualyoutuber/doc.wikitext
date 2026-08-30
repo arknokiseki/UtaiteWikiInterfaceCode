@@ -1,0 +1,39 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Virtualyoutuber|v1=PAGENAME|v2=link text}}<br/>
+{{T|VTW|v1=PAGENAME|v2=link text}}<br/>
+{{T|VLW|v1=PAGENAME|v2=link text}}<br/>
+{{T|VTuberW|v1=PAGENAME|v2=link text}}<br/>
+
+==Examples==
+{{T|Virtualyoutuber|p1=Regis Altare|p2=Altare (Holostars)|_Y_=1}}<br/>
+{{T|VTW|p1=Regis Altare|p2=Regis Altare (Holostars)|_Y_=1}}<br/>
+{{T|VYW|p1=Hoshikawa Sara|Hoshikawa Sara (Nijisanji)|_Y_=1}}<br/>
+{{T|VTuberW|Hoshikawa Sara|Hoshikawa (Nijisanji)|_Y_=1}}<br/>
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "Regis Altare",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "Altare (Holostars)",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>
+
+<noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,46 @@
+{{Languages|Template:Mono/doc}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Mono/styles.css}}
+{{tsh|tt|ttt}}
+
+This template is for formatting short bits of content (the only parameter) as monospaced (nonproportional) text.
+It is a replacement for <syntaxhighlight inline lang="html"><tt>...</tt></syntaxhighlight>, which is an obsolete element under HTML5.
+
+{{-}}
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "This template is for formatting short bits of content as monospaced text.",
+		"cs": "Tato šablona je určena pro formátování krátkých částí obsahu jako textu s neproporcionálním rozložením."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Content",
+				"cs": "Obsah"
+			},
+			"description": {
+				"en": "The content to format as monospaced.",
+				"cs": "Obsah, který se má formátovat jako jednoprostorový."
+			},
+			"required": true,
+			"type": "line"
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+* {{tlx|code|inline{{=}}1}}
+* {{tlx|inline-code}}
+* {{tlx|kbd}}
+* {{tlx|samp}}
+* {{tlx|var}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Formatting templates{{#translation:}}]]
+}}</includeonly>

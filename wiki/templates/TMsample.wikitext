@@ -1,0 +1,8 @@
+<div style="display:none">
+<span class="tmsample" title="{{{2|}}}"></span></div>
+{|style="width:250px; font-size:85%; line-height: 1.5em; text-align:center;"
+|A sample of a cover song by '''{{BASEPAGENAME}}'''<br />''{{{1|"SONGNAME", composed by PRODUCER}}}''
+|-
+|style="padding-left:10px"|<span class="tmsample" title="{{{2|}}}"></span>
+|}
+<noinclude>{{Documentation}}</noinclude>

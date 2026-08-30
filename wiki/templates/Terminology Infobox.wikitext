@@ -1,0 +1,203 @@
+<includeonly><infobox>
+	<title source="title">
+		<default>{{PAGENAME}}</default>
+	</title>
+	<header name="secondary_title">{{#if:{{#pos:{{{secondary_title|}}}|;}}||{{{secondary_title}}}}}</header>
+	<image source="image">
+		<caption source="caption"/>
+	</image>
+	<data source="type">
+		<label>Type</label>
+		<format>[[{{{type}}}]]{{#if:{{{type2|}}}|<br>[[{{{type2}}}]]}}{{#if:{{{type3|}}}|<br>[[{{{type3}}}]]}}{{#if:{{{type4|}}}|<br>[[{{{type4}}}]]}}{{#if:{{{type5|}}}|<br>[[{{{type5}}}]]}}</format>
+	</data>
+	<data source="group">
+		<label>Group</label>
+		<format>[[{{{group}}}]]{{#if:{{{group2|}}}|<br>[[{{{group2}}}]]}}{{#if:{{{group3|}}}|<br>[[{{{group3}}}]]}}{{#if:{{{group4|}}}|<br>[[{{{group4}}}]]}}{{#if:{{{group5|}}}|<br>[[{{{group5}}}]]}}</format>
+	</data>
+	<data source="description">
+		<label>Descrip&#173;tion</label>
+	</data>
+	<data source="affiliation">
+    	<label>Affil&#173;i&#173;a&#173;tion</label>
+    	<format>{{Exists|{{{affiliation}}}|[[{{{affiliation}}}]]|{{{affiliation}}}}}{{#if:{{{affiliationNote|}}}|&#160;({{{affiliationNote}}})}}<!--
+    	-->{{#if:{{{affiliation2|}}}|<br>{{Exists|{{{affiliation2}}}|[[{{{affiliation2}}}]]|{{{affiliation2}}}}}{{#if:{{{affiliationNote2|}}}|&#160;({{{affiliationNote2}}})}}}}<!--
+		-->{{#if:{{{affiliation3|}}}|<br>{{Exists|{{{affiliation3}}}|[[{{{affiliation3}}}]]|{{{affiliation3}}}}}{{#if:{{{affiliationNote3|}}}|&#160;({{{affiliationNote3}}})}}}}<!--
+		-->{{#if:{{{affiliation4|}}}|<br>{{Exists|{{{affiliation4}}}|[[{{{affiliation4}}}]]|{{{affiliation4}}}}}{{#if:{{{affiliationNote4|}}}|&#160;({{{affiliationNote4}}})}}}}<!--
+		-->{{#if:{{{affiliation5|}}}|<br>{{Exists|{{{affiliation5}}}|[[{{{affiliation5}}}]]|{{{affiliation5}}}}}{{#if:{{{affiliationNote5|}}}|&#160;({{{affiliationNote5}}})}}}}<!--
+		-->{{#if:{{{affiliation6|}}}|<br>{{Exists|{{{affiliation6}}}|[[{{{affiliation6}}}]]|{{{affiliation6}}}}}{{#if:{{{affiliationNote6|}}}|&#160;({{{affiliationNote6}}})}}}}<!--
+		-->{{#if:{{{affiliation7|}}}|<br>{{Exists|{{{affiliation7}}}|[[{{{affiliation7}}}]]|{{{affiliation7}}}}}{{#if:{{{affiliationNote7|}}}|&#160;({{{affiliationNote7}}})}}}}<!--
+		-->{{#if:{{{affiliation8|}}}|<br>{{Exists|{{{affiliation8}}}|[[{{{affiliation8}}}]]|{{{affiliation8}}}}}{{#if:{{{affiliationNote8|}}}|&#160;({{{affiliationNote8}}})}}}}</format>
+	</data>
+	<data source="world">
+		<label>World</label>
+		<format>[[{{{world}}}]]</format>
+	</data>
+	<data source="region">
+		<label>Region</label>
+		<format>[[{{{region}}}]]{{#if:{{{region2|}}}|<br>[[{{{region2|}}}]]|}}{{#if:{{{region3|}}}|<br>[[{{{region3|}}}]]|}}{{#if:{{{region4|}}}|<br>[[{{{region4|}}}]]|}}{{#if:{{{region5|}}}|<br>[[{{{region5|}}}]]|}}{{#if:{{{region6|}}}|<br>[[{{{region6|}}}]]|}}{{#if:{{{region7|}}}|<br>[[{{{region7|}}}]]|}}{{#if:{{{region8|}}}|<br>[[{{{region8|}}}]]|}}{{#if:{{{region9|}}}|<br>[[{{{region9|}}}]]|}}</format>
+	</data>
+	<data source="subregion">
+		<label>Subregion</label>
+		<format>[[{{{subregion}}}]]{{#if:{{{subregion2|}}}|<br>[[{{{subregion2|}}}]]|}}{{#if:{{{subregion3|}}}|<br>[[{{{subregion3|}}}]]|}}{{#if:{{{subregion4|}}}|<br>[[{{{subregion4|}}}]]|}}{{#if:{{{subregion5|}}}|<br>[[{{{subregion5|}}}]]|}}{{#if:{{{subregion6|}}}|<br>[[{{{subregion6|}}}]]|}}{{#if:{{{subregion7|}}}|<br>[[{{{subregion7|}}}]]|}}{{#if:{{{subregion8|}}}|<br>[[{{{subregion8|}}}]]|}}{{#if:{{{subregion9|}}}|<br>[[{{{subregion9|}}}]]|}}</format>
+	</data>
+	<data source="area">
+		<label>Area</label>
+		<format>[[{{{area}}}]]{{#if:{{{area2|}}}|<br>[[{{{area2|}}}]]|}}{{#if:{{{area3|}}}|<br>[[{{{area3|}}}]]|}}{{#if:{{{area4|}}}|<br>[[{{{area4|}}}]]|}}{{#if:{{{area5|}}}|<br>[[{{{area5|}}}]]|}}{{#if:{{{area6|}}}|<br>[[{{{area6|}}}]]|}}{{#if:{{{area7|}}}|<br>[[{{{area7|}}}]]|}}{{#if:{{{area8|}}}|<br>[[{{{area8|}}}]]|}}{{#if:{{{area9|}}}|<br>[[{{{area9|}}}]]|}}</format>
+	</data>
+	<data source="subarea">
+		<label>Subarea</label>
+		<format>[[{{{subarea}}}]]</format>
+	</data>
+	<data source="poi">
+		<label>Point of Interest</label>
+		<format>[[{{{poi}}}]]</format>
+	</data>
+	<data source="domain">
+		<label>Domain</label>
+		<format>[[{{{domain}}}]]{{#if:{{{domain2|}}}|<br>[[{{{domain2|}}}]]|}}{{#if:{{{domain3|}}}|<br>[[{{{domain3|}}}]]|}}{{#if:{{{domain4|}}}|<br>[[{{{domain4|}}}]]|}}{{#if:{{{domain5|}}}|<br>[[{{{domain5|}}}]]|}}{{#if:{{{domain6|}}}|<br>[[{{{domain6|}}}]]|}}{{#if:{{{domain7|}}}|<br>[[{{{domain7|}}}]]|}}{{#if:{{{domain8|}}}|<br>[[{{{domain8|}}}]]|}}{{#if:{{{domain9|}}}|<br>[[{{{domain9|}}}]]|}}</format>
+	</data>
+	<data source="event">
+		<label>Event</label>
+		<format>[[{{{event}}}]]{{#if:{{{event2|}}}|<br>[[{{{event2|}}}]]|}}{{#if:{{{event3|}}}|<br>[[{{{event3|}}}]]|}}{{#if:{{{event4|}}}|<br>[[{{{event4|}}}]]|}}{{#if:{{{event5|}}}|<br>[[{{{event5|}}}]]|}}{{#if:{{{event6|}}}|<br>[[{{{event6|}}}]]|}}{{#if:{{{event7|}}}|<br>[[{{{event7|}}}]]|}}{{#if:{{{event8|}}}|<br>[[{{{event8|}}}]]|}}{{#if:{{{event9|}}}|<br>[[{{{event9|}}}]]|}}</format>
+	</data>
+	<data source="pronunciation">
+		<label>Pronun&#173;ci&#173;a&#173;tion</label>
+		<format>{{{pronunciation}}} {{tt|ⓘ|Based on official English Voice-Overs}}</format>
+	</data>
+	<data source="related">
+		<label>Related Terms</label>
+		<format><ul><!--
+		    -->{{Array|{{{related|}}}|;|template=1|<li>²{Exists¦{item}¦[[{item}]]¦{item} }²</li>}}<!--
+		--></ul></format>
+	</data>
+	<group>
+		<panel>
+			<section>
+				<label>How to Obtain</label>
+				<data source="recipe">
+					<label>{{{recipe_type|Recipe}}}</label>
+				</data>
+				<data source="source1">
+					<label>Source 1</label>
+                                        <format>{{#if:{{{day1|}}}|[[{{{source1|}}}]]<br>({{{day1|}}}/{{{day2|}}}/{{{day3|}}})|{{{source1|}}}}}</format>
+				</data>
+				<data source="source2">
+					<label>Source 2</label>
+				</data>
+				<data source="source3">
+					<label>Source 3</label>
+				</data>
+				<data source="source4">
+					<label>Source 4</label>
+				</data>
+				<data source="source5">
+					<label>Source 5</label>
+				</data>
+				<data source="source6">
+					<label>Source 6</label>
+				</data>
+				<data source="source7">
+					<label>Source 7</label>
+				</data>
+				<data source="source8">
+					<label>Source 8</label>
+				</data>
+				<data source="source9">
+					<label>Source 9</label>
+				</data>
+				<data source="source10">
+					<label>Source 10</label>
+				</data>
+			</section>
+		</panel>
+	</group>
+</infobox>
+{{Namespace|main=[[Category:Terminology]]<!--
+	Set page display title if title is different from page name
+-->{{#ifeq:{{NAMESPACE}}||<!--
+-->{{#if:{{{title|}}}{{{displaytitle|}}}|{{#ifeq:{{PAGENAME}}|{{{title}}}||{{#ifeq:{{lc:{{{displaytitle|}}}}}|no||{{DISPLAYTITLE:{{{displaytitle|{{{title}}}}}}|noreplace}}}}}}}}<!--
+-->}}<!--
+-->{{#if:{{{type|}}}|[[Category:{{{type|}}}]]}}<!--
+-->{{#if:{{{type2|}}}|[[Category:{{{type2|}}}]]}}<!--
+-->{{#if:{{{type3|}}}|[[Category:{{{type3|}}}]]}}<!--
+-->{{#if:{{{type4|}}}|[[Category:{{{type4|}}}]]}}<!--
+-->{{#if:{{{type5|}}}|[[Category:{{{type5|}}}]]}}<!--
+-->{{#if:{{{group|}}}|[[Category:{{{group|}}}]]}}<!--
+-->{{#if:{{{group2|}}}|[[Category:{{{group2|}}}]]}}<!--
+-->{{#if:{{{group3|}}}|[[Category:{{{group3|}}}]]}}<!--
+-->{{#if:{{{group4|}}}|[[Category:{{{group4|}}}]]}}<!--
+-->{{#if:{{{group5|}}}|[[Category:{{{group5|}}}]]}}<!--
+-->{{#if:{{{affiliation|}}}|{{Exists|Category:{{{affiliation|}}}|[[Category:{{{affiliation}}}]]}}}}<!--
+-->{{#if:{{{affiliation2|}}}|{{Exists|Category:{{{affiliation2|}}}|[[Category:{{{affiliation2}}}]]}}}}<!--
+-->{{#if:{{{affiliation3|}}}|{{Exists|Category:{{{affiliation3|}}}|[[Category:{{{affiliation3}}}]]}}}}<!--
+-->{{#if:{{{affiliation4|}}}|{{Exists|Category:{{{affiliation4|}}}|[[Category:{{{affiliation4}}}]]}}}}<!--
+-->{{#if:{{{affiliation5|}}}|{{Exists|Category:{{{affiliation5|}}}|[[Category:{{{affiliation5}}}]]}}}}<!--
+-->{{#if:{{{affiliation6|}}}|{{Exists|Category:{{{affiliation6|}}}|[[Category:{{{affiliation6}}}]]}}}}<!--
+-->{{#if:{{{affiliation7|}}}|{{Exists|Category:{{{affiliation7|}}}|[[Category:{{{affiliation7}}}]]}}}}<!--
+-->{{#if:{{{affiliation8|}}}|{{Exists|Category:{{{affiliation8|}}}|[[Category:{{{affiliation8}}}]]}}}}<!--
+-->{{#if:{{{world|}}}|[[Category:{{{world}}} Terminology]]}}<!--
+-->{{#if:{{{region|}}}|[[Category:{{{region}}} Terminology]]}}<!--
+-->{{#if:{{{region2|}}}|[[Category:{{{region2}}} Terminology]]}}<!--
+-->{{#if:{{{region3|}}}|[[Category:{{{region3}}} Terminology]]}}<!--
+-->{{#if:{{{region4|}}}|[[Category:{{{region4}}} Terminology]]}}<!--
+-->{{#if:{{{region5|}}}|[[Category:{{{region5}}} Terminology]]}}<!--
+-->{{#if:{{{region6|}}}|[[Category:{{{region6}}} Terminology]]}}<!--
+-->{{#if:{{{region7|}}}|[[Category:{{{region7}}} Terminology]]}}<!--
+-->{{#if:{{{region8|}}}|[[Category:{{{region8}}} Terminology]]}}<!--
+-->{{#if:{{{region9|}}}|[[Category:{{{region9}}} Terminology]]}}<!--
+-->{{#if:{{{subregion|}}}|[[Category:{{{subregion}}} Terminology]]}}<!--
+-->{{#if:{{{subregion2|}}}|[[Category:{{{subregion2}}} Terminology]]}}<!--
+-->{{#if:{{{subregion3|}}}|[[Category:{{{subregion3}}} Terminology]]}}<!--
+-->{{#if:{{{subregion4|}}}|[[Category:{{{subregion4}}} Terminology]]}}<!--
+-->{{#if:{{{subregion5|}}}|[[Category:{{{subregion5}}} Terminology]]}}<!--
+-->{{#if:{{{subregion6|}}}|[[Category:{{{subregion6}}} Terminology]]}}<!--
+-->{{#if:{{{subregion7|}}}|[[Category:{{{subregion7}}} Terminology]]}}<!--
+-->{{#if:{{{subregion8|}}}|[[Category:{{{subregion8}}} Terminology]]}}<!--
+-->{{#if:{{{subregion9|}}}|[[Category:{{{subregion9}}} Terminology]]}}<!--
+-->{{#if:{{{area|}}}|[[Category:{{{area}}} Terminology]]}}<!--
+-->{{#if:{{{area2|}}}|[[Category:{{{area2}}} Terminology]]}}<!--
+-->{{#if:{{{area3|}}}|[[Category:{{{area3}}} Terminology]]}}<!--
+-->{{#if:{{{area4|}}}|[[Category:{{{area4}}} Terminology]]}}<!--
+-->{{#if:{{{area5|}}}|[[Category:{{{area5}}} Terminology]]}}<!--
+-->{{#if:{{{area6|}}}|[[Category:{{{area6}}} Terminology]]}}<!--
+-->{{#if:{{{area7|}}}|[[Category:{{{area7}}} Terminology]]}}<!--
+-->{{#if:{{{area8|}}}|[[Category:{{{area8}}} Terminology]]}}<!--
+-->{{#if:{{{area9|}}}|[[Category:{{{area9}}} Terminology]]}}<!--
+-->{{#if:{{{subarea|}}}|[[Category:{{{subarea}}} Terminology]]}}<!--
+-->{{#if:{{{poi|}}}|[[Category:{{{poi}}} Terminology]]}}<!--
+-->{{#if:{{{domain|}}}|[[Category:{{{domain}}} Terminology]]}}<!--
+-->{{#if:{{{domain2|}}}|[[Category:{{{domain2}}} Terminology]]}}<!--
+-->{{#if:{{{domain3|}}}|[[Category:{{{domain3}}} Terminology]]}}<!--
+-->{{#if:{{{domain4|}}}|[[Category:{{{domain4}}} Terminology]]}}<!--
+-->{{#if:{{{domain5|}}}|[[Category:{{{domain5}}} Terminology]]}}<!--
+-->{{#if:{{{domain6|}}}|[[Category:{{{domain6}}} Terminology]]}}<!--
+-->{{#if:{{{domain7|}}}|[[Category:{{{domain7}}} Terminology]]}}<!--
+-->{{#if:{{{domain8|}}}|[[Category:{{{domain8}}} Terminology]]}}<!--
+-->{{#if:{{{domain9|}}}|[[Category:{{{domain9}}} Terminology]]}}<!--
+-->{{#if:{{{event|}}}|[[Category:{{{event}}} Terminology]][[Category:Event Terminology]]}}<!--
+-->{{#if:{{{event2|}}}|[[Category:{{{event2}}} Terminology]]}}<!--
+-->{{#if:{{{event3|}}}|[[Category:{{{event3}}} Terminology]]}}<!--
+-->{{#if:{{{event4|}}}|[[Category:{{{event4}}} Terminology]]}}<!--
+-->{{#if:{{{event5|}}}|[[Category:{{{event5}}} Terminology]]}}<!--
+-->{{#if:{{{event6|}}}|[[Category:{{{event6}}} Terminology]]}}<!--
+-->{{#if:{{{event7|}}}|[[Category:{{{event7}}} Terminology]]}}<!--
+-->{{#if:{{{event8|}}}|[[Category:{{{event8}}} Terminology]]}}<!--
+-->{{#if:{{{event9|}}}|[[Category:{{{event9}}} Terminology]]}}<!--
+-->{{#if:{{{day1|}}}|[[Category:{{{source1}}} Rewards]]}}<!--
+-->{{#if:{{{day1|}}}|[[Category:{{{day1}}} Terminology]]}}<!--
+-->{{#if:{{{day2|}}}|[[Category:{{{day2}}} Terminology]]}}<!--
+-->{{#if:{{{day3|}}}|[[Category:{{{day3}}} Terminology]]}}<!--
+-->{{#if:{{{day4|}}}|[[Category:{{{day4}}} Terminology]]}}<!--
+-->{{#if:{{{day5|}}}|[[Category:{{{day5}}} Terminology]]}}<!--
+-->{{#if:{{{day6|}}}|[[Category:{{{day6}}} Terminology]]}}<!--
+-->{{#if:{{{day7|}}}|[[Category:{{{day7}}} Terminology]]}}<!--
+-->{{#if:{{{recipe|}}}|[[Category:Terminology with {{{recipe_type|Recipe}}}]]}}<!--
+-->{{#if:{{{pronunciation|}}}|[[Category:Pronunciation Included]]}}<!--
+-->}}<!--line break required for styling purposes-->
+</includeonly><noinclude>{{Documentation|type=Infobox}}</noinclude>
+<noinclude>[[Category:Infobox Templates]]
+</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

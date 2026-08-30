@@ -1,0 +1,22 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = faibon twitter.png
+|caption = his Blog and Twitter
+|officialjapname = ふぁいぼん
+|officialromajiname = Faibon
+|NNDuserpage = 861319
+|mylist1 = 23606285
+|mylist1info = all
+|mylist2 = 17675187
+|mylist2info = 
+|nicommu1 = co134668
+|nicommu1info = 
+|exampletitle = Silver Bullet
+|examplennd = sm17254282
+|exampleyt = 
+|description = '''Faibon''' ('''ふぁいぼん''') is an {{NNDict|Utaite}} with a deep, cool, laid back and somewhat lazy but resonant and clear sounding voice, which is sometimes described as {{VW|Ikemen}}.
+
+
+However, he can sing equally well in a higher range, such as in his cover of "[[Sainou Sampler]]"{{nnd|sm14411862}} or his "[[rain stops, good-bye]]"{{nnd|sm14683310}}.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

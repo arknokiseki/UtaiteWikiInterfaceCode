@@ -1,0 +1,92 @@
+<noinclude>{{Documentation subpage}}</noinclude>
+<!--
+     PLEASE ADD CATEGORIES AND INTERWIKIS AT THE BOTTOM OF THIS PAGE
+-->
+
+This {{til|xpd}} (expansion demo) shows the call of a variable, parser function or template and its result, for documentation.
+
+;Usage&#58;
+:{{Tlx|xpd|left side|up to 3 additional parameters}}
+
+Please note that for [[Help:Parser function|parser functions]] the first parameter belongs to the left side before "|".
+
+Examples without additional parameters:
+
+{| class="wikitable"
+|{{Tlx|xpd|tc}} || {{xpd|tc}}
+|-
+|{{Tlx|xpd|CURRENTDAY}} || {{xpd|CURRENTDAY}}
+|-
+|{{Tlx|xpd|#expr:2*3}} || {{xpd|#expr:2*3}}
+|-
+|{{Tlx|xpd|<nowiki>1=#expr:2+2=5</nowiki>}} || {{xpd|1=#expr:2+2=5}}
+|-
+|{{Tlx|xpd|<nowiki>1=#expr:2+2=4</nowiki>}} || {{xpd|1=#expr:2+2=4}}
+|-
+|{{Tlx|xpd|urlencode:!}} || {{xpd|urlencode:!}}
+|-
+|{{Tlx|xpd|uc:abc}} || {{xpd|uc:abc}}
+|}
+
+{{((}}subst:xpd|uc:Upper Case|subst=subst:{{))}} substitutes {{((}}<small>&#160;</small><code>subst:uc:Upper Case</code>{{))}} {{{2|gives}}} UPPER CASE
+
+See [[Help:Substitution]] for several caveats wrt <code>subst=subst:</code>.
+
+Note that, as always, a parameter containing "=" has to be explicitly named by putting, in this case, "1=" in front.
+
+{{til|Xpdn}} can be used in the case of an expression in double braces which itself includes a pair of double braces (simple '''nested''' expressions). Use "|" for the inner "<nowiki>{{</nowiki>" and, if there is code after it, also for "}}".
+
+{| class="wikitable"
+|{{Tlx|xpdn|#expr:24*|CURRENTDAY}} || {{xpdn|#expr:24*|CURRENTDAY}}
+|-
+|{{Tlx|xpdn|#expr:24*|CURRENTDAY|-24}} || {{xpdn|#expr:24*|CURRENTDAY|-24}}
+|-
+|{{Tlx|xpdn|#expr:4*|#expr:not 0|<nowiki> &gt;3</nowiki>}} || {{xpdn|#expr: 4*|#expr:not 0| >3}}
+|-
+|{{Tlx|xpdn|urlencode:|DIRMARK}} || {{xpdn|urlencode:|DIRMARK}}
+|}
+
+Examples with additional parameters (no nesting possible):
+
+{| class="wikitable"
+|{{Tlx|xpd|#ifeq: 1.00|+1|okay}} || {{xpd|#ifeq: 1.00|+1|okay}}
+|-
+|{{Tlx|xpd|#ifeq: this|that<code><nowiki>||</nowiki></code>false|4=s=is}} || {{xpd|#ifeq: this|that||false|s=is}}
+|-
+|{{Tlx|xpd|t|b}} || {{xpd|t|b}}
+|-
+|{{Tlx|xpd|t2|b|c}} || {{xpd|t2|b|c}}
+|}
+
+In the case of one or more named parameters, write all parameter definitions from that as value of the appropriate parameter number, e.g.:
+:<nowiki>{{xpd|t link|2=wikt=abc|3=}}</nowiki> gives "{{xpd|t link|2=wikt=abc|3=}}"
+
+Optional substitution with <code>subst=subst:</code> is '''not''' supported. The demo template shows what another template actually '''does''', and not what it '''did''' some time ago.
+
+==Separator parameter==
+;Usage&#58;
+:{{Tlx|xpd|left side|up to 3 additional parameters|4=s=separator}}
+:{{Tlx|xpdn|left side|nested part and optional last part|4=s=separator}}
+
+:The default separator is "gives", use <code>s==</code> or similar to get "=" etc.
+
+Examples with separator parameter:
+
+{| class="wikitable"
+|{{Tlx|xpd|CURRENTDAY|3=s=is}} || {{xpd|CURRENTDAY|s=is}}
+|-
+|{{Tlx|xpd|<nowiki>1=#expr:2+2</nowiki>|<nowiki>s==</nowiki>}} || {{xpd|1=#expr:2+2|s==}}
+|-
+|{{Tlx|xpdn|#expr:4*|#expr:not 0|<nowiki> &gt;3 | yields</nowiki>}} || {{xpdn|#expr: 4*|#expr:not 0| >3 | yields}}
+|}
+
+==See also==
+*[[Module:Xpd]]
+*[[Template:Xpds]]
+*[[Template:Xpdp]]
+*[[m:Template:Xpd/doc]]
+
+<includeonly><!-- CATEGORIES AND INTERWIKIS HERE, THANKS -->
+[[Category:Handbook templates|{{PAGENAME}}]]
+
+</includeonly>

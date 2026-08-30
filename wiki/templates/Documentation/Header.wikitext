@@ -1,0 +1,10 @@
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|doc|<!--
+-->{{#invoke:documentation|navigation|navHeader=<div>'''This is the documentation page for [[{{NAMESPACE}}:{{#replace:{{BASEPAGENAME}}|!|&excl;}}|{{#replace:{{BASEPAGENAME}}|!|&excl;}}]].'''</div><div>It contains usage information, categories, and other content not part of the original {{#switch:{{NAMESPACE}}
+| {{ns:828}} = module
+| {{ns:10}} = template
+}} page.</div>}}[[Category:{{#switch:{{NAMESPACE}}
+| {{ns:828}} = Module Documentation
+| {{ns:10}} = Template Documentation
+| #default = Documentation
+}}]]
+}}</includeonly><noinclude>{{Documentation|type=Documentation}}</noinclude>

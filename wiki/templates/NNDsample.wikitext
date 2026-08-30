@@ -1,0 +1,2 @@
+<includeonly><div class="blacklist-pPreview">{{EmbedVideo|niconico|{{{id|{{{2}}}}}}|{{{dim|300px}}}|{{{align|left}}}|<!--ev description-->|{{{alt|{{{song|A sample of a cover song}}}{{#if:{{{song|}}}|&nbsp;covered&nbsp;|&nbsp;}}by '''{{{singer|{{YTsample/name}}}}}'''{{#if:{{{producer|}}}|, originally composed by '''{{{producer}}}'''|}}}}}
+}}{{clear}}</div></includeonly><noinclude>{{Documentation}}</noinclude>

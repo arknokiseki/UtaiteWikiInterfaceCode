@@ -1,0 +1,249 @@
+= AlbumType2 Template Documentation =
+This template creates a standardized layout for album pages with tabbed sections for tracklist, shops/downloads, and streaming services.
+
+== Usage ==
+<pre>
+{{AlbumType2
+|albumtitle=
+|singers=
+|datereleased=
+|label=
+|albumartist=
+|image=
+|track=
+|shops=
+|jpshops=
+|streams=
+|spotifyalbumid=
+|crossfadeyt=
+|crossfadennd=
+|ytxfddesc=
+|nndxfddesc=
+}}
+</pre>
+
+== Parameters ==
+=== Basic Information Parameters ===
+{| class="wikitable"
+! Parameter !! Description !! Required? !! Example
+|-
+| albumtitle || The title of the album || Yes || <code>My Album Title</code>
+|-
+| singers || Featured artists on the album || No || <code>Artist A, Artist B</code>
+|-
+| datereleased || Release date of the album || Yes || <code>July 07, 2024</code>
+|-
+| label || Record label or publisher || No || <code>Universal Music</code>
+|-
+| albumartist || Artist who created the album artwork || No || <code>Cover Artist Name</code>
+|-
+| image || Filename of the album cover image || No || <code>Album_cover.jpg</code>
+|}
+
+=== Media Player Parameters ===
+{| class="wikitable"
+! Parameter !! Description !! Format !! Example
+|-
+| spotifyalbumid || Spotify album ID for embedded player || Spotify album ID || <code>3y5m8YvNm0yGHYoi4ada4V</code>
+|-
+| crossfadeyt || YouTube crossfade preview ID || YouTube video ID || <code>7oYbEQ1_pjg</code>
+|-
+| crossfadennd || Niconico crossfade preview ID || Niconico video ID || <code>sm20071610</code>
+|-
+| ytxfddesc || YouTube crossfade description || Text || <code>Album Crossfade</code>
+|-
+| nndxfddesc || Niconico crossfade description || Text || <code>Album Crossfade</code>
+|}
+
+=== Track Template Parameters ===
+{| class="wikitable"
+! Parameter !! Description !! Required? !! Example
+|-
+| number || Track number || Yes || <code>1</code>
+|-
+| title || Song title || Yes || <code>Song Title</code> or <code><ruby>星空<rt>ほしぞら</rt></ruby></code>
+|-
+| additionalshortinfo || Additional information || No || <code>Single</code> or <code><nowiki>{{yt|dQw4w9WgXcQ}}</nowiki></code>
+|-
+| singers || Track artists || No || <code>Artist Name</code>
+|-
+| lyricist || Lyric writer || No || <code>Lyricist Name</code>
+|-
+| composer || Music composer || No || <code>Composer Name</code>
+|-
+| arranger || Music arranger || No || <code>Arranger Name</code>
+|-
+| collapsible || Makes track info collapsible || No || <code>y</code>
+|}
+
+=== Shop Section Types ===
+{| class="wikitable"
+! Section !! Parameter !! Description !! Example
+|-
+| International Shops || shops || Links to international stores || <code><nowiki>{{LType2|amazon|149104}}</nowiki></code>
+|-
+| Japan Only || jpshops || Links to Japanese stores || <code><nowiki>{{LType2|amazon|149104}}</nowiki></code>
+|-
+| Streaming Services || streams || Links to streaming platforms || <code><nowiki>{{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}</nowiki></code>
+|}
+
+== Examples ==
+
+=== Basic Usage ===
+<pre>
+{{AlbumType2
+|albumtitle=Album Name
+|singers=Artist Name
+|datereleased=January 1, 2024
+|label=Label Name
+|track=
+{{Track|1|title=Song Title|singers=Artist}}
+}}
+</pre>
+Output:
+{{AlbumType2
+|albumtitle=Album Name
+|singers=Artist Name
+|datereleased=January 1, 2024
+|label=Label Name
+|track={{Track|1|title=Song Title|singers=Artist}}
+}}
+
+=== Advanced Usage with All Features ===
+<pre>
+{{AlbumType2
+|albumtitle=Summer Collection
+|singers=Various Artists
+|datereleased=July 07, 2024
+|label=Music Label
+|albumartist=Cover Artist
+|track=
+{{Track|1|title=Summer Song|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
+{{Track|2|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ|additionalshortinfo=Instrumental|singers=Artist B}}
+|shops={{LType2|amazon|149104}}
+|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
+|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
+|crossfadeyt=7oYbEQ1_pjg
+}}
+</pre>
+output:
+{{AlbumType2
+|albumtitle=Summer Collection
+|singers=Various Artists
+|datereleased=July 07, 2024
+|label=Music Label
+|albumartist=Cover Artist
+|track=
+{{Track|1|title=Summer Song|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
+{{Track|2|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ|additionalshortinfo=Instrumental|singers=Artist B}}
+|shops={{LType2|amazon|149104}}
+|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
+|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
+|crossfadeyt=7oYbEQ1_pjg
+}}
+
+<pre>
+{{AlbumType2
+|albumtitle=test
+|singers=test
+|datereleased=July 07, 2024
+|label=test
+|albumartist=test
+|track=
+{{Track|1
+|title=Song Title 1
+|additionalshortinfo=Single
+|singers=Artist A
+|lyricist=Writer A
+|composer=Composer A
+|arranger=Arranger A
+}}<!--
+-->{{Track|2
+|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ (Starry Sky Orchestra)
+|additionalshortinfo=Instrumental
+|singers=Artist B
+|lyricist=Writer B
+|composer=Composer B
+|arranger=Arranger B
+|collapsible=y
+}}<!--
+-->{{Track|3
+|title=Song Title 3
+|additionalshortinfo={{yt|dQw4w9WgXcQ}}
+|singers=Artist C
+|lyricist=Writer C
+|composer=Composer C
+|arranger=Arranger C
+}}<!--
+-->{{Track|4
+|title=<ruby>初音<rt>はつね</rt></ruby>ミクの<ruby>消失<rt>しょうしつ</rt></ruby><br />The disappearance of Hatsune Miku
+|additionalshortinfo=Instrumental
+|singers=ー
+|lyricist=Writer D
+|composer=Composer D
+|arranger=Arranger D
+}}
+|shops={{LType2|amazon|149104}}
+|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
+|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
+|crossfadeyt=7oYbEQ1_pjg
+|crossfadennd=sm20071610
+}}
+</pre>
+Output:
+{{AlbumType2
+|albumtitle=test
+|singers=test
+|datereleased=July 07, 2024
+|label=test
+|albumartist=test
+|track=
+{{Track|1
+|title=Song Title 1
+|additionalshortinfo=Single
+|singers=Artist A
+|lyricist=Writer A
+|composer=Composer A
+|arranger=Arranger A
+}}<!--
+-->{{Track|2
+|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ (Starry Sky Orchestra)
+|additionalshortinfo=Instrumental
+|singers=Artist B
+|lyricist=Writer B
+|composer=Composer B
+|arranger=Arranger B
+|collapsible=y
+}}<!--
+-->{{Track|3
+|title=Song Title 3
+|additionalshortinfo={{yt|dQw4w9WgXcQ}}
+|singers=Artist C
+|lyricist=Writer C
+|composer=Composer C
+|arranger=Arranger C
+}}<!--
+-->{{Track|4
+|title=<ruby>初音<rt>はつね</rt></ruby>ミクの<ruby>消失<rt>しょうしつ</rt></ruby><br />The disappearance of Hatsune Miku
+|additionalshortinfo=Instrumental
+|singers=ー
+|lyricist=Writer D
+|composer=Composer D
+|arranger=Arranger D
+}}
+|shops={{LType2|amazon|149104}}
+|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
+|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
+|crossfadeyt=7oYbEQ1_pjg
+|crossfadennd=sm20071610
+}}
+
+== Notes ==
+* Track titles support line breaks using <nowiki><br /></nowiki>
+* Japanese text can be annotated with readings using <nowiki><ruby></nowiki> tags
+* Crossfade previews are only shown when video IDs are provided
+* Shop sections will collapse if no links are provided
+
+== See Also ==
+* [[Template:Track]] - For individual track entries
+* [[Template:LType2]] - For shop and streaming links

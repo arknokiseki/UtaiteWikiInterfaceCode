@@ -1,0 +1,3 @@
+{{documentation subpage}}
+{{dependencies|Module:Arguments}}
+This module is used to support the template {{tl|Repeat}}.

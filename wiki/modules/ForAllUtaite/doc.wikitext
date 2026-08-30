@@ -1,0 +1,16 @@
+This module implements {{t|ForAllUtaite}}, a {{t|Main other}}-style metatemplate that branches on whether the current page transcludes {{t|Utaite}}.
+
+== Functions ==
+=== main ===
+<code><nowiki>{{#invoke:ForAllUtaite|main}}</nowiki></code> — reads its parameters from the parent template call:
+* '''1''' — output on pages that transclude {{t|Utaite}}
+* '''2''' — output on all other pages
+* '''demo''' — force a branch for testing: <code>utaite</code> or <code>other</code>
+
+== How detection works ==
+The module reads the current page's own wikitext via <code>title:getContent()</code> and scans it for a <code>{{Utaite}}</code> template call. HTML comments are stripped before matching, because editors sometimes place comments inside the template call (even between <code><nowiki>{{</nowiki></code> and the template name). Because it reads the page source directly rather than the templatelinks table, the result updates in the same edit that adds or removes {{t|Utaite}}.
+
+In the Template, Module and MediaWiki namespaces <code>main</code> returns nothing (unless <code>demo=</code> is set), so templates embedding {{t|ForAllUtaite}} do not categorize their own pages.
+
+== Used by ==
+* [[Template:ForAllUtaite]]

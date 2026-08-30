@@ -1,0 +1,26 @@
+<includeonly><!--
+--><div <!--
+   -->class="<!--
+      -->giw-collapsible mw-collapsible <!--
+      -->{{#if:{{{collapsed|}}}|mw-collapsed}}<!--
+   -->" <!--
+   -->style="<!--
+      -->{{{style|}}}<!--
+   -->" <!--
+   -->data-expandtext="<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_left_arrow|}}}||{{{expand_arrow|▼}}}}}<!--
+      -->{{{expand_text|{{{2|Placeholder Button}}}}}}<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_right_arrow|}}}||{{{expand_arrow|▼}}}}}<!--
+   -->" <!--
+   -->data-collapsetext="<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_left_arrow|}}}||{{{collapse_arrow|▲}}}}}<!--
+      -->{{{collapse_text|{{{2|Placeholder Button}}}}}}<!--
+      -->{{#if:{{{no_arrow|}}}{{{no_right_arrow|}}}||{{{collapse_arrow|▲}}}}}<!--
+   -->"<!--
+-->><!--
+-->{{#if:{{{openonly|}}}|<div class="mw-collapsible-content" {{#if:{{{collapsed|}}}|style="display: none"}}><!--
+      -->|<div class="mw-collapsible-content" {{#if:{{{collapsed|}}}|style="display: none"}}>
+{{{1|Placeholder Content}}}<!--
+      --></div><!--
+   --></div><!--
+-->}}</includeonly><noinclude>{{Documentation|type=Design}}</noinclude>

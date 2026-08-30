@@ -1,0 +1,99 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{TemplateData header|editlinks=1|docpage=TemplateData header/doc}}
+<templatedata>
+{
+	"description": {
+		"cs": "Vloží stručné záhlaví pro sekci dat šablony.",
+		"en": "Inserts a brief header for the template data section.",
+		"fr": "Insère un court entête pour la section de données du modèle.",
+		"pt-br": "Insere um breve cabeçalho para a seção de dados da predefinição."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"cs": "Název šablony",
+				"en": "Template name",
+				"fr": "nom du modèle",
+				"pt-br": "Nome da predefinição"
+			},
+			"description": {
+				"cs": "Slouží k zobrazení jiného než výchozího názvu šablony, což je {{BASEPAGENAME}}.",
+				"en": "Used to display a name for the template other than the default.",
+				"fr": "Utilisé pour afficher un nom de modèle différent de celui par défaut.",
+				"pt-br": "Utilizado para exibir um nome para a predefinição além do padrão."
+			},
+			"type": "string",
+			"required": false,
+			"default": "{{BASEPAGENAME}}"
+		},
+		"noheader": {
+			"label": {
+				"cs": "Bez záhlaví",
+				"en": "No header",
+				"fr": "pas d'entête",
+				"pt-br": "Sem cabeçalho"
+			},
+			"description": {
+				"cs": "Přiřazení libovolné hodnoty tomuto parametru způsobí, že šablona vynechá první větu textu záhlaví.",
+				"en": "Assigning any value to this parameter will cause the template to omit the first sentence of the header text.",
+				"fr": "Permet au modèle de ne pas afficher la première ligne du texte d'entête si une valeur est déclarée ici.",
+				"pt-br": "A atribuição de qualquer valor a esse parâmetro fará com que a predefinição omita a primeira frase do texto do cabeçalho."
+			},
+			"type": "string",
+			"required": false,
+			"default": {
+				"fr": "aucune"
+			},
+			"example": {
+				"fr": "noheader=1"
+			}
+		},
+		"editlinks": {
+			"label": {
+				"cs": "Upravit odkazy?",
+				"en": "Edit links?",
+				"pt-br": "Ligações de edição"
+			},
+			"description": {
+				"cs": "Zda zobrazit odkazy na úpravy {{Navbar}} na stránkách, které přenášejí data TemplateData.",
+				"en": "Whether to show {{Navbar}} editlinks on pages that transclude the TemplateData.",
+				"fr": "Indique s'il faut afficher les liens d'édition {{Navbar}} sur les pages qui transcluent les TemplateData.",
+				"pt-br": "Se deverão ser exibidas ligações de edição da {{Navbar}} nas páginas que transcluirem o TemplateData."
+			},
+			"default": "0",
+			"autovalue": "1",
+			"type": "boolean"
+		},
+		"docpage": {
+			"label": {
+				"cs": "Stránka doc",
+				"en": "Doc page",
+				"pt-br": "Página de documentação"
+			},
+			"description": {
+				"cs": "Název aktuální stránky používaný pro odkazy na úpravy {{Navbar}}.",
+				"en": "The name of the current page, used for {{Navbar}} edit links.",
+				"fr": "Nom de la page courante, utilisé pour les liens d'édition {{Navbar}}.",
+				"pt-br": "O nome da página atual, utilizado para as ligações de edição da {{Navbar}}."
+			},
+			"default": "{{BASEPAGENAME}}/doc",
+			"autovalue": "{{subst:PAGENAME}}",
+			"suggested": true,
+			"type": "wiki-template-name"
+		}
+	},
+	"paramOrder": [
+		"1",
+		"noheader",
+		"editlinks",
+		"docpage"
+	]
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Template documentation{{#translation:}}]]
+[[Category:TemplateData documentation{{#translation:}}| ]]
+}}</includeonly>

@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Seiyuuwiki|v1=PAGENAME|v2=Link Text}}
+
+==Examples==
+{{T|Seiyuuwiki|p1=Murase Ayumu|p2=Mr. Murase|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "Murase Ayumu",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "Mr. Murase",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>

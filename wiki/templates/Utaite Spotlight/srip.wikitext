@@ -1,0 +1,27 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = srip love trigger thumbnail.png
+|caption = his cover of "Love Trigger"
+|officialjapname = 
+|officialromajiname = srip
+|NNDuserpage = 911676
+|mylist1 = 16130437
+|mylist1info = 
+|mylist2 = 
+|mylist2info = 
+|mylist3 = 
+|mylist3info = 
+|nicommu1 = co358651
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Shinzou Democracy]]
+|examplennd = sm16790363
+|exampleyt = nK_efXFEUxc
+|description = '''srip''' is an {{NNDict|Utaite}} known for his strong yet distinctively husky mid-ranged voice. Despite his voice having a noticeable, almost breathy roughness to it, it is often considered to be "sultry" and pleasant to listen to.
+
+Though the power and intensity of his singing style is well-suited to rock, he is also capable of covering ballads and slower songs in a softer, more calming way, as seen in covers like "[http://www.youtube.com/watch?v=kLP6m0fdYLw Super Nova]"{{nnd|sm17773241}}.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

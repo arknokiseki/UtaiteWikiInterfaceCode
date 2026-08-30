@@ -1,0 +1,9 @@
+: This is a assistant template.
+
+It switches depending on the namespace of the page, where it is added.
+
+Use it as followed:
+
+<code><nowiki>{{maintalkcat other|TEXT FOR Main NAMESPACE|TEXT FOR Talk NAMESPACE|TEXT FOR Category NAMESPACE|TEXT FOR Other NAMESPACES}}</nowiki></code>
+
+<includeonly>[[Category:General wiki templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

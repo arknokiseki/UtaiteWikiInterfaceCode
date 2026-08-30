@@ -1,0 +1,29 @@
+{{Documentation/Header}}
+This template is used to automatically show badges or awards on specific user pages depending on whose page it’s on.
+
+==Syntax==
+{{T|Badges}}
+
+==Examples==
+{{T|Badges|_Y_=1}}
+
+==List of Available Badges==
+{{Gallery/nolink
+|Badge-Bureaucrat.svg|Bureaucrat, [https://hypixel-skyblock.fandom.com/wiki/File:Badge-Bureaucrat.png source]
+|Badge-Administrator.svg|Administrator, [https://hypixel-skyblock.fandom.com/wiki/File:Badge-Administrator.png source]
+|Badge-ContentModerator.svg|Content Moderator, [https://hypixel-skyblock.fandom.com/wiki/File:Badge-ContentModerator.png source]
+|Badge-Bot.svg|Bot, [https://hypixel-skyblock.fandom.com/wiki/File:Badge-Bot.png source]
+|Upbbtest.svg|Page Builder Beta Tester
+|Editor.png|[[User:Frigidum1222|Frigidum1222]] Exclusive Badge<br/>Top 1 in Songlist Leaderboard 2024
+}}
+
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

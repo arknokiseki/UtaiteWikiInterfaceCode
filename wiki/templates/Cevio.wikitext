@@ -1,0 +1,8 @@
+<includeonly>{{Interwiki|Cevio|{{{1|}}}|{{{2|{{{1|}}}}}}|{{{4|}}}|server=fandom}}</includeonly><noinclude>
+==Template Documentation==
+{{Documentation}}
+
+{{Interwiki doc}}
+</noinclude>
+<noinclude>[[Category:Interwiki Templates]]
+</noinclude>

@@ -1,0 +1,88 @@
+{{Shortcut|Template:UWI}}{{Documentation/Header}}
+This template provides a simple, customizable inline wrapper for inserting Utaite Wiki's custom icons into your wikitext. It uses relative scaling (<code>em</code>), meaning the icons will naturally match the text size of their surrounding container unless overridden. It also supports dynamic animations and transformations.
+== Syntax ==
+{{T|UWI|v1=icon=icon_name|v2=class=utility_classes|v3=color=color|v4=size=custom_size|v5=animation-duration=time|v6=animation-iteration-count=number|v7=rotate-angle=angle}}
+
+== Examples ==
+
+=== Basic Sizing & Styling ===
+Standard usage (inherits text size):
+{{T|UWI|p1=icon=nicovideo|p2=color=#68ecfa|_Y_=1}}
+
+Using predefined sizing classes (<code>uw-2xs</code>, <code>uw-xs</code>, <code>uw-sm</code>, <code>uw-lg</code>, <code>uw-xl</code>, <code>uw-2xl</code>):
+{{T|UWI|p1=icon=nagareboshi|p2=class=uw-2xl|_Y_=1}}
+
+Using a custom inline size (overrides predefined classes):
+{{T|UWI|p1=icon=nagareboshi|p2=size=3rem|p3=color=#ffcc00|_Y_=1}}
+
+=== Animations ===
+Standard continuous spin (great for loading states):
+{{T|UWI|p1=icon=nicovideo|p2=class=uw-spin|p3=color=#999|_Y_=1}}
+
+A fast, pulsing heartbeat effect using custom duration:
+{{T|UWI|p1=icon=nagareboshi|p2=class=uw-beat|p3=color=#ff5555|p4=animation-duration=0.5s|_Y_=1}}
+
+A slow bounce that only loops exactly 3 times before stopping:
+{{T|UWI|p1=icon=nagareboshi|p2=class=uw-bounce|p3=animation-duration=2s|p4=animation-iteration-count=3|_Y_=1}}
+
+=== Transformations ===
+Flipping an icon horizontally:
+{{T|UWI|p1=icon=nicovideo|p2=class=uw-flip-horizontal|_Y_=1}}
+
+Applying a precise, custom rotation (e.g., tilting 45 degrees):
+{{T|UWI|p1=icon=nagareboshi|p2=class=uw-rotate-by|p3=rotate-angle=45deg|_Y_=1}}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Inserts a custom Utaite Wiki icon. Automatically scales to match surrounding text size. Supports FontAwesome-style utility classes for sizing, animation, and rotation.",
+	"params": {
+		"icon": {
+			"label": "Icon Name",
+			"description": "The specific Utaite Wiki icon name (e.g., nagareboshi, nicovideo).",
+			"type": "string",
+			"default": "nicovideo",
+			"required": true
+		},
+		"class": {
+			"label": "Utility Classes",
+			"description": "Space-separated classes for sizing (e.g., uw-xl, uw-sm), animation (e.g., uw-spin, uw-beat, uw-bounce), or static transforms (e.g., uw-flip-horizontal, uw-rotate-by).",
+			"type": "string",
+			"suggested": true
+		},
+		"color": {
+			"label": "Color",
+			"description": "CSS color value for the icon (hex, rgb, or CSS variable).",
+			"type": "string",
+			"default": "var(--primary-text-color)"
+		},
+		"size": {
+			"label": "Custom Size",
+			"description": "A hardcoded CSS font-size (e.g., 24px, 3em). This will override any sizing class provided.",
+			"type": "string"
+		},
+		"animation-duration": {
+			"label": "Animation Duration",
+			"description": "Overrides the default speed of an animation class (e.g., 0.5s, 2s, 500ms).",
+			"type": "string"
+		},
+		"animation-iteration-count": {
+			"label": "Animation Iterations",
+			"description": "How many times an animation should loop before stopping (e.g., 1, 3, infinite). Defaults to infinite.",
+			"type": "string"
+		},
+		"rotate-angle": {
+			"label": "Custom Rotation Angle",
+			"description": "The exact angle to rotate the icon. Only works when the 'uw-rotate-by' class is applied (e.g., 45deg, 0.5turn, -15deg).",
+			"type": "string"
+		},
+		"style": {
+			"label": "Additional Styles",
+			"description": "Any extra standard CSS rules to apply directly to the icon wrapper.",
+			"type": "string"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>

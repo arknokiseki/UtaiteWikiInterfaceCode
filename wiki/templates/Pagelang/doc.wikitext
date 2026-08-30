@@ -1,0 +1,120 @@
+{{Languages|Template:Pagelang/doc}}
+<includeonly>
+{{Languages|Template:Pagelang}}</includeonly>{{Documentation subpage}}
+<!--{{High Risk|Template:Pagelang}}-->
+{{Lua|Module:Template translation}}
+
+== Usage ==
+<templatedata>
+{
+	"description": {
+		"en": "This stuff template for check language of translated subpage (for translatable pages). Used for automate substitution localized values that will match the language of the current page. Also used to help defining text direction (with using with {{dir}}). It is designed to be called from other templates.",
+		"cs": "Tato šablona pro kontrolu jazyka přeložené podstránky (pro přeložitelné stránky). Používá se k automatickému nahrazování lokalizovaných hodnot, které budou odpovídat jazyku aktuální stránky. Také se používá k definování směru textu (s použitím s {{dir}}). Je navržen pro volání z jiných šablon.",
+		"tr": "Çevrilen alt sayfanın kontrol dili için malzeme şablonu (çevrilebilir sayfalar için). Geçerli sayfanın diliyle eşleşecek yerelleştirilmiş değiştirme değerlerini otomatikleştirmek için kullanılır. Ayrıca metin yönünü tanımlamaya yardımcı olmak için de kullanılır ({{dir}} ile birlikte). Diğer şablonlardan çağrılmak üzere tasarlanmıştır.",
+		"fr": "Ce modèle sert à contrôler la langue de la sous-page traduite (pour les pages traductibles). Il est utilisé pour la substitution automatique des valeurs localisées correspondant à la langue de la page actuelle. Il est également utilisé pour aider à définir la direction du texte (par l'utilisation de {{dir}}). Il est conçu pour être appelé à partir d'autres modèles.",
+		"pt-br": "Predefinição utilizada para verificar o idioma da subpágina de tradução (para páginas traduzíveis). Usada para automatizar a substituição de valores localizados (traduzidos) que corresponderão ao idioma da página em questão. Usada também para auxiliar na definição da direção do texto (se chamada com {{dir}}). Feita para ser chamada a partir de outras predefinições."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Page title",
+				"cs": "Název stránky",
+				"tr": "Sayfa başlığı",
+				"fr": "Titre de la page",
+				"pt-br": "Título da página"
+			},
+			"description": {
+				"en": "Page title to get language for. By default the title of the current page.",
+				"cs": "Název stránky pro získání jazyka. Ve výchozím nastavení název aktuální stránky.",
+				"tr": "Dili alınacak sayfa başlığı. Varsayılan olarak mevcut sayfanın başlığı.",
+				"fr": "Titre de la page dont on veut connaître la langue. ",
+				"pt-br": "Título da página de onde obter-se o idioma. Por padrão, é o título da página atual."
+			},
+			"type": "wiki-page-name",
+			"default": {
+				"fr": "valeur du titre de la page courante."
+			}
+		}
+	}
+}
+</templatedata>
+
+== Examples ==
+* <syntaxhighlight inline lang="wikitext">{{Pagelang}}</syntaxhighlight>
+{{Pagelang}}<br>
+* <syntaxhighlight inline lang="wikitext">{{Pagelang|Page name}}</syntaxhighlight>
+{{Pagelang|Page name}}<br>
+* <syntaxhighlight inline lang="wikitext">{{Pagelang|Page name/ja}}</syntaxhighlight>
+{{Pagelang|Page name/ja}}
+
+Examples of common use in translated pages or templates:
+
+<syntaxhighlight lang="wikitext">
+<!--
+
+Display the language name of the given the language code in parameter 1, in the same language as the current translated page with a tooltip showing the language name in the user's preferred language.
+
+--><span lang="{{#bcp47:{{int:lang}}}}" title="{{#language:{{1}}|{{int:lang}}}} ({{{1}}})"><!--
+--><span lang="{{#bcp47:{{pagelang}}}}" dir="{{#dir:{{pagelang}}}}" class="autonym"><!--
+-->{{#language:{{1}}|{{pagelang}}<!--
+--></span></span>
+
+<!--
+
+Align the floatting image to the correct side, depending on the language of the current translated page
+
+-->[[File:Example|{{dir|{{pagelang}}|left|right}}|30x30px]]
+
+</syntaxhighlight>
+
+== Technical note ==
+{{Notice/outdated|scope=in this section}}
+When a subpage page contains any (single or double) quotes or ampersands, it is not a valid language code; <code>PAGENAME</code> and <code>SUBPAGENAME</code> normally HTML-encodes these characters in their return value, so they are safe to use as input of <code>#language</code>. But <code>#titleparts</code> restores these quotes or ampersands by HTML-decoding them.
+
+But then <syntaxhighlight inline lang="wikitext">{{#language:}}</syntaxhighlight> will produce a fatal server error when it is used with "language codes" with single quotes.
+
+; Proof
+
+This still works:
+<syntaxhighlight lang="wikitext">
+  {{#language:fr|{{#titleparts:There's a fatal bug in MediaWiki|1}}}}
+</syntaxhighlight>
+
+This does not work either:
+<syntaxhighlight lang="wikitext">
+  {{#language:fr|{{PAGENAME:There's a fatal bug in MediaWiki}}}}
+</syntaxhighlight>
+
+Nor does this:
+<syntaxhighlight lang="wikitext">
+  {{#language:fr|There's a fatal bug in MediaWiki}}
+</syntaxhighlight>
+<span class="error">This is a critical bug of the <syntaxhighlight inline lang="wikitext">{{#language:}}</syntaxhighlight> parser function, and apparently a severe security issues that could be caused by some clever insertion of code in PHP after the quote.</span>
+
+This bug only occurs in the second parameter of <syntaxhighlight inline lang="wikitext">{{#language:}}</syntaxhighlight> (the target language into which to give the name of the language specified by the code in the first parameter). Only the first parameter is checked for validity, but not the second one. Here, where <syntaxhighlight inline lang="wikitext">{{#language:}}</syntaxhighlight> cannot find the name of the language, in any target language, it should return the native language name, as in:
+
+<syntaxhighlight lang="wikitext">
+  {{#language:fr|invalid language}}
+</syntaxhighlight>
+:  {{#language:fr|invalid language}}
+
+; Work-around used in this template
+
+To avoid this severe bug, we want to detect quotes (or ampersands) in subpage names, as they are invalid anyway in any language code, in order to return an empty string and not the subpage name: such subpage name cannot be a language code anyway.
+
+One way to detect subpages that cannot be safe language codes is to check if their value filtered by <syntaxhighlight inline lang="wikitext">{{#titleparts:}}</syntaxhighlight> is equal to their value filtered by <syntaxhighlight inline lang="wikitext">{{PAGENAME}}</syntaxhighlight>: if they aren't equal that's because they contained "ampersands", or quotes.
+
+; Why we use <syntaxhighlight inline lang="wikitext">{{#titleparts:}}</syntaxhighlight> and not just <syntaxhighlight inline lang="wikitext">{{SUBPAGENAME}}</syntaxhighlight>?
+
+<syntaxhighlight inline lang="wikitext">{{#titleparts:}}</syntaxhighlight> is used in this template instead of using <syntaxhighlight inline lang="wikitext">{{SUBPAGENAME}}</syntaxhighlight>, but using <code>SUBPAGENAME</code> would not avoid the bug either, because it could as well return the full page name containing the quotes (<syntaxhighlight inline lang="wikitext">{{SUBPAGENAME}}</syntaxhighlight> only works in namespaces where subpages have been activated, so it does not work in the main namespace to see if it has been translated using a language code suffix).
+
+== See also ==
+* {{ll|Manual:PAGENAMEE encoding}}
+* {{tl|TNT}}
+* {{tl|LL}}
+* {{tl|BCP47}}
+* {{tl|dir}}
+<includeonly>
+[[Category:Internationalization templates{{#translation:}}]]
+</includeonly>

@@ -1,0 +1,7 @@
+<noinclude></noinclude><!--
+-->[[File:{{{icon|Yellowpin.svg}}}|{{{size|18}}}px|alt=To do|link=]]''' {{{1|<!--T:1--> To do}}}'''<!--template:to do--><!--
+--><noinclude>
+{{documentation}}
+
+[[Category:Utility templates|{{PAGENAME}}]]
+</noinclude>

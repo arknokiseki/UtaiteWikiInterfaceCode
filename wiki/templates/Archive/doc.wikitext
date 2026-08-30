@@ -1,0 +1,21 @@
+{{Documentation/Header}}
+{{Documentation subpage}}
+
+<templatedata>
+{
+	"description": {
+		"en": "This template is to be placed at the top of archive pages. It adds a notice on archival, and disables section editing and the new section link to minimize accidental edits. Do not subst this template."
+	},
+	"params": {
+		"1": {
+			"label": {
+				"en": "current talk page"
+			},
+			"description": {
+				"en": "The title of the current talk page, in case it’s not the base page of the archive (e.g. the base page of Talk:Example/Archive would be Talk:Example). Usually not needed, but may be useful in case of renames/moves."
+			},
+			"type": "wiki-page-name"
+		}
+	}
+}
+</templatedata>

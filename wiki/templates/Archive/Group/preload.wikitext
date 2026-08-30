@@ -1,0 +1,267 @@
+<noinclude>{{Archived}}
+
+<pre>
+[[File:Template doc.png|center|600px]]
+From left to right: [[utaitename1]], [[utaitename2]] and [[utaitename3]]
+
+'''romajiname''' ('''kanjiname''') ...
+
+[Description/Setting.....]
+
+==Links==
+* []
+
+==List of Songs==
+{{Playlist|content = 
+# }}
+
+==Discography==
+{{Album|type = 
+|albumtitle      = 
+|image           = 
+|datereleased    = 
+|crossfadeyt     = 
+|crossfadennd    =  
+|albumartist     = 
+|shops           = 
+
+|track1title     = 
+|track1info      = 
+|track1utaite    = 
+|track1lyricist  = 
+|track1composer  = 
+|track1arranger  = 
+
+|track2title     = 
+|track2info      = 
+|track2utaite    = 
+|track2lyricist  = 
+|track2composer  = 
+|track2arranger  = 
+
+|track3title     = 
+|track3info      = 
+|track3utaite    = 
+|track3lyricist  = 
+|track3composer  = 
+|track3arranger  = 
+
+|track4title     = 
+|track4info      = 
+|track4utaite    = 
+|track4lyricist  = 
+|track4composer  = 
+|track4arranger  = 
+
+|track5title     = 
+|track5info      = 
+|track5utaite    = 
+|track5lyricist  = 
+|track5composer  = 
+|track5arranger  = 
+
+|track6title     = 
+|track6info      = 
+|track6utaite    = 
+|track6lyricist  = 
+|track6composer  = 
+|track6arranger  = 
+
+|track7title     = 
+|track7info      = 
+|track7utaite    = 
+|track7lyricist  = 
+|track7composer  = 
+|track7arranger  = 
+
+|track8title     = 
+|track8info      = 
+|track8utaite    = 
+|track8lyricist  = 
+|track8composer  = 
+|track8arranger  = 
+
+|track9title     = 
+|track9info      = 
+|track9utaite    = 
+|track9lyricist  = 
+|track9composer  = 
+|track9arranger  = 
+
+|track10title    = 
+|track10info     = 
+|track10utaite   = 
+|track10lyricist = 
+|track10composer = 
+|track10arranger = 
+
+|track11title    = 
+|track11info     = 
+|track11utaite   = 
+|track11lyricist = 
+|track11composer = 
+|track11arranger = 
+
+|track12title    = 
+|track12info     = 
+|track12utaite   = 
+|track12lyricist = 
+|track12composer = 
+|track12arranger = 
+
+|track13title    = 
+|track13info     = 
+|track13utaite   = 
+|track13lyricist = 
+|track13composer = 
+|track13arranger = 
+
+|track14title    = 
+|track14info     = 
+|track14utaite   = 
+|track14lyricist = 
+|track14composer = 
+|track14arranger = 
+
+|track15title    = 
+|track15info     = 
+|track15utaite   = 
+|track15lyricist = 
+|track15composer = 
+|track15arranger = 
+}}
+----
+{{Category|NND Groups}}/{{Category|YT Groups}}
+</pre>
+
+<noinclude><includeonly>[[File:Template doc.png|center|600px]]
+From left to right: [[utaitename1]], [[utaitename2]] and [[utaitename3]]
+
+'''romajiname''' ('''kanjiname''') ...
+
+[Description/Setting.....]
+
+==Links==
+* []
+
+==List of Songs==
+{{Playlist|content = 
+# }}
+
+==Discography==
+{{Album|type = 
+|albumtitle      = 
+|image           = 
+|datereleased    = 
+|crossfadeyt     = 
+|crossfadennd    =  
+|albumartist     = 
+|shops           = 
+
+|track1title     = 
+|track1info      = 
+|track1utaite    = 
+|track1lyricist  = 
+|track1composer  = 
+|track1arranger  = 
+
+|track2title     = 
+|track2info      = 
+|track2utaite    = 
+|track2lyricist  = 
+|track2composer  = 
+|track2arranger  = 
+
+|track3title     = 
+|track3info      = 
+|track3utaite    = 
+|track3lyricist  = 
+|track3composer  = 
+|track3arranger  = 
+
+|track4title     = 
+|track4info      = 
+|track4utaite    = 
+|track4lyricist  = 
+|track4composer  = 
+|track4arranger  = 
+
+|track5title     = 
+|track5info      = 
+|track5utaite    = 
+|track5lyricist  = 
+|track5composer  = 
+|track5arranger  = 
+
+|track6title     = 
+|track6info      = 
+|track6utaite    = 
+|track6lyricist  = 
+|track6composer  = 
+|track6arranger  = 
+
+|track7title     = 
+|track7info      = 
+|track7utaite    = 
+|track7lyricist  = 
+|track7composer  = 
+|track7arranger  = 
+
+|track8title     = 
+|track8info      = 
+|track8utaite    = 
+|track8lyricist  = 
+|track8composer  = 
+|track8arranger  = 
+
+|track9title     = 
+|track9info      = 
+|track9utaite    = 
+|track9lyricist  = 
+|track9composer  = 
+|track9arranger  = 
+
+|track10title    = 
+|track10info     = 
+|track10utaite   = 
+|track10lyricist = 
+|track10composer = 
+|track10arranger = 
+
+|track11title    = 
+|track11info     = 
+|track11utaite   = 
+|track11lyricist = 
+|track11composer = 
+|track11arranger = 
+
+|track12title    = 
+|track12info     = 
+|track12utaite   = 
+|track12lyricist = 
+|track12composer = 
+|track12arranger = 
+
+|track13title    = 
+|track13info     = 
+|track13utaite   = 
+|track13lyricist = 
+|track13composer = 
+|track13arranger = 
+
+|track14title    = 
+|track14info     = 
+|track14utaite   = 
+|track14lyricist = 
+|track14composer = 
+|track14arranger = 
+
+|track15title    = 
+|track15info     = 
+|track15utaite   = 
+|track15lyricist = 
+|track15composer = 
+|track15arranger = 
+}}
+----
+{{Category|NND Groups}}/{{Category|YT Groups}}</includeonly>

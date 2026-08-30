@@ -1,0 +1,104 @@
+{{Documentation subpage}}
+
+Given some wikitext, this template outputs both a text version with syntax highlighting and the output from the parser.
+
+It avoid the duplication frequently seen in template documentation, where wikitext is written twice.
+
+== Usage ==
+
+===Simple usage===
+
+<syntaxhighlight lang=wikitext>
+{{T/Example|<nowiki>
+{{Done}} and {{not done}}
+</nowiki>}}
+</syntaxhighlight>
+
+The code above will produce the following:
+
+{{T/Example|<nowiki>
+{{Done}} and {{not done}}
+</nowiki>}}
+
+=== A more complicated template ===
+The example below shows an infobox along with some custom HTML markup to prevent it from floating on the right of the page.
+<syntaxhighlight lang="wikitext" copy>
+{{T/Example|<nowiki>
+<div style="max-width: fit-content">
+{{LuaInfobox
+|title=Li Shengwu
+|Alma Mater :: University of Oxford<br/>Stanford University
+|-header :: Scientific career
+|Field :: Economics
+|Institution :: Harvard University
+}}
+</div>
+<div style="clear:both"/>
+</nowiki>}}
+</syntaxhighlight>
+
+The code above is rendered as follows:
+
+{{T/Example|<nowiki>
+<div style="max-width: fit-content">
+{{LuaInfobox
+|title=Li Shengwu
+|Alma Mater :: University of Oxford<br/>Stanford University
+|-header :: Scientific career
+|Field :: Economics
+|Institution :: Harvard University
+}}
+</div>
+<div style="clear:both"/>
+</nowiki>}}
+
+=== With the nowiki tag ===
+
+If a complicated example has a <code><nowiki>&lt;/nowiki></nowiki></code> tag in it, we can escape it using <code><nowiki>&lt;//nowiki></nowiki></code>.
+
+<syntaxhighlight lang=wikitext>
+{{T/Example|1=<nowiki>{{Repeat
+
+| pattern = <nowiki>
+*{{TNAME}} (see {{tl|TNAME}})
+<//nowiki>
+
+| arg1 = TNAME
+
+| Done
+| Not done
+| Comment
+
+}}
+</nowiki>}}
+</syntaxhighlight>
+
+Note the double slash inside the closing <code>nowiki</code> tag. The code above results in the following wikitext/result pair.
+
+{{T/Example|1=<nowiki>{{Repeat
+
+| pattern = <nowiki>
+*{{TNAME}} (see {{tl|TNAME}})
+<//nowiki>
+
+| arg1 = TNAME
+
+| Done
+| Not done
+| Comment
+
+}}
+</nowiki>}}
+
+== Limitations ==
+{{tl|T/Example}} cannot be used to show an example of using itself: this causes a template loop.
+
+Some special characters may get escaped by the <code>nowiki</code> tag. The Lua module currently unescapes <code><</code> and <code>></code>. Please reach out to the author of this template if you notice other characters that need to be unescaped.
+
+== See also ==
+Below are some templates that have functionalities similar to this template:
+* [[w:Template:Demo|Template:Demo on Wikipedia]]
+* [https://moegirl.icu/Module:Example Module:Example on moegirlpedia]
+<includeonly>
+[[Category:Templates]]
+</includeonly>

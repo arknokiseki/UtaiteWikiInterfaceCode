@@ -1,0 +1,34 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = mainann NND.png
+|caption = Nico Nico Douga
+|officialjapname = まいなん
+|officialromajiname = mainann
+|YTusername = mainann1026
+|NNDuserpage = 12779144
+|mylist1 = 23920740
+|mylist1info = solo
+|mylist2 = 32514850
+|mylist2info = collabs
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co1067227
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Yurufuwa Jukai Girl]]
+|examplennd = sm18021149
+|exampleyt = WifCBftTbSA
+|description = '''mainann''' ('''まいなん''') is a young {{NNDict|Utaite}} at the age of only 18.<sup>[http://www.nicovideo.jp/user/12779144]</sup>
+
+She is thought to have a nice and soothing voice, and it is noted to fit well to acoustic guitar arranges. The remarkable thing about that is that she plays the guitar herself, accompanying her singing. On those songs her voice would sound somewhat childish, breathy and cute. Her most popular cover is her sing and play cover of "[[Irony (song)|Irony]]"{{nnd|sm19207182}}.
+
+Surprisingly, she equally well covers more powerful songs such as "[[Shotgun・Lovers]]"{{nnd|sm15285257}} with ease. Making her voice stronger and sounding more mature, she can pull off a rock song equally well.
+
+mainann also uploads songs on [http://tmbox.net/user/mainann1026/sound TmBox].
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

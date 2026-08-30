@@ -1,0 +1,26 @@
+{{NOUT
+<!--?|pagelength=-->
+<!--!use pagelength field only if necessary. Default=25-->
+|entries={{NUTE
+|image=Template doc.png
+|singer=utaitename
+|producer=<!--?example: -->
+<!--?* '''Vocal/Mix:''' [https://www.nicovideo.jp/user/xxxxxxxx producername1], [[producername2]]-->
+<!--?* '''Encode:''' [https://www.nicovideo.jp/user/xxxxxxxx producername3], etc-->
+<!--?-->
+|NND=<!--?example: smxxxxxxx-->
+|YT=<!--?ytvideoid-->
+|description=
+}}
+{{NUTE
+|image=Template doc.png
+|singer=utaitename
+|producer=<!--?example: -->
+<!--?* '''Vocal/Mix:''' [https://www.nicovideo.jp/user/xxxxxxxx producername1], [[producername2]]-->
+<!--?* '''Encode:''' [https://www.nicovideo.jp/user/xxxxxxxx producername3], etc-->
+<!--?-->
+|NND=<!--?example: smxxxxxxx-->
+|YT=<!--?ytvideoid-->
+|description=
+}}
+}}

@@ -1,0 +1,8 @@
+<!--{{WIP|template}}-->
+<pre>{{Wp|Mrs. Green Apple}}</pre>
+<pre>{{Wp|Giga_(musician)|Giga-P}}</pre>
+
+...results in:<br />
+<ol><li>{{Wp|Mrs. Green Apple}}</li>
+<li>{{Wp|Giga_(musician)|Giga-P}}</li>
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

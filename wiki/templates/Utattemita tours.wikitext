@@ -1,0 +1,176 @@
+{{anchor|{{{nameeng}}}}}
+<div style="float:left; clear:left; margin:auto"><infobox theme="anikora">
+	<group row-items="1">
+	<header><center>{{#if:{{{namejap|}}}|{{{namejap}}}<br>}}{{{nameeng}}}</center></header>
+	<data source="openingnnd"><format><center>http://tn-skr1.smilevideo.jp/smile?i={{#sub:{{{openingnnd}}}|2|15}}&dummy.jpg</center></format></data>
+	<data source="endingnnd"><format><center>http://tn-skr1.smilevideo.jp/smile?i={{#sub:{{{endingnnd}}}|2|15}}&dummy.jpg</center></format></data>
+	</group>
+	<group row-items="1">
+		<data source="date"><format><center>{{{date}}}</center></format></data>
+	</group>
+	<group row-items="2">
+		<header><center>Opening/Ending</center></header>
+		<data source=""><default><center>{{#if: {{{openingyt|}}} | [[File:yt.png{{!}}link{{=}}http://www.youtube.com/watch?v{{=}}{{{openingyt}}}]]|[[File:NoYt.png|link=]]}}{{#if: {{{openingnnd|}}} | {{nnd|{{{openingnnd}}}}}|[[File:NoNv.png|link=]]}}</center></default></data>
+		<data source=""><default><center>{{#if: {{{endingyt|}}} | [[File:yt.png{{!}}link{{=}}http://www.youtube.com/watch?v{{=}}{{{endingyt}}}]]|[[File:NoYt.png|link=]]}}{{#if: {{{endingnnd|}}} | {{nnd|{{{endingnnd}}}}}|[[File:NoNv.png|link=]]}}</center></default></data>
+		<data source="mylist"><format><center>[http://www.nicovideo.jp/mylist/{{{mylist}}} mylist/{{{mylist}}}]</center></format></data>
+	</group>
+</infobox></div>
+<div style="float:left; clear:right; margin:auto"><infobox theme="tracklist">
+	<group collapse="open" row-items="4">
+		<header>Tracklist</header>
+		<data source="" span="2"><default><b>Title</b></default></data>
+		<data source=""><default><b>Original</b></default></data>
+		<data source=""><default><b>Utaite</b></default></data>
+		<data source="track1title" span="2"><format>1. "{{{track1title}}}"{{#if:{{{track1nnd|}}}|&nbsp;{{nnd|{{{track1nnd}}}}}}}{{#if:{{{track1info|}}}|&nbsp;({{{track1info}}})}}</format></data>
+		<data source="track1original"></data>
+		<data source="track1title"><format>{{#if:{{{track1utaite|}}}|{{{track1utaite}}}|&nbsp;}}</format></data>
+		<data source="track2title" span="2"><format>2. "{{{track2title}}}"{{#if:{{{track2nnd|}}}|&nbsp;{{nnd|{{{track2nnd}}}}}}}{{#if:{{{track2info|}}}|&nbsp;({{{track2info}}})}}</format></data>
+		<data source="track2original"></data>
+		<data source="track2title"><format>{{#if:{{{track2utaite|}}}|{{{track2utaite}}}|&nbsp;}}</format></data>
+		<data source="track3title" span="2"><format>3. "{{{track3title}}}"{{#if:{{{track3nnd|}}}|&nbsp;{{nnd|{{{track3nnd}}}}}}}{{#if:{{{track3info|}}}|&nbsp;({{{track3info}}})}}</format></data>
+		<data source="track3original"></data>
+		<data source="track3title"><format>{{#if:{{{track3utaite|}}}|{{{track3utaite}}}|&nbsp;}}</format></data>
+		<data source="track4title" span="2"><format>4. "{{{track4title}}}"{{#if:{{{track4nnd|}}}|&nbsp;{{nnd|{{{track4nnd}}}}}}}{{#if:{{{track4info|}}}|&nbsp;({{{track4info}}})}}</format></data>
+		<data source="track4original"></data>
+		<data source="track4title"><format>{{#if:{{{track4utaite|}}}|{{{track4utaite}}}|&nbsp;}}</format></data>
+		<data source="track5title" span="2"><format>5. "{{{track5title}}}"{{#if:{{{track5nnd|}}}|&nbsp;{{nnd|{{{track5nnd}}}}}}}{{#if:{{{track5info|}}}|&nbsp;({{{track5info}}})}}</format></data>
+		<data source="track5original"></data>
+		<data source="track5title"><format>{{#if:{{{track5utaite|}}}|{{{track5utaite}}}|&nbsp;}}</format></data>
+		<data source="track6title" span="2"><format>6. "{{{track6title}}}"{{#if:{{{track6nnd|}}}|&nbsp;{{nnd|{{{track6nnd}}}}}}}{{#if:{{{track6info|}}}|&nbsp;({{{track6info}}})}}</format></data>
+		<data source="track6original"></data>
+		<data source="track6title"><format>{{#if:{{{track6utaite|}}}|{{{track6utaite}}}|&nbsp;}}</format></data>
+		<data source="track7title" span="2"><format>7. "{{{track7title}}}"{{#if:{{{track7nnd|}}}|&nbsp;{{nnd|{{{track7nnd}}}}}}}{{#if:{{{track7info|}}}|&nbsp;({{{track7info}}})}}</format></data>
+		<data source="track7original"></data>
+		<data source="track7title"><format>{{#if:{{{track7utaite|}}}|{{{track7utaite}}}|&nbsp;}}</format></data>
+		<data source="track8title" span="2"><format>8. "{{{track8title}}}"{{#if:{{{track8nnd|}}}|&nbsp;{{nnd|{{{track8nnd}}}}}}}{{#if:{{{track8info|}}}|&nbsp;({{{track8info}}})}}</format></data>
+		<data source="track8original"></data>
+		<data source="track8title"><format>{{#if:{{{track8utaite|}}}|{{{track8utaite}}}|&nbsp;}}</format></data>
+		<data source="track9title" span="2"><format>9. "{{{track9title}}}"{{#if:{{{track9nnd|}}}|&nbsp;{{nnd|{{{track9nnd}}}}}}}{{#if:{{{track9info|}}}|&nbsp;({{{track9info}}})}}</format></data>
+		<data source="track9original"></data>
+		<data source="track9title"><format>{{#if:{{{track9utaite|}}}|{{{track9utaite}}}|&nbsp;}}</format></data>
+		<data source="track10title" span="2"><format>10. "{{{track10title}}}"{{#if:{{{track10nnd|}}}|&nbsp;{{nnd|{{{track10nnd}}}}}}}{{#if:{{{track10info|}}}|&nbsp;({{{track10info}}})}}</format></data>
+		<data source="track10original"></data>
+		<data source="track10title"><format>{{#if:{{{track10utaite|}}}|{{{track10utaite}}}|&nbsp;}}</format></data>
+		<data source="track11title" span="2"><format>11. "{{{track11title}}}"{{#if:{{{track11nnd|}}}|&nbsp;{{nnd|{{{track11nnd}}}}}}}{{#if:{{{track11info|}}}|&nbsp;({{{track11info}}})}}</format></data>
+		<data source="track11original"></data>
+		<data source="track11title"><format>{{#if:{{{track11utaite|}}}|{{{track11utaite}}}|&nbsp;}}</format></data>
+		<data source="track12title" span="2"><format>12. "{{{track12title}}}"{{#if:{{{track12nnd|}}}|&nbsp;{{nnd|{{{track12nnd}}}}}}}{{#if:{{{track12info|}}}|&nbsp;({{{track12info}}})}}</format></data>
+		<data source="track12original"></data>
+		<data source="track12title"><format>{{#if:{{{track12utaite|}}}|{{{track12utaite}}}|&nbsp;}}</format></data>
+		<data source="track13title" span="2"><format>13. "{{{track13title}}}"{{#if:{{{track13nnd|}}}|&nbsp;{{nnd|{{{track13nnd}}}}}}}{{#if:{{{track13info|}}}|&nbsp;({{{track13info}}})}}</format></data>
+		<data source="track13original"></data>
+		<data source="track13title"><format>{{#if:{{{track13utaite|}}}|{{{track13utaite}}}|&nbsp;}}</format></data>
+		<data source="track14title" span="2"><format>14. "{{{track14title}}}"{{#if:{{{track14nnd|}}}|&nbsp;{{nnd|{{{track14nnd}}}}}}}{{#if:{{{track14info|}}}|&nbsp;({{{track14info}}})}}</format></data>
+		<data source="track14original"></data>
+		<data source="track14title"><format>{{#if:{{{track14utaite|}}}|{{{track14utaite}}}|&nbsp;}}</format></data>
+		<data source="track15title" span="2"><format>15. "{{{track15title}}}"{{#if:{{{track15nnd|}}}|&nbsp;{{nnd|{{{track15nnd}}}}}}}{{#if:{{{track15info|}}}|&nbsp;({{{track15info}}})}}</format></data>
+		<data source="track15original"></data>
+		<data source="track15title"><format>{{#if:{{{track15utaite|}}}|{{{track15utaite}}}|&nbsp;}}</format></data>
+		<data source="track16title" span="2"><format>16. "{{{track16title}}}"{{#if:{{{track16nnd|}}}|&nbsp;{{nnd|{{{track16nnd}}}}}}}{{#if:{{{track16info|}}}|&nbsp;({{{track16info}}})}}</format></data>
+		<data source="track16original"></data>
+		<data source="track16title"><format>{{#if:{{{track16utaite|}}}|{{{track16utaite}}}|&nbsp;}}</format></data>
+		<data source="track17title" span="2"><format>17. "{{{track17title}}}"{{#if:{{{track17nnd|}}}|&nbsp;{{nnd|{{{track17nnd}}}}}}}{{#if:{{{track17info|}}}|&nbsp;({{{track17info}}})}}</format></data>
+		<data source="track17original"></data>
+		<data source="track17title"><format>{{#if:{{{track17utaite|}}}|{{{track17utaite}}}|&nbsp;}}</format></data>
+		<data source="track18title" span="2"><format>18. "{{{track18title}}}"{{#if:{{{track18nnd|}}}|&nbsp;{{nnd|{{{track18nnd}}}}}}}{{#if:{{{track18info|}}}|&nbsp;({{{track18info}}})}}</format></data>
+		<data source="track18original"></data>
+		<data source="track18title"><format>{{#if:{{{track18utaite|}}}|{{{track18utaite}}}|&nbsp;}}</format></data>
+		<data source="track19title" span="2"><format>19. "{{{track19title}}}"{{#if:{{{track19nnd|}}}|&nbsp;{{nnd|{{{track19nnd}}}}}}}{{#if:{{{track19info|}}}|&nbsp;({{{track19info}}})}}</format></data>
+		<data source="track19original"></data>
+		<data source="track19title"><format>{{#if:{{{track19utaite|}}}|{{{track19utaite}}}|&nbsp;}}</format></data>
+		<data source="track20title" span="2"><format>20. "{{{track20title}}}"{{#if:{{{track20nnd|}}}|&nbsp;{{nnd|{{{track20nnd}}}}}}}{{#if:{{{track20info|}}}|&nbsp;({{{track20info}}})}}</format></data>
+		<data source="track20original"></data>
+		<data source="track20title"><format>{{#if:{{{track20utaite|}}}|{{{track20utaite}}}|&nbsp;}}</format></data>
+		<data source="track21title" span="2"><format>21. "{{{track21title}}}"{{#if:{{{track21nnd|}}}|&nbsp;{{nnd|{{{track21nnd}}}}}}}{{#if:{{{track21info|}}}|&nbsp;({{{track21info}}})}}</format></data>
+		<data source="track21original"></data>
+		<data source="track21title"><format>{{#if:{{{track21utaite|}}}|{{{track21utaite}}}|&nbsp;}}</format></data>
+		<data source="track22title" span="2"><format>22. "{{{track22title}}}"{{#if:{{{track22nnd|}}}|&nbsp;{{nnd|{{{track22nnd}}}}}}}{{#if:{{{track22info|}}}|&nbsp;({{{track22info}}})}}</format></data>
+		<data source="track22original"></data>
+		<data source="track22title"><format>{{#if:{{{track22utaite|}}}|{{{track22utaite}}}|&nbsp;}}</format></data>
+		<data source="track23title" span="2"><format>23. "{{{track23title}}}"{{#if:{{{track23nnd|}}}|&nbsp;{{nnd|{{{track23nnd}}}}}}}{{#if:{{{track23info|}}}|&nbsp;({{{track23info}}})}}</format></data>
+		<data source="track23original"></data>
+		<data source="track23title"><format>{{#if:{{{track23utaite|}}}|{{{track23utaite}}}|&nbsp;}}</format></data>
+		<data source="track24title" span="2"><format>24. "{{{track24title}}}"{{#if:{{{track24nnd|}}}|&nbsp;{{nnd|{{{track24nnd}}}}}}}{{#if:{{{track24info|}}}|&nbsp;({{{track24info}}})}}</format></data>
+		<data source="track24original"></data>
+		<data source="track24title"><format>{{#if:{{{track24utaite|}}}|{{{track24utaite}}}|&nbsp;}}</format></data>
+		<data source="track25title" span="2"><format>25. "{{{track25title}}}"{{#if:{{{track25nnd|}}}|&nbsp;{{nnd|{{{track25nnd}}}}}}}{{#if:{{{track25info|}}}|&nbsp;({{{track25info}}})}}</format></data>
+		<data source="track25original"></data>
+		<data source="track25title"><format>{{#if:{{{track25utaite|}}}|{{{track25utaite}}}|&nbsp;}}</format></data>
+		<data source="track26title" span="2"><format>26. "{{{track26title}}}"{{#if:{{{track26nnd|}}}|&nbsp;{{nnd|{{{track26nnd}}}}}}}{{#if:{{{track26info|}}}|&nbsp;({{{track26info}}})}}</format></data>
+		<data source="track26original"></data>
+		<data source="track26title"><format>{{#if:{{{track26utaite|}}}|{{{track26utaite}}}|&nbsp;}}</format></data>
+		<data source="track27title" span="2"><format>27. "{{{track27title}}}"{{#if:{{{track27nnd|}}}|&nbsp;{{nnd|{{{track27nnd}}}}}}}{{#if:{{{track27info|}}}|&nbsp;({{{track27info}}})}}</format></data>
+		<data source="track27original"></data>
+		<data source="track27title"><format>{{#if:{{{track27utaite|}}}|{{{track27utaite}}}|&nbsp;}}</format></data>
+		<data source="track28title" span="2"><format>28. "{{{track28title}}}"{{#if:{{{track28nnd|}}}|&nbsp;{{nnd|{{{track28nnd}}}}}}}{{#if:{{{track28info|}}}|&nbsp;({{{track28info}}})}}</format></data>
+		<data source="track28original"></data>
+		<data source="track28title"><format>{{#if:{{{track28utaite|}}}|{{{track28utaite}}}|&nbsp;}}</format></data>
+		<data source="track29title" span="2"><format>29. "{{{track29title}}}"{{#if:{{{track29nnd|}}}|&nbsp;{{nnd|{{{track29nnd}}}}}}}{{#if:{{{track29info|}}}|&nbsp;({{{track29info}}})}}</format></data>
+		<data source="track29original"></data>
+		<data source="track29title"><format>{{#if:{{{track29utaite|}}}|{{{track29utaite}}}|&nbsp;}}</format></data>
+		<data source="track30title" span="2"><format>30. "{{{track30title}}}"{{#if:{{{track30nnd|}}}|&nbsp;{{nnd|{{{track30nnd}}}}}}}{{#if:{{{track30info|}}}|&nbsp;({{{track30info}}})}}</format></data>
+		<data source="track30original"></data>
+		<data source="track30title"><format>{{#if:{{{track30utaite|}}}|{{{track30utaite}}}|&nbsp;}}</format></data>
+		<data source="track31title" span="2"><format>31. "{{{track31title}}}"{{#if:{{{track31nnd|}}}|&nbsp;{{nnd|{{{track31nnd}}}}}}}{{#if:{{{track31info|}}}|&nbsp;({{{track31info}}})}}</format></data>
+		<data source="track31original"></data>
+		<data source="track31title"><format>{{#if:{{{track31utaite|}}}|{{{track31utaite}}}|&nbsp;}}</format></data>
+		<data source="track32title" span="2"><format>32. "{{{track32title}}}"{{#if:{{{track32nnd|}}}|&nbsp;{{nnd|{{{track32nnd}}}}}}}{{#if:{{{track32info|}}}|&nbsp;({{{track32info}}})}}</format></data>
+		<data source="track32original"></data>
+		<data source="track32title"><format>{{#if:{{{track32utaite|}}}|{{{track32utaite}}}|&nbsp;}}</format></data>
+		<data source="track33title" span="2"><format>33. "{{{track33title}}}"{{#if:{{{track33nnd|}}}|&nbsp;{{nnd|{{{track33nnd}}}}}}}{{#if:{{{track33info|}}}|&nbsp;({{{track33info}}})}}</format></data>
+		<data source="track33original"></data>
+		<data source="track33title"><format>{{#if:{{{track33utaite|}}}|{{{track33utaite}}}|&nbsp;}}</format></data>
+		<data source="track34title" span="2"><format>34. "{{{track34title}}}"{{#if:{{{track34nnd|}}}|&nbsp;{{nnd|{{{track34nnd}}}}}}}{{#if:{{{track34info|}}}|&nbsp;({{{track34info}}})}}</format></data>
+		<data source="track34original"></data>
+		<data source="track34title"><format>{{#if:{{{track34utaite|}}}|{{{track34utaite}}}|&nbsp;}}</format></data>
+		<data source="track35title" span="2"><format>35. "{{{track35title}}}"{{#if:{{{track35nnd|}}}|&nbsp;{{nnd|{{{track35nnd}}}}}}}{{#if:{{{track35info|}}}|&nbsp;({{{track35info}}})}}</format></data>
+		<data source="track35original"></data>
+		<data source="track35title"><format>{{#if:{{{track35utaite|}}}|{{{track35utaite}}}|&nbsp;}}</format></data>
+		<data source="track36title" span="2"><format>36. "{{{track36title}}}"{{#if:{{{track36nnd|}}}|&nbsp;{{nnd|{{{track36nnd}}}}}}}{{#if:{{{track36info|}}}|&nbsp;({{{track36info}}})}}</format></data>
+		<data source="track36original"></data>
+		<data source="track36title"><format>{{#if:{{{track36utaite|}}}|{{{track36utaite}}}|&nbsp;}}</format></data>
+		<data source="track37title" span="2"><format>37. "{{{track37title}}}"{{#if:{{{track37nnd|}}}|&nbsp;{{nnd|{{{track37nnd}}}}}}}{{#if:{{{track37info|}}}|&nbsp;({{{track37info}}})}}</format></data>
+		<data source="track37original"></data>
+		<data source="track37title"><format>{{#if:{{{track37utaite|}}}|{{{track37utaite}}}|&nbsp;}}</format></data>
+		<data source="track38title" span="2"><format>38. "{{{track38title}}}"{{#if:{{{track38nnd|}}}|&nbsp;{{nnd|{{{track38nnd}}}}}}}{{#if:{{{track38info|}}}|&nbsp;({{{track38info}}})}}</format></data>
+		<data source="track38original"></data>
+		<data source="track38title"><format>{{#if:{{{track38utaite|}}}|{{{track38utaite}}}|&nbsp;}}</format></data>
+		<data source="track39title" span="2"><format>39. "{{{track39title}}}"{{#if:{{{track39nnd|}}}|&nbsp;{{nnd|{{{track39nnd}}}}}}}{{#if:{{{track39info|}}}|&nbsp;({{{track39info}}})}}</format></data>
+		<data source="track39original"></data>
+		<data source="track39title"><format>{{#if:{{{track39utaite|}}}|{{{track39utaite}}}|&nbsp;}}</format></data>
+		<data source="track40title" span="2"><format>40. "{{{track40title}}}"{{#if:{{{track40nnd|}}}|&nbsp;{{nnd|{{{track40nnd}}}}}}}{{#if:{{{track40info|}}}|&nbsp;({{{track40info}}})}}</format></data>
+		<data source="track40original"></data>
+		<data source="track40title"><format>{{#if:{{{track40utaite|}}}|{{{track40utaite}}}|&nbsp;}}</format></data>
+		<data source="track41title" span="2"><format>41. "{{{track41title}}}"{{#if:{{{track41nnd|}}}|&nbsp;{{nnd|{{{track41nnd}}}}}}}{{#if:{{{track41info|}}}|&nbsp;({{{track41info}}})}}</format></data>
+		<data source="track41original"></data>
+		<data source="track41title"><format>{{#if:{{{track41utaite|}}}|{{{track41utaite}}}|&nbsp;}}</format></data>
+		<data source="track42title" span="2"><format>42. "{{{track42title}}}"{{#if:{{{track42nnd|}}}|&nbsp;{{nnd|{{{track42nnd}}}}}}}{{#if:{{{track42info|}}}|&nbsp;({{{track42info}}})}}</format></data>
+		<data source="track42original"></data>
+		<data source="track42title"><format>{{#if:{{{track42utaite|}}}|{{{track42utaite}}}|&nbsp;}}</format></data>
+		<data source="track43title" span="2"><format>43. "{{{track43title}}}"{{#if:{{{track43nnd|}}}|&nbsp;{{nnd|{{{track43nnd}}}}}}}{{#if:{{{track43info|}}}|&nbsp;({{{track43info}}})}}</format></data>
+		<data source="track43original"></data>
+		<data source="track43title"><format>{{#if:{{{track43utaite|}}}|{{{track43utaite}}}|&nbsp;}}</format></data>
+		<data source="track44title" span="2"><format>44. "{{{track44title}}}"{{#if:{{{track44nnd|}}}|&nbsp;{{nnd|{{{track44nnd}}}}}}}{{#if:{{{track44info|}}}|&nbsp;({{{track44info}}})}}</format></data>
+		<data source="track44original"></data>
+		<data source="track44title"><format>{{#if:{{{track44utaite|}}}|{{{track44utaite}}}|&nbsp;}}</format></data>
+		<data source="track45title" span="2"><format>45. "{{{track45title}}}"{{#if:{{{track45nnd|}}}|&nbsp;{{nnd|{{{track45nnd}}}}}}}{{#if:{{{track45info|}}}|&nbsp;({{{track45info}}})}}</format></data>
+		<data source="track45original"></data>
+		<data source="track45title"><format>{{#if:{{{track45utaite|}}}|{{{track45utaite}}}|&nbsp;}}</format></data>
+		<data source="track46title" span="2"><format>46. "{{{track46title}}}"{{#if:{{{track46nnd|}}}|&nbsp;{{nnd|{{{track46nnd}}}}}}}{{#if:{{{track46info|}}}|&nbsp;({{{track46info}}})}}</format></data>
+		<data source="track46original"></data>
+		<data source="track46title"><format>{{#if:{{{track46utaite|}}}|{{{track46utaite}}}|&nbsp;}}</format></data>
+		<data source="track47title" span="2"><format>47. "{{{track47title}}}"{{#if:{{{track47nnd|}}}|&nbsp;{{nnd|{{{track47nnd}}}}}}}{{#if:{{{track47info|}}}|&nbsp;({{{track47info}}})}}</format></data>
+		<data source="track47original"></data>
+		<data source="track47title"><format>{{#if:{{{track47utaite|}}}|{{{track47utaite}}}|&nbsp;}}</format></data>
+		<data source="track48title" span="2"><format>48. "{{{track48title}}}"{{#if:{{{track48nnd|}}}|&nbsp;{{nnd|{{{track48nnd}}}}}}}{{#if:{{{track48info|}}}|&nbsp;({{{track48info}}})}}</format></data>
+		<data source="track48original"></data>
+		<data source="track48title"><format>{{#if:{{{track48utaite|}}}|{{{track48utaite}}}|&nbsp;}}</format></data>
+		<data source="track49title" span="2"><format>49. "{{{track49title}}}"{{#if:{{{track49nnd|}}}|&nbsp;{{nnd|{{{track49nnd}}}}}}}{{#if:{{{track49info|}}}|&nbsp;({{{track49info}}})}}</format></data>
+		<data source="track49original"></data>
+		<data source="track49title"><format>{{#if:{{{track49utaite|}}}|{{{track49utaite}}}|&nbsp;}}</format></data>
+		<data source="track50title" span="2"><format>50. "{{{track50title}}}"{{#if:{{{track50nnd|}}}|&nbsp;{{nnd|{{{track50nnd}}}}}}}{{#if:{{{track50info|}}}|&nbsp;({{{track50info}}})}}</format></data>
+		<data source="track50original"></data>
+		<data source="track50title"><format>{{#if:{{{track50utaite|}}}|{{{track50utaite}}}|&nbsp;}}</format></data>
+	</group>
+</infobox></div>
+{{clr}}<noinclude>{{Notice/outdated}}{{documentation}}</noinclude>

@@ -1,0 +1,44 @@
+<em {{#if:{{{class|}}}|class="{{{class}}}"}} {{#if:{{{id|}}}|id="{{{id}}}"}} {{#if:{{{style|}}}|style="{{{style}}}"}} {{#if:{{{title|}}}|title="{{{title}}}"}}>{{{1}}}</em><noinclude>
+{{documentation}}
+<!-- Add categories to the /doc subpage, not here! -->
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Text",
+			"description": "Text to be emphasized",
+			"required": true
+		},
+		"class": {
+			"label": "Custom CSS classes",
+			"description": "takes a class name (or multiple class names, separated by commas); adds class=\"classname[s]\" to the HTML code",
+			"type": "string"
+		},
+		"id": {
+			"label": "Custom Element ID",
+			"description": "takes a valid, unique HTML id (must begin with an alphabetic letter); adds id=\"name\" to the HTML code",
+			"type": "string"
+		},
+		"style": {
+			"label": "Custom CSS styles",
+			"description": "takes inline CSS input; adds style=\"CSS directive[s]\" to the HTML code",
+			"type": "string"
+		},
+		"title": {
+			"label": "Custom Title",
+			"description": "takes text, which cannot be marked up in any way, and displays it as a pop-up \"tooltip\" (in most browsers) when the cursor hovers over the span",
+			"type": "string"
+		}
+	},
+	"description": "Semantically emphasise a word (or) phrase.",
+	"paramOrder": [
+		"class",
+		"id",
+		"style",
+		"title",
+		"1"
+	],
+	"format": "inline"
+}
+</templatedata>
+</noinclude>

@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images that represent youtaite avatars in song thumbnails or music videos (MVs/PVs).
+;Syntax
+:Type <code>{{t|Youtaite Song Avatars}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,69 @@
+{{Languages|Template:Plain link/doc}}
+{{Documentation subpage}}
+<!-- EDIT TEMPLATE DOCUMENTATION BELOW THIS LINE -->
+{{tsh|plnk|plainlink}}
+This template will allow you to create a local or [[Help:Links#Interwiki links|interwiki link]] (such as a link to the [[Help:History|history of a page]]) on a page without having the [[File:External.svg|10px]] follow the link. This can be used, for example, when internal or interwiki links appear as external links. See {{Section link|w:Help:URL|URLs on other Wikimedia projects}} for more information.
+
+==Examples==
+
+*<code><nowiki>{{Plain link |url=//www.wikipedia.org}}</nowiki></code> gives {{Plain link |url=//www.wikipedia.org}}
+*<code><nowiki>{{Plain link |//www.wikipedia.org Wikipedia}}</nowiki></code> gives {{Plain link |//www.wikipedia.org Wikipedia}}
+*<code><nowiki>{{Plain link |http://www.wikipedia.org | Wikipedia}}</nowiki></code> gives {{Plain link|http://www.wikipedia.org|Wikipedia}}
+
+=== Notes ===
+Do not leave a space before the start of the URL, it confuses the <nowiki>[</nowiki> ''URL'' <nowiki>]</nowiki> parser.
+
+If you leave the "scheme" (http: or https:) off the start of the URL parameter, the hyperlink will use the current page's protocol.
+
+If your url or link title contains an equals sign <code>=</code> you must use named parameters or <code>{{Tl|{{=}}}}</code>:
+* <code>{{Tlx|Plainlink|<b>url{{=}}</b><nowiki>http://en.wikipedia.org/w/index.php?title=Equals_sign&oldid=282228764</nowiki>|<b>name{{=}}</b>"{{=}}"}}</code> gives {{Plain link|url=http://en.wikipedia.org/w/index.php?title=Equals_sign&oldid=282228764|name="="}}
+* <code>{{Tlx|Plainlink|<nowiki>http://en.wikipedia.org/w/index.php?title</nowiki>{{Tl|{{=}}}}Equals_sign&oldid{{Tl|{{=}}}}282228764|"{{Tl|{{=}}}}"}}</code> gives {{Plain link|http://en.wikipedia.org/w/index.php?title{{=}}Equals_sign&oldid{{=}}282228764|"{{=}}"}}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "Use this template to add a local or interwiki link that would otherwise show a box and arrow icon next to the link without the icon.",
+		"cs": "Tuto šablonu použijte k přidání místního nebo interwiki odkazu, který by jinak vedle odkazu bez ikony zobrazil rámeček a ikonu šipky."
+	},
+	"format": "inline",
+	"params": {
+		"url": {
+			"aliases": ["URL","1"],
+			"label": {
+				"en": "URL",
+				"cs": "URL"
+			},
+			"description": {
+				"en": "URL of the link. For Wikimedia links, use the format \"//example.com\". This allows users to use the protocol they're currently using.",
+				"cs": "URL odkazu. Pro odkazy na Wikimedie použijte formát \"//example.com\". To umožňuje uživatelům používat protokol, který aktuálně používají."
+			},
+			"required": true,
+			"type": "url"
+		},
+		"name": {
+			"aliases": ["NAME","2"],
+			"label": {
+				"en": "Text",
+				"cs": "Text"
+			},
+			"description": {
+				"en": "Text to be linked",
+				"cs": "Text k propojení"
+			},
+			"suggested": true,
+			"type": "string"
+		}
+	},
+	"paramOrder": [
+		"url",
+		"name"
+	]
+}
+</templatedata>
+
+<includeonly>
+<!-- ADD CATEGORIES BELOW THIS LINE -->
+[[Category:External link templates]]
+</includeonly>

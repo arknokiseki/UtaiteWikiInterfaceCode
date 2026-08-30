@@ -1,0 +1,4 @@
+<includeonly>|- style="vertical-align:top;"
+| {{tl2|nowrap=1|{{{1}}}}}
+| {{Htmli|{{ {{{1}}} }}}}
+| {{Htmli|{{#invoke:n34|escapehtml|{{ {{{1}}} }}}}}}{{#if:{{{o|}}}| {{{t}}} {{Htmli|{{#tag:nowiki|{{{o}}}}}}}}}</includeonly><noinclude>{{Documentation}}</noinclude>

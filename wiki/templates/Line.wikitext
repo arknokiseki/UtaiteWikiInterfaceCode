@@ -1,0 +1,6 @@
+<includeonly><span class="line-icon-link"><abbr title="{{#if:{{{2|}}}|&nbsp;{{{2}}}}}">{{#switch:{{{3}}}
+  |Line=[https://lin.ee/{{{1}}} <span style="color: #5de25a !important;"><i class="fa-brands fa-line"></i></span>]
+  |LinePage=[https://page.line.me/{{{1}}} <span style="color: #5de25a !important;"><i class="fa-brands fa-line"></i></span>]
+  |LineQR=[https://line.me/R/ti/p/{{{1}}} <span style="color: #5de25a !important;"><i class="fa-brands fa-line"></i></span>]
+  |#default=[https://lin.ee/{{{1}}} <span style="color: #5de25a !important;"><i class="fa-brands fa-line"></i></span>]
+}}</abbr></span></includeonly><noinclude>{{documentation}}</noinclude>

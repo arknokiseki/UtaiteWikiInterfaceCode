@@ -1,0 +1,58 @@
+{{Archived}}
+: This page is used as a preset summary list for [[wikia:dev:Standard Edit Summary|Standard Edit Summary]].
+(click to browse)
+1. Refactoring
+-- Cleanup
+-- Corrected spelling/grammar/typo(s)
+-- Factual correction
+-- Formatting
+-- HTML tidying
+-- Wikifying
+-- Corrected template usage
+
+2. Content
+-- Replaced duplicate image(s)
+-- Added/updated cover(s)
+-- Added/updated album
+-- Added citation
+-- Added translation
+-- Added/updated/elaborated description
+-- Updated trivia
+-- Added yt/nnd links
+-- Updated with new information
+-- Expanded or rewritten
+-- Replaced/added YT reprint(s)
+
+3. Removal/Reversion
+-- Reverted vandalism, test, or vanity edit(s)
+-- Removed fanon or speculative content
+-- Removed libel/slander
+-- Removed copyright violation(s), including YouTube reprints.
+-- Removed material not relating to the topic
+
+4. Templates
+-- Added template(s)
+-- Added infobox
+-- Added disambig template
+
+5. Categories
+-- Added category
+-- Modified category
+-- Alphabetized categories
+-- Removed double category
+
+6. Redirects and Shortcuts
+-- Added redirect
+-- Removed redirect
+-- Modified or fixed redirect
+-- Added shortcut to article section
+-- Removed shortcut to article section
+
+7. Talk Pages and Archives
+-- Signing a post
+-- Adding a new topic
+-- Adding reply on another topic
+-- Modifying a topic
+-- Removing a topic
+-- Archiving or closing a topic
+-- Dearchiving a topic

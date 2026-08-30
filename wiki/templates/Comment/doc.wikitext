@@ -1,0 +1,15 @@
+{{Documentation subpage}}
+
+==Usage==
+You may either use {{tl|comment}} by itself for the default message or you may add a custom message as an optional parameter.
+
+{| class="wikitable"
+!Template !! Result
+|-
+|{{tlx|comment}} || {{comment}}
+|-
+|{{tlx|comment|Custom message}} || {{comment|Custom message}}
+|}
+
+==See also==
+{{#lst:Template:Template list|resolution-templates}}

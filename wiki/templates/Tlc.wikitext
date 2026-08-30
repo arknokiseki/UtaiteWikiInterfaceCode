@@ -1,0 +1,20 @@
+<onlyinclude><!--
+--><templatestyles src="Template:Nowrap/styles.css"/><!--
+--><code class="nowrap"><!--
+-->{{((}}<!--
+--><includeonly>{{{1}}}</includeonly><!--
+--><noinclude>tlc{{!}}...</noinclude><!--
+-->{{#ifeq:{{{2|x}}}|{{{2|}}}| {{!}}{{{2}}} | }}<!--
+-->{{#ifeq:{{{3|x}}}|{{{3|}}}| {{!}}{{{3}}} | }}<!--
+-->{{#ifeq:{{{4|x}}}|{{{4|}}}| {{!}}{{{4}}} | }}<!--
+-->{{#ifeq:{{{5|x}}}|{{{5|}}}| {{!}}{{{5}}} | }}<!--
+-->{{#ifeq:{{{6|x}}}|{{{6|}}}| {{!}}{{{6}}} | }}<!--
+-->{{#ifeq:{{{7|x}}}|{{{7|}}}| {{!}}{{{7}}} | }}<!--
+-->{{#ifeq:{{{8|x}}}|{{{8|}}}| {{!}}{{{8}}} | }}<!--
+-->{{#ifeq:{{{9|x}}}|{{{9|}}}| {{!}}{{{9}}} | }}<!--
+-->{{))}}<!--
+--></code><!--
+--></onlyinclude>
+
+{{Documentation}}
+<!-- Add categories and interwikis to the /doc subpage, not here! -->

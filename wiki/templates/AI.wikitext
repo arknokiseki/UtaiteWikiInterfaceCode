@@ -1,0 +1,1 @@
+{{#ifeq:{{{nameonly}}}|true|[https://utaite.miraheze.org/wiki/Avatar_Illustrators?searchName={{{1}}} {{{2}}}]|<br/>Illust. by [https://utaite.miraheze.org/wiki/Avatar_Illustrators?searchName={{{1}}} {{{2}}}]}}<noinclude>{{documentation}}</noinclude>

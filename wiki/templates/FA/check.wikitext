@@ -1,0 +1,1 @@
+<includeonly><i class="fa-solid fa-square-check" style="color: #63E6BE;"></i></includeonly><noinclude>output: {{FA/check}}</noinclude>

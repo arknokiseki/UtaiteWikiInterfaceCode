@@ -1,0 +1,112 @@
+=== Description ===
+This template embeds a video from external sources like YouTube or Twitch, using [[mw:Extension:EmbedVideo (fork)]].
+
+=== Syntax ===
+Template uses unnamed parameters. Video service name and video's ID from the URL are the main parameters, examples (copied from extension documentation):
+{| class="wikitable"
+!Site
+!Service Name(s)
+!ID Example
+!URL Example(s)
+|-
+|[https://archive.org/details/movies Archive.org Videos]
+|<code>archiveorg</code>
+|electricsheep-flock-244-80000-6
+|https://archive.org/details/electricsheep-flock-244-80000-6<nowiki/>https://archive.org/embed/electricsheep-flock-244-80000-6
+|-
+|[https://www.bilibili.com/ Bilibili]
+|<code>bilibili</code>
+|BV1Hz4y1k7ae
+|https://player.bilibili.com/player.html?bvid=1Hz4y1k7ae&amp;page=1
+|-
+|[https://tv.kakao.com/ KakaoTV]
+|<code>kakaotv</code>
+|301157950
+|https://play-tv.kakao.com/embed/player/cliplink/301157950
+|-
+|[https://tv.naver.com/ NaverTV]
+|<code>navertv</code>
+|27831593
+|https://tv.naver.com/embed/27831593
+|-
+|[http://nicovideo.jp/ Niconico]
+|<code>niconico</code>
+|sm40807360
+|https://embed.nicovideo.jp/watch/sm40807360
+|-
+|[http://soundcloud.com/ SoundCloud]
+|<code>soundcloud</code>
+|
+|https://soundcloud.com/skrillex/skrillex-rick-ross-purple-lamborghini
+|-
+|[http://spotify.com/ Spotify]
+|<code>spotifyalbum</code> - Art embed
+|3B61kSKTxlY36cYgzvf3cP
+|https://open.spotify.com/album/3B61kSKTxlY36cYgzvf3cP
+|-
+|[http://spotify.com/ Spotify]
+|<code>spotifyartist</code> - Artist embed
+|0YC192cP3KPCRWx8zr8MfZ
+|https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ
+|-
+|[http://spotify.com/ Spotify]
+|<code>spotifytrack</code> - Song embed
+|6ZFbXIJkuI1dVNWvzJzown
+|https://open.spotify.com/track/6ZFbXIJkuI1dVNWvzJzown
+|-
+|[http://www.twitch.tv/ Twitch]
+|<code>twitch</code> - Live Streams
+|<code>twitchvod</code> - Archived Videos on Demand
+|twitchplayspokemon
+|-
+|[http://www.vimeo.com/ Vimeo]
+|<code>vimeo</code>
+|105035718
+|http://vimeo.com/105035718
+|-
+|[http://www.youtube.com/ YouTube]
+|<code>youtube</code> - Single Videos
+|pSsYTj9kCHE
+|https://www.youtube.com/watch?v=pSsYTj9kCHE
+|-
+|[http://www.youtube.com/ YouTube]
+|<code>youtubeplaylist</code> - Playlists
+|PLY0KbDiiFYeNgQkjujixr7qD-FS8qecoP
+|https://www.youtube.com/embed/?listType=playlist&list=PLY0KbDiiFYeNgQkjujixr7qD-FS8qecoP
+|-
+|[http://www.youtube.com/ YouTube]
+|<code>youtubevideolist</code> - Video List
+|pSsYTj9kCHE - urlargs=playlist=pSsYTj9kCHE,pSsYTj9kCHE
+|https://www.youtube.com/embed/pSsYTj9kCHE?playlist=pSsYTj9kCHE,pSsYTj9kCHE
+|}
+
+In simplest case without additional parameters the video will be 300px in width and placed to the right side of the of the page:
+: <code><nowiki>{{EmbedVideo|service|ID}}</nowiki></code>
+
+All parameters:
+: <code><nowiki>{{EmbedVideo|service|ID|width|alignment|title|description}}</nowiki></code>
+
+=== Usage example ===
+Simple code:
+: <code><nowiki>{{EmbedVideo|youtube|9xJfPx8RViU}}</nowiki></code>
+
+With all parameters:
+: <code><nowiki>{{EmbedVideo|youtube|J---aiyznGQ|500|left|Keyboard cat! - THE ORIGINAL!|This is second example}}</nowiki></code>
+The width value must be just number; the alignment values are "left" and "center" ("right" is default thus can be skipped).
+
+To skip a parameter, leave its position blank, for example default width and no title are alright but different alignment is needed:
+: <code><nowiki>{{EmbedVideo|youtube|SaA_cs4WZHM||left||This is third example}}</nowiki></code>
+Results:
+{{EmbedVideo|youtube|9xJfPx8RViU}}
+{{EmbedVideo|youtube|J---aiyznGQ|500|left|Keyboard cat! - THE ORIGINAL!|This is second example}}
+{{EmbedVideo|youtube|SaA_cs4WZHM||left||This is third example}}
+{{EmbedVideo|youtube|P_CSdxSGfaA|500|left|[[test]]|This is forth example {{VW|Wowaka}}}}
+<div style="clear: both;"></div>
+=== Notes ===
+These are notes provided by Miraheze Developers Wiki (they can be removed after import):
+* When importing this template to another wiki, you should enable extension [[mw:Extension:EmbedVideo (fork)|EmbedVideo]] at [[Special:ManageWiki/extensions#mw-section-mediahandlers]].
+* Upon import to another wiki the title can be changed to whatever user prefers, so use that title instead of "EmbedVideo" in its syntax.
+* See also:
+** [[mh:dev:Template:YouTube]] - another video embed template which supports only YouTube and uses different extension.
+** [[mh:dev:Template:Flexbox]] - this template can be used to create a gallery of videos.
+<includeonly>[[Category:Templates for media]]</includeonly>

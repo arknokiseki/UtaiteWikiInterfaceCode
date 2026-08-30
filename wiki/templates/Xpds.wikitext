@@ -1,0 +1,32 @@
+<includeonly>{{#invoke:xpd|s}}</includeonly><noinclude>
+{{documentation|content=
+{{Lua|Module:xpd}}
+
+This [[Template:xpds]] (expansion demo) shows the call of a variable, parser function or template and its result, for documentation. The call is the same as the template call to be demonstrated, except that "<code>xpds{{!}}</code>" is inserted after the opening braces.
+
+The template uses [[Module:Xpd]]; see also [[Module talk:Xpd]].
+
+Examples:
+----
+{{tlx|xpds|CURRENTTIME}} gives: {{xpds|CURRENTTIME}}
+----
+{{tlx|xpds|#expr:1/7}} gives: {{xpds|#expr:1/7}}
+----
+{{tlx|xpds|2x|[[abc]] }} gives: {{xpds|2x|[[abc]] }}
+----
+{{tlx|xpds|{{#expr:7-5}}x|{{#expr:1/7}} }} gives: {{xpds|{{#expr:7-5}}x|{{#expr:1/7}} }}
+----
+{{tlx|xpds|t2demo||abc}} gives: {{xpds|t2demo||abc}}
+----
+{{tlx|xpds|hook|ParserBeforePreprocess}} gives: {{xpds|hook|ParserBeforePreprocess}}
+----
+{{tlx|xpds|Foreach|hook|delim{{=}},|ParserBeforePreprocess|ParserAfterTidy}} gives:
+
+{{xpds|Foreach|hook|delim=,|ParserBeforePreprocess|ParserAfterTidy}}
+
+== See also ==
+* [[Template:Xpdp]] - the same, except that it starts the result of the template, variable or parser function call in a new paragraph
+* [[m:Template:Xpd/doc]]
+}}
+[[Category:Handbook templates{{#translation:}}|{{PAGENAME}}]]
+</noinclude>

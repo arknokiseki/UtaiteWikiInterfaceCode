@@ -1,0 +1,15 @@
+<div class="banner-block">[[File:Choramin.png|1500px|link=]]
+<div class="container-top">
+</div>
+<div class="container-bottom">
+<div>
+<div style="font-size:1.5rem;">'''Welcome to the Youtaite Wiki'''</div>
+This wiki has accumulated '''{{NUMBEROFEDITS}}''' edits to '''[[Special:Statistics|{{NUMBEROFARTICLES}} articles]]''' and '''[[Special:Newimages|{{NUMBEROFFILES}} images]]'''.
+</div>
+<div>
+[[Help:Contents|<div class="wds-button wds-is-text wds-is-secondary" style="margin-right:.2rem">Help pages</div>]] [[Special:CreatePage|<div class="wds-button">Create a new article</div>]]
+</div>
+</div>
+</div><noinclude>
+[[Category:Main Page Templates]]
+</noinclude><noinclude>[[Category:Templates/Main page]]{{Documentation|Template:Main page/doc}}</noinclude>

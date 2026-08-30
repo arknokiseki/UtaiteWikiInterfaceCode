@@ -1,0 +1,8 @@
+{{#ifeq:{{#invoke:Template translation|getLanguageSubpage|{{{1|}}}}}|en
+|{{#ifeq:{{#titleparts:{{{1|{{PAGENAME}}}}}||-1}}|en
+  |{{#invoke:Template translation|getLanguageSubpage|{{{1|}}}}}
+  }}
+|{{#invoke:Template translation|getLanguageSubpage|{{{1|}}}}}
+}}<noinclude>
+{{Documentation}}
+</noinclude>

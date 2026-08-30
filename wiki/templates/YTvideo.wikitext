@@ -1,0 +1,5 @@
+{| style="float:left" width="{{{width|50}}}%"
+|style="text-align: center;"|{{#if:{{{song|}}}|'''"{{{song}}}"'''}}{{#if: {{{details|}}}|<br>{{{details}}}}}{{#if: {{{group|}}}|<br>feat. {{{group}}}}}
+|-
+|style="text-align: center;"|<div style="position: relative;"><span class="ytvideo" title="{{{1|}}}" style="width: 300px; margin: auto; display: inline-block;"></span>{{#if:{{{2|}}}|<div style="position: absolute; left: -10px; top: -25px">[[File:Crownicon.png|link=|60px]]</div>}}</div>
+|}<noinclude>{{documentation}}</noinclude>

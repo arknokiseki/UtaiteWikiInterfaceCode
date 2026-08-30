@@ -1,0 +1,73 @@
+{{Documentation/Header}}
+{{High Risk|Template:Track|nocat=1|pagetype=Main}}
+Renders a single '''track row''' for an album or discography tracklist.
+
+'''Important:''' this template outputs a raw <code><nowiki><tr></nowiki></code> row, so it '''must''' be placed inside HTML <code><nowiki><table>…</table></nowiki></code> tags — not inside a wikitable (<code><nowiki>{|</nowiki></code>) — and the table needs its own header row. Each call produces seven cells, or eight when <code>group</code> is used, so the header row must have a matching number of columns. This template works inside {{T|AlbumType2}}
+
+==Syntax==
+{{T|Track|block=1
+|v1=number
+|v2=title =
+|v3=additionalshortinfo =
+|v4=singers =
+|v5=lyricist =
+|v6=composer =
+|v7=arranger =
+|v8=group =
+}}
+
+==Examples==
+<pre>
+<table class="wikitable">
+<tr><th>#</th><th>Title</th><th>Info</th><th>Singers</th><th>Lyricist</th><th>Composer</th><th>Arranger</th></tr>
+{{Track|1|title=Song Title 1|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
+{{Track|2|title=Song Title 2|additionalshortinfo=Instrumental|singers=Artist B|lyricist=Writer B|composer=Composer B|arranger=Arranger B}}
+</table>
+</pre>
+
+Renders as:
+<table class="wikitable">
+<tr><th>#</th><th>Title</th><th>Info</th><th>Singers</th><th>Lyricist</th><th>Composer</th><th>Arranger</th></tr>
+{{Track|1|title=Song Title 1|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
+{{Track|2|title=Song Title 2|additionalshortinfo=Instrumental|singers=Artist B|lyricist=Writer B|composer=Composer B|arranger=Arranger B}}
+</table>
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Track number || The track number shown in the first cell. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>title</code> || – || Title || The song title. || string || No title provided ||
+|-
+| <code>additionalshortinfo</code> || – || Additional info || A short note about the track (e.g. 'Single', 'Instrumental'). || string || – ||
+|-
+| <code>utaite</code> || <code>singers</code> || Singers || The performer(s) on this track. || string || <code><nowiki>{{ROOTPAGENAME}}</nowiki></code> ||
+|-
+| <code>lyricist</code> || – || Lyricist || Writer of the lyrics. || string || N/A ||
+|-
+| <code>composer</code> || – || Composer || Composer of the song. || string || N/A ||
+|-
+| <code>arranger</code> || – || Arranger || Arranger of the song. || string || N/A ||
+|-
+| <code>group</code> || – || Group || Adds an '''extra eighth cell''' for a group name. The table header must include a matching column. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A single track row for an album tracklist. Must be placed inside HTML <table> tags.",
+"params": {
+"1": { "label": "Track number", "description": "The track number.", "type": "string", "required": true },
+"title": { "label": "Title", "description": "The song title.", "type": "string", "default": "No title provided" },
+"additionalshortinfo": { "label": "Additional info", "description": "Short note such as 'Single' or 'Instrumental'.", "type": "string" },
+"utaite": { "aliases": ["singers"], "label": "Singers", "description": "Performer(s) on this track. Defaults to the root page name.", "type": "string" },
+"lyricist": { "label": "Lyricist", "description": "Writer of the lyrics.", "type": "string", "default": "N/A" },
+"composer": { "label": "Composer", "description": "Composer of the song.", "type": "string", "default": "N/A" },
+"arranger": { "label": "Arranger", "description": "Arranger of the song.", "type": "string", "default": "N/A" },
+"group": { "label": "Group", "description": "Adds an extra eighth cell for a group name.", "type": "string" }
+},
+"paramOrder": ["1","title","additionalshortinfo","utaite","lyricist","composer","arranger","group"],
+"format": "block"
+}
+</templatedata>
+</div>

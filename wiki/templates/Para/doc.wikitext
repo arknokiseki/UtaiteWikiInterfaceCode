@@ -1,0 +1,64 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Distinguish|Template:Param|Template:Parameter}}
+{{Uses TemplateStyles|Template:Mono/styles.css|Template:Nowrap/styles.css}}
+__TOC__
+{{clear}}
+== Usage ==
+This template is for giving examples of [[w:Wikipedia:Template messages|template]] parameter source code (useful in template documentation and talk page discussions of template code).  It must have one or two parameters itself. The first is the name of the example parameter to display (this may be ''empty'', but it '''must''' be ''present''), and the second (optional) one is a value for the first example parameter, or (if the first {{tlx|para}} parameter is empty) an unnamed example parameter.
+===Examples===
+#&nbsp;&nbsp;{{tlx|para|name}}
+#:renders as
+#:{{para|name}}
+#&nbsp;&nbsp;{{tlx|para|title|&lt;var&gt;book title&lt;/var&gt;}}
+#:renders as
+#:{{para|title|<var>book title</var>}}
+#&nbsp;&nbsp;{{tlx|para|3=section|2=<span style="font-size: 1pt;">&nbsp;</span>}}
+#:renders as
+#:{{para||section}}
+#:(for unnamed parameters in the example code; note the empty first parameter in the {{tlx|para}} template)
+#&nbsp;&nbsp;{{tlx|para|&lt;var&gt;parameter&lt;/var&gt;|&lt;var&gt;value&lt;/var&gt;}}
+#:renders as
+#:{{para|<var>parameter</var>|<var>value</var>}}
+When using literal, pre-specified values, simply provide the value (appearance as in example 3). When illustrating hypothetical, variable or user-definable values, use <code><nowiki><var>value</var></nowiki></code> (appearance as in example 2), and the same should be done for non-literal, example parameters (as in example 4).
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Name",
+			"description": "The parameter name.",
+			"type": "string",
+			"required": true
+		},
+		"2": {
+			"label": "Value",
+			"description": "The parameter value.",
+			"type": "string",
+			"suggested": true
+		},
+		"plain": {
+			"label": "Plain?",
+			"description": "Whether to use plain text instead of <code>.",
+			"type": "boolean",
+			"default": "0"
+		},
+		"nowrap": {
+			"label": "Nowrap?",
+			"description": "Whether to add `style=\"white-space:nowrap\"`.",
+			"type": "boolean",
+			"default": "1"
+		}
+	}
+}
+</templatedata>
+== See also ==
+* {{tl|ApiParam}} &ndash; for documenting API parameters
+{{tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Typing-aid templates{{#translation:}}]]
+[[Category:Formatting templates{{#translation:}}]]
+[[Category:Semantic markup templates{{#translation:}}]]
+}}</includeonly>

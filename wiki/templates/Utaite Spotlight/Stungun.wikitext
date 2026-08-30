@@ -1,0 +1,31 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = stungun twitter.png
+|caption = Nico Nico Douga and Twitter
+|officialjapname = スタンガン
+|officialromajiname = Stungun
+|NNDuserpage = 13015043
+|YThandle = @すたんちゃんねる
+|mylist1 = 20388524
+|mylist1info = utattemita
+|mylist2 = 24799317
+|mylist2info = misc.
+|mylist3 = 25736362
+|mylist3info = used for
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co334079
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Kagerou Days]]
+|examplennd = sm15763797
+|exampleyt = 
+|description = '''Stungun''' ('''スタンガン''') is an {{NNDict|Utaite}} who is said to have an {{NNDict|Ikemen|ikebo}} (ikemen voice).
+
+
+When singing in a higher range, his voice gets nasal such as in his "[[Pierrot]]"{{nnd|sm20385344}}, but he maintains a certain calmity with a nice vibrato.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

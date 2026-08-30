@@ -1,0 +1,85 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+== Usage ==
+This template displays a filtered list of utaite articles.
+
+=== Show utaite by alphabet ===
+To display all utaite whose names start with a specific letter:
+
+'''Examples:'''<br/>
+{{T|UtaiteListFiltered|alphabet|A}}<br/>
+{{T|UtaiteListFiltered|alphabet|M}}<br/>
+{{T|UtaiteListFiltered|alphabet|T}}
+
+This will show all utaite whose names begin with that letter, sorted alphabetically.
+
+=== Show non-alphabetical entries ===
+
+To display utaite whose names don't start with A-Z (like symbols, numbers, or special characters):
+
+<pre>
+{{UtaiteListFiltered|other}}
+</pre>
+
+This catches entries that come before "A" in sorting order and after "Z" - basically anything that doesn't fit the regular alphabet.
+
+==Syntax==
+{{T|UtaiteListFiltered|v1=mode|v2=alphabet (optional)|v3=count=number}}
+
+===Parameter===
+{| class="wikitable"
+! Parameter !! Required !! Description
+|-
+| {{Para|1}} || Yes || Mode selector: use <code>alphabet</code> for alphabetical filtering, or <code>other</code> for non-alphabetical entries
+|-
+| {{Para|2}} || Conditional || The letter to filter by (only needed when using <code>alphabet</code> mode)
+|-
+| {{Para|count}} || No || Maximum number of results to display (defaults to 600 if not specified)
+|}
+
+== Complete Example ==
+
+Here's how you might structure a full utaite listing page:
+
+<pre>
+== Symbols & Numbers ==
+{{UtaiteListFiltered|other}}
+
+== A ==
+{{UtaiteListFiltered|alphabet|A}}
+
+== B ==
+{{UtaiteListFiltered|alphabet|B}}
+
+== C ==
+{{UtaiteListFiltered|alphabet|C}}
+
+... and so on for each letter
+</pre>
+
+== Troubleshooting ==
+'''Not seeing any results?'''
+* Make sure you spelled the mode correctly (<code>alphabet</code>, <code>number</code>, or <code>other</code>)
+* Check that you included the letter when using <code>alphabet</code> mode
+* Verify that utaite in that category actually exist in the wiki
+
+'''Too many results?'''
+* Add the <code>count</code> parameter to limit results: <code><nowiki>{{UtaiteListFiltered|alphabet|A|count=50}}</nowiki></code>
+
+==Examples==
+{{T|UtaiteListFiltered|p1=alphabet|p2=A|_Y_=1}}
+{{clr}}
+{{T|UtaiteListFiltered|p1=number|p2=|_Y_=1}}
+{{clr}}
+{{T|UtaiteListFiltered|p1=other|p2=|_Y_=1}}
+{{clr}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

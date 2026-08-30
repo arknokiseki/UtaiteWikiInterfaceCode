@@ -1,0 +1,67 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Distinguish|Template:Para|Template:Parameter}}
+
+This template is for giving examples of template parameter source code which is useful in template documentation and talk page discussions of template code.
+
+== Usage ==
+* <code><nowiki>{{param|foo}}</nowiki></code> → {{param|foo}}
+* <code><nowiki>{{param|foo|tag=kbd}}</nowiki></code> &rarr; {{param|foo|tag=kbd}}
+* <code><nowiki>{{param|foo|bar}}</nowiki></code> → {{param|foo|bar}}
+* <code><nowiki>{{param|foo|{{param|bar|nested=1}}}}</nowiki></code> → {{param|foo|{{param|bar|nested=1}}}}
+* <code><nowiki>{{param|foo|{{param|bar|{{param|baz|derp|nested=1}}|nested=1}}}}</nowiki></code> → {{param|foo|{{param|bar|{{param|baz|derp|nested=1}}|nested=1}}}}
+
+=== Examples involving {{tlx|para}} ===
+* <code><nowiki>{{para|foo|{{param|bar}}}}</nowiki></code> → {{para|foo|{{param|bar}}}}
+* <code><nowiki>{{para|foo|{{param|bar|nested=1}}}}</nowiki></code> → {{para|foo|{{param|bar|nested=1}}}}
+* <code><nowiki>{{para|foo}}{{param|bar}}</nowiki></code> → {{para|foo}}{{param|bar}}
+* <code><nowiki>{{para|foo|{{var|bar}}}}</nowiki></code> → {{para|foo|{{var|bar}}}}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "This template is for giving examples of template parameter source code which is useful in template documentation and talk page discussions of template code.",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Name",
+			"description": "The parameter name",
+			"required": true,
+			"type": "string"
+		},
+		"2": {
+			"label": "Value",
+			"description": "The parameter value",
+			"type": "string"
+		},
+		"nested": {
+			"label": "Nested?",
+			"description": "Whether to not wrap in <{{{tag|code}}}> tags.",
+			"default": "0",
+			"autovalue": "1",
+			"type": "boolean"
+		},
+		"tag": {
+			"label": "Nested Tag Name",
+			"description": "The name of the tag to wrap in. Used only when “nested” is falsy.",
+			"suggestedvalues": [
+				"code",
+				"samp",
+				"var"
+			],
+			"default": "code",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+* {{tlx|para|foo|bar}} &rarr;&nbsp;{{para|foo|bar}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Typing-aid templates{{#translation:}}]]
+[[Category:Formatting templates{{#translation:}}]]
+[[Category:Semantic markup templates{{#translation:}}]]
+}}</includeonly>

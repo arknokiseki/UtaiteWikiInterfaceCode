@@ -1,0 +1,16 @@
+<pre>{{Commercially featured
+|"Title"|Month XX, 20XX
+|XXX of the XXX
+
+|"Title"|Month XX, 20XX
+|XXX of the XXX
+}}</pre>
+...results in:
+{{Commercially featured
+|"Title"|Month XX, 20XX
+|XXX of the XXX
+
+|"Title"|Month XX, 20XX
+|XXX of the XXX
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

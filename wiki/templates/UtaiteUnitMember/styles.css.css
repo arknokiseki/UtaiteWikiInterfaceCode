@@ -1,0 +1,417 @@
+/* ==========================================================================
+   UtaiteUnitMember (uum-) — member grid for utaite units
+   ========================================================================== */
+
+/* ---------- container ---------- */
+
+.uum-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
+	margin: 1em 0;
+}
+
+/* Width-capped by the module (inline max-width) so flex-wrap breaks at a
+   balanced column count — e.g. 6 members -> 3/3 instead of 5/1. The cap
+   only limits the maximum; narrow viewports still wrap to fewer per row. */
+.uum-balanced {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ---------- status tokens ----------
+   Each status sets custom properties consumed by pill / ribbon / text. */
+
+.uum-status-active {
+	--uum-status: #2ecc71;
+	--uum-status-bg: rgba(46, 204, 113, 0.15);
+	--uum-status-border: rgba(46, 204, 113, 0.4);
+}
+
+.uum-status-hiatus {
+	--uum-status: #e67e22;
+	--uum-status-bg: rgba(230, 126, 34, 0.15);
+	--uum-status-border: rgba(230, 126, 34, 0.4);
+}
+
+.uum-status-inactive {
+	--uum-status: #7f8c8d;
+	--uum-status-bg: rgba(127, 140, 141, 0.15);
+	--uum-status-border: rgba(127, 140, 141, 0.4);
+}
+
+.uum-status-graduated {
+	--uum-status: #9b59b6;
+	--uum-status-bg: rgba(155, 89, 182, 0.15);
+	--uum-status-border: rgba(155, 89, 182, 0.4);
+}
+
+.uum-status-terminated {
+	--uum-status: #e74c3c;
+	--uum-status-bg: rgba(231, 76, 60, 0.15);
+	--uum-status-border: rgba(231, 76, 60, 0.4);
+}
+
+/* ---------- shared card bits ---------- */
+
+.uum-card {
+	position: relative;
+	box-sizing: border-box;
+}
+
+/* portrait images only — do NOT match inline images like oshi marks */
+.uum-image img,
+.uum-full-image img,
+.uum-compact-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: var(--uum-imgpos, center);
+	display: block;
+}
+
+/* |fit=contain — show the whole portrait, letterboxed inside the frame
+   (useful for tall full-body renders that cover would crop badly) */
+.uum-fit-contain img {
+	object-fit: contain;
+}
+
+/* inline images inside info lines (e.g. an oshi mark as [[File:...|16x16px]])
+   keep their own size and flow with the text */
+.uum-line img,
+.uum-extra img {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	max-height: 18px;
+	vertical-align: text-bottom;
+}
+
+.uum-name {
+	font-weight: 700;
+}
+
+.uum-desc {
+	font-size: 11px;
+	opacity: 0.65;
+}
+
+.uum-line {
+	font-size: 11px;
+}
+
+.uum-label {
+	font-weight: 700;
+}
+
+/* dimming for graduated / terminated (fullimage + compact) */
+.uum-dim .uum-full-image img,
+.uum-dim .uum-compact-image img {
+	filter: saturate(0.35) brightness(0.8);
+	transition: filter 250ms ease;
+}
+
+.uum-dim:hover .uum-full-image img,
+.uum-dim:hover .uum-compact-image img {
+	filter: none;
+}
+
+/* ---------- leader crown badge ---------- */
+
+.uum-leader {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	z-index: 3;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 26px;
+	min-width: 26px;
+	padding: 0 4px;
+	border-radius: 99px;
+	background: rgba(15, 20, 24, 0.85);
+	border: 1px solid #f2c14e;
+	font-size: 13px;
+	line-height: 1;
+	cursor: default;
+}
+
+.uum-leader-text {
+	max-width: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	color: #f2c14e;
+	transition: max-width 250ms ease, margin-left 250ms ease;
+}
+
+.uum-card:hover .uum-leader-text {
+	max-width: 60px;
+	margin-left: 5px;
+}
+
+/* fullimage: ribbon owns the top-right corner, crown moves top-left */
+.uum-card-full .uum-leader {
+	right: auto;
+	left: 8px;
+}
+
+/* compact: small inline crown next to the name */
+.uum-leader-inline {
+	font-size: 12px;
+}
+
+/* ==========================================================================
+   Variant: default — vertical 200px card
+   ========================================================================== */
+
+.uum-card-default {
+	width: 200px;
+	background: var(--color-surface-2, #1b232b);
+	border: 1px solid rgba(127, 179, 211, 0.28);
+	border-radius: 8px;
+	overflow: hidden;
+	text-align: center;
+	transition: transform 180ms ease, border-color 180ms ease,
+		box-shadow 180ms ease;
+}
+
+.uum-card-default:hover {
+	transform: translateY(-4px);
+	border-color: rgba(127, 179, 211, 0.65);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.uum-colorbar {
+	height: 4px;
+	width: 100%;
+}
+
+.uum-card-default .uum-image {
+	position: relative;
+	height: 200px;
+	overflow: hidden;
+}
+
+.uum-card-default .uum-body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	padding: 12px 10px 14px;
+}
+
+.uum-card-default .uum-name {
+	font-size: 15px;
+}
+
+/* terminated names render as plain text; keep them readable */
+.uum-card-default .uum-name,
+.uum-overlay .uum-name,
+.uum-compact-body .uum-name {
+	color: var(--color-emphasized, #c9d4dc);
+}
+
+.uum-color-line {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.uum-swatch {
+	width: 10px;
+	height: 10px;
+	border-radius: 3px;
+	display: inline-block;
+	flex: 0 0 auto;
+}
+
+.uum-pill {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 99px;
+	font-size: 10.5px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--uum-status, #2ecc71);
+	background: var(--uum-status-bg, rgba(46, 204, 113, 0.15));
+	border: 1px solid var(--uum-status-border, rgba(46, 204, 113, 0.4));
+}
+
+/* ==========================================================================
+   Variant: fullimage — 200×280, image fills the card
+   ========================================================================== */
+
+.uum-card-full {
+	width: 200px;
+	height: 280px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	overflow: hidden;
+	background: var(--color-surface-2, #1b232b);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.uum-card-full:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.uum-full-image {
+	position: absolute;
+	inset: 0;
+}
+
+.uum-full-image img {
+	transition: transform 500ms ease;
+}
+
+.uum-card-full:hover .uum-full-image img {
+	transform: scale(1.05);
+}
+
+/* 45° corner ribbon, top-right */
+.uum-ribbon {
+	position: absolute;
+	top: 16px;
+	right: -34px;
+	z-index: 2;
+	width: 130px;
+	transform: rotate(45deg);
+	text-align: center;
+	padding: 3px 0;
+	font-size: 9px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #0d1216;
+	background: var(--uum-status, #2ecc71);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+	pointer-events: none;
+}
+
+.uum-overlay {
+	position: absolute;
+	inset: auto 0 0 0;
+	z-index: 1;
+	padding: 28px 12px 12px;
+	text-align: left;
+	background: linear-gradient(
+		to top,
+		rgba(10, 13, 16, 0.95) 40%,
+		transparent
+	);
+}
+
+.uum-full-name {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+}
+
+.uum-dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	flex: 0 0 auto;
+}
+
+.uum-overlay .uum-name,
+.uum-overlay .uum-name a {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.uum-card-full .uum-extra {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: max-height 350ms ease, opacity 350ms ease, margin-top 350ms ease;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.uum-card-full:hover .uum-extra {
+	max-height: 120px;
+	opacity: 1;
+	margin-top: 6px;
+}
+
+.uum-card-full .uum-extra .uum-line {
+	line-height: 1.5;
+}
+
+/* ==========================================================================
+   Variant: compact — horizontal 250px card
+   ========================================================================== */
+
+.uum-card-compact {
+	display: flex;
+	width: 250px;
+	box-sizing: border-box;
+	background: var(--color-surface-2, #1b232b);
+	border: 1px solid rgba(127, 179, 211, 0.28);
+	border-left: 4px solid #7fb3d3; /* overridden inline per member color */
+	border-radius: 8px;
+	overflow: hidden;
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.uum-card-compact:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.uum-compact-image {
+	flex: 0 0 84px;
+	width: 84px;
+	overflow: hidden;
+}
+
+.uum-compact-body {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 12px;
+	text-align: left;
+	min-width: 0;
+}
+
+.uum-compact-body .uum-name {
+	font-size: 14px;
+}
+
+.uum-status-text {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--uum-status, #2ecc71);
+}
+
+.uum-card-compact .uum-extra {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: max-height 300ms ease, opacity 300ms ease;
+	color: var(--color-subtle, #a7b4bd);
+}
+
+.uum-card-compact:hover .uum-extra {
+	max-height: 60px;
+	opacity: 1;
+}
+
+/* ---------- accessibility: respect reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+	.uum-card,
+	.uum-card img,
+	.uum-leader-text,
+	.uum-extra {
+		transition: none !important;
+	}
+}

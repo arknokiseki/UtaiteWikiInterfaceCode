@@ -1,0 +1,31 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = chabatake nnd.png
+|caption = Nico Nico Douga
+|officialjapname = 茶畑∴
+|officialromajiname = Chabatake∴
+|NNDuserpage = 512547
+|mylist1 = 3419709
+|mylist1info = main
+|mylist2 = 9293418
+|mylist2info = 1st year project
+|mylist3 = 15696298
+|mylist3info = 2nd year project
+|mylist4 = 25989133
+|mylist4info = collab
+|nicommu1 = co188281
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = Kumikyoku Nico Nico Douga Kai
+|examplennd = sm14389175
+|exampleyt = 
+|description = '''Chabatake∴''' ('''茶畑∴''') is an {{NNDict|Utaite}} with a rather cute and unique, somewhat strong {{NNDict|Loli}} voice, who sings VOCALOID and anime songs.
+
+She participated in several collaboration albums of [[Celo Project Albums|Celo Project]].
+
+She chose the name Chabatake∴, because she adores tea.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

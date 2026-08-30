@@ -1,0 +1,25 @@
+<infobox theme="song">
+<navigation><center>[[{{BASEPAGENAME}}|Song covers]] > {{#ifexist:{{BASEPAGENAME}}/chorus|[[{{BASEPAGENAME}}/chorus|Song choruses]]|{{font color|gray||Song choruses}}}}</center></navigation>
+	<image source="image"/>
+	<group row-items="4">
+		<header><center>Song title</center></header>
+		<data source="songtitle" span="4"><format><center>{{{songtitle}}}</center></format></data>
+		<data source="songtitle"><format><center>{{#if:{{{main|}}}|<small>{{{main}}}</small><br>}}{{#if:{{{nnd|}}}|{{nnd|{{{nnd}}}|{{{nnddesc|{{{nnd}}}}}}|link}}|NND}}{{#if:{{{yt|}}}|&nbsp;{{!}}&nbsp;{{yt|{{{yt}}}|YT|link}}
+|{{!}}YT}}</center></format></data>
+		<data source="other"><format><center><small>{{{other}}}</small><br>{{#if:{{{nnd2|}}}|{{nnd|{{{nnd2|}}}}}|[[File:NoNv.png|link=]]}}{{#if:{{{yt2|}}}|[[File:Yt.png|link=http://www.youtube.com/watch?v={{{yt2}}}]]|[[File:NoYt.png|link=]]}}</center></format></data>
+		<data source="other3"><format><center><small>{{{other3}}}</small><br>{{#if:{{{nnd3|}}}|{{nnd|{{{nnd3|}}}}}|[[File:NoNv.png|link=]]}}{{#if:{{{yt3|}}}|[[File:Yt.png|link=http://www.youtube.com/watch?v={{{yt3}}}]]|[[File:NoYt.png|link=]]}}</center></format></data>
+		<data source="other4"><format><center><small>{{{other4}}}</small><br>{{#if:{{{nnd4|}}}|{{nnd|{{{nnd4|}}}}}|[[File:NoNv.png|link=]]}}{{#if:{{{yt4|}}}|[[File:Yt.png|link=http://www.youtube.com/watch?v={{{yt4}}}]]|[[File:NoYt.png|link=]]}}</center></format></data>
+	</group>
+	<group row-items="1">
+		<header><center>Producer</center></header>
+		<data source="producer"><format><center>{{{producer}}}</center></format></data>
+	</group>
+</infobox>
+{{clr}}
+__TOC__{{main other|<includeonly>[[Category:Famous Utattemita Songs]][[Category:Pages using Song Template]]</includeonly>|}}<noinclude><center><span style="color: red; font-weight: bold;">This template will become obsolete soon. Please use [[Template:Utattemita|<nowiki>{{Utattemita}}</nowiki>]] template instead.</span></center>{{documentation}}</noinclude>
+<noinclude>[[Category:Infobox Templates]]
+</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

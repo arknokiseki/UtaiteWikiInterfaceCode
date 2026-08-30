@@ -1,0 +1,37 @@
+{{Documentation/Header}}
+This template is used to mark templates as high-risk, a template that has a lot of uses and where technically deficient or malicious edits can affect almost every page on the wiki. Templates marked as such will be put in [[:Category:High-Risk Templates]], and modules [[:Category:High-Risk Modules]].
+
+==Syntax==
+{{T|High Risk|v1=Template or Module name with specified namespace|v2=pagetype=Namespace the template/module is designed for|v3=nocat=include as "1" to disable categories}}
+* {{F|pagetype}} &mdash; Main, Template, File, Module or Category.
+
+==Examples==
+{{T|High Risk|Template:Utaite|pagetype=Main|nocat=1|_Y_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Name",
+			"type": "string",
+			"description": "Template or Module full name with specified namespace of which to use for the statistics.",
+			"example": "\"Module:Round\", \"Template:Card\"",
+			"default": "{{NAMESPACE}}:{{ROOTPAGENAME}}",
+			"suggested": true
+		},
+		"pagetype": {
+			"label": "Page Type",
+			"description": "Namespace which the template/module is designed for.",
+			"example": "\"Template\", \"Category\"",
+			"type": "string",
+			"suggested": true
+		},
+		"nocat": {
+			"label": "Disable Categories",
+			"type": "boolean"
+		}
+	},
+	"format": "inline"
+}
+</templatedata>

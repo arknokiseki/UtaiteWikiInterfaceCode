@@ -1,0 +1,20 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Mono/styles.css|Template:Nowrap/styles.css}}
+{{Lua|Module:Template link general}}
+{{tsh|tlg}}
+== TemplateData ==
+{{#ifeq:{{FULLROOTPAGENAME}}|Template:Tlg
+|{{TemplateData header|Template link general}}
+|{{TemplateData header}}
+}}
+<!-- TODO: support filtering parameters in [[Module:TNT#doc]] for templates
+  -- that set parameters of [[Module:Template link general]] in the invocation. -->
+{{#invoke:TNT|doc|template link general}}
+
+== See also ==
+{{tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+}}</includeonly>

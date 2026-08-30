@@ -1,0 +1,3 @@
+<includeonly>{{#if:{{{1|}}}|{{BirthdayEntry|name={{{1}}}|image={{#if:{{#invoke:Utaite|getParameter|{{{1}}}|image}}|{{#invoke:Utaite|getParameter|{{{1}}}|image}}|Unknown}}|birthyear={{#if:{{#invoke:Utaite|getParameter|{{{1}}}|birthyear}}|{{#invoke:Utaite|getParameter|{{{1}}}|birthyear}}|Unknown}}|birthmonth={{#if:{{#invoke:Utaite|getParameter|{{{1}}}|birthmonth}}|{{#invoke:Utaite|getParameter|{{{1}}}|birthmonth}}|Unknown}}|birthday={{#if:{{#invoke:Utaite|getParameter|{{{1}}}|birthday}}|{{#invoke:Utaite|getParameter|{{{1}}}|birthday}}|Unknown}}}}|'''not exist'''}}</includeonly><noinclude>
+{{doc}}
+</noinclude>

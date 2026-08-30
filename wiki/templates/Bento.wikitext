@@ -1,0 +1,1 @@
+<includeonly>[[File:Bento.png|{{{size|16x16px}}}|link=https://bento.me/{{{1}}}|{{#if:{{{2|}}}|{{{2}}}}}]]</includeonly><noinclude>{{documentation}}[[Category:SNS Template]]</noinclude>

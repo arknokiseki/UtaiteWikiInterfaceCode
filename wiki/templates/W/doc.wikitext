@@ -1,0 +1,27 @@
+{{Documentation/Header}}
+{{High Risk}}
+This is a shorthand template for linking to articles on the {{w|English Wikipedia}}, outside of the Utaite Wiki.
+
+==Syntax==
+To simultaneously link to an English Wikipedia article and show the article name, the template syntax is:<br>
+{{T|w|v1=article title}}
+
+To link to an article by name but showing different inline text while linking to it, the template syntax is:<br>
+{{T|w|v1=article title|v2=different text}}
+
+To link to another language (see {{w|meta:List of Wikipedias|here}} for all language codes), the template syntax is:<br>
+{{T|w|v1=lang:article title|v2=article title or any text}}
+
+==Examples==
+Link to article and display article name:<br>
+{{T|w|Apple|_Y_=1}}
+
+Link to article and display text different from article name:<br>
+{{T|w|Apple|Fruit of God|_Y_=1}}
+
+Link to article in {{w|meta:List of Wikipedias|another language}} and display article title or any text:<br>
+{{T|w|es:Manzana|Fruit of God|_Y_=1}}
+
+==See also==
+* {{T|Wt}} for Wiktionary links<noinclude>
+</noinclude>

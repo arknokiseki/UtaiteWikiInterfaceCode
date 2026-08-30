@@ -1,0 +1,31 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|ULW|v1=PAGENAME|v2=Link Text}}
+
+==Examples==
+{{T|ULW|p1=page name|p2=link caption|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "PAGENAME",
+			"description": "Page name in target wiki",
+			"example": "page name",
+			"type": "string",
+			"suggested": true
+		},
+		"2": {
+			"label": "Link Text",
+			"description": "Text to be displayed",
+			"example": "link caption",
+			"type": "string",
+			"suggested": true
+		}
+	}
+}
+</templatedata>

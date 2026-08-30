@@ -1,0 +1,28 @@
+{{Utaite Spotlight/Design|site=nnd
+|image = Yueporu mune kyun 26115613.png
+|caption = her collab cover of "Kimi ni Mune Kyun"
+|officialjapname = ゆえぽる
+|officialromajiname = Yueporu
+|YTusername = 
+|NNDuserpage = 6493791
+|mylist1 = 17215754
+|mylist1info = 
+|mylist2 = 19572215
+|mylist2info = used in
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co339167
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = The Beast.
+|examplennd = sm12163867
+|exampleyt = ZJ9XnDbh-mA
+|description = '''Yueporu''' ('''ゆえぽる''') is an {{NNDict|Utaite}} with a charming, somewhat glamourous and gentle voice. Her break through cover was of "Flashbacksound"{{nnd|sm10649713}}, first getting 10K views.
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

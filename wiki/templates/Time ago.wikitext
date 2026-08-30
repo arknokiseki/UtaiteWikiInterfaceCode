@@ -1,0 +1,3 @@
+<includeonly>{{#invoke:TimeAgo|main|{{{1|}}}}}</includeonly><noinclude>
+{{documentation}}[[Category:Assistant templates]]
+</noinclude>

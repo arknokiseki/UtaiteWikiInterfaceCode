@@ -1,0 +1,15 @@
+{{Documentation subpage}}
+<!-- Categories go at the bottom of this page and interwikis go in Wikidata. -->
+
+== Usage ==
+* <code><nowiki>{{</nowiki>Pre|1= |background= |color= |width= |space= <nowiki>}}</nowiki></code>
+All parameters are optional:
+* <code>|1=</code> – the text to present (may include markup and templates to expand; note that automatic syntax highlighting is not supported; the default text is empty).
+* <code>|background= |color=</code> – set alternate colors (in CSS format) to use for distinguishing status of the rendered code: bad, non-working, obsolete, deprecated, unsupported, discouraged, simplified, incomplete, tricky, detailed, supported, recommended, advanced, optional, mandatory, current, future, proposal, untested, beta, approved, rejected, dangerous, problematic, temporary, workaround, alternative, etc.; for passing CSS colors using a compact numeric format starting with a sharp sign <code>#</code> followed by hexadecimal digits (3 or 6 digits for RGB colors, 4 or 8 digits for RGBA colors), you may need to escape it by a leading <code>&lt;nowiki/&gt;</code> empty tag, so that it won't be interpreted by MediaWiki as a numbered list item when it preprocesses parameters given to the template, or use a template generating the color syntax.
+* <code>|width=</code> – CSS width for the generated <code>&lt;pre&gt;&lt;/pre&gt;</code> parent element (useful in table cells).
+* <code>|space=</code> – one of the values accepted for the CSS <code>white-space:</code> attribute (<code>pre-wrap</code> by default to preserve newlines in the text given in 1st parameter but still allow wrapping overlong lines, without overflowing the width or using an horizontal scrollbar)
+
+<includeonly>{{#ifeq:{{SUBPAGENAME}}|sandbox||
+<!-- Categories go here and interwikis go in Wikidata. -->
+[[Category:Semantic markup templates]]
+}}</includeonly>

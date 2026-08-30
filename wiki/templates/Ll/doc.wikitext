@@ -1,0 +1,35 @@
+{{Documentation/Header}}
+Links to a page on [[mw:|mediawiki.org]]. It exists so that documentation imported from MediaWiki.org keeps working here — its internal links resolve to the upstream wiki instead of redlinking locally.
+
+When the target is the page you are already on, the label renders '''bold''' and unlinked, matching how self-links behave normally.
+
+==Syntax==
+{{T|Ll|block=1
+|v1=page
+|v2=label
+|v3=nsp =
+}}
+
+==Examples==
+{| class="dataTable"
+! Code !! Result
+|-
+| <code><nowiki>{{Ll|Help:Templates}}</nowiki></code> || {{Ll|Help:Templates}}
+|-
+| <code><nowiki>{{Ll|Help:Templates|template help}}</nowiki></code> || {{Ll|Help:Templates|template help}}
+|-
+| <code><nowiki>{{Ll|Help:Templates|nsp=1}}</nowiki></code> || {{Ll|Help:Templates|nsp=1}}
+|}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Page || Page title on mediawiki.org. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>2</code> || – || Label || Display text for the link. || string || the page title ||
+|-
+| <code>nsp</code> || – || Strip namespace || Any value shows only the page name, dropping the namespace prefix. Ignored if a label is given. || string || – ||
+|}
+
+==See also==
+* {{T|Interwiki doc}} — shared documentation for interwiki link templates

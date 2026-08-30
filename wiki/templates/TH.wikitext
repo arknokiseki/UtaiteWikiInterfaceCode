@@ -1,0 +1,5 @@
+<includeonly>[http://en.touhouwiki.net/wiki/{{#replace:{{{1}}}|<nowiki> </nowiki>|_}} {{{2|{{{1|}}}}}}]</includeonly><noinclude>{{documentation}}
+
+{{Interwiki doc}}
+</noinclude><noinclude>[[Category:Interwiki Templates]]
+</noinclude>

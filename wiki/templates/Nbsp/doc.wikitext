@@ -1,0 +1,15 @@
+{{Documentation/Header}}
+{{High Risk|Template:Nbsp|nocat=1|pagetype=Main}}
+Inserts a single non-breaking space (<code>&amp;nbsp;</code>). Use it to keep two items together on one line — a number and its unit, a name and an honorific, initials — so they never split across a line break. Takes no parameters; each call produces exactly one non-breaking space.
+
+==Syntax==
+{{T|Nbsp}}
+
+==Examples==
+{| class="dataTable"
+! Code !! Result
+|-
+| <code><nowiki>100{{Nbsp}}m</nowiki></code> || 100{{Nbsp}}m
+|-
+| <code><nowiki>Vol.{{Nbsp}}3</nowiki></code> || Vol.{{Nbsp}}3
+|}

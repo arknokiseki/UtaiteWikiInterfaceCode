@@ -1,0 +1,185 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Lua|Module:List}}
+{{Uses TemplateStyles|Template:Plainlist/styles.css}}
+{{TemplateData header}}
+<templatedata>
+{
+    "params": {
+        "class": {
+            "label": "Wrapper <div> – `class` Attribute",
+            "description": "The value of the `class` attribute of the wrapper <div> tag.",
+            "type": "string"
+        },
+        "style": {
+            "label": "Wrapper <div> – `style` Attribute",
+            "description": "The value of the `style` attribute of the wrapper <div> tag.",
+            "type": "string"
+        },
+        "list_style": {
+            "label": "<ul> Tag – `style` Attribute",
+            "description": "The value of the `style` attribute of the <ul> tag.",
+            "type": "string"
+        },
+        "item_style": {
+            "label": "<li> Tags – `style` Attribute",
+            "description": "The value of the `style` attribute for all inner <li> tags.",
+            "type": "string"
+        },
+        "1": {
+            "label": "Item 1",
+            "description": "The contents of the first <li> tag.",
+            "type": "content"
+        },
+        "item1_style": {
+            "label": "Item 1 – `style` Attribute",
+            "description": "The value of the `style` attribute of the first <li> tag.",
+            "type": "string"
+        },
+        "item1_value": {
+            "label": "Item 1 – `value` Attribute",
+            "description": "The value of the `value` attribute of the first <li> tag.",
+            "type": "string"
+        },
+        "2": {
+            "label": "Item 2",
+            "description": "The contents of the second <li> tag.",
+            "type": "content"
+        },
+        "item2_style": {
+            "label": "Item 2 – `style` Attribute",
+            "description": "The value of the `style` attribute of the second <li> tag.",
+            "type": "string"
+        },
+        "item2_value": {
+            "label": "Item 2 – `value` Attribute",
+            "description": "The value of the `value` attribute of the second <li> tag.",
+            "type": "string"
+        },
+        "3": {
+            "label": "Item 3",
+            "description": "The contents of the third <li> tag.",
+            "type": "content"
+        },
+        "item3_style": {
+            "label": "Item 3 – `style` Attribute",
+            "description": "The value of the `style` attribute of the third <li> tag.",
+            "type": "string"
+        },
+        "item3_value": {
+            "label": "Item 3 – `value` Attribute",
+            "description": "The value of the `value` attribute of the third <li> tag.",
+            "type": "string"
+        },
+        "4": {
+            "label": "Item 4",
+            "description": "The contents of the fourth <li> tag.",
+            "type": "content"
+        },
+        "item4_style": {
+            "label": "Item 4 – `style` Attribute",
+            "description": "The value of the `style` attribute of the fourth <li> tag.",
+            "type": "string"
+        },
+        "item4_value": {
+            "label": "Item 4 – `value` Attribute",
+            "description": "The value of the `value` attribute of the fourth <li> tag.",
+            "type": "string"
+        },
+        "5": {
+            "label": "Item 5",
+            "description": "The contents of the fifth <li> tag.",
+            "type": "content"
+        },
+        "item5_style": {
+            "label": "Item 5 – `style` Attribute",
+            "description": "The value of the `style` attribute of the fifth <li> tag.",
+            "type": "string"
+        },
+        "item5_value": {
+            "label": "Item 5 – `value` Attribute",
+            "description": "The value of the `value` attribute of the fifth <li> tag.",
+            "type": "string"
+        },
+        "6": {
+            "label": "Item 6",
+            "description": "The contents of the sixth <li> tag.",
+            "type": "content"
+        },
+        "item6_style": {
+            "label": "Item 6 – `style` Attribute",
+            "description": "The value of the `style` attribute of the sixth <li> tag.",
+            "type": "string"
+        },
+        "item6_value": {
+            "label": "Item 6 – `value` Attribute",
+            "description": "The value of the `value` attribute of the sixth <li> tag.",
+            "type": "string"
+        },
+        "7": {
+            "label": "Item 7",
+            "description": "The contents of the seventh <li> tag.",
+            "type": "content"
+        },
+        "item7_style": {
+            "label": "Item 7 – `style` Attribute",
+            "description": "The value of the `style` attribute of the seventh <li> tag.",
+            "type": "string"
+        },
+        "item7_value": {
+            "label": "Item 7 – `value` Attribute",
+            "description": "The value of the `value` attribute of the seventh <li> tag.",
+            "type": "string"
+        },
+        "8": {
+            "label": "Item 8",
+            "description": "The contents of the eighth <li> tag.",
+            "type": "content"
+        },
+        "item8_style": {
+            "label": "Item 8 – `style` Attribute",
+            "description": "The value of the `style` attribute of the eighth <li> tag.",
+            "type": "string"
+        },
+        "item8_value": {
+            "label": "Item 8 – `value` Attribute",
+            "description": "The value of the `value` attribute of the eighth <li> tag.",
+            "type": "string"
+        },
+        "9": {
+            "label": "Item 9",
+            "description": "The contents of the ninth <li> tag.",
+            "type": "content"
+        },
+        "item9_style": {
+            "label": "Item 9 – `style` Attribute",
+            "description": "The value of the `style` attribute of the ninth <li> tag.",
+            "type": "string"
+        },
+        "item9_value": {
+            "label": "Item 9 – `value` Attribute",
+            "description": "The value of the `value` attribute of the ninth <li> tag.",
+            "type": "string"
+        },
+        "10": {
+            "label": "Item 10",
+            "description": "The contents of the tenth <li> tag.",
+            "type": "content"
+        },
+        "item10_style": {
+            "label": "Item 10 – `style` Attribute",
+            "description": "The value of the `style` attribute of the tenth <li> tag.",
+            "type": "string"
+        },
+        "item10_value": {
+            "label": "Item 10 – `value` Attribute",
+            "description": "The value of the `value` attribute of the tenth <li> tag.",
+            "type": "string"
+        }
+    }
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:List formatting and function templates]]
+}}</includeonly>

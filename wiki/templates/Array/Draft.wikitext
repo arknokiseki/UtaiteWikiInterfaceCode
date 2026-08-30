@@ -1,0 +1,13 @@
+<includeonly>{{#invoke:Array/Draft|main}}</includeonly><noinclude>{{Documentation|content=
+
+==Examples==
+{{T|Array/Draft|1,2,3,4,5|,|*''{item}''{newline} |_Y_=1}}<br>
+{{T|Array/Draft|1,2,2,2,3,4,5|,|*''{item}''{newline}|p4=dedupe=1|_Y_=1}}<br>
+{{T|Array/Draft|Traveler;Paimon;Diluc;Jean;Venti|;|*{item}{newline}|p4=sort=1|_Y_=1}}<br>
+{{T|Array/Draft|Archon;Story;Event|;|[[{item} Quests]]|XXX|nw=1|_Y_=1}}<br>
+{{T|Array/Draft|a&&b/yes/no&&c&&d&&e|format={index}: {item1} ({item2}, {item3})|delim=&&|delim2=/|join=,&nbsp;|_Y_=1}}<br>
+{{T|Array/Draft|a&&b/yes\no&&c&&d&&e|format={index}: {item1} ({item2.1}, {item2.2})|delim=&&|delim2=/|delim3=\|join=,&nbsp;|_Y_=1}}<br>
+{{T|Array/Draft|a&&b&&c&&d&&e|&&|{index}: {item}|,&nbsp;|_Y_=1}}<br>
+<pre>{{Array/Draft|Venti;Diluc;Jean|;|{{Character|{item}|50}}}}</pre>
+{{Array/Draft|Venti;Diluc;Jean|;|{{Character|{item}|50}}}}<br>
+}}</noinclude>

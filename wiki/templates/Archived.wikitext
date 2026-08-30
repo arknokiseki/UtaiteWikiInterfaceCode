@@ -1,0 +1,8 @@
+<includeonly>{{ombox
+| type      = notice
+| image     = [[Image:OOjs_UI_icon_information-progressive.svg|40px]]
+| style     = width: {{{width|80%}}} 
+| textstyle = color: red; font-weight: bold; font-style: italic;
+| text      = This {{NAMESPACE}} has been archived.&nbsp;{{#ifeq:{{NAMESPACE}}|Template| Please refrain from using this template.|}}
+ {{{info|}}}
+}}{{#ifeq:{{NAMESPACE}}|{{ns:0}}|[[Category:Archived Article]]|[[Category:Archived {{NAMESPACE}}]]}}</includeonly><noinclude>{{Doc}}</noinclude>

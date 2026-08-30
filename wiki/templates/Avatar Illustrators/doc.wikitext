@@ -1,0 +1,6 @@
+;Description
+:Use this template to label images that represent avatar illustrators.
+;Syntax
+:Type <code>{{t|Avatar Illustrators}}</code> on the image information page.
+
+<includeonly>[[Category:Image license templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,13 @@
+{{Documentation/Header}}
+Outputs a literal ampersand (<code>&amp;</code>). Use it inside template parameters and URLs where a bare <code>&amp;</code> would otherwise be read as the start of an HTML entity, or would break parameter parsing.
+
+Takes no parameters.
+
+==Syntax==
+{{T|&}}
+
+==Example==
+<pre>{{fullurl:Special:Block|wpTarget=Bot{{&}}wpExpiry=indefinite}}</pre>
+
+==See also==
+* {{T|Nbsp}} — non-breaking space

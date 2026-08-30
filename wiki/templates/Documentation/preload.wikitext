@@ -1,0 +1,17 @@
+<includeonly>{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|{{subst:BASEPAGENAME}}|v1=|v2=|v3=}}
+
+==Examples==
+{{T|{{subst:BASEPAGENAME}}|p1=|p2=|p3=|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata></includeonly><noinclude>{{Documentation|type=Preload}}</noinclude>

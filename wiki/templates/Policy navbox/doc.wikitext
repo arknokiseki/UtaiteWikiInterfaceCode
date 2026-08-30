@@ -1,0 +1,9 @@
+{{Documentation/Header}}
+A navigation bar linking every policy and governance page on the wiki — rules, privacy, licensing, the EDP, requirements, romanization, adminship requests, the admin noticeboard and block appeals.
+
+Place it at the top or bottom of any policy page so readers can move between them. Takes no parameters.
+
+==Syntax==
+{{T|Policy navbox}}
+
+To add a page to the bar, edit this template directly — the link list is hardcoded.

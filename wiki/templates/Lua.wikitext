@@ -1,0 +1,4 @@
+<onlyinclude><includeonly>{{#invoke:Lua banner|main}}</includeonly></onlyinclude>
+{{Lua|Module:Lua banner}}
+{{Documentation}}
+<!-- Categories go on the /doc subpage and interwikis go on Wikidata. -->

@@ -1,0 +1,114 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+This is the '''template link with parameters''' (or {{tlp|tlp}}) template.
+
+It can be used in documentation and talk page discussions to show how a template name would be used in code.
+
+Here is how this template looks. Code to the left and actual rendering to the right:
+
+: {{tlc|tlp|name|parameters}} = {{tlp|name|parameters}}
+
+Features of {{tlp|tlp}}:
+* It shows a template name with a link to that template.
+* It shows up to eight parameters.
+* It also shows empty parameters. (See examples below.)
+* It prevents line wraps in its output.
+* It uses normal text style. ({{tlx|tlx}}, for instance, uses {{tag|code}} text style.)
+
+This template belongs to a whole family of similar templates. See the [[#See also|see also]] section below for some of them. For instance, when writing documentation you might want to avoid a lot of unnecessary links, since it decreases readability&nbsp;– i.e. on the first occurrence of a template name, use {{tl|tl}}, {{tlp|tlp}} or {{Tlx|Tlx}} and thereafter use {{tlf|tlf}}, {{tlc|tlc}}.
+
+===Examples===
+{| class="wikitable"
+|- style="vertical-align:top" 
+| '''Code''' || '''Output''' || '''Comments'''
+|- style="vertical-align:top"
+| {{tlc|tlp}} || {{tlp}} || Shows its own syntax.
+|- style="vertical-align:top">
+| {{tlc|tlp|name}} || {{tlp|name}} ||
+|- style="vertical-align:top"
+|| {{tlc|tlp|name|first}} || {{tlp|name|first}} || 
+|- style="vertical-align:top"
+| {{tlc|tlp|name|first|last}} || {{tlp|name|first|last}} || 
+|- style="vertical-align:top" 
+| {{tlc|tlp|name|<nowiki>a|b|c|d|e|f|g|h|i|j</nowiki>}} || {{tlp|name|a|b|c|d|e|f|g|h|i|j}} ||Shows up to ''eight'' parameters. The rest are dropped.
+|- style="vertical-align:top">
+| {{tlc|tlp|name||three|four}} || {{tlp|name||three|four}} || Also shows empty parameters.
+|- style="vertical-align:top"
+| {{tlc|tlp|name||three|}} || {{tlp|name||three|}} || Even shows empty parameters that come at the end.
+|- style="vertical-align:top" 
+|style="color:red;"|{{tlc|tlp|name|3=first=a|4=last=b}} ||style="color:red;"|{{tlp|name|first=a|last=b}} ||style="color:red;"|Equal signs are a problem, but there are a couple ways to fix:
+|- style="vertical-align:top">
+|| {{tlc|tlp|name|3=2=first=a|4=3=last=b}} || {{tlp|name|2=first=a|3=last=b}} || Use numbered parameters to fix it. Here, parameter "{{para|2}}" is assigned the string "first{{=}}a". Start with #2, since "name" is already in the "{{para|1}}" slot. Note that ''all'' subsequent parameters after a numbered parameter ''must also'' be numbered.
+|- style="vertical-align:top"
+| {{tlc|tlp|name|3=first{{tl|1==}}a|4=last{{tl|1==}}b}} || {{tlp|name|first{{=}}a|last{{=}}b}} || Or, simply use, "{{tlx|1==}}", the equal-sign template, to "escape" the symbol.
+|-style="vertical-align:top" 
+| {{tlc|tlp|name|3=2=1=a|4=3=2=b}} || {{tlp|name|2=1=a|3=2=b}} || Both techniques also work with numbered positional parameters (e.g.: "{{para|1}}", "{{para|2}}").
+|- style="vertical-align:top"
+|style="color:red;"|{{tlc|tlp|name|3=2=1=a|4=last{{tl|1==}}b}} ||style="color:red;"|{{tlp|name|last{{=}}b}} ||style="color:red;"|The named parameter ("{{para|last}}") clobbered the prior one ("{{para|2}}").  Again, '''all''' subsequent parameters after a numbered parameter ''must also'' be numbered...
+|- style="vertical-align:top" 
+| {{tlc|tlp|name|3=2=1=a|4=3=last=b}} || {{tlp|name|2=1=a|3=last=b}} || ... but that's easy to fix, by adding the position number ("{{para|3}}") to the last parameter.
+|}
+
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"description": "Template link with parameters",
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": "Template",
+			"description": "Linked template name",
+			"required": true,
+			"type": "wiki-template-name"
+		},
+		"2": {
+			"label": "Parameter 1",
+			"description": "First parameter value",
+			"type": "string"
+		},
+		"3": {
+			"label": "Parameter 2",
+			"description": "Second parameter value",
+			"type": "string"
+		},
+		"4": {
+			"label": "Parameter 3",
+			"description": "Third parameter value",
+			"type": "string"
+		},
+		"5": {
+			"label": "Parameter 4",
+			"description": "Fourth parameter value",
+			"type": "string"
+		},
+		"6": {
+			"label": "Parameter 5",
+			"description": "Fifth parameter value",
+			"type": "string"
+		},
+		"7": {
+			"label": "Parameter 6",
+			"description": "Sixth parameter value",
+			"type": "string"
+		},
+		"8": {
+			"label": "Parameter 7",
+			"description": "Seventh parameter value",
+			"type": "string"
+		},
+		"9": {
+			"label": "Parameter 8",
+			"description": "Eight parameter value",
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== See also ==
+{{Tl-nav}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal template-link templates{{#translation:}}]]
+}}</includeonly>

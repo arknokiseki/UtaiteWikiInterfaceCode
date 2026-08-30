@@ -1,0 +1,35 @@
+{{Documentation/Header}}
+{{Lua|Item}}
+This template creates the icon and link for a [[character]].
+
+==Parameters==
+This template has 2 unnamed parameters:
+# '''(mandatory)''' Name of the Character.
+# '''(optional)''' Size of the icon. Defaults to 80.
+This template has the following named parameters:
+*'''text''' (optional) Changes text to something other than character name.
+*'''link''' (optional) Changes link to something other than character.
+*'''nobr''' (optional) Set to '''1''' for no new line.
+*'''notext''' (optional) Set to '''1''' for no text.
+
+==Example==
+<pre>{{Character|Mafumafu}}{{Character|Amatsuki}}{{Character|96Neko}}</pre>
+{{Character|Mafumafu}}{{Character|Amatsuki}}{{Character|96Neko}}
+
+<pre>{{Character|Mafumafu|nobr=1}}, {{Character|Amatsuki|nobr=1}}, {{Character|96Neko|nobr=1}}</pre>
+{{Character|Mafumafu|nobr=1}}, {{Character|Amatsuki|nobr=1}}, {{Character|96Neko|nobr=1}}
+
+<pre>{{Character|Mafumafu|notext=1}}{{Character|Amatsuki|notext=1}}{{Character|96Neko|notext=1}}</pre>
+{{Character|Mafumafu|notext=1}}{{Character|Amatsuki|notext=1}}{{Character|96Neko|notext=1}}
+
+<pre>{{Character|Mafumafu|text=First}}{{Character|Amatsuki|text=Second}}{{Character|96Neko|text=Third}}</pre>
+{{Character|Mafumafu|text=First}}{{Character|Amatsuki|text=Second}}{{Character|96Neko|text=Third}}
+
+<pre>{{Character|Mafumafu|link=Characters}}{{Character|Amatsuki|link=Geo}}{{Character|96Neko|link=Barbatos}}</pre>
+{{Character|Mafumafu|link=Characters}}{{Character|Amatsuki|link=Geo}}{{Character|96Neko|link=Barbatos}}
+
+<pre>{{Character|Unknown}}</pre>
+{{Character|Unknown}}<noinclude>
+</noinclude>
+<noinclude>[[Category:Imported Templates]]
+</noinclude>

@@ -1,0 +1,1 @@
+<includeonly>{{uptodate|Month XX, 20XX}}</includeonly><noinclude>Example: {{T|uptodate|{{MONTHNAME|{{CURRENTMONTH}}}} {{CURRENTDAY}}, {{CURRENTYEAR}}|_Y_=1}}</noinclude>

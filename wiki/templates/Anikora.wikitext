@@ -1,0 +1,16 @@
+<includeonly>__notoc__<div class="anime-season-container"><!--
+  --><!-- Season header --><!--
+  --><div class="season-header"><div class="cover-image">[[File:anikora_{{#sub:{{{nnd}}}|2|15}}.png|Season Cover|120px]]</div><div class="header-text"><h3>{{#if:{{{season|}}}|{{{year|}}}{{#switch:{{{season|}}}|Spring=春|Summer=夏|Autumn=秋|Winter=冬}}アニメの曲をまとめてコラボ {{nnd|{{{nnd|}}}}}|{{{title}}} {{nnd|{{{nnd|}}}}}}}</h3><div class="date">{{{date|}}}</div></div></div><!--
+  --><!-- Tracklist --><!--
+  --><div class="tracklist-container"><!--
+    --><h3>Tracklist</h3>
+{| class="wikitable datatable" data-page-length="25" data-order='[[0, "asc"]]' data-column-defs='[{"targets": [1,2,3], "searchable": true}]' data-search-panes="true"
+! data-searchpane="true" | No.
+! data-searchpane="true" | Title
+! data-searchpane="true" | Original
+! data-searchpane="true" | Utaite
+|-
+{{{tracks|}}}
+|}<!--
+  --></div><!--
+--></div></includeonly><noinclude>__notoc__{{documentation}}</noinclude>

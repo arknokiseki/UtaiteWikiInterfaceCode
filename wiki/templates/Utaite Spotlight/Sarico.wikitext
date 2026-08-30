@@ -1,0 +1,30 @@
+{{Utaite Spotlight/Design|nnd = 
+|image = sarico twitterbg.png
+|caption = her twitter background
+|officialjapname = サリコ
+|officialromajiname = Sarico
+|NNDuserpage = 3283566
+|mylist1 = 26560366
+|mylist1info = utattemita
+|mylist2 = 32091082
+|mylist2info = collab
+|mylist3 = 29157897
+|mylist3info = mix
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co410356
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Headphone Actor]]
+|examplennd = sm16445213
+|exampleyt = kfNWUCGpgzk
+|description = '''Sarico''' ('''サリコ''') is an {{NNDict|Utaite}} with a rather rough and harsh voice, with a compressed and compact sound, who often puts much energy behind her voice, giving her singing a screaming like style, such as in her cover of "Tokyo Teddy Bear"{{nnd|sm15444469}}.
+
+She can however also sing in a calm ton without losing that rough tone of her voice, such as in her cover of "[[Hitorinbo Envy]]"{{nnd|sm20938385}}.
+
+Her favorite genre would be rock'n'roll, but she isn't picky about genres in general.}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

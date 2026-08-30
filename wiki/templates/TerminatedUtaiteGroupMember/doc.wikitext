@@ -1,0 +1,129 @@
+== TerminatedUtaiteGroupMember template ==
+__notoc__
+The '''TerminatedUtaiteGroupMember''' template is used to display information about individual terminated members of an utaite group. It creates a card-like layout for each terminated member, showcasing their image, name, and optionally their associated color and oshi mark. This template is used just for "archive" purpose and not to be disused.
+<tabber>Usage=
+=== Usage ===
+
+Use the following syntax to add a terminated member to your page:
+
+<pre>
+{{TerminatedUtaiteGroupMember
+|image=
+|name=
+|desc=
+|color=
+|fanname=
+|oshimark=
+|reason=
+|leader= yes (ONLY ADD THIS PARAMETER IF HE/SHE/THEY ARE THE LEADER)
+}}
+</pre>
+
+|-|Parameters=
+=== Parameters ===
+
+{| class="wikitable"
+! Parameter !! Description !! Required?
+|-
+| image || The filename of the member's portrait image. This should be an image that has been uploaded to the wiki. || Yes
+|-
+| name || The name of the utaite group member. || Yes
+|-
+| desc || Short description of the utaite group member, e.g. Dice no. 1 for Liura from Ireisu. || Yes
+|-
+| color || The member's associated color. If provided, it will be displayed and used as the text color for the color name. || No
+|-
+| fanname || The member's fans name || No
+|-
+| oshimark || The member's oshi mark, typically an emoji or special character. || No
+|-
+| reason || The reason of termination || No
+|-
+| leader || <b>Only add this parameter if he/she/they are the leader of the group. You can fill this parameter with "yes" without quotation mark. || No
+|}
+
+==== Example ====
+
+Here's an example of how to use the template:
+
+<pre>
+{{TerminatedUtaiteGroupMember
+|image=template_doc.png
+|name=Member Name
+|desc=Member Description
+|color=Red
+|fanname=yessir
+|reason=Ate chocolate at UN conference.
+|oshimark=🎤
+}}
+</pre>
+
+This will create a card displaying the terminated member's image (MemberName.jpg), their name "Member Name", their color (Red), and their oshi mark (🎤).
+
+==== Output ====
+{{TerminatedUtaiteGroupMember
+|image=template_doc.png
+|name=Member Name
+|desc=Member Description
+|color=Red
+|fanname=yessir
+|oshimark=🎤
+|reason=Ate chocolate at UN conference.
+}}
+
+|-|Multiple Members=
+=== Multiple Members ===
+
+To display multiple members, simply add a div tag with certain style and use the template multiple times inside the div tag:
+
+<pre>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;text-align: center;">
+{{TerminatedUtaiteGroupMember
+|image=Member1.jpg
+|name=Member 1
+|color=Red
+|fanname=yessir
+|oshimark=🎤
+|leader=yes
+|reason=Ate dinosaur eggs at Jurassic Park
+}}
+{{TerminatedUtaiteGroupMember
+|image=Member2.jpg
+|name=Member 2
+|color=Blue
+|fanname=yessir
+|oshimark=🎵
+|reason=Married with anime character
+}}
+</div>
+</pre>
+
+=== Output ===
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;text-align: center;">
+{{TerminatedUtaiteGroupMember
+|image=Member1.jpg
+|name=Member 1
+|color=Red
+|fanname=yessir
+|oshimark=🎤
+|leader=yes
+|reason=Ate dinosaur eggs at Jurassic Park
+}}
+{{TerminatedUtaiteGroupMember
+|image=Member2.jpg
+|name=Member 2
+|color=Blue
+|fanname=yessir
+|oshimark=🎵
+|reason=Married with anime character
+}}
+</div>
+
+|-|Notes=
+=== Notes ===
+
+* Make sure to upload the terminated member images to the wiki before using them in the template.
+* The color, oshimark, and status parameters are optional. If not provided, those fields (except for status) will not appear on the terminated member's card.
+* To change the overall layout or styling of the cards, you would need to modify the template itself.
+</tabber>
+<includeonly>[[Category:Template documentation]]</includeonly>

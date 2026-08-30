@@ -1,0 +1,37 @@
+<div class="utaiteUnit"><!--
+--><div class="blacklist-pPreview">
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! style="text-align:center;background-color:#c3e6f9; color:#000000; padding:10px" |{{#if:{{{Name|}}}|<font size="5">{{{Name|}}}</font>|}}{{#if: {{{Kanji|}}}|{{#if: {{{Ruby|}}}|<font size="5"><ruby>{{{Kanji|}}}<rt>{{{Ruby}}}</rt></ruby></font>|<font size="5">{{{Kanji|}}}<br /></font>}}|}}{{#if:{{{Romaji|}}}|<font size="3">{{{Romaji|}}}</font><br />|}}{{#if: {{{English|}}}|<font size="3">{{{English|}}}</font>|}}
+|}
+<center>[[File:{{{Image}}}|700px]]</center>
+{| cellspacing="1/6" cellpadding="3" border="0" align="center" width="100%"
+! align="center" style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" | Years Active
+| align="center" | {{{Years}}}
+! align="center" style="background-color:#c3e6f9; color:#000000; text-align:center; padding:0.5em;" | Status
+| align="center" | {{{Status}}}
+|-
+|}</div></div><includeonly>[[Category:Utaite Agencies]]</includeonly>
+<noinclude>
+
+==Template==
+<pre>
+{{UtaiteAgency
+|Name= VOISING
+|Image= voising.png
+|Years= 2022 - present
+|Status= {{Active}}
+}}
+</pre>
+==Results==
+{{UtaiteAgency
+|Name= VOISING
+|Image= voising.png
+|Years= 2022 - present
+|Status= {{Active}}
+}}
+
+</noinclude>
+<noinclude>
+</noinclude>
+<noinclude>[[Category:Templates Used in Main Content]]
+</noinclude>

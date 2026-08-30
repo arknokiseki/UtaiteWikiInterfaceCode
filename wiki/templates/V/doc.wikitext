@@ -1,0 +1,46 @@
+==Description==
+A template that presents the view or play counts of a song.
+Retreived from: {{VW|Template:V|Vocaloid Wiki}}
+
+==Parameters==
+; <code>1=</code>
+: [[Template:External/doc|Website abbreviation]].
+; <code>2=</code>
+: View or play count.
+:* It doesn't matter if there is a comma; <code><nowiki>{{v|yt|1500123}}</nowiki></code> is just as valid as <code><nowiki>{{v|yt|1500,123}}</nowiki></code>. Even <code><nowiki>{{v|yt|150,0,12,3}}</nowiki></code> is okay, because the code removes all commas before processing.
+:* Rounding of the view count is automatic.
+
+==Notes==
+<pre><nowiki>
+    8,999      9,999 Songs approaching 10,000
+   10,000     99,999 Songs with 10,000
+
+   89,999     99,999 Songs approaching 100,000
+  100,000    999,999 Songs with 100,000
+
+  899,999    999,999 Songs approaching 1M
+1,000,000  9,999,999 Songs with 1M
+
+10,000,000 --------- Songs with 10M
+
+* {{v|nn|5}}
+
+* {{v|nn|55}}
+* {{v|nn|555}}
+
+* {{v|nn|5,555}}
+* {{v|nn|55,555}}
+* {{v|nn|555,555}}
+
+* {{v|nn|5,555,555}}
+* {{v|nn|55,555,555}}
+
+* {{v|nn|555,555,555}}
+* {{v|nn|99,555}}
+
+
+* {{v|nn|99.555}}
+* {{v|nn|99 555}}
+</nowiki></pre>
+
+<includeonly>[[Category:Templates]] [[Category:Component templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

@@ -1,0 +1,1 @@
+<includeonly>[http://www.pixiv.net/member.php?id={{{1}}} <span class="pixiv-icon"><i class="fa-brands fa-pixiv"></i></span>]</includeonly><noinclude>{{documentation}}</noinclude>

@@ -1,0 +1,16 @@
+<pre>{{Song
+|image     = placeholder.png
+|songtitle = Romaji<br>(漢字)<br>(Translation)
+|nnd       = nndid
+|yt        = ytid
+|producer  = Producername
+}}</pre>
+...results in:
+{{Song
+|image     = placeholder.png
+|songtitle = Romaji<br>(漢字)<br>(Translation)
+|nnd       = nndid
+|yt        = ytid
+|producer  = Producername
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

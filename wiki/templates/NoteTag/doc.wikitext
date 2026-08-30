@@ -1,0 +1,35 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+== TemplateData ==
+{{TemplateData header}}
+<templatedata>
+{
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Text",
+				"cs": "Text"
+			},
+			"aliases": [
+				"note",
+				"content",
+				"text"
+			],
+			"suggested": true,
+			"type": "line"
+		},
+		"name": {
+			"label": {
+				"en": "Name",
+				"cs": "Název"
+			},
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:templates]]
+}}</includeonly>

@@ -1,0 +1,4 @@
+<code class="mw-highlight"><onlyinclude>{{{{{|safesubst:}}}#tag:span|{{{1}}}|class="na"}}{{{{{|safesubst:}}}#if:{{{2|}}}<noinclude>1</noinclude>|{{{{{|safesubst:}}}#tag:span|=|class="o"}}{{{{{|safesubst:}}}#tag:span|{{{2}}}|class="s"}}}}</onlyinclude></code>
+{{Documentation}}
+{{#tag:syntaxhighlight||lang=text|style=display:none!important}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

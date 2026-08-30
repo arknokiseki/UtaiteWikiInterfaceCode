@@ -1,0 +1,49 @@
+<includeonly>
+{| class="wikitable datatable" data-page-length="25" data-order='[[1, "asc"]]' data-column-defs='[{"targets": [0], "visible": false}, {"targets": [1,2,3,4], "searchable": true}]' data-search-panes="true" data-row-group='{"dataSrc": 0}' style="width:100%; 
+! Group
+! Illustrator
+! Japanese Name
+! Sample Work
+! Sites
+! Utaite
+|-
+{{{entries}}}
+|}</includeonly><noinclude>
+== Usage ==
+<pre>
+{{Illustrators
+|entries=
+{{Illustrators/entry
+|name=Alice
+|namejp=アリス
+|image=Alice_art.jpg
+|sites=Twitter: @alice
+|utaite=Singer1
+}}
+{{Illustrators/entry
+|name=Bob
+|namejp=ボブ
+|image=Bob_art.jpg
+|sites=Pixiv: bob
+|utaite=Singer2
+}}
+}}
+</pre>
+{{Illustrators
+|entries=
+{{Illustrators/entry
+|name=Alice
+|namejp=アリス
+|image=Alice_art.jpg
+|sites=Twitter: @alice
+|utaite=Singer1
+}}
+{{Illustrators/entry
+|name=Bob
+|namejp=ボブ
+|image=Bob_art.jpg
+|sites=Pixiv: bob
+|utaite=Singer2
+}}
+}}
+</noinclude>

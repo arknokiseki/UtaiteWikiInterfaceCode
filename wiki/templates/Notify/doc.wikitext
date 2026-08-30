@@ -1,0 +1,35 @@
+==Description==
+This template is used to create notification banners.
+
+==Parameters==
+; <code>1=</code>, <code>color=</code>
+: A color to be used throughout the template. Any color that is [https://developer.mozilla.org/en-US/docs/Web/CSS/color_value valid in CSS] is valid here.
+; <code>2=</code>, <code>symb=</code>
+: A symbol to display on the left and right sides of the template.
+; <code>3=</code>, <code>text=</code>
+: The text to display inside the notification.
+
+==Examples==
+<pre>{{notify
+  | 1 = #22364a
+  | 2 = V
+  | 3 = This is a sample notification.
+}}</pre>
+
+<br />
+<pre>
+{{Notify
+  | 1 = #22364a
+  | 2 = V
+  | 3 = This EDIT subject is a '''EDIT_TEXT'''.{{#if:{{{1|}}}|&nbsp;The reasons include: '''{{{1}}}'''.}}<br /><small>This is a detailed notification. More subjects categorized [[:Category:|here]].</small>
+}}<includeonly>[[Category:]]</includeonly><noinclude>{{TYPE templates/doc}}</noinclude>
+</pre>
+
+<br />
+{{notify
+  | 1 = #22364a
+  | 2 = V
+  | 3 = This is a sample notification.
+}}
+{{WikiaLicense|NFSWorld}}
+<includeonly>[[Category:Templates|{{PAGENAME}}]] [[Category:General wiki templates|{{PAGENAME}}]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

@@ -1,0 +1,18 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+This template return middot symbol (&middot;)
+==Syntax==
+{{T|·}}
+
+==Examples==
+{{T|·|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

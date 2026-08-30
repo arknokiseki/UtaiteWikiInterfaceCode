@@ -1,0 +1,19 @@
+<pre>{{WIP}}</pre>
+...resulted in: 
+{{WIP}}
+
+<pre>{{WIP|description}}</pre>
+...resulted in: 
+{{WIP|description}}
+
+<pre>{{WIP|songlist}}</pre>
+...resulted in: 
+{{WIP|songlist}}
+
+<pre>{{WIP|template}}</pre>
+...resulted in: 
+{{WIP|template}}
+
+<pre>{{WIP|background}}</pre>
+...resulted in: 
+{{WIP|background}}

@@ -1,0 +1,32 @@
+{{Documentation/Header}}
+This template is used to link to a Twitcasting archive.
+
+==Syntax==
+{{T|Twitcast/archive|v1=channel|v2=video_id}}
+
+==Examples==
+{{T|Twitcast/archive|p1=c:coe_oo|p2=832874145|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "Twitcasting Channel",
+			"example": "c:coe_oo",
+			"type": "string",
+			"required": true
+		},
+		"2": {
+			"label": "Video ID",
+			"example": "832874145",
+			"type": "string",
+			"required": true
+		}
+	},
+	"description": "This template is used to link to a Twitcasting archive.",
+	"format": "inline"
+}
+</templatedata>

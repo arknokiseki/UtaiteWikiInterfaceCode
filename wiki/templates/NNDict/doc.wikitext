@@ -1,0 +1,4 @@
+<pre>{{NNDict|Utaite}}</pre>
+...results in:
+{{NNDict|Utaite}}
+<includeonly>[[Category:Assistant templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

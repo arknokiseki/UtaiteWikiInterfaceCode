@@ -1,0 +1,5 @@
+<includeonly><ruby>{{{1}}}<rt>{{{2}}}</rt></ruby></includeonly><noinclude>Example:
+<pre>{{Ruby/rt|0302・0101・1001・0304・0502・0105・0501・0902・0501・0301・0102|しあわせにおなりなさい}}</pre><br/>
+Return: {{Ruby/rt|0302・0101・1001・0304・0502・0105・0501・0902・0501・0301・0102|しあわせにおなりなさい}}
+{{WikiaLicense|sound-horizon-lyrics|Template:Ruby/rt}}
+</noinclude>

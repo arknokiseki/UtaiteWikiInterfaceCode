@@ -1,0 +1,1 @@
+__HIDDENCAT__<div style="margin:1em; padding: 10px; border:none; text-align:center;">This category is [[:Category:Hidden categories|not shown]] on its member pages, unless the appropriate [[Special:Preferences#mw-prefsection-rendering|user preference]] is set.</div><noinclude>{{doc}}</noinclude>

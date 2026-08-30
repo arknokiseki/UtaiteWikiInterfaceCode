@@ -1,0 +1,27 @@
+{{Documentation/Header}}
+Displays a notice that a page is protected and editable only by administrators, and files it under [[:Category:Protected Pages]]. Place it at the top of the protected page.
+
+==Syntax==
+{{T|Admin Only|v1=nocat =}}
+
+==Examples==
+{{T|Admin Only|_Y_=1|p1=nocat = true}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>nocat</code> || – || No category || Set to <code>true</code> to show the notice '''without''' adding [[:Category:Protected Pages]]. Used for documentation and examples. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A notice that a page is protected and editable only by administrators.",
+"params": {
+"nocat": { "label": "No category", "description": "Set to 'true' to display the notice without categorizing.", "type": "string" }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Template/Notice]]</includeonly>

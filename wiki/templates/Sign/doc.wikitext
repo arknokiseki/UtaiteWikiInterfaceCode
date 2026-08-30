@@ -1,0 +1,32 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Sign|v1=p1=username or IP|v2=p2=date}}
+
+<!--'''Usage:''' (replace highlighted items)
+
+ <nowiki>{{subst:sign|</nowiki><font color="blue">username or IP</font><nowiki>|</nowiki><font color="blue">date</font><nowiki>}}</nowiki>
+-->
+==Examples==
+{{T|Sign|p1=Makudoumee|p2=August 16, 2025|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {
+		"1": {
+			"label": "username or IP",
+			"description": "username or IP",
+			"type": "string",
+			"required": true
+		},
+		"2": {
+			"label": "Date",
+			"description": "Date",
+			"type": "date"
+		}
+	}
+}
+</templatedata>

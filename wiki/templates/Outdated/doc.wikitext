@@ -1,0 +1,52 @@
+== Usage ==
+This template is used to indicate that a utaite's song, discography, or playlist list is outdated and incomplete.
+=== Syntax ===
+<pre>
+{{Outdated|latest upload date|type|latest upload time}}
+</pre>
+=== Parameters ===
+; date
+: The date of the most recent upload (required).
+; type
+: The type of list being updated (optional). Can be either "discography" or "playlist". If left blank or any other value is used, it defaults to "song".
+; time
+: The time of the most recent upload (optional). Recognized format → HH:mm)
+=== Examples ===
+
+For a song list:
+
+<pre>
+{{Outdated|October 12, 2022}}
+</pre>
+
+;output<nowiki>:</nowiki>
+:{{Outdated|October 12, 2022}}
+
+For a discography list:
+
+<pre>
+{{Outdated|October 12, 2022|discography}}
+</pre>
+
+;output<nowiki>:</nowiki>
+:{{Outdated|October 12, 2022|discography}}
+
+For a playlist:
+
+<pre>
+{{Outdated|October 12, 2022|playlist}}
+</pre>
+
+;output<nowiki>:</nowiki>
+:{{Outdated|October 12, 2022|playlist}}
+
+With upload time:
+
+<div style="font-family: monospace; background-color: #222222; padding: 10px; border: 1px solid #ddd; white-space: pre;"><nowiki>{{Outdated|</nowiki>{{CURRENTJSTSTRMONTH}} {{CURRENTJSTDAY}}, {{CURRENTJSTYEAR}}|playlist|{{#expr:{{CURRENTJSTHOUR}}+1}}:{{CURRENTMINUTE}}}}</div>
+
+;output<nowiki>:</nowiki>
+:{{Outdated|{{CURRENTJSTSTRMONTH}} {{CURRENTJSTDAY}}, {{CURRENTJSTYEAR}}|playlist|{{#expr:{{CURRENTJSTHOUR}}+1}}:{{CURRENTMINUTE}}}}
+
+== Categories ==
+This template adds pages to the following category:
+[[:Category:Utaite with outdated covered song list]]

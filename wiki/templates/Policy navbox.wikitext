@@ -1,0 +1,15 @@
+{| class="wikitable" style="width:100%; background:transparent; text-align:center;"
+|-
+! style="text-align:center; background:transparent;" | Policy navigation
+|-
+| 
+[[Utaite Wiki:Rules and Guidelines|Rules and Guidelines]]・<!--
+-->[[Utaite Wiki:Privacy & Doxxing|Privacy & Doxxing]]・<!--
+-->[[Utaite Wiki:Licensing & Media|Licensing & Media]]・<!--
+-->[[Utaite Wiki:Exemption Doctrine Policy|EDP (Fair Use)]]・<!--
+-->[[Utaite Wiki:Requirements|Requirements]]・<!--
+-->[[Utaite_Wiki:Romanization_Guidelines|Romanization]]・<!-- 
+-->[[Utaite_Wiki:Requests_for_Adminship|Requests for Adminship]]・<!--
+-->[[Utaite_Wiki:Admin noticeboard|Admin noticeboard]]・<!--
+-->[[Utaite_Wiki:Block appeals|Block appeals]]
+|}<noinclude>{{doc}}</noinclude>

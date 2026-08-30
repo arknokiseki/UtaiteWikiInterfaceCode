@@ -1,0 +1,62 @@
+{{Languages|Template:Badge/doc}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Uses TemplateStyles|Template:Badge/styles.css}}
+{{Tracked|T188443}}
+{{TemplateData header}}
+<templatedata>
+{
+	"description": {
+		"en": "This template creates a badge with a light background. It can be used e.g. in page status indicators.",
+		"pt-br": "Esta predefinição cria um emblema (badge) com um fundo claro. Ele pode ser usado, p. ex., em indicadores de estado de página."
+	},
+	"format": "inline",
+	"params": {
+		"content": {
+			"label": {
+				"en": "Contents",
+				"pt-br": "Conteúdo"
+			},
+			"description": {
+				"en": "The badge's content.",
+				"pt-br": "O conteúdo do emblema."
+			},
+			"required": true,
+			"type": "content"
+		},
+		"style": {
+			"label": {
+				"en": "Extra style",
+				"pt-br": "Estilo adicional"
+			},
+			"description": {
+				"en": "Extra CSS for the badge's style tag.",
+				"pt-br": "CSS adicional para a marcação “style” do emblema."
+			},
+			"type": "string"
+		},
+		"class": {
+			"label": {
+				"en": "Extra class",
+				"pt-br": "Classe adicional"
+			},
+			"description": {
+				"en": "Extra CSS classes.",
+				"pt-br": "Classes adicionais do CSS."
+			},
+			"type": "string"
+		}
+	}
+}
+</templatedata>
+
+== Badge templates ==
+
+* [[Template:Shortcut]], promote short redirect pages.
+* [[Template:Ptag]], promote Phabricator tags and workboards.
+* [[Template:Tracked]], badge rendering a prominent link to a Phabricator task.
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Formatting templates]]
+}}</includeonly>

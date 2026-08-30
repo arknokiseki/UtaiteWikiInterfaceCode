@@ -1,0 +1,33 @@
+<includeonly>__NOTOC__<div class="birthday-table">{{#ifeq:{{{includeMMDD|}}}|true|<h2> {{{month}}}/{{{day}}} </h2>{{CURRENTJSTYEAR}}年{{CURRENTJSTMONTH}}月{{CURRENTJSTDAY}}日（{{CURRENTJSTDOWJAP}}）{{CURRENTJSTHOUR}}:{{CURRENTMINUTE}}<br />
+<small>Time may be inaccurate by a few minutes. Using JST (UTC+9) timezone.</small><!--
+--><div class="birthday-grid"><!--
+-->{{#dpl:
+categorymatch=Birthday/{{{month}}}/{{{day}}}<&>%{{{cat|Utaite}}}
+|notcategory=Deceased Utaite
+|mode=userformat
+|format=,²{ProcessSingerPage/Birthday¦%TITLE%,}²
+|noresultsheader=<!--
+--><div style="text-align:center; width:100%;"><!--
+--><br /><b>No stars☆彡 were born on this day</b><!--
+--></div>
+|allowcachedresults=true}}</div>
+|{{CURRENTJSTYEAR}}年{{CURRENTJSTMONTH}}月{{CURRENTJSTDAY}}日（{{CURRENTJSTDOWJAP}}）{{CURRENTJSTHOUR}}:{{CURRENTMINUTE}}<br /><!--
+--><small>Time may be inaccurate by a few minutes. Using JST (UTC+9) timezone.</small><!--
+--><div class="birthday-grid"><!--
+-->{{#dpl:
+categorymatch=Birthday/{{{month}}}/{{{day}}}<&>%{{{cat|Utaite}}}
+|notcategory=Deceased Utaite
+|mode=userformat
+|format=,²{ProcessSingerPage/Birthday¦%TITLE%,}²
+|noresultsheader=<!--
+--><div style="text-align:center; width:100%;"><!--
+--><br /><b>No stars☆彡 were born on this day</b><!--
+--></div>
+|allowcachedresults=true<!--
+-->}}<!--
+--></div><!--
+-->}}<!--
+--></div><!--
+--></includeonly><!--
+--><noinclude>{{doc}}
+</noinclude>

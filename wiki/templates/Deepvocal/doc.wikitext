@@ -1,0 +1,17 @@
+{{Documentation/Header}}
+<!-- Template Description -->
+==Syntax==
+{{T|Deepvocal|v1=PAGENAME|v2=Link Text}}
+
+==Examples==
+{{T|Deepvocal|p1=Namine Ritsu|p2=Namine Ritsu|_Y_=1}}
+
+==Template Data==
+<!--
+Edit the Template Data through the "MANAGE TEMPLATEDATA" button at the top left
+--><templatedata>
+{
+	"params": {},
+	"description": ""
+}
+</templatedata>

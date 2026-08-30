@@ -1,0 +1,7 @@
+<onlyinclude><!--
+--><span style="filter: contrast(0.2) sepia(1) saturate(4);">[[File:OOjs UI icon pause.svg|{{#if:{{{size|}}}|{{{size}}}|18}}px|alt=<!--T:1--> Incomplete|link=]]</span> <!--
+-->'''{{#if:{{{1|}}}|{{ {{{|safesubst:}}}ucfirst:{{{1}}}}}|<!--T:2--> Partially done}}'''<!--template:partially done--><!--
+--></onlyinclude>
+{{Documentation}}
+
+[[Category:Utility templates{{#translation:}}]]

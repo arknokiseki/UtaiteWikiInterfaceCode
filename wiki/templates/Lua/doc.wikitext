@@ -1,0 +1,65 @@
+{{Languages|Template:Lua/doc}}
+{{Documentation subpage}}
+{{Lua|Module:Lua banner}}
+<!-- Categories go at the bottom of this page, and interwikis go on Wikidata. -->
+
+This template is used to show that a template uses [[w:Lua (programming language)|Lua]] modules. It is placed at the top of the template's <code>/doc</code> subpage. It automatically adds the template to [[:Category:{{#invoke:Data|Module:Lua banner/config|default_category}}]], or to one of its subcategories.
+
+== Usage ==
+
+; Basic : {{tlx|Lua|''module name''}}
+
+; All parameters : {{tlx|Lua|''module 1''|''module 2''|''module 3''|...|category{{=}}''custom category''|nocat{{=}}''true''}}
+
+The first module name is required.
+
+== Examples ==
+
+* {{tlx|Lua|Module:Bananas}}
+{{Lua|Module:Bananas|nocat=true}}
+{{clear}}
+
+* {{tlx|Lua|Module:Bananas|Module:BananasArgs}}
+{{Lua|Module:Bananas|Module:BananasArgs|nocat=true}}
+{{clear}}
+
+* {{tlx|Lua|Module:Bananas|Module:BananasArgs|Module:HelloWorld}}
+{{Lua|Module:Bananas|Module:BananasArgs|Module:HelloWorld|nocat=true}}
+{{clear}}
+
+* {{tlx|Lua|wish{{=}}true}}
+{{Lua|wish=true|nocat=true}}
+{{-}}
+
+* {{tlx|Lua}}
+{{Lua|nocat=true}}
+{{clear}}
+
+== Categorisation ==
+
+===Template category===
+This template adds pages to [[:Category:Lua-based templates]] if the page is in the template namespace, and it is not on any of the subpages /doc, /sandbox, /sandbox2 or /testcases. You can specify a different category with the {{para|category}} parameter, e.g. {{para|category|Lua String-based templates}}.
+
+Some modules have a default category other than [[:Category:{{#invoke:Data|Module:Lua banner/config|default_category}}]]:
+* [[Module:String]] has the default category [[:Category:{{#invoke:Data|Module:Lua banner/config|module_categories|String}}]].
+
+===Error category===
+If no modules are specified and wishes are not enabled by default, the transcluded page will be added to [[:Category:{{#invoke:Data|Module:Lua banner/config|error_category}}]].
+{{#if:{{#invoke:Data|Module:Lua banner/config|wish_category}}|<nowiki/>
+=== Wish category ===
+If no modules are specified {{#if:{{yesno|{{#invoke:Data|Module:Lua banner/config|allow_wishes}}}}|or|and}} {{para|wish|true}} is used, the page will be added to [[:Category:{{#invoke:Data|Module:Lua banner/config|wish_category}}]]
+<nowiki/>}}
+===Category suppression===
+To suppress all categorisation, use {{para|nocat|true}}. (As well as "true", the values "yes", "y", and "1" will also work.)
+
+== TemplateData ==
+{{TemplateData header}}
+{{#invoke:TNT|doc|Lua banner}}
+
+== See also ==
+* [[Wikipedia:Lua]]
+* {{tl|module rating}}
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+
+}}</includeonly>

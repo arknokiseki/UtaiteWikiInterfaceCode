@@ -1,0 +1,8 @@
+.tpl-badge {
+	background-color: var( --background-color-progressive-subtle, #eaf3ff );
+	color: var( --color-base, #202122 );
+	border-radius: 10px;
+	display: inline-block;
+	font-size: 90%;
+	padding: 5px 8px;
+}

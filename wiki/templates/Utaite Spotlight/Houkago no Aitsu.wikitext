@@ -1,0 +1,36 @@
+{{Utaite Spotlight/Design|nnd =
+|image = Houkago no aitsu hp.png
+|caption = his homepage. Illust. by Shibuki Kamome (飛沫かもめ)
+|officialjapname = 放課後のあいつ
+|officialromajiname = Houkago no Aitsu
+|YTusername = 
+|NNDuserpage = 26980250
+|mylist1 = 33986673
+|mylist1info = 
+|mylist2 = 41284344
+|mylist2info = jazz covers
+|mylist3 = 
+|mylist3info = 
+|mylist4 = 
+|mylist4info = 
+|nicommu1 = co1958627
+|nicommu1info = 
+|nicommu2 = 
+|nicommu2info = 
+|nicommu3 = 
+|nicommu3info = 
+|exampletitle = [[Sayoko]] -Piano ver.-
+|examplennd = sm21093467
+|exampleyt = kReIpAAc-n0
+|description = '''Houkago no Aitsu''' ('''放課後のあいつ'''), lit. Afterschool Boy is a male {{NNDict|Utaite}} who has only started in late 2013 and mainly covers VOCALOID originals.
+
+Houkago no Aitsu has a gentle and clear, but strong and expressive voice in the higher ranges, which is said to be "sweet [and] induces sleep".<sup>[http://oneokrock0130.wix.com/uttattemita#!houkago/c1jo3]</sup> He also has a strong vibrato.
+
+He likes to sing freely, and is said to be good at {{NNDict|serifu}}.
+
+During namahousous, he likes to sing songs or play games.
+
+Houkago no Aitsu shares a [http://oneokrock0130.wix.com/uttattemita homepage] with 4 other utaite, namely [[Rally]], [[Risru]], [[Umechazuke]] and [[Marestera]].
+}}{{#switch: {{PAGENAME}}
+|Utaite Wiki=
+|Template:Utaite Spotlight=|#default=[[Category:Singer_Spotlight--Utaite]]}}

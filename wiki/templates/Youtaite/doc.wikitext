@@ -1,0 +1,1150 @@
+{{Documentation/Header}}
+This infobox is designed for content creators' profiles, especially Youtaite. It provides a comprehensive summary of their profile, social media presence, and key activities.
+
+==Syntax==
+Below is a list of commonly used parameters. For a complete list, please refer to the TemplateData section.
+<br/>
+
+{{T|Youtaite|block=1
+|v1=pagename           =
+|v2=image              =
+|v3=officialillustrator=
+|v4=officialjapname    =
+|v5=officialromajiname =
+|v6=officialengname    =
+|v7=aka                =
+|v8=gender             =
+|v9=birthyear          =
+|v10=birthmonth        =
+|v11=birthday          =
+|v12=birthref          =
+|v13=status            =
+|v14=affiliation       =
+|v15=country           =
+|v16=YTchannel         =
+|v17=Twitter           =
+|v18=Twitch            =
+|v19=ytsample          =
+|v20=ytsamplesong      =
+}}
+
+==Examples==
+===Basic Usage===
+This example shows a minimal setup with only the essential information.
+
+{{T|Youtaite|block=1|_Y_=1
+|p1=pagename      = Youtaite Name
+|p2=image         = Template doc.png
+|p3=gender        = Female
+|p4=fanname       = Fan Name
+|p5=status        = {{Active}}
+|p6=affiliation   = [[Affiliated Group]]
+|p7=YTchannel     = UCxxxxxxxxxxxxxxxxxxxxxx
+|p8=Twitter       = username
+}}
+
+===Advanced Usage===
+This example utilizes more parameters to create a more detailed and comprehensive infobox, including multiple names, a full birthdate to auto-calculate age, a sample song, and a signature.
+
+{{T|Youtaite|block=1|_Y_=1
+|p1=pagename           = Youtaite Name
+|p2=image              = Template doc.png
+|p3=officialillustrator= [[Illustrator Name]]
+|p4=officialjapname    = japname
+|p5=officialromajiname = romname
+|p6=aka                = *Nickname 1<br/>*Nickname 2<br/>*Nickname 3
+|p7=fanmark            = ✨
+|p8=fanname            = Fan Name
+|p9=gender             = Male
+|p10=birthyear         = 2000
+|p11=birthmonth        = 01
+|p12=birthday          = 01
+|p13=birthref          = <ref>[https://twitter.com/example twitter profile]</ref>
+|p14=status            = {{Active}}
+|p15=years             = 2020–present
+|p16=affiliation       = [[Affiliated Group]]
+|p17=country           = Japan (Optional; usually unnecessary.)
+|p18=YTchannel         = UCxxxxxxxxxxxxxxxxxxxxxx
+|p19=YTchannelinfo     = Main Channel
+|p20=YTchannel2        = UCyyyyyyyyyyyyyyyyyyyyyy
+|p21=YTchannel2info    = Sub Channel
+|p22=Twitter           = username
+|p23=Twitter2          = username_alt
+|p24=Twitter2info      = Alternate Account
+|p25=Twitch            = username
+|p26=Marshmallow       = username
+|p27=ytsample          = dQw4w9WgXcQ
+|p28=ytsamplesong      = Song Title
+|p29=ytsampleproducer  = [[Producer Name]]
+|p30=signature         = Template doc.png
+|p31=signsize          = 100px
+}}
+
+=== Image Caption Logic Breakdown ===
+The template builds the image caption in a very specific order. It checks for parameters one by one, and as soon as it finds one, it uses it and ignores the rest in the main caption group.
+
+==== Main Caption Priority ====
+The template follows this hierarchy to generate the main part of the caption:
+# <code>imagedescr</code>: This provides a fully custom caption and overrides all other main caption parameters.
+# <code>imagesong</code>: If no <code>imagedescr</code>, this generates a caption about a song cover. It uses <code>songfeat</code> and <code>gender</code> (...his/her/their cover of...) to add detail.
+# <code>imagegroup</code>: If the first two are missing, this generates a caption about the group the person is seen with.
+# <code>otherillustrator</code>: The lowest priority option, used for non-official art.
+
+==== Caption Add-on ====
+* <code>officialillustrator</code>: This parameter is independent. If this parameter is filled, its text will always be appended to the end of the generated caption, regardless of which other parameters were used.
+
+==== Parameter Relationships & Incompatibilities ====
+This table summarizes how the parameters interact:
+{| class="wikitable"
+! Parameter
+! Interacts With
+! Incompatible With (Will be ignored if...)
+|-
+| <code>imagedescr</code>
+| <code>officialillustrator</code> (which appends to it)
+| <code>imagesong</code>, <code>songfeat</code>, <code>imagegroup</code>, and <code>otherillustrator</code> are all hidden.
+|-
+| <code>imagesong</code>
+| <code>songfeat</code>, <code>gender</code>, <code>officialillustrator</code>
+| <code>imagedescr</code> is present.
+|-
+| <code>imagegroup</code>
+| <code>officialillustrator</code>
+| <code>imagedescr</code> or <code>imagesong</code> are present.
+|-
+| <code>otherillustrator</code>
+| <code>officialillustrator</code>
+| <code>imagedescr</code>, <code>imagesong</code>, or <code>imagegroup</code> are present.
+|-
+| <code>officialillustrator</code>
+| '''Everything.''' It always appends itself.
+| Nothing.
+|-
+| <code>songfeat</code>
+| <code>imagesong</code> (relies on it)
+| <code>imagesong</code> is not present.
+|}
+{{clear}}<br/><br/><br/><br/><br/><br/><br/>
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>pagename</code>
+| –
+| Pagename
+| Overrides the page's name displayed at the top of the infobox.<br/>If not provided, it defaults to the actual page name.
+| string
+| <code><nowiki>{{PAGENAME}}</nowiki></code>
+| 
+|-
+| <code>uaca</code>
+| –
+| Accent Color Source
+| The parameter that provides the main accent color for the infobox header.
+| string
+| –
+| 
+|-
+| <code>utca</code>
+| –
+| Accent Color Text Source
+| The parameter that provides the text color for the infobox header.
+| string
+| –
+| 
+|-
+| <code>image</code>
+| –
+| Image
+| The filename of the main image for the infobox (e.g., 'CharacterArt.png'). Do not include the 'File:' prefix.
+| wiki-file-name
+| –
+| 
+|-
+| <code>imagedescr</code>
+| –
+| Image Description
+| Provides a fully custom caption for the image. <br/>This parameter has the highest priority and will override <code>imagesong</code>, <code>imagegroup</code>, and <code>otherillustrator</code>.
+| string
+| –
+| 
+|-
+| <code>imagesong</code>
+| –
+| Image Song
+| The name of a song from which the image is taken. <br/>Generates a caption like "...as seen in their cover of [Song Name]". <br/>This parameter is ignored if <code>imagedescr</code> is used.
+| string
+| –
+| 
+|-
+| <code>songfeat</code>
+| –
+| Song Feature Type
+| A helper parameter for <code>imagesong</code> that describes the feature type (e.g., 'solo', 'duet'). <br/>It has no effect if <code>imagesong</code> is not used.
+| string
+| –
+| 
+|-
+| <code>imagegroup</code>
+| –
+| Image Group
+| The name of a group the person is depicted with. <br/>Generates a caption like "...as seen in [Group Name]". <br/>This parameter is ignored if <code>imagedescr</code> or <code>imagesong</code> are used.
+| string
+| –
+| 
+|-
+| <code>otherillustrator</code>
+| –
+| Other Illustrator
+| The name of the artist for a non-official image (e.g., fanart, commission). <br/>Generates a caption like "...as depicted by [Illustrator Name]". <br/>This has the lowest priority and is ignored if <code>imagedescr</code>, <code>imagesong</code>, or <code>imagegroup</code> are used.
+| string
+| –
+| 
+|-
+| <code>officialillustrator</code>
+| –
+| Official Illustrator
+| The name of the official character illustrator. <br/>This is '''always appended''' to the end of the caption (e.g., '..., illust. by [Illustrator Name]') <br/>and is compatible with all other caption parameters.
+| wiki-page-name
+| –
+| 
+|-
+| <code>officialjapname</code>
+| –
+| Japanese Name
+| The official name in Japanese.
+| string
+| –
+| 
+|-
+| <code>officialromajiname</code>
+| –
+| Romaji Name
+| The romaji transcription of the Japanese name.
+| string
+| –
+| 
+|-
+| <code>officialchinname</code>
+| –
+| Chinese Name
+| The official name in Chinese.
+| string
+| –
+| 
+|-
+| <code>officialpinyinname</code>
+| –
+| Pinyin Name
+| The pinyin transcription of the Chinese name.
+| string
+| –
+| 
+|-
+| <code>officialengname</code>
+| –
+| English Name
+| The official name in English.
+| string
+| –
+| 
+|-
+| <code>officialnameinfo</code>
+| –
+| Official Name Info
+| Additional information or notes regarding the official names.
+| string
+| –
+| 
+|-
+| <code>aka</code>
+| –
+| Also Known As
+| A list of aliases or nicknames, typically formatted with bullets.
+| string
+| –
+| 
+|-
+| <code>fanmark</code>
+| –
+| Fan Mark
+| The official emoji or symbol used to represent the person or their fanbase.
+| string
+| –
+| 
+|-
+| <code>fanname</code>
+| –
+| Fan Name
+| The official name of the fanbase.
+| string
+| –
+| 
+|-
+| <code>gender</code>
+| –
+| Gender
+| The person's gender (e.g., 'Male', 'Female', 'Androgynous'). Also used for categorization.
+| string
+| Unknown
+| 
+|-
+| <code>birthmonth</code>
+| –
+| Birth Month
+| The numeric month of birth (e.g., '01' for January, '12' for December).
+| number
+| –
+| 
+|-
+| <code>birthday</code>
+| –
+| Birth Day
+| The numeric day of birth.
+| number
+| –
+| 
+|-
+| <code>birthyear</code>
+| –
+| Birth Year
+| The four-digit year of birth.
+| number
+| –
+| 
+|-
+| <code>deathyear</code>
+| –
+| Death Year
+| The four-digit year of death (status must contain "deceased" string).
+| number
+| –
+| 
+|-
+| <code>birthref</code>
+| –
+| Birthdate Reference
+| A citation or reference for the birthdate information, using <nowiki><ref></nowiki> tags.
+| string
+| –
+| 
+|-
+| <code style="text-decoration: line-through; color: #FF0000";>age</code>
+| –
+| <span style="text-decoration: line-through; color: #FF0000";>Age</span>
+| <span style="font-weight: bold; color: #FF0000"">This parameter is deprecated. Use 'birthyear', 'birthmonth', and 'birthday' instead. <br/>The template automatically calculates the age.</span>
+| number
+| –
+| <span style="color:red; font-weight:bold;">Deprecated</span>
+|-
+| <code>status</code>
+| –
+| Status
+| The current activity status of the utaite <br/>(e.g., '{{T|Active}}', '{{T|Inactive}}', '{{T|Hiatus}}').<br/>Status templates transclusion output example:<br/>
+* {{Active|nocat=true}}
+* {{Inactive|nocat=true}}
+* {{Hiatus|nocat=true}}
+| string
+| Active
+| 
+|-
+| <code>years</code>
+| –
+| Years Active
+| The range of years the person has been active (e.g., '2020–present').
+| string
+| –
+| 
+|-
+| <code>affiliation</code>
+| –
+| Affiliation
+| The group, agency, or company the person is affiliated with.
+| string
+| –
+| 
+|-
+| <code>country</code>
+| –
+| Origin
+| The country of origin for the person.
+| string
+| –
+| 
+|-
+| <code>partner</code>
+| –
+| Collab Partners
+| Notable collaboration partners.
+| string
+| –
+| 
+|-
+| <code>otheractivity</code>
+| –
+| Other Activities
+| Other significant activities outside of their primary role (e.g., illustrating, mixing).
+| string
+| –
+| 
+|-
+| <code>cat</code>
+| –
+| Category
+| Overrides the main category type for the page. For example, 'Producer' or 'Illustrator'.
+| string
+| Singers
+| 
+|-
+| <code>ytsample</code>
+| –
+| YouTube Sample Video ID
+| The YouTube video ID for a sample song.
+| string
+| –
+| 
+|-
+| <code>ytsamplesong</code>
+| –
+| YouTube Sample Song Name
+| The name of the sample song.
+| string
+| A sample of a song
+| 
+|-
+| <code>ytsamplesinger</code>
+| –
+| YouTube Sample Singer
+| The singer credited in the sample. Defaults to the page name.
+| string
+| <code><nowiki>{{BASEPAGENAME}}</nowiki></code>
+| 
+|-
+| <code>ytsampleproducer</code>
+| –
+| YouTube Sample Producer
+| The producer credited in the sample.
+| string
+| –
+| 
+|-
+| <code>signature</code>
+| –
+| Signature Image
+| The filename of an image of the utaite's signature.
+| wiki-file-name
+| 404simple.png
+| 
+|-
+| <code>signsize</code>
+| –
+| Signature Size
+| The size of the signature image (e.g., '80px').
+| string
+| 60px
+| 
+|-
+| <code>YTchannel</code>
+| <code>YTchannel2</code>
+| YouTube Channel 1/2
+| The YouTube channel ID (the string starting with 'UC').
+| string
+| –
+| 
+|-
+| <code>YTchannelinfo</code>
+| <code>YTchannel2info</code>
+| YouTube Channel 1/2 Info
+| Custom display text for the YouTube channel link.
+| string
+| –
+| 
+|-
+| <code>YTchanneldeleted</code>
+| <code>YTchannel2deleted</code>
+| YouTube Channel 1/2 Deleted
+| Set to 'yes' if the channel is deleted, to mark it as such.
+| string
+| –
+| 
+|-
+| <code>YTusername</code>
+| <code>YTusername2</code>, <code>YTusername3</code>, <code>YTusername4</code>
+| YouTube Username 1-4
+| Legacy YouTube username (custom URL, not handle).
+| string
+| –
+| 
+|-
+| <code>YTinfo</code>
+| <code>YT2info</code>, <code>YT3info</code>, <code>YT4info</code>
+| YouTube Username 1-4 Info
+| Custom display text for the legacy YouTube username link.
+| string
+| –
+| 
+|-
+| <code>YTusernamedeleted</code>
+| <code>YTusername2deleted</code>, <code>YTusername3deleted</code>, <br/><code>YTusername4deleted</code>
+| YouTube Username 1-4 Deleted
+| Set to 'yes' if the account is deleted.
+| string
+| –
+| 
+|-
+| <code>YThandle</code>
+| <code>YThandle2</code>, <code>YThandle3</code>, <code>YThandle4</code>
+| YouTube Handle 1-4
+| The YouTube handle (without the '@').
+| string
+| –
+| 
+|-
+| <code>YTHinfo</code>
+| <code>YTH2info</code>, <code>YTH3info</code>, <code>YTH4info</code>
+| YouTube Handle 1-4 Info
+| Custom display text for the YouTube handle link.
+| string
+| –
+| 
+|-
+| <code>YThandledeleted</code>
+| <code>YThandle2deleted</code>, <code>YThandle3deleted</code>, <br/><code>YThandle4deleted</code>
+| YouTube Handle 1-4 Deleted
+| Set to 'yes' if the account is deleted.
+| string
+| –
+| 
+|-
+| <code>Twitter</code>
+| <code>Twitter2</code>, <code>Twitter3</code>
+| X (Twitter) Account 1-3
+| The X (formerly Twitter) handle, without the '@'.
+| string
+| –
+| 
+|-
+| <code>Twitterinfo</code>
+| <code>Twitter2info</code>, <code>Twitter3info</code>
+| X (Twitter) Account 1-3 Info
+| Custom display text for the X (Twitter) link.
+| string
+| –
+| 
+|-
+| <code>Twitcast</code>
+| <code>Twitcast2</code>
+| TwitCasting Account 1/2
+| The TwitCasting user ID.
+| string
+| –
+| 
+|-
+| <code>Twitcastinfo</code>
+| <code>Twitcast2info</code>
+| TwitCasting Account 1/2 Info
+| Custom display text for the TwitCasting link.
+| string
+| –
+| 
+|-
+| <code>Instagram</code>
+| <code>Instagram2</code>
+| Instagram Account 1/2
+| The Instagram username.
+| string
+| –
+| 
+|-
+| <code>Instagraminfo</code>
+| <code>Instagram2info</code>
+| Instagram Account 1/2 Info
+| Custom display text for the Instagram link.
+| string
+| –
+| 
+|-
+| <code>Threads</code>
+| –
+| Threads Account
+| The Threads username.
+| string
+| –
+| 
+|-
+| <code>Threadsinfo</code>
+| –
+| Threads Account Info
+| Custom display text for the Threads link.
+| string
+| –
+| 
+|-
+| <code>Soundcloud</code>
+| <code>Soundcloud2</code>
+| SoundCloud Account 1/2
+| The SoundCloud username/handle.
+| string
+| –
+| 
+|-
+| <code>Soundcloudinfo</code>
+| <code>Soundcloud2info</code>
+| SoundCloud Account 1/2 Info
+| Custom display text for the SoundCloud link.
+| string
+| –
+| 
+|-
+| <code>Twitch</code>
+| –
+| Twitch Account
+| The Twitch username.
+| string
+| –
+| 
+|-
+| <code>Twitchinfo</code>
+| –
+| Twitch Account Info
+| Custom display text for the Twitch link.
+| string
+| –
+| 
+|-
+| <code>Bluesky</code>
+| –
+| Bluesky Account
+| The Bluesky handle.
+| string
+| –
+| 
+|-
+| <code>Blueskyinfo</code>
+| –
+| Bluesky Account Info
+| Custom display text for the Bluesky link.
+| string
+| –
+| 
+|-
+| <code>Tiktok</code>
+| <code>Tiktok2</code>
+| TikTok Account 1/2
+| The TikTok username, including the '@'.
+| string
+| –
+| 
+|-
+| <code>Tiktokinfo</code>
+| <code>Tiktok2info</code>
+| TikTok Account 1/2 Info
+| Custom display text for the TikTok link.
+| string
+| –
+| 
+|-
+| <code>Line</code>
+| <code>Line2</code>
+| Line Account 1/2
+| The Line user ID.
+| string
+| –
+| 
+|-
+| <code>Lineinfo</code>
+| <code>Line2info</code>
+| Line Account 1/2 Info
+| Custom display text for the Line link.
+| string
+| –
+| 
+|-
+| <code>LinePage</code>
+| –
+| Line Page
+| The Line Page ID.
+| string
+| –
+| 
+|-
+| <code>LinePageinfo</code>
+| –
+| Line Page Info
+| Custom display text for the Line Page link.
+| string
+| –
+| 
+|-
+| <code>Lineqrpage</code>
+| –
+| Line QR Page
+| the last part of the url to the Line QR code page (alphanumeric).
+| string
+| –
+| 
+|-
+| <code>Lineqrpageinfo</code>
+| –
+| Line QR Page Info
+| Custom display text for the Line QR page link.
+| string
+| –
+| 
+|-
+| <code>BBuserspace</code>
+| <code>BBuserspace2</code>
+| Bilibili User Space 1/2
+| The user ID number for the Bilibili user space.
+| number
+| –
+| 
+|-
+| <code>BBuserspaceinfo</code>
+| <code>BBuserspace2info</code>
+| Bilibili User Space 1/2 Info
+| Custom display text for the Bilibili link.
+| string
+| –
+| 
+|-
+| <code>Weibo</code>
+| <code>Weibo2</code>
+| Weibo Account 1/2
+| The Weibo user ID or custom URL string.
+| string
+| –
+| 
+|-
+| <code>Weiboinfo</code>
+| <code>Weibo2info</code>
+| Weibo Account 1/2 Info
+| Custom display text for the Weibo link.
+| string
+| –
+| 
+|-
+| <code>Marshmallow</code>
+| –
+| Marshmallow Account
+| The Marshmallow username for sending anonymous messages.
+| string
+| –
+| 
+|-
+| <code>Marshmallowinfo</code>
+| –
+| Marshmallow Account Info
+| Custom display text for the Marshmallow link.
+| string
+| –
+| 
+|-
+| <code>Booth</code>
+| <code>Booth2</code>
+| Booth Page 1/2
+| The Booth username or store ID.
+| string
+| –
+| 
+|-
+| <code>Boothinfo</code>
+| <code>Booth2info</code>
+| Booth Page 1/2 Info
+| Custom display text for the Booth link.
+| string
+| –
+| 
+|-
+| <code>Spotify</code>
+| <code>Spotify2</code>
+| Spotify Artist Page 1/2
+| The Spotify artist ID.
+| string
+| –
+| 
+|-
+| <code>Spotifyinfo</code>
+| <code>Spotify2info</code>
+| Spotify Artist Page 1/2 Info
+| Custom display text for the Spotify link.
+| string
+| –
+| 
+|-
+| <code>NNDuserpage</code>
+| <code>NNDuserpage2</code>, <code>NNDuserpage3</code>, <br/><code>NNDuserpage4</code>, <code>NNDuserpage5</code>
+| Nico Nico Douga User Page 1-5
+| The user ID number for the NND user page.
+| number
+| –
+| 
+|-
+| <code>NNDuserpageinfo</code>
+| <code>NNDuserpage2info</code>, <code>NNDuserpage3info</code>, <br/><br/><code>NNDuserpage4info</code>, <code>NNDuserpage5info</code>
+| Nico Nico Douga User Page 1-5 Info
+| Custom display text for the NND user page link.
+| string
+| –
+| 
+|-
+| <code>mylist1</code>
+| <code>mylist2</code>, <code>mylist3</code>, <code>mylist4</code>, <br/><code>mylist5</code>, <code>mylist6</code>, <br/><code>mylist7</code>, <code>mylist8</code>, <code>mylist9</code>, <code>mylist10</code>
+| NND Mylist 1-10
+| The ID number for a Nico Nico Douga Mylist.
+| number
+| –
+| 
+|-
+| <code>mylist1info</code>
+| <code>mylist2info</code>, <code>mylist3info</code>, <code>mylist4info</code>, <br/><code>mylist5info</code>, <code>mylist6info</code>, <code>mylist7info</code>, <br/><code>mylist8info</code>, <code>mylist9info</code>, <code>mylist10info</code>
+| NND Mylist 1-10 Info
+| Custom display text for the NND Mylist link.
+| string
+| –
+| 
+|-
+| <code>nicommu1</code>
+| <code>nicommu2</code>, <code>nicommu3</code>, <code>nicommu4</code>
+| NND Community 1-4
+| The ID number for a Nico Nico Douga community (co######).
+| string
+| –
+| 
+|-
+| <code>nicommu1info</code>
+| <code>nicommu2info</code>, <code>nicommu3info</code>, <code>nicommu4info</code>
+| NND Community 1-4 Info
+| Custom display text for the NND community link.
+| string
+| –
+| 
+|-
+| <code>NNDchannel1</code>
+| <code>NNDchannel2</code>
+| NND Channel 1/2
+| The ID for a Nico Nico Douga channel (ch#######).
+| string
+| –
+| 
+|-
+| <code>NNDchannel1info</code>
+| <code>NNDchannel2info</code>
+| NND Channel 1/2 Info
+| Custom display text for the NND channel link.
+| string
+| –
+| 
+|-
+| <code>othersns</code>
+| <code>othersns2</code>, <code>othersns3</code>, <br/><code>othersns4</code>, <code>othersns5</code>
+| Other SNS 1-5
+| A fully formatted link for any other social media or website not listed.
+| string
+| –
+| 
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "This template generates an infobox for content creators' profiles, especially Youtaite. It includes fields for personal information, social media links, and other relevant data.",
+"params": {
+"pagename": {
+"label": "Pagename",
+"description": "Overrides the page's name displayed at the top of the infobox. If not provided, it defaults to the actual page name.",
+"type": "string",
+"required": false,
+"default": "{{PAGENAME}}"
+},
+"uaca": {
+"label": "Accent Color Source",
+"description": "The parameter that provides the main accent color for the infobox header.",
+"type": "string",
+"required": false
+},
+"utca": {
+"label": "Accent Color Text Source",
+"description": "The parameter that provides the text color for the infobox header.",
+"type": "string",
+"required": false
+},
+"image": {
+"label": "Image",
+"description": "The filename of the main image for the infobox (e.g., 'CharacterArt.png'). Do not include the 'File:' prefix.",
+"type": "wiki-file-name",
+"required": false
+},
+"imagedescr": {
+"label": "Image Description",
+"description": "Provides a fully custom caption for the image. This parameter has the highest priority and will override <code>imagesong</code>, <code>imagegroup</code>, and <code>otherillustrator</code>.",
+"type": "string",
+"required": false
+},
+"imagesong": {
+"label": "Image Song",
+"description": "The name of a song from which the image is taken. Generates a caption like \"...as seen in their cover of [Song Name]\". This parameter is ignored if <code>imagedescr</code> is used.",
+"type": "string",
+"required": false
+},
+"songfeat": {
+"label": "Song Feature Type",
+"description": "A helper parameter for <code>imagesong</code> that describes the feature type (e.g., 'solo', 'duet'). It has no effect if <code>imagesong</code> is not used.",
+"type": "string",
+"required": false
+},
+"imagegroup": {
+"label": "Image Group",
+"description": "The name of a group the person is depicted with. Generates a caption like \"...as seen in [Group Name]\". This parameter is ignored if <code>imagedescr</code> or <code>imagesong</code> are used.",
+"type": "string",
+"required": false
+},
+"otherillustrator": {
+"label": "Other Illustrator",
+"description": "The name of the artist for a non-official image (e.g., fanart, commission). Generates a caption like \"...as depicted by [Illustrator Name]\". This has the lowest priority and is ignored if <code>imagedescr</code>, <code>imagesong</code>, or <code>imagegroup</code> are used.",
+"type": "string",
+"required": false
+},
+"officialillustrator": {
+"label": "Official Illustrator",
+"description": "The name of the official character illustrator. This is '''always appended''' to the end of the caption (e.g., '..., illust. by [Illustrator Name]') and is compatible with all other caption parameters.",
+"type": "wiki-page-name",
+"required": false
+},
+"officialjapname": {
+"label": "Japanese Name",
+"description": "The official name in Japanese.",
+"type": "string",
+"required": false
+},
+"officialromajiname": {
+"label": "Romaji Name",
+"description": "The romaji transcription of the Japanese name.",
+"type": "string",
+"required": false
+},
+"officialchinname": {
+"label": "Chinese Name",
+"description": "The official name in Chinese.",
+"type": "string",
+"required": false
+},
+"officialpinyinname": {
+"label": "Pinyin Name",
+"description": "The pinyin transcription of the Chinese name.",
+"type": "string",
+"required": false
+},
+"officialengname": {
+"label": "English Name",
+"description": "The official name in English.",
+"type": "string",
+"required": false
+},
+"officialnameinfo": {
+"label": "Official Name Info",
+"description": "Additional information or notes regarding the official names.",
+"type": "string",
+"required": false
+},
+"aka": {
+"label": "Also Known As",
+"description": "A list of aliases or nicknames, typically formatted with bullets.",
+"type": "string",
+"required": false
+},
+"fanmark": {
+"label": "Fan Mark",
+"description": "The official emoji or symbol used to represent the person or their fanbase.",
+"type": "string",
+"required": false
+},
+"fanname": {
+"label": "Fan Name",
+"description": "The official name of the fanbase.",
+"type": "string",
+"required": false
+},
+"gender": {
+"label": "Gender",
+"description": "The person's gender (e.g., 'Male', 'Female', 'Androgynous'). Also used for categorization.",
+"type": "string",
+"required": false,
+"default": "Unknown"
+},
+"birthmonth": {
+"label": "Birth Month",
+"description": "The numeric month of birth (e.g., '01' for January, '12' for December).",
+"type": "number",
+"required": false
+},
+"birthday": {
+"label": "Birth Day",
+"description": "The numeric day of birth.",
+"type": "number",
+"required": false
+},
+"birthyear": {
+"label": "Birth Year",
+"description": "The four-digit year of birth.",
+"type": "number",
+"required": false
+},
+"deathyear": {
+"label": "Death Year",
+"description": "The four-digit year of death.",
+"type": "number",
+"required": false
+},
+"birthref": {
+"label": "Birthdate Reference",
+"description": "A citation or reference for the birthdate information, using <ref> tags.",
+"type": "string",
+"required": false
+},
+"status": {
+"label": "Status",
+"description": "The current activity status of the utaite (e.g., {{Active}}, {{Inactive}}, {{Hiatus}}).",
+"type": "string",
+"required": false,
+"default": "Active"
+},
+"years": {
+"label": "Years Active",
+"description": "The range of years the person has been active (e.g., '2020–present').",
+"type": "string",
+"required": false
+},
+"affiliation": {
+"label": "Affiliation",
+"description": "The group, agency, or company the person is affiliated with.",
+"type": "string",
+"required": false
+},
+"YTchannel": { "aliases": ["YTchannel2"], "label": "YouTube Channel 1/2", "description": "The YouTube channel ID (the string starting with 'UC').", "type": "string" },
+"YTchannelinfo": { "aliases": ["YTchannel2info"], "label": "YouTube Channel 1/2 Info", "description": "Custom display text for the YouTube channel link.", "type": "string" },
+"YTchanneldeleted": { "aliases": ["YTchannel2deleted"], "label": "YouTube Channel 1/2 Deleted", "description": "Set to 'yes' if the channel is deleted, to mark it as such.", "type": "string" },
+"YTusername": { "aliases": ["YTusername2", "YTusername3", "YTusername4"], "label": "YouTube Username 1-4", "description": "Legacy YouTube username (custom URL, not handle).", "type": "string" },
+"YTinfo": { "aliases": ["YT2info", "YT3info", "YT4info"], "label": "YouTube Username 1-4 Info", "description": "Custom display text for the legacy YouTube username link.", "type": "string" },
+"YTusernamedeleted": { "aliases": ["YTusername2deleted", "YTusername3deleted", "YTusername4deleted"], "label": "YouTube Username 1-4 Deleted", "description": "Set to 'yes' if the account is deleted.", "type": "string" },
+"YThandle": { "aliases": ["YThandle2", "YThandle3", "YThandle4"], "label": "YouTube Handle 1-4", "description": "The YouTube handle (without the '@').", "type": "string" },
+"YTHinfo": { "aliases": ["YTH2info", "YTH3info", "YTH4info"], "label": "YouTube Handle 1-4 Info", "description": "Custom display text for the YouTube handle link.", "type": "string" },
+"YThandledeleted": { "aliases": ["YThandle2deleted", "YThandle3deleted", "YThandle4deleted"], "label": "YouTube Handle 1-4 Deleted", "description": "Set to 'yes' if the account is deleted.", "type": "string" },
+"Twitcast": { "aliases": ["Twitcast2"], "label": "TwitCasting Account 1/2", "description": "The TwitCasting user ID.", "type": "string" },
+"Twitcastinfo": { "aliases": ["Twitcast2info"], "label": "TwitCasting Account 1/2 Info", "description": "Custom display text for the TwitCasting link.", "type": "string" },
+"Instagram": { "aliases": ["Instagram2"], "label": "Instagram Account 1/2", "description": "The Instagram username.", "type": "string" },
+"Instagraminfo": { "aliases": ["Instagram2info"], "label": "Instagram Account 1/2 Info", "description": "Custom display text for the Instagram link.", "type": "string" },
+"Threads": { "label": "Threads Account", "description": "The Threads username.", "type": "string" },
+"Threadsinfo": { "label": "Threads Account Info", "description": "Custom display text for the Threads link.", "type": "string" },
+"Soundcloud": { "aliases": ["Soundcloud2"], "label": "SoundCloud Account 1/2", "description": "The SoundCloud username/handle.", "type": "string" },
+"Soundcloudinfo": { "aliases": ["Soundcloud2info"], "label": "SoundCloud Account 1/2 Info", "description": "Custom display text for the SoundCloud link.", "type": "string" },
+"Twitter": { "aliases": ["Twitter2", "Twitter3"], "label": "X (Twitter) Account 1-3", "description": "The X (formerly Twitter) handle, without the '@'.", "type": "string" },
+"Twitterinfo": { "aliases": ["Twitter2info", "Twitter3info"], "label": "X (Twitter) Account 1-3 Info", "description": "Custom display text for the X (Twitter) link.", "type": "string" },
+"Twitch": { "label": "Twitch Account", "description": "The Twitch username.", "type": "string" },
+"Twitchinfo": { "label": "Twitch Account Info", "description": "Custom display text for the Twitch link.", "type": "string" },
+"Bluesky": { "label": "Bluesky Account", "description": "The Bluesky handle.", "type": "string" },
+"Blueskyinfo": { "label": "Bluesky Account Info", "description": "Custom display text for the Bluesky link.", "type": "string" },
+"Line": { "aliases": ["Line2"], "label": "Line Account 1/2", "description": "The Line user ID.", "type": "string" },
+"Lineinfo": { "aliases": ["Line2info"], "label": "Line Account 1/2 Info", "description": "Custom display text for the Line link.", "type": "string" },
+"LinePage": { "label": "Line Page", "description": "The Line Page ID.", "type": "string" },
+"LinePageinfo": { "label": "Line Page Info", "description": "Custom display text for the Line Page link.", "type": "string" },
+"Lineqrpage": { "label": "Line QR Page", "description": "the last part of the url to the Line QR code page (alphanumeric).", "type": "string" },
+"Lineqrpageinfo": { "label": "Line QR Page Info", "description": "Custom display text for the Line QR page link.", "type": "string" },
+"Tiktok": { "aliases": ["Tiktok2"], "label": "TikTok Account 1/2", "description": "The TikTok username, including the '@'.", "type": "string" },
+"Tiktokinfo": { "aliases": ["Tiktok2info"], "label": "TikTok Account 1/2 Info", "description": "Custom display text for the TikTok link.", "type": "string" },
+"Marshmallow": { "label": "Marshmallow Account", "description": "The Marshmallow username for sending anonymous messages.", "type": "string" },
+"Marshmallowinfo": { "label": "Marshmallow Account Info", "description": "Custom display text for the Marshmallow link.", "type": "string" },
+"Booth": { "aliases": ["Booth2"], "label": "Booth Page 1/2", "description": "The Booth username or store ID.", "type": "string" },
+"Boothinfo": { "aliases": ["Booth2info"], "label": "Booth Page 1/2 Info", "description": "Custom display text for the Booth link.", "type": "string" },
+"Spotify": { "aliases": ["Spotify2"], "label": "Spotify Artist Page 1/2", "description": "The Spotify artist ID.", "type": "string" },
+"Spotifyinfo": { "aliases": ["Spotify2info"], "label": "Spotify Artist Page 1/2 Info", "description": "Custom display text for the Spotify link.", "type": "string" },
+"NNDuserpage": { "aliases": ["NNDuserpage2", "NNDuserpage3", "NNDuserpage4", "NNDuserpage5"], "label": "Nico Nico Douga User Page 1-5", "description": "The user ID number for the NND user page.", "type": "number" },
+"NNDuserpageinfo": { "aliases": ["NNDuserpage2info", "NNDuserpage3info", "NNDuserpage4info", "NNDuserpage5info"], "label": "Nico Nico Douga User Page 1-5 Info", "description": "Custom display text for the NND user page link.", "type": "string" },
+"BBuserspace": { "aliases": ["BBuserspace2"], "label": "Bilibili User Space 1/2", "description": "The user ID number for the Bilibili user space.", "type": "number" },
+"BBuserspaceinfo": { "aliases": ["BBuserspace2info"], "label": "Bilibili User Space 1/2 Info", "description": "Custom display text for the Bilibili link.", "type": "string" },
+"Weibo": { "aliases": ["Weibo2"], "label": "Weibo Account 1/2", "description": "The Weibo user ID or custom URL string.", "type": "string" },
+"Weiboinfo": { "aliases": ["Weibo2info"], "label": "Weibo Account 1/2 Info", "description": "Custom display text for the Weibo link.", "type": "string" },
+"othersns": { "aliases": ["othersns2", "othersns3", "othersns4", "othersns5"], "label": "Other SNS 1-5", "description": "A fully formatted link for any other social media or website not listed.", "type": "string" },
+"mylist1": { "aliases": ["mylist2", "mylist3", "mylist4", "mylist5", "mylist6", "mylist7", "mylist8", "mylist9", "mylist10"], "label": "NND Mylist 1-10", "description": "The ID number for a Nico Nico Douga Mylist.", "type": "number" },
+"mylist1info": { "aliases": ["mylist2info", "mylist3info", "mylist4info", "mylist5info", "mylist6info", "mylist7info", "mylist8info", "mylist9info", "mylist10info"], "label": "NND Mylist 1-10 Info", "description": "Custom display text for the NND Mylist link.", "type": "string" },
+"nicommu1": { "aliases": ["nicommu2", "nicommu3", "nicommu4"], "label": "NND Community 1-4", "description": "The ID number for a Nico Nico Douga community (co######).", "type": "string" },
+"nicommu1info": { "aliases": ["nicommu2info", "nicommu3info", "nicommu4info"], "label": "NND Community 1-4 Info", "description": "Custom display text for the NND community link.", "type": "string" },
+"NNDchannel1": { "aliases": ["NNDchannel2"], "label": "NND Channel 1/2", "description": "The ID for a Nico Nico Douga channel (ch#######).", "type": "string" },
+"NNDchannel1info": { "aliases": ["NNDchannel2info"], "label": "NND Channel 1/2 Info", "description": "Custom display text for the NND channel link.", "type": "string" },
+"country": {
+"label": "Origin",
+"description": "The country of origin for the person.",
+"type": "string",
+"required": false
+},
+"partner": {
+"label": "Collab Partners",
+"description": "Notable collaboration partners.",
+"type": "string",
+"required": false
+},
+"otheractivity": {
+"label": "Other Activities",
+"description": "Other significant activities outside of their primary role (e.g., illustrating, mixing).",
+"type": "string",
+"required": false
+},
+"ytsample": {
+"label": "YouTube Sample Video ID",
+"description": "The YouTube video ID for a sample song.",
+"type": "string",
+"required": false
+},
+"ytsamplesong": {
+"label": "YouTube Sample Song Name",
+"description": "The name of the sample song.",
+"type": "string",
+"required": false,
+"default": "A sample of a song"
+},
+"ytsamplesinger": {
+"label": "YouTube Sample Singer",
+"description": "The singer credited in the sample. Defaults to the page name.",
+"type": "string",
+"required": false,
+"default": "{{BASEPAGENAME}}"
+},
+"ytsampleproducer": {
+"label": "YouTube Sample Producer",
+"description": "The producer credited in the sample.",
+"type": "string",
+"required": false
+},
+"signature": {
+"label": "Signature Image",
+"description": "The filename of an image of the utaite's signature.",
+"type": "wiki-file-name",
+"required": false,
+"default": "404simple.png"
+},
+"signsize": {
+"label": "Signature Size",
+"description": "The size of the signature image (e.g., '80px').",
+"type": "string",
+"required": false,
+"default": "60px"
+},
+"cat": {
+"label": "Category",
+"description": "Overrides the main category type for the page. For example, 'Producer' or 'Illustrator'.",
+"type": "string",
+"required": false,
+"default": "Singers"
+}
+},
+"paramOrder": [
+"pagename", "uaca", "utca", "image", "imagedescr", "imagesong", "songfeat", "imagegroup", "otherillustrator", "officialillustrator", "officialjapname", "officialromajiname", "officialchinname", "officialpinyinname", "officialengname", "officialnameinfo", "aka", "fanmark", "fanname", "gender", "birthmonth", "birthday", "birthyear", "deathyear", "birthref", "status", "years", "affiliation", "country", "partner", "otheractivity", "cat", "ytsample", "ytsamplesong", "ytsamplesinger", "ytsampleproducer", "signature", "signsize", "YTchannel", "YTchannelinfo", "YTchanneldeleted", "YTusername", "YTinfo", "YTusernamedeleted", "YThandle", "YTHinfo", "YThandledeleted", "Twitter", "Twitterinfo", "Twitcast", "Twitcastinfo", "Instagram", "Instagraminfo", "Threads", "Threadsinfo", "Soundcloud", "Soundcloudinfo", "Twitch", "Twitchinfo", "Bluesky", "Blueskyinfo", "Tiktok", "Tiktokinfo", "Line", "Lineinfo", "LinePage", "LinePageinfo", "Lineqrpage", "Lineqrpageinfo", "BBuserspace", "BBuserspaceinfo", "Weibo", "Weiboinfo", "Marshmallow", "Marshmallowinfo", "Booth", "Boothinfo", "Spotify", "Spotifyinfo", "NNDuserpage", "NNDuserpageinfo", "mylist1", "mylist1info", "nicommu1", "nicommu1info", "NNDchannel1", "NNDchannel1info", "othersns"
+],
+"format": "block"
+}
+</templatedata>
+notice the x-axis scrollbar above 👆<br/>
+please scroll to see the rest of the TemplateData columns~
+</div>
+
+{{ref}}
+<references/>

@@ -1,0 +1,272 @@
+{{Documentation/Header}}
+{{TemplateData header}}
+<templatedata>
+{
+	"params": {
+		"1": {
+			"aliases": [
+				"title",
+				"heading",
+				"header",
+				"reason",
+				"result"
+			],
+			"label": {
+				"en": "Title"
+			},
+			"description": {
+				"en": "Main title of collapsed box"
+			},
+			"example": {
+				"en": "This is the title text"
+			},
+			"required": true
+		},
+		"2": {
+			"label": {
+				"en": "Custom warning line"
+			},
+			"description": {
+				"en": "Will override the standard warning line, and make the 'warning' parameter unnecessary"
+			},
+			"example": {
+				"en": "This is a custom warning line"
+			},
+			"type": "string"
+		},
+		"indent": {
+			"description": {
+				"en": "Indents the box from the left of the page"
+			},
+			"type": "unknown",
+			"autovalue": "0px",
+			"label": {
+				"en": "Indentation"
+			}
+		},
+		"expand": {
+			"aliases": [
+				"collapse"
+			],
+			"description": {
+				"en": "Using expand=yes or collapse=no will leave the material uncollapsed with the border and coloring"
+			},
+			"example": {
+				"en": "true"
+			},
+			"type": "string",
+			"autovalue": "",
+			"label": {
+				"en": "Expansion"
+			}
+		},
+		"border": {
+			"label": {
+				"en": "Border width (px)"
+			},
+			"description": {
+				"en": "Sets the width of the border line on the collapsed material"
+			},
+			"example": {
+				"en": "2px"
+			},
+			"default": {
+				"en": "1px"
+			},
+			"autovalue": ""
+		},
+		"b-color": {
+			"label": {
+				"en": "Border color",
+				"cs": "Barva ohraničení",
+				"fr": "Couleur de la bordure"
+			},
+			"description": {
+				"en": "Sets the border color",
+				"cs": "Nastaví barvu ohraničení",
+				"fr": "Définit la couleur de la bordure"
+			},
+			"example": {
+				"en": "#F0F2F5",
+				"cs": "#F0F2F5",
+				"fr": "#F0F2F5"
+			},
+			"default": {
+				"en": "Silver",
+				"cs": "Silver",
+				"fr": "Silver"
+			}
+		},
+		"width": {
+			"label": {
+				"en": "Template width (px or %)",
+				"cs": "Šířka šablony (px nebo %)",
+				"fr": "Largeur du modèle (px ou %)"
+			},
+			"description": {
+				"en": "Sets the width of the overall template",
+				"cs": "Nastaví šířku celé šablony",
+				"fr": "Définit la largeur totale du modèle"
+			},
+			"example": {
+				"en": "50%",
+				"cs": "50%",
+				"fr": "50%"
+			}
+		},
+		"bg": {
+			"label": {
+				"en": "Collapsed material background color",
+				"cs": "Barva pozadí sbaleného prvku",
+				"fr": "Couleur de fond du matériel replié"
+			},
+			"description": {
+				"en": "Sets the background color of the collapsed material",
+				"cs": "Nastaví barvu pozadí sbaleného prvku",
+				"fr": "Définit la couleur de fond du matériel replié"
+			},
+			"example": {
+				"en": "#F0F2F5",
+				"cs": "#F0F2F5",
+				"fr": "#F0F2F5"
+			},
+			"default": {
+				"en": "#CFC",
+				"cs": "#CFC",
+				"fr": "#CFC"
+			}
+		},
+		"left": {
+			"label": {
+				"en": "Alight along the left margin (true or blank)",
+				"cs": "Zarovnat k levému okraji (true nebo prázdný)",
+				"fr": "Alignement le long de la marge gauche (true ou vide)"
+			},
+			"description": {
+				"en": "Will align the 'parameter 1 title' along the left margin",
+				"cs": "Zarovná 'název parametru 1' k levému okraji",
+				"fr": "Aligne le 'parameter 1 titre' le long de la marge gauche"
+			},
+			"example": {
+				"en": "true",
+				"cs": "true",
+				"fr": "true"
+			},
+			"type": "string",
+			"default": {
+				"en": "",
+				"cs": "",
+				"fr": ""
+			}
+		},
+		"fc": {
+			"label": {
+				"en": "Title font color",
+				"cs": "Barva písma názvu",
+				"fr": "Couleur de la fonte du titre"
+			},
+			"description": {
+				"en": "Sets the font color of the title of the collapsible bar",
+				"cs": "Nastaví barvu písma názvu rozbalovací lišty",
+				"fr": "Définit la couleur de la fonte du titre de la barre repliable"
+			},
+			"example": {
+				"en": "#F0F2F5",
+				"cs": "#F0F2F5",
+				"fr": "#F0F2F5"
+			},
+			"default": {
+				"en": "Black",
+				"cs": "Black",
+				"fr": "Black"
+			}
+		},
+		"warning": {
+			"label": {
+				"en": "Warning (true or blank)",
+				"cs": "Upozornění (true nebo prázdné)",
+				"fr": "Avertissement (true ou vide)"
+			},
+			"description": {
+				"en": "Will display a default warning line under the main title which reads \"The following is a closed debate. Please do not modify it.\"",
+				"cs": "Pod hlavním názvem se zobrazí výchozí varovný řádek, který zní \"Následuje uzavřená debata. Neupravujte jej, prosím.\"",
+				"fr": "Affiche une ligne d'avertissement par défaut sous le titre principal indiquant \"La suite est une discussion qui est terminée. Veuillez ne pas la modifier.\""
+			},
+			"example": {
+				"en": "true",
+				"cs": "true",
+				"fr": "true"
+			}
+		},
+		"border2": {
+			"label": {
+				"en": "Expanded box border size & color",
+				"cs": "Velikost a barva okraje rozbaleného pole",
+				"fr": "Bordure de la boîte dépliée largeur et couleur"
+			},
+			"description": {
+				"en": "Sets the border of the box that appears when template is expanded",
+				"cs": "Nastaví ohraničení rámečku, který se zobrazí po rozbalení šablony",
+				"fr": "Définit le bord de la boîte qui apparaît lorsque le modèle est déplié"
+			},
+			"example": {
+				"en": "2px",
+				"cs": "2px",
+				"fr": "2px"
+			},
+			"default": {
+				"en": "1px silver",
+				"cs": "1px silver",
+				"fr": "1px silver"
+			}
+		},
+		"padding": {
+			"label": {
+				"en": "Padding (px)",
+				"cs": "Výplň (px)",
+				"fr": "Remplissage (px)"
+			},
+			"description": {
+				"en": "Sets the padding on the collapsed material in the colored area",
+				"cs": "Nastaví výplň na složeném prvku v barevné oblasti",
+				"fr": "Définit l'espacement sur le matériel replié de la zone colorée"
+			},
+			"example": {
+				"en": "16px",
+				"cs": "16px",
+				"fr": "16px"
+			},
+			"default": {
+				"en": "8px",
+				"cs": "8px",
+				"fr": "8px"
+			}
+		},
+		"bg2": {
+			"label": {
+				"en": "Expanded box color",
+				"cs": "Barva rozbaleného pole",
+				"fr": "Couleur de la boîte dépliée"
+			},
+			"description": {
+				"en": "Sets background of the box that appears when template is expanded",
+				"cs": "Nastaví pozadí pole, které se zobrazí po rozbalení šablony",
+				"fr": "Définit la couleur de fond de la boîte qui apparaît lorsque le modèle est déplié"
+			},
+			"example": {
+				"en": "#F0F2F5",
+				"cs": "#F0F2F5",
+				"fr": "#F0F2F5"
+			},
+			"default": {
+				"en": "white",
+				"cs": "white",
+				"fr": "white"
+			}
+		}
+	},
+	"description": {
+		"en": "Use in conjunction with {{Collapse bottom}}. Will collapse text in between the two templates."
+	}
+}
+</templatedata>

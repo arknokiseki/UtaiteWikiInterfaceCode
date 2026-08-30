@@ -1,0 +1,2 @@
+{{Documentation/Header}}
+This template is used to load in an appropriate page format preload when creating a new page.

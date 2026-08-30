@@ -1,0 +1,155 @@
+{{Languages|Template:Tag/doc}}
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+{{Hatnote|For the [[Special:MyLanguage/Help:Page status indicators|page status indicator]] Phabricator tags, see: {{tl|Ptag}}.}}
+{{Uses TemplateStyles|Template:Nowrap/styles.css}}
+{{TemplateData header}}
+__NOTOC__
+<templatedata>
+{
+	"description": {
+		"en": "This template provides a quick way to mention an XML-style tag in a preformatted way. Mainly used in discussion/help pages.",
+		"cs": "Tato šablona poskytuje rychlý způsob, jak zmínit značku ve stylu XML předformátovaným způsobem. Používá se hlavně na stránkách diskusí/nápovědy.",
+		"tr": "Bu şablon, XML tarzı bir etiketi önceden biçimlendirilmiş bir şekilde belirtmenin hızlı bir yolunu sağlar. Esas olarak tartışma/yardım sayfalarında kullanılır."
+	},
+	"format": "inline",
+	"params": {
+		"1": {
+			"label": {
+				"en": "Tag",
+				"cs": "Značka",
+				"tr": "Etiket"
+			},
+			"description": {
+				"en": "The name of the HTML tag.",
+				"cs": "Název značky HTML.",
+				"tr": "HTML etiketinin adı."
+			},
+			"example": {
+				"en": "span",
+				"cs": "rozsah",
+				"tr": "span"
+			},
+			"type": "line",
+			"default": {
+				"en": "tag",
+				"cs": "Značka",
+				"tr": "tag"
+			},
+			"required": true
+		},
+		"2": {
+			"label": {
+				"en": "Type",
+				"cs": "Typ",
+				"tr": "Tür"
+			},
+			"description": {
+				"en": "What type of tag to display, see documentation for possible values.",
+				"cs": "Jaký typ značky zobrazit, možné hodnoty naleznete v dokumentaci.",
+				"tr": "Ne tür bir etiket görüntülenecek, olası değerler için belgelere bakın."
+			},
+			"suggestedvalues": [
+				"p",
+				"pair",
+				"o",
+				"open",
+				"c",
+				"close",
+				"s",
+				"single"
+			],
+			"default": {
+				"en": "pair",
+				"cs": "pár",
+				"tr": "pair"
+			},
+			"type": "string"
+		},
+		"content": {
+			"label": {
+				"en": "Content",
+				"cs": "Obsah",
+				"tr": "İçerik"
+			},
+			"description": {
+				"en": "The text content of the tag. By default “...” for pair type, empty for others; unused if type is single.",
+				"cs": "Textový obsah značky. Ve výchozím nastavení “...” pro typ páru, prázdné pro ostatní; nepoužito, pokud je typ single.",
+				"tr": "Etiketin metin içeriği. Çift tipi için varsayılan olarak “...”, diğerleri için boştur; tür tek ise kullanılmaz."
+			},
+			"type": "content"
+		},
+		"params": {
+			"label": {
+				"en": "Parameters",
+				"cs": "Parametery",
+				"tr": "Parametreler"
+			},
+			"description": {
+				"en": "Parameters (attributes) for the opening tag, unused in close type.",
+				"cs": "Parametry (atributy) pro úvodní značku, nepoužívané v typu close.",
+				"tr": "Kapanış türünde kullanılmayan açılış etiketi için parametreler (öznitelikler)."
+			},
+			"example": {
+				"en": "foo=\"bar\"",
+				"cs": "foo=\"bar\"",
+				"tr": "foo=\"bar\""
+			},
+			"type": "line"
+		},
+		"plain": {
+			"label": {
+				"en": "Plain display",
+				"cs": "Obyčejný displej",
+				"tr": "Düz görüntüleme"
+			},
+			"description": {
+				"en": "Avoid using monospace font and grey background for the tag.",
+				"cs": "Vyhněte se použití jednoprostorového písma a šedého pozadí pro značku.",
+				"tr": "Etiket için tek aralıklı yazı tipi ve gri arka plan kullanmaktan kaçının."
+			},
+			"type": "boolean"
+		},
+		"wrap": {
+			"label": {
+				"en": "Wrap?",
+				"cs": "Zabalit?"
+			},
+			"description": {
+				"en": "Whether to not add `style=\"white-space: nowrap;\"` to the enclosing <code> tag.",
+				"cs": "Zda nepřidat `style=\"white-space: nowrap;\"` do ohraničující značky <code>."
+			},
+			"autovalue": "1",
+			"type": "boolean"
+		}
+	}
+}
+</templatedata>
+
+== Usage ==
+=== Types ===
+*<code>p</code> or <code>pair</code> – ''(default)'' display a matched pair of open-and-close tags: {{tag|div|pair}}
+*<code>o</code> or <code>open</code> – display only the opening tag of an open-and-close pair: {{tag|span|open}}
+*<code>c</code> or <code>close</code> – display only the closing tag of an open-and-close pair: {{tag|span|close}}
+*<code>s</code> or <code>single</code> – display a single tag: {{tag|br|single}}
+
+=== Examples ===
+* {{tlx|tag|ref}} → {{tag|ref}}
+* {{tlx|tag|ref|content{{=}}hello}} → {{tag|ref|content=hello}}
+* {{tlx|tag|span|content{{=}}foo}} → {{tag|span|content=foo}}
+* {{tlx|tag|span|open}} → {{tag|span|open}}
+* {{tlx|tag|span|open|content{{=}}hello}} → {{tag|span|open|content=hello}}
+* {{tlx|tag|span|close|content{{=}}hello}} → {{tag|span|close|content=hello}}
+* {{tlx|tag|span|pair|content{{=}}hello}} → {{tag|span|pair|content=hello}}
+* {{tlx|tag|ref|open|params{{=}}{{tlx|attr|group|"note"}}}} → {{tag|ref|open|params={{attr|group|"note"}}}}
+* {{tlx|tag|references|single}} → {{tag|references|single}}
+* {{tlx|tag|br|single}} → {{tag|br|single}}
+
+== See also ==
+* {{tlx|attr}}
+* {{tlx|xtag}} (Extension Tag)
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Semantic markup templates{{#translation:}}]]
+}}</includeonly>
+{{#tag:syntaxhighlight||lang=text|style=display:none!important}}

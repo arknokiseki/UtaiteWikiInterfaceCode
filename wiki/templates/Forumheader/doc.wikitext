@@ -1,0 +1,30 @@
+{{Documentation/Header}}
+The breadcrumb header for a forum thread. It renders '''Forums: Index > ''Board'' > ''Page''''' and files the page into both the named board's category and [[:Category:Forum Posts]].
+
+Place it as the first line of a new forum page.
+
+==Syntax==
+{{T|Forumheader|v1=board name}}
+
+==Example==
+<pre>{{Forumheader|Departure}}</pre>
+…renders the breadcrumb and adds the page to [[:Category:Departure]] and [[:Category:Forum Posts]].
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Board || Name of the forum board, without the <code>Forum:</code> prefix. Also used as the category name. || string || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Breadcrumb header for a forum thread; also categorizes the page.",
+"params": {
+"1": { "label": "Board", "description": "Forum board name, without the 'Forum:' prefix.", "type": "string", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>
+<includeonly>[[Category:Forums]]</includeonly>

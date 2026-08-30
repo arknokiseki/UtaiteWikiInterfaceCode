@@ -1,0 +1,54 @@
+= StructuredQuote Template Documentation =
+
+== Overview ==
+The StructuredQuote template is used to create stylized quotations with optional attribution. It generates a table-based layout with customizable appearance and content.
+
+== Usage ==
+<pre>
+{{StructuredQuote
+| text = The quote text goes here
+| speaker = Optional: Name of the speaker
+| receiver = Optional: Name of the person being addressed
+| attribution = Optional: Additional attribution details
+| source = Optional: Source of the quote
+}}
+</pre>
+
+=== Output ===
+{{StructuredQuote
+| text = The quote text goes here
+| speaker = Optional: Name of the speaker
+| receiver = Optional: Name of the person being addressed
+| attribution = Optional: Additional attribution details
+| source = Optional: Source of the quote
+}}
+
+== Parameters ==
+# `text` (required): The main text of the quote.
+# `speaker` (optional): The name of the person who said the quote.
+# `receiver` (optional): The name of the person to whom the quote was directed.
+# `attribution` (optional): Additional attribution information.
+# `source` (optional): The source of the quote.
+
+== Notes ==
+* The template automatically adjusts its layout based on which optional parameters are provided.
+* If any of the optional parameters (speaker, receiver, attribution, or source) are provided, an additional row is added to the table for attribution.
+* The template is designed to be responsive and should adapt to different screen sizes.
+
+== Example ==
+<pre>
+{{StructuredQuote
+| text = To be, or not to be, that is the question.
+| speaker = Hamlet
+| source = Hamlet, Act 3, Scene 1
+}}
+</pre>
+This will produce a styled quote box with the text from Hamlet, attributed to the character and sourced from the play.
+
+
+=== Output ===
+{{StructuredQuote
+| text = To be, or not to be, that is the question.
+| speaker = Hamlet
+| source = Hamlet, Act 3, Scene 1
+}}

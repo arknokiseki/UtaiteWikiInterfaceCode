@@ -1,0 +1,6 @@
+<onlyinclude><includeonly>{{#if:{{{name|}}}
+ |{{#tag:ref|{{{1|{{{note|{{{content|{{{text|}}}}}}}}}}}}|group=note|name={{{name|}}}}}
+ |{{#tag:ref|{{{1|{{{note|{{{content|{{{text|}}}}}}}}}}}}|group=note}}
+}}</includeonly></onlyinclude>
+{{Documentation}}
+<!-- Add categories to the /doc subpage and interwikis in Wikidata, not here! -->

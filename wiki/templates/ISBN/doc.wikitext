@@ -1,0 +1,12 @@
+{{Documentation subpage}}
+;Use <code><nowiki>{{ISBN|  }}</nowiki></code>
+
+== Usage ==
+<code><nowiki>{{ISBN|0-7475-3269-9}}</nowiki></code>
+
+;results in:
+{{ISBN|0-7475-3269-9}}
+
+Edit page ''Project:Book sources'' to add links to your favourite book finding sites. See [[mw:Manual:ISBN]] for details.
+
+<includeonly>[[Category:Catalog lookup templates]] </includeonly>

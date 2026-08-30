@@ -1,0 +1,1 @@
+<includeonly><br>Illust. by [http://www.pixiv.net/member.php?id={{{1}}} <span class="pixiv-icon"><i class="fa-brands fa-pixiv"></i></span> {{{2}}}] {{#if:{{{3|}}}|and [http://www.pixiv.net/member.php?id={{{3}}} <span class="pixiv-icon"><i class="fa-brands fa-pixiv"></i></span> {{{4}}}]|}} </includeonly><noinclude>{{documentation}}{{SNS Template}}</noinclude>

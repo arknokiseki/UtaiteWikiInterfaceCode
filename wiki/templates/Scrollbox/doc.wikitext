@@ -1,0 +1,57 @@
+{{Documentation/Header}}
+{{High Risk|Template:Scrollbox|nocat=1|pagetype=Main}}
+Wraps content in a fixed-height, '''scrollable box''' with an automatic scrollbar — handy for long lists, such as the "Affiliation and Collaboration Projects" sections, that would otherwise stretch a page. The content may be passed as the first unnamed parameter or as <code>content=</code>.
+
+==Syntax==
+{{T|Scrollbox|block=1
+|v1=content =
+|v2=height =
+|v3=height-unit =
+|v4=font-size =
+|v5=min-width =
+|v6=text-align =
+|v7=class =
+}}
+
+==Examples==
+{{T|Scrollbox|_Y_=1|block=1
+|p1=height = 60
+|p2=content = Line 1<br/>Line 2<br/>Line 3<br/>Line 4<br/>Line 5<br/>Line 6<br/>Line 7<br/>Line 8
+}}
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || <code>content</code> || Content || The content to place inside the scroll box. || content || – || <span style="color:red;font-weight:bold;">Required</span>
+|-
+| <code>height</code> || – || Height || Maximum height (number only). || number || 300 ||
+|-
+| <code>height-unit</code> || – || Height unit || CSS unit for the height. || string || px ||
+|-
+| <code>font-size</code> || – || Font size || CSS <code>font-size</code> for the box. || string || inherit ||
+|-
+| <code>min-width</code> || – || Minimum width || CSS <code>min-width</code>. || string || auto ||
+|-
+| <code>text-align</code> || – || Text align || CSS <code>text-align</code>. || string || inherit ||
+|-
+| <code>class</code> || – || CSS class || Extra CSS class(es) to apply to the box. || string || – ||
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "A fixed-height, scrollable container for long lists.",
+"params": {
+"1": { "label": "Content", "description": "Content to place inside the scroll box.", "type": "content", "aliases": ["content"], "required": true },
+"height": { "label": "Height", "description": "Maximum height, number only.", "type": "number", "default": "300" },
+"height-unit": { "label": "Height unit", "description": "CSS unit for the height.", "type": "string", "default": "px" },
+"font-size": { "label": "Font size", "description": "CSS font-size.", "type": "string", "default": "inherit" },
+"min-width": { "label": "Minimum width", "description": "CSS min-width.", "type": "string", "default": "auto" },
+"text-align": { "label": "Text align", "description": "CSS text-align.", "type": "string", "default": "inherit" },
+"class": { "label": "CSS class", "description": "Extra CSS class(es) for the box.", "type": "string" }
+},
+"paramOrder": ["1","height","height-unit","font-size","min-width","text-align","class"],
+"format": "block"
+}
+</templatedata>
+</div>

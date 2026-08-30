@@ -1,0 +1,11 @@
+<includeonly>|-
+|style="border: 1px solid #ccc; border-right:none; border-top:none"|
+<span style="display:none">{{{display|{{{name|}}}}}}</span>
+{{#if:{{{image|}}}|[[File:{{{image}}}|100px]]|[[File:Template doc.png|100px]]}}
+[[{{#switch: {{{label|}}} | N/A = Misc. Albums | = Misc. Albums | #default = {{{label}}}}}#{{{name|}}}|{{{display|{{{name|}}}}}}]]
+|style="text-align:center; border: 1px solid #ccc; border-right:none; border-top:none"|
+{{anchor|{{{display|{{{name|}}}}}}}}
+'''{{#if:{{{date|}}}|{{#time:Y.m.d|{{{date}}}}}|{{{release|}}}}}'''
+|style="text-align:center; border: 1px solid #ccc; border-top:none"|
+[[{{#switch: {{{label|}}} | N/A = Misc. Albums | = Misc. Albums | #default = {{{label}}}}}]]
+</includeonly><noinclude>{{Documentation|content={{CA/doc}}}}</noinclude>

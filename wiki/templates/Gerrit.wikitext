@@ -1,0 +1,2 @@
+<onlyinclude>{{#invoke:Gerrit|link_automatic|{{{1|example}}}}}</onlyinclude>
+{{Documentation}}

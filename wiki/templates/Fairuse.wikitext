@@ -1,0 +1,5 @@
+<div class="boilerplate" id="c-fairuse" style="width:100%; margin:0 auto; padding:10px; border:1px solid #A8ACA8; background:#f4f8fb; color:#000;">
+The copyright of this file is owned by the creator of this image who is not affiliated with Utaite Wiki. It is believed by Utaite wiki that this image is used to illustrate the subject of the image, and thus falls under the [[Wikipedia:fair use|fair use]] clause of [[Wikipedia:United States copyright law|United States copyright law]]. Any other uses of this image may be [[Wikipedia:copyright_infringement|Copyright Infringement]]. For more information, please see [[Wikipedia:Non-free content|Non-free content]]. If you are the copyright holder of this image and believe the use of this image here does not fall under fair use, please contact one of the [[Utaite Wiki:Administrators|Administrators]].
+</div>
+<includeonly>[[Category:Images]][[Category:Fair Use Images]][[Category:Media]]</includeonly>
+<noinclude>{{documentation}}</noinclude>

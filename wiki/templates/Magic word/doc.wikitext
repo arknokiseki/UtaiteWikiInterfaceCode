@@ -1,0 +1,76 @@
+{{Documentation subpage}}
+<!-- Add categories where indicated at the bottom of this page and interwikis at Wikidata -->
+Uses:
+*Template:Nowrap/styles.css
+*Template:Mono/styles.css
+
+== Description ==
+Creates a formatted link to the documentation of a magic word.
+
+== Parameters ==
+<templatedata>
+{
+    "description": "Creates a formatted link to the documentation of a magic word.",
+    "params": {
+        "1": {
+            "label": "Magic Word",
+            "description": "The name of the magic word or parser function.",
+            "type": "string",
+            "required": true
+        },
+        "2": {
+            "label": "Parameter 0",
+            "description": "The parameter passed immediately after the colon.",
+            "type": "content",
+            "required": false
+        },
+        "ext": {
+            "label": "Extension",
+            "description": "The name of the extension that adds the parser function (without the \"Extension:\" namespace prefix)",
+            "type": "string",
+            "required": false
+        },
+        "code": {
+            "label": "Code?",
+            "description": "Whether to use <code> styling.",
+            "type": "boolean",
+            "default": "0",
+            "autovalue": "1",
+            "required": false
+        },
+        "mono": {
+            "label": "Monospaced?",
+            "description": "Whether to use style=\"font-family:monospace\".",
+            "type": "boolean",
+            "default": "0",
+            "autovalue": "1",
+            "required": false
+        },
+        "nowrap": {
+            "label": "Nowrap?",
+            "description": "Whether to use style=\"white-space:nowrap\".",
+            "type": "boolean",
+            "default": "0",
+            "autovalue": "1",
+            "required": false
+        }
+    }
+}
+</templatedata>
+
+== Examples ==
+* {{tlx|Magic word|nowrap{{=}}1|ext{{=}}Translate|#translation}} &rarr; <br
+/>{{Magic word|nowrap=1|ext=Translate|#translation}}
+* {{tlx|Magic word|mono{{=}}1|nowrap{{=}}1|ext{{=}}Scribunto|#invoke|Example}} &rarr; <br
+/>{{Magic word|mono=1|nowrap=1|ext=Scribunto|#invoke|Example}}
+* {{tlx|Magic word|code{{=}}1|#language|{{tlx|Magic word|PAGELANGUAGE|nowrapper{{=}}1}}}} &rarr; <br
+/>{{Magic word|code=1|#language|{{Magic word|PAGELANGUAGE|nowrapper=1}}}}
+
+== See also ==
+{{tl-nav}}
+
+<includeonly>{{Sandbox other||
+<!-- Categories below this line; interwikis at Wikidata -->
+[[Category:Internal link templates]]
+[[Category:Magic words]]
+}}</includeonly>

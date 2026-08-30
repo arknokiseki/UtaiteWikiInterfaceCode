@@ -1,0 +1,16 @@
+<pre>{{Song chorus
+|yt      = ytid
+|nnd     = nndid
+|creator = Creatorname
+|number  = 12
+|singers = [[Singer1]], [[Singer2]]
+}}</pre>
+...results in:
+{{Song chorus
+|yt      = dQw4w9WgXcQ
+|nnd     = sm9
+|creator = Creatorname
+|number  = 12
+|singers = [[Singer1]], [[Singer2]]
+}}
+<includeonly>[[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation]]</noinclude>

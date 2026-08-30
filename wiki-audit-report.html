@@ -1,0 +1,951 @@
+<title>Wiki Documentation Audit</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F7F6; --surface:#FFFFFF; --ink:#1B1F1D; --muted:#697068; --line:#E2E5E1;
+  --accent:#2E6F5E; --accent-weak:#2E6F5E22; --attention:#B4632A; --attention-weak:#B4632A1F;
+  --critical:#A33A32; --shadow:0 1px 2px #1B1F1D0D;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15181A; --surface:#1C2022; --ink:#E8EBE8; --muted:#939A93; --line:#2A2F30;
+    --accent:#5FA98F; --accent-weak:#5FA98F26; --attention:#D68A4E; --attention-weak:#D68A4E26;
+    --critical:#D4726A; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15181A; --surface:#1C2022; --ink:#E8EBE8; --muted:#939A93; --line:#2A2F30;
+  --accent:#5FA98F; --accent-weak:#5FA98F26; --attention:#D68A4E; --attention-weak:#D68A4E26;
+  --critical:#D4726A; --shadow:none;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg); color:var(--ink); margin:0;
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:56px 24px 96px; display:flex; flex-direction:column; gap:52px}
+h1,h2{font-family:Spectral,Georgia,serif; font-weight:600; text-wrap:balance; margin:0}
+h1{font-size:2.1rem; letter-spacing:-.01em}
+h2{font-size:1.3rem}
+.lede{color:var(--muted); max-width:62ch; margin:10px 0 0}
+.eyebrow{font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:600}
+section{display:flex; flex-direction:column; gap:16px}
+.head{display:flex; flex-direction:column; gap:4px}
+.mono,td.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.85rem}
+.ns{color:var(--muted)}
+.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden}
+.stat{background:var(--surface); padding:18px 20px; display:flex; flex-direction:column; gap:2px}
+.stat b{font-family:Spectral,Georgia,serif; font-size:2rem; font-weight:600; font-variant-numeric:tabular-nums; line-height:1.1}
+.stat span{font-size:.8rem; color:var(--muted)}
+
+.cov{display:flex; flex-direction:column; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:20px; box-shadow:var(--shadow)}
+.covrow{display:flex; flex-direction:column; gap:7px}
+.covtop{display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:.9rem}
+.covtop em{font-style:normal; color:var(--muted); font-variant-numeric:tabular-nums}
+.bar{display:flex; height:10px; border-radius:5px; overflow:hidden; background:var(--line)}
+.bar i{display:block}
+.bar .done{background:var(--accent)}
+.bar .todo{background:var(--attention)}
+.key{display:flex; gap:18px; font-size:.8rem; color:var(--muted); flex-wrap:wrap}
+.key i{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:6px; vertical-align:middle}
+
+.split{display:grid; grid-template-columns:1fr; gap:22px}
+@media(min-width:860px){.split{grid-template-columns:1fr 1fr}}
+.panel{display:flex; flex-direction:column; gap:10px; min-width:0}
+.panel h3{margin:0; font-size:.95rem; font-weight:600}
+.panel p{margin:0; font-size:.83rem; color:var(--muted)}
+
+.scroll{overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.86rem}
+th,td{text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); vertical-align:middle}
+th{font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:600; white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:var(--accent-weak)}
+
+.usage{display:inline-block; width:46px; height:5px; border-radius:3px; background:var(--line); margin-right:8px; vertical-align:middle}
+.usage i{display:block; height:100%; border-radius:3px; background:var(--accent)}
+.chip{display:inline-block; font-size:.72rem; padding:1px 7px; border-radius:99px; background:var(--accent-weak); color:var(--accent); font-weight:500}
+.chip.none{background:var(--attention-weak); color:var(--attention)}
+.chip.flag{background:var(--attention-weak); color:var(--attention)}
+.tier{font-size:.72rem; font-weight:600; letter-spacing:.04em}
+.tier.UNUSED{color:var(--critical)}
+.tier[data-t="DOC-ONLY"]{color:var(--attention)}
+
+.finding{border:1px solid var(--line); border-radius:8px; background:var(--surface); overflow:hidden}
+.finding>summary{cursor:pointer; padding:11px 16px; display:flex; align-items:center; gap:10px; font-size:.9rem; font-weight:500; list-style:none}
+.finding>summary::-webkit-details-marker{display:none}
+.finding>summary::before{content:"▸"; color:var(--muted); font-size:.7rem; transition:transform .15s}
+.finding[open]>summary::before{transform:rotate(90deg)}
+.finding .n{margin-left:auto; font-variant-numeric:tabular-nums; color:var(--muted); font-size:.82rem}
+.finding.warn>summary{box-shadow:inset 3px 0 0 var(--attention)}
+.finding ul{margin:0; padding:4px 16px 14px 34px; display:flex; flex-direction:column; gap:6px; font-size:.84rem}
+.finding li{color:var(--muted)}
+.finding li b{font-family:"JetBrains Mono",ui-monospace,monospace; font-weight:500; font-size:.82rem; color:var(--ink)}
+
+.prov{display:flex; flex-direction:column; gap:7px; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:18px 20px}
+.provrow{display:grid; grid-template-columns:1fr 46px; align-items:center; gap:12px; font-size:.86rem}
+.provbar{position:relative; height:20px; display:flex; align-items:center}
+.provbar i{position:absolute; left:0; height:100%; border-radius:3px; background:var(--accent-weak)}
+.provbar span{position:relative; padding-left:8px}
+.empty{color:var(--muted); font-size:.86rem; margin:0; padding:14px; border:1px dashed var(--line); border-radius:8px}
+footer{color:var(--muted); font-size:.8rem; border-top:1px solid var(--line); padding-top:18px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="head">
+  <p class="eyebrow">utaite.wiki · snapshot 2026-08-30</p>
+  <h1>Template &amp; Module Documentation</h1>
+  <p class="lede">Every Template and Module page on the wiki, measured for documentation coverage and real usage. 566 content roots; redirects excluded throughout.</p>
+</header>
+
+<section>
+  <div class="stats">
+    <div class="stat"><b>78%</b><span>Templates documented — 377 of 483</span></div>
+    <div class="stat"><b>46%</b><span>Modules documented — 38 of 83</span></div>
+    <div class="stat"><b>151</b><span>Pages with no documentation</span></div>
+    <div class="stat"><b>48</b><span>Deletion candidates — 40 confident</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="head"><h2>Coverage</h2><p class="lede">A page counts as documented when a <code class="mono">/doc</code> subpage exists. Quality is a separate question, handled below.</p></div>
+  <div class="cov">
+    <div class="covrow">
+      <div class="covtop"><strong>Template</strong><em>377 documented · 106 missing</em></div>
+      <div class="bar"><i class="done" style="width:78%"></i><i class="todo" style="width:22%"></i></div>
+    </div>
+    <div class="covrow">
+      <div class="covtop"><strong>Module</strong><em>38 documented · 45 missing</em></div>
+      <div class="bar"><i class="done" style="width:46%"></i><i class="todo" style="width:54%"></i></div>
+    </div>
+    <div class="key"><span><i style="background:var(--accent)"></i>Documented</span><span><i style="background:var(--attention)"></i>Missing</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="head">
+    <h2>What to write first</h2>
+    <p class="lede">Undocumented pages ranked by usage against documentation gap, then split by origin. These are two different jobs: the left column has to be authored here, the right column already has documentation upstream to import or link.</p>
+  </div>
+  <div class="split">
+    <div class="panel">
+      <h3>Write — 89 pages</h3>
+      <p>Native to this wiki. Nobody else can document these.</p>
+      <div class="scroll"><table>
+<thead><tr><th>Page</th><th class="num">Uses</th><th class="num">Missing params</th><th>Doc</th></tr></thead>
+<tbody>
+<tr>
+<td class="mono"><span class="ns">Template:</span>UtaiteCollabUnit</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">34</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>R</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">24</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Unofficial</td>
+<td class="num"><span class="usage"><i style="width:26%"></i></span>5</td>
+<td class="num">13</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Box</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">12</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>DiscordWidget</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">12</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>SonglistEntry</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">12</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>AdminVotingHeader</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">9</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>UtaiteAgency</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">8</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>TimedDisplay</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">7</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>DiscordIntegrator</td>
+<td class="num"><span class="usage"><i style="width:23%"></i></span>4</td>
+<td class="num">5</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Official</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">5</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>LL</td>
+<td class="num"><span class="usage"><i style="width:35%"></i></span>10</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utaite Groups List</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">5</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>ActivityFeed</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Mw</td>
+<td class="num"><span class="usage"><i style="width:69%"></i></span>117</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>UserGroupIcon</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">3</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>TextCleaner</td>
+<td class="num"><span class="usage"><i style="width:92%"></i></span>585+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>H2</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>MP-Blog</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>TimeAgo</td>
+<td class="num"><span class="usage"><i style="width:82%"></i></span>293</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>ProcessSingerPage</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Tick</td>
+<td class="num"><span class="usage"><i style="width:39%"></i></span>14</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Commercially featured</td>
+<td class="num"><span class="usage"><i style="width:71%"></i></span>132</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Sanitize</td>
+<td class="num"><span class="usage"><i style="width:68%"></i></span>110</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Wt</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+</tbody></table></div>
+    </div>
+    <div class="panel">
+      <h3>Source — 62 pages</h3>
+      <p>Imported. Look upstream before writing from scratch.</p>
+      <div class="scroll"><table>
+<thead><tr><th>Page</th><th class="num">Uses</th><th class="num">Missing params</th><th>Doc</th></tr></thead>
+<tbody>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Bottask</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">92</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>ApiParam</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">14</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Xpdn</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">7</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Efn</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">6</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>TOCright</td>
+<td class="num"><span class="usage"><i style="width:35%"></i></span>10</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Notelist</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">5</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Gerrit search</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Plural</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Ifopt</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">4</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Languages</td>
+<td class="num"><span class="usage"><i style="width:96%"></i></span>752+</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Yesno</td>
+<td class="num"><span class="usage"><i style="width:100%"></i></span>1807+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Str right</td>
+<td class="num"><span class="usage"><i style="width:0%"></i></span>0</td>
+<td class="num">3</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Entrypoint</td>
+<td class="num"><span class="usage"><i style="width:98%"></i></span>880+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Fallbacklist</td>
+<td class="num"><span class="usage"><i style="width:98%"></i></span>880+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>I18n</td>
+<td class="num"><span class="usage"><i style="width:98%"></i></span>880+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>TableTools</td>
+<td class="num"><span class="usage"><i style="width:97%"></i></span>807+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Config</td>
+<td class="num"><span class="usage"><i style="width:96%"></i></span>752+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>TOC Right</td>
+<td class="num"><span class="usage"><i style="width:92%"></i></span>593+</td>
+<td class="num">—</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>LangSwitch</td>
+<td class="num"><span class="usage"><i style="width:20%"></i></span>3</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Htmlir</td>
+<td class="num"><span class="usage"><i style="width:51%"></i></span>32</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Markup</td>
+<td class="num"><span class="usage"><i style="width:50%"></i></span>30</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>T2</td>
+<td class="num"><span class="usage"><i style="width:16%"></i></span>2</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Placeholder</td>
+<td class="num"><span class="usage"><i style="width:48%"></i></span>27</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Example</td>
+<td class="num"><span class="usage"><i style="width:47%"></i></span>25</td>
+<td class="num">1</td>
+<td><span class="chip none">none</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>MW 1.15</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">2</td>
+<td><span class="chip none">none</span></td>
+</tr>
+</tbody></table></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="head">
+    <h2>Documented, but thinly</h2>
+    <p class="lede">Pages that do have a <code class="mono">/doc</code> yet leave parameters unexplained. Ranked the same way; doc length is deliberately not a factor.</p>
+  </div>
+  <div class="scroll"><table>
+<thead><tr><th>Page</th><th class="num">Uses</th><th class="num">Missing params</th><th>Doc</th></tr></thead>
+<tbody>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utattemita tours</td>
+<td class="num"><span class="usage"><i style="width:39%"></i></span>14</td>
+<td class="num">208</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Album</td>
+<td class="num"><span class="usage"><i style="width:86%"></i></span>392</td>
+<td class="num">191</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Foreach</td>
+<td class="num"><span class="usage"><i style="width:26%"></i></span>5</td>
+<td class="num">102</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Youtaite</td>
+<td class="num"><span class="usage"><i style="width:80%"></i></span>248</td>
+<td class="num">96</td>
+<td><span class="chip">rich</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utaite</td>
+<td class="num"><span class="usage"><i style="width:93%"></i></span>616+</td>
+<td class="num">89</td>
+<td><span class="chip">rich</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Gallery</td>
+<td class="num"><span class="usage"><i style="width:97%"></i></span>824+</td>
+<td class="num">84</td>
+<td><span class="chip">thin</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Song covers</td>
+<td class="num"><span class="usage"><i style="width:92%"></i></span>588+</td>
+<td class="num">55</td>
+<td><span class="chip">thin</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>AlbumType2</td>
+<td class="num"><span class="usage"><i style="width:75%"></i></span>179</td>
+<td class="num">38</td>
+<td><span class="chip">rich</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Pre</td>
+<td class="num"><span class="usage"><i style="width:23%"></i></span>4</td>
+<td class="num">23</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Nicollabo</td>
+<td class="num"><span class="usage"><i style="width:33%"></i></span>9</td>
+<td class="num">17</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Song</td>
+<td class="num"><span class="usage"><i style="width:92%"></i></span>584+</td>
+<td class="num">15</td>
+<td><span class="chip">thin</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utattemita</td>
+<td class="num"><span class="usage"><i style="width:66%"></i></span>94</td>
+<td class="num">15</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Playlist</td>
+<td class="num"><span class="usage"><i style="width:99%"></i></span>922+</td>
+<td class="num">13</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Tlsu</td>
+<td class="num"><span class="usage"><i style="width:48%"></i></span>27</td>
+<td class="num">13</td>
+<td><span class="chip">adequate</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Table-AnchorRow</td>
+<td class="num"><span class="usage"><i style="width:10%"></i></span>1</td>
+<td class="num">12</td>
+<td><span class="chip">thin</span></td>
+</tr>
+</tbody></table></div>
+</section>
+
+<section>
+  <div class="head">
+    <h2>Deletion candidates</h2>
+    <p class="lede">No transclusion anywhere, no <code class="mono">require()</code> from another module, no reference from gadget code. Pages used only by other templates are classed internal and are <strong>not</strong> listed here. Static analysis cannot prove a wiki page is dead — treat these as review candidates.</p>
+  </div>
+  <div class="scroll"><table>
+    <thead><tr><th>Page</th><th>Tier</th><th>Origin</th><th>Confidence</th></tr></thead>
+    <tbody>
+<tr>
+<td class="mono"><span class="ns">Module:</span>DateUtil</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Effective protection level</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>UtaiteMemberStatus</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>!</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom — old utaite wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>=</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom — old utaite wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>?</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Anikora Thumbnail</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>CURRENTDATE</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Cc-by-nc-4.0</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Cc-by-sa-3.0</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom (wiki not identified)</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Cc-by-sa-4.0</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Clrl</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom — old utaite wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Clrr</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom — old utaite wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>DPL scroll</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>DiscordWidget</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Efn</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Harv</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>ISBN</td>
+<td><span class="tier DOC-ONLY" data-t="DOC-ONLY">DOC-ONLY</span></td>
+<td>Miraheze</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Intricate template</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Invisible</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom (wiki not identified)</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Lowercase title</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>MP-Left</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>MP-Mobile</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Max</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom (wiki not identified)</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>ModuleQuality</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>No-license</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Notelist</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>PAGENAME</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Parser functions nav</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Pp-template</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Runner-up</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Wikipedia</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Sandbox</td>
+<td><span class="tier DOC-ONLY" data-t="DOC-ONLY">DOC-ONLY</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>SharedDocumentation</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>SonglistEntry</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Str right</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utaite Groups List</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Utaite Spotlight</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Fandom — old utaite wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Welcome-subject</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Wt</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Template:</span>Y-MP-Left</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip">no references found</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Bugzilla</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>CommentStreamsUtil</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Demo</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Footnotes</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>MultiReplace</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>Wikipedia</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>PageExcerpt</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Uptodate helper</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>written on this wiki</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+<tr>
+<td class="mono"><span class="ns">Module:</span>Uses TNT</td>
+<td><span class="tier UNUSED" data-t="UNUSED">UNUSED</span></td>
+<td>mediawiki.org</td>
+<td><span class="chip flag">check by hand</span></td>
+</tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <div class="head">
+    <h2>Documentation plumbing</h2>
+    <p class="lede">22 findings, grouped by what is actually wrong. Shared documentation is listed last because it is deliberate, not a fault.</p>
+  </div>
+  <details class="finding warn">
+  <summary>Doc whose template is gone<span class="n">4</span></summary>
+  <ul><li><b>Template:Main page/doc</b> — Template:Main page does not exist</li><li><b>Template:Markup templates/doc</b> — Template:Markup templates does not exist</li><li><b>Template:T/piece/doc</b> — Template:T/piece does not exist</li><li><b>Template:Un+Official links templates/doc</b> — Template:Un+Official links templates does not exist</li></ul>
+</details>
+<details class="finding warn">
+  <summary>Double redirect<span class="n">3</span></summary>
+  <ul><li><b>Template:-</b> — Template:Clear is itself a redirect to Template:Clr</li><li><b>Template:Complete/preload</b> — Template:Completion request/preload is itself a redirect to Template:Completion Request/preload</li><li><b>Template:Tabber2</b> — Template:TabberType2 is itself a redirect to Template:Tabber</li></ul>
+</details>
+<details class="finding warn">
+  <summary>Doc attached to a redirect<span class="n">2</span></summary>
+  <ul><li><b>Template:Clear/doc</b> — Template:Clear is a redirect to Template:Clr</li><li><b>Template:Mbox/doc</b> — Template:Mbox is a redirect to Template:MessageBox</li></ul>
+</details>
+<details class="finding warn">
+  <summary>Doc points at a template, not a doc<span class="n">1</span></summary>
+  <ul><li><b>Template:$1/doc</b> — points at Module:$var/templatedoc, which is not a /doc page</li></ul>
+</details>
+<details class="finding warn">
+  <summary>Redirect target does not exist<span class="n">1</span></summary>
+  <ul><li><b>Template:$1/doc</b> — target Module:$var/templatedoc does not exist</li></ul>
+</details>
+<details class="finding">
+  <summary>Shared documentation (intentional)<span class="n">11</span></summary>
+  <ul><li><b>Template:-/doc</b> — shares documentation with Template:Clear/doc</li><li><b>Template:Forumtable/doc</b> — shares documentation with Template:Forum/table/doc</li><li><b>Template:GalleryCustomFormat/doc</b> — shares documentation with Template:Gallery/CustomFormat/doc</li><li><b>Template:HeadingB/doc</b> — shares documentation with Template:Archive/HeadingB/doc</li><li><b>Template:MiniTabs/doc</b> — shares documentation with Template:Archive/MiniTabs/doc</li><li><b>Template:Music Video Thumbnail/doc</b> — shares documentation with Template:Music Video Thumbnails/doc</li><li><b>Template:PlaylistTable/doc</b> — shares documentation with Template:SonglistTable/doc</li><li><b>Template:Tlg/doc</b> — shares documentation with Template:Template link general/doc</li><li><b>Template:UtaiteUnitMember/card/doc</b> — shares documentation with Template:UtaiteUnitMember/doc</li><li><b>Template:WikiaLicense/doc</b> — shares documentation with Template:Interwiki/doc</li><li><b>Template:Wp:ja/doc</b> — shares documentation with Template:Wp ja/doc</li></ul>
+</details>
+</section>
+
+<section>
+  <div class="head">
+    <h2>Where these pages came from</h2>
+    <p class="lede">Origin read from each page's first revision, whose interwiki-prefixed username survives transwiki import. 251 of 566 roots were written here; the rest arrived from 11 other wikis.</p>
+  </div>
+  <div class="prov">
+<div class="provrow">
+  <div class="provbar"><i style="width:100%"></i><span>written on this wiki</span></div>
+  <div class="num">251</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:63%"></i><span>mediawiki.org</span></div>
+  <div class="num">158</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:32%"></i><span>Fandom (wiki not identified)</span></div>
+  <div class="num">80</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:18%"></i><span>Fandom — old utaite wiki</span></div>
+  <div class="num">44</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:6%"></i><span>Miraheze</span></div>
+  <div class="num">14</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:3%"></i><span>Fandom — Vocaloid Lyrics wiki</span></div>
+  <div class="num">7</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:2%"></i><span>Wikipedia</span></div>
+  <div class="num">4</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:2%"></i><span>Meta-Wiki</span></div>
+  <div class="num">4</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:0%"></i><span>exttest</span></div>
+  <div class="num">1</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:0%"></i><span>Miraheze Dev</span></div>
+  <div class="num">1</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:0%"></i><span>Fandom Dev wiki</span></div>
+  <div class="num">1</div>
+</div>
+<div class="provrow">
+  <div class="provbar"><i style="width:0%"></i><span>Fandom — Virtual YouTuber wiki</span></div>
+  <div class="num">1</div>
+</div>
+  </div>
+</section>
+
+<footer>
+  Generated from <code class="mono">wiki-audit.json</code> · snapshot 2026-08-30 · redirects listed in <code class="mono">wiki/_redirects.tsv</code>. Queue tables show the top entries; the full data set is in the JSON.
+</footer>
+
+</div>

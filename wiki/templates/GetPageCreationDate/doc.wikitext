@@ -1,0 +1,32 @@
+{{Documentation/Header}}
+Returns the date a page was created, as <code>YYYY-MM-DD</code>. It finds the page's earliest revision with DPL and formats that revision's timestamp.
+
+==Syntax==
+{{T|GetPageCreationDate|v1=page title}}
+
+==Example==
+{| class="wikitable"
+! Code !! Result
+|-
+| <code><nowiki>{{GetPageCreationDate|Utaite Wiki:Tutorial}}</nowiki></code> || {{GetPageCreationDate|Utaite Wiki:Tutorial}}
+|}
+
+Give the '''full page title''', including any namespace prefix. An unknown page returns an empty string rather than an error.
+
+{| class="dataTable sortable"
+! Parameter !! Aliases !! Label !! Description !! Type !! Default !! Status
+|-
+| <code>1</code> || – || Page title || Full title of the page to look up, including namespace. || wiki-page-name || – || <span style="color:red;font-weight:bold;">Required</span>
+|}
+
+<div style="display: none;">
+<templatedata>
+{
+"description": "Returns the creation date of a page as YYYY-MM-DD.",
+"params": {
+"1": { "label": "Page title", "description": "Full title of the page, including namespace.", "type": "wiki-page-name", "required": true }
+},
+"format": "inline"
+}
+</templatedata>
+</div>

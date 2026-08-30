@@ -1,0 +1,1 @@
+<includeonly><span style="text-align: center; margin: 0 10px 10px; width: {{{3|300}}}px; font-size: 105%; float: {{{4|right}}};">{{#ev:{{{1}}}|id={{{2}}}|autoresize=true|{{#if:{{{5|}}}|description='''{{{5|}}}'''}}}}{{#if: {{{6|}}}|<br><span style="font-size: 90%;">{{{6|}}}</span>}}</span></includeonly><noinclude>{{documentation}}</noinclude>

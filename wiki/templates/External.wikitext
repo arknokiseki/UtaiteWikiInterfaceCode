@@ -1,0 +1,86 @@
+<!--
+
+-->{{#switch:{{{1}}}
+  |nn = Niconico
+  |nn-ico = <span class="external-icon">[[File:Nnd32.png|16px|link=https://www.nicovideo.jp/watch/{{{2}}} |alt=[nn] |{{{3|}}}]]</span>
+  |nn-url = [https://www.nicovideo.jp/watch/{{{2}}} Niconico]
+  |nn-url1 = [https://www.nicozon.net/watch/{{{2}}} Nicozon]
+  |nn-img = [[File:Thumb-nn.png|link=|alt=Niconico logo|Niconico]]
+
+  |yt = YouTube
+  |yt-ico  = <span class="external-icon">[[File:Yt.png |link=https://www.youtube.com/watch?v={{{2}}} |alt=[yt] |{{{3|}}}]]</span>
+  |yt-url  = [https://www.youtube.com/watch?v={{{2}}} <small>YT</small>]
+  |yt-img  = [[File:Thumb-yt.png|link=|alt=YouTube logo|YouTube]]
+  |yt-img1 = https://i.ytimg.com/vi/{{{2}}}/1.jpg
+  |yt-img2 = https://i.ytimg.com/vi/{{{2}}}/2.jpg
+  |yt-img3 = https://i.ytimg.com/vi/{{{2}}}/3.jpg
+
+  |bb = bilibili
+  |bb-ico = <span class="external-icon">[[File:Bilibili2.png|16px|link=https://www.bilibili.com/{{#ifeq:{{#sub:{{{2}}}|0|2}}|au|audio|video}}/{{{2}}} |alt=[bb] |{{{3|}}}]]</span>
+  |bb-url = [https://www.bilibili.com/{{#ifeq:{{#sub:{{{2}}}|0|2}}|au|audio|video}}/{{{2}}} bilibili]
+  |bb-img = [[File:Thumb-bb.png|link=|alt=bilibili logo|bilibili]]
+
+  |pp = piapro
+  |pp-ico = <span class="external-icon">[[File:Piapro.png|16px|link=https://piapro.jp/t/{{{2}}} |alt=[pp] |{{{3|}}}]]</span>
+  |pp-url = [https://piapro.jp/t/{{{2}}} piapro]
+  |pp-img = [[File:Thumb-pp.png|link=|alt=piapro logo|piapro]]
+
+  |tm = TmBox
+  |tm-ico = <span class="external-icon">[[File:Tm.png |link=http://tmbox.net/pl/{{{2}}} |alt=[tm] |{{{3|}}}]]</span>
+  |tm-url = [http://tmbox.net/pl/{{{2}}} TmBox]
+  |tm-img = [[File:Thumb-tm.png|link=|alt=TmBox logo|TmBox]]
+
+  |sc = SoundCloud
+  |sc-ico  = <span class="external-icon">[[File:Sc.png|link=https://soundcloud.com/{{{2}}}|alt=[sc] |{{{3|}}}]]</span>
+  |sc-url  = [https://soundcloud.com/{{{2}}} SoundCloud]
+  |sc-img  = [[File:Thumb-sc.png|link=|alt=SoundCloud logo|SoundCloud]]
+
+  |sc-ico1 = <span class="external-icon">[[File:Sc.png|link=https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{2}}} |alt=[sc] |{{{3|}}}]]</span>
+  |sc-url1 = [https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{2}}} SoundCloud]
+
+  |sc-ico2 = <span class="external-icon">[[File:Sc.png |link={{ifcontains |{{{2}}} |/ |then=https://soundcloud.com/{{{2}}} |else=https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{2}}} }} |alt=[sc] |{{{3|}}}]]</span>
+  |sc-url2 = [{{ifcontains |{{{2}}} |/ |then=https://soundcloud.com/{{{2}}} |else=https://w.soundcloud.com/player/?url=https://api.soundcloud.com/tracks/{{{2}}} }} SoundCloud]
+
+  |sp = Spotify
+  |sp-ico = <span class="external-icon">[[File:Spotify.png |16px|link=https://open.spotify.com/track/{{{2}}} |alt=[sp] |{{{3|}}}]]</span>
+  |sp-url = [https://open.spotify.com/track/{{{2}}} Spotify]
+  |sp-img = [[File:Thumb-spotify.png|link=|alt=Spotify logo|Spotify]]
+
+  |00 = External
+  |00-ico = <span class="external-icon">[[File:World.png|16px|link={{{2}}} |alt=[→] |{{{3|}}}]]</span>
+  |00-url = <span class="external-icon">[[File:World.png|16px|link={{{2}}} |alt=[→] |{{{3|}}}]]</span> [{{{2}}} {{{3}}}] 
+  |00-img = <span class="external-thumb {{#if:{{{100px|}}} |external-thumb-100px }}">[[File:{{{2|World.png}}}|{{#if:{{{100px|}}} |100px| 120px}}|link=]]</span>
+
+  |#default = <span class="error">【site:{{{1}}}】</span>（【id:{{{2}}}】【description:{{{3}}}】）<includeonly>{{cat|Error/External}}</includeonly>
+}}<!--
+
+ERROR CHECKING AND OTHER FUN STUFF
+
+-->{{#switch:{{{1}}} 
+  |sc-ico1 |sc-url1 = {{cat|Alternative sc link style|1}}
+  |sc-ico2 |sc-url2 = {{cat|Alternative sc link style|2}}
+}}<!--
+
+-->{{#switch:{{{1}}}
+  |#default = {{ifcontains |{{{2}}} |http |then={{cat|Error/External/URL}} }}
+  |00-ico |00-url=<!--nothing-->
+}}<!--
+
+-->{{#switch:{{#explode:{{{1}}} |- |1}}
+  |ico |url = 
+
+{{#switch:{{#explode:{{{1}}} |- |0}}
+  |nn = {{ifcontains |{{{2}}} |nico |then={{cat|Error/External/Niconico}} }}
+  |yt = {{#switch:{{#len:{{{2}}} }} |#default={{cat|Error/External/YouTube}} |11= }}
+  |pp = {{#switch:{{#len:{{{2}}} }} |#default={{cat|Error/External/piapro}} |4 |19= }}
+  |sc = {{ifcontains |{{{2}}} |/ |then=<!--nothing--> |else={{cat|Error/External/SoundCloud}} }}
+}}
+
+}}<!--
+
+-->{{ifcontains |{{{3}}} |( |then={{cat|Error/External/comment|弧}} }}<!--
+-->{{ifcontains |{{{3}}} |small |then={{cat|Error/External/comment|小}} }}<!--
+
+DOCUMENTATION
+
+--><noinclude>{{FandomLicense|Vocaloid|Template:External}}{{documentation}}</noinclude>

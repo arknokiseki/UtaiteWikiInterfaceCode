@@ -1,0 +1,44 @@
+{{Documentation/Header}}
+{{High Risk|Template:Uptodate/sync|nocat=1|pagetype=Main}}
+
+Shows the freshness box from a page's <code>/Songs</code> subpage on the article itself, so the same information does not have to be maintained twice.
+
+It takes '''no parameters'''. Everything comes from the subpage.
+
+==Usage==
+On the article:
+
+<pre>
+{{Uptodate/sync}}
+</pre>
+
+On the subpage <code>&lt;PageName&gt;/Songs</code>, the real thing:
+
+<pre>
+{{Uptodate|October 31, 2023|bordercolor=#A97A3F}}
+</pre>
+
+The article then renders that same box. To change it, edit the subpage — never the article.
+
+==How it works==
+Handled by [[Module:Uptodate]], which:
+# resolves the current page's root name and looks for its <code>/Songs</code> subpage
+# reads that subpage's wikitext and finds the first {{T|Uptodate}} call
+# splits its parameters into positional and named ones
+# rebuilds the call and expands it on the current page
+
+If the subpage does not exist, or has no {{T|Uptodate}} call, an error message is shown in its place.
+
+==Things worth knowing==
+* '''<code>nocat</code> is deliberately not carried over.''' If the subpage sets <code>nocat=true</code>, the article still categorizes. This is intentional: the categories belong on the article, not the subpage.
+* '''Only the first {{T|Uptodate}} call''' on the subpage is used.
+* '''Empty positional parameters collapse.''' A call such as <code><nowiki>{{Uptodate|October 31, 2023|||12:30}}</nowiki></code> is rebuilt with the gaps removed. Harmless in practice, since only the first positional parameter (the date) is read, and the retired ones are ignored anyway.
+* '''Nested templates in a parameter value are not supported.''' The subpage is matched with a simple pattern that stops at the first <code>}</code>, so a value containing <code><nowiki>{{...}}</nowiki></code> will not survive the round trip.
+* Named parameters '''are''' forwarded, so <code>bordercolor</code>, <code>discography</code>, <code>force-uptodate</code> and the rest all reach the article.
+* This template uses [[Module:Uptodate]], '''not''' <code>Module:Freshness.fromSubpage</code>. The latter does the same job inside the Freshness module and is currently unused by this path.
+
+==See also==
+* {{T|Uptodate}} — what goes on the <code>/Songs</code> subpage
+* {{T|Freshness}} — the underlying box
+* [[Module:Uptodate]] — the module behind this template
+* [[Module:Freshness/core]] — thresholds and colour handling

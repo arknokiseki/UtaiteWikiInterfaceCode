@@ -1,0 +1,2 @@
+{{LicenseBox|image=WIP descr.png|text=''This file is a MV thumbnail.''}}{{fairuse}}<includeonly>[[Category:Event Thumbnails]][[Category:Media]]</includeonly><noinclude>
+{{documentation}}[[Category:Picture categorization templates]][[Category:Licensing templates]][[Category:Image wiki templates]] </noinclude>

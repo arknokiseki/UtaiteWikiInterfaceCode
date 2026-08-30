@@ -1,0 +1,15 @@
+;Description
+:This template is used to link to an Bluesky account.
+;Syntax
+:Place <code><nowiki>{{Bluesky|<username>}}</nowiki></code> and substitute <username> with the latter part of the Utaite's Bluesky Profile link. If necessary, use the article's talk page to discuss further details.
+
+;Example<nowiki>:</nowiki>
+:<pre>{{Bluesky|yukimi-n.bsky.social|yukimi bluesky description}}</pre>
+
+;Will result in<nowiki>:</nowiki>
+:{{Bluesky|yukimi-n.bsky.social|yukimi bluesky description}}
+
+;note<nowiki>:</nowiki>
+:description field is optional.
+
+<includeonly>{{Maintalkcat other|<!--main-->|<!--talk-->|<!--cat-->|[[Category:SNS Template]]}}</includeonly><includeonly>[[Category:Assistant templates]][[Category:Templates]]</includeonly><noinclude>[[Category:Template documentation|{{PAGENAME}}]]</noinclude>

@@ -1,0 +1,1 @@
+<includeonly>{{#invoke:Formatting|main|template=1}}</includeonly><noinclude>{{Documentation}}</noinclude>

@@ -1,0 +1,67 @@
+{{Documentation/Header}}
+This template will categorize files that need to be reuploaded, and mark it with a noticeable template. 
+
+==Categories==
+{| class="wikitable"
+!Parameter||Category
+|-
+| {{F|jpg}}<br>{{F|jpeg}}<br>{{F|webp}} || [[:Category:Reupload with PNG Format]]
+|-
+| {{F|quality}} || [[:Category:Better Quality Needed]]
+|-
+| {{F|ratio}} || [[:Category:Proper Ratio Needed]]
+|-
+| {{F|ui}} || [[:Category:Missing UI Removal]]
+|}
+
+==Examples==
+{{T|Placeholder Image|jpg=1|_Y_=1}}<br>
+{{T|Placeholder Image|quality=1|reason=Turn the Bloom off.|_Y_=1}}
+
+==Template Data==
+<templatedata>
+{
+	"params": {
+		"jpg": {
+			"label": "Reupload with PNG Format",
+			"description": "Image needs to be reuploaded as png.",
+			"type": "boolean",
+			"aliases": [
+				"jpeg",
+				"webp"
+			]
+		},
+		"quality": {
+			"label": "Better Quality Needed",
+			"description": "The file isn't at high quality.",
+			"type": "boolean"
+		},
+		"ratio": {
+			"label": "Proper Ratio Needed",
+			"description": "The file's dimension's ratio isn't 16:9.",
+			"type": "boolean"
+		},
+		"ui": {
+			"label": "Missing UI Removal",
+			"description": "UI elements should not be visisble.",
+			"type": "boolean"
+		},
+		"reason": {
+			"label": "Additional Reason",
+			"type": "string",
+			"suggested": true,
+			"aliases": [
+				"1"
+			]
+		}
+	},
+	"format": "inline",
+	"paramOrder": [
+		"jpg",
+		"quality",
+		"ratio",
+		"ui",
+		"reason"
+	]
+}
+</templatedata>
