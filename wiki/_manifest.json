@@ -2277,7 +2277,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -2294,7 +2294,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -2836,7 +2836,7 @@
         "user": "utaite>BLUEBIRD",
         "timestamp": "2013-02-11T12:35:13Z",
         "comment": "Created page with \"=\"",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -3083,7 +3083,7 @@
         "user": "utaite>Esperancia",
         "timestamp": "2012-03-06T23:27:56Z",
         "comment": "Created page with \"{{#expr:({{{4|{{CURRENTYEAR}}}}})-({{{1}}})-(({{{5|{{CURRENTMONTH}}}}})<({{{2}}})or({{{5|{{CURRENTMONTH}}}}})=({{{2}}})and({{{6|{{CURRENTDAY}}}}})<({{{3}}}))}}\"",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -3356,7 +3356,7 @@
         "user": ":wikia:utaite>Esperancia",
         "timestamp": "2011-12-27T07:40:33Z",
         "comment": "Created page with \"<div style=\"text-align:center; font-size:120%\"><div style=\"font-size:120%\">'''ANNOUNCEMENT!'''</div>  Starting next year (2012) this wiki will also '''feature YouTube singers'''!...\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -4983,7 +4983,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5074,7 +5074,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5102,7 +5102,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5130,7 +5130,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5186,7 +5186,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5214,7 +5214,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -5242,7 +5242,7 @@
         "user": "utaite>Default",
         "timestamp": "2009-12-13T01:52:33Z",
         "comment": "",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -6376,7 +6376,7 @@
         "user": ":wikia:utaite>Sbluen",
         "timestamp": "2012-12-29T03:01:35Z",
         "comment": "Created page with \"<div class=\"plainlinks plainlinks2\" style=\"text-align:center;\"> <strong style=\"font-size: 2em;\">Emergency {{{titlename|bot}}} shutoff button</strong>  [[{{{icon|File:Shutdown ...\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -6573,7 +6573,7 @@
         "user": ":wikia:utaite>BLUEBIRD",
         "timestamp": "2017-04-10T18:12:49Z",
         "comment": "Created page with \"<span style=\"font-size:120%\"><code>{{font color|indigo||{{{1}}}}}</code></span>\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -7075,7 +7075,7 @@
         "user": ":wikia:utaite>Sbluen",
         "timestamp": "2013-03-10T20:42:21Z",
         "comment": "from wikip[edia",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -9944,7 +9944,7 @@
         "user": "utaite>BLUEBIRD",
         "timestamp": "2013-01-16T00:35:10Z",
         "comment": "Created page with \"{{#switch:   <!--If no or empty \"demospace\" parameter then detect namespace-->   {{#if:{{{demospace|}}}    | {{lc: {{{demospace}}} }}    <!--Use lower case \"demospace\"-->   | ...\"",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -10001,7 +10001,7 @@
         "user": "utaite>BLUEBIRD",
         "timestamp": "2013-01-27T17:34:05Z",
         "comment": "Created page with \"{{#switch:   <!--If no or empty \"demospace\" parameter then detect namespace-->   {{#if:{{{demospace|}}}    | {{lc: {{{demospace}}} }}    <!--Use lower case \"demospace\"-->   | ...\"",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -10057,7 +10057,7 @@
         "user": ":wikia:utaite>BLUEBIRD",
         "timestamp": "2017-04-10T18:12:54Z",
         "comment": "Created page with \"<span style=\"font-size:120%\"><code>{{font color|cadetblue||{{{1}}}}}</code></span>\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -10510,7 +10510,7 @@
         "user": ":wikia:utaite>BLUEBIRD",
         "timestamp": "2013-05-07T20:43:42Z",
         "comment": "Created page with \"{|width=\"90%\" align=\"center\" cellspacing=\"0\" |colspan=4 align=\"center\" style=\"border-top-right-radius:10px; border-top-left-radius:10px; background:#000; color:#FFF; font-size...\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -10837,7 +10837,7 @@
         "user": "utaite>BLUEBIRD",
         "timestamp": "2012-09-24T00:50:25Z",
         "comment": "just trying sth out",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -12067,7 +12067,7 @@
         "user": "utaite>BLUEBIRD",
         "timestamp": "2013-02-11T19:39:03Z",
         "comment": "Created page with \"[http://www.pixiv.net/member.php?id={{{1}}} {{{2}}}]<noinclude>  This is an assistant template, for pixiv links   :Usage:  {| border=\"0\" style=\"background-color:#EEEEEE;\" widt...\"",
-        "sourceWiki": "utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -12129,7 +12129,7 @@
         "user": ":wikia:utaite>BLUEBIRD",
         "timestamp": "2017-04-10T18:12:52Z",
         "comment": "Created page with \"<span style=\"font-size:120%\"><code>{{font color|seagreen||{{{1}}}}}</code></span>\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
@@ -16549,7 +16549,7 @@
         "user": ":wikia:utaite>BLUEBIRD",
         "timestamp": "2013-06-05T20:25:25Z",
         "comment": "Created page with \"<choose> <option> {{{{BASEPAGENAME}}/}} </option> <option> {{{{BASEPAGENAME}}/}} </option> <option> {{{{BASEPAGENAME}}/}} </option> <option> {{{{BASEPAGENAME}}/}} </option> <o...\"",
-        "sourceWiki": ":wikia:utaite"
+        "sourceWiki": "wikia:utaite"
       }
     },
     {
