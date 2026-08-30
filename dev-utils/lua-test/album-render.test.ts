@@ -86,4 +86,13 @@ describe('Module:Album tracklist rendering', () => {
     const t = tracks([{ title: '[[Melt]]', n: '1' }]);
     expect(render(t)).toContain('[[Melt]]');
   });
+
+  it('embeds the merged credit line in the title cell for mobile', () => {
+    const t = tracks([{ title: 'Melt', n: '1', lyricist: 'ryo', composer: 'ryo' }]);
+    expect(render(t)).toContain('<span class="album-track-credit">lyrics, music: ryo</span>');
+  });
+
+  it('omits the credit span when a track has no credits', () => {
+    expect(render(tracks([{ title: 'Melt', n: '1' }]))).not.toContain('album-track-credit');
+  });
 });

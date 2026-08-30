@@ -273,6 +273,14 @@ local function renderRow(track, columns, opts, mode)
       if mode == 'badge' and p._clean(track.group) ~= '' then
         value = value .. ' <span class="album-track-badge">' .. p._clean(track.group) .. '</span>'
       end
+      -- The merged credit line rides inside the title cell rather than in a
+      -- column of its own, so the column count stays stable for DataTables.
+      -- CSS hides it on desktop and reveals it on mobile, where the separate
+      -- credit columns are hidden instead.
+      local credit = p._credit(track)
+      if credit ~= '' then
+        value = value .. '<span class="album-track-credit">' .. credit .. '</span>'
+      end
     end
     if value == '' and field ~= 'n' and field ~= 'title' then
       value = '&mdash;'
