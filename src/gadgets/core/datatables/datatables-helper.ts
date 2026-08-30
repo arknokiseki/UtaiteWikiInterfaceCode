@@ -1,4 +1,4 @@
-import { initAlbumFilter } from './album-filter';
+import { initAlbumFilter } from './album-filter.js';
 
 // ====================
 // Type Definitions
@@ -154,6 +154,7 @@ interface JQuery<TElement = HTMLElement> {
   prop(name: string, value: boolean): JQuery<TElement>;
   on(events: string, handler: (event: Event, ...args: unknown[]) => void): JQuery<TElement>;
   on(events: string, selector: string, handler: (this: TElement, event: Event) => void): JQuery<TElement>;
+  one(events: string, handler: (event: Event, ...args: unknown[]) => void): JQuery<TElement>;
   off(events: string): JQuery<TElement>;
   prependTo(target: JQuery<TElement> | string): JQuery<TElement>;
   appendTo(target: JQuery<TElement> | string): JQuery<TElement>;
@@ -656,34 +657,27 @@ interface JQueryFactory extends JQueryStatic {
   // --------------------------
   // Inline Column Visibility
   // --------------------------
+  /**
+   * Column-visibility control, ported from the live gadget.
+   *
+   * Prod is the source of truth here: this was rewritten on-wiki from an
+   * inline toggle row into a dropdown panel, and the repo never received it.
+   * Kept faithful to the live behaviour rather than re-designed.
+   */
   const renderInlineColumnToggles = ($table: JQuery, dataTable: DataTableApi): void => {
     try {
       const $container = $(dataTable.table().container());
-
-      // Remove existing UI to prevent duplicates
       $container.find('.dt-colvis-row, .dt-colvis-inline').remove();
 
-      // Inject minimal CSS once
-      if (!document.getElementById('dt-colvis-inline-styles')) {
-        const styleContent = `
-          .dt-colvis-inline{display:flex;flex-wrap:wrap;gap:.25rem .75rem;align-items:center;margin:0}
-          .dt-colvis-inline .col-toggle{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;white-space:nowrap}
-          .dt-colvis-inline .dt-colvis-title{font-weight:600;margin-right:.5rem}
-          .dt-colvis-inline .dt-colvis-reset{margin-left:.5rem;cursor:pointer;text-decoration:underline;font-size:.85em;color:inherit;opacity:.8}
-          .dt-colvis-inline input[type=checkbox]{margin:0}
-          .dt-colvis-row{margin-top:.35rem;width:100%}
-          .dt-colvis-row .dt-layout-cell{flex:1 1 100%}
-        `;
-        $('<style id="dt-colvis-inline-styles">')
-          .text(styleContent)
-          .appendTo('head');
-      }
-
-      const $wrapper = $(
-        '<div class="dt-colvis-inline" role="group" aria-label="Column visibility"></div>'
-      );
       const $headers = $table.find('thead th');
       const initialVis: boolean[] = [];
+
+      const tableId = $table.attr('id') || 'dt-' + Math.random().toString(36).slice(2);
+      const panelId = 'dt-colvis-panel-' + tableId.replace(/[^a-zA-Z0-9]/g, '_');
+      // Unique event namespace so each table can clean up independently.
+      const ns = '.colvis_' + panelId;
+
+      const $panel = $('<div class="dt-colvis-panel" hidden></div>').attr('id', panelId);
 
       dataTable.columns().every(function (this: DataTableColumnApi, idx: number) {
         const $th = $($headers.get(idx));
@@ -691,22 +685,18 @@ interface JQueryFactory extends JQueryStatic {
 
         initialVis[idx] = this.visible() as boolean;
         const title = $th.text().trim() || `Column ${idx + 1}`;
-        const id = `${$table.attr('id') || 'dt'}-colvis-${idx}`;
-
+        const checkId = `${tableId}-colvis-${idx}`;
         const $checkbox = $('<input type="checkbox" />')
-          .attr('id', id)
+          .attr('id', checkId)
           .attr('data-col-index', String(idx))
           .prop('checked', initialVis[idx]);
-
-        const $label = $('<label class="col-toggle" />')
+        const $label = $('<label class="dt-colvis-item" />')
           .append($checkbox)
-          .append($('<span/>').text(title));
-
-        $wrapper.append($label);
+          .append($('<span>').text(title));
+        $panel.append($label);
       });
 
-      // Reset link
-      const $reset = $('<a class="dt-colvis-reset" href="javascript:void(0)">Reset</a>').on(
+      const $reset = $('<button type="button" class="dt-colvis-reset">Reset</button>').on(
         'click',
         () => {
           dataTable.columns().every(function (this: DataTableColumnApi, i: number) {
@@ -715,24 +705,68 @@ interface JQueryFactory extends JQueryStatic {
             this.visible(initialVis[i], false);
           });
           dataTable.columns().adjust().draw(false);
-
           if (dataTable.responsive && dataTable.responsive.recalc) {
             dataTable.responsive.recalc();
           }
-        }
+          $panel.find('input[data-col-index]').each(function (this: HTMLElement) {
+            const input = this as HTMLInputElement;
+            const i = parseInt(input.getAttribute('data-col-index') || '0', 10);
+            input.checked = !!initialVis[i];
+          });
+        },
       );
+      $panel.append($reset);
 
-      $wrapper.prepend('<span class="dt-colvis-title">Columns:</span>');
-      $wrapper.append($reset);
+      const $btn = $(
+        '<button type="button" class="dt-colvis-btn" aria-haspopup="true" aria-expanded="false">Columns</button>',
+      );
+      const $wrapper = $('<div class="dt-colvis-wrapper"></div>').append($btn).append($panel);
 
-      // Insert UI below top controls
+      $btn.on('click', function (e: Event) {
+        e.stopPropagation();
+        const opening = !!$panel.prop('hidden');
+        $panel.prop('hidden', !opening);
+        $btn.attr('aria-expanded', opening ? 'true' : 'false');
+        $btn.toggleClass('is-open', opening);
+      });
+
+      $(document).on('click' + ns, function () {
+        $panel.prop('hidden', true);
+        $btn.attr('aria-expanded', 'false').removeClass('is-open');
+      });
+
+      $panel.on('click', function (e: Event) {
+        e.stopPropagation();
+      });
+
+      $panel.on('change', 'input[data-col-index]', function (this: HTMLElement) {
+        const input = this as HTMLInputElement;
+        const colIdx = parseInt(input.getAttribute('data-col-index') || '0', 10);
+        dataTable.column(colIdx).visible(input.checked, false);
+        dataTable.columns().adjust().draw(false);
+        if (dataTable.responsive && dataTable.responsive.recalc) {
+          dataTable.responsive.recalc();
+        }
+      });
+
+      $table
+        .off('.colvisInline')
+        .on('column-visibility.dt.colvisInline', (_e: Event, ...args: unknown[]) => {
+          const columnIdx = args[1] as number;
+          const state = args[2] as boolean;
+          $panel.find(`input[data-col-index="${columnIdx}"]`).prop('checked', !!state);
+        });
+
+      $table.one('destroy.dt' + ns, function () {
+        $(document).off('click' + ns);
+      });
+
       const $tableLayout = $container.find('.dt-layout-table');
       const $row = $('<div class="dt-layout-row dt-colvis-row"></div>');
-      const $cell = $('<div class="dt-layout-cell dt-layout-start dt-colvis-cell"></div>').appendTo(
-        $row
-      );
+      const $cell = $(
+        '<div class="dt-layout-cell dt-layout-start dt-colvis-cell"></div>',
+      ).appendTo($row);
       $cell.append($wrapper);
-
       if ($tableLayout.length) {
         $row.insertBefore($tableLayout);
       } else {
@@ -743,30 +777,8 @@ interface JQueryFactory extends JQueryStatic {
           $container.append($row);
         }
       }
-
-      // Handle checkbox changes
-      $row.on('change', 'input[type=checkbox][data-col-index]', function (this: HTMLElement) {
-        const input = this as HTMLInputElement;
-        const colIdx = parseInt(input.getAttribute('data-col-index') || '0', 10);
-        
-        dataTable.column(colIdx).visible(input.checked, false);
-        dataTable.columns().adjust().draw(false);
-
-        if (dataTable.responsive && dataTable.responsive.recalc) {
-          dataTable.responsive.recalc();
-        }
-      });
-
-      // Keep checkboxes in sync
-      $table.off('.colvisInline');
-      $table.on(
-        'column-visibility.dt.colvisInline',
-        (_e: Event, _settings: DataTableSettings, columnIdx: number, state: boolean) => {
-          $row.find(`input[data-col-index="${columnIdx}"]`).prop('checked', !!state);
-        }
-      );
     } catch (e) {
-      console.warn('Inline ColVis failed:', e);
+      console.warn('ColVis dropdown failed:', e);
     }
   };
 

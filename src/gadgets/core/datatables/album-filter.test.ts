@@ -1,4 +1,4 @@
-import { initAlbumFilter } from './album-filter';
+import { initAlbumFilter } from './album-filter.js';
 
 function build(): HTMLElement {
   const root = document.createElement('div');

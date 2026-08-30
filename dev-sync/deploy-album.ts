@@ -31,22 +31,30 @@ interface Target {
 
 const TARGETS: Target[] = [
   {
+    // The repo is authoritative for this one: it originated here and every
+    // live revision so far was pasted from it. The dry run still reports any
+    // line that would be lost, which would reveal an edit made on-wiki.
+    page: 'Module:Album',
+    file: 'wiki/modules/Album.lua',
+    mode: 'replace',
+    summary: 'Album: embed crossfades and Spotify, drop thead/tbody',
+  },
+  {
     page: 'MediaWiki:Gadget-citizen-templates.css',
     file: 'dist/gadgets/styling/citizen/citizen-templates.css',
     mode: 'replace',
     summary: 'Album: fixed square cover, metadata grid, adaptive tracklist styles',
   },
-  // MediaWiki:Gadget-datatables-helper.js is deliberately NOT deployed.
-  //
-  // The live gadget carries a ColVis dropdown (dt-colvis-btn / -panel /
-  // -wrapper / -item) that the repo source has never had — live holds both
-  // that dropdown and the inline toggles, so it is a superset and replacing
-  // it would delete the dropdown. Porting it into datatables-helper.ts is
-  // real reconciliation work, tracked separately.
-  //
-  // Consequence: the sectioned-tracklist filter bar stays inactive until then.
-  // It degrades cleanly — the tracklist itself is rendered by Module:Album and
-  // is unaffected.
+  {
+    // Safe only because the live ColVis dropdown and the dt-songlist- handling
+    // have now been ported back into datatables-helper.ts. Verified by
+    // comparing identifiers and string literals against live, not line counts:
+    // a line diff reported 601 phantom removals here while hiding a real one.
+    page: 'MediaWiki:Gadget-datatables-helper.js',
+    file: 'dist/gadgets/core/datatables/datatables-helper.js',
+    mode: 'replace',
+    summary: 'Album: sectioned-tracklist filter bar; no functional change to ColVis or songlists',
+  },
   {
     page: 'MediaWiki:Gadget-Datatables.css',
     file: 'dist/gadgets/core/datatables/Datatables.css',
