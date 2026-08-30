@@ -27,3 +27,5 @@ build
 load.js
 .env
 .env.*
+# Claude Code worktrees
+.claude/worktrees/
