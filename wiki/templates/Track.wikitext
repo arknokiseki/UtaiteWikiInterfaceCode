@@ -1,10 +1,2 @@
-<includeonly><tr><td>{{{1}}}</td>
-<td>{{{title|No title provided}}}</td>
-<td>{{{additionalshortinfo|}}}</td>
-<td>{{#if:{{{utaite|{{{singers|}}}}}}|{{{utaite|{{{singers}}}}}}|{{ROOTPAGENAME}}}}</td>
-<td>{{#if:{{{lyricist|}}}|{{{lyricist}}}|N/A}}</td>
-<td>{{#if:{{{composer|}}}|{{{composer}}}|N/A}}</td>
-<td>{{#if:{{{arranger|}}}|{{{arranger}}}|N/A}}</td>
-{{#if:{{{group|}}}|<td>{{{group}}}</td>}}
-</tr></includeonly><noinclude>
+<includeonly>{{#if:{{{title|}}}|␞{{{1|}}}␟{{{title|}}}␟{{{additionalshortinfo|}}}␟{{{utaite|{{{singers|}}}}}}␟{{{lyricist|}}}␟{{{composer|}}}␟{{{arranger|}}}␟{{{group|}}}}}</includeonly><noinclude>
 {{doc}}</noinclude>
