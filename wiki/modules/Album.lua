@@ -204,4 +204,42 @@ function p._credit(track)
   return table.concat(parts, ' \194\183 ')
 end
 
+--- Splits tracks into runs of equal group value, in source order.
+function p._sections(tracks)
+  local sections, current = {}, nil
+  for _, t in ipairs(tracks or {}) do
+    local label = p._clean(t.group)
+    if not current or current.label ~= label then
+      current = { label = label, tracks = {} }
+      sections[#sections + 1] = current
+    end
+    current.tracks[#current.tracks + 1] = t
+  end
+  return sections
+end
+
+--- Decides how `group` should be rendered for this album.
+-- `group` carries two meanings in live data: a disc/edition partition whose
+-- values form contiguous runs (19 of 26 albums), and a per-track tag whose
+-- values interleave (7 of 26). Sectioning the latter shatters the list.
+function p._groupMode(tracks, override)
+  local any = false
+  for _, t in ipairs(tracks or {}) do
+    if p._clean(t.group) ~= '' then any = true break end
+  end
+  if not any then return 'none' end
+
+  override = p._clean(override)
+  if override == 'section' or override == 'badge' or override == 'column' then
+    return override
+  end
+
+  local runs = {}
+  for _, section in ipairs(p._sections(tracks)) do
+    runs[section.label] = (runs[section.label] or 0) + 1
+    if runs[section.label] > 1 then return 'badge' end
+  end
+  return 'section'
+end
+
 return p
