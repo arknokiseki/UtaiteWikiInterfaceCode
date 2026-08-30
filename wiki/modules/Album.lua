@@ -51,8 +51,14 @@ function p._canonical(key)
   return key
 end
 
-local RS = '\30'
-local FS = '\31'
+-- U+241E SYMBOL FOR RECORD SEPARATOR and U+241F SYMBOL FOR UNIT SEPARATOR,
+-- as UTF-8 bytes. Real C0 control characters cannot be used here: MediaWiki
+-- replaces U+001E/U+001F with U+FFFD during parsing, and the numeric entities
+-- &#30;/&#31; survive expansion only as literal five-character text. These
+-- printable symbols pass through template expansion unchanged, and are
+-- conspicuous if a record ever escapes unparsed.
+local RS = '\226\144\158'
+local FS = '\226\144\159'
 
 local RECORD_FIELDS = {
   'n', 'title', 'info', 'utaite', 'lyricist', 'composer', 'arranger', 'group',
@@ -68,18 +74,33 @@ function p._isLegacyHtml(blob)
   return string.find(blob, '<tr', 1, true) ~= nil
 end
 
+--- Splits `s` on the multi-byte literal `sep`.
+-- Lua patterns cannot express a negated multi-byte character class, so the
+-- separators are matched with plain finds rather than `[^sep]`.
+local function splitPlain(s, sep)
+  local parts, pos = {}, 1
+  while true do
+    local a, b = string.find(s, sep, pos, true)
+    if not a then
+      parts[#parts + 1] = string.sub(s, pos)
+      return parts
+    end
+    parts[#parts + 1] = string.sub(s, pos, a - 1)
+    pos = b + 1
+  end
+end
+
 --- Splits a |track= blob of {{Track}} records into track tables.
 function p._parseRecords(blob)
   local tracks = {}
-  for record in string.gmatch(blob or '', RS .. '([^' .. RS .. ']*)') do
-    local track, i = {}, 1
-    -- Trailing empty fields are preserved by appending a sentinel separator.
-    for field in string.gmatch(record .. FS, '([^' .. FS .. ']*)' .. FS) do
-      local key = RECORD_FIELDS[i]
-      if key then
-        track[key] = (key == 'n') and mw.text.trim(field) or p._clean(field)
-      end
-      i = i + 1
+  local records = splitPlain(blob or '', RS)
+  -- Element 1 is whatever preceded the first separator, which is not a record.
+  for i = 2, #records do
+    local fields = splitPlain(records[i], FS)
+    local track = {}
+    for j, key in ipairs(RECORD_FIELDS) do
+      local value = fields[j] or ''
+      track[key] = (key == 'n') and mw.text.trim(value) or p._clean(value)
     end
     if track.title and track.title ~= '' then
       tracks[#tracks + 1] = track

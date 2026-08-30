@@ -66,7 +66,12 @@ describe('Module:Album track collection', () => {
   });
 
   it('prefers the |track= record dialect when present', () => {
-    const a = luaTable({ track: '\x1e1\x1fFromRecord\x1f\x1f\x1f\x1f\x1f\x1f', t1title: 'Ignored' });
+    // U+241E / U+241F, not C0 controls — MediaWiki replaces the latter with
+    // U+FFFD before Lua ever sees them. See the RS/FS comment in Album.lua.
+    const a = luaTable({
+      track: '␞1␟FromRecord␟␟␟␟␟␟',
+      t1title: 'Ignored',
+    });
     expect(m.eval(`#M._collectTracks(${a})`)).toBe('1');
     expect(m.eval(`M._collectTracks(${a})[1].title`)).toBe('FromRecord');
   });

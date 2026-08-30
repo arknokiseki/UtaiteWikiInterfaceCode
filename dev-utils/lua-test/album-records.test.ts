@@ -1,8 +1,10 @@
 import { loadLuaModule, type LuaModule } from './lua-harness';
 
 const MODULE = 'wiki/modules/Album.lua';
-const RS = '\\030';
-const FS = '\\031';
+// U+241E / U+241F as Lua byte escapes; see the RS/FS comment in Album.lua.
+// Real C0 control characters cannot be used because MediaWiki replaces them.
+const RS = '\\226\\144\\158';
+const FS = '\\226\\144\\159';
 
 /** Builds a Lua string literal for a record blob. */
 function blob(rows: string[][]): string {
