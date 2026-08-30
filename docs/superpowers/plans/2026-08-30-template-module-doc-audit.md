@@ -16,7 +16,9 @@
 - **Branch:** `feat/template-module-doc-audit`. Already created; the spec is committed on it.
 - **Never `git add -A` or `git add .`** in this repo. `core.autocrlf=true` with no `.gitattributes` makes ~100 files show as modified when they are pure line-ending churn. Stage only the exact paths each task names.
 - **Node 24 / pnpm 11.** Run TS directly: `node dev-utils/wiki-audit/fetch.ts`.
-- **Imports use `.js` extensions** (tsconfig is `nodenext`), e.g. `import { titleToPath } from './lib/titles.js'`.
+- **Imports use `.ts` extensions**, e.g. `import { titleToPath } from './lib/titles.ts'` — matching `dev-sync/sync.ts`, the repo's other Node-executed tooling. Node's type-stripping does NOT rewrite `.js`→`.ts`, so a `.js` specifier fails with `ERR_MODULE_NOT_FOUND` when the file is run directly. (`src/` still uses `.js`; Vite builds that, Node does not run it.)
+- **`.ts` specifiers need `allowImportingTsExtensions`**, which the root tsconfig cannot enable because it emits. A scoped `dev-utils/wiki-audit/tsconfig.json` enables it with `noEmit: true`, and `jest.config.js` carries a path-scoped `ts-jest` transform so only this directory uses that config. Both already exist; do not modify the root `tsconfig.json`.
+- **No `import.meta` in any module a test imports.** `ts-jest` compiles to CommonJS regardless of `nodenext`, so `import.meta` is a compile error (`TS1343`) in `fetch.ts`, `analyze.ts` and `report.ts`. Every CLI entry point lives in a separate `*-cli.ts` file that nothing imports.
 - **Tests are colocated** as `*.test.ts` beside the module, matching `src/gadgets/contents/UptodateEditor/`.
 - **Run tests:** `pnpm run tests` (jest). Single file: `npx jest <path>`.
 - **API URL** comes from `WIKI_API_URL` in `.env` (`https://utaite.wiki/w/api.php`).
@@ -29,6 +31,10 @@
 
 ```
 dev-utils/wiki-audit/
+  tsconfig.json         scoped: allowImportingTsExtensions + noEmit  (already created)
+  fetch-cli.ts          entry point; the only place import.meta appears
+  analyze-cli.ts        entry point
+  report-cli.ts         entry point
   lib/types.ts          shared interfaces; no logic
   lib/titles.ts         title <-> filesystem path encoding      + titles.test.ts
   lib/api.ts            read-only mwn wrapper, batching, paging + api.test.ts
@@ -110,7 +116,7 @@ export interface Manifest {
 Create `dev-utils/wiki-audit/lib/titles.test.ts`:
 
 ```ts
-import { encodeSegment, decodeSegment, titleToPath, pathToTitle, assignPaths } from './titles.js';
+import { encodeSegment, decodeSegment, titleToPath, pathToTitle, assignPaths } from './titles.ts';
 
 describe('encodeSegment — percent-encodes what NTFS refuses', () => {
   test.each([
@@ -254,7 +260,7 @@ Expected: FAIL — cannot find module `./titles.js`.
 Create `dev-utils/wiki-audit/lib/titles.ts`:
 
 ```ts
-import type { ContentModel } from './types.js';
+import type { ContentModel } from './types.ts';
 
 const EXT: Record<ContentModel, string> = {
   wikitext: '.wikitext',
@@ -383,8 +389,8 @@ a page."
 Create `dev-utils/wiki-audit/lib/api.test.ts`:
 
 ```ts
-import { queryAll, chunk } from './api.js';
-import type { WikiQuery } from './api.js';
+import { queryAll, chunk } from './api.ts';
+import type { WikiQuery } from './api.ts';
 
 function fakeClient(pages: any[]): WikiQuery {
   let call = 0;
@@ -522,7 +528,7 @@ Pure function, so it lands before the network code that feeds it.
 Create `dev-utils/wiki-audit/analyze/provenance.test.ts`:
 
 ```ts
-import { parseSourceWiki, describeSource, isUpstream } from './provenance.js';
+import { parseSourceWiki, describeSource, isUpstream } from './provenance.ts';
 
 describe('parseSourceWiki — the interwiki prefix is the provenance', () => {
   test.each([
@@ -583,7 +589,7 @@ Expected: FAIL — cannot find module `./provenance.js`.
 Create `dev-utils/wiki-audit/analyze/provenance.ts`:
 
 ```ts
-import type { FirstRevision } from '../lib/types.js';
+import type { FirstRevision } from '../lib/types.ts';
 
 /**
  * Transwiki import preserves the original revision history with interwiki-
@@ -656,8 +662,8 @@ upstream docs can be sourced. Unknown provenance stays in the write queue."
 Create `dev-utils/wiki-audit/fetch.test.ts`:
 
 ```ts
-import { buildManifest, renderRedirectsTsv, EXCLUDED_TITLES } from './fetch.js';
-import type { RawPage } from './fetch.js';
+import { buildManifest, renderRedirectsTsv, EXCLUDED_TITLES } from './fetch.ts';
+import type { RawPage } from './fetch.ts';
 
 function page(over: Partial<RawPage> = {}): RawPage {
   return {
@@ -725,10 +731,10 @@ Create `dev-utils/wiki-audit/fetch.ts`:
 ```ts
 import { mkdir, writeFile } from 'fs/promises';
 import { dirname, resolve } from 'path';
-import { assignPaths } from './lib/titles.js';
-import { createClient, queryAll, chunk } from './lib/api.js';
-import type { WikiQuery } from './lib/api.js';
-import type { ContentModel, Manifest, ManifestEntry } from './lib/types.js';
+import { assignPaths } from './lib/titles.ts';
+import { createClient, queryAll, chunk } from './lib/api.ts';
+import type { WikiQuery } from './lib/api.ts';
+import type { ContentModel, Manifest, ManifestEntry } from './lib/types.ts';
 
 export const EXCLUDED_TITLES = ['Template:Utaite Spotlight/*natsuki'];
 
@@ -864,14 +870,28 @@ export async function runFetch(client: WikiQuery, outDir: string): Promise<Manif
   return manifest;
 }
 
-if (import.meta.filename === process.argv[1]) {
-  const apiUrl = process.env.WIKI_API_URL;
-  if (!apiUrl) throw new Error('WIKI_API_URL is not set');
-  const outDir = resolve(import.meta.dirname, '../../wiki');
-  await mkdir(outDir, { recursive: true });
-  await runFetch(createClient(apiUrl, USER_AGENT), outDir);
-}
 ```
+
+`fetch.ts` must contain NO `import.meta` — `fetch.test.ts` imports it, and
+`ts-jest` compiles to CommonJS, where `import.meta` is a `TS1343` error.
+Put the entry point in its own file instead.
+
+Create `dev-utils/wiki-audit/fetch-cli.ts`:
+
+```ts
+import { mkdir } from 'fs/promises';
+import { resolve } from 'path';
+import { createClient } from './lib/api.ts';
+import { runFetch, USER_AGENT } from './fetch.ts';
+
+const apiUrl = process.env.WIKI_API_URL;
+if (!apiUrl) throw new Error('WIKI_API_URL is not set');
+const outDir = resolve(import.meta.dirname, '../../wiki');
+await mkdir(outDir, { recursive: true });
+await runFetch(createClient(apiUrl, USER_AGENT), outDir);
+```
+
+Export `USER_AGENT` from `fetch.ts` so the CLI can pass it in.
 
 - [ ] **Step 4: Run test to verify it passes**
 
@@ -936,8 +956,8 @@ Kept separate from Task 4 because it is a distinct ~5 minute network pass with i
 Append to `dev-utils/wiki-audit/fetch.test.ts`:
 
 ```ts
-import { enrichFirstRevisions } from './fetch.js';
-import type { WikiQuery } from './lib/api.js';
+import { enrichFirstRevisions } from './fetch.ts';
+import type { WikiQuery } from './lib/api.ts';
 
 describe('enrichFirstRevisions', () => {
   const client: WikiQuery = {
@@ -1104,8 +1124,8 @@ git commit -m "chore(wiki): add provenance to the mirror manifest"
 Create `dev-utils/wiki-audit/analyze/usage.test.ts`:
 
 ```ts
-import { resolveRedirects, extractRequires, extractGadgetRefs, classify } from './usage.js';
-import type { Manifest } from '../lib/types.js';
+import { resolveRedirects, extractRequires, extractGadgetRefs, classify } from './usage.ts';
+import type { Manifest } from '../lib/types.ts';
 
 function manifest(entries: any[]): Manifest {
   return { fetchedAt: '', apiUrl: '', entries };
@@ -1237,7 +1257,7 @@ Expected: FAIL — cannot find module `./usage.js`.
 Create `dev-utils/wiki-audit/analyze/usage.ts`:
 
 ```ts
-import type { Manifest } from '../lib/types.js';
+import type { Manifest } from '../lib/types.ts';
 
 export type UsageTier = 'USED' | 'INTERNAL' | 'DOC-ONLY' | 'UNUSED';
 
@@ -1357,7 +1377,7 @@ are never deletion candidates."
 Create `dev-utils/wiki-audit/analyze/docquality.test.ts`:
 
 ```ts
-import { extractParameters, extractDocumentedParameters, scoreDoc } from './docquality.js';
+import { extractParameters, extractDocumentedParameters, scoreDoc } from './docquality.ts';
 
 describe('extractParameters — the template\'s real parameter set', () => {
   test('finds named parameters with defaults', () => {
@@ -1580,8 +1600,8 @@ dominated by parameters the template accepts but the doc never explains."
 Create `dev-utils/wiki-audit/analyze/plumbing.test.ts`:
 
 ```ts
-import { findPlumbingIssues } from './plumbing.js';
-import type { Manifest } from '../lib/types.js';
+import { findPlumbingIssues } from './plumbing.ts';
+import type { Manifest } from '../lib/types.ts';
 
 function m(entries: any[]): Manifest {
   return { fetchedAt: '', apiUrl: '', entries };
@@ -1669,7 +1689,7 @@ Expected: FAIL — cannot find module `./plumbing.js`.
 Create `dev-utils/wiki-audit/analyze/plumbing.ts`:
 
 ```ts
-import type { Manifest } from '../lib/types.js';
+import type { Manifest } from '../lib/types.ts';
 
 export type PlumbingKind =
   | 'doc-redirect-circular'
@@ -1772,8 +1792,8 @@ recorded as its own kind rather than reported as a fault."
 Create `dev-utils/wiki-audit/analyze.test.ts`:
 
 ```ts
-import { buildAudit } from './analyze.js';
-import type { Manifest } from './lib/types.js';
+import { buildAudit } from './analyze.ts';
+import type { Manifest } from './lib/types.ts';
 
 const empty = new Map<string, { count: number; capped: boolean; from: string[] }>();
 
@@ -1844,14 +1864,14 @@ Create `dev-utils/wiki-audit/analyze.ts`:
 ```ts
 import { readFile, writeFile, readdir } from 'fs/promises';
 import { resolve, join } from 'path';
-import { createClient, queryAll, chunk } from './lib/api.js';
-import { resolveRedirects, extractRequires, extractGadgetRefs, classify } from './analyze/usage.js';
-import type { UsageTier } from './analyze/usage.js';
-import { scoreDoc } from './analyze/docquality.js';
-import type { DocScore } from './analyze/docquality.js';
-import { findPlumbingIssues, type Finding } from './analyze/plumbing.js';
-import { describeSource, isUpstream } from './analyze/provenance.js';
-import type { Manifest } from './lib/types.js';
+import { createClient, queryAll, chunk } from './lib/api.ts';
+import { resolveRedirects, extractRequires, extractGadgetRefs, classify } from './analyze/usage.ts';
+import type { UsageTier } from './analyze/usage.ts';
+import { scoreDoc } from './analyze/docquality.ts';
+import type { DocScore } from './analyze/docquality.ts';
+import { findPlumbingIssues, type Finding } from './analyze/plumbing.ts';
+import { describeSource, isUpstream } from './analyze/provenance.ts';
+import type { Manifest } from './lib/types.ts';
 
 export interface AuditRow {
   title: string;
@@ -1993,19 +2013,31 @@ async function fetchTransclusions(apiUrl: string, titles: string[]) {
   return out;
 }
 
-if (import.meta.filename === process.argv[1]) {
-  const root = resolve(import.meta.dirname, '../..');
-  const manifest: Manifest = JSON.parse(await readFile(resolve(root, 'wiki/_manifest.json'), 'utf8'));
-  const contents = await loadContents(manifest);
-  const gadgetText = await loadGadgetText(resolve(root, 'live-snapshot.local'));
-  const apiUrl = process.env.WIKI_API_URL;
-  if (!apiUrl) throw new Error('WIKI_API_URL is not set');
-  console.log('Fetching transclusion counts...');
-  const transclusions = await fetchTransclusions(apiUrl, manifest.entries.filter((e) => !e.redirect).map((e) => e.title));
-  const audit = buildAudit(manifest, contents, transclusions, gadgetText);
-  await writeFile(resolve(root, 'wiki-audit.json'), JSON.stringify(audit, null, 2) + '\n', 'utf8');
-  console.log(`Wrote wiki-audit.json — ${audit.rows.length} rows, ${audit.findings.length} findings.`);
-}
+// No import.meta here — analyze.test.ts imports this module.
+// Export the helpers the CLI needs (drop the `async function` keyword's
+// implicit privacy by exporting each):
+export { loadContents, loadGadgetText, fetchTransclusions };
+```
+
+Then create `dev-utils/wiki-audit/analyze-cli.ts`:
+
+```ts
+import { readFile, writeFile } from 'fs/promises';
+import { resolve } from 'path';
+import { buildAudit, loadContents, loadGadgetText, fetchTransclusions } from './analyze.ts';
+import type { Manifest } from './lib/types.ts';
+
+const root = resolve(import.meta.dirname, '../..');
+const manifest: Manifest = JSON.parse(await readFile(resolve(root, 'wiki/_manifest.json'), 'utf8'));
+const contents = await loadContents(manifest);
+const gadgetText = await loadGadgetText(resolve(root, 'live-snapshot.local'));
+const apiUrl = process.env.WIKI_API_URL;
+if (!apiUrl) throw new Error('WIKI_API_URL is not set');
+console.log('Fetching transclusion counts...');
+const transclusions = await fetchTransclusions(apiUrl, manifest.entries.filter((e) => !e.redirect).map((e) => e.title));
+const audit = buildAudit(manifest, contents, transclusions, gadgetText);
+await writeFile(resolve(root, 'wiki-audit.json'), JSON.stringify(audit, null, 2) + '\n', 'utf8');
+console.log(`Wrote wiki-audit.json — ${audit.rows.length} rows, ${audit.findings.length} findings.`);
 ```
 
 - [ ] **Step 4: Run test to verify it passes**
@@ -2018,9 +2050,9 @@ Expected: PASS.
 In `package.json`, add to `"scripts"`:
 
 ```json
-    "wiki:fetch": "node --env-file=.env dev-utils/wiki-audit/fetch.ts",
-    "wiki:analyze": "node --env-file=.env dev-utils/wiki-audit/analyze.ts",
-    "wiki:report": "node dev-utils/wiki-audit/report.ts",
+    "wiki:fetch": "node --env-file=.env dev-utils/wiki-audit/fetch-cli.ts",
+    "wiki:analyze": "node --env-file=.env dev-utils/wiki-audit/analyze-cli.ts",
+    "wiki:report": "node dev-utils/wiki-audit/report-cli.ts",
     "wiki:audit": "npm run wiki:fetch && npm run wiki:analyze && npm run wiki:report"
 ```
 
@@ -2077,8 +2109,8 @@ git commit -m "chore(wiki): add audit analysis output"
 Create `dev-utils/wiki-audit/report.test.ts`:
 
 ```ts
-import { rankPriority, splitBacklog, deletionCandidates, renderReport } from './report.js';
-import type { AuditRow, Audit } from './analyze.js';
+import { rankPriority, splitBacklog, deletionCandidates, renderReport } from './report.ts';
+import type { AuditRow, Audit } from './analyze.ts';
 
 function row(over: Partial<AuditRow> = {}): AuditRow {
   return {
@@ -2195,7 +2227,7 @@ Create `dev-utils/wiki-audit/report.ts` with the pure logic first:
 ```ts
 import { readFile, writeFile } from 'fs/promises';
 import { resolve } from 'path';
-import type { Audit, AuditRow } from './analyze.js';
+import type { Audit, AuditRow } from './analyze.ts';
 
 /** Usage x doc-gap. Log-damped usage so the top of the curve does not swamp the gap term. */
 export function rankPriority(rows: AuditRow[]): AuditRow[] {
@@ -2243,16 +2275,21 @@ Colour rules from the spec, which the tests do not enforce and the implementer m
 - Every title passed through `escapeHtml`.
 - No external scripts, stylesheets or images — the page must be fully self-contained.
 
-Add the CLI entry point at the end:
+Create the entry point as its own file, `dev-utils/wiki-audit/report-cli.ts`
+(`report.ts` itself must contain no `import.meta`, since `report.test.ts`
+imports it):
 
 ```ts
-if (import.meta.filename === process.argv[1]) {
-  const root = resolve(import.meta.dirname, '../..');
-  const audit: Audit = JSON.parse(await readFile(resolve(root, 'wiki-audit.json'), 'utf8'));
-  const out = resolve(root, 'wiki-audit-report.html');
-  await writeFile(out, renderReport(audit), 'utf8');
-  console.log(`Wrote ${out}`);
-}
+import { readFile, writeFile } from 'fs/promises';
+import { resolve } from 'path';
+import { renderReport } from './report.ts';
+import type { Audit } from './analyze.ts';
+
+const root = resolve(import.meta.dirname, '../..');
+const audit: Audit = JSON.parse(await readFile(resolve(root, 'wiki-audit.json'), 'utf8'));
+const out = resolve(root, 'wiki-audit-report.html');
+await writeFile(out, renderReport(audit), 'utf8');
+console.log(`Wrote ${out}`);
 ```
 
 - [ ] **Step 5: Run test to verify it passes**
