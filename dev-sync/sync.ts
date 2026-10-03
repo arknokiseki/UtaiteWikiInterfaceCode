@@ -253,7 +253,8 @@ async function syncWikiCode(bot: Mwn, pagesToUpdate: Map<string, string>): Promi
   // so it can resolve while earlier edits are still running (and drop their
   // failures). A small pool that settles every save instead.
   const CONCURRENCY = 3;
-  const RETRIES = 3;
+  const RETRIES = 5;
+  const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
   const failures = new Map<string, unknown>();
   const queue = Array.from(pagesToUpdate.keys());
   const runWorker = async () => {
@@ -266,6 +267,11 @@ async function syncWikiCode(bot: Mwn, pagesToUpdate: Map<string, string>): Promi
         } catch (err) {
           failures.set(title, err);
           if (attempt >= RETRIES) break;
+          // the wiki's edit rate limit needs a real pause, not an instant retry
+          const limited = /ratelimited/i.test(String(err));
+          const wait = limited ? 60_000 * (attempt + 1) : 5_000 * (attempt + 1);
+          log(`Retrying '${title}' in ${wait / 1000}s (${limited ? 'rate limited' : String(err)})`);
+          await sleep(wait);
         }
       }
     }
