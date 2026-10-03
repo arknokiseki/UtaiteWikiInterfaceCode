@@ -239,20 +239,40 @@ function getFilesInGadgetDistFolder(gadgetId: string): string[] {
  */
 async function syncWikiCode(bot: Mwn, pagesToUpdate: Map<string, string>): Promise<string[]> {
   log(`Syncing ${pagesToUpdate.size} page(s)...`);
-  const failed = await bot.batchOperation(
-    Array.from(pagesToUpdate.keys()) as string[],
-    async (pageTitle: string, _: number): Promise<any> => {
-      const filepath = pagesToUpdate.get(pageTitle)!;
-      const src = await readFile(filepath, { encoding: 'utf-8', flag: 'r' });
-      const res: any = await bot.save(pageTitle, src, EDIT_SUMMARY);
-      // identical content is a null edit: no new revision
-      log(res && res.nochange !== undefined ? `Unchanged page '${pageTitle}'` : `Edited page '${pageTitle}'`);
-      return;
-    },
-    /* concurrencies */ 3,
-    /* maxRetries */ 3
-  );
-  const errors = Object.entries((failed && failed.failures) || {});
+
+  const savePage = async (pageTitle: string): Promise<void> => {
+    const filepath = pagesToUpdate.get(pageTitle)!;
+    const src = await readFile(filepath, { encoding: 'utf-8', flag: 'r' });
+    const res: any = await bot.save(pageTitle, src, EDIT_SUMMARY);
+    // identical content is a null edit: no new revision
+    log(res && res.nochange !== undefined ? `Unchanged page '${pageTitle}'` : `Edited page '${pageTitle}'`);
+  };
+
+  // Not bot.batchOperation: mwn 3.0.1 starts each next batch when the *last*
+  // item of a batch settles, and its promise only waits for the final batch,
+  // so it can resolve while earlier edits are still running (and drop their
+  // failures). A small pool that settles every save instead.
+  const CONCURRENCY = 3;
+  const RETRIES = 3;
+  const failures = new Map<string, unknown>();
+  const queue = Array.from(pagesToUpdate.keys());
+  const runWorker = async () => {
+    for (let title = queue.shift(); title !== undefined; title = queue.shift()) {
+      for (let attempt = 0; ; attempt++) {
+        try {
+          await savePage(title);
+          failures.delete(title);
+          break;
+        } catch (err) {
+          failures.set(title, err);
+          if (attempt >= RETRIES) break;
+        }
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: CONCURRENCY }, runWorker));
+
+  const errors = Array.from(failures.entries());
   if (errors.length > 0) {
     log(`Failed to edit the following pages:`);
     errors.forEach(([item, error]) => {
