@@ -1,0 +1,136 @@
+.utaite-countdown {
+    margin: 1rem 0;
+    font-family: sans-serif;
+    color: var(--primary-text-color);
+}
+
+.utaite-countdown .cd-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: var(--header-text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.utaite-countdown .cd-segments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.utaite-countdown .cd-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*background: var(--surface-bg);*/
+    border: 1px solid var(--theme-border-color);
+    border-radius: var(--border-radius, 6px);
+    padding: 8px 12px;
+    min-width: 50px;
+    box-shadow: var(--box-shadow);
+}
+
+.utaite-countdown .cd-val {
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+    color: var(--stats-number-color, var(--theme-link-color));
+}
+
+.utaite-countdown .cd-lbl {
+    font-size: 0.7em;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+    margin-top: 2px;
+}
+
+.countdown-style-card {
+    padding: 16px;
+    border: var(--menu-card-border);
+    border-radius: var(--border-radius, 8px);
+    box-shadow: var(--card-shadow);
+}
+
+.countdown-style-banner {
+    background: linear-gradient(135deg, var(--theme-page-background-color-quiet), var(--surface-bg));
+    padding: 16px 24px;
+    border-left: 4px solid var(--theme-accent-color);
+    border-radius: var(--border-radius, 4px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.countdown-style-banner .cd-title {
+    margin-bottom: 0;
+    margin-right: 16px;
+}
+
+.countdown-style-compact {
+    display: inline-block;
+    margin: 0;
+}
+.countdown-style-compact .cd-box {
+    padding: 4px 8px;
+    min-width: 40px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+.countdown-style-compact .cd-val {
+    font-size: 1.1em;
+}
+
+.countdown-style-minimal .cd-box {
+    flex-direction: row;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+.countdown-style-minimal .cd-val {
+    font-size: 1em;
+}
+.countdown-style-minimal .cd-lbl {
+    font-size: 0.9em;
+    margin-top: 0;
+    text-transform: lowercase;
+}
+
+.utaite-countdown.cd-expired {
+    opacity: 0.7;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.countdown-align-center {
+    text-align: center;
+}
+.countdown-align-center .cd-segments {
+    justify-content: center;
+}
+
+.countdown-align-right {
+    text-align: right;
+}
+.countdown-align-right .cd-segments {
+    justify-content: flex-end;
+}
+
+.countdown-align-left {
+    text-align: left;
+}
+.countdown-align-left .cd-segments {
+    justify-content: flex-start;
+}
+
+@media (max-width: 500px) {
+    .countdown-style-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}

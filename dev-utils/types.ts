@@ -68,9 +68,37 @@ export interface GadgetDefinition {
    * from the list of gadgets that will be served/distributed 
    */
   disabled?: boolean
-  
+
+  /**
+   * If set to true, the gadget's code is still built and synced, but its line in
+   * MediaWiki:Gadgets-definition is wrapped in an HTML comment (`<!-- * ... -->`),
+   * so the gadget isn't registered on the wiki.
+   */
+  commentedOut?: boolean
+
+  /**
+   * Note written as an HTML comment on the line(s) above the gadget in
+   * MediaWiki:Gadgets-definition. Multi-line strings keep their line breaks.
+   */
+  comment?: string
+
+  /**
+   * Optional `=== subsection ===` heading the gadget is listed under, within its section.
+   * Gadgets sharing a subsection should be adjacent in the yaml.
+   */
+  subsection?: string
+
+  /**
+   * Files copied byte-for-byte to the gadget's dist folder instead of being bundled
+   * (vendor builds, minified libraries, JSON data). Listed in `code` too, they appear
+   * in the gadget definition; otherwise they are synced as standalone pages that other
+   * code loads at runtime.
+   */
+  verbatim?: string[]
+
   /**
    * Specify specific loading conditions. Used to emulate MediaWiki's ResourceLoader.
+   * Flags are written to MediaWiki:Gadgets-definition in the order they appear here.
    */
   resourceLoader?: ResourceLoaderConditions
 }

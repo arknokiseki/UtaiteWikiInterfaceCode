@@ -120,7 +120,7 @@ declare global {
                     <div class="tm-header">
                         <h2 class="tm-title" id="${toolId}-title">${mw.html.escape(title)}</h2>
                         <button class="tm-close" type="button" aria-label="Close">
-                            <i class="fas fa-times"></i>
+                            <i class="fa-solid fa-times"></i>
                         </button>
                     </div>
                     <div class="tm-body">${contentHtml}</div>

@@ -40,8 +40,6 @@ declare global {
     window.uptodateEditorLoaded = true;
 
     const SUMMARY = 'Update song list freshness via UptodateEditor';
-    /** Back-ported from prod, where the label was edited by hand after deploy. */
-    const BUTTON_LABEL = 'Update Freshness';
 
     function isPermitted(): boolean {
         const groups = (mw.config.get('wgUserGroups') || []) as string[];
@@ -55,7 +53,7 @@ declare global {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'ute-open';
-        button.textContent = BUTTON_LABEL;
+        button.textContent = 'Update Freshness';
         button.setAttribute('aria-label', 'Update song list freshness');
         return button;
     }
@@ -122,7 +120,7 @@ declare global {
             window.alert('UptodateEditor failed: ' + ((e && e.error && e.error.info) || 'unknown error.'));
         } finally {
             button.disabled = false;
-            button.textContent = BUTTON_LABEL;
+            button.textContent = 'Update Freshness';
         }
     }
 

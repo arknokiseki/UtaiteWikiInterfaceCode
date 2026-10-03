@@ -3,6 +3,8 @@ import {
   generateCssBanner,
   generateGadgetsDefinitionWikitext,
   createMwGadgetImplementation,
+  noControlChars,
+  preserveUseStrict,
 } from './plugins';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -57,6 +59,11 @@ export default defineConfig(async ({ mode }: ConfigEnv): Promise<UserConfig> => 
 
   return {
     plugins: [
+      // Keep 'use strict' in files marked @keep-use-strict (see the plugin)
+      preserveUseStrict(),
+      // Fail on raw control characters, which MediaWiki mangles on save
+      noControlChars(),
+
 
       // On Vite Build, watch changes made to files in gadgets/ subdirectory
       // and generate the load.js entrypoint file 

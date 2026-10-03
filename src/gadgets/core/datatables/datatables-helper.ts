@@ -218,7 +218,8 @@ interface JQueryFactory extends JQueryStatic {
   // Early return for mobile
   if (
     document.body.classList.contains('mw-mf') ||
-    document.body.classList.contains('is-mobile-device')
+    document.body.classList.contains('is-mobile-device') ||
+    window.innerWidth < 768
   ) {
     return;
   }
@@ -226,15 +227,14 @@ interface JQueryFactory extends JQueryStatic {
   // Constants
   const MOBILE_BREAKPOINT = 1024;
   const URL_SEARCH_PARAM_KEY = 'searchName';
-  const DATATABLES_GADGET_URL = 'https://utaite.wiki/wiki/MediaWiki:Gadget-Datatables.js?action=raw';
+  // Same-origin, cacheable raw URL; bump v= when Gadget-Datatables.js changes
+  const DATATABLES_GADGET_URL = '/w/index.php?title=MediaWiki:Gadget-Datatables.js&action=raw&ctype=text/javascript&maxage=2592000&smaxage=2592000&v=dt-2.3.4';
 
   // Configuration flags
   const DISABLE_REBUILD_ON_RESIZE = true;
   const INLINE_COLUMN_TOGGLES = true;
 
   // State
-  let initialized = false;
-  let queue: JQuery[] = [];
   const processedTables = new WeakMap<HTMLElement, boolean>();
 
   // Track DT lib loading
@@ -1240,45 +1240,49 @@ interface JQueryFactory extends JQueryStatic {
   $(window as unknown as HTMLElement).on('resize', handleResize);
 
   // --------------------------
-  // Initial boot
+  // Boot: the ~460 KB library is fetched only on pages that have a table
   // --------------------------
-  const finishInit = (): void => {
-    registerTrackNumberSort();
-    initialized = true;
+  const TABLE_SELECTOR = 'table.dataTable, table.datatable';
+  let sortRegistered = false;
 
-    // Process queued content
-    queue.forEach(($content) => {
-      process($content);
-    });
-
-    queue = [];
-    mw.hook('datatables.loaded').fire();
-    console.log('DataTables Helper initialization complete.');
+  const onLibReady = (): void => {
+    if (!sortRegistered) {
+      registerTrackNumberSort();
+      sortRegistered = true;
+    }
   };
 
-  const initialize = (): void => {
+  const handleContent = ($c: JQuery): void => {
+    // No tables: still run the album filters (they don't need DataTables), skip the library.
+    if (!$c.find(TABLE_SELECTOR).length) {
+      process($c);
+      return;
+    }
+    // Library already loaded: stay synchronous. SonglistCRUD relies on this
+    // when refreshTable re-fires wikipage.content.
+    if ($.fn && $.fn.DataTable) {
+      onLibReady();
+      process($c);
+      return;
+    }
+    // First table on this page view: load the library, then set up the tables.
     ensureDataTablesLib().then(
       () => {
-        finishInit();
+        onLibReady();
+        process($c);
+        mw.hook('datatables.loaded').fire();
+        console.log('DataTables Helper initialization complete.');
       },
       () => {
-        finishInit();
+        process($c);
       }
     );
   };
 
-  mw.loader.using(['jquery']).then(initialize);
-
   // --------------------------
   // MediaWiki Hooks
   // --------------------------
-  mw.hook('wikipage.content').add(($c: JQuery) => {
-    if (initialized) {
-      process($c);
-    } else {
-      queue.push($c);
-    }
-  });
+  mw.hook('wikipage.content').add(handleContent);
 
   mw.hook('wikipage.editform').add(cleanup);
 })(jQuery as unknown as JQueryFactory, mediaWiki as unknown as MediaWiki);

@@ -1,0 +1,145 @@
+/* All CSS here will be loaded for users of the Citizen skin */
+
+/* ========== Splash Screen ========== */
+
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.15s;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #dbeafe url('https://static.wikitide.net/utaitewiki/e/e6/Site-logo.png') center calc(50% - 20px) / 72px auto no-repeat;
+  pointer-events: auto;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  z-index: 99999;
+  top: calc(50% + 28px);
+  left: calc(50% - 12px);
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(59, 130, 246, 0.2);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: splash-spin 0.8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes splash-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Dismissed */
+body.splash-done::before,
+body.splash-done::after {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+body.splash-done::after {
+  animation-play-state: paused;
+}
+
+/* Skip on Special pages */
+body.ns-special::before,
+body.ns-special::after {
+  display: none !important;
+}
+
+/* Dark — forced */
+html.skin-theme-clientpref-night body::before {
+  background-color: #1e293b;
+}
+html.skin-theme-clientpref-night body::after {
+  border-color: rgba(148, 163, 184, 0.2);
+  border-top-color: #94a3b8;
+}
+
+/* Dark — auto */
+@media (prefers-color-scheme: dark) {
+  html.skin-theme-clientpref-os body::before {
+    background-color: #1e293b;
+  }
+  html.skin-theme-clientpref-os body::after {
+    border-color: rgba(148, 163, 184, 0.2);
+    border-top-color: #94a3b8;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation-duration: 2s; }
+  body.splash-done::before,
+  body.splash-done::after { transition-duration: 0.01s; }
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation-duration: 0.01s !important; }
+}
+
+@media print {
+  body::before, body::after { display: none !important; }
+}
+
+.show-to-user,
+.show-to-autoconfirmed,
+.show-to-confirmed,
+.show-to-member,
+.show-to-contentmoderator,
+.show-to-sysop,
+.show-to-admin,
+.show-to-interface-admin,
+.show-to-bureaucrat,
+.show-to-logged-in {
+    display: none;
+}
+
+/* Tailwind - start */
+.text-center{
+	text-align: center;
+}
+
+.text-left{
+	text-align: left;
+}
+
+.text-right{
+	text-align: right;
+}
+
+.text-justify{
+	text-align: justify;
+}
+
+.text-start{
+	text-align: start;
+}
+
+.text-end{
+	text-align: end;
+}
+/* Tailwind - end */
+
+/* Very small mobile screens */
+@media screen and (max-width: 480px) {
+  .mw-dismissable-notice::after {
+    font-size: 13px;
+    top: 8px;
+    left: 10px;
+  }
+  
+  .mw-dismissable-notice-body {
+    padding: 32px 15px 12px 10px;
+  }
+  
+  .sitenotice {
+    font-size: 13px;
+  }
+}

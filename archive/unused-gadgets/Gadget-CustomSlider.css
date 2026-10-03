@@ -1,0 +1,141 @@
+#SliderView {
+	background: transparent;
+	height: auto;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	width: 100%; 
+}
+#SliderWrapper {
+	position: relative;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	-webkit-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+	-moz-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+	-o-transition-timing-function: cubic-bezier(.67,.01,.23,1);
+	transition-timing-function: cubic-bezier(.67,.01,.23,1);
+}
+#SliderWrapper, #SliderWrapper ul, #SliderWrapper li, #NavBtns, #NavBtns ul {
+	margin: 0;
+	padding: 0;
+}
+#NavBtns li {
+	margin: 0;
+}
+
+.Sld {
+	float: left;
+	height: auto;
+	list-style: none;
+}
+
+.SlideIMG {
+	width: 100%;
+}
+
+.SlideIMG img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	position: relative; 
+}
+
+#NavBtns {
+	display: block;
+	position: absolute;
+}
+.NavBtn {
+	background: transparent;
+	display: block;
+	height: auto;
+	list-style: none;
+	position: relative;
+	margin: 0;
+	top: 0;
+	width: auto;
+}
+
+.nmLeft {
+	background: linear-gradient(to right, rgba(61,61,61,0.8), rgba(61,61,61,0.8), transparent);
+	height: 100%;
+	left: 0;
+}
+.nmLeft li {
+	list-style: none;
+	padding: 10px 100px 10px 10px;
+}
+.nmLeft li:hover {
+	background: linear-gradient(to right, rgba(81,81,81,0.8), rgba(81,81,81,0.8), transparent);
+	cursor: pointer;
+}
+
+.nmRight {
+	background: linear-gradient(to left, rgba(61,61,61,0.8), rgba(61,61,61,0.8), transparent);
+	height: 100%;
+	right: 0;
+	text-align: left;
+}
+.nmRight li {
+	list-style: none;
+	padding: 10px 10px 10px 100px;
+}
+.nmRight li:hover {
+	background: linear-gradient(to left, rgba(81,81,81,0.8), rgba(81,81,81,0.8), transparent);
+	cursor: pointer;
+}
+
+.nmTop {
+	background: linear-gradient(to bottom, rgba(61,61,61,0.8), rgba(61,61,61,0.8), transparent);
+	text-align: left;
+	top: 0;
+	width: 100%;
+}
+
+.nmTop li {
+	display: inline-block;
+	list-style: none;
+	padding: 10px 10px 20px 10px;
+}
+
+.nmTop li:hover {
+	background: linear-gradient(to bottom, rgba(81,81,81,0.8), rgba(81,81,81,0.8), transparent);
+	cursor: pointer;
+}
+
+.nmBottom {
+	background: linear-gradient(to top, rgba(61,61,61,0.8), rgba(61,61,61,0.8), transparent);
+	bottom: 0;
+	text-align: left;
+	width: 100%;
+}
+.nmBottom li {
+	display: inline-block;
+	list-style: none;
+	padding: 20px 10px 10px 10px;
+}
+.nmBottom li:hover {
+	background: linear-gradient(to top, rgba(81,81,81,0.8), rgba(81,81,81,0.8), transparent);
+	cursor: pointer;
+}
+
+.nbActiveLeft {
+	background: linear-gradient(to right, rgba(111,111,111,0.8), rgba(111,111,111,0.8), transparent);
+}
+.nbActiveRight {
+	background: linear-gradient(to left, rgba(111,111,111,0.8), rgba(111,111,111,0.8), transparent);
+}
+.nbActiveTop {
+	background: linear-gradient(to bottom, rgba(111,111,111,0.8), rgba(111,111,111,0.8),  transparent);
+}
+.nbActiveBottom {
+	background: linear-gradient(to top, rgba(111,111,111,0.8), rgba(111,111,111,0.8),  transparent);
+}
