@@ -456,8 +456,10 @@ table.album-track-table {
     }
 
     /* MediaWiki does not whitelist <thead>, so the header is a normal row
-       carrying .album-track-head. A thead selector would never match. */
-    .album-track-head {
+       carrying .album-track-head. A thead selector would never match. Scoped
+       to the table so it outranks the `.album-track-table tr { display: grid }`
+       card layout below, which otherwise shows the header as a squeezed grid. */
+    .album-track-table tr.album-track-head {
         display: none;
     }
 
