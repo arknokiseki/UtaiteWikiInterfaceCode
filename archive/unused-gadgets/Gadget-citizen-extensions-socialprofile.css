@@ -1,0 +1,539 @@
+/*These extensions are no longer in use. This page is kept for archive purposes only.*/
+/*=============================================================
+SocialProfile
+=============================================================*/
+.profile-tab-bar .profile-tab,
+.profile-tab-bar .profile-tab-on {
+    box-sizing: content-box !important;
+}
+
+.profile-info-container div {
+  color: inherit !important;
+}
+
+/* =============================================================
+   UpdateProfile / UploadAvatar — Modernized to match UserProfile
+   Uses: --sp-* variables defined by your new userprofile theme
+   Keeps poll system unchanged.
+   ============================================================= */
+
+.skin-theme-clientpref-day,
+.skin-theme-clientpref-night {
+  --sp-bg: rgba(255,255,255,0.04);
+  --sp-panel: rgba(255,255,255,0.03);
+  --sp-contrast: rgba(255,255,255,0.85);
+  --sp-muted: rgba(255,255,255,0.65);
+  --sp-accent: #7aa2ff;
+  --sp-link: #1a73e8;
+  --sp-card: rgba(255,255,255,0.03);
+  --sp-border: rgba(255,255,255,0.06);
+  --sp-radius: 12px;
+  --sp-gap: 18px;
+  --sp-padding: 18px;
+  --sp-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  --sp-transition: 180ms cubic-bezier(.2,.8,.2,1);
+  --sp-avatar-size: 110px;
+  --sp-heading-size: 28px;
+  --sp-subheading-size: 15px;
+}
+
+.skin-theme-clientpref-day {
+  --sp-bg: rgba(0,0,0,0.04);
+  --sp-panel: rgba(255,255,255,0.92);
+  --sp-contrast: #111;
+  --sp-muted: rgba(0,0,0,0.54);
+  --sp-accent: #2b7cff;
+  --sp-link: #0b63d6;
+  --sp-card: rgba(255,255,255,0.95);
+  --sp-border: rgba(0,0,0,0.08);
+  --sp-shadow: 0 6px 24px rgba(20,20,20,0.06);
+}
+
+.skin-theme-clientpref-night {
+  --sp-bg: rgba(10,10,12,0.46);
+  --sp-panel: rgba(8,10,12,0.6);
+  --sp-contrast: #f7f7f8;
+  --sp-muted: rgba(255,255,255,0.66);
+  --sp-accent: #7aa2ff;
+  --sp-link: #7aa2ff;
+  --sp-card: rgba(255,255,255,0.03);
+  --sp-border: rgba(255,255,255,0.06);
+}
+
+
+body {
+  --up-bg: var(--sp-bg, rgba(255,255,255,0.03));
+  --up-panel: var(--sp-panel, rgba(255,255,255,0.03));
+  --up-contrast: var(--sp-contrast, #111);
+  --up-muted: var(--sp-muted, rgba(0,0,0,0.54));
+  --up-accent: var(--sp-accent, #2b7cff);
+  --up-link: var(--sp-link, var(--up-accent));
+  --up-card: var(--sp-card, rgba(255,255,255,0.03));
+  --up-border: var(--sp-border, rgba(0,0,0,0.06));
+  --up-radius: var(--sp-radius, 10px);
+  --up-gap: calc(var(--sp-gap, 16px));
+  --up-padding: calc(var(--sp-padding, 18px));
+  --up-shadow: var(--sp-shadow, 0 6px 18px rgba(0,0,0,0.12));
+  --up-transition: var(--sp-transition, 180ms cubic-bezier(.2,.8,.2,1));
+}
+
+/* Headings and strongs within the targeted pages */
+body:is([class*="page-Special_UpdateProfile"], [class*="page-Special_UploadAvatar"]) h2,
+body:is([class*="page-Special_UpdateProfile"], [class*="page-Special_UploadAvatar"]) b,
+body:is([class*="page-Special_UpdateProfile"], [class*="page-Special_UploadAvatar"]) strong,
+body:is([class*="page-Special_UpdateProfile"], [class*="page-Special_UploadAvatar"]) #user-page-left,
+body:is([class*="page-Special_UpdateProfile"], [class*="page-Special_UploadAvatar"]) #user-page-right {
+  color: var(--up-contrast) !important;
+}
+
+/* Tabs */
+.profile-tab-bar .profile-tab,
+.profile-tab-bar .profile-tab-on {
+  box-sizing: content-box !important;
+}
+
+.profile-tab,
+.profile-tab-on {
+  padding: 10px 16px !important;
+  margin-bottom: -1px !important;
+  border: 1px solid transparent !important;
+  border-bottom: 1px solid var(--up-border) !important;
+  border-radius: calc(var(--up-radius)) calc(var(--up-radius)) 0 0 !important;
+  font-weight: 700 !important;
+  position: relative !important;
+  transition: color var(--up-transition), border-color var(--up-transition), background var(--up-transition) !important;
+  background: transparent !important;
+  color: var(--up-muted) !important;
+  font-size: inherit !important;
+}
+
+/* Anchors inside tabs */
+.profile-tab a,
+.profile-tab-on a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Hover / inactive */
+.profile-tab:hover {
+  color: var(--up-contrast) !important;
+  border-bottom-color: var(--up-accent) !important;
+  background: linear-gradient(180deg, rgba(122,162,255,0.02), transparent) !important;
+}
+
+/* Active tab */
+.profile-tab-on {
+  color: var(--up-contrast) !important;
+  background: linear-gradient(180deg, rgba(122,162,255,0.03), transparent) !important;
+  border-color: var(--up-border) !important;
+  border-top: 2px solid var(--up-accent) !important;
+  z-index: 2 !important;
+}
+
+/* Container / cards */
+.profile-info,
+.profile-update {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent) !important;
+  border: 1px solid var(--up-border) !important;
+  border-radius: var(--up-radius) !important;
+  padding: calc(var(--up-padding)) !important;
+  margin-bottom: calc(var(--up-gap) * 0.7) !important;
+  box-shadow: var(--up-shadow) !important;
+  color: var(--up-muted) !important;
+}
+
+/* Remove duplicate wrapper visuals where nested */
+.profile-info > .profile-update {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Section title inside forms */
+.profile-update-title {
+  font-size: 1.125rem !important;
+  font-weight: 800 !important;
+  color: var(--up-contrast) !important;
+  border-bottom: 1px solid var(--up-border) !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 18px !important;
+}
+
+/* Labels left column */
+.profile-update-unit-left,
+.mw-label {
+  font-weight: 700 !important;
+  color: var(--up-accent) !important;
+  padding-bottom: 8px !important;
+  display: block !important;
+}
+
+/* Inputs, selects, textareas */
+input[type="text"],
+input[type="file"],
+textarea,
+select {
+  background: var(--up-card) !important;
+  border: 1px solid var(--up-accent) !important;
+  border-radius: calc(var(--up-radius) * 0.6) !important;
+  padding: 10px 12px !important;
+  color: var(--up-contrast) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: box-shadow var(--up-transition), border-color var(--up-transition) !important;
+}
+
+/* Focus styles for form controls */
+input[type="text"]:focus,
+textarea:focus,
+select:focus,
+input[type="file"]:focus {
+  outline: none !important;
+  border-color: var(--up-accent) !important;
+  box-shadow: 0 6px 18px rgba(122,162,255,0.12) !important;
+}
+
+/* Checkbox style */
+input[type="checkbox"] {
+  accent-color: var(--up-accent) !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 8px !important;
+  vertical-align: middle !important;
+}
+
+/* Buttons */
+.site-button,
+button[type="submit"] {
+  background: linear-gradient(180deg, var(--up-accent), color-mix(in srgb, var(--up-accent) 80%, black 20%)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: calc(var(--up-radius) * 0.6) !important;
+  padding: 10px 16px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: transform var(--up-transition), box-shadow var(--up-transition) !important;
+  box-shadow: 0 8px 20px rgba(11,99,214,0.12) !important;
+  text-transform: none !important;
+}
+
+/* Button hover/active */
+.site-button:hover,
+button[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(11,99,214,0.14) !important;
+}
+
+/* Avatar preview */
+.profile-info img,
+.avatar-preview {
+  border-radius: calc(var(--up-radius) * 0.6) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+  max-width: 140px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Small muted helper text */
+.profile-info .help,
+.profile-update .help,
+.form-help {
+  color: var(--up-muted) !important;
+  font-size: 0.92rem !important;
+  margin-top: 6px !important;
+}
+
+/* Responsive two-column layout for label+input pairs */
+.profile-update-row {
+  display: grid !important;
+  grid-template-columns: 220px 1fr !important;
+  gap: 12px !important;
+  align-items: start !important;
+  margin-bottom: 12px !important;
+}
+
+@media (max-width: 760px) {
+  .profile-update-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* subtle focus ring for entire cards */
+.profile-info:focus-within,
+.profile-update:focus-within {
+  outline: 3px solid rgba(122,162,255,0.08) !important;
+  outline-offset: 4px !important;
+  border-color: color-mix(in srgb, var(--up-accent) 18%, var(--up-border)) !important;
+}
+
+/* Ensure links use accent */
+.profile-info a,
+.profile-update a {
+  color: var(--up-link) !important;
+  text-decoration: underline !important;
+}
+
+/* Action row (save/cancel) */
+.update-actions {
+  display: flex !important;
+  gap: 10px !important;
+  justify-content: flex-end !important;
+  margin-top: 8px !important;
+}
+
+/* Accessibility: larger hit targets on mobile */
+@media (max-width: 520px) {
+  .profile-tab,
+  .profile-tab-on {
+    padding: 12px 14px !important;
+  }
+  .site-button, button[type="submit"] {
+    width: 100% !important;
+    padding: 12px !important;
+  }
+}
+
+/* ----------------------------------------- */
+/* AVATAR & MISC                             */
+/* ----------------------------------------- */
+.profile-info img {
+	border-radius: var(--border-radius) !important;
+	box-shadow: var(--card-shadow) !important;
+	max-width: 120px !important;
+	height: auto;
+}
+
+.g-give-container {
+    background-color: transparent !important;
+}
+
+/* =====================================================================
+MediaWiki Poll Extension - Using CSS Variables
+=======================================================================*/
+/* Poll containers */
+.poll-right,
+.poll {
+    background-color: var(--poll-bg-secondary) !important;
+    border: 1px solid var(--poll-border-color) !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    margin: 15px 0 !important;
+    box-shadow: 0 2px 8px var(--poll-shadow-light) !important;
+}
+
+/* Poll secondary containers */
+.create-link,
+.credit-box,
+.poll-stats,
+.poll-links {
+    background-color: var(--poll-bg-tertiary) !important;
+    border: 1px solid var(--poll-border-light) !important;
+    border-radius: 6px !important;
+    padding: 10px 15px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Links */
+.create-link a,
+.submitted-by-user a,
+.poll-links a {
+    color: var(--poll-link-color) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+.create-link a:hover,
+.poll-links a:hover {
+    color: var(--poll-link-hover) !important;
+}
+
+/* Headings and text */
+.credit-box h1,
+.c-form-title {
+    color: var(--poll-text-primary) !important;
+    font-weight: 600 !important;
+    margin: 0 0 10px 0 !important;
+}
+
+.credit-box h1 { font-size: 16px !important; }
+.c-form-title { font-size: 18px !important; margin-bottom: 15px !important; }
+
+/* Lists and stats */
+.submitted-by-user ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 5px 0 0 0 !important;
+    display: flex !important;
+    gap: 15px !important;
+}
+
+.submitted-by-user li {
+    color: var(--poll-text-secondary) !important;
+    font-size: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+.profile-on {
+    color: var(--poll-accent-green) !important;
+    font-weight: 600 !important;
+}
+
+/* Poll choices */
+.poll-choice {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 15px !important;
+    padding: 10px !important;
+    background-color: var(--poll-bg-secondary) !important;
+    border: 1px solid var(--poll-border-light) !important;
+    border-radius: 6px !important;
+}
+
+.poll-choice-left {
+    color: var(--poll-text-primary) !important;
+    font-weight: 500 !important;
+    min-width: 120px !important;
+}
+
+.poll-choice-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 1 !important;
+}
+
+.poll-choice-votes {
+    color: var(--poll-text-secondary) !important;
+    font-size: 14px !important;
+    min-width: 70px !important;
+}
+
+/* Vote bars */
+.image-choice-1 { background-color: var(--poll-vote-bar-1) !important; }
+.image-choice-2 { background-color: var(--poll-vote-bar-2) !important; }
+.image-choice-1, .image-choice-2 {
+    border-radius: 6px !important;
+    content: "" !important;
+}
+
+/* Status messages */
+.poll-closed {
+    background-color: var(--poll-accent-red) !important;
+    color: white !important;
+    padding: 10px 15px !important;
+    border-radius: 6px !important;
+    margin-bottom: 20px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.poll-total-votes {
+    color: var(--poll-text-secondary) !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    margin: 15px 0 !important;
+    font-style: italic !important;
+}
+
+.poll-timestamp {
+    color: var(--poll-text-muted) !important;
+    font-size: 12px !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+}
+
+/* Form elements */
+input[name="embed_code"],
+textarea[name="commentText"] {
+    background-color: var(--poll-bg-secondary) !important;
+    color: var(--poll-text-primary) !important;
+    border: 1px solid var(--poll-border-color) !important;
+    border-radius: 4px !important;
+    padding: 8px !important;
+}
+
+input[name="embed_code"] {
+    font-family: monospace !important;
+}
+
+textarea[name="commentText"] {
+    border-radius: 6px !important;
+    padding: 12px !important;
+    width: 100% !important;
+    resize: vertical !important;
+    font-family: inherit !important;
+    margin-bottom: 15px !important;
+}
+
+textarea[name="commentText"]:focus {
+    outline: none !important;
+    border-color: var(--poll-accent-blue) !important;
+    box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2) !important;
+}
+
+/* Buttons */
+.site-button {
+    background-color: var(--poll-button-bg) !important;
+    color: var(--poll-button-text) !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    margin-right: 10px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.site-button:hover {
+    background-color: var(--poll-button-hover) !important;
+}
+
+/* Table styling */
+.poll table {
+    width: 100% !important;
+    margin-top: 15px !important;
+}
+
+.poll table td {
+    color: var(--poll-text-primary) !important;
+    padding: 5px !important;
+    vertical-align: middle !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .poll-choice {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    
+    .poll-choice-right {
+        width: 100% !important;
+    }
+    
+    .c-item {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    .c-user {
+        flex-wrap: wrap !important;
+    }
+}
+
+
+/*Quiz*/
+/* QuizGameHome special page */
+body.page-Special_QuizGameHome h1 {
+    color: inherit !important;
+    background-color: inherit !important;
+}
+
+body.page-Special_QuizGameHome div[class^="create-message"] {
+    background-color: inherit !important;
+}

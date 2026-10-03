@@ -1,0 +1,54 @@
+/**
+ * Discography Editor Stylesheet
+ * v0.0.1
+ * initial code with no theme
+ * @author Makudoumee
+ */
+
+#de-overlay {
+  position: fixed; z-index: 10000; inset: 0; background: rgba(0,0,0,0.55);
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+#de-dialog {
+  background: #fff; max-width: 1200px; width: 95%; max-height: 90vh; overflow: auto;
+  border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+#de-header {
+  padding: 12px 16px; border-bottom: 1px solid #e5e5e5; display: flex; align-items: center; gap: 8px;
+}
+#de-title { font-weight: 700; font-size: 18px; flex: 1; }
+#de-content { padding: 12px 16px 24px; }
+#de-footer { padding: 12px 16px; border-top: 1px solid #e5e5e5; display: flex; gap: 8px; justify-content: flex-end; }
+
+.de-btn {
+  background: #2a4b8d; color: #fff; border: 0; border-radius: 6px; padding: 8px 12px; cursor: pointer;
+}
+.de-btn.secondary { background: #666; }
+.de-btn.danger { background: #b33a3a; }
+.de-btn.ghost { background: transparent; color: #2a4b8d; border: 1px solid #2a4b8d; }
+
+.de-section { border: 1px solid #e5e5e5; border-radius: 8px; margin-bottom: 14px; }
+.de-section > .de-section-hd {
+  background: #f8f9fa; padding: 8px 12px; display: flex; align-items: center; gap: 8px;
+}
+.de-section > .de-section-bd { padding: 10px 12px; }
+
+.de-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px 12px; }
+.de-field { display: flex; flex-direction: column; gap: 4px; }
+.de-field label { font-size: 12px; color: #666; }
+.de-field input[type="text"],
+.de-field input[type="date"],
+.de-field textarea {
+  width: 100%; padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font: inherit;
+}
+.de-note { font-size: 12px; color: #888; }
+
+.de-list { display: flex; flex-direction: column; gap: 10px; }
+
+.de-item-controls { display: flex; gap: 6px; margin-left: auto; }
+.de-chip { display:inline-block; padding: 3px 6px; border-radius: 999px; background:#eef2ff; color:#2a4b8d; font-size:12px; }
+
+.de-table { width: 100%; border-collapse: collapse; }
+.de-table th, .de-table td { border: 1px solid #e5e5e5; padding: 6px 8px; vertical-align: top; }
+.de-table th { background: #f8f9fa; text-align: left; }

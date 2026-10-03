@@ -1,0 +1,78 @@
+#recent-blogs {
+    margin: 1em 0;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#recent-blogs h3 {
+    margin: 0 0 0.75em 0;
+    padding-bottom: 0.5em;
+    font-size: 1.2em;
+    color: #333;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+#recent-blogs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#recent-blogs li {
+    margin-bottom: 0.6em;
+    padding-bottom: 0.6em;
+    border-bottom: 1px solid #eaecf0;
+}
+
+#recent-blogs li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+#recent-blogs a {
+    display: block;
+    color: #0645ad;
+    text-decoration: none;
+    font-size: 0.95em;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+}
+
+#recent-blogs a:hover {
+    color: #3366bb;
+    text-decoration: underline;
+}
+
+/* Extra info styling for when we add timestamps or author info */
+#recent-blogs .blog-date {
+    display: block;
+    color: #72777d;
+    font-size: 0.85em;
+    margin-top: 0.2em;
+}
+
+#recent-blogs .blog-author {
+    color: #54595d;
+    font-size: 0.85em;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    #recent-blogs {
+        margin: 0.5em 0;
+        padding: 0.75em;
+    }
+    
+    #recent-blogs h3 {
+        font-size: 1.1em;
+    }
+    
+    #recent-blogs a {
+        font-size: 0.9em;
+    }
+}

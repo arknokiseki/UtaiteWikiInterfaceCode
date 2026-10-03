@@ -1,0 +1,508 @@
+/* Modal Container & Overlay */
+.bulk-upload-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.bulk-upload-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Main Modal Container */
+.bulk-upload-container {
+    position: relative;
+    background: var(--container-bg);
+    border: 1px solid var(--theme-border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow-hover);
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal Header */
+.bulk-upload-header {
+    background: var(--surface-bg);
+    border-bottom: 1px solid var(--theme-border-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.bulk-upload-header h2 {
+    margin: 0;
+    color: var(--primary-text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.bulk-upload-close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.bulk-upload-close:hover {
+    background: var(--theme-border-color);
+    color: var(--primary-text-color);
+}
+
+/* Modal Content */
+.bulk-upload-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Global Settings Section */
+.bulk-upload-global-settings {
+    background: var(--surface-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-border-color);
+}
+
+.bulk-upload-global-settings h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bulk-upload-field {
+    margin-bottom: 15px;
+}
+
+.bulk-upload-field:last-child {
+    margin-bottom: 0;
+}
+
+.bulk-upload-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.bulk-upload-field select,
+.bulk-upload-field input[type="text"],
+.bulk-upload-field textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 4px;
+    background: var(--container-bg);
+    color: var(--primary-text-color);
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.bulk-upload-field select:focus,
+.bulk-upload-field input[type="text"]:focus,
+.bulk-upload-field textarea:focus {
+    outline: none;
+    border-color: var(--theme-link-color);
+    box-shadow: 0 0 0 2px rgba(var(--theme-link-color--rgb), 0.2);
+}
+
+.bulk-upload-field textarea {
+    min-height: 80px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.bulk-upload-field select {
+    cursor: pointer;
+}
+
+/* File Selection Section */
+.bulk-upload-files {
+    background: var(--surface-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-border-color);
+}
+
+.bulk-upload-files h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bulk-upload-files input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed var(--theme-border-color);
+    border-radius: var(--border-radius);
+    background: var(--container-bg);
+    color: var(--primary-text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
+}
+
+.bulk-upload-files input[type="file"]:hover {
+    border-color: var(--theme-link-color);
+    background: var(--theme-page-background-color);
+}
+
+/* File List */
+#file-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid var(--theme-border-color);
+    border-radius: var(--border-radius);
+    background: var(--container-bg);
+}
+
+#file-list:empty {
+    display: none;
+}
+
+/* File Item */
+.file-item {
+    padding: 15px;
+    border-bottom: 1px solid var(--theme-border-color);
+    background: var(--container-bg);
+    transition: background-color 0.2s ease;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}
+
+.file-item:hover {
+    background: var(--theme-page-background-color);
+}
+
+.file-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.file-item-name {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    word-break: break-word;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.file-item-remove {
+    background: var(--poll-accent-red);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.file-item-remove:hover {
+    background: #c82333;
+}
+
+.file-item-fields {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.file-item-fields > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-item-fields label {
+    margin-bottom: 5px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.file-item-fields select,
+.file-item-fields textarea {
+    padding: 6px 8px;
+    border: 1px solid var(--theme-border-color);
+    border-radius: 4px;
+    background: var(--container-bg);
+    color: var(--primary-text-color);
+    font-size: 0.85rem;
+    transition: border-color 0.2s ease;
+}
+
+.file-item-fields select:focus,
+.file-item-fields textarea:focus {
+    outline: none;
+    border-color: var(--theme-link-color);
+}
+
+.file-item-fields textarea {
+    min-height: 60px;
+    resize: vertical;
+}
+
+/* Upload Status */
+.upload-status {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.upload-status.upload-pending {
+    background: rgba(var(--theme-accent-color--rgb), 0.1);
+    color: var(--theme-accent-color);
+    border: 1px solid var(--theme-accent-color);
+}
+
+.upload-status.upload-success {
+    background: rgba(40, 167, 69, 0.1);
+    color: var(--poll-accent-green);
+    border: 1px solid var(--poll-accent-green);
+}
+
+.upload-status.upload-error {
+    background: rgba(220, 53, 69, 0.1);
+    color: var(--poll-accent-red);
+    border: 1px solid var(--poll-accent-red);
+}
+
+/* Progress Section */
+.bulk-upload-progress {
+    background: var(--surface-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--theme-border-color);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--theme-page-background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid var(--theme-border-color);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--theme-link-color), var(--theme-link-color-hover));
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.progress-text {
+    text-align: center;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Actions Section */
+.bulk-upload-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    padding-top: 20px;
+    border-top: 1px solid var(--theme-border-color);
+    flex-shrink: 0;
+}
+
+.bulk-upload-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+#start-upload {
+    background: var(--theme-link-color);
+    color: white;
+}
+
+#start-upload:hover:not(:disabled) {
+    background: var(--theme-link-color-hover);
+}
+
+#start-upload:disabled {
+    background: var(--theme-border-color);
+    color: var(--secondary-text-color);
+    cursor: not-allowed;
+}
+
+#cancel-upload {
+    background: var(--poll-accent-red);
+    color: white;
+}
+
+#cancel-upload:hover {
+    background: #c82333;
+}
+
+/* Disabled State */
+.bulk-upload-modal input:disabled,
+.bulk-upload-modal select:disabled,
+.bulk-upload-modal textarea:disabled,
+.bulk-upload-modal button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .bulk-upload-modal {
+        padding: 10px;
+    }
+    
+    .bulk-upload-container {
+        max-height: 95vh;
+    }
+    
+    .bulk-upload-header {
+        padding: 15px;
+    }
+    
+    .bulk-upload-content {
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .bulk-upload-global-settings,
+    .bulk-upload-files,
+    .bulk-upload-progress {
+        padding: 15px;
+    }
+    
+    .file-item-fields {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .bulk-upload-actions {
+        flex-direction: column;
+    }
+    
+    .bulk-upload-actions button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .bulk-upload-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .file-item {
+        padding: 10px;
+    }
+    
+    .file-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .file-item-name {
+        margin-right: 0;
+    }
+}
+
+/* Scrollbar Styling */
+#file-list::-webkit-scrollbar,
+.bulk-upload-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+#file-list::-webkit-scrollbar-track,
+.bulk-upload-content::-webkit-scrollbar-track {
+    background: var(--theme-page-background-color);
+}
+
+#file-list::-webkit-scrollbar-thumb,
+.bulk-upload-content::-webkit-scrollbar-thumb {
+    background: var(--theme-border-color);
+    border-radius: 4px;
+}
+
+#file-list::-webkit-scrollbar-thumb:hover,
+.bulk-upload-content::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-text-color);
+}
+
+/* Animation for modal appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.bulk-upload-modal[style*="block"] .bulk-upload-container {
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Focus styles for accessibility */
+.bulk-upload-modal *:focus {
+    outline: 2px solid var(--theme-link-color);
+    outline-offset: 2px;
+}
+
+.bulk-upload-modal button:focus,
+.bulk-upload-modal select:focus,
+.bulk-upload-modal input:focus,
+.bulk-upload-modal textarea:focus {
+    outline-offset: 1px;
+}
