@@ -545,6 +545,15 @@ table.album-track-table {
         color: var(--primary-text-color);
     }
 
+    /* On desktop the column header says who this is; the mobile card has no
+       header row, so label it like the credit line above it. Not on the
+       pre-migration tables, whose third column is not always the singer. */
+    .album-tracklist:not(.album-track-legacy) .album-track-table td:nth-child(3)::before {
+        content: "utaite:";
+        margin-right: .3em;
+        color: var(--secondary-text-color);
+    }
+
     .album-track-table td:nth-child(n + 4) {
         display: none;
     }

@@ -697,27 +697,6 @@ function p._legacyTrackLine(track)
   return mw.text.trim(track.n or '') .. '. "' .. track.title .. '" <small>' .. small .. '</small><small>' .. credit .. '</small>'
 end
 
---- PortableInfobox parses its markup as XML, so a bare "&" (as in "STAIN &
--- RAIN") drops the whole item. Escape it; entities like &nbsp; stay as they are.
--- The old template never hit this because its values were substituted later.
-function p._xmlSafe(s)
-  s = (s or ''):gsub('&', '&amp;')
-  return (s:gsub('&amp;(#?%w+;)', '&%1'))
-end
-
---- A PortableInfobox <data> row holding an already rendered value. source=""
--- keeps the infobox from looking the value up in the frame's own arguments.
-local function piData(value)
-  if value == '' then return '' end
-  return '<data source=""><default>' .. p._xmlSafe(value) .. '</default></data>\n'
-end
-
-local function piImage(file)
-  file = p._clean(file)
-  if file == '' then return '' end
-  return '<image source=""><default>' .. p._xmlSafe(file) .. '</default></image>\n'
-end
-
 --- Template:Anchor's output, built here: passing a title through
 -- {{anchor|...}} breaks when it holds "=", as in an external link's URL.
 local function anchorDiv(text)
@@ -725,34 +704,46 @@ local function anchorDiv(text)
   return '<div id="' .. id .. '" class="hide"></div>'
 end
 
---- Builds the legacy markup. `expand` preprocesses wikitext (frame:preprocess);
--- the infobox tags must be parsed for PortableInfobox to load its styles.
-function p._legacy(args, expand)
+--- Builds the legacy design as the old template did it: infobox markup that
+-- only refers to its values ({{{name}}}, source="name"), plus the values as
+-- arguments of the frame that parses it. PortableInfobox parses its markup as
+-- XML, so values written into it inline break on "&" and the like (an image
+-- named "Stain & Rain.png" fails in every escaped form); as arguments they
+-- reach it untouched. Frame-free: returns the pieces, p.main assembles them.
+function p._legacyParts(args)
   args = args or {}
-  expand = expand or function(s) return s end
+  local values = {}
+  local function put(name, value)
+    value = value or ''
+    if value ~= '' then values[name] = value end
+    return value ~= ''
+  end
+
   local title = p._clean(args.albumtitle)
   if title == '' then title = displayTitle(args) end
+  put('albumtitle', title)
 
   -- The old template's three link anchors: the title up to '~', up to '(',
-  -- and whole (for #Album_name links from other pages).
+  -- and whole. Like its {{#sub:}}, an empty prefix means the whole title.
   local anchors = ''
   local raw = p._clean(args.albumtitle)
   if raw ~= '' then
     local function upTo(ch)
       local at = mw.ustring.find(raw, ch, 1, true)
-      return at and mw.ustring.sub(raw, 1, at - 1) or raw
+      return (at and at > 1) and mw.ustring.sub(raw, 1, at - 1) or raw
     end
     anchors = anchorDiv(upTo('~')) .. anchorDiv(upTo('(')) .. anchorDiv(raw) .. '\n'
   end
 
+  local image = put('image', p._clean(args.image)) and '<image source="image"/>\n' or ''
   local alts = {}
   for _, key in ipairs({ 'imagealt', 'imagealt1', 'imagealt2', 'image3', 'imagealt3', 'image4', 'imagealt4', 'image5' }) do
-    local img = piImage(args[key])
-    if img ~= '' then alts[#alts + 1] = img end
+    if put(key, p._clean(args[key])) then alts[#alts + 1] = '<image source="' .. key .. '"/>\n' end
   end
 
   local yt, nnd = p._clean(args.crossfadeyt), p._clean(args.crossfadennd)
-  local crossfade = '<center>Crossfade: '
+  -- wikitext: p.main expands it before handing it over
+  values.crossfade = '<center>Crossfade: '
     .. (yt ~= '' and ('[[File:yt.png|link=http://www.youtube.com/watch?v=' .. yt .. ']]') or '[[File:NoYt.png|link=]]')
     -- 1= so an "=" in the value (editors paste full URLs) stays the argument
     .. (nnd ~= '' and ('{{nnd|1=' .. nnd .. '}}') or '[[File:NoNv.png|link=]]')
@@ -761,38 +752,44 @@ function p._legacy(args, expand)
   local descr = p._clean(args.albumdescr)
   if descr == '' then descr = p._clean(args.intro) end
   local artist, released = p._clean(args.albumartist), p._clean(args.datereleased)
+  put('albumdescr', descr ~= '' and ('<center>' .. descr .. '</center>') or '')
+  put('albumartist', artist ~= '' and ('<center>Illust. by ' .. artist .. '</center>') or '')
+  put('datereleased', released ~= '' and ('<center>Released on ' .. released .. '</center>') or '')
 
-  local function orNone(value, none)
+  local function listOr(name, value)
     value = p._clean(value)
-    return (value ~= '' and (value .. NBSP) or none)
+    put(name, value ~= '' and (value .. NBSP) or '')
   end
-  local shops = p._clean(args.jpshops) .. p._clean(args.shops)
+  listOr('streams', args.streams)
+  listOr('shops', p._clean(args.jpshops) .. p._clean(args.shops))
+  listOr('download', args.download or args.downloads)
 
-  local album = '<infobox theme="album">\n<group>\n<header>' .. p._xmlSafe(title) .. '</header>\n'
-    .. piImage(args.image) .. '</group>\n'
+  local album = '<infobox theme="album">\n<group>\n<header>{{{albumtitle}}}</header>\n' .. image .. '</group>\n'
     .. (#alts > 0 and ('<group collapse="closed">\n<header>Alternative CD covers</header>\n' .. table.concat(alts) .. '</group>\n') or '')
     .. '<group row-items="1">\n'
-    .. piData(descr ~= '' and ('<center>' .. descr .. '</center>') or '')
-    .. piData(artist ~= '' and ('<center>Illust. by ' .. artist .. '</center>') or '')
-    .. piData(released ~= '' and ('<center>Released on ' .. released .. '</center>') or '')
-    .. piData(crossfade)
+    .. '<data source="albumdescr"/>\n<data source="albumartist"/>\n<data source="datereleased"/>\n<data source="crossfade"/>\n'
     .. '</group>\n<group>\n'
-    .. '<header>Streaming Services</header>\n' .. piData(orNone(args.streams, 'No streaming media available yet'))
-    .. '<header>Shops</header>\n' .. piData(orNone(shops, 'No shops available yet'))
-    .. '<header>Downloads</header>\n' .. piData(orNone(args.download or args.downloads, 'No downloads available yet'))
+    .. '<header>Streaming Services</header>\n<data source="streams"><default>No streaming media available yet</default></data>\n'
+    .. '<header>Shops</header>\n<data source="shops"><default>No shops available yet</default></data>\n'
+    .. '<header>Downloads</header>\n<data source="download"><default>No downloads available yet</default></data>\n'
     .. '</group>\n</infobox>'
 
   local tracks = p._collectTracks(args)
   local rows = {}
   local sectioned = p._groupMode(tracks, args.groupstyle) == 'section'
-  local current
-  for _, t in ipairs(tracks) do
+  local current, groups = nil, 0
+  for i, t in ipairs(tracks) do
     -- Disc/edition groups become headers inside the tracklist box.
     if sectioned and p._clean(t.group) ~= current then
       current = p._clean(t.group)
-      if current ~= '' then rows[#rows + 1] = '<header>' .. p._xmlSafe(current) .. '</header>\n' end
+      if current ~= '' then
+        groups = groups + 1
+        put('group' .. groups, current)
+        rows[#rows + 1] = '<header>{{{group' .. groups .. '}}}</header>\n'
+      end
     end
-    rows[#rows + 1] = piData(p._legacyTrackLine(t))
+    put('track' .. i .. 'title', p._legacyTrackLine(t))
+    rows[#rows + 1] = '<data source="track' .. i .. 'title"/>\n'
   end
   local tracklist = '<infobox theme="tracklist">\n<group collapse="open">\n<header>Tracklist</header>\n'
     .. table.concat(rows) .. '</group>\n</infobox>'
@@ -803,13 +800,26 @@ function p._legacy(args, expand)
   if suffix == '' then suffix = p._clean(args.tss) end
   local notes = p._clean(args.notes)
 
-  return '<div class="album album-legacy">' .. p._anchor(args) .. expand(anchors
-    .. (prefix ~= '' and (prefix .. '\n') or '')
-    .. '<div style="float:left; clear:left; margin:auto">' .. album .. '</div>'
-    .. '<div style="float:left; clear:right; margin:auto;" class="tracklist-wrapper">' .. tracklist .. '</div>'
-    .. '{{clr}}'
-    .. (suffix ~= '' and ('\n' .. suffix) or '')
-    .. (notes ~= '' and ('\n' .. notes) or ''))
+  return {
+    anchor = p._anchor(args),
+    before = anchors .. (prefix ~= '' and (prefix .. '\n') or ''),
+    boxes = '<div style="float:left; clear:left; margin:auto">' .. album .. '</div>'
+      .. '<div style="float:left; clear:right; margin:auto;" class="tracklist-wrapper">' .. tracklist .. '</div>',
+    after = '{{clr}}' .. (suffix ~= '' and ('\n' .. suffix) or '') .. (notes ~= '' and ('\n' .. notes) or ''),
+    values = values,
+  }
+end
+
+--- Assembles the legacy design: the infobox markup is parsed in a child frame
+-- whose arguments are the values, exactly like a template's own parameters.
+local function renderLegacyDesign(frame, args)
+  local parts = p._legacyParts(args)
+  parts.values.crossfade = frame:preprocess(parts.values.crossfade)
+  local child = frame:newChild{ title = frame:getTitle(), args = parts.values }
+  return '<div class="album album-legacy">' .. parts.anchor
+    .. frame:preprocess(parts.before)
+    .. child:preprocess(parts.boxes)
+    .. frame:preprocess(parts.after)
     .. '</div>'
 end
 
@@ -817,7 +827,7 @@ end
 function p.main(frame)
   local args = require('Module:Arguments').getArgs(frame)
   if string.lower(p._clean(args.variant)) == 'legacy' then
-    return p._legacy(args, function(wikitext) return frame:preprocess(wikitext) end)
+    return renderLegacyDesign(frame, args)
   end
   local root = mw.title.getCurrentTitle().rootText
   local built = p._build(args, root, function(wikitext)
