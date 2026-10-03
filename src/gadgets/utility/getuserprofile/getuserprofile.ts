@@ -1,113 +1,107 @@
+// @keep-use-strict: live runs this strict (see plugins/preserve-use-strict.ts)
+"use strict";
 /**
  * Avatar Fetcher Gadget
- * Scans for .useravatar-container elements, places placeholders, 
- * and batches API requests to fetch real avatars.
+ * Scans for .useravatar-container elements, shows a placeholder, then swaps in each
+ * user's UserProfileV2 avatar.
+ *
+ * list=queryuserprofilev2 (extension UserProfileV2) takes exactly ONE user per request
+ * (param `user_name`). It has no batch mode: `us_users` doesn't exist (-> missingparam)
+ * and a pipe-separated user_name crashes the API. So: one request per unique user, a few
+ * at a time, cached for the browser session. Unknown users simply keep the placeholder.
  */
-
-interface UserProfileItem {
-    name: string;
-    'profile-avatar': string; // Key specific to SocialProfile/queryuserprofilev2
-    [key: string]: unknown;
-}
-
-interface ApiUserProfileResponse {
-    query?: {
-        queryuserprofilev2?: UserProfileItem[];
-    };
-}
-
-interface MwApi {
-    get: (params: Record<string, unknown>) => JQuery.Promise<ApiUserProfileResponse>;
-}
-
-declare const mw: {
-    hook: (name: string) => {
-        add: (handler: (content: JQuery<HTMLElement>) => void) => void;
-    };
-    Api: new () => MwApi;
-    loader: {
-        using: (modules: string[]) => JQuery.Promise<void>;
-    };
-};
-
-declare const mediaWiki: typeof mw;
-
-(function (mw: typeof mediaWiki, $: JQueryStatic): void {
+(function (mw, $) {
     'use strict';
-
-    const BATCH_SIZE = 50;
-
-    // Map username to list of jQuery elements waiting for that avatar
-    type UserMap = Record<string, JQuery<HTMLElement>[]>;
-
-    /**
-     * Fetches avatar URLs for a batch of users and updates the DOM.
-     */
-    function fetchAvatars(userList: string[], userMap: UserMap): void {
-        const api = new mw.Api();
-
-        api.get({
-            action: 'query',
-            format: 'json',
-            list: 'queryuserprofilev2',
-            us_users: userList.join('|')
-        }).then(function (data: ApiUserProfileResponse): void {
-            if (!data.query || !data.query.queryuserprofilev2) return;
-
-            // Use requestAnimationFrame to batch DOM updates for performance
-            requestAnimationFrame(function (): void {
-                const results = data.query?.queryuserprofilev2 || [];
-
-                results.forEach(function (userData: UserProfileItem): void {
-                    const name = userData.name;
-                    const avatarUrl = userData['profile-avatar'];
-
-                    if (avatarUrl && userMap[name]) {
-                        userMap[name].forEach(function ($el: JQuery<HTMLElement>): void {
-                            const $img = $el.find('img');
-                            // Update src and remove loading class
-                            $img.attr('src', avatarUrl).removeClass('useravatar-loading');
-                        });
-                        // Clean up map entry
-                        delete userMap[name]; 
-                    }
-                });
+    // Site logo as a thumbnail: the original is 1106px wide, far too big for a 20px avatar
+    const PLACEHOLDER_THUMB = 'https://static.wikitide.net/utaitewiki/thumb/e/e6/Site-logo.png/';
+    const MAX_PARALLEL = 4;
+    const CACHE_KEY = 'utaite-useravatar-v1';
+    // username -> avatar URL, or '' when the user has none / doesn't exist here
+    const cache = loadCache();
+    // username -> elements still waiting for that avatar
+    const waiting = {};
+    const queue: any = [];
+    let running = 0;
+    function loadCache() {
+        try {
+            return JSON.parse(sessionStorage.getItem(CACHE_KEY) || '{}');
+        }
+        catch (e) {
+            return {};
+        }
+    }
+    function saveCache() {
+        try {
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+        }
+        catch (e) {
+            // storage full or blocked: the in-memory cache still works for this page
+        }
+    }
+    function extractAvatar(data: any) {
+        const q = data && data.query;
+        const item = Array.isArray(q) ? q[0] : (q && q.queryuserprofilev2 ? q.queryuserprofilev2[0] : undefined);
+        let url = item && typeof item['profile-avatar'] === 'string' ? item['profile-avatar'] : '';
+        if (url.indexOf('//') === 0) {
+            url = 'https:' + url;
+        }
+        return url;
+    }
+    function apply(username: any) {
+        const url = cache[username];
+        const $els = (waiting as any)[username] || [];
+        delete (waiting as any)[username];
+        requestAnimationFrame(function () {
+            $els.forEach(function ($el: any) {
+                const $img = $el.find('img').removeClass('useravatar-loading');
+                // data-fallback ({{GetUserAvatar|fallback=File.png}}) covers users with no
+                // account here, or only the extension's default avatar
+                const fallback = String($el.data('fallback') || '');
+                const src = url && !/\/default\.png(\?|$)/.test(url) ? url : (fallback || url);
+                if (src) {
+                    $img.attr('src', src); // otherwise the placeholder logo stays
+                }
             });
-        }).catch(function (err: unknown): void {
-            console.error('Avatar batch failed', err);
         });
     }
-
-    /**
-     * Main processor called on page load or content refresh (e.g., Live Preview)
-     */
-    function processAvatars($content: JQuery<HTMLElement>): void {
+    function pump() {
+        while (running < MAX_PARALLEL && queue.length) {
+            const username = queue.shift();
+            running++;
+            new mw.Api().get({
+                action: 'query',
+                format: 'json',
+                list: 'queryuserprofilev2',
+                user_name: username
+            }).then(function (data) {
+                cache[username] = extractAvatar(data);
+            }, function (code) {
+                // e.g. userprofilev2-apierror-invalidusername: no local account with that name.
+                // Remember it so we don't ask again this session; not worth a console error.
+                cache[username] = '';
+                console.debug('[getuserprofile] no avatar for', username, code);
+            }).always(function () {
+                running--;
+                saveCache();
+                apply(username);
+                pump();
+            });
+        }
+    }
+    function processAvatars($content: any) {
         const $containers = $content.find('.useravatar-container').not('.processed');
-        if ($containers.length === 0) return;
-
+        if ($containers.length === 0)
+            return;
         $containers.addClass('processed');
-
-        const userMap: UserMap = {};
-        const uniqueUsers: string[] = [];
-
-        $containers.each(function (): void {
+        $containers.each(function () {
             const $el = $(this);
-            const username = $el.data('username') as string | undefined;
-
-            if (!username) return;
-
-            if (!userMap[username]) {
-                userMap[username] = [];
-                uniqueUsers.push(username);
-            }
-            userMap[username].push($el);
-
-            const size = ($el.data('size') as number) || 138;
-            const radius = ($el.data('radius') as string) || '50%';
-
-            // Create placeholder immediately
+            const username = String($el.data('username') || '').trim();
+            if (!username)
+                return;
+            const size = $el.data('size') || 138;
+            const radius = $el.data('radius') || '50%';
             const $placeholder = $('<img>', {
-                src: 'https://static.wikitide.net/utaitewiki/e/e6/Site-logo.png',
+                src: PLACEHOLDER_THUMB + (size <= 80 ? '80px' : '160px') + '-Site-logo.png',
                 class: 'useravatar-img useravatar-loading',
                 alt: username
             }).css({
@@ -115,22 +109,25 @@ declare const mediaWiki: typeof mw;
                 height: size + 'px',
                 borderRadius: radius,
                 display: 'inline-block',
-                verticalAlign: 'middle'
+                verticalAlign: 'middle',
+                objectFit: 'cover'
             });
-
             $el.empty().append($placeholder);
+            const isNew = !(waiting as any)[username];
+            ((waiting as any)[username] = (waiting as any)[username] || []).push($el);
+            if (Object.prototype.hasOwnProperty.call(cache, username)) {
+                apply(username);
+            }
+            else if (isNew && queue.indexOf(username) === -1) {
+                queue.push(username);
+            }
         });
-
-        // Batch requests
-        for (let i = 0; i < uniqueUsers.length; i += BATCH_SIZE) {
-            const batch = uniqueUsers.slice(i, i + BATCH_SIZE);
-            fetchAvatars(batch, userMap);
-        }
+        pump();
     }
-
     // Ensure API module is loaded before attaching hook
-    mw.loader.using(['mediawiki.api']).then(function (): void {
+    mw.loader.using(['mediawiki.api']).then(function () {
         mw.hook('wikipage.content').add(processAvatars);
     });
-
 })(mediaWiki, jQuery);
+
+export {};

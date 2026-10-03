@@ -1,3 +1,5 @@
+import { initAlbumFilter } from './album-filter.js';
+
 // ====================
 // Type Definitions
 // ====================
@@ -25,13 +27,16 @@ interface ColumnWidthCalc {
 }
 
 interface DataTableOptions {
-  responsive?: {
-    details?: {
-      type?: string;
-      target?: string;
-    };
-  };
+  responsive?:
+    | false
+    | {
+        details?: {
+          type?: string;
+          target?: string;
+        };
+      };
   autoWidth?: boolean;
+  deferRender?: boolean;
   scrollX?: boolean;
   pageLength?: number;
   layout?: {
@@ -149,6 +154,7 @@ interface JQuery<TElement = HTMLElement> {
   prop(name: string, value: boolean): JQuery<TElement>;
   on(events: string, handler: (event: Event, ...args: unknown[]) => void): JQuery<TElement>;
   on(events: string, selector: string, handler: (this: TElement, event: Event) => void): JQuery<TElement>;
+  one(events: string, handler: (event: Event, ...args: unknown[]) => void): JQuery<TElement>;
   off(events: string): JQuery<TElement>;
   prependTo(target: JQuery<TElement> | string): JQuery<TElement>;
   appendTo(target: JQuery<TElement> | string): JQuery<TElement>;
@@ -189,6 +195,10 @@ declare global {
     __dtLibLoading?: boolean;
     __dtUrlSearchPopstateBound?: boolean;
     previousViewportConfig?: ViewportConfig;
+    /** Supplied by a separate songlist gadget when it is loaded. */
+    SonglistRenderer?: {
+      getOptions(table: JQuery): Partial<DataTableOptions>;
+    };
   }
 }
 
@@ -208,7 +218,8 @@ interface JQueryFactory extends JQueryStatic {
   // Early return for mobile
   if (
     document.body.classList.contains('mw-mf') ||
-    document.body.classList.contains('is-mobile-device')
+    document.body.classList.contains('is-mobile-device') ||
+    window.innerWidth < 768
   ) {
     return;
   }
@@ -216,15 +227,14 @@ interface JQueryFactory extends JQueryStatic {
   // Constants
   const MOBILE_BREAKPOINT = 1024;
   const URL_SEARCH_PARAM_KEY = 'searchName';
-  const DATATABLES_GADGET_URL = 'https://utaite.wiki/wiki/MediaWiki:Gadget-Datatables.js?action=raw';
+  // Same-origin, cacheable raw URL; bump v= when Gadget-Datatables.js changes
+  const DATATABLES_GADGET_URL = '/w/index.php?title=MediaWiki:Gadget-Datatables.js&action=raw&ctype=text/javascript&maxage=2592000&smaxage=2592000&v=dt-2.3.4';
 
   // Configuration flags
   const DISABLE_REBUILD_ON_RESIZE = true;
   const INLINE_COLUMN_TOGGLES = true;
 
   // State
-  let initialized = false;
-  let queue: JQuery[] = [];
   const processedTables = new WeakMap<HTMLElement, boolean>();
 
   // Track DT lib loading
@@ -647,34 +657,27 @@ interface JQueryFactory extends JQueryStatic {
   // --------------------------
   // Inline Column Visibility
   // --------------------------
+  /**
+   * Column-visibility control, ported from the live gadget.
+   *
+   * Prod is the source of truth here: this was rewritten on-wiki from an
+   * inline toggle row into a dropdown panel, and the repo never received it.
+   * Kept faithful to the live behaviour rather than re-designed.
+   */
   const renderInlineColumnToggles = ($table: JQuery, dataTable: DataTableApi): void => {
     try {
       const $container = $(dataTable.table().container());
-
-      // Remove existing UI to prevent duplicates
       $container.find('.dt-colvis-row, .dt-colvis-inline').remove();
 
-      // Inject minimal CSS once
-      if (!document.getElementById('dt-colvis-inline-styles')) {
-        const styleContent = `
-          .dt-colvis-inline{display:flex;flex-wrap:wrap;gap:.25rem .75rem;align-items:center;margin:0}
-          .dt-colvis-inline .col-toggle{display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;white-space:nowrap}
-          .dt-colvis-inline .dt-colvis-title{font-weight:600;margin-right:.5rem}
-          .dt-colvis-inline .dt-colvis-reset{margin-left:.5rem;cursor:pointer;text-decoration:underline;font-size:.85em;color:inherit;opacity:.8}
-          .dt-colvis-inline input[type=checkbox]{margin:0}
-          .dt-colvis-row{margin-top:.35rem;width:100%}
-          .dt-colvis-row .dt-layout-cell{flex:1 1 100%}
-        `;
-        $('<style id="dt-colvis-inline-styles">')
-          .text(styleContent)
-          .appendTo('head');
-      }
-
-      const $wrapper = $(
-        '<div class="dt-colvis-inline" role="group" aria-label="Column visibility"></div>'
-      );
       const $headers = $table.find('thead th');
       const initialVis: boolean[] = [];
+
+      const tableId = $table.attr('id') || 'dt-' + Math.random().toString(36).slice(2);
+      const panelId = 'dt-colvis-panel-' + tableId.replace(/[^a-zA-Z0-9]/g, '_');
+      // Unique event namespace so each table can clean up independently.
+      const ns = '.colvis_' + panelId;
+
+      const $panel = $('<div class="dt-colvis-panel" hidden></div>').attr('id', panelId);
 
       dataTable.columns().every(function (this: DataTableColumnApi, idx: number) {
         const $th = $($headers.get(idx));
@@ -682,22 +685,18 @@ interface JQueryFactory extends JQueryStatic {
 
         initialVis[idx] = this.visible() as boolean;
         const title = $th.text().trim() || `Column ${idx + 1}`;
-        const id = `${$table.attr('id') || 'dt'}-colvis-${idx}`;
-
+        const checkId = `${tableId}-colvis-${idx}`;
         const $checkbox = $('<input type="checkbox" />')
-          .attr('id', id)
+          .attr('id', checkId)
           .attr('data-col-index', String(idx))
           .prop('checked', initialVis[idx]);
-
-        const $label = $('<label class="col-toggle" />')
+        const $label = $('<label class="dt-colvis-item" />')
           .append($checkbox)
-          .append($('<span/>').text(title));
-
-        $wrapper.append($label);
+          .append($('<span>').text(title));
+        $panel.append($label);
       });
 
-      // Reset link
-      const $reset = $('<a class="dt-colvis-reset" href="javascript:void(0)">Reset</a>').on(
+      const $reset = $('<button type="button" class="dt-colvis-reset">Reset</button>').on(
         'click',
         () => {
           dataTable.columns().every(function (this: DataTableColumnApi, i: number) {
@@ -706,24 +705,68 @@ interface JQueryFactory extends JQueryStatic {
             this.visible(initialVis[i], false);
           });
           dataTable.columns().adjust().draw(false);
-
           if (dataTable.responsive && dataTable.responsive.recalc) {
             dataTable.responsive.recalc();
           }
-        }
+          $panel.find('input[data-col-index]').each(function (this: HTMLElement) {
+            const input = this as HTMLInputElement;
+            const i = parseInt(input.getAttribute('data-col-index') || '0', 10);
+            input.checked = !!initialVis[i];
+          });
+        },
       );
+      $panel.append($reset);
 
-      $wrapper.prepend('<span class="dt-colvis-title">Columns:</span>');
-      $wrapper.append($reset);
+      const $btn = $(
+        '<button type="button" class="dt-colvis-btn" aria-haspopup="true" aria-expanded="false">Columns</button>',
+      );
+      const $wrapper = $('<div class="dt-colvis-wrapper"></div>').append($btn).append($panel);
 
-      // Insert UI below top controls
+      $btn.on('click', function (e: Event) {
+        e.stopPropagation();
+        const opening = !!$panel.prop('hidden');
+        $panel.prop('hidden', !opening);
+        $btn.attr('aria-expanded', opening ? 'true' : 'false');
+        $btn.toggleClass('is-open', opening);
+      });
+
+      $(document).on('click' + ns, function () {
+        $panel.prop('hidden', true);
+        $btn.attr('aria-expanded', 'false').removeClass('is-open');
+      });
+
+      $panel.on('click', function (e: Event) {
+        e.stopPropagation();
+      });
+
+      $panel.on('change', 'input[data-col-index]', function (this: HTMLElement) {
+        const input = this as HTMLInputElement;
+        const colIdx = parseInt(input.getAttribute('data-col-index') || '0', 10);
+        dataTable.column(colIdx).visible(input.checked, false);
+        dataTable.columns().adjust().draw(false);
+        if (dataTable.responsive && dataTable.responsive.recalc) {
+          dataTable.responsive.recalc();
+        }
+      });
+
+      $table
+        .off('.colvisInline')
+        .on('column-visibility.dt.colvisInline', (_e: Event, ...args: unknown[]) => {
+          const columnIdx = args[1] as number;
+          const state = args[2] as boolean;
+          $panel.find(`input[data-col-index="${columnIdx}"]`).prop('checked', !!state);
+        });
+
+      $table.one('destroy.dt' + ns, function () {
+        $(document).off('click' + ns);
+      });
+
       const $tableLayout = $container.find('.dt-layout-table');
       const $row = $('<div class="dt-layout-row dt-colvis-row"></div>');
-      const $cell = $('<div class="dt-layout-cell dt-layout-start dt-colvis-cell"></div>').appendTo(
-        $row
-      );
+      const $cell = $(
+        '<div class="dt-layout-cell dt-layout-start dt-colvis-cell"></div>',
+      ).appendTo($row);
       $cell.append($wrapper);
-
       if ($tableLayout.length) {
         $row.insertBefore($tableLayout);
       } else {
@@ -734,30 +777,8 @@ interface JQueryFactory extends JQueryStatic {
           $container.append($row);
         }
       }
-
-      // Handle checkbox changes
-      $row.on('change', 'input[type=checkbox][data-col-index]', function (this: HTMLElement) {
-        const input = this as HTMLInputElement;
-        const colIdx = parseInt(input.getAttribute('data-col-index') || '0', 10);
-        
-        dataTable.column(colIdx).visible(input.checked, false);
-        dataTable.columns().adjust().draw(false);
-
-        if (dataTable.responsive && dataTable.responsive.recalc) {
-          dataTable.responsive.recalc();
-        }
-      });
-
-      // Keep checkboxes in sync
-      $table.off('.colvisInline');
-      $table.on(
-        'column-visibility.dt.colvisInline',
-        (_e: Event, _settings: DataTableSettings, columnIdx: number, state: boolean) => {
-          $row.find(`input[data-col-index="${columnIdx}"]`).prop('checked', !!state);
-        }
-      );
     } catch (e) {
-      console.warn('Inline ColVis failed:', e);
+      console.warn('ColVis dropdown failed:', e);
     }
   };
 
@@ -820,15 +841,23 @@ interface JQueryFactory extends JQueryStatic {
       processedTables.set($table.get(0), true);
       if (!prepareTable($table)) return;
 
+      // Songlist tables ship with a separate mobile view and explicit header
+      // widths, so skip the responsive plugin and the autoWidth measurement
+      // pass. deferRender limits initial DOM creation to visible rows only.
+      const isSonglist = /\bdt-songlist-/.test($table.attr('class') || '');
+
       // Build options
       const options: DataTableOptions = {
-        responsive: {
-          details: {
-            type: 'inline',
-            target: 'tr',
-          },
-        },
-        autoWidth: true,
+        responsive: isSonglist
+          ? false
+          : {
+              details: {
+                type: 'inline',
+                target: 'tr',
+              },
+            },
+        autoWidth: !isSonglist,
+        deferRender: isSonglist,
         scrollX: false,
         pageLength: viewportConfig.pageLength,
         layout: {
@@ -848,6 +877,12 @@ interface JQueryFactory extends JQueryStatic {
           },
         },
       };
+
+      // Songlist tables supply their own DataTables options through a
+      // separate gadget, when that gadget is loaded.
+      if (isSonglist && window.SonglistRenderer) {
+        Object.assign(options, window.SonglistRenderer.getOptions($table));
+      }
 
       // Fixed widths opt-in
       const wantsFixedWidths =
@@ -949,9 +984,14 @@ interface JQueryFactory extends JQueryStatic {
       // Final adjustments
       setTimeout(() => {
         try {
-          dataTable.columns().adjust().draw(false);
-          if (dataTable.responsive && dataTable.responsive.recalc) {
-            dataTable.responsive.recalc();
+          // adjust() is a no-op when autoWidth is off and responsive.recalc()
+          // is unnecessary when the plugin is disabled, so skip both for
+          // songlists.
+          if (!isSonglist) {
+            dataTable.columns().adjust().draw(false);
+            if (dataTable.responsive && dataTable.responsive.recalc) {
+              dataTable.responsive.recalc();
+            }
           }
 
           if (wantsFixedWidths && options.columns) {
@@ -985,6 +1025,15 @@ interface JQueryFactory extends JQueryStatic {
       $(this).addClass('dataTable-processed datatable-loaded');
       processTable($(this));
     });
+
+    // Sectioned album tracklists deliberately carry no DataTables instance —
+    // section headers would be sorted as data rows — so they get their own
+    // chip and text filter instead.
+    $content
+      .find('.album-tracklist[data-sectioned="true"]')
+      .each(function (this: HTMLElement) {
+        initAlbumFilter(this);
+      });
   };
 
   // --------------------------
@@ -1191,45 +1240,49 @@ interface JQueryFactory extends JQueryStatic {
   $(window as unknown as HTMLElement).on('resize', handleResize);
 
   // --------------------------
-  // Initial boot
+  // Boot: the ~460 KB library is fetched only on pages that have a table
   // --------------------------
-  const finishInit = (): void => {
-    registerTrackNumberSort();
-    initialized = true;
+  const TABLE_SELECTOR = 'table.dataTable, table.datatable';
+  let sortRegistered = false;
 
-    // Process queued content
-    queue.forEach(($content) => {
-      process($content);
-    });
-
-    queue = [];
-    mw.hook('datatables.loaded').fire();
-    console.log('DataTables Helper initialization complete.');
+  const onLibReady = (): void => {
+    if (!sortRegistered) {
+      registerTrackNumberSort();
+      sortRegistered = true;
+    }
   };
 
-  const initialize = (): void => {
+  const handleContent = ($c: JQuery): void => {
+    // No tables: still run the album filters (they don't need DataTables), skip the library.
+    if (!$c.find(TABLE_SELECTOR).length) {
+      process($c);
+      return;
+    }
+    // Library already loaded: stay synchronous. SonglistCRUD relies on this
+    // when refreshTable re-fires wikipage.content.
+    if ($.fn && $.fn.DataTable) {
+      onLibReady();
+      process($c);
+      return;
+    }
+    // First table on this page view: load the library, then set up the tables.
     ensureDataTablesLib().then(
       () => {
-        finishInit();
+        onLibReady();
+        process($c);
+        mw.hook('datatables.loaded').fire();
+        console.log('DataTables Helper initialization complete.');
       },
       () => {
-        finishInit();
+        process($c);
       }
     );
   };
 
-  mw.loader.using(['jquery']).then(initialize);
-
   // --------------------------
   // MediaWiki Hooks
   // --------------------------
-  mw.hook('wikipage.content').add(($c: JQuery) => {
-    if (initialized) {
-      process($c);
-    } else {
-      queue.push($c);
-    }
-  });
+  mw.hook('wikipage.content').add(handleContent);
 
   mw.hook('wikipage.editform').add(cleanup);
 })(jQuery as unknown as JQueryFactory, mediaWiki as unknown as MediaWiki);

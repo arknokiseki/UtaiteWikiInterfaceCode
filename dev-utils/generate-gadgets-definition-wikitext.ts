@@ -29,11 +29,19 @@ export async function writeWikitextFile(gadgetsDefinition: GadgetsDefinition): P
     let s: string[] = [];
     for (const [gadgetSectionName, gadgets] of Object.entries(gadgetsDefinition.gadgets)) {
       s.push(`== ${gadgetSectionName} ==`);
+      let subsection: string | undefined;
       for (const [gadgetName, gadgetDefinition] of Object.entries(gadgets)) {
         const gadgetId = `${gadgetSectionName}/${gadgetName}`;
         if ((enableAll && hmGadgetNames.has(gadgetId)) || (!enableAll && !hmGadgetNames.has(gadgetId))) continue;
         const wikitext = createSingleGadgetDefinitionWikitext(gadgetName, gadgetDefinition);
         if (wikitext !== null) {
+          if (gadgetDefinition.subsection && gadgetDefinition.subsection !== subsection) {
+            s.push(`=== ${gadgetDefinition.subsection} ===`);
+          }
+          subsection = gadgetDefinition.subsection;
+          if (gadgetDefinition.comment) {
+            s.push(formatComment(gadgetDefinition.comment));
+          }
           s.push(wikitext);
         }
       }
@@ -61,12 +69,22 @@ function createSingleGadgetDefinitionWikitext(gadgetName: string, gadgetDefiniti
   gadgetCodeFiles = gadgetCodeFiles
     .map((filename) => resolveFileExtension(filename));
   
-  let resourceLoaderConditions = compileResourceLoaderConditions(resourceLoader);
-  if (resourceLoaderConditions !== null) {
-    resourceLoaderConditions = "|" + resourceLoaderConditions;
-  }
+  const resourceLoaderConditions = compileResourceLoaderConditions(resourceLoader);
+  const flags = resourceLoaderConditions !== null ? `|${resourceLoaderConditions}` : '';
 
-  return `* ${gadgetName}[ResourceLoader${resourceLoaderConditions}]|${gadgetCodeFiles.join('|')}`;
+  const line = `* ${gadgetName}[ResourceLoader${flags}]|${gadgetCodeFiles.join('|')}`;
+  return gadgetDefinition.commentedOut ? `<!-- ${line} -->` : line;
+}
+
+/**
+ * Wrap a note in an HTML comment, indenting continuation lines to line up after "<!-- "
+ *
+ * @param comment
+ * @returns
+ */
+function formatComment(comment: string): string {
+  const lines = comment.trim().split('\n');
+  return `<!-- ${lines.map((line, i) => (i === 0 ? line : `     ${line}`)).join('\n')} -->`;
 }
 
 /**
@@ -94,16 +112,18 @@ function compileResourceLoaderConditions(resourceLoader: ResourceLoaderCondition
     rights: resourceLoader.rights
   }
   
-  if (resourceLoader.default === true) conditions.push('default');
-  if (resourceLoader.hidden === true) conditions.push('hidden');
-  if (!!resourceLoader.type) conditions.push(`type=${resourceLoader.type}`);
-  if (!!resourceLoader.supportsUrlLoad) conditions.push(`supportsUrlLoad=${resourceLoader.supportsUrlLoad}`);
-
-  Object.entries(variablesToNormalize).forEach(([key, variables]) => {
-    if (!!variables) {
-      conditions.push(`${key}=${normalizeVariable(variables)}`);
+  // Keep the order the flags are written in the yaml, so the output can match the
+  // wiki's existing definition line for line
+  for (const key of Object.keys(resourceLoader) as (keyof ResourceLoaderConditions)[]) {
+    if (key === 'default' || key === 'hidden') {
+      if (resourceLoader[key] === true) conditions.push(key);
+    } else if (key === 'type' || key === 'supportsUrlLoad') {
+      if (!!resourceLoader[key]) conditions.push(`${key}=${resourceLoader[key]}`);
+    } else if (key in variablesToNormalize) {
+      const variables = variablesToNormalize[key as keyof typeof variablesToNormalize];
+      if (!!variables) conditions.push(`${key}=${normalizeVariable(variables)}`);
     }
-  });
+  }
 
   return conditions.length > 0 ? conditions.join('|') : null;
 }

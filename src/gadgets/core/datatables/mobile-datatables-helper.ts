@@ -124,7 +124,8 @@ interface MediaWiki {
 (($: JQueryStatic, mw: MediaWiki): void => {
   'use strict';
 
-  const DATATABLES_GADGET_URL = 'https://utaite.wiki/wiki/MediaWiki:Gadget-Mobile-Datatables.js?action=raw';
+  // Same-origin, cacheable raw URL; bump v= when Gadget-Mobile-Datatables.js changes
+  const DATATABLES_GADGET_URL = '/w/index.php?title=MediaWiki:Gadget-Mobile-Datatables.js&action=raw&ctype=text/javascript&maxage=2592000&smaxage=2592000&v=dt-mobile-1';
   
   let libLoaded = false;
   let libLoading = false;
@@ -473,9 +474,10 @@ interface MediaWiki {
   };
 
   const initializeAllTables = (): void => {
-    const tables = Array.from(
+    // Songlist pages carry a desktop copy of each table that stays hidden on mobile
+    const tables = (Array.from(
       document.querySelectorAll('table.dataTable, table.datatable')
-    ) as HTMLElement[];
+    ) as HTMLElement[]).filter((table) => !table.closest('.songlist-desktop'));
 
     if (tables.length === 0) {
       return;
@@ -505,10 +507,25 @@ interface MediaWiki {
       });
   };
 
+  /**
+   * Songlists render both a desktop and a mobile container; on mobile show only the
+   * mobile one (the styles-only SonglistMobile gadget covers the no-JS case).
+   */
+  const applySonglistMobileView = ($content: JQuery | null): void => {
+    const scope = $content ? $content[0] : document;
+    scope.querySelectorAll<HTMLElement>('.songlist-desktop').forEach((el) => {
+      el.style.display = 'none';
+    });
+    scope.querySelectorAll<HTMLElement>('.songlist-mobile').forEach((el) => {
+      el.style.display = 'block';
+    });
+  };
+
   const init = (): void => {
     if (!isMobileView()) {
       return;
     }
+    applySonglistMobileView(null);
     initializeAllTables();
   };
 
@@ -528,18 +545,21 @@ interface MediaWiki {
       return;
     }
 
+    applySonglistMobileView($content);
+    const contentEl = $content[0] as HTMLElement; // JQuery wrapper to Element
+    if (!contentEl) return;
+
+    const tables = (Array.from(
+      contentEl.querySelectorAll('table.dataTable, table.datatable')
+    ) as HTMLElement[]).filter((table) => !table.closest('.songlist-desktop'));
+
+    // No tables on this page: don't download the library at all.
+    if (tables.length === 0) {
+      return;
+    }
+
     ensureDataTablesLib().then(() => {
       addModalStyling();
-      const contentEl = $content[0] as HTMLElement; // JQuery wrapper to Element
-      if (!contentEl) return;
-
-      const tables = Array.from(
-        contentEl.querySelectorAll('table.dataTable, table.datatable')
-      ) as HTMLElement[];
-
-      if (tables.length === 0) {
-        return;
-      }
 
       // Init first table if not already
       if (tables[0] && !$.fn.DataTable.isDataTable(tables[0])) {
@@ -555,6 +575,8 @@ interface MediaWiki {
         }
         setupLazyLoading(tables.slice(1));
       }
+    }).catch((err) => {
+      console.error('Failed to load DataTables:', err);
     });
   });
 

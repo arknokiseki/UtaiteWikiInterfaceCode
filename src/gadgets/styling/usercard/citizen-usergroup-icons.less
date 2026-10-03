@@ -1,0 +1,85 @@
+#citizen-userMenu__card ul.citizen-userInfo-usergroups.uw-role-icon-list {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#citizen-userMenu__card .uw-role-icon-item,
+#citizen-userMenu__card .uw-role-icon-item a {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  text-decoration: none !important;
+}
+
+#citizen-userMenu__card .uw-role-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#citizen-userMenu__card .uw-tooltip-trigger::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%) translateX(-4px) scale(0.95);
+  background-color: hsl(222.2, 84%, 4.9%);
+  color: hsl(210, 40%, 98%);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 50;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out, visibility 0.15s;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#citizen-userMenu__card .uw-tooltip-trigger::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 4px);
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background-color: hsl(222.2, 84%, 4.9%);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 49;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out, visibility 0.15s;
+}
+
+#citizen-userMenu__card .uw-tooltip-trigger:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0) scale(1);
+}
+
+#citizen-userMenu__card .uw-tooltip-trigger:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+#citizen-userMenu__card #p-docs-browser {
+  display: none !important;
+}

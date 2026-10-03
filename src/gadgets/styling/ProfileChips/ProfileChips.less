@@ -1,0 +1,296 @@
+:root {
+    --badge-primary-bg: #0f172a;
+    --badge-primary-text: #f8fafc;
+    --badge-secondary-bg: #f1f5f9;
+    --badge-secondary-text: #0f172a;
+    --badge-destructive-bg: #ef4444;
+    --badge-destructive-text: #ffffff;
+    --badge-outline-border: #e2e8f0;
+
+    --chip-achievement-bg: #FFB200;
+    --chip-achievement-text: #4d3300;
+    --chip-achievement-border: #cc8e00;
+    --chip-achievement-shine: rgba(255, 255, 255, 0.6);
+    --chip-achievement-shadow: rgba(255, 178, 0, 0.4);
+    
+    --chip-template-enthusiast-bg: #9ABF80;
+    --chip-template-enthusiast-text: #1b3d1b; 
+    --chip-template-enthusiast-stripe: rgba(255, 255, 255, 0.4);
+    --chip-template-enthusiast-border: rgba(27, 61, 27, 0.4);
+    
+    --chip-trusted-translator-bg: #2C3E50;
+    --chip-trusted-translator-text: #ECF0F1;
+    --chip-trusted-translator-accent: #3498DB;
+    --chip-trusted-translator-track: rgba(255, 255, 255, 0.08);
+    --chip-trusted-translator-border: rgba(52, 152, 219, 0.4);
+}
+
+.skin-theme-clientpref-night {
+    --badge-primary-bg: #f8fafc;
+    --badge-primary-text: #0f172a;
+    --badge-secondary-bg: #1e293b;
+    --badge-secondary-text: #f8fafc;
+    --badge-destructive-bg: #7f1d1d;
+    --badge-outline-border: #1e293b;
+    
+    --chip-achievement-bg: #FFB200;
+    --chip-achievement-text: #000000;
+    --chip-achievement-border: #FFD666;
+    --chip-achievement-shine: rgba(255, 255, 255, 0.8);
+    --chip-achievement-shadow: rgba(255, 178, 0, 0.25);
+    
+    --chip-template-enthusiast-bg: #1e293b;
+    --chip-template-enthusiast-text: #4ade80;
+    --chip-template-enthusiast-stripe: rgba(74, 222, 128, 0.1);
+    --chip-template-enthusiast-border: #4ade80;
+    
+    --chip-trusted-translator-bg: #0F172A;
+    --chip-trusted-translator-text: #38BDF8;
+    --chip-trusted-translator-accent: #0284C7;
+    --chip-trusted-translator-track: rgba(56, 189, 248, 0.1);
+    --chip-trusted-translator-border: rgba(56, 189, 248, 0.4);
+}
+
+.profile-chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.profile-chip {
+    display: inline-flex;
+    width: fit-content;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    overflow: hidden;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1rem;
+    white-space: nowrap;
+    transition: color 0.15s, box-shadow 0.15s, background-color 0.15s;
+    box-sizing: border-box;
+}
+
+.profile-chip svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    pointer-events: none;
+}
+
+.profile-chip-default { background-color: var(--badge-primary-bg); color: var(--badge-primary-text); }
+.profile-chip-secondary { background-color: var(--badge-secondary-bg); color: var(--badge-secondary-text); }
+.profile-chip-destructive { background-color: var(--badge-destructive-bg); color: var(--badge-destructive-text); }
+.profile-chip-outline { border-color: var(--badge-outline-border); color: var(--badge-primary-bg); background: transparent; }
+
+.profile-chip-achievement_unpaid_editor {
+    background-color: var(--chip-achievement-bg);
+    color: var(--chip-achievement-text) !important;
+    border: 1px solid var(--chip-achievement-border);
+    position: relative;
+    padding: 0.35rem 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1;
+}
+
+.profile-chip-achievement_unpaid_editor::before {
+    content: '\f5ad';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0.6rem;
+    top: 50%;
+    transform: translate(-15px, -50%) rotate(-20deg);
+    opacity: 0;
+    color: var(--chip-achievement-text);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.profile-chip-achievement_unpaid_editor::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--chip-achievement-shine), transparent);
+    transform: skewX(-25deg);
+    z-index: -1;
+}
+
+.profile-chip-achievement_unpaid_editor:hover {
+    padding: 0.35rem 0.85rem 0.35rem 1.8rem;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px var(--chip-achievement-shadow);
+    border-color: #fff;
+}
+
+.profile-chip-achievement_unpaid_editor:hover::before {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(0deg);
+}
+
+.profile-chip-achievement_unpaid_editor:hover::after {
+    animation: achievementShineSweep 1.5s ease-in-out infinite;
+}
+
+.profile-chip-template_enthusiast {
+    background-color: var(--chip-template-enthusiast-bg);
+    color: var(--chip-template-enthusiast-text) !important;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 5px,
+        var(--chip-template-enthusiast-stripe) 5px,
+        var(--chip-template-enthusiast-stripe) 10px
+    );
+    background-size: 14.14px 14.14px; 
+    animation: templateCompileScroll 2s linear infinite;
+    border: 1px dashed var(--chip-template-enthusiast-border);
+    position: relative;
+    padding: 0.35rem 0.85rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: default;
+}
+
+.profile-chip-template_enthusiast::before,
+.profile-chip-template_enthusiast::after {
+    font-family: monospace;
+    font-weight: 800;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--chip-template-enthusiast-text);
+}
+
+.profile-chip-template_enthusiast::before {
+    content: '{{';
+    left: 0.5rem;
+    transform: translate(5px, -50%);
+}
+
+.profile-chip-template_enthusiast::after {
+    content: '}}';
+    right: 0.5rem;
+    transform: translate(-5px, -50%);
+}
+
+.profile-chip-template_enthusiast:hover {
+    padding: 0.35rem 1.6rem; 
+    border-style: solid;
+    box-shadow: 0 4px 12px rgba(154, 191, 128, 0.3);
+}
+
+.skin-theme-clientpref-night .profile-chip-template_enthusiast:hover {
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);
+}
+
+.profile-chip-template_enthusiast:hover::before,
+.profile-chip-template_enthusiast:hover::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+.profile-chip-trusted_translator {
+    background-color: var(--chip-trusted-translator-bg);
+    color: var(--chip-trusted-translator-text) !important;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        var(--chip-trusted-translator-track) 3px,
+        var(--chip-trusted-translator-track) 4px
+    );
+    border: 1px dashed var(--chip-trusted-translator-border);
+    position: relative;
+    padding: 0.35rem 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1;
+}
+
+.profile-chip-trusted_translator::before {
+    content: '\f1ab';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0.6rem;
+    top: 50%;
+    transform: translate(-10px, -50%);
+    opacity: 0;
+    color: var(--chip-trusted-translator-text);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.profile-chip-trusted_translator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        transparent, 
+        var(--chip-trusted-translator-accent), 
+        transparent
+    );
+    opacity: 0.15;
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+.profile-chip-trusted_translator:hover {
+    padding: 0.35rem 0.85rem 0.35rem 1.8rem;
+    border-style: solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skin-theme-clientpref-night .profile-chip-trusted_translator:hover {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.profile-chip-trusted_translator:hover::before {
+    opacity: 1;
+    transform: translate(0, -50%);
+}
+
+.profile-chip-trusted_translator:hover::after {
+    left: 100%;
+}
+
+.profile-chip-trusted_translator:active {
+    transform: scale(0.98);
+}
+
+@keyframes templateCompileScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 14.14px 0; }
+}
+
+@keyframes achievementShineSweep {
+    0% { left: -150%; }
+    50% { left: 250%; }
+    100% { left: 250%; } 
+}

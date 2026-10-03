@@ -24,6 +24,7 @@ gadgets:
         dependencies:
           - mediawiki.api
     videopreview:
+      commentedOut: true
       description: "Video preview functionality."
       authors:
         - makudoumee
@@ -59,9 +60,13 @@ gadgets:
         - datatables-helper.ts
         - mobile-datatables-helper.ts
         - Datatables.less
+      # Handsontable bundles that datatables-helper / mobile-datatables-helper load at
+      # runtime; not listed in the gadget definition
+      verbatim:
+        - Datatables.js
+        - Mobile-Datatables.js
       resourceLoader:
         default: true
-        hidden: true
         actions:
           - view
     userlinks:
@@ -94,6 +99,7 @@ gadgets:
         default: true
         hidden: true
     twitter:
+      commentedOut: true
       description: "Embed Twitter."
       authors:
         - Yehuda Katz
@@ -107,6 +113,7 @@ gadgets:
         default: true
         hidden: true
     bottom toolbar:
+      commentedOut: true
       description: "Desktop-only bottom toolbar for MediaWiki pages."
       authors:
         - makudoumee
@@ -121,6 +128,7 @@ gadgets:
           - mediawiki.page.watch.ajax
           - mediawiki.watchstar.widgets
     ToolsMenu:
+      commentedOut: true
       description: "Tools Menu Gateway."
       authors:
         - makudoumee
@@ -155,7 +163,9 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+        rights: purge
     LinkPreview:
+      commentedOut: true
       description: "Hover-based link preview system for MediaWiki, inspired by Extension:Popups. <br/>Displays a smart™ preview with extracted lead text and the best™ available page image."
       authors: 
         - fngplg
@@ -187,6 +197,7 @@ gadgets:
         hidden: true
         actions:
           - view
+        rights: edit
         namespaces: "0,4,6,8,10,12,14,110,828,3000,3006"
     hidesnonedit:
       description: "Hides site notice on edit."
@@ -197,6 +208,7 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+        rights: edit
     sandbox:
       description: "A WikiText sandbox editor with live preview."
       authors:
@@ -206,11 +218,14 @@ gadgets:
         - sandbox.ts
         - sandbox.less
         - sandbox.json
+      verbatim:
+        - sandbox.json
       resourceLoader:
         default: true
         hidden: true
         actions:
           - view
+        rights: edit
         namespaces: "0,4"
 
   contents:
@@ -227,12 +242,57 @@ gadgets:
         default: true
         hidden: true
     utacolle:
+      commentedOut: true
       description: "Loads JSON data from wiki pages and renders them as DataTables (currently used on UtaColle table)."
       code:
         - UtaColle.ts
       resourceLoader:
         default: true
         hidden: true
+    SonglistCRUD:
+      description: "Add / Edit / Delete controls for SonglistTable datatables, reading and writing <Artist>/Songs/songs.json via the MediaWiki API. Bundles SonglistSchema (the songs.json entry shape) and SonglistRenderer (client-side rendering)."
+      authors:
+        - Ark
+      code:
+        - SonglistSchema.ts
+        - SonglistRenderer.ts
+        - SonglistCRUD.ts
+        - SonglistCRUD.less
+      resourceLoader:
+        dependencies:
+          - mediawiki.api
+          - mediawiki.util
+          - mediawiki.user
+          - jquery
+        default: true
+        hidden: true
+    SonglistSheet:
+      description: "Spreadsheet editor for <Artist>/Songs/songs.json, lazy-loaded by SonglistCRUD on first click of its Spreadsheet button."
+      authors:
+        - Ark
+      code:
+        - SonglistSheet.ts
+        - SonglistSheet.less
+      resourceLoader:
+        hidden: true
+        dependencies:
+          - ext.gadget.jspreadsheet
+          - ext.gadget.SonglistCRUD
+    SonglistMobile:
+      description: "The songlist rules that must reach mobile view: list styles and the desktop/mobile container toggles. Styles only."
+      authors:
+        - Ark
+      comment: |
+        Styles only, deliberately. A gadget carrying JS does not deliver its
+        stylesheet to mobile view, which is why the songlist list styles and the
+        desktop/mobile container toggles cannot live in SonglistCRUD. Do not add
+        a .js file to this line.
+      code:
+        - SonglistMobile.less
+      resourceLoader:
+        default: true
+        hidden: true
+        type: styles
     UptodateEditor:
       description: "Button + modal to update {{Uptodate}} parameters on song lists."
       authors:
@@ -243,14 +303,41 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
-        actions:
-          - view
-        namespaces:
-          - 0
+        rights: edit
         dependencies:
           - mediawiki.api
           - mediawiki.util
           - mediawiki.user
+        actions:
+          - view
+        namespaces:
+          - 0
+
+  libraries:
+    jspreadsheet:
+      description: "jsuites + jspreadsheet-ce (vendor builds from jsDelivr), for SonglistSheet."
+      links:
+        - https://cdn.jsdelivr.net/npm/jsuites@5.13.5/dist/jsuites.js
+        - https://cdn.jsdelivr.net/npm/jspreadsheet-ce@5.0.4/dist/index.js
+      comment: |
+        Loaded on demand only. NOT `default`: ResourceLoader registers these as
+        modules but never delivers them, so ordinary artist page views (and all
+        mobile views) never fetch the ~340 KB. Gadget-SonglistCRUD.js pulls them
+        with mw.loader.using() on first click of the Spreadsheet button.
+        jsuites MUST precede jspreadsheet: the bundle's require('jsuites')
+        fallback does not work in a browser.
+      code:
+        - jsuites.js
+        - jsuites.css
+        - jspreadsheet-ce.js
+        - jspreadsheet-ce.css
+      verbatim:
+        - jsuites.js
+        - jsuites.css
+        - jspreadsheet-ce.js
+        - jspreadsheet-ce.css
+      resourceLoader:
+        hidden: true
 
   utility:
     getuserprofile:
@@ -285,11 +372,11 @@ gadgets:
         - LinkSuggest.less
       resourceLoader:
         default: true
+        dependencies:
+          - mediawiki.api
         actions:
           - edit
           - submit
-        dependencies:
-          - mediawiki.api
     PWA:
       description: "PWA Installer & Manager Gadget."
       code:
@@ -298,6 +385,42 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+    Countdown:
+      description: "Replaces .countdown elements with a ticking countdown to the date in their .countdowndate child."
+      authors:
+        - Ark
+      code:
+        - Countdown.ts
+        - Countdown.less
+      resourceLoader:
+        default: true
+        hidden: true
+    CustomIconGlobal:
+      description: "Injects CSS masks for custom SVG icons defined in MediaWiki:CustomIcon.json (cached in localStorage for 15 minutes)."
+      authors:
+        - Ark
+      subsection: custom icon
+      code:
+        - CustomIconGlobal.ts
+      resourceLoader:
+        default: true
+        hidden: true
+        dependencies:
+          - mediawiki.api
+          - mediawiki.util
+    CustomIconManager:
+      description: "Modal editor for MediaWiki:CustomIcon.json, on Special:CustomIcon."
+      authors:
+        - Ark
+      subsection: custom icon
+      code:
+        - CustomIconManager.ts
+      resourceLoader:
+        default: true
+        hidden: true
+        rights: edit
+        dependencies:
+          - mediawiki.api
 
   blog:
     userblog:
@@ -310,9 +433,9 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
-        namespaces: "0,2,3000,3001"
         dependencies:
           - mediawiki.api
+        namespaces: "0,2,3000,3001"
 
   styling:
     citizen:
@@ -334,6 +457,8 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+        skins: citizen
+        type: styles
     mainpage:
       description: "Main Page styling."
       authors:
@@ -352,10 +477,11 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
-        namespaces: "0"
         actions:
           - view
+        namespaces: "0"
     fontawesome:
+      commentedOut: true
       description: "FontAwesome icons."
       links:
         - https://github.com/FortAwesome/Font-Awesome
@@ -368,6 +494,7 @@ gadgets:
       description: "User Card styling."
       code:
         - citizen-usergroup-icons.ts
+        - citizen-usergroup-icons.less
       resourceLoader:
         default: true
         hidden: true
@@ -396,6 +523,7 @@ gadgets:
         default: true
         hidden: true
     movablesitenotice:
+      commentedOut: true
       description: "Movable Site Notice."
       code:
         - movablenotice.ts
@@ -409,12 +537,15 @@ gadgets:
       code:
         - birthday.ts
         - birthday.less
+      # canvas-confetti build that birthday.ts loads at runtime; not in the gadget definition
+      verbatim:
+        - confetti.js
       resourceLoader:
         default: true
         hidden: true
-        namespaces: "0"
         actions:
           - view
+        namespaces: "0"
     usersignaturestyle:
       description: "User Signature styling."
       code:
@@ -428,6 +559,25 @@ gadgets:
         - makudoumee
       code:
         - badge.less
+      resourceLoader:
+        default: true
+        hidden: true
+    ProfileChips:
+      description: "Custom tags on the user profile masthead, configured in MediaWiki:ProfileChips.json (needs the UserProfileV2 extension)."
+      authors:
+        - Ark
+      code:
+        - ProfileChips.ts
+        - ProfileChips.less
+      resourceLoader:
+        default: true
+        hidden: true
+    HideTags:
+      description: "Hides some user group tags on profile mastheads (autopatrolled, commentadmin, csmoderator, smw*)."
+      authors:
+        - Ark
+      code:
+        - HideTags.ts
       resourceLoader:
         default: true
         hidden: true
@@ -449,6 +599,7 @@ gadgets:
 
   external:
     item:
+      commentedOut: true
       description: "Styling for [[Module:Item]] from [[wikia:genshin-impact|Genshin Impact Wiki]]"
       authors:
         - Leochan100
