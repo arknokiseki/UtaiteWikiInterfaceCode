@@ -1,0 +1,166 @@
+/* This stylesheet alters the appearance of the transcluded version of 
+   {{Special:RecentChanges}}, and makes it to look somewhat similar to the 
+   output of the depreceated <activityfeed /> tag.
+   
+   It targets the RecentChanges elements only when wrapped in another element 
+   with class="activityfeed", and it is specialized for certain parameters of 
+   {{Special:RecentChanges}}, both given in Template:ActivityFeed.
+*/
+
+/* Text variables. Can be overriden for different languages */
+/* Note: html and :where() are used to make it easier to overwrite. */
+:where(html) {
+	--activityfeed-msg-created-by: " > created by";
+	--activityfeed-msg-edited-by: " > edited by";
+	--activityfeed-msg-new-page: "New page:";
+}
+
+/** German translation **/
+:where(html[lang="de"]) {
+	--activityfeed-msg-created-by: " > Erstellt von";
+	--activityfeed-msg-edited-by: " > Bearbeitet von";
+	--activityfeed-msg-new-page: "Neue Seite:";
+}
+
+/** Spanish translation **/
+:where(html[lang="es"]) {
+	--activityfeed-msg-created-by: " > creado por";
+	--activityfeed-msg-edited-by: " > editado por";
+	--activityfeed-msg-new-page: "Nueva página:";
+}
+
+/** French translation **/
+:where(html[lang="fr"]) {
+	--activityfeed-msg-created-by: " > créé par";
+	--activityfeed-msg-edited-by: " > édité par";
+	--activityfeed-msg-new-page: "Nouvelle page:";
+}
+
+/** Brazilian Portuguese translation **/
+:where(html[lang="pt-br"]) {
+	--activityfeed-msg-created-by: " > criado por";
+	--activityfeed-msg-edited-by: " > editado por";
+	--activityfeed-msg-new-page: "Nova página:";
+}
+
+/* General Layout */
+.mw-parser-output .activityfeed ul.special {
+    margin-left: 1em;
+}
+
+.mw-parser-output .activityfeed .mw-changeslist-line:not(:first-child) {
+    margin-top: 2em;
+}
+
+/* Date headers */
+.mw-parser-output .activityfeed h4 {
+    font-size: 1.5em;    
+}
+
+.mw-parser-output .activityfeed h4:not(:first-of-type) {
+    margin-top: 2em;
+}
+
+/* Hiding various parts */
+.mw-parser-output .activityfeed .activity-summary,
+.mw-parser-output .activityfeed .activity-tabs,
+.mw-parser-output .activityfeed .mw-changeslist-legend,
+.mw-parser-output .activityfeed .mw-changeslist-links::before,
+.mw-parser-output .activityfeed .mw-changeslist-links::after,
+.mw-parser-output .activityfeed .mw-changeslist-links > ::before,
+.mw-parser-output .activityfeed .mw-changeslist-history,
+.mw-parser-output .activityfeed .mw-changeslist-separator,
+.mw-parser-output .activityfeed .mw-diff-bytes,
+.mw-parser-output .activityfeed .mw-usertoollinks,
+.mw-parser-output .activityfeed .mw-tag-markers,
+.mw-parser-output .activityfeed .comment,
+.mw-parser-output .activityfeed .mw-changeslist-legend {
+    display: none;
+}
+
+/* Hiding the text in the disabled diff "link" for new pages */
+.mw-parser-output .activityfeed .mw-changeslist-links > span:first-child {
+    color: transparent;
+}
+
+/* Diff link:
+       Hiding the text
+       enlarging the font size to make more room for the picture
+       apply diff icon
+       inverting the color on dark mode
+*/
+.mw-parser-output .activityfeed .mw-changeslist-links .mw-changeslist-diff {
+	background-image: url('/resources-ucp/v2/dist/svg/wds-icons-pencil.svg'), url('/resources-ucp/v2/dist/svg/wds-icons-magnifying-glass.svg');
+	background-position: 0 100%, 100% 0;
+	background-repeat: no-repeat;
+	background-size: 70% 70%, 50% 50%;
+	color: transparent;
+	font-size: 1.5em;
+}
+
+.theme-fandomdesktop-dark .activityfeed .mw-changeslist-links .mw-changeslist-diff {
+	-webkit-filter: invert(1);
+	filter: invert(1);
+}
+
+/* Page name */
+.mw-parser-output .activityfeed .mw-title {
+	font-weight: bold;
+}
+
+/* Linebreak after the page name */
+.mw-parser-output .activityfeed .mw-title::after {
+	content: "\a \9";
+	line-height: 2;
+	white-space: pre-wrap;
+}
+
+/* Edited by / Created by */
+.mw-parser-output .activityfeed .mw-changeslist-date::after {
+	content: var(--activityfeed-msg-edited-by);
+}
+
+/* For new pages:
+        Restyling the N mark
+        Adding a page icon
+        A darkmode hack
+        Unhiding edit summary
+        Changing/adding CSS text
+*/
+.mw-parser-output .activityfeed .newpage {
+	background: url('/resources-ucp/v2/dist/svg/wds-icons-page.svg') no-repeat;
+	background-position: 0 0.1em;
+	background-size: contain;
+	float: left;
+	font-size: 1.5em;
+	margin-left: 0;
+	margin-right: -1em;
+	text-align: center;
+	text-decoration: none;
+	width: 1.5em;
+}
+
+.theme-fandomdesktop-dark .mw-parser-output .activityfeed .newpage {
+    -webkit-filter: invert(1);
+    color: #000;
+    filter: invert(1);
+}
+
+.mw-parser-output .activityfeed .newpage ~ .mw-changeslist-date::after {
+	content: var(--activityfeed-msg-created-by);
+}
+
+.mw-parser-output .activityfeed .newpage ~ .comment {
+	display: block;
+	margin-left: 10ch;
+}
+
+.mw-parser-output .activityfeed .newpage ~ .comment::before {
+	content: var(--activityfeed-msg-new-page)"\20";
+	font-size: larger;
+	font-weight: bold;
+}
+
+.mw-parser-output .activityfeed .newpage ~ .comment::after {
+	content: "";
+}

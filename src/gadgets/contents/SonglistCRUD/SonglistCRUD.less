@@ -1,0 +1,590 @@
+/* ══════════════════════════════════════════════════════════════════
+   TOOLBAR (Filter bar + Add Song button, sits above the table)
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+/* ── Filter bar (left side of toolbar) ── */
+.slcrud-filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.slcrud-filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-base, #202122);
+    white-space: nowrap;
+}
+
+.slcrud-filter-select {
+    padding: 5px 24px 5px 8px;
+    border: 1px solid var(--border-color-base, #a2a9b1);
+    border-radius: 2px;
+    background-color: var(--background-color-base, #fff);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23767676'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    color: var(--color-base, #202122);
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.1s;
+}
+
+.slcrud-filter-select:focus {
+    outline: none;
+    border-color: var(--border-color-progressive, #36c);
+    box-shadow: inset 0 0 0 1px var(--border-color-progressive, #36c);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SHARED BUTTON BASE
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.slcrud-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Progressive (Add / Save) */
+.slcrud-btn-add,
+.slcrud-btn-primary {
+    padding: 6px 16px;
+    border: 1px solid var(--border-color-progressive, #36c);
+    background: var(--background-color-progressive, #36c);
+    color: var(--color-inverted-fixed, #fff);
+    font-weight: 600;
+}
+
+.slcrud-btn-add:hover,
+.slcrud-btn-primary:hover {
+    background: var(--background-color-progressive--hover, #4b77d6);
+    border-color: var(--border-color-progressive--hover, #4b77d6);
+}
+
+/* Quiet / Cancel */
+.slcrud-btn-cancel {
+    padding: 6px 16px;
+    border: 1px solid var(--border-color-base, #a2a9b1);
+    background: var(--background-color-base, #fff);
+    color: var(--color-base, #202122);
+}
+
+.slcrud-btn-cancel:hover {
+    background: var(--background-color-interactive-subtle, #f8f9fa);
+    border-color: var(--color-base--hover, #404244);
+}
+
+/* Destructive (Delete confirm) */
+.slcrud-btn-destructive {
+    padding: 6px 16px;
+    border: 1px solid #b32424;
+    background: #b32424;
+    color: #fff;
+    font-weight: 600;
+}
+
+.slcrud-btn-destructive:hover {
+    background: #a01f1f;
+    border-color: #a01f1f;
+}
+
+/* Quiet progressive — row-level Edit button */
+.slcrud-btn-edit {
+    padding: 2px 8px;
+    border: 1px solid var(--border-color-progressive, #36c);
+    background: transparent;
+    color: var(--color-progressive, #36c);
+    font-size: 0.8125rem;
+}
+
+.slcrud-btn-edit:hover {
+    background: color-mix(in srgb, var(--color-progressive, #36c) 10%, transparent);
+}
+
+/* Quiet destructive — row-level Delete button */
+.slcrud-btn-row-delete {
+    padding: 2px 8px;
+    border: 1px solid #b32424;
+    background: transparent;
+    color: #b32424;
+    font-size: 0.8125rem;
+}
+
+.slcrud-btn-row-delete:hover {
+    background: rgba(179, 36, 36, 0.08);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ACTIONS COLUMN CELL
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-actions {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.slcrud-actions-header {
+    text-align: center !important;
+    font-weight: 600;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MODAL OVERLAY
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-sizing: border-box;
+    animation: slcrud-fade-in 0.15s ease;
+}
+
+@keyframes slcrud-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   MODAL DIALOG
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-dialog {
+    background: var(--background-color-base, #fff);
+    color: var(--color-base, #202122);
+    border: 1px solid var(--border-color-base, #a2a9b1);
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+    width: min(660px, 100%);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slcrud-slide-in 0.15s ease;
+}
+
+@keyframes slcrud-slide-in {
+    from {
+        transform: translateY(-12px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slcrud-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color-base, #a2a9b1);
+    flex-shrink: 0;
+}
+
+.slcrud-dialog-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-base, #202122);
+}
+
+.slcrud-dialog-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--color-base, #202122);
+    opacity: 0.6;
+    transition: opacity 0.1s, border-color 0.1s;
+}
+
+.slcrud-dialog-close:hover {
+    opacity: 1;
+    border-color: var(--border-color-base, #a2a9b1);
+}
+
+.slcrud-dialog-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.slcrud-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 12px 20px;
+    border-top: 1px solid var(--border-color-base, #a2a9b1);
+    flex-shrink: 0;
+}
+
+/* Confirm dialog variant */
+.slcrud-dialog--narrow {
+    width: min(440px, 100%);
+}
+
+.slcrud-dialog--narrow .slcrud-dialog-body p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FORM LAYOUT
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.slcrud-field {
+    margin-bottom: 14px;
+}
+
+.slcrud-field:last-child {
+    margin-bottom: 0;
+}
+
+/* Three-column row (video IDs) */
+.slcrud-field-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.slcrud-field-row .slcrud-field {
+    margin-bottom: 0;
+}
+
+/* Label */
+.slcrud-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--color-base, #202122);
+}
+
+.slcrud-label-required::after {
+    content: ' *';
+    color: #b32424;
+}
+
+/* Text input */
+.slcrud-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color-base, #a2a9b1);
+    border-radius: 2px;
+    background: var(--background-color-base, #fff);
+    color: var(--color-base, #202122);
+    font-family: inherit;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    transition: border-color 0.1s;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slcrud-input:focus {
+    outline: none;
+    border-color: var(--border-color-progressive, #36c);
+    box-shadow: inset 0 0 0 1px var(--border-color-progressive, #36c);
+}
+
+.slcrud-input:invalid {
+    border-color: #b32424;
+    box-shadow: inset 0 0 0 1px #b32424;
+}
+
+.slcrud-input::placeholder {
+    color: var(--secondary-text-color, #72777d);
+    opacity: 1;
+}
+
+/* Help / hint text */
+.slcrud-help {
+    font-size: 0.8125rem;
+    color: var(--secondary-text-color, #54595d);
+    margin-top: 3px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SECTION DIVIDERS
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-section-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-base, #202122);
+    border-bottom: 1px solid var(--border-color-base, #a2a9b1);
+    padding-bottom: 5px;
+    margin: 18px 0 12px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   CHECKBOXES
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-checkbox-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.slcrud-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-base, #202122);
+}
+
+.slcrud-checkbox-label input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--background-color-progressive, #36c);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Site sub-checkboxes (shown when Deleted/Privated is checked) */
+.slcrud-site-group {
+    display: none;
+    /* toggled by JS */
+    margin-top: 8px;
+    margin-left: 20px;
+    padding: 10px 14px;
+    background: var(--background-color-interactive-subtle, #f8f9fa);
+    border-left: 3px solid var(--border-color-progressive, #36c);
+    border-radius: 0 2px 2px 0;
+}
+
+.slcrud-site-group.is-visible {
+    display: block;
+}
+
+.slcrud-site-group-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--secondary-text-color, #54595d);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   FEATURED ARTISTS DYNAMIC LIST
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-feat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.slcrud-feat-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.slcrud-feat-row .slcrud-input {
+    flex: 1;
+}
+
+/* Inline remove (−) button — quiet destructive, icon-only */
+.slcrud-btn-feat-remove {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid #b32424;
+    background: transparent;
+    color: #b32424;
+    border-radius: 2px;
+    font-size: 0.8125rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slcrud-btn-feat-remove:hover {
+    background: rgba(179, 36, 36, 0.08);
+}
+
+/* Add artist (+) button — quiet progressive, full-width */
+.slcrud-btn-feat-add {
+    align-self: flex-start;
+    padding: 4px 10px;
+    border: 1px solid var(--border-color-progressive, #36c);
+    background: transparent;
+    color: var(--color-progressive, #36c);
+    border-radius: 2px;
+    font-size: 0.8125rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 4px;
+}
+
+.slcrud-btn-feat-add:hover {
+    background: color-mix(in srgb, var(--color-progressive, #36c) 10%, transparent);
+}
+
+
+.slcrud-feat-preview {
+    margin-top: 5px;
+    font-size: 0.8125rem;
+    color: var(--secondary-text-color, #54595d);
+    min-height: 1.2em;
+}
+
+.slcrud-feat-preview a {
+    color: var(--color-progressive, #36c);
+    text-decoration: none;
+}
+
+.slcrud-feat-preview a:hover {
+    text-decoration: underline;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TOAST NOTIFICATIONS
+   ══════════════════════════════════════════════════════════════════ */
+#slcrud-toasts {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1400;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+}
+
+.slcrud-toast {
+    min-width: 200px;
+    max-width: 360px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    animation: slcrud-toast-in 0.2s ease;
+    pointer-events: auto;
+    color: #fff;
+}
+
+.slcrud-toast--success {
+    background: #14866d;
+}
+
+.slcrud-toast--error {
+    background: #b32424;
+}
+
+.slcrud-toast--info {
+    background: var(--background-color-progressive, #36c);
+}
+
+@keyframes slcrud-toast-in {
+    from {
+        transform: translateX(16px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TABLE REFRESH STATE
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-refreshing {
+    opacity: 0.45;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   LOADING SPINNER (inline, on Save button)
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-btn-loading::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: slcrud-spin 0.6s linear infinite;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+@keyframes slcrud-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PLACEMENT
+   A live readout of where the song will land. It is a preview, not help
+   text, so it stays legible rather than receding like .slcrud-help.
+   ══════════════════════════════════════════════════════════════════ */
+.slcrud-placement-info {
+    color: var(--body-text-color, #202122);
+    font-style: italic;
+}
+
+.slcrud-placement-select {
+    margin-bottom: 3px;
+}

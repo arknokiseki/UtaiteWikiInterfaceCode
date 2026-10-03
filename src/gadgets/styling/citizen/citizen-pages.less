@@ -2,23 +2,20 @@
 Main page
 =================================*/
 body.rootpage-Utaite_Wiki .cs-footer .oo-ui-buttonWidget:has(.oo-ui-icon-speechBubbleAdd) {
-    display: none !important;
+  display: none !important;
 }
-
 /*===============================
 RecentChanges page
 =================================*/
 html.skin-theme-clientpref-night .mw-changeslist h4 {
-    --color-surface-0-oklch__c: transparent !important;
+  --color-surface-0-oklch__c: transparent !important;
 }
-
 /*=============================
 Upload Page
 ==============================*/
 .upload-text-container {
   position: relative;
 }
-
 /*
 .upload-text-container::after {
   content: '';
@@ -32,143 +29,254 @@ Upload Page
   z-index: 10;
 }
 */
-
 /* ==========================================================================
    Utaite Gallery Page
    ========================================================================== */
-
-.singer-box{
-    width:300px;
-    border:1px solid #ccc;
-    padding:5px; 
-    margin:5px;
-    float:left;
-    text-align:center;
+.singer-box {
+  width: 300px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  float: left;
+  text-align: center;
 }
-
-.singer-image{
-    width:275px;
-    height:200px;
-    overflow:hidden;
-    display:inline-block;
+.singer-image {
+  width: 275px;
+  height: 200px;
+  overflow: hidden;
+  display: inline-block;
 }
-
-.singer-name{
-    text-align:center;
-    padding-top:5px;
+.singer-name {
+  text-align: center;
+  padding-top: 5px;
 }
-
 /*=============================
-Noarticletext
+Noarticletext — empty page state
+Component: MediaWiki:Noarticletext
+Markup:    .np > .np-eyebrow, .np-lede, .np-create, .np-hint, .np-builder, .np-alt
+Note:      InputBox renders Codex components (.cdx-text-input, .cdx-button).
+           Codex ships :enabled / :not(:disabled) rules at (0,4,0), so the
+           overrides below need !important to win. Layout is mobile-first
+           column so it cannot overflow even if the cascade is lost.
 ===============================*/
 
-.empty-page-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: var(--empty-page-bg);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px var(--empty-page-shadow);
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+/* --- local tokens ----------------------------------------------------- */
+.np {
+  --np-ink: #1b1b1f;
+  --np-ink-hover: #35353d;
+  --np-on-ink: #ffffff;
+}
+.skin-theme-clientpref-night .np {
+  --np-ink: #f2f2f7;
+  --np-ink-hover: #d5d5de;
+  --np-on-ink: #16161a;
+}
+/* optional: covers the "match OS" theme setting. delete if unused. */
+@media (prefers-color-scheme: dark) {
+  .skin-theme-clientpref-os .np {
+    --np-ink: #f2f2f7;
+    --np-ink-hover: #d5d5de;
+    --np-on-ink: #16161a;
+  }
 }
 
-.empty-page-content h2 {
-  color: var(--empty-page-heading-color);
-  font-size: 1.8em;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--empty-page-heading-border);
-  padding-bottom: 10px;
-  transition: color 0.3s, border-color 0.3s;
+/* --- container -------------------------------------------------------- */
+.np {
+  max-width: 46rem;
+  margin: 2rem auto;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--border-color-base, #c8ccd1);
+  border-radius: var(--border-radius-medium, 8px);
 }
 
-.empty-page-content p {
-  color: var(--empty-page-text-color);
-  line-height: 1.6;
-  margin-bottom: 25px;
-  transition: color 0.3s;
+.np-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-subtle, #72777d);
 }
 
-.create-options {
+.np-lede {
+  margin: 0 0 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-base, #202122);
+}
+
+/* --- call to action (nopermission variant) ---------------------------- */
+.np-cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 20px;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 0;
 }
 
-.create-form, .alternative-actions {
-  flex: 1;
-  min-width: 300px;
+.np-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-base, 4px);
+  background-color: var(--np-ink);
+  color: var(--np-on-ink) !important;
+  text-decoration: none !important;
+  transition: background-color 120ms ease;
+}
+.np-cta a:hover {
+  background-color: var(--np-ink-hover);
+  color: var(--np-on-ink) !important;
+}
+.np-cta a:focus-visible {
+  outline: 2px solid var(--color-progressive, #36c);
+  outline-offset: 2px;
 }
 
-.create-form h3, .alternative-actions h3 {
-  color: var(--empty-page-subheading-color);
-  font-size: 1.2em;
-  margin-bottom: 15px;
-  transition: color 0.3s;
+.np-cta-alt a {
+  font-size: 0.9375rem;
 }
 
-.alternative-actions ul {
-  list-style-type: none;
-  padding: 0;
+/* --- create form ------------------------------------------------------ */
+.np .np-create .mw-inputbox-centered {
+  text-align: initial;
 }
 
-.alternative-actions li {
-  margin-bottom: 10px;
-  padding-left: 20px;
-  position: relative;
+.np .np-create .createbox {
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.625rem;
+  margin: 0;
 }
 
-.alternative-actions li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--empty-page-bullet-color);
-  transition: color 0.3s;
+.np .np-create .cdx-text-input {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-.alternative-actions a {
-  color: var(--empty-page-link-color);
-  text-decoration: none;
-  transition: color 0.2s;
+.np .np-create .cdx-text-input__input {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: clamp(1.0625rem, 3.5vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: var(--border-radius-base, 4px);
 }
 
-.alternative-actions a:hover {
-  color: var(--empty-page-link-hover);
-  text-decoration: underline;
+.np .np-create .cdx-text-input__input:focus {
+  outline: 2px solid var(--color-progressive, #36c);
+  outline-offset: 1px;
 }
 
-/* Enhance inputbox styling */
-.create-form .mw-inputbox-input {
-  padding: 10px;
-  border: 1px solid var(--empty-page-input-border);
-  border-radius: 4px;
-  font-size: 1em;
-  background-color: var(--empty-page-input-bg);
-  color: var(--empty-page-input-text);
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.create-form .mw-inputbox-button {
-  background-color: var(--empty-page-button-bg);
-  color: var(--empty-page-button-text);
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
+.np .np-create .cdx-button.cdx-button--action-progressive {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding-inline: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
-  font-weight: bold;
+  border-radius: var(--border-radius-base, 4px);
+  background-color: var(--np-ink) !important;
+  color: var(--np-on-ink) !important;
+  border: 1px solid transparent !important;
+  transition: background-color 120ms ease;
 }
 
-.create-form .mw-inputbox-button:hover {
-  background-color: var(--empty-page-button-hover);
+.np .np-create .cdx-button.cdx-button--action-progressive:hover {
+  background-color: var(--np-ink-hover) !important;
+  color: var(--np-on-ink) !important;
+}
+
+.np .np-create .cdx-button.cdx-button--action-progressive:focus-visible {
+  outline: 2px solid var(--color-progressive, #36c);
+  outline-offset: 2px;
+}
+
+/* --- supporting text -------------------------------------------------- */
+.np-hint,
+.np-builder {
+  margin: 0.625rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-subtle, #72777d);
+}
+.np-builder {
+  margin-top: 0.375rem;
+}
+
+/* --- fallback actions ------------------------------------------------- */
+.np-alt {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color-subtle, #eaecf0);
+}
+
+.np-alt-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-base, #202122);
+}
+
+.np-alt ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.np-alt li {
+  margin: 0;
+}
+
+/* --- wide screens: field and button side by side ---------------------- */
+@media (min-width: 30rem) {
+  .np .np-create .createbox {
+    flex-direction: row;
+  }
+  .np .np-create .cdx-text-input {
+    flex: 1 1 auto;
+  }
+  .np .np-create .cdx-button.cdx-button--action-progressive {
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 30rem) {
+  .np {
+    margin: 1rem auto;
+  }
+  .np-cta,
+  .np-cta a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np .np-create .cdx-button.cdx-button--action-progressive,
+  .np-cta a {
+    transition: none;
+  }
 }
 
 @media (max-width: 768px) {
-  .empty-page-container {
-    padding: 20px;
-    margin: 20px;
-  }
-  
   .create-options {
     flex-direction: column;
   }

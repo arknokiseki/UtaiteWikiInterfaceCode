@@ -59,6 +59,8 @@ declare const mediaWiki: typeof mw;
         const list = root.querySelector('ul.citizen-userInfo-usergroups');
         if (!list) return;
 
+        list.classList.add('uw-role-icon-list');
+
         const items = list.querySelectorAll('li.citizen-userInfo-usergroup');
         for (let i = 0; i < items.length; i++) {
             const li = items[i] as HTMLElement;
@@ -79,16 +81,25 @@ declare const mediaWiki: typeof mw;
                 continue;
             }
 
+            // the role name moves into a tooltip; the link keeps only the icon
+            const roleText = a.textContent!.trim();
+            a.innerHTML = '';
+
             const badge = document.createElement('span');
-            badge.className = 'uw-role-icon';
+            badge.className = 'uw-role-icon uw-tooltip-trigger';
             badge.style.backgroundColor = cfg.color;
+
+            badge.setAttribute('data-tooltip', roleText);
+            badge.setAttribute('aria-label', roleText);
 
             const icon = document.createElement('i');
             icon.className = 'fa-solid ' + cfg.icon;
             icon.setAttribute('aria-hidden', 'true');
 
             badge.appendChild(icon);
-            a.insertBefore(badge, a.firstChild);
+            a.appendChild(badge);
+
+            li.classList.add('uw-role-icon-item');
             li.dataset.uwRoleIconized = '1';
         }
 

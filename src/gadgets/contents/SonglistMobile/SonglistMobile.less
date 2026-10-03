@@ -1,0 +1,179 @@
+/* ══════════════════════════════════════════════════════════════════
+   Gadget-SonglistMobile.css — the songlist rules that must reach mobile.
+
+   THIS GADGET MUST NEVER SHIP A .js FILE.
+
+   Gadget-SonglistCRUD.css cannot do this job. ResourceLoader bundles a
+   mixed JS+CSS gadget's stylesheet inside the script module, and on a
+   mobile page not one .songlist-* rule reaches the CSSOM — the module
+   sits in state 'executing' and never delivers. Styles-only gadgets are
+   emitted as ordinary load.php stylesheets and do arrive; badge.css,
+   Tabs.css and fontawesome.css all demonstrably do.
+
+   These rules apply on desktop too: {{SonglistTable|listview=true}}
+   renders the list view there. Do not gate them behind a width query.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── which container wins ───────────────────────────────────────────
+   Moved verbatim from Gadget-SonglistCRUD.css, where they never loaded
+   on mobile — which is why an empty six-column DataTables header used
+   to render above the list. .songlist-mobile's display:none is
+   load-bearing ON DESKTOP: without it the list appears under the table.
+     .mw-mf           — Minerva (MobileFrontend)
+     .is-mobile-device — Citizen skin mobile flag
+   ------------------------------------------------------------------ */
+.songlist-mobile  { display: none; }
+.songlist-desktop { display: block; }
+
+.mw-mf .songlist-desktop,
+.is-mobile-device .songlist-desktop { display: none; }
+
+.mw-mf .songlist-mobile,
+.is-mobile-device .songlist-mobile  { display: block; }
+
+/* ── year jump index ────────────────────────────────────────────────
+   The only navigation a zero-JS list can offer. Chips are ordinary
+   fragment links, so browser find-in-page still sees every row —
+   which is why year FILTERING was rejected.
+   ------------------------------------------------------------------ */
+.songlist-ml-yrnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    margin: 0.5em 0 0.75em;
+}
+
+.songlist-ml-yrnav a {
+    display: inline-block;
+    min-height: 2.2em;
+    padding: 0.45em 0.7em;
+    border: 1px solid var(--border-color-base, #c8ccd1);
+    border-radius: 4px;
+    font-size: 0.9em;
+    line-height: 1.25;
+    text-decoration: none;
+}
+
+.songlist-ml-yr {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 0.35em 0;
+    font-weight: 700;
+    background: var(--background-color-base, #fff);
+    border-bottom: 2px solid var(--border-color-base, #c8ccd1);
+}
+
+/* ── the list ───────────────────────────────────────────────────────
+   No max-height and no overflow. The list flows with the page; a nested
+   scroll region is what made this unusable.
+   ------------------------------------------------------------------ */
+.songlist-mobile-list {
+    list-style: decimal;
+    padding-left: 2.25em;
+    margin: 0 0 0.75em;
+}
+
+.songlist-mobile-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.35em 0;
+    border-bottom: 1px solid var(--border-color-base, #c8ccd1);
+    line-height: 1.45;
+}
+
+.songlist-mobile-list li:last-child { border-bottom: none; }
+
+/* min-width:0 lets a long title wrap instead of forcing the row wider
+   than the viewport. */
+.songlist-ml-main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.songlist-ml-title {
+    display: block;
+    font-weight: 600;
+}
+
+.songlist-ml-title small {
+    font-weight: 400;
+    color: var(--secondary-text-color, #72777d);
+}
+
+.songlist-ml-meta {
+    display: block;
+    font-size: 0.875em;
+    color: var(--secondary-text-color, #54595d);
+    margin-top: 2px;
+}
+
+/* ── tap targets ────────────────────────────────────────────────────
+   The icons themselves stay ~19px; the ANCHOR grows to the 44px
+   minimum around them. {{yt}}/{{nnd}}/{{bb}} are shared site-wide and
+   are not modified — only their containers here.
+   ------------------------------------------------------------------ */
+.songlist-ml-links {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.songlist-ml-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+/* ── back to the year chips ─────────────────────────────────────────
+   Mobile only. Citizen ships two "Back to top" affordances but neither
+   works in mobile view — the TOC one collapses to 0x0 and the
+   sticky-header one is hidden — so this is not a duplicate.
+
+   Emitted inside .songlist-ml-wrap, which sits inside the collapsible
+   Songs section. A display:none ancestor hides a position:fixed
+   descendant, so the button appears only while the list is open. No JS
+   decides that. Verified there is no transform/filter/contain ancestor
+   that would make `fixed` position against the wrapper instead of the
+   viewport.
+   ------------------------------------------------------------------ */
+.songlist-ml-totop { display: none; }
+
+.mw-mf .songlist-ml-totop,
+.is-mobile-device .songlist-ml-totop {
+    display: block;
+    position: fixed;
+    right: 0.75em;
+    bottom: 0.75em;
+    z-index: 5;
+}
+
+.mw-mf .songlist-ml-totop a,
+.is-mobile-device .songlist-ml-totop a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.85em;
+    border: 1px solid var(--border-color-base, #c8ccd1);
+    border-radius: 999px;
+    background: var(--background-color-base, #fff);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    font-size: 0.9em;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Room for the button to float over, so it never covers the last row. */
+.mw-mf .songlist-ml-wrap,
+.is-mobile-device .songlist-ml-wrap { padding-bottom: 4em; }
+
+.songlist-ml-empty {
+    color: var(--secondary-text-color, #72777d);
+    font-style: italic;
+}

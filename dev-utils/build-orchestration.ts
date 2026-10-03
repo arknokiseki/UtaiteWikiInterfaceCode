@@ -50,7 +50,8 @@ export function setGadgetNamespace(_gadgetNamespace: string): void {
  * @returns
  */
 function getScriptsToLoadFromGadgetDefinition(gadgetDefinition: GadgetDefinition): string[] {
-  return gadgetDefinition.code?.filter(code => getFileType(code) === 'script') || [];
+  const verbatim = new Set(gadgetDefinition.verbatim || []);
+  return gadgetDefinition.code?.filter(code => getFileType(code) === 'script' && !verbatim.has(code)) || [];
 }
 
 /**
@@ -60,7 +61,8 @@ function getScriptsToLoadFromGadgetDefinition(gadgetDefinition: GadgetDefinition
  * @returns
  */
 function getStylesheetsToLoadFromGadgetDefinition(gadgetDefinition: GadgetDefinition): string[] {
-  return gadgetDefinition.code?.filter(code => getFileType(code) === 'style') || [];
+  const verbatim = new Set(gadgetDefinition.verbatim || []);
+  return gadgetDefinition.code?.filter(code => getFileType(code) === 'style' && !verbatim.has(code)) || [];
 }
 
 /**
@@ -560,6 +562,13 @@ export function mapWikicodeSourceFiles(gadgetsToBuild: GadgetDefinition[], mwInt
     }
     getStylesheetsToLoadFromGadgetDefinition(definition).forEach(loadFile);
     getScriptsToLoadFromGadgetDefinition(definition).forEach(loadFile);
+    (definition.verbatim || []).forEach((file) => {
+      assets.push({
+        src: resolveSrcGadgetsPath(section, name, file),
+        dest: `gadgets/${section}/${name}`,
+        overwrite: true
+      });
+    });
     (definition.i18n || []).forEach((i18nFile) => {
       assets.push({ 
         src: resolveSrcGadgetsPath(section, name, i18nFile), 

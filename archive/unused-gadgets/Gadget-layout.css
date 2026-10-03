@@ -1,0 +1,214 @@
+/* This file is no longer used because it has already been moved to [[MediaWiki:Gadget-citizen-layout.css]]. This file now serves as an archive only. */
+/*[[Category:Redundant Stylesheets]]*/
+/*
+ * SECTION A: GLOBAL STYLES & LAYOUT
+ *************************************
+ * This section defines the page structure.
+ */
+body {
+    background-color: var(--theme-page-background-color);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+::selection {
+    background-color: #b3d4fc;
+    color: black;
+    text-shadow: none;
+}
+
+
+.citizen-page-header {
+    background: none;
+}
+
+/*
+ * SECTION B: LIGHT THEME (Day Theme)
+ *************************************
+ * This applies when day theme is selected
+ */
+.skin-theme-clientpref-day {
+    --theme-page-background-color: #f5f8fa;
+    --theme-page-background-color--secondary: #e1e8ed;
+    --theme-link-color: #2b7bb9;
+    --theme-link-color-hover: #3498db;
+    --theme-accent-color: #5c9ece;
+    --theme-border-color: #cbd2d9;
+    --background-image: url('https://static.wikitide.net/utaitewiki/4/4a/Utattemitanouta.png');
+    --background-color: var(--theme-page-background-color);
+    --container-bg: #ffffff;
+    --surface-bg: var(--theme-page-background-color--secondary);
+    --primary-text-color: #202122;
+    --secondary-text-color: #54595d;
+    --accent-color: var(--theme-accent-color);
+    --niconico-icon-filter: brightness(0) saturate(100%) invert(0%);
+    --niconico-icon-filter-hover: brightness(0) saturate(100%) invert(20%);
+}
+
+/* Light theme header/sidebar */
+.skin-theme-clientpref-day .citizen-header {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid var(--theme-border-color);
+}
+
+.skin-theme-clientpref-day .mw-body {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-right: 1px solid var(--theme-border-color);
+    backdrop-filter: blur(8px);
+}
+
+.skin-theme-clientpref-day .citizen-header a,
+.skin-theme-clientpref-day .citizen-header .citizen-menu__heading {
+    color: #333 !important;
+}
+
+.skin-theme-clientpref-day .citizen-menu__card {
+    background-color: var(--background-color);
+    border: 2px solid #144694;
+    border-radius: 1em;
+}
+
+
+/*
+ * SECTION C: DARK THEME (Night Theme)
+ *************************************
+ * This applies when night theme is selected
+ */
+.skin-theme-clientpref-night {
+    --theme-page-background-color: #28272b;
+    --theme-page-background-color--rgb: 40, 39, 43;
+    --theme-page-background-color--secondary: #494e52;
+    --theme-link-color: #5b858c;
+    --theme-link-color--rgb: 91, 133, 140;
+    --theme-link-color-hover: #69c0cf;
+    --theme-link-color--hover--rgb: 105, 192, 207;
+    --theme-accent-color: #778d91;
+    --theme-accent-color--rgb: 119, 141, 145;
+    --theme-accent-color--hover: #97b0b0;
+    --theme-accent-color--hover--rgb: 151, 176, 176;
+    --theme-border-color: #383d40;
+    --theme-border-color--rgb: 56, 61, 64;
+    --background-image: url('https://static.wikitide.net/utaitewiki/f/f7/Site-background-light.jpg');
+    --background-color: transparent;
+    --container-bg: var(--theme-page-background-color);
+    --surface-bg: var(--theme-page-background-color--secondary);
+    --primary-text-color: #e3e3e3;
+    --secondary-text-color: #b1b1b1;
+    --accent-color: var(--theme-accent-color);
+    --niconico-icon-filter: brightness(0) saturate(100%) invert(100%);
+    --niconico-icon-filter-hover: brightness(0) saturate(100%) invert(85%);
+}
+
+.skin-theme-clientpref-night .citizen-header {
+    background-color: rgba(40, 39, 43, 0.7);
+    backdrop-filter: blur(8px);
+    border-right: 1px solid var(--theme-border-color);
+}
+
+.skin-theme-clientpref-night .mw-body {
+    background-color: rgba(40, 39, 43, 0.7);
+    border-right: 1px solid var(--theme-border-color);
+    backdrop-filter: blur(8px);
+}
+
+
+/*
+ * SECTION D: AUTO THEME (System Preference)
+ *************************************
+ * This handles auto theme based on system preferences
+ */
+@media (prefers-color-scheme: light) {
+    .skin-theme-clientpref-os {
+        --theme-page-background-color: #f5f8fa;
+        --theme-page-background-color--secondary: #e1e8ed;
+        --theme-link-color: #2b7bb9;
+        --theme-link-color-hover: #3498db;
+        --theme-accent-color: #5c9ece;
+        --theme-border-color: #cbd2d9;
+        --background-image: url('https://static.wikitide.net/utaitewiki/4/4a/Utattemitanouta.png');
+        --background-color: var(--theme-page-background-color);
+        --container-bg: #ffffff;
+        --surface-bg: var(--theme-page-background-color--secondary);
+        --primary-text-color: #202122;
+        --secondary-text-color: #54595d;
+        --accent-color: var(--theme-accent-color);
+    }
+    
+    .skin-theme-clientpref-os .citizen-header {
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        border-right: 1px solid var(--theme-border-color);
+    }
+    
+    .skin-theme-clientpref-os .mw-body {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-right: 1px solid var(--theme-border-color);
+        backdrop-filter: blur(8px);
+    }
+    
+    .skin-theme-clientpref-os .citizen-header a,
+    .skin-theme-clientpref-os .citizen-header .citizen-menu__heading {
+        color: #333 !important;
+    }
+    
+    .skin-theme-clientpref-os .citizen-menu__card {
+        background-color: var(--background-color);
+        border: 2px solid #144694;
+        border-radius: 1em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .skin-theme-clientpref-os {
+        --theme-page-background-color: #28272b;
+        --theme-page-background-color--secondary: #494e52;
+        --theme-link-color: #5b858c;
+        --theme-link-color-hover: #69c0cf;
+        --theme-accent-color: #778d91;
+        --theme-border-color: #383d40;
+        --background-image: url('https://static.wikitide.net/utaitewiki/f/f7/Site-background-light.jpg');
+        --background-color: #1a1a1a;
+        --container-bg: var(--theme-page-background-color);
+        --surface-bg: var(--theme-page-background-color--secondary);
+        --primary-text-color: #e3e3e3;
+        --secondary-text-color: #b1b1b1;
+        --accent-color: var(--theme-accent-color);
+    }
+    
+    .skin-theme-clientpref-os .citizen-header {
+        background-color: rgba(40, 39, 43, 0.7);
+        backdrop-filter: blur(8px);
+        border-right: 1px solid var(--theme-border-color);
+    }
+    
+    .skin-theme-clientpref-os .mw-body {
+        background-color: rgba(40, 39, 43, 0.7);
+        border-right: 1px solid var(--theme-border-color);
+        backdrop-filter: blur(8px);
+    }
+}
+
+/*
+ * SECTION E: FALLBACK FOR DEFAULT THEME
+ *************************************
+ * This provides fallback styles when no specific theme class is present
+ */
+.skin-citizen:not([class*="skin-theme-clientpref"]) {
+    --theme-page-background-color: #f5f8fa;
+    --theme-page-background-color--secondary: #e1e8ed;
+    --theme-link-color: #2b7bb9;
+    --theme-link-color-hover: #3498db;
+    --theme-accent-color: #5c9ece;
+    --theme-border-color: #cbd2d9;
+    --background-image: url('https://static.wikitide.net/utaitewiki/4/4a/Utattemitanouta.png');
+    --background-color: var(--theme-page-background-color);
+    --container-bg: #ffffff;
+    --surface-bg: var(--theme-page-background-color--secondary);
+    --primary-text-color: #202122;
+    --secondary-text-color: #54595d;
+    --accent-color: var(--theme-accent-color);
+}

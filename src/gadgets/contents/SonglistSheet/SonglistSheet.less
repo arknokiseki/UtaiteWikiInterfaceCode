@@ -1,0 +1,670 @@
+.slsheet-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba( 0, 0, 0, 0.55 );
+}
+
+.slsheet-dialog {
+	position: relative; /* anchors the commit sub-dialog backdrop */
+	display: flex;
+	flex-direction: column;
+	/* 11 default columns plus a 280px inspector do not fit in 768px; see the
+	   spec's open-item 2. */
+	width: min( 95vw, 1400px );
+	max-height: 90vh;
+	overflow: hidden;
+	background: var( --color-surface-1, #fff );
+	color: var( --color-base, #202122 );
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 8px;
+	box-shadow: 0 12px 48px rgba( 0, 0, 0, 0.4 );
+
+	/* Citizen defines --color-warning and --color-destructive but no *-subtle
+	   counterpart, so those var() calls fell back to their light literals and
+	   left pale cream/pink bars inside a dark dialog. Mixing the accent into
+	   the current surface follows whichever theme is active instead. The plain
+	   declaration first is the fallback for browsers without color-mix. */
+	--slsheet-warning-bg: #fef6e7;
+	--slsheet-warning-bg: color-mix( in srgb, var( --color-warning, #edab00 ) 14%, var( --color-surface-1, #fff ) );
+	--slsheet-destructive-bg: #fee7e6;
+	--slsheet-destructive-bg: color-mix( in srgb, var( --color-destructive, #bf3c2c ) 14%, var( --color-surface-1, #fff ) );
+
+	/* Gridlines and selection wash for the jspreadsheet chrome below. */
+	--slsheet-grid-line: var( --border-color-base, #c8ccd1 );
+	--slsheet-selection: rgba( 51, 102, 204, 0.16 );
+	--slsheet-selection: color-mix( in srgb, var( --color-progressive, #36c ) 16%, transparent );
+}
+
+/* ── header ─────────────────────────────────────────────────────────── */
+
+.slsheet-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 14px;
+	background: var( --color-surface-2, #f8f9fa );
+	border-bottom: 1px solid var( --border-color-base, #c8ccd1 );
+}
+
+.slsheet-title {
+	font-weight: 600;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.slsheet-beta {
+	flex: 0 0 auto;
+	font-size: 0.7em;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	padding: 2px 7px;
+	border-radius: 99px;
+	background: var( --slsheet-warning-bg );
+	color: var( --color-warning, #ac6600 );
+	border: 1px solid var( --color-warning, #edab00 );
+}
+
+.slsheet-tools {
+	margin-left: auto;
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.slsheet-search {
+	padding: 3px 7px;
+	min-width: 150px;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 4px;
+	background: var( --color-surface-0, #fff );
+	color: inherit;
+}
+
+.slsheet-close {
+	flex: 0 0 auto;
+	background: none;
+	border: 0;
+	font-size: 1.2em;
+	line-height: 1;
+	padding: 2px 6px;
+	cursor: pointer;
+	color: inherit;
+}
+
+/* ── beta notice ────────────────────────────────────────────────────── */
+
+.slsheet-notice {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+	padding: 8px 14px;
+	font-size: 0.86em;
+	background: var( --slsheet-warning-bg );
+	color: var( --color-base, #202122 );
+	border-bottom: 1px solid var( --color-warning, #edab00 );
+}
+
+.slsheet-notice-dismiss {
+	margin-left: auto;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	color: inherit;
+}
+
+/* ── body: grid + inspector ─────────────────────────────────────────── */
+
+.slsheet-body {
+	display: flex;
+	/* 60vh preferred, but allowed to shrink once the dialog hits its 90vh cap
+	   -- otherwise a short viewport clips the sheet's horizontal scrollbar. */
+	flex: 1 1 60vh;
+	min-height: 0;
+}
+
+.slsheet-grid {
+	flex: 1;
+	min-width: 0;
+	/* No scroller here. jspreadsheet runs with tableOverflow:true and
+	   tableHeight:60vh, so .jss_content is already the scroll container.
+	   Nesting a second one around it gave two vertical scrollbars, and it
+	   broke freezeColumns and ws.scrollTo(), both of which resolve against
+	   .jss_content rather than this wrapper. */
+	overflow: hidden;
+}
+
+.slsheet-inspector {
+	flex: 0 0 280px;
+	width: 280px;
+	overflow-y: auto;
+	padding: 10px 12px;
+	border-left: 1px solid var( --border-color-base, #c8ccd1 );
+	background: var( --color-surface-2, #f8f9fa );
+}
+
+.slsheet-dialog.is-inspector-collapsed .slsheet-inspector {
+	display: none;
+}
+
+/* ── error bar ──────────────────────────────────────────────────────── */
+
+.slsheet-errorbar {
+	padding: 7px 14px;
+	font-size: 0.86em;
+	background: var( --slsheet-destructive-bg );
+	color: var( --color-destructive, #bf3c2c );
+	border-top: 1px solid var( --color-destructive, #bf3c2c );
+}
+
+.slsheet-errorbar[ hidden ] {
+	display: none;
+}
+
+.slsheet-jump {
+	color: inherit;
+	text-decoration: underline;
+}
+
+/* ── footer ─────────────────────────────────────────────────────────── */
+
+.slsheet-footer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 9px 14px;
+	background: var( --color-surface-2, #f8f9fa );
+	border-top: 1px solid var( --border-color-base, #c8ccd1 );
+}
+
+.slsheet-spacer {
+	margin-left: auto;
+}
+
+.slsheet-counts {
+	font-size: 0.86em;
+	color: var( --color-subtle, #54595d );
+}
+
+.slsheet-btn {
+	padding: 4px 11px;
+	font-size: 0.9em;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 4px;
+	background: var( --color-surface-0, #fff );
+	color: inherit;
+	cursor: pointer;
+}
+
+.slsheet-btn:disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+.slsheet-btn-commit:not( :disabled ) {
+	background: var( --color-progressive, #14866d );
+	border-color: var( --color-progressive, #14866d );
+	color: #fff;
+	font-weight: 600;
+}
+
+.slsheet-kbd {
+	font-size: 0.75em;
+	padding: 1px 5px;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	color: var( --color-subtle, #54595d );
+}
+
+/* ── commit sub-dialog ──────────────────────────────────────────────── */
+/* Anchored to .slsheet-dialog, which carries position:relative. */
+
+.slsheet-subback {
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba( 0, 0, 0, 0.45 );
+}
+
+.slsheet-subdialog {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: min( 90%, 620px );
+	max-height: 80%;
+	padding: 16px;
+	background: var( --color-surface-1, #fff );
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 8px;
+	box-shadow: 0 8px 32px rgba( 0, 0, 0, 0.35 );
+}
+
+.slsheet-subdialog h3 {
+	margin: 0;
+	font-size: 1em;
+	word-break: break-word;
+}
+
+.slsheet-diff {
+	overflow-y: auto;
+	max-height: 320px;
+	font-size: 0.85em;
+}
+
+.slsheet-diff-row {
+	padding: 5px 0;
+	border-bottom: 1px solid var( --border-color-subtle, #eaecf0 );
+}
+
+.slsheet-diff-field {
+	margin-left: 10px;
+	word-break: break-word;
+}
+
+.slsheet-diff-key {
+	color: var( --color-subtle, #54595d );
+}
+
+.slsheet-diff del {
+	color: var( --color-destructive, #bf3c2c );
+	text-decoration: line-through;
+}
+
+.slsheet-diff ins {
+	color: var( --color-progressive, #14866d );
+	text-decoration: none;
+}
+
+.slsheet-diff-add {
+	color: var( --color-progressive, #14866d );
+}
+
+.slsheet-diff-del {
+	color: var( --color-destructive, #bf3c2c );
+}
+
+.slsheet-summary {
+	width: 100%;
+	padding: 4px 7px;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	background: var( --color-surface-0, #fff );
+	color: inherit;
+}
+
+.slsheet-subfooter {
+	display: flex;
+	gap: 7px;
+	justify-content: flex-end;
+}
+
+.slsheet-commit-error {
+	padding: 8px;
+	font-size: 0.86em;
+	background: var( --slsheet-destructive-bg );
+	border: 1px solid var( --color-destructive, #bf3c2c );
+	border-radius: 4px;
+}
+
+/* ── inspector internals ────────────────────────────────────────────── */
+
+.slsheet-ins-title {
+	margin: 0 0 8px;
+	font-size: 0.95em;
+	font-weight: 600;
+	word-break: break-word;
+}
+
+.slsheet-ins-empty {
+	color: var( --color-subtle, #54595d );
+	font-size: 0.86em;
+}
+
+.slsheet-ins-group {
+	margin-bottom: 12px;
+}
+
+.slsheet-ins-label {
+	margin-bottom: 4px;
+	font-size: 0.72em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var( --color-subtle, #54595d );
+}
+
+.slsheet-lrow {
+	display: flex;
+	gap: 4px;
+	margin-bottom: 4px;
+}
+
+.slsheet-lin {
+	flex: 1;
+	min-width: 0;
+	padding: 3px 6px;
+	font-size: 0.85em;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	background: var( --color-surface-0, #fff );
+	color: inherit;
+}
+
+.slsheet-lin-svc {
+	flex: 0 0 88px;
+}
+
+.slsheet-lx {
+	flex: 0 0 auto;
+	padding: 2px 7px;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	background: transparent;
+	color: var( --color-destructive, #bf3c2c );
+	cursor: pointer;
+	line-height: 1;
+}
+
+.slsheet-ladd {
+	margin-top: 2px;
+	padding: 2px 8px;
+	font-size: 0.8em;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	background: transparent;
+	color: var( --color-progressive, #14866d );
+	cursor: pointer;
+}
+
+.slsheet-cb {
+	display: block;
+	margin: 2px 0;
+	font-size: 0.85em;
+}
+
+/* Greyed out when the row has no id for that platform, so it cannot be
+   marked deleted/privated there. */
+.slsheet-cb.is-disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.slsheet-ins-msg {
+	margin-top: 3px;
+	font-size: 0.78em;
+}
+
+.slsheet-ins-msg.is-error {
+	color: var( --color-destructive, #bf3c2c );
+}
+
+.slsheet-ins-msg.is-warning {
+	color: var( --color-warning, #ac6600 );
+}
+
+.slsheet-ins-group.is-invalid .slsheet-lin {
+	border-color: var( --color-destructive, #bf3c2c );
+}
+
+/* ── jspreadsheet chrome ────────────────────────────────────────────── */
+
+/* The worksheet needs search:true for ws.search() to work at all — it builds
+   the searchInput element that the method writes into. But the sheet already
+   has a search box in its own header, so the built-in one is hidden rather
+   than shown twice. Hide the .jss_filter wrapper, not just the input: the
+   wrapper also carries a "Search:" label, which otherwise shows as a stray
+   strip above the grid. display:none keeps the input in the DOM, so
+   ws.search() still works. */
+.slsheet-grid .jss_filter,
+.slsheet-grid .jss_search,
+.slsheet-grid .jexcel_search {
+	display: none !important;
+}
+
+.slsheet-grid .jss_container,
+.slsheet-grid .jexcel_container {
+	max-width: 100%;
+}
+
+/* tableHeight puts a hard 60vh on .jss_content inline. Cap it to the wrapper
+   so a short viewport shrinks the sheet rather than cutting off its
+   horizontal scrollbar. The percentage only resolves if every box between the
+   two carries a height, hence the wrappers: .slsheet-grid > .jtabs-content >
+   .jss_container > .jss_content. */
+.slsheet-grid > .jtabs-content,
+.slsheet-grid .jss_container {
+	height: 100%;
+}
+
+.slsheet-grid .jss_content {
+	max-height: 100% !important;
+}
+
+/* ── theme bridge: jspreadsheet + jsuites chrome ─────────────────────── */
+/*
+ * jspreadsheet CE bakes a light-only palette into its stylesheet as literals:
+ * #fff for the sheet and the frozen columns, #f3f3f3 for the header row and
+ * the row-number gutter, #ccc gridlines, and rgba( 0, 0, 0, … ) for
+ * selection, highlight and read-only text. Citizen computes its surfaces in
+ * oklch and flips them for night mode, so in dark mode those literals stayed
+ * light while the dialog around them went dark — pale header strips, an
+ * invisible selection wash, and a read-only "No." column drawn at 30% black
+ * on a near-black cell.
+ *
+ * Everything below re-expresses that chrome in citizen tokens. It is scoped
+ * to .slsheet-grid: other gadgets embed jspreadsheet too, and this is a
+ * re-skin for this dialog, not a change to the shared library.
+ */
+
+.slsheet-grid .jss_worksheet {
+	background-color: var( --color-surface-1, #fff );
+	border-right-color: var( --slsheet-grid-line );
+	border-bottom-color: var( --slsheet-grid-line );
+}
+
+.slsheet-grid .jss_worksheet > thead > tr > td,
+.slsheet-grid .jss_worksheet > tfoot > tr > td,
+.slsheet-grid .jss_worksheet > tbody > tr > td {
+	border-top-color: var( --slsheet-grid-line );
+	border-left-color: var( --slsheet-grid-line );
+}
+
+/* Header row, footer and the row-number gutter: one step off the sheet. */
+.slsheet-grid .jss_worksheet > thead > tr > td,
+.slsheet-grid .jss_worksheet > tfoot > tr > td,
+.slsheet-grid .jss_worksheet > tbody > tr > td:first-child {
+	background-color: var( --color-surface-2, #f8f9fa );
+	color: var( --color-base, #202122 );
+}
+
+.slsheet-grid .jss_worksheet > thead > tr > td.selected,
+.slsheet-grid .jss_worksheet > tbody > tr.selected > td:first-child {
+	background-color: var( --color-surface-4, #eaecf0 );
+}
+
+/* freezeColumns: 2 keeps No. and Title pinned. They need an opaque background
+   so scrolled cells do not show through — vendor sets #fff, the single most
+   visible break in dark mode. */
+.slsheet-grid .jss_worksheet tbody .jss_freezed {
+	background-color: var( --color-surface-1, #fff );
+	box-shadow: 1px 0 0 var( --slsheet-grid-line ) !important;
+}
+
+.slsheet-grid .jss_worksheet thead .jss_freezed,
+.slsheet-grid .jss_worksheet tfoot .jss_freezed {
+	box-shadow: 1px 0 0 var( --slsheet-grid-line ) !important;
+}
+
+/* The "No." column is readOnly, and the vendor dims it with 30% black. */
+.slsheet-grid .jss_worksheet > tbody > tr > td.readonly {
+	color: var( --color-subtle, #54595d );
+	opacity: 0.8;
+}
+
+.slsheet-grid .jss_worksheet > tbody > tr > td.highlight > a {
+	color: var( --color-progressive, #36c );
+}
+
+/* Selection and copy marquee: rgba( 0, 0, 0, 0.05 ) over a dark sheet is
+   nothing at all, and the #000 edges vanish with it. */
+.slsheet-grid .jss_worksheet .highlight,
+.slsheet-grid .jss_worksheet .selection {
+	background-color: var( --slsheet-selection );
+}
+
+.slsheet-grid .jss_worksheet .highlight-top,
+.slsheet-grid .jss_worksheet .selection-top,
+.slsheet-grid .jss_worksheet .copying-top {
+	border-top-color: var( --color-progressive, #36c );
+}
+
+.slsheet-grid .jss_worksheet .highlight-left,
+.slsheet-grid .jss_worksheet .selection-left,
+.slsheet-grid .jss_worksheet .copying-left {
+	border-left-color: var( --color-progressive, #36c );
+}
+
+.slsheet-grid .jss_worksheet .highlight-right,
+.slsheet-grid .jss_worksheet .selection-right,
+.slsheet-grid .jss_worksheet .copying-right {
+	border-right-color: var( --color-progressive, #36c );
+}
+
+.slsheet-grid .jss_worksheet .highlight-bottom,
+.slsheet-grid .jss_worksheet .selection-bottom,
+.slsheet-grid .jss_worksheet .copying-bottom {
+	border-bottom-color: var( --color-progressive, #36c );
+}
+
+.slsheet-grid .jss_worksheet .highlight-top,
+.slsheet-grid .jss_worksheet .highlight-left {
+	box-shadow: none;
+}
+
+/* Fill handle: a black square with a white ring. */
+.slsheet-grid .jss_corner {
+	background-color: var( --color-progressive, #36c );
+	border-color: var( --color-surface-1, #fff );
+}
+
+/* Both scrollbars live on .jss_content. The vendor draws them thin over a
+   transparent track, which on a dark surface reads as no scrollbar at all --
+   and this is the only way to reach the rest of a 650-row sheet. Full width,
+   and a track with its own channel so the bar is findable when idle. */
+.slsheet-grid .jss_content {
+	scrollbar-width: auto;
+	scrollbar-color: var( --color-subtle, #666 ) var( --color-surface-2, #f8f9fa );
+}
+
+.slsheet-grid .jss_content::-webkit-scrollbar {
+	width: 14px;
+	height: 14px;
+}
+
+.slsheet-grid .jss_content::-webkit-scrollbar-track {
+	background: var( --color-surface-2, #f8f9fa );
+}
+
+.slsheet-grid .jss_content::-webkit-scrollbar-thumb {
+	background: var( --color-subtle, #666 );
+	border: 3px solid var( --color-surface-2, #f8f9fa );
+	border-radius: 8px;
+}
+
+/* The dropdown cell editor is jsuites, which is light-only in the same way.
+   It renders inside the cell, so it stays within this scope. */
+.slsheet-grid .jdropdown,
+.slsheet-grid .jdropdown-default .jdropdown-container,
+.slsheet-grid .jdropdown-default .jdropdown-content {
+	background-color: var( --color-surface-1, #fff );
+	color: var( --color-base, #202122 );
+}
+
+.slsheet-grid .jdropdown-default .jdropdown-content {
+	border-color: var( --slsheet-grid-line );
+}
+
+.slsheet-grid .jdropdown-item {
+	color: var( --color-base, #202122 );
+}
+
+.slsheet-grid .jdropdown-default .jdropdown-cursor {
+	background-color: var( --color-surface-3, #eaecf0 );
+}
+
+.slsheet-grid .jdropdown-default .jdropdown-item:hover,
+.slsheet-grid .jdropdown-default .jdropdown-selected {
+	background-color: var( --color-progressive, #36c );
+	color: #fff;
+}
+
+/* ── cell state ─────────────────────────────────────────────────────── */
+/* Green rail: edited this session. Amber: pre-existing oddity, preserved. */
+
+.slsheet-grid .jss td.slsheet-cell-dirty {
+	box-shadow: inset 2px 0 0 var( --color-progressive, #14866d );
+}
+
+.slsheet-grid .jss td.slsheet-cell-warn {
+	background: var( --slsheet-warning-bg );
+}
+
+.slsheet-grid .jss td.slsheet-cell-error {
+	box-shadow: inset 0 0 0 2px var( --color-destructive, #bf3c2c );
+}
+
+/* ── states ─────────────────────────────────────────────────────────── */
+
+.slsheet-loading,
+.slsheet-error {
+	padding: 24px;
+	text-align: center;
+}
+
+.slsheet-error {
+	color: var( --color-destructive, #bf3c2c );
+}
+
+/* Placement: move a row within its date group. Only rendered when the row
+   shares its upload_date with another, since otherwise the date decides. */
+.slsheet-place-row {
+	display: flex;
+	gap: 4px;
+	margin: 2px 0;
+}
+
+.slsheet-move {
+	flex: 1;
+	padding: 2px 8px;
+	font-size: 0.8em;
+	border: 1px solid var( --border-color-base, #c8ccd1 );
+	border-radius: 3px;
+	background: transparent;
+	color: var( --color-progressive, #14866d );
+	cursor: pointer;
+}
+
+.slsheet-move:disabled {
+	color: var( --secondary-text-color, #72777d );
+	opacity: 0.55;
+	cursor: default;
+}
+
+/* The notice sits on a warning-tinted background where the default link
+   blue is low contrast, so underline it and inherit the notice colour. */
+.slsheet-notice-link {
+	color: inherit;
+	text-decoration: underline;
+	font-weight: 600;
+}
+
+.slsheet-notice-link:hover,
+.slsheet-notice-link:focus {
+	color: var( --color-progressive, #14866d );
+}
