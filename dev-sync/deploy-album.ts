@@ -40,7 +40,7 @@ const TARGETS: Target[] = [
     page: 'Module:Album',
     file: 'wiki/modules/Album.lua',
     mode: 'replace',
-    summary: 'Album: restore tsp/tss and alt covers; add intro/notes, t<N>length/bonus/hidden/otherprod/n, TOC entry per album',
+    summary: 'Album: add |variant=legacy (the old Template:Album design, rendered from the module data)',
   },
   {
     page: 'Template:AlbumType2/doc',
