@@ -69,9 +69,15 @@ describe('Module:Album legacy variant', () => {
       expect(html.indexOf('theme="album"')).toBeLessThan(html.indexOf('theme="tracklist"'));
     });
 
-    it('keeps the old link anchors', () => {
+    it('keeps the old link anchors, built directly so "=" in a title cannot break them', () => {
       const html = legacy(base);
-      expect(html).toContain('{{anchor|Test}}{{anchor|Test~Album }}{{anchor|Test~Album (x)}}');
+      expect(html).toContain('<div id="Test" class="hide"></div><div id="Test~Album " class="hide"></div><div id="Test~Album (x)" class="hide"></div>');
+      expect(legacy({ ...base, albumtitle: '[http://x.example/?a=b Title]' })).not.toContain('{{anchor');
+    });
+
+    it('escapes a bare & for the infobox XML but keeps entities', () => {
+      expect(m.eval(`M._xmlSafe("STAIN & RAIN &nbsp; &#160;")`)).toBe('STAIN &amp; RAIN &nbsp; &#160;');
+      expect(legacy({ ...base, albumtitle: 'STAIN & RAIN' })).toContain('<header>STAIN &amp; RAIN</header>');
     });
 
     it('shows the placeholders the old template showed', () => {

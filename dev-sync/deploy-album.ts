@@ -14,11 +14,15 @@
  *
  *   node --env-file=.env dev-sync/deploy-album.ts
  *   node --env-file=.env dev-sync/deploy-album.ts --write
+ *   node --env-file=.env dev-sync/deploy-album.ts --write --only=Module:Album
  */
 import { Mwn } from 'mwn';
 import { readFile } from 'fs/promises';
 
 const WRITE = process.argv.includes('--write');
+/** --only=<page>[,<page>...] limits the run to those pages, to stage a deploy. */
+const ONLY = (process.argv.find((a) => a.startsWith('--only=')) || '').slice('--only='.length)
+  .split(',').map((s) => s.trim()).filter(Boolean);
 
 interface Target {
   page: string;
@@ -69,6 +73,14 @@ const TARGETS: Target[] = [
     mode: 'replace',
     summary: 'Album: emit delimited records instead of <tr> markup',
   },
+  // After Module:Album has |variant=legacy live: same look, rendered by the
+  // module (render-checked against the old template on all {{Album}} calls).
+  {
+    page: 'Template:Album',
+    file: 'wiki/templates/Album.wikitext',
+    mode: 'replace',
+    summary: 'Render via Module:Album (legacy design, same look; no 30-track limit). Bucket and category unchanged',
+  },
 ];
 
 async function initBot(): Promise<Mwn> {
@@ -102,6 +114,7 @@ async function main(): Promise<void> {
   console.log(WRITE ? 'MODE: write\n' : 'MODE: dry run (pass --write to save)\n');
 
   for (const target of TARGETS) {
+    if (ONLY.length && !ONLY.includes(target.page)) continue;
     const built = await readFile(target.file, 'utf8');
     const live = (await bot.read(target.page))?.revisions?.[0]?.content ?? '';
 

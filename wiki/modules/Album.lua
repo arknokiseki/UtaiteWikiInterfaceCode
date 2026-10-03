@@ -697,17 +697,32 @@ function p._legacyTrackLine(track)
   return mw.text.trim(track.n or '') .. '. "' .. track.title .. '" <small>' .. small .. '</small><small>' .. credit .. '</small>'
 end
 
+--- PortableInfobox parses its markup as XML, so a bare "&" (as in "STAIN &
+-- RAIN") drops the whole item. Escape it; entities like &nbsp; stay as they are.
+-- The old template never hit this because its values were substituted later.
+function p._xmlSafe(s)
+  s = (s or ''):gsub('&', '&amp;')
+  return (s:gsub('&amp;(#?%w+;)', '&%1'))
+end
+
 --- A PortableInfobox <data> row holding an already rendered value. source=""
 -- keeps the infobox from looking the value up in the frame's own arguments.
 local function piData(value)
   if value == '' then return '' end
-  return '<data source=""><default>' .. value .. '</default></data>\n'
+  return '<data source=""><default>' .. p._xmlSafe(value) .. '</default></data>\n'
 end
 
 local function piImage(file)
   file = p._clean(file)
   if file == '' then return '' end
-  return '<image source=""><default>' .. file .. '</default></image>\n'
+  return '<image source=""><default>' .. p._xmlSafe(file) .. '</default></image>\n'
+end
+
+--- Template:Anchor's output, built here: passing a title through
+-- {{anchor|...}} breaks when it holds "=", as in an external link's URL.
+local function anchorDiv(text)
+  local id = mw.uri and mw.uri.anchorEncode and mw.uri.anchorEncode(text) or text
+  return '<div id="' .. id .. '" class="hide"></div>'
 end
 
 --- Builds the legacy markup. `expand` preprocesses wikitext (frame:preprocess);
@@ -727,7 +742,7 @@ function p._legacy(args, expand)
       local at = mw.ustring.find(raw, ch, 1, true)
       return at and mw.ustring.sub(raw, 1, at - 1) or raw
     end
-    anchors = '{{anchor|' .. upTo('~') .. '}}{{anchor|' .. upTo('(') .. '}}{{anchor|' .. raw .. '}}\n'
+    anchors = anchorDiv(upTo('~')) .. anchorDiv(upTo('(')) .. anchorDiv(raw) .. '\n'
   end
 
   local alts = {}
@@ -739,7 +754,8 @@ function p._legacy(args, expand)
   local yt, nnd = p._clean(args.crossfadeyt), p._clean(args.crossfadennd)
   local crossfade = '<center>Crossfade: '
     .. (yt ~= '' and ('[[File:yt.png|link=http://www.youtube.com/watch?v=' .. yt .. ']]') or '[[File:NoYt.png|link=]]')
-    .. (nnd ~= '' and ('{{nnd|' .. nnd .. '}}') or '[[File:NoNv.png|link=]]')
+    -- 1= so an "=" in the value (editors paste full URLs) stays the argument
+    .. (nnd ~= '' and ('{{nnd|1=' .. nnd .. '}}') or '[[File:NoNv.png|link=]]')
     .. '</center>'
 
   local descr = p._clean(args.albumdescr)
@@ -752,7 +768,7 @@ function p._legacy(args, expand)
   end
   local shops = p._clean(args.jpshops) .. p._clean(args.shops)
 
-  local album = '<infobox theme="album">\n<group>\n<header>' .. title .. '</header>\n'
+  local album = '<infobox theme="album">\n<group>\n<header>' .. p._xmlSafe(title) .. '</header>\n'
     .. piImage(args.image) .. '</group>\n'
     .. (#alts > 0 and ('<group collapse="closed">\n<header>Alternative CD covers</header>\n' .. table.concat(alts) .. '</group>\n') or '')
     .. '<group row-items="1">\n'
@@ -774,7 +790,7 @@ function p._legacy(args, expand)
     -- Disc/edition groups become headers inside the tracklist box.
     if sectioned and p._clean(t.group) ~= current then
       current = p._clean(t.group)
-      if current ~= '' then rows[#rows + 1] = '<header>' .. current .. '</header>\n' end
+      if current ~= '' then rows[#rows + 1] = '<header>' .. p._xmlSafe(current) .. '</header>\n' end
     end
     rows[#rows + 1] = piData(p._legacyTrackLine(t))
   end
