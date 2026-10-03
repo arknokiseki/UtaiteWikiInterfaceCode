@@ -1,0 +1,13 @@
+{
+  // Single tsconfig for the whole Jest run. dev-utils/wiki-audit is executed directly
+  // by Node (`node .../fetch-cli.ts`), so its relative imports must carry .ts
+  // extensions, which TypeScript only permits under `allowImportingTsExtensions`.
+  // That flag requires `noEmit`, so the root config cannot set it — the root config
+  // really emits. ts-jest forces `noEmit` back to false after parsing, so it still
+  // emits the transformed test modules from here.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}
