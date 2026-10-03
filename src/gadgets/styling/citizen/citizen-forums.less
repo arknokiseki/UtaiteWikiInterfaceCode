@@ -281,6 +281,11 @@
 .forum-new-topic-container .mw-inputbox-createbox.cdx-text-input__input::placeholder {
   color: var(--forum-text-muted);
 }
+/* Codex wraps the input in .cdx-text-input; let it shrink below the input's size="50" width */
+.forum-new-topic-container .createbox .cdx-text-input {
+  min-width: 0;
+  max-width: 100%;
+}
 .forum-new-topic-container .cdx-button.cdx-button--action-progressive.cdx-button--weight-primary {
   display: inline-flex;
   align-items: center;
@@ -613,9 +618,15 @@
   .forum-new-topic-container {
     padding: 24px 16px;
   }
-  .forum-new-topic-container .mw-inputbox-createbox.cdx-text-input__input {
-    min-width: 100%;
+  .forum-new-topic-container .createbox .cdx-text-input {
     width: 100%;
+  }
+  /* InputBox's own .mw-inputbox-createbox[size] { width: auto !important } sizes the
+     input to 50 characters (~413px), wider than a phone; this needs !important to beat it */
+  .forum-new-topic-container .mw-inputbox-createbox.cdx-text-input__input,
+  .forum-new-topic-container .mw-inputbox-createbox[size] {
+    min-width: 0;
+    width: 100% !important;
   }
   .forum-new-topic-container .createbox.mw-inputbox-form-inline {
     flex-direction: column;
