@@ -17,6 +17,12 @@ mw = {
   text = {
     trim = function(s) return (tostring(s or ''):gsub('^%s*(.-)%s*$', '%1')) end,
   },
+  -- Byte-based stand-ins: enough for the ASCII used in tests. On the wiki these
+  -- are the real UTF-8 aware mw.ustring functions.
+  ustring = {
+    find = string.find,
+    sub = string.sub,
+  },
   title = {
     getCurrentTitle = function()
       return {

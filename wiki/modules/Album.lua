@@ -645,9 +645,164 @@ function p._build(args, root, expand)
   }
 end
 
+-- ---------------------------------------------------------------------------
+-- Legacy variant (|variant=legacy): the look of the old Template:Album, two
+-- floated PortableInfoboxes (album details, tracklist), drawn from the same
+-- normalised data as the main design. Only the design is kept; the old
+-- template's logic (30-track cap, raw {{{trackN...}}} lookups) is not.
+-- ---------------------------------------------------------------------------
+
+local NBSP = '&nbsp;'
+
+--- The old credit line: "(lyrics, music: X, arrange: Y)", naming a person
+-- once for every role they share with the role(s) before it.
+function p._legacyCredit(track)
+  local L, C, A = p._clean(track.lyricist), p._clean(track.composer), p._clean(track.arranger)
+  local s
+  if L ~= '' then
+    s = '(lyrics' .. (L == C and (',' .. NBSP .. 'music') or '') .. (L == A and (',' .. NBSP .. 'arrange') or '')
+      .. ': ' .. L
+    if C ~= '' and C ~= L then
+      s = s .. ',' .. NBSP .. 'music' .. (C == A and (',' .. NBSP .. 'arrange') or '') .. ': ' .. C
+    end
+    if A ~= '' and A ~= L and A ~= C then
+      s = s .. ',' .. NBSP .. 'arrange: ' .. A
+    end
+    s = s .. ')'
+  elseif C ~= '' then
+    s = '(music' .. (C == A and (',' .. NBSP .. 'arrange') or '') .. ': ' .. C
+    if A ~= '' and A ~= C then s = s .. ',' .. NBSP .. 'arrange: ' .. A end
+    s = s .. ')'
+  elseif A ~= '' then
+    s = '(arrange: ' .. A .. ')'
+  else
+    return ''
+  end
+  return '<br>' .. string.rep(NBSP, 4) .. s
+end
+
+--- One tracklist line, as the old template wrote it.
+function p._legacyTrackLine(track)
+  local small = p._clean(track.info)
+  local utaite = p._clean(track.utaite)
+  if utaite ~= '' then small = small .. NBSP .. '<strong>(' .. utaite .. ')</strong>' end
+  -- Extras the old template had no place for, kept small and after the info.
+  local length = p._clean(track.length)
+  if length ~= '' then small = small .. ' [' .. length .. ']' end
+  if track.bonus then small = small .. ' (Bonus)' end
+  if track.hidden then small = small .. ' (Hidden)' end
+  local credit = p._legacyCredit(track)
+  local extra = p._clean(track.otherprod)
+  if extra ~= '' then credit = credit .. '<br>' .. string.rep(NBSP, 4) .. extra end
+  return mw.text.trim(track.n or '') .. '. "' .. track.title .. '" <small>' .. small .. '</small><small>' .. credit .. '</small>'
+end
+
+--- A PortableInfobox <data> row holding an already rendered value. source=""
+-- keeps the infobox from looking the value up in the frame's own arguments.
+local function piData(value)
+  if value == '' then return '' end
+  return '<data source=""><default>' .. value .. '</default></data>\n'
+end
+
+local function piImage(file)
+  file = p._clean(file)
+  if file == '' then return '' end
+  return '<image source=""><default>' .. file .. '</default></image>\n'
+end
+
+--- Builds the legacy markup. `expand` preprocesses wikitext (frame:preprocess);
+-- the infobox tags must be parsed for PortableInfobox to load its styles.
+function p._legacy(args, expand)
+  args = args or {}
+  expand = expand or function(s) return s end
+  local title = p._clean(args.albumtitle)
+  if title == '' then title = displayTitle(args) end
+
+  -- The old template's three link anchors: the title up to '~', up to '(',
+  -- and whole (for #Album_name links from other pages).
+  local anchors = ''
+  local raw = p._clean(args.albumtitle)
+  if raw ~= '' then
+    local function upTo(ch)
+      local at = mw.ustring.find(raw, ch, 1, true)
+      return at and mw.ustring.sub(raw, 1, at - 1) or raw
+    end
+    anchors = '{{anchor|' .. upTo('~') .. '}}{{anchor|' .. upTo('(') .. '}}{{anchor|' .. raw .. '}}\n'
+  end
+
+  local alts = {}
+  for _, key in ipairs({ 'imagealt', 'imagealt1', 'imagealt2', 'image3', 'imagealt3', 'image4', 'imagealt4', 'image5' }) do
+    local img = piImage(args[key])
+    if img ~= '' then alts[#alts + 1] = img end
+  end
+
+  local yt, nnd = p._clean(args.crossfadeyt), p._clean(args.crossfadennd)
+  local crossfade = '<center>Crossfade: '
+    .. (yt ~= '' and ('[[File:yt.png|link=http://www.youtube.com/watch?v=' .. yt .. ']]') or '[[File:NoYt.png|link=]]')
+    .. (nnd ~= '' and ('{{nnd|' .. nnd .. '}}') or '[[File:NoNv.png|link=]]')
+    .. '</center>'
+
+  local descr = p._clean(args.albumdescr)
+  if descr == '' then descr = p._clean(args.intro) end
+  local artist, released = p._clean(args.albumartist), p._clean(args.datereleased)
+
+  local function orNone(value, none)
+    value = p._clean(value)
+    return (value ~= '' and (value .. NBSP) or none)
+  end
+  local shops = p._clean(args.jpshops) .. p._clean(args.shops)
+
+  local album = '<infobox theme="album">\n<group>\n<header>' .. title .. '</header>\n'
+    .. piImage(args.image) .. '</group>\n'
+    .. (#alts > 0 and ('<group collapse="closed">\n<header>Alternative CD covers</header>\n' .. table.concat(alts) .. '</group>\n') or '')
+    .. '<group row-items="1">\n'
+    .. piData(descr ~= '' and ('<center>' .. descr .. '</center>') or '')
+    .. piData(artist ~= '' and ('<center>Illust. by ' .. artist .. '</center>') or '')
+    .. piData(released ~= '' and ('<center>Released on ' .. released .. '</center>') or '')
+    .. piData(crossfade)
+    .. '</group>\n<group>\n'
+    .. '<header>Streaming Services</header>\n' .. piData(orNone(args.streams, 'No streaming media available yet'))
+    .. '<header>Shops</header>\n' .. piData(orNone(shops, 'No shops available yet'))
+    .. '<header>Downloads</header>\n' .. piData(orNone(args.download or args.downloads, 'No downloads available yet'))
+    .. '</group>\n</infobox>'
+
+  local tracks = p._collectTracks(args)
+  local rows = {}
+  local sectioned = p._groupMode(tracks, args.groupstyle) == 'section'
+  local current
+  for _, t in ipairs(tracks) do
+    -- Disc/edition groups become headers inside the tracklist box.
+    if sectioned and p._clean(t.group) ~= current then
+      current = p._clean(t.group)
+      if current ~= '' then rows[#rows + 1] = '<header>' .. current .. '</header>\n' end
+    end
+    rows[#rows + 1] = piData(p._legacyTrackLine(t))
+  end
+  local tracklist = '<infobox theme="tracklist">\n<group collapse="open">\n<header>Tracklist</header>\n'
+    .. table.concat(rows) .. '</group>\n</infobox>'
+
+  local prefix = p._clean(args.tracksectionprefix)
+  if prefix == '' then prefix = p._clean(args.tsp) end
+  local suffix = p._clean(args.tracksectionsuffix)
+  if suffix == '' then suffix = p._clean(args.tss) end
+  local notes = p._clean(args.notes)
+
+  return '<div class="album album-legacy">' .. p._anchor(args) .. expand(anchors
+    .. (prefix ~= '' and (prefix .. '\n') or '')
+    .. '<div style="float:left; clear:left; margin:auto">' .. album .. '</div>'
+    .. '<div style="float:left; clear:right; margin:auto;" class="tracklist-wrapper">' .. tracklist .. '</div>'
+    .. '{{clr}}'
+    .. (suffix ~= '' and ('\n' .. suffix) or '')
+    .. (notes ~= '' and ('\n' .. notes) or ''))
+    .. '</div>'
+end
+
 --- Entry point. The only frame-aware function.
 function p.main(frame)
   local args = require('Module:Arguments').getArgs(frame)
+  if string.lower(p._clean(args.variant)) == 'legacy' then
+    return p._legacy(args, function(wikitext) return frame:preprocess(wikitext) end)
+  end
   local root = mw.title.getCurrentTitle().rootText
   local built = p._build(args, root, function(wikitext)
     return frame:preprocess(wikitext)
