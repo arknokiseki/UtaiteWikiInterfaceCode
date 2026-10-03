@@ -36,7 +36,19 @@ const TARGETS: Target[] = [
     page: 'Module:Album',
     file: 'wiki/modules/Album.lua',
     mode: 'replace',
-    summary: 'Album: optional |t<N>n= to show a custom track number (for migrating {{Track}} pages)',
+    summary: 'Album: restore tsp/tss and alt covers; add intro/notes, t<N>length/bonus/hidden/otherprod/n, TOC entry per album',
+  },
+  {
+    page: 'Template:AlbumType2/doc',
+    file: 'wiki/templates/AlbumType2/doc.wikitext',
+    mode: 'replace',
+    summary: 'Document the t<N> track parameters and the new album options',
+  },
+  {
+    page: 'Template:AlbumType2/preload',
+    file: 'wiki/templates/AlbumType2/preload.wikitext',
+    mode: 'replace',
+    summary: 'Preload t<N> track parameters instead of {{Track}}',
   },
   // ORDER MATTERS. AlbumType2 must land before Track.
   //
