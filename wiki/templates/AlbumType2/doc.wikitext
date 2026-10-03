@@ -1,24 +1,38 @@
 = AlbumType2 Template Documentation =
-This template creates a standardized layout for album pages with tabbed sections for tracklist, shops/downloads, and streaming services.
+This template creates a standardized layout for album pages: a cover card with the album details, and tabs for the tracklist, cover art, shops/downloads, streaming and crossfade previews. It is rendered by [[Module:Album]].
+
+Each album is also listed in the page's table of contents (under the nearest heading), so readers can jump straight to it.
 
 == Usage ==
 <pre>
 {{AlbumType2
 |albumtitle=
+|officialromtitle=
 |singers=
 |datereleased=
 |label=
 |albumartist=
 |image=
-|track=
+|intro=
+
+|t1title=
+|t1info=
+|t1singers=
+|t1lyricist=
+|t1composer=
+|t1arranger=
+
+|t2title=
+|t2lyricist=
+|t2composer=
+
 |shops=
 |jpshops=
 |streams=
 |spotifyalbumid=
 |crossfadeyt=
 |crossfadennd=
-|ytxfddesc=
-|nndxfddesc=
+|notes=
 }}
 </pre>
 
@@ -29,16 +43,80 @@ This template creates a standardized layout for album pages with tabbed sections
 |-
 | albumtitle || The title of the album || Yes || <code>My Album Title</code>
 |-
+| officialjaptitle / officialromtitle / officialengtitle || Official Japanese, romanized and English titles. The romanized and English ones are shown under the title || No || <code>Yumeiro Signal</code>
+|-
 | singers || Featured artists on the album || No || <code>Artist A, Artist B</code>
 |-
 | datereleased || Release date of the album || Yes || <code>July 07, 2024</code>
 |-
 | label || Record label or publisher || No || <code>Universal Music</code>
 |-
+| catalognumber || Catalog number || No || <code>LGIN-1234</code>
+|-
 | albumartist || Artist who created the album artwork || No || <code>Cover Artist Name</code>
 |-
 | image || Filename of the album cover image || No || <code>Album_cover.jpg</code>
+|-
+| imagealt, imagealt2 &hellip; imagealt4 || Alternate covers (limited editions etc.). Shown next to the main cover in the '''Cover Art''' tab || No || <code>Album_cover_limited.jpg</code>
+|-
+| gallery || Extra content for the '''Cover Art''' tab || No || <code><nowiki><gallery>...</gallery></nowiki></code>
+|-
+| suppressacg || <code>true</code> hides the '''Cover Art''' tab || No || <code>true</code>
 |}
+
+=== Text Around the Album ===
+{| class="wikitable"
+! Parameter !! Where it appears !! Example
+|-
+| intro || Under the cover card, above the tabs || <code>First full album, released for the 10th anniversary.</code>
+|-
+| notes || Below the tabs || <code>* Limited edition includes a DVD.</code>
+|-
+| tsp (or tracksectionprefix) || Inside the Tracklist tab, before the tracklist || <code><nowiki><h4>CD</h4></nowiki></code>
+|-
+| tss (or tracksectionsuffix) || Inside the Tracklist tab, after the tracklist || <code><nowiki>'''Bonus DVD:''' ...</nowiki></code>
+|}
+
+=== Table of Contents ===
+{| class="wikitable"
+! Parameter !! Description !! Default
+|-
+| toctitle || Text of the album's entry in the table of contents || The album title, without ruby readings or links
+|-
+| headinglevel || Heading level of that entry (2&ndash;6). Use 4 when the album sits under a level-3 heading || <code>3</code>
+|-
+| notoc || <code>yes</code> leaves the album out of the table of contents || &mdash;
+|}
+
+=== Track Parameters ===
+Tracks are numbered parameters: <code>t1&hellip;</code> for track 1, <code>t2&hellip;</code> for track 2, and so on. Tracks are listed in number order, and a gap in the numbers is fine. Columns only appear when at least one track uses them.
+{| class="wikitable"
+! Parameter !! Description !! Example
+|-
+| t''N''title || Song title (required for the track to show) || <code>Song Title</code> or <code><nowiki><ruby>星空<rt>ほしぞら</rt></ruby></nowiki></code>
+|-
+| t''N''info || Short extra info after the title || <code>Instrumental</code> or <code><nowiki>{{yt|dQw4w9WgXcQ}}</nowiki></code>
+|-
+| t''N''singers (or t''N''utaite) || Track singers. Defaults to the page's singer when empty || <code>Artist Name</code>
+|-
+| t''N''lyricist || Lyric writer || <code>Lyricist Name</code>
+|-
+| t''N''composer || Music composer || <code>Composer Name</code>
+|-
+| t''N''arranger || Music arranger || <code>Arranger Name</code>
+|-
+| t''N''length || Track length || <code>4:16</code>
+|-
+| t''N''otherprod || Other production credits, shown under the title || <code>Bass: Name · Mix: Name</code>
+|-
+| t''N''group || Disc or edition the track belongs to. Consecutive tracks with the same group become a titled section (e.g. a bonus DVD) || <code>Bonus DVD</code>
+|-
+| t''N''bonus / t''N''hidden || <code>true</code> adds a '''Bonus''' / '''Hidden''' badge || <code>true</code>
+|-
+| t''N''n || Number to display instead of ''N'' (the order still follows ''N'') || <code>B</code> or <code>18-A</code>
+|}
+
+The older forms still work: <code>track1title</code>&hellip; parameters, and <code><nowiki>|track={{Track|1|title=...}}</nowiki></code>. New albums should use the <code>t''N''</code> parameters.
 
 === Media Player Parameters ===
 {| class="wikitable"
@@ -55,27 +133,6 @@ This template creates a standardized layout for album pages with tabbed sections
 | nndxfddesc || Niconico crossfade description || Text || <code>Album Crossfade</code>
 |}
 
-=== Track Template Parameters ===
-{| class="wikitable"
-! Parameter !! Description !! Required? !! Example
-|-
-| number || Track number || Yes || <code>1</code>
-|-
-| title || Song title || Yes || <code>Song Title</code> or <code><ruby>星空<rt>ほしぞら</rt></ruby></code>
-|-
-| additionalshortinfo || Additional information || No || <code>Single</code> or <code><nowiki>{{yt|dQw4w9WgXcQ}}</nowiki></code>
-|-
-| singers || Track artists || No || <code>Artist Name</code>
-|-
-| lyricist || Lyric writer || No || <code>Lyricist Name</code>
-|-
-| composer || Music composer || No || <code>Composer Name</code>
-|-
-| arranger || Music arranger || No || <code>Arranger Name</code>
-|-
-| collapsible || Makes track info collapsible || No || <code>y</code>
-|}
-
 === Shop Section Types ===
 {| class="wikitable"
 ! Section !! Parameter !! Description !! Example
@@ -87,6 +144,15 @@ This template creates a standardized layout for album pages with tabbed sections
 | Streaming Services || streams || Links to streaming platforms || <code><nowiki>{{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}</nowiki></code>
 |}
 
+=== Display Options ===
+{| class="wikitable"
+! Parameter !! Description !! Values
+|-
+| groupstyle || How t''N''group is shown. Chosen automatically: sections when each group is one run of tracks, otherwise a badge per track || <code>section</code>, <code>badge</code>, <code>column</code>
+|-
+| tablefilter || Search and paging for long tracklists (automatic above 15 tracks) || <code>always</code>, <code>never</code>
+|}
+
 == Examples ==
 
 === Basic Usage ===
@@ -96,8 +162,8 @@ This template creates a standardized layout for album pages with tabbed sections
 |singers=Artist Name
 |datereleased=January 1, 2024
 |label=Label Name
-|track=
-{{Track|1|title=Song Title|singers=Artist}}
+|t1title=Song Title
+|t1singers=Artist
 }}
 </pre>
 Output:
@@ -106,144 +172,69 @@ Output:
 |singers=Artist Name
 |datereleased=January 1, 2024
 |label=Label Name
-|track={{Track|1|title=Song Title|singers=Artist}}
+|t1title=Song Title
+|t1singers=Artist
+|notoc=yes
 }}
 
-=== Advanced Usage with All Features ===
+=== Discs, Lengths and Extra Credits ===
 <pre>
 {{AlbumType2
-|albumtitle=Summer Collection
-|singers=Various Artists
-|datereleased=July 07, 2024
-|label=Music Label
-|albumartist=Cover Artist
-|track=
-{{Track|1|title=Summer Song|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
-{{Track|2|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ|additionalshortinfo=Instrumental|singers=Artist B}}
-|shops={{LType2|amazon|149104}}
-|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
-|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
-|crossfadeyt=7oYbEQ1_pjg
-}}
-</pre>
-output:
-{{AlbumType2
-|albumtitle=Summer Collection
-|singers=Various Artists
-|datereleased=July 07, 2024
-|label=Music Label
-|albumartist=Cover Artist
-|track=
-{{Track|1|title=Summer Song|additionalshortinfo=Single|singers=Artist A|lyricist=Writer A|composer=Composer A|arranger=Arranger A}}
-{{Track|2|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ|additionalshortinfo=Instrumental|singers=Artist B}}
-|shops={{LType2|amazon|149104}}
-|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
-|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
-|crossfadeyt=7oYbEQ1_pjg
-}}
+|albumtitle=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ
+|officialromtitle=Hoshizora Orchestra
+|datereleased=July 7, 2024
+|intro=Second album, with a bonus DVD in the limited edition.
+|t1title=Summer Song
+|t1info=Single
+|t1lyricist=Writer A
+|t1composer=Writer A
+|t1arranger=Arranger A
+|t1length=4:16
+|t1group=CD
 
-<pre>
-{{AlbumType2
-|albumtitle=test
-|singers=test
-|datereleased=July 07, 2024
-|label=test
-|albumartist=test
-|track=
-{{Track|1
-|title=Song Title 1
-|additionalshortinfo=Single
-|singers=Artist A
-|lyricist=Writer A
-|composer=Composer A
-|arranger=Arranger A
-}}<!--
--->{{Track|2
-|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ (Starry Sky Orchestra)
-|additionalshortinfo=Instrumental
-|singers=Artist B
-|lyricist=Writer B
-|composer=Composer B
-|arranger=Arranger B
-|collapsible=y
-}}<!--
--->{{Track|3
-|title=Song Title 3
-|additionalshortinfo={{yt|dQw4w9WgXcQ}}
-|singers=Artist C
-|lyricist=Writer C
-|composer=Composer C
-|arranger=Arranger C
-}}<!--
--->{{Track|4
-|title=<ruby>初音<rt>はつね</rt></ruby>ミクの<ruby>消失<rt>しょうしつ</rt></ruby><br />The disappearance of Hatsune Miku
-|additionalshortinfo=Instrumental
-|singers=ー
-|lyricist=Writer D
-|composer=Composer D
-|arranger=Arranger D
-}}
-|shops={{LType2|amazon|149104}}
-|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
-|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
-|crossfadeyt=7oYbEQ1_pjg
-|crossfadennd=sm20071610
+|t2title=Night Song
+|t2composer=Composer B
+|t2otherprod=Guitar: Guitarist A · Mix: Engineer A
+|t2length=3:58
+|t2group=CD
+
+|t3title=Summer Song (Music Video)
+|t3bonus=true
+|t3group=Bonus DVD
+|notes=* The DVD is only included in the limited edition.
 }}
 </pre>
 Output:
 {{AlbumType2
-|albumtitle=test
-|singers=test
-|datereleased=July 07, 2024
-|label=test
-|albumartist=test
-|track=
-{{Track|1
-|title=Song Title 1
-|additionalshortinfo=Single
-|singers=Artist A
-|lyricist=Writer A
-|composer=Composer A
-|arranger=Arranger A
-}}<!--
--->{{Track|2
-|title=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ (Starry Sky Orchestra)
-|additionalshortinfo=Instrumental
-|singers=Artist B
-|lyricist=Writer B
-|composer=Composer B
-|arranger=Arranger B
-|collapsible=y
-}}<!--
--->{{Track|3
-|title=Song Title 3
-|additionalshortinfo={{yt|dQw4w9WgXcQ}}
-|singers=Artist C
-|lyricist=Writer C
-|composer=Composer C
-|arranger=Arranger C
-}}<!--
--->{{Track|4
-|title=<ruby>初音<rt>はつね</rt></ruby>ミクの<ruby>消失<rt>しょうしつ</rt></ruby><br />The disappearance of Hatsune Miku
-|additionalshortinfo=Instrumental
-|singers=ー
-|lyricist=Writer D
-|composer=Composer D
-|arranger=Arranger D
-}}
-|shops={{LType2|amazon|149104}}
-|streams={{LType2|spotify|3y5m8YvNm0yGHYoi4ada4V}}
-|spotifyalbumid=3y5m8YvNm0yGHYoi4ada4V
-|crossfadeyt=7oYbEQ1_pjg
-|crossfadennd=sm20071610
+|albumtitle=<ruby>星空<rt>ほしぞら</rt></ruby>オーケストラ
+|officialromtitle=Hoshizora Orchestra
+|datereleased=July 7, 2024
+|intro=Second album, with a bonus DVD in the limited edition.
+|t1title=Summer Song
+|t1info=Single
+|t1lyricist=Writer A
+|t1composer=Writer A
+|t1arranger=Arranger A
+|t1length=4:16
+|t1group=CD
+|t2title=Night Song
+|t2composer=Composer B
+|t2otherprod=Guitar: Guitarist A · Mix: Engineer A
+|t2length=3:58
+|t2group=CD
+|t3title=Summer Song (Music Video)
+|t3bonus=true
+|t3group=Bonus DVD
+|notes=* The DVD is only included in the limited edition.
+|notoc=yes
 }}
 
 == Notes ==
 * Track titles support line breaks using <nowiki><br /></nowiki>
 * Japanese text can be annotated with readings using <nowiki><ruby></nowiki> tags
 * Crossfade previews are only shown when video IDs are provided
-* Shop sections will collapse if no links are provided
+* The Shops & Downloads, Streaming and Cover Art tabs only appear when they have content
 
 == See Also ==
-* [[Template:Track]] - For individual track entries
-* [[Template:LType2]] - For shop and streaming links
+* [[Module:Album]] - Renders this template
+* [[Template:LType2]] - Shop and streaming links

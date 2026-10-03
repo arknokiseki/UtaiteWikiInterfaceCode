@@ -1,107 +1,73 @@
 <includeonly>{{AlbumType2
 |albumtitle = Album Name
+|officialromtitle = 
 |image = Template doc.png
 |datereleased = Month DD, YYYY
+|intro = <!--optional: short album info shown above the tabs-->
 |crossfadennd = sm12345678
 |crossfadeyt = ytvideoid
-|jpshops ={{LType2|animate|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}<!--find out more available outlet on https://utaite.fandom.com/wiki/Template:LType2/doc!-->
+|jpshops ={{LType2|animate|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}<!--find out more available outlet on https://utaite.wiki/wiki/Template:LType2/doc-->
 |shops = {{LType2|cdjapan|LGIN-1234|n-th Anniversary Edition}}{{LType2|tower|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}
 |streams = <!--{{LType2|spotify|spotifyalbumid}}-->
 |spotifyalbumid = <!--spotifyalbumid-->
 
-|track=
-{{Track|1
-|title=Song Title 1
-|additionalshortinfo=info
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricist1
-|composer=composer1
-|arranger=arranger1
-}}<!--
+<!--TRACKS: t1 = track 1, t2 = track 2, ... Add as many as you need. Remove lines you don't use.-->
+|t1title = Song Title 1
+|t1info = info
+|t1singers = utaitename<!--remove this line to use the default (page name)-->
+|t1lyricist = lyricist1
+|t1composer = composer1
+|t1arranger = arranger1
+|t1length = <!--optional, e.g. 4:16-->
 
+|t2title = Song Title 2
+|t2info = info
+|t2singers = utaitename<!--remove this line to use the default (page name)-->
+|t2lyricist = lyricist2
+|t2composer = composer2
+|t2arranger = arranger2
 
--->{{Track|2
-|title=Song Title 2
-|additionalshortinfo=info
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricist2
-|composer=composer2
-|arranger=arranger2
-}}<!--
-<!--YOU CAN ADD AS MANY TRACK AS YOU NEED! THIS IS THE ADVANTAGE OF USING AlbumType2 Template!--><!--
+<!--Bonus DVD/Blu-ray or several discs: give every track a group, e.g.
+|t1group = CD   |t2group = CD   |t3title = Music Video   |t3group = Bonus DVD
+and each disc gets its own section. Other options: t1bonus = true, t1hidden = true,
+t1otherprod = (extra credits), t1n = (number to show instead of 1). See Template:AlbumType2/doc.-->
 
--->{{Track|n
-|title=Song Title n
-|additionalshortinfo=info if exist
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricistn
-|composer=composern
-|arranger=arrangern
-}}
-<!--you can remove this section below entirely-->
-|tss=<h2>DVD/Bluray</h2>
-<h3>DVD①</h3>
-Some description
-{{Track/o|1|title=Song Title 1|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-{{Track/o|2|title=Song Title n|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-{{Track/o|n|title=Song Title n|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-<h3>DVD②</h3>
-Some Description
-<h3>Bonus</h3>
-Some Description
-<!--you can remove this section above entirely, but don't remove the double curly brace below-->
+|notes = <!--optional: text shown below the tabs-->
 }}</includeonly><noinclude><pre>
 {{AlbumType2
 |albumtitle = Album Name
+|officialromtitle = 
 |image = Template doc.png
 |datereleased = Month DD, YYYY
+|intro = <!--optional: short album info shown above the tabs-->
 |crossfadennd = sm12345678
 |crossfadeyt = ytvideoid
-|jpshops ={{LType2|animate|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}<!--find out more available outlet on https://utaite.fandom.com/wiki/Template:LType2/doc!-->
+|jpshops ={{LType2|animate|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}<!--find out more available outlet on https://utaite.wiki/wiki/Template:LType2/doc-->
 |shops = {{LType2|cdjapan|LGIN-1234|n-th Anniversary Edition}}{{LType2|tower|1234567|n-th Anniversary Edition w/ Bonus: bonus here if exist}}
 |streams = <!--{{LType2|spotify|spotifyalbumid}}-->
 |spotifyalbumid = <!--spotifyalbumid-->
 
-|track=
-{{Track|1
-|title=Song Title 1
-|additionalshortinfo=info
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricist1
-|composer=composer1
-|arranger=arranger1
-}}<!--
+<!--TRACKS: t1 = track 1, t2 = track 2, ... Add as many as you need. Remove lines you don't use.-->
+|t1title = Song Title 1
+|t1info = info
+|t1singers = utaitename<!--remove this line to use the default (page name)-->
+|t1lyricist = lyricist1
+|t1composer = composer1
+|t1arranger = arranger1
+|t1length = <!--optional, e.g. 4:16-->
 
+|t2title = Song Title 2
+|t2info = info
+|t2singers = utaitename<!--remove this line to use the default (page name)-->
+|t2lyricist = lyricist2
+|t2composer = composer2
+|t2arranger = arranger2
 
--->{{Track|2
-|title=Song Title 2
-|additionalshortinfo=info
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricist2
-|composer=composer2
-|arranger=arranger2
-}}<!--
-<!--YOU CAN ADD AS MANY TRACK AS YOU NEED! THIS IS THE ADVANTAGE OF USING AlbumType2 Template!--><!--
+<!--Bonus DVD/Blu-ray or several discs: give every track a group, e.g.
+|t1group = CD   |t2group = CD   |t3title = Music Video   |t3group = Bonus DVD
+and each disc gets its own section. Other options: t1bonus = true, t1hidden = true,
+t1otherprod = (extra credits), t1n = (number to show instead of 1). See Template:AlbumType2/doc.-->
 
--->{{Track|n
-|title=Song Title n
-|additionalshortinfo=info if exist
-|singers=utaitename<!--remove this line if you want to use default value (page name)-->
-|lyricist=lyricistn
-|composer=composern
-|arranger=arrangern
-}}
-<!--you can remove this section below entirely-->
-|tss=<h2>DVD/Bluray</h2>
-<h3>DVD①</h3>
-Some description
-{{Track/o|1|title=Song Title 1|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-{{Track/o|2|title=Song Title n|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-{{Track/o|n|title=Song Title n|additionalshortinfo=info if exist|singers=utaitename|lyricist=lyricist1, lyricist2, lyricist n|composer=composer 1, composer 2, composer n|arranger=arranger1, arranger2, |collapsible=y}}
-<h3>DVD②</h3>
-Some Description
-<h3>Bonus</h3>
-Some Description
-<!--you can remove this section above entirely, but don't remove the double curly brace below-->
+|notes = <!--optional: text shown below the tabs-->
 }}
 </pre></noinclude>
