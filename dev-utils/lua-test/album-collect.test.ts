@@ -31,6 +31,21 @@ describe('Module:Album track collection', () => {
     expect(m.eval(`M._collectTracks(${a})[2].n`)).toBe('2');
   });
 
+  it('shows t<N>n instead of the index when given, keeping index order', () => {
+    // {{Track}} pages number tracks freely ("B", "18-A", a repeated "11");
+    // migrated pages keep that label while the index fixes the order.
+    const a = luaTable({ t1title: 'A', t1n: '18-A', t2title: 'B', t2n: ' 18-B ', t3title: 'C' });
+    expect(m.eval(`M._collectTracks(${a})[1].n`)).toBe('18-A');
+    expect(m.eval(`M._collectTracks(${a})[2].n`)).toBe('18-B');
+    expect(m.eval(`M._collectTracks(${a})[3].n`)).toBe('3');
+    expect(m.eval(`M._collectTracks(${a})[2].title`)).toBe('B');
+  });
+
+  it('does not count a lone t<N>n as a track', () => {
+    const a = luaTable({ t1title: 'A', t2n: '2' });
+    expect(m.eval(`#M._collectTracks(${a})`)).toBe('1');
+  });
+
   it('collects the legacy track1* dialect', () => {
     const a = luaTable({
       track1title: 'Melt', track1utaite: 'Soraru', track1info: 'TV size',

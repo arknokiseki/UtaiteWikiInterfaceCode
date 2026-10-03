@@ -115,7 +115,10 @@ local TRACK_FIELDS = {
 
 --- Reads one track's fields for index `idx` under a given prefix.
 local function readTrack(norm, prefix, idx)
-  local track = { n = tostring(idx) }
+  -- |t<N>n= overrides the displayed number (e.g. "B", "18-A"); the index still
+  -- decides the order. It does not count towards `any`.
+  local label = mw.text.trim(norm[prefix .. idx .. 'n'] or '')
+  local track = { n = (label ~= '') and label or tostring(idx) }
   local any = false
   for _, field in ipairs(TRACK_FIELDS) do
     local v = p._clean(norm[prefix .. idx .. field])

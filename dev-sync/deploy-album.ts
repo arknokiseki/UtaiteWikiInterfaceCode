@@ -36,7 +36,7 @@ const TARGETS: Target[] = [
     page: 'Module:Album',
     file: 'wiki/modules/Album.lua',
     mode: 'replace',
-    summary: 'Album: embed crossfades and Spotify, drop thead/tbody',
+    summary: 'Album: optional |t<N>n= to show a custom track number (for migrating {{Track}} pages)',
   },
   // ORDER MATTERS. AlbumType2 must land before Track.
   //
