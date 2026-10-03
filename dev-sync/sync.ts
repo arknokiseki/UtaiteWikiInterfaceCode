@@ -10,7 +10,10 @@ import axios from "axios";
 import { readdirSync, createWriteStream, existsSync, mkdirSync } from "fs";
 import { readFile, writeFile } from "fs/promises";
 import { join, relative, resolve, basename } from "path";
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
+import { promisify } from 'util';
+
+const execFileAsync = promisify(execFile);
 
 const EDIT_SUMMARY = 'Automated: Syncing the MediaWiki Interface + Gadgets Code';
 
@@ -119,15 +122,15 @@ const rxGadgetFolderStructure = new RegExp(`^${gadgetsSubfolder}\/(?<gadgetId>[^
  * `getPagesToUpdate()` will try to get the minimum list of pages to edit if 
  * possible.
  * 
- * @param from        only subscribe to changes made after the specified date & time   
+ * @param baseCommit  only subscribe to changes made since this commit (the last synced one)
  * @param updateAll   if set to `true`, then `getPagesToUpdate` will update all pages
  * @returns           a Map object with the pagename as key, filepath as value
  */
-async function getPagesToUpdate(from?: Date, updateAll?: boolean): Promise<Map<string, string>> {
+async function getPagesToUpdate(baseCommit?: string, updateAll?: boolean): Promise<Map<string, string>> {
   const res = new Map<string, string>();
   const gadgetsToUpdate = new Set<string>();
-  
-  let filepaths = await ((from === undefined || updateAll) ? getAllFilesFromSrc() : getFileChangesFromGit(from));
+
+  let filepaths = await ((baseCommit === undefined || updateAll) ? getAllFilesFromSrc() : getFileChangesFromGit(baseCommit));
 
   for (let filepath of filepaths) {
     if (filepath.startsWith(`${gadgetsSubfolder}/`)) {
@@ -169,30 +172,45 @@ async function getAllFilesFromSrc(): Promise<string[]> {
   return results;
 }
 
+async function git(...args: string[]): Promise<string> {
+  const { stdout } = await execFileAsync('git', args, { cwd: resolve(__dirname, '..'), maxBuffer: 64 * 1024 * 1024 });
+  return stdout.trim();
+}
+
 /**
- * Only fetch the paths of files changed from the specified date & time.
- * 
- * @param from 
- * @returns 
+ * Only fetch the paths of files in `src/` changed between `baseCommit` and HEAD.
+ *
+ * A tree diff rather than `git log --since`: commits brought in by a merge keep
+ * their original (older) dates and the merge commit itself lists no files, so a
+ * date filter silently skipped everything that arrived through a merge.
+ *
+ * @param baseCommit
+ * @returns
  */
-function getFileChangesFromGit(from: Date): Promise<string[]> {
-  return new Promise((resolve, _) => {
-    const cmd = `git log --since="${from.toISOString()}" --name-only --pretty=format: | sort -u | grep -ve "^$"`;
-    log(`CMD EXEC: ${cmd}`);
-    exec(cmd, (error, stdout, stderr) => {
-      if (error || stderr) {
-        log(`Error: ${error?.message || stderr}`);
-        resolve([]);
-        return;
-      }
-      let files = stdout.trim().split('\n');
-      // Restrict to files within src/
-      files = files
-        .filter(file => file.startsWith(`${basename(srcPath)}/`))
-        .map(file => file.replace(`${basename(srcPath)}/`, ''));
-      resolve(files);
-    });
-  });
+async function getFileChangesFromGit(baseCommit: string): Promise<string[]> {
+  const prefix = `${basename(srcPath)}/`;
+  log(`Collecting changes in ${prefix} since ${baseCommit.slice(0, 7)}`);
+  // deleted files have nothing in dist/ to save
+  const out = await git('diff', '--name-only', '--diff-filter=d', baseCommit, 'HEAD', '--', prefix);
+  return out.split('\n').filter(Boolean).map(file => file.slice(prefix.length));
+}
+
+/**
+ * Read the last-updated file: the time on the first line and, since the sync
+ * started recording it, the synced commit on the second. An older file that only
+ * holds a time resolves to the last commit made before that time.
+ *
+ * @param file
+ * @returns the last synced commit, or undefined to sync everything
+ */
+async function readLastSynced(file: string): Promise<string | undefined> {
+  if (!existsSync(file)) return undefined;
+  const [time, commit] = (await readFile(file, { encoding: 'utf-8' })).trim().split(/\r?\n/);
+  if (commit && /^[0-9a-f]{7,40}$/.test(commit.trim())) return commit.trim();
+  const at = Date.parse((time || '').trim());
+  if (isNaN(at)) return undefined;
+  const legacy = await git('rev-list', '-1', `--before=${new Date(at).toISOString()}`, 'HEAD');
+  return legacy || undefined;
 }
 
 /**
@@ -219,30 +237,31 @@ function getFilesInGadgetDistFolder(gadgetId: string): string[] {
  * @param bot 
  * @param pagesToUpdate 
  */
-async function syncWikiCode(bot: Mwn, pagesToUpdate: Map<string, string>): Promise<void> {
-  log('Syncing wiki code...');
+async function syncWikiCode(bot: Mwn, pagesToUpdate: Map<string, string>): Promise<string[]> {
+  log(`Syncing ${pagesToUpdate.size} page(s)...`);
   const failed = await bot.batchOperation(
     Array.from(pagesToUpdate.keys()) as string[],
     async (pageTitle: string, _: number): Promise<any> => {
       const filepath = pagesToUpdate.get(pageTitle)!;
       const src = await readFile(filepath, { encoding: 'utf-8', flag: 'r' });
-      await bot.save(pageTitle, src, EDIT_SUMMARY);
-      log(`Edited page '${pageTitle}'`);
+      const res: any = await bot.save(pageTitle, src, EDIT_SUMMARY);
+      // identical content is a null edit: no new revision
+      log(res && res.nochange !== undefined ? `Unchanged page '${pageTitle}'` : `Edited page '${pageTitle}'`);
       return;
     },
     /* concurrencies */ 3,
     /* maxRetries */ 3
   );
-  log('Finished syncing wiki code!');
-  if (!!failed && !!failed.failures) {
-    const errors = Object.entries(failed.failures);
-    if (errors.length > 0) {
-      log(`Failed to edit the following pages:`);
-      errors.forEach(([item, error]) => {
-        log(`${item}\t${error}`);
-      })
-    }
+  const errors = Object.entries((failed && failed.failures) || {});
+  if (errors.length > 0) {
+    log(`Failed to edit the following pages:`);
+    errors.forEach(([item, error]) => {
+      log(`${item}\t${error}`);
+    });
+  } else {
+    log('Finished syncing wiki code!');
   }
+  return errors.map(([item]) => item);
 }
 
 
@@ -258,25 +277,27 @@ async function main() {
 
     const bot = await initBot();
     
-    /* Get last updated time */
+    /* Get the last synced commit */
     const lastUpdatedLogFileName = `last-updated${!!process.env.profile ? '.' : ''}${process.env.profile || ''}.txt`;
     const lastUpdatedLogFile = resolve(logsFolderPath, lastUpdatedLogFileName);
-    let from: Date | undefined;
-    if (existsSync(lastUpdatedLogFile)) {
-      const rw = await readFile(lastUpdatedLogFile, { encoding: 'utf-8', flag: 'r' });
-      const rn = Date.parse(rw.trim());
-      if (!isNaN(rn)) {
-        from = new Date(rn);
-      }
+    const baseCommit = await readLastSynced(lastUpdatedLogFile);
+    // read before syncing, so a commit made while the sync runs is picked up next time
+    const head = await git('rev-parse', 'HEAD');
+
+    const pagesToUpdate = await getPagesToUpdate(baseCommit, updateAll);
+    const failures = await syncWikiCode(bot, pagesToUpdate);
+
+    if (failures.length > 0) {
+      // keep the old marker so the failed pages are retried on the next run
+      log(`Not updating ${lastUpdatedLogFileName}: ${failures.length} page(s) failed`);
+      process.exitCode = 1;
+      return;
     }
-
-    const pagesToUpdate = await getPagesToUpdate(from, updateAll);
-    syncWikiCode(bot, pagesToUpdate);
-
-    /* Save last updated time for next time */
-    await writeFile(lastUpdatedLogFile, new Date(Date.now()).toISOString(), { encoding: 'utf-8', flag: 'w' });
+    /* Save the synced commit for next time */
+    await writeFile(lastUpdatedLogFile, `${new Date(Date.now()).toISOString()}\n${head}\n`, { encoding: 'utf-8', flag: 'w' });
   } catch (err) {
-    log(err);
+    log(String(err));
+    process.exitCode = 1;
   }
 }
 main();
