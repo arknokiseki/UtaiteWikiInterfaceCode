@@ -209,8 +209,10 @@
     const SITE_ID_FIELD = { yt: 'youtube_id', nnd: 'niconico_id', bb: 'bilibili_id' };
 
     // Placeholder standing in for {{!}} while braces are stripped. A control
-    // character so it cannot collide with anything a human would type.
-    const PIPE_SENTINEL = '\u0001';
+    // character so it cannot collide with anything a human would type. Built at
+    // runtime: the build would print '\u0001' as a raw byte, and MediaWiki turns
+    // raw control characters into U+FFFD when the page is saved.
+    const PIPE_SENTINEL = String.fromCharCode(1);
 
     function okResult(value: any, warning: any) {
         return { value: value, changed: false, error: null, warning: warning || null };

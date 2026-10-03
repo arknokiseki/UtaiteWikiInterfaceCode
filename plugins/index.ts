@@ -2,6 +2,7 @@ import autogenerateEntrypoint from "./autogenerate-entrypoint.js";
 import createMwGadgetImplementation from "./create-mw-gadget-implementation.js";
 import generateCssBanner from "./generate-css-banner.js";
 import generateGadgetsDefinitionWikitext from "./generate-gadgets-definition-wikitext.js";
+import noControlChars from "./no-control-chars.js";
 import preserveUseStrict from "./preserve-use-strict.js";
 
 export {
@@ -9,5 +10,6 @@ export {
   createMwGadgetImplementation,
   generateCssBanner,
   generateGadgetsDefinitionWikitext,
+  noControlChars,
   preserveUseStrict,
 };
