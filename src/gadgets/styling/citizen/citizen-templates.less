@@ -255,6 +255,50 @@ table.album-track-table {
     white-space: nowrap;
 }
 
+/* One heading per album for the table of contents. Visually hidden (the card
+   shows the styled title) but not display:none, so a TOC jump still lands on
+   the album. Nested in .album, so mobile section folding leaves it alone. */
+.album {
+    position: relative;
+}
+
+.album-anchor {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    scroll-margin-top: 4rem;
+}
+
+/* |t<N>bonus= / |t<N>hidden= */
+.album-track-flag {
+    border-color: var(--color-progressive, #3366cc);
+    color: var(--color-progressive, #3366cc);
+}
+
+/* |t<N>otherprod=: extra production credits, shown on every screen */
+.album-track-extra {
+    display: block;
+    margin-top: 2px;
+    font-size: .85em;
+    color: var(--secondary-text-color);
+}
+
+/* |tsp= / |tss=: text before and after the tracklist; |intro= / |notes=:
+   text above and below the tabs */
+.album-track-prefix,
+.album-track-suffix,
+.album-intro,
+.album-notes {
+    margin: 10px 0;
+}
+
 .album-track-section {
     display: flex;
     justify-content: space-between;

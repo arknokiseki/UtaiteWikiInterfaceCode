@@ -111,12 +111,19 @@ end
 
 local TRACK_FIELDS = {
   'title', 'info', 'utaite', 'lyricist', 'composer', 'arranger', 'group',
+  'length', 'otherprod',
 }
+
+--- True for a yes-ish flag value (|t3bonus=true, yes, y, 1).
+local function flag(v)
+  v = string.lower(mw.text.trim(v or ''))
+  return v ~= '' and v ~= 'false' and v ~= 'no' and v ~= 'n' and v ~= '0'
+end
 
 --- Reads one track's fields for index `idx` under a given prefix.
 local function readTrack(norm, prefix, idx)
   -- |t<N>n= overrides the displayed number (e.g. "B", "18-A"); the index still
-  -- decides the order. It does not count towards `any`.
+  -- decides the order. It does not count towards `any`, nor do the flags.
   local label = mw.text.trim(norm[prefix .. idx .. 'n'] or '')
   local track = { n = (label ~= '') and label or tostring(idx) }
   local any = false
@@ -128,6 +135,8 @@ local function readTrack(norm, prefix, idx)
   if track.utaite == '' then
     track.utaite = p._clean(norm[prefix .. idx .. 'singers'])
   end
+  track.bonus = flag(norm[prefix .. idx .. 'bonus'])
+  track.hidden = flag(norm[prefix .. idx .. 'hidden'])
   return track, any
 end
 
@@ -187,13 +196,17 @@ function p._columns(tracks)
   local cols = {}
   for _, name in ipairs(SPINE) do cols[#cols + 1] = name end
 
-  local hasArranger, hasGroup = false, false
+  local hasArranger, hasGroup, hasLength = false, false, false
   for _, t in ipairs(tracks or {}) do
     if p._clean(t.arranger) ~= '' then hasArranger = true end
     if p._clean(t.group) ~= '' then hasGroup = true end
+    if p._clean(t.length) ~= '' then hasLength = true end
   end
 
   if hasArranger then cols[#cols + 1] = 'Arranger' end
+  -- Last of the data columns: the mobile layout keys on the positions of the
+  -- first three, and shows the length in the credit line instead.
+  if hasLength then cols[#cols + 1] = 'Length' end
   if hasGroup then cols[#cols + 1] = 'Group' end
   return cols
 end
@@ -222,6 +235,9 @@ function p._credit(track)
   end
 
   local parts = {}
+  -- The Length column is hidden on phones, where this line is shown instead.
+  local length = p._clean(track.length)
+  if length ~= '' then parts[1] = length end
   for _, who in ipairs(order) do
     parts[#parts + 1] = table.concat(byName[who], ', ') .. ': ' .. who
   end
@@ -273,7 +289,7 @@ local FILTER_THRESHOLD = 15
 
 local COLUMN_FIELD = {
   ['#'] = 'n', Title = 'title', Utaite = 'utaite', Lyricist = 'lyricist',
-  Composer = 'composer', Arranger = 'arranger', Group = 'group',
+  Composer = 'composer', Arranger = 'arranger', Length = 'length', Group = 'group',
 }
 
 local function attr(name, value)
@@ -296,6 +312,17 @@ local function renderRow(track, columns, opts, mode)
       end
       if mode == 'badge' and p._clean(track.group) ~= '' then
         value = value .. ' <span class="album-track-badge">' .. p._clean(track.group) .. '</span>'
+      end
+      if track.bonus then
+        value = value .. ' <span class="album-track-badge album-track-flag">Bonus</span>'
+      end
+      if track.hidden then
+        value = value .. ' <span class="album-track-badge album-track-flag">Hidden</span>'
+      end
+      -- Extra production credits (bass, mix, ...), shown on every screen.
+      local extra = p._clean(track.otherprod)
+      if extra ~= '' then
+        value = value .. '<span class="album-track-extra">' .. extra .. '</span>'
       end
       -- The merged credit line rides inside the title cell rather than in a
       -- column of its own, so the column count stays stable for DataTables.
@@ -413,6 +440,38 @@ local function displayTitle(args)
   return '<span class="album-error">albumtitle field must be filled</span>'
 end
 
+--- Reduces a wikitext title to plain text for the table of contents: drops
+-- ruby readings, keeps link labels, removes tags and bold/italic quotes.
+function p._plainTitle(s)
+  s = s or ''
+  if mw.text.killMarkers then s = mw.text.killMarkers(s) end
+  s = s:gsub('<rt[^>]*>.-</rt>', ''):gsub('<rp[^>]*>.-</rp>', '')
+  s = s:gsub('%[%[[^%]|]*|([^%]]*)%]%]', '%1'):gsub('%[%[([^%]]*)%]%]', '%1')
+  s = s:gsub('%[https?://[^%s%]]+%s+([^%]]*)%]', '%1'):gsub('%[https?://[^%s%]]+%]', '')
+  s = s:gsub('<[^>]*>', ''):gsub("'''?", '')
+  return mw.text.trim((s:gsub('%s+', ' ')))
+end
+
+--- A heading per album so the table of contents lists it. It is kept out of
+-- sight (the card shows the styled title) and nested inside the album's div,
+-- so skins that fold top-level headings into mobile sections leave it alone.
+function p._anchor(args)
+  args = args or {}
+  if flag(args.notoc) then return '' end
+  local text = p._clean(args.toctitle)
+  if text == '' then
+    for _, key in ipairs({ 'albumtitle', 'officialjaptitle', 'officialromtitle', 'officialengtitle' }) do
+      text = p._clean(args[key])
+      if text ~= '' then break end
+    end
+    text = p._plainTitle(text)
+  end
+  if text == '' then return '' end
+  local level = tonumber(p._clean(args.headinglevel)) or 3
+  if level < 2 or level > 6 or level % 1 ~= 0 then level = 3 end
+  return '<h' .. level .. ' class="album-anchor">' .. text .. '</h' .. level .. '>'
+end
+
 --- Renders the cover box and the metadata grid.
 function p._renderCard(args)
   args = args or {}
@@ -477,13 +536,50 @@ function p._build(args, root, expand)
     })
   end
 
+  -- Text before/after the tracklist, as the pre-module AlbumType2 placed it.
+  -- Pages use it for disc headings, notices and bonus-disc tables (Track/o).
+  local prefix = p._clean(args.tracksectionprefix)
+  if prefix == '' then prefix = p._clean(args.tsp) end
+  local suffix = p._clean(args.tracksectionsuffix)
+  if suffix == '' then suffix = p._clean(args.tss) end
+  if prefix ~= '' then
+    tracklist = '<div class="album-track-prefix">\n' .. prefix .. '\n</div>' .. tracklist
+  end
+  if suffix ~= '' then
+    tracklist = tracklist .. '<div class="album-track-suffix">\n' .. suffix .. '\n</div>'
+  end
+
   local tabs = {
     { label = 'Tracklist', content = tracklist },
   }
 
+  -- Alternate covers. The old template rotated them into the card at random
+  -- by parse time; listing them beside the main cover keeps every one visible.
+  local covers = {}
+  local seen = {}
+  local function addCover(file, caption)
+    file = p._clean(file):gsub('^[Ff]ile:', ''):gsub('^[Ii]mage:', '')
+    if file ~= '' and not seen[file] then
+      seen[file] = true
+      covers[#covers + 1] = file .. '|' .. caption
+    end
+  end
+  local alts = {}
+  for _, key in ipairs({ 'imagealt', 'imagealt1', 'imagealt2', 'imagealt3', 'imagealt4' }) do
+    if p._clean(args[key]) ~= '' then alts[#alts + 1] = args[key] end
+  end
+  if #alts > 0 then
+    addCover(args.image, 'Main cover')
+    for i, file in ipairs(alts) do addCover(file, 'Alternate cover ' .. i) end
+  end
+
   local gallery = p._clean(args.gallery)
-  if gallery ~= '' and p._clean(args.suppressacg) ~= 'true' then
-    tabs[#tabs + 1] = { label = 'Cover Art', content = '<div class="album-art">' .. gallery .. '</div>' }
+  if (gallery ~= '' or #covers > 0) and p._clean(args.suppressacg) ~= 'true' then
+    local art = gallery
+    if #covers > 0 then
+      art = art .. expand('<gallery mode="packed" heights="180">\n' .. table.concat(covers, '\n') .. '\n</gallery>')
+    end
+    tabs[#tabs + 1] = { label = 'Cover Art', content = '<div class="album-art">' .. art .. '</div>' }
   end
 
   local jpshops, shops = p._clean(args.jpshops), p._clean(args.shops)
@@ -531,7 +627,22 @@ function p._build(args, root, expand)
     crossfade('NND Crossfade', 'niconico', nnd, p._clean(args.nndxfddesc))
   end
 
-  return { card = p._renderCard(args), tracklist = tracklist, tabs = tabs }
+  -- Free text above and below the tabs. The newline after the opening tag
+  -- lets wikitext lists and headings at the start of the value parse.
+  local function block(class, value)
+    value = p._clean(value)
+    if value == '' then return '' end
+    return '<div class="' .. class .. '">\n' .. value .. '\n</div>'
+  end
+
+  return {
+    anchor = p._anchor(args),
+    card = p._renderCard(args),
+    tracklist = tracklist,
+    tabs = tabs,
+    intro = block('album-intro', args.intro),
+    notes = block('album-notes', args.notes),
+  }
 end
 
 --- Entry point. The only frame-aware function.
@@ -552,8 +663,11 @@ function p.main(frame)
   -- together and there is no element to hang spacing on — a margin on the
   -- card would separate it from its own tabs instead.
   return '<div class="album">'
+    .. built.anchor
     .. built.card
+    .. built.intro
     .. frame:extensionTag('tabber', tabber, { class = 'wds-tabber dev-tabber album-tabs' })
+    .. built.notes
     .. '</div>'
 end
 
