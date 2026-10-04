@@ -2,7 +2,8 @@
   mw.loader.using(["mediawiki.api"]).then(function() {
     $(function() {
       var USER_BLOG_NAMESPACE = 3e3;
-      var Skeleton = window.Skeleton!;
+      // Set once ext.gadget.Skeleton has loaded (only on blog pages, see the bottom)
+      var Skeleton: NonNullable<typeof window.Skeleton>;
       // Same per-user fallback images as the main page blog cards (Module:BlogCard):
       // { "BLUEBIRD": "JUN.png", "Sbluen": true } where true means "<username>.png".
       // Covers former staff who have no account here, so no UserProfileV2 avatar.
@@ -304,12 +305,18 @@
       var wgNamespaceNumber = mw.config.get("wgNamespaceNumber");
       var wgAction = mw.config.get("wgAction");
       if (wgNamespaceNumber === USER_BLOG_NAMESPACE && wgAction === "view") {
-        var pageTitle = mw.config.get("wgTitle");
-        if (pageTitle.split("/").length > 1) {
-          initializePostPage();
-        } else {
-          initializeListingPage();
-        }
+        // Skeleton is a library gadget (hidden, not default): fetched here, on blog
+        // pages only, rather than as a dependency of this gadget, which also loads
+        // in articles and user pages where it draws nothing.
+        mw.loader.using("ext.gadget.Skeleton").then(function() {
+          Skeleton = window.Skeleton!;
+          var pageTitle = mw.config.get("wgTitle");
+          if (pageTitle.split("/").length > 1) {
+            initializePostPage();
+          } else {
+            initializeListingPage();
+          }
+        });
       }
     });
   });

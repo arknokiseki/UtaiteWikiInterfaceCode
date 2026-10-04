@@ -150,15 +150,16 @@ gadgets:
     Skeleton:
       description: "Shared loading states (skeleton placeholders and spinner) for gadgets that fetch content."
       comment: |
-        Default so any gadget can depend on it. It does nothing by itself: it only
-        publishes window.Skeleton, so pages whose gadgets never call it do no work.
+        Library gadget: hidden and NOT default, so ResourceLoader registers it but
+        never delivers it by itself. Gadgets pull it in where they draw loading
+        states, as a dependency or with mw.loader.using('ext.gadget.Skeleton')
+        (userblog does the latter, on blog pages only).
       authors:
         - makudoumee
       code:
         - Skeleton.ts
         - Skeleton.less
       resourceLoader:
-        default: true
         hidden: true
     QuickPurge:
       description: "Intercepts purge links and performs API-based purge without confirmation."
@@ -451,7 +452,6 @@ gadgets:
           - mediawiki.util
           - mediawiki.Title
           - ext.gadget.getuserprofile
-          - ext.gadget.Skeleton
         namespaces: "0,2,3000,3001"
 
   styling:
