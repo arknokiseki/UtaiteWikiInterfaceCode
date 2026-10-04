@@ -451,6 +451,7 @@ gadgets:
           - mediawiki.util
           - mediawiki.Title
           - ext.gadget.getuserprofile
+          - ext.gadget.Skeleton
         namespaces: "0,2,3000,3001"
 
   styling:

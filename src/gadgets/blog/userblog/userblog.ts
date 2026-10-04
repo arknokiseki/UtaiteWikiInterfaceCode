@@ -2,6 +2,7 @@
   mw.loader.using(["mediawiki.api"]).then(function() {
     $(function() {
       var USER_BLOG_NAMESPACE = 3e3;
+      var Skeleton = window.Skeleton!;
       // Same per-user fallback images as the main page blog cards (Module:BlogCard):
       // { "BLUEBIRD": "JUN.png", "Sbluen": true } where true means "<username>.png".
       // Covers former staff who have no account here, so no UserProfileV2 avatar.
@@ -80,6 +81,18 @@
         return Math.floor(seconds) + " seconds ago";
       }
 
+      /** Placeholder shaped like a .blog-card, shown while the post list loads. */
+      function blogCardSkeleton(): string {
+        return '<div class="blog-card blog-card--skeleton">' +
+          '<div class="blog-card-header">' +
+            '<div class="blog-card-meta">' + Skeleton.line({ width: "10em" }) + '</div>' +
+          '</div>' +
+          '<div class="blog-card-title">' + Skeleton.line({ width: "55%" }) + '</div>' +
+          '<div class="blog-card-excerpt">' + Skeleton.text({ lines: 2 }) + '</div>' +
+          '<div class="blog-card-footer">' + Skeleton.block(30, 120) + '</div>' +
+        '</div>';
+      }
+
       function initializeCreateButton(container: any, blogOwnerUsername: any) {
         var currentUserName = mw.config.get("wgUserName");
         if (currentUserName === blogOwnerUsername.replace(/_/g, " ")) {
@@ -120,7 +133,7 @@
           '<div class="custom-blog-details">' +
             '<a href="' + userPageLink + '">' + usernameText + '</a>' +
             '<span class="custom-blog-bullet">&bull;</span>' +
-            '<span class="custom-blog-timestamp">loading...</span>' +
+            '<span class="custom-blog-timestamp">' + Skeleton.line({ width: "6em" }) + '</span>' +
             '<span class="custom-blog-bullet">&bull;</span>' +
             '<a href="' + userBlogLink + '">User blog:' + usernameText + '</a>' +
           '</div>' +
@@ -129,6 +142,14 @@
         if (targetElement) {
           targetElement.insertAdjacentHTML("afterend", blogHeaderHTML);
           fillAvatar(document.querySelector(".custom-blog-subtitle"), usernameText);
+        }
+        /** Drops the timestamp placeholder and its bullet when there is no timestamp to show. */
+        function clearTimestamp() {
+          var timestampElement = document.querySelector(".custom-blog-timestamp");
+          if (!timestampElement) return;
+          var bullet = timestampElement.previousElementSibling;
+          if (bullet && bullet.classList.contains("custom-blog-bullet")) bullet.remove();
+          timestampElement.remove();
         }
         new mw.Api().get({
           action: "query",
@@ -139,7 +160,10 @@
           format: "json"
         }).then(function(data) {
           var pages = (data.query) ? data.query.pages : null;
-          if (!pages) return;
+          if (!pages) {
+            clearTimestamp();
+            return;
+          }
           var pageId = Object.keys(pages)[0];
           if (pageId !== "-1" && pages[pageId].revisions && pages[pageId].revisions.length > 0) {
             var timestamp = pages[pageId].revisions[0].timestamp;
@@ -148,8 +172,10 @@
             if (timestampElement) {
               timestampElement.textContent = timeAgo;
             }
+          } else {
+            clearTimestamp();
           }
-        });
+        }, clearTimestamp);
       }
 
       function initializeListingPage() {
@@ -175,13 +201,15 @@
             '</a>' +
             '<h2>' + usernameText + '\'s Blog Posts</h2>' +
           '</div>' +
-          '<div class="blog-listing-loader">Loading posts...</div>' +
         '</div>';
 
         fillAvatar(document.querySelector(".blog-listing-header"), usernameText);
 
         var listingContainer = document.querySelector(".blog-listing-container");
         initializeCreateButton(listingContainer, username);
+        var loading = Skeleton.show(listingContainer!, blogCardSkeleton() + blogCardSkeleton() + blogCardSkeleton(), {
+          label: "Loading posts…"
+        });
 
         // First query: get the list of blog post pages
         new mw.Api().get({
@@ -193,12 +221,9 @@
           format: "json"
         }).then(function(data: any): any {
           var pages = (data.query) ? data.query.allpages : null;
-          var loader = document.querySelector(".blog-listing-loader");
-          if (loader) {
-            loader.remove();
-          }
 
           if (!pages || pages.length === 0) {
+            loading.done();
             listingContainer!.insertAdjacentHTML("beforeend",
               "<p>This user hasn't written any blog posts yet.</p>");
             return;
@@ -219,6 +244,7 @@
           });
         }).then(function(data: any) {
           if (!data) return;
+          loading.done();
           var pagesObj = ((data as any).query) ? (data as any).query.pages : null;
 
           if (!pagesObj) {
@@ -269,10 +295,7 @@
 
           listingContainer!.insertAdjacentHTML("beforeend", postsHTML);
         }).catch(function() {
-          var loader = document.querySelector(".blog-listing-loader");
-          if (loader) {
-            loader.remove();
-          }
+          loading.done();
           listingContainer!.insertAdjacentHTML("beforeend",
             "<p>Sorry, there was an error trying to load the blog posts.</p>");
         });
