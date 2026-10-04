@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Skeleton: placeholders shown while a gadget fetches content.
+   Colours derive from currentColor, so they follow the light/dark theme and
+   whatever text colour the surrounding block uses. Override per container with
+   --uw-skeleton-color / --uw-skeleton-highlight.
+   ========================================================================== */
+
+.uw-skeleton {
+  --uw-skeleton-base: var(--uw-skeleton-color, color-mix(in srgb, currentColor 12%, transparent));
+  --uw-skeleton-shine: var(--uw-skeleton-highlight, color-mix(in srgb, currentColor 5%, transparent));
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+  background-color: var(--uw-skeleton-base);
+  background-image: linear-gradient(90deg, transparent 0%, var(--uw-skeleton-shine) 50%, transparent 100%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  animation: uw-skeleton-shimmer 1.4s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Inline line of text: 0.8em tall, centred in the line box like real glyphs */
+.uw-skeleton--text {
+  width: 100%;
+  height: 0.8em;
+}
+
+.uw-skeleton--circle {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.uw-skeleton--block {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.uw-skeleton-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+}
+
+.uw-skeleton-stack > .uw-skeleton--text {
+  display: block;
+}
+
+.uw-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-text-color, currentColor);
+}
+
+/* Screen reader only */
+.uw-skeleton-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes uw-skeleton-shimmer {
+  0% { background-position: 150% 0; }
+  100% { background-position: -50% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uw-skeleton {
+    animation: none;
+    background-image: none;
+  }
+}

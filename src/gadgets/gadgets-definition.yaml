@@ -147,6 +147,19 @@ gadgets:
       resourceLoader:
         default: true
         hidden: true
+    Skeleton:
+      description: "Shared loading states (skeleton placeholders and spinner) for gadgets that fetch content."
+      comment: |
+        Default so any gadget can depend on it. It does nothing by itself: it only
+        publishes window.Skeleton, so pages whose gadgets never call it do no work.
+      authors:
+        - makudoumee
+      code:
+        - Skeleton.ts
+        - Skeleton.less
+      resourceLoader:
+        default: true
+        hidden: true
     QuickPurge:
       description: "Intercepts purge links and performs API-based purge without confirmation."
       links:
