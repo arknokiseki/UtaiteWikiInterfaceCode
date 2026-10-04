@@ -2,35 +2,66 @@
   mw.loader.using(["mediawiki.api"]).then(function() {
     $(function() {
       var USER_BLOG_NAMESPACE = 3e3;
-      var FALLBACK_AVATAR = "https://static.wikitide.net/utaitewiki/e/e6/Site-logo.png";
+      // Same per-user fallback images as the main page blog cards (Module:BlogCard):
+      // { "BLUEBIRD": "JUN.png", "Sbluen": true } where true means "<username>.png".
+      // Covers former staff who have no account here, so no UserProfileV2 avatar.
+      var AVATAR_CONFIG = "Template:LatestUserBlogs/config.json";
 
-      function getUserAvatar(username: any) {
-		  return new mw.Api().get({
-		    action: "query",
-		    format: "json",
-		    list: "queryuserprofilev2",
-		    user_name: username.replace(/_/g, " ")
-		  }).then(function(data) {
-		    var profile = null;
-		    if (data && data.query) {
-		      if (Array.isArray(data.query) && data.query[0]) {
-		        profile = data.query[0];
-		      } else if (data.query.queryuserprofilev2 && data.query.queryuserprofilev2[0]) {
-		        profile = data.query.queryuserprofilev2[0];
-		      }
-		    }
-		    if (profile && profile["profile-avatar"]) {
-		      var avatarUrl = profile["profile-avatar"];
-		      if (avatarUrl.indexOf("//") === 0) {
-		        avatarUrl = "https:" + avatarUrl;
-		      }
-		      return avatarUrl;
-		    }
-		    return FALLBACK_AVATAR;
-		  }).catch(function() {
-		    return FALLBACK_AVATAR;
-		  });
-	  }
+      /** Normalises a username the way MediaWiki titles do (first letter, underscores). */
+      function normaliseUser(name: string): string {
+        var t = mw.Title.newFromText(name, 2);
+        return t ? t.getMainText().split("/")[0] : name.replace(/_/g, " ");
+      }
+
+      /** Resolves to the fallback file name configured for this user, or "". */
+      function avatarFallbackFor(username: string): JQuery.Promise<string> {
+        return new mw.Api().get({
+          action: "query",
+          prop: "revisions",
+          titles: AVATAR_CONFIG,
+          rvprop: "content",
+          rvslots: "main",
+          formatversion: 2,
+          maxage: 3600,
+          smaxage: 3600
+        }).then(function(data: any) {
+          var page = data && data.query && data.query.pages && data.query.pages[0];
+          var rev = page && page.revisions && page.revisions[0];
+          var map = rev ? (JSON.parse(rev.slots.main.content).avatarFallback || {}) : {};
+          var want = normaliseUser(username);
+          for (var name in map) {
+            if (normaliseUser(name) !== want) continue;
+            if (map[name] === true || map[name] === "") return want + ".png";
+            if (typeof map[name] === "string") return map[name];
+          }
+          return "";
+        }, function() {
+          return "";
+        });
+      }
+
+      /**
+       * Avatar placeholder in {{GetUserAvatar}}'s markup. The getuserprofile gadget
+       * fills it: UserProfileV2 avatar, else data-fallback, else the site logo.
+       */
+      function avatarSlot(username: string, size: number): string {
+        return '<span class="useravatar-container" data-username="' + mw.html.escape(username) + '"' +
+          ' data-size="' + size + '" data-radius="50%"' +
+          ' style="display:inline-block;width:' + size + 'px;height:' + size + 'px;border-radius:50%;vertical-align:middle;"></span>';
+      }
+
+      /** Adds the configured fallback, then hands the slot to getuserprofile. */
+      function fillAvatar(container: Element | null, username: string) {
+        if (!container) return;
+        var $slot = $(container).find(".useravatar-container").first();
+        var size = Number($slot.attr("data-size")) || 30;
+        avatarFallbackFor(username).then(function(file: string) {
+          if (file) {
+            $slot.attr("data-fallback", mw.util.getUrl("Special:FilePath/" + file, { width: size * 2 }));
+          }
+          mw.hook("wikipage.content").fire($(container as HTMLElement));
+        });
+      }
 
       function calculateTimeAgo(isoTimestamp: any) {
         var now = (/* @__PURE__ */ new Date()).getTime();
@@ -84,9 +115,7 @@
         var usernameText = username.replace(/_/g, " ");
         var blogHeaderHTML = '<div class="custom-blog-subtitle">' +
           '<a href="' + userPageLink + '">' +
-            '<div class="custom-blog-avatar">' +
-              '<img src="' + FALLBACK_AVATAR + '" class="blog-avatar-loading" data-username="' + usernameText + '" />' +
-            '</div>' +
+            '<div class="custom-blog-avatar">' + avatarSlot(usernameText, 30) + '</div>' +
           '</a>' +
           '<div class="custom-blog-details">' +
             '<a href="' + userPageLink + '">' + usernameText + '</a>' +
@@ -99,13 +128,7 @@
         var targetElement = document.querySelector(".citizen-page-heading");
         if (targetElement) {
           targetElement.insertAdjacentHTML("afterend", blogHeaderHTML);
-          getUserAvatar(username).then(function(avatarUrl) {
-            var avatarImg = document.querySelector(".blog-avatar-loading");
-            if (avatarImg) {
-              (avatarImg as any).src = avatarUrl;
-              avatarImg.classList.remove("blog-avatar-loading");
-            }
-          });
+          fillAvatar(document.querySelector(".custom-blog-subtitle"), usernameText);
         }
         new mw.Api().get({
           action: "query",
@@ -148,22 +171,14 @@
         contentArea.innerHTML = '<div class="blog-listing-container">' +
           '<div class="blog-listing-header">' +
             '<a href="' + userPageLink + '">' +
-              '<div class="custom-blog-avatar blog-listing-avatar">' +
-                '<img src="' + FALLBACK_AVATAR + '" class="blog-avatar-loading" data-username="' + usernameText + '" />' +
-              '</div>' +
+              '<div class="custom-blog-avatar blog-listing-avatar">' + avatarSlot(usernameText, 44) + '</div>' +
             '</a>' +
             '<h2>' + usernameText + '\'s Blog Posts</h2>' +
           '</div>' +
           '<div class="blog-listing-loader">Loading posts...</div>' +
         '</div>';
 
-        getUserAvatar(username).then(function(avatarUrl) {
-          var avatarImg = document.querySelector(".blog-avatar-loading");
-          if (avatarImg) {
-            (avatarImg as any).src = avatarUrl;
-            avatarImg.classList.remove("blog-avatar-loading");
-          }
-        });
+        fillAvatar(document.querySelector(".blog-listing-header"), usernameText);
 
         var listingContainer = document.querySelector(".blog-listing-container");
         initializeCreateButton(listingContainer, username);

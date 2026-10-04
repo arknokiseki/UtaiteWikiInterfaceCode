@@ -435,6 +435,9 @@ gadgets:
         hidden: true
         dependencies:
           - mediawiki.api
+          - mediawiki.util
+          - mediawiki.Title
+          - ext.gadget.getuserprofile
         namespaces: "0,2,3000,3001"
 
   styling:
