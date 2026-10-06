@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "build-show": "npm run build && npm run preview",
     "tests": "jest",
+    "typecheck": "tsc -p tsconfig.jest.json",
     "presync": "npm run build",
     "sync": "node dev-sync/sync.ts",
     "wiki:fetch": "node --env-file=.env dev-utils/wiki-audit/fetch-cli.ts",

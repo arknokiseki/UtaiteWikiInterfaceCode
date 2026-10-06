@@ -1,4 +1,4 @@
-import { loadLuaModule, type LuaModule } from './lua-harness';
+import { loadLuaModule, type LuaModule } from './lua-harness.ts';
 
 const MODULE = 'wiki/modules/Album.lua';
 

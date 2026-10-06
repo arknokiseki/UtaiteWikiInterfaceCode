@@ -3,7 +3,7 @@ import { normalizePath } from 'vite';
 import wrap from 'word-wrap'; 
 import { GadgetDefinition, GadgetsDefinition } from './types.js';
 import { getFileType } from './utils.js';
-import { RenderedChunk } from "rollup";
+import type { Rollup } from "vite";
 import { resolveSrcPath } from './utils.js';
 
 /**
@@ -76,7 +76,7 @@ function getGadgetKeysFromChunkName(id: string): [string, string] | null {
  * @returns 
  */
 export function generateScriptBanner({ ghUrl, ghBranch, gadgetsDefinition }: { ghUrl: string, ghBranch: string, gadgetsDefinition: GadgetsDefinition }) {
-  return (chunk: RenderedChunk): string => {
+  return (chunk: Rollup.RenderedChunk): string => {
     if (getFileType(chunk.name) === 'style') {
       return '';
     }

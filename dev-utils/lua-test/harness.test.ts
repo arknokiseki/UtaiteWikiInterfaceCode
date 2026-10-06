@@ -1,7 +1,7 @@
 import { writeFileSync, mkdirSync } from 'fs';
 import { tmpdir } from 'os';
 import { join } from 'path';
-import { loadLuaModule } from './lua-harness';
+import { loadLuaModule } from './lua-harness.ts';
 
 const FIXTURE = `
 local p = {}

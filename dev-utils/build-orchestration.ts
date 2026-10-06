@@ -4,7 +4,7 @@ import { parse } from 'yaml';
 import * as crypto from 'crypto';
 import { Target } from 'vite-plugin-static-copy';
 import { transformWithEsbuild } from 'vite';
-import { OutputBundle } from 'rollup';
+import type { Rollup } from 'vite';
 import type { GadgetDefinition, GadgetsDefinition } from './types.js';
 import { 
   getFileType, 
@@ -403,7 +403,7 @@ function generateGadgetImplementationLoadConditionsWrapperCode(
  */
 export async function createRolledUpGadgetImplementation( 
   gadgetImplementationFilePath: string,
-  writeBundle: OutputBundle,
+  writeBundle: Rollup.OutputBundle,
   gadget: GadgetDefinition, 
   minify: boolean
 ): Promise<string> {

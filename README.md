@@ -83,6 +83,8 @@ To run unit tests (Jest), execute:
 npm run tests
 ```
 
+To type-check the whole repository (gadgets, tooling and tests), execute `npm run typecheck`.
+
 ### Build & deploy
 
 Running `npm run build` will start up Vite in Build mode and terminate after build is finished. Files are saved onto the `dist/` folder after the build process is finished. 
@@ -299,9 +301,15 @@ Execute Jest unit tests.
 </td>
 </tr>
 <tr>
+<td><code>npm run typecheck</code></td>
+<td>
+Type-check the whole repository with <code>tsc</code> (no output files).
+</td>
+</tr>
+<tr>
 <td><code>npm run sync</code></td>
 <td>
-Syncs the interface code written in the wiki with the latest built bundle.<br /><br />Run <code>npm run sync -- --update-all</code> to force the script to update all pages. 
+Syncs the interface code written in the wiki with the latest built bundle.<br /><br />Run <code>npm run sync -- --update-all</code> to force the script to update all pages.<br /><br />Run <code>npm run sync -- --gadget "Skeleton, userblog"</code> and/or <code>--siteinterface "Common, Citizen"</code> to update only those gadgets / <code>MediaWiki:</code> pages, changed or not. Names are case-insensitive; a gadget can also be given as <code>section/Name</code>. A targeted run does not move the last-synced marker, so other pending changes still go out on the next full sync. 
 </td>
 </tr>
 </tbody>

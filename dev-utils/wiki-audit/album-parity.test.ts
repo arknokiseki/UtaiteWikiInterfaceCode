@@ -1,7 +1,4 @@
-// Imported without a .ts extension: this file is only ever run by Jest, never
-// executed directly by Node, so it does not need the allowImportingTsExtensions
-// override that the directly-executed wiki-audit CLIs rely on.
-import { extractTrackFacts, compare } from './album-parity';
+import { extractTrackFacts, compare } from './album-parity.ts';
 
 const BEFORE = `
 <table class="album-track-table"><tbody>

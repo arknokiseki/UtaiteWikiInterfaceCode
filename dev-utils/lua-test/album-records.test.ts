@@ -1,4 +1,4 @@
-import { loadLuaModule, type LuaModule } from './lua-harness';
+import { loadLuaModule, type LuaModule } from './lua-harness.ts';
 
 const MODULE = 'wiki/modules/Album.lua';
 // U+241E / U+241F as Lua byte escapes; see the RS/FS comment in Album.lua.
