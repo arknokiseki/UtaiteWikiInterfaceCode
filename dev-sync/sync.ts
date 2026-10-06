@@ -11,7 +11,7 @@ import { readdirSync, createWriteStream, existsSync, mkdirSync } from "fs";
 import { readFile, writeFile } from "fs/promises";
 import { join, relative, resolve, basename } from "path";
 import { execFile } from 'child_process';
-import { promisify } from 'util';
+import { promisify, parseArgs } from 'util';
 
 const execFileAsync = promisify(execFile);
 
@@ -116,6 +116,29 @@ async function initBot(): Promise<Mwn> {
 const rxGadgetFolderStructure = new RegExp(`^${gadgetsSubfolder}\/(?<gadgetId>[^\/]+\/[^\/]+)\/(?<relFilePath>.*)$`);
 
 /**
+ * Names picked with `--gadget` / `--siteinterface`. Matching is case-insensitive:
+ * a gadget by its folder name (`Skeleton`) or `section/folder` (`core/Skeleton`),
+ * site interface code by its page name without extension (`Common`, `Citizen`).
+ */
+interface SyncTargets {
+  gadgets: string[];
+  siteInterfaces: string[];
+}
+
+/**
+ * Split `--gadget "a, b" --gadget c` into `['a', 'b', 'c']`.
+ */
+function splitList(values: string[] | undefined): string[] {
+  return (values || []).flatMap(v => v.split(',')).map(v => v.trim()).filter(Boolean);
+}
+
+const gadgetMatches = (gadgetId: string, name: string) =>
+  [gadgetId, basename(gadgetId)].some(id => id.toLowerCase() === name.toLowerCase());
+
+const siteInterfaceMatches = (pagename: string, name: string) =>
+  pagename.replace(/\.(js|css)$/, '').toLowerCase() === name.toLowerCase();
+
+/**
  * Fetches the names of each `MediaWiki:` page to edit as well as the correspondent 
  * filepaths of the code bundle on `dist/`. 
  * 
@@ -124,27 +147,45 @@ const rxGadgetFolderStructure = new RegExp(`^${gadgetsSubfolder}\/(?<gadgetId>[^
  * 
  * @param baseCommit  only subscribe to changes made since this commit (the last synced one)
  * @param updateAll   if set to `true`, then `getPagesToUpdate` will update all pages
+ * @param targets     if set, update exactly these gadgets / site interface pages,
+ *                    changed or not, and nothing else
  * @returns           a Map object with the pagename as key, filepath as value
  */
-async function getPagesToUpdate(baseCommit?: string, updateAll?: boolean): Promise<Map<string, string>> {
+async function getPagesToUpdate(baseCommit?: string, updateAll?: boolean, targets?: SyncTargets): Promise<Map<string, string>> {
   const res = new Map<string, string>();
   const gadgetsToUpdate = new Set<string>();
 
-  let filepaths = await ((baseCommit === undefined || updateAll) ? getAllFilesFromSrc() : getFileChangesFromGit(baseCommit));
+  let filepaths = await ((baseCommit === undefined || updateAll || targets) ? getAllFilesFromSrc() : getFileChangesFromGit(baseCommit));
 
   for (let filepath of filepaths) {
     if (filepath.startsWith(`${gadgetsSubfolder}/`)) {
       if (basename(filepath) === 'gadgets-definition.yaml') {
+        if (targets) continue;
         res.set('MediaWiki:Gadgets-definition', resolve(gadgetsDistPath, 'gadgets-definition.wikitext'));
       } else {
         const m = filepath.match(rxGadgetFolderStructure);
         if (m !== null) {
-          gadgetsToUpdate.add(m.groups!['gadgetId']!);
+          const gadgetId = m.groups!['gadgetId']!;
+          if (targets && !targets.gadgets.some(name => gadgetMatches(gadgetId, name))) continue;
+          gadgetsToUpdate.add(gadgetId);
         }
       }
     } else if (filepath.startsWith(`${mediawikiSubfolder}/`)) {
       const pagename = resolveFileExtension(basename(filepath));
+      if (targets && !targets.siteInterfaces.some(name => siteInterfaceMatches(pagename, name))) continue;
       res.set(`MediaWiki:${pagename}`, normalizePath(resolve(mediawikiDistPath, pagename)));
+    }
+  }
+
+  if (targets) {
+    // a typo should stop the run, not quietly sync less than was asked for
+    const synced = [...res.keys()].map(title => title.slice('MediaWiki:'.length));
+    const unknown = [
+      ...targets.gadgets.filter(name => ![...gadgetsToUpdate].some(id => gadgetMatches(id, name))),
+      ...targets.siteInterfaces.filter(name => !synced.some(pagename => siteInterfaceMatches(pagename, name))),
+    ];
+    if (unknown.length > 0) {
+      throw new Error(`No gadget or site interface page matches: ${unknown.join(', ')}`);
     }
   }
 
@@ -296,13 +337,24 @@ async function main() {
   try {
     resolveEnv();
     
-    const args = process.argv.slice(2);
-    const updateAll = args.some((arg) => arg === '--update-all');
+    // npm run sync -- --update-all                      every page
+    // npm run sync -- --gadget "Skeleton, userblog"     only these gadgets
+    // npm run sync -- --siteinterface "Common, Citizen" only these MediaWiki: pages
+    const { values: args } = parseArgs({
+      options: {
+        'update-all': { type: 'boolean' },
+        gadget: { type: 'string', multiple: true },
+        siteinterface: { type: 'string', multiple: true },
+      },
+    });
+    const updateAll = !!args['update-all'];
+    const targets: SyncTargets | undefined = (args.gadget || args.siteinterface) ? {
+      gadgets: splitList(args.gadget),
+      siteInterfaces: splitList(args.siteinterface),
+    } : undefined;
 
     log("Starting the deploy script...");
 
-    const bot = await initBot();
-    
     /* Get the last synced commit */
     const lastUpdatedLogFileName = `last-updated${!!process.env.profile ? '.' : ''}${process.env.profile || ''}.txt`;
     const lastUpdatedLogFile = resolve(logsFolderPath, lastUpdatedLogFileName);
@@ -310,13 +362,20 @@ async function main() {
     // read before syncing, so a commit made while the sync runs is picked up next time
     const head = await git('rev-parse', 'HEAD');
 
-    const pagesToUpdate = await getPagesToUpdate(baseCommit, updateAll);
+    // before logging in, so an unknown --gadget name stops the run cheaply
+    const pagesToUpdate = await getPagesToUpdate(baseCommit, updateAll, targets);
+    const bot = await initBot();
     const failures = await syncWikiCode(bot, pagesToUpdate);
 
     if (failures.length > 0) {
       // keep the old marker so the failed pages are retried on the next run
       log(`Not updating ${lastUpdatedLogFileName}: ${failures.length} page(s) failed`);
       process.exitCode = 1;
+      return;
+    }
+    if (targets) {
+      // a partial sync leaves the other changed pages pending for the next full run
+      log(`Not updating ${lastUpdatedLogFileName}: only selected pages were synced`);
       return;
     }
     /* Save the synced commit for next time */
