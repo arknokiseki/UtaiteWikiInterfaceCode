@@ -1,9 +1,9 @@
 local p = {}
 
 local services = {
-    ['amazon'] = { url = 'http://www.amazon.co.jp/dp/%s', name = 'Amazon', logo = true },
-    ['amazonmusic'] = { url = 'https://music.amazon.com/albums/%s', name = 'Amazon Music', logo = true },
-    ['amazonmusicjp'] = { url = 'https://music.amazon.co.jp/albums/%s', name = 'Amazon Music JP', logo = true },
+    ['amazon'] = { url = 'http://www.amazon.co.jp/dp/%s', name = 'Amazon', logo = true, invert = true },
+    ['amazonmusic'] = { url = 'https://music.amazon.com/albums/%s', name = 'Amazon Music', logo = true, invert = true },
+    ['amazonmusicjp'] = { url = 'https://music.amazon.co.jp/albums/%s', name = 'Amazon Music JP', logo = true, invert = true },
     ['amiami'] = { url = 'https://www.amiami.jp/top/detail/detail?gcode=%s', name = 'amiami', logo = true },
     ['awa'] = { url = 'https://s.awa.fm/album/%s', name = 'AWA', logo = true },
     ['awa-track'] = { url = 'https://s.awa.fm/track/%s', name = 'AWA', logo = 'awa_logo.png' },
@@ -29,7 +29,7 @@ local services = {
     ['mora'] = { url = 'https://mora.jp/package/%s', name = 'mora', logo = true },
     ['animate-intl'] = { url = 'https://www.animate.shop/products/%s', name = 'Animate International', logo = true },
     ['ototoy'] = { url = 'https://ototoy.jp/_/default/p/%s', name = 'Ototoy', logo = true },
-    ['cdjapan'] = { url = 'http://www.cdjapan.co.jp/product/%s', name = 'CDJapan', logo = true },
+    ['cdjapan'] = { url = 'http://www.cdjapan.co.jp/product/%s', name = 'CDJapan', logo = true, invert = true },
     ['nicochokuhan'] = { url = 'http://chokuhan.nicovideo.jp/products/detail/%s', name = 'Nicochokuhan', logo = true },
     ['d-stage'] = { url = 'http://d-stage.com/shop/detail.php?seq=%s', name = 'D-stage', logo = true },
     ['fasic'] = { url = 'http://shop.fasic.jp/?pid=%s', name = 'Fasic', logo = true },
@@ -99,7 +99,11 @@ function p.link(frame)
         logoFile = service.logo
     end
 
-    return string.format('[[File:%s|120px|link=%s|%s]]', logoFile, linkUrl, linkName)
+    -- skin-invert: Citizen applies invert(1) hue-rotate(180deg) in night mode only,
+    -- so a dark wordmark turns light while the accent colour keeps its hue
+    local classOpt = service.invert and '|class=skin-invert' or ''
+
+    return string.format('[[File:%s|120px|link=%s%s|%s]]', logoFile, linkUrl, classOpt, linkName)
 end
 
 return p
