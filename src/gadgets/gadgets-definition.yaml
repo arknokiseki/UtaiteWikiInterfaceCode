@@ -6,7 +6,7 @@ gadgets:
     CustomTabber:
       description: "Client-side enhancements for MediaWiki Tabber."
       authors:
-        - makudoumee
+        - ark
       code:
         - CustomTabber.ts
       resourceLoader:
@@ -15,7 +15,7 @@ gadgets:
     TextExtractsLoader:
       description: "Fetches text extracts for blog cards and other placeholders."
       authors:
-        - makudoumee
+        - ark
       code:
         - TextExtractsLoader.ts
       resourceLoader:
@@ -27,7 +27,7 @@ gadgets:
       commentedOut: true
       description: "Video preview functionality."
       authors:
-        - makudoumee
+        - ark
       code:
         - PreviewVid.less
         - PreviewVid.ts
@@ -39,7 +39,7 @@ gadgets:
         - Grunny (original code)
         - leviathan_89 (modifications)
         - CoolMikeHatsune22 (Miraheze port)
-        - Makudoumee (Utaite Wiki port)
+        - ark (Utaite Wiki port)
       links:
         - https://dev.fandom.com/wiki/MediaWiki:PreloadTemplates.js?oldid=208770
         - https://dev.miraheze.org/wiki/PreloadTemplates/code.js
@@ -55,7 +55,7 @@ gadgets:
     datatables:
       description: "DataTables helper."
       authors:
-        - makudoumee
+        - ark
       code:
         - datatables-helper.ts
         - mobile-datatables-helper.ts
@@ -72,7 +72,7 @@ gadgets:
     userlinks:
       description: "UserLinks template JavaScript handler."
       authors:
-        - makudoumee
+        - ark
       code:
         - UserLinks.ts
       resourceLoader:
@@ -81,7 +81,7 @@ gadgets:
     forum:
       description: "Lightweight forum helper script for MediaWiki Forum pages."
       authors:
-        - makudoumee
+        - ark
       code:
         - forum.ts
       resourceLoader:
@@ -91,7 +91,7 @@ gadgets:
     lightboxmodoki:
       description: "Lightbox gallery."
       authors:
-        - makudoumee
+        - ark
       code:
         - lightbox-modoki.ts
         - lightbox-modoki.less
@@ -116,7 +116,7 @@ gadgets:
       commentedOut: true
       description: "Desktop-only bottom toolbar for MediaWiki pages."
       authors:
-        - makudoumee
+        - ark
       code:
         - bottom toolbar.ts
         - bottom toolbar.less
@@ -131,7 +131,7 @@ gadgets:
       commentedOut: true
       description: "Tools Menu Gateway."
       authors:
-        - makudoumee
+        - ark
       code:
         - ToolsMenu.ts
       resourceLoader:
@@ -140,7 +140,7 @@ gadgets:
     ModalBuilder:
       description: "Modal Builder utility."
       authors:
-        - makudoumee
+        - ark
       code:
         - ModalBuilder.ts
         - ModalBuilder.less
@@ -155,7 +155,7 @@ gadgets:
         states, as a dependency or with mw.loader.using('ext.gadget.Skeleton')
         (userblog does the latter, on blog pages only).
       authors:
-        - makudoumee
+        - ark
       code:
         - Skeleton.ts
         - Skeleton.less
@@ -171,7 +171,7 @@ gadgets:
         - MonkeysHK
         - Celeranis
         - Magiczocker
-        - makudoumee (Port to Utaite Wiki)
+        - ark (Port to Utaite Wiki)
       code:
         - QuickPurge.ts
       resourceLoader:
@@ -181,9 +181,9 @@ gadgets:
     LinkPreview:
       commentedOut: true
       description: "Hover-based link preview system for MediaWiki, inspired by Extension:Popups. <br/>Displays a smart™ preview with extracted lead text and the best™ available page image."
-      authors: 
+      authors:
         - fngplg
-        - makudoumee (port to Utaite Wiki)
+        - ark (port to Utaite Wiki)
       code:
         - LinkPreview.ts
         - LinkPreview.less
@@ -192,7 +192,7 @@ gadgets:
     ShowbyGroup:
       description: "Show content by user group."
       authors:
-        - makudoumee
+        - ark
       code:
         - showbygroup.ts
         - showbygroup.less
@@ -202,7 +202,7 @@ gadgets:
     AddCategory:
       description: "Interactive category editor for MediaWiki articles."
       authors:
-        - makudoumee
+        - ark
       code:
         - add-category.ts
         - add-category.less
@@ -216,7 +216,7 @@ gadgets:
     hidesnonedit:
       description: "Hides site notice on edit."
       authors:
-        - makudoumee
+        - ark
       code:
         - hidesnonedit.ts
       resourceLoader:
@@ -226,7 +226,7 @@ gadgets:
     sandbox:
       description: "A WikiText sandbox editor with live preview."
       authors:
-        - makudoumee
+        - ark
       code:
         - portablesandbox.ts
         - sandbox.ts
@@ -310,7 +310,7 @@ gadgets:
     UptodateEditor:
       description: "Button + modal to update {{Uptodate}} parameters on song lists."
       authors:
-        - makudoumee
+        - ark
       code:
         - UptodateEditor.ts
         - UptodateEditor.less
@@ -357,7 +357,7 @@ gadgets:
     getuserprofile:
       description: "Avatar Fetcher (for [[mw:Extension:UserProfileV2|UserProfileV2]] Extension)."
       authors:
-        - makudoumee
+        - ark
       code:
         - getuserprofile.ts
       resourceLoader:
@@ -366,7 +366,7 @@ gadgets:
     docsbrowser:
       description: "Documentation Browser Modal."
       authors:
-        - makudoumee
+        - ark
       dependencies:
         - mediawiki.api
         - ext.gadget.ModalBuilder
@@ -380,7 +380,7 @@ gadgets:
     LinkSuggest:
       description: "Link Suggestions on code editor."
       authors:
-        - makudoumee
+        - ark
       code:
         - LinkSuggest.ts
         - LinkSuggest.less
@@ -440,7 +440,7 @@ gadgets:
     userblog:
       description: "User Blog functionality."
       authors:
-        - makudoumee
+        - ark
       code:
         - userblog.ts
         - userblog.less
@@ -458,7 +458,7 @@ gadgets:
     citizen:
       description: "Citizen skin styling and extensions."
       authors:
-        - makudoumee
+        - ark
       code:
         - citizen-vars.less
         - citizen-base.less
@@ -479,7 +479,7 @@ gadgets:
     mainpage:
       description: "Main Page styling."
       authors:
-        - makudoumee
+        - ark
       code:
         - Mp.less
       resourceLoader:
@@ -488,7 +488,7 @@ gadgets:
     actioncard:
       description: "Action Card hotfix for main page."
       authors:
-        - makudoumee
+        - ark
       code:
         - actioncard.ts
       resourceLoader:
@@ -533,7 +533,7 @@ gadgets:
       description: "Protection Indicator."
       authors:
         - Sohom Datta (Extension)
-        - Makudoumee (Utaite Wiki port)
+        - ark (Utaite Wiki port)
       code:
         - ProtectionIndicator.ts
       resourceLoader:
@@ -550,7 +550,7 @@ gadgets:
     birthday:
       description: "Adds confetti to pages in the 'Today's Birthdays' category."
       authors:
-        - makudoumee
+        - ark
       code:
         - birthday.ts
         - birthday.less
@@ -573,7 +573,7 @@ gadgets:
     badge:
       description: "Badge styling."
       authors:
-        - makudoumee
+        - ark
       code:
         - badge.less
       resourceLoader:
@@ -606,7 +606,7 @@ gadgets:
         - Echoblast53
         - Salty Nori
         - Leochan100
-        - makudoumee (Utaite Wiki port)
+        - ark (Utaite Wiki port)
       code:
         - documentation.less
         - documentation.ts
@@ -621,7 +621,7 @@ gadgets:
       authors:
         - Leochan100
         - Mikevoir
-        - 
+        -
       links:
         - https://genshin-impact.fandom.com/wiki/MediaWiki:Item.css?oldid=1727760
       code:
